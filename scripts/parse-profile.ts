@@ -42,8 +42,19 @@ export function parseProfileHtml(html: string): ParsedProfile {
   const clanIcon = snbArgs[8]  ?? null;
   const clanName = snbArgs[10] ?? null;
 
-  // clanId from icon filename: "clan_278.gif" → "278"
-  const clanId = clanIcon ? (/clan_(\d+)/.exec(clanIcon)?.[1] ?? null) : null;
+  // clanId from icon filename: "clan_278.gif" → "278".
+  // "Хранители" use a different icon pattern (h-sheriff-N.gif) → clanId "7".
+  // clanIcon === "" (empty string, but present) means the game reported no
+  // clan at all — that must be distinguished from clanIcon === null
+  // (showNameBlock missing / parse failure), where we don't know either way.
+  let clanId: string | null = null;
+  if (clanIcon) {
+    const m = /clan_(\d+)/.exec(clanIcon);
+    if (m) clanId = m[1];
+    else if (/h-sheriff/i.test(clanIcon)) clanId = "7";
+  } else if (clanIcon === "") {
+    clanId = ""; // explicitly clanless
+  }
 
   // ── #set_DescAdd — position ───────────────────────────────────────────────
   // Server-injected div (not JS-rendered). Flat content: text + <b> + <br>.
