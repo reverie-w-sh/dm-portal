@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent:       #caa55d;
-  --color-accent-muted: #9f7c3b;
+  --color-accent:       #b86a16;
+  --color-accent-muted: #8d5110;
 
   --color-dark:         #1b1e23;
   --color-dark-card:    #2a2f37;
   --color-dark-raised:  #343a43;
 
-  --color-ink:          #2d2d2d;
-  --color-ink-dim:      #666666;
-  --color-ink-muted:    #8c8c8c;
+  --color-ink:          #2f3134;
+  --color-ink-dim:      #5f6266;
+  --color-ink-muted:    #7a7d82;
 
   --font-inter: var(--font-inter-src);
 }
@@ -30,7 +30,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Pixel-art clan icons */
 img.clan-icon {
   image-rendering: crisp-edges;
   image-rendering: pixelated;
@@ -46,24 +45,24 @@ img.clan-icon {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(202, 165, 93, 0.35);
+  background: rgba(184, 106, 22, 0.45);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(202, 165, 93, 0.55);
+  background: rgba(184, 106, 22, 0.7);
 }
 
 /* Cards */
 .glass {
-  background: #ece9e2;
-  border: 1px solid #d4d0c7;
+  background: #d3d3d3;
+  border: 1px solid #b6b6b6;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
 }
 
 .glass-sm {
-  background: #f2f0eb;
-  border: 1px solid #d9d4ca;
+  background: #d3d3d3;
+  border: 1px solid #b6b6b6;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
 }
 
@@ -72,33 +71,33 @@ img.clan-icon {
 }
 
 .glass-hover:hover {
-  background: #f7f4ee;
-  border-color: #caa55d;
+  background: #dddddd;
+  border-color: #b86a16;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
 }
 
 /* Dividers */
 .divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(212, 208, 199, 0.9), transparent);
+  background: linear-gradient(to right, transparent, rgba(120, 120, 120, 0.65), transparent);
 }
 
 .divider-accent {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(202, 165, 93, 0.65), transparent);
+  background: linear-gradient(to right, transparent, rgba(184, 106, 22, 0.55), transparent);
 }
 
 /* Crest */
 .crest-glow {
   box-shadow:
-    0 0 0 1px rgba(202, 165, 93, 0.35),
+    0 0 0 1px rgba(184, 106, 22, 0.35),
     0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
 /* Buttons */
 .btn-primary {
-  background: #caa55d;
-  color: #2d2d2d;
+  background: #b86a16;
+  color: #ffffff;
   font-weight: 700;
   border-radius: 10px;
   padding: 0.625rem 1.5rem;
@@ -108,7 +107,7 @@ img.clan-icon {
 }
 
 .btn-primary:hover {
-  background: #d9b86d;
+  background: #cc7722;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
   transform: translateY(-1px);
 }
@@ -125,5 +124,5 @@ img.clan-icon {
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.07);
-  color: #f0d991;
+  color: #cc7722;
 }
