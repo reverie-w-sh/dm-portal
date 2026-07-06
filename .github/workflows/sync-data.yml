@@ -46,6 +46,8 @@ jobs:
             echo "Нет изменений в данных — коммит не нужен."
           else
             git commit -m "chore: auto-sync clan data"
+            git checkout -- .
+            git clean -fd
             git fetch origin main
             git rebase origin/main
             git push
