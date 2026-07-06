@@ -2,12 +2,14 @@
  * Fetches live profile pages for every real player in data/players.json
  * and updates their fields from the parsed HTML.
  *
- * Fields updated: nick, level, clanName, clanIcon, position, profileUrl
+* Fields updated: nick, level, clanId, clanName, clanIcon, position, profileUrl
  *
- * NOTE: clanId is intentionally NOT updated.
- *   The parser returns the game's numeric ID ("278").
- *   players.json uses portal slug IDs ("woelfchen") for routing.
- *   Overwriting would break the Members page filter.
+ * clanId IS updated from the live profile (fixed 2026-07-06): players.json
+ * and clans.json both use the game's numeric clan ID ("278"), so this is
+ * safe. This is what makes players who left the clan disappear from the
+ * Members page — without it, a departed member's old clanId would linger
+ * forever since scan-ratings.ts skips clanless players entirely.
+ *
  *
  * Skipped: players whose cuid is not a plain number (placeholder entries).
  *
@@ -70,9 +72,9 @@ async function main(): Promise<void> {
       const html   = await fetchHtml(player.cuid);
       const parsed = parseProfileHtml(html);
 
-      if (parsed.nick  !== null) player.nick  = parsed.nick;
+     if (parsed.nick  !== null) player.nick  = parsed.nick;
       if (parsed.level !== null) player.level = parsed.level;
-      // clanId intentionally skipped — see file header
+      if (parsed.clanId !== null) player.clanId = parsed.clanId;
       if (parsed.clanName !== null) player.clanName = parsed.clanName;
       if (parsed.clanIcon !== null) player.clanIcon = parsed.clanIcon;
       player.position   = parsed.position;
