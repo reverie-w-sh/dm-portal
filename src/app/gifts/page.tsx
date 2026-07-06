@@ -22,25 +22,58 @@ export default function GiftsPage() {
         Клановые подарочки
       </p>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {gifts.map((gift) => (
-          <a
-            key={gift.url}
-            href={gift.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="glass glass-hover rounded-2xl p-5 flex items-center gap-4"
-          >
-            <img
-              src={gift.url}
-              alt={gift.title}
-              className="w-16 h-16 object-contain clan-icon shrink-0"
-            />
+      <div className="glass rounded-2xl p-5 mb-8">
+        <h2 className="text-lg font-bold text-ink mb-3">
+          Как заказать подарок
+        </h2>
 
-            <span className="text-ink font-semibold">
-              {gift.title}
-            </span>
-          </a>
+        <ol className="list-decimal ml-5 space-y-2 text-sm text-ink-dim">
+          <li>На счёте должно быть не менее <strong>3 ТГ</strong>.</li>
+          <li>
+            Перейдите в{" "}
+            <a
+              href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent font-semibold hover:underline"
+            >
+              Услуги комотдела → Личные подарки
+            </a>.
+          </li>
+          <li>Загрузите выбранный подарок.</li>
+        </ol>
+      </div>
+
+      <div className="grid gap-4">
+        {gifts.map((gift) => (
+          <div
+            key={gift.url}
+            className="glass glass-hover rounded-2xl p-5 flex items-center justify-between gap-5"
+          >
+            <div className="flex items-center gap-4 min-w-0">
+              <div className="w-20 h-20 rounded-xl bg-[#d3d3d3] border border-black/10 flex items-center justify-center shrink-0">
+                <img
+                  src={gift.url}
+                  alt={gift.title}
+                  className="max-w-[72px] max-h-[72px] object-contain clan-icon"
+                />
+              </div>
+
+              <div className="min-w-0">
+                <div className="font-semibold text-ink">
+                  {gift.title}
+                </div>
+              </div>
+            </div>
+
+            <a
+              href={gift.url}
+              download
+              className="btn-primary shrink-0"
+            >
+              Скачать
+            </a>
+          </div>
         ))}
       </div>
     </div>
