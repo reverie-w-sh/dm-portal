@@ -8,7 +8,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/members", label: 'Состав клана "Волчата"' },
   { href: "/clans", label: "Другие кланы ДМ" },
-  { href: "/gifts", label: "Подарки" },
+  { href: "/gifts", label: "Подарочки" },
   { href: "/links", label: "Что-то полезное" },
 ];
 
