@@ -8,7 +8,8 @@ import { useState } from "react";
 const navLinks = [
   { href: "/members", label: 'Состав клана "Волчата"' },
   { href: "/clans", label: "Другие кланы ДМ" },
-  { href: "/links", label: "Разности" },
+  { href: "/gifts", label: "Подарки" },
+  { href: "/links", label: "Что-то полезное" },
 ];
 
 export default function Navbar() {
@@ -18,66 +19,88 @@ export default function Navbar() {
   const isActive = (href: string) => pathname.startsWith(href);
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[#3b414a] bg-[#20242b]">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
-        <Link href="/" onClick={() => setOpen(false)} className="shrink-0">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d8d2c0] shadow-md">
+    <header className="sticky top-0 z-50 border-b border-[#454b55] bg-[#2a2f37] shadow-lg">
+      <div className="max-w-[1180px] mx-auto h-16 px-6 flex items-center">
+
+        {/* Logo */}
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          className="mr-10 shrink-0"
+        >
+          <div className="w-10 h-10 rounded-xl bg-[#d3d3d3] border border-[#b8b8b8] flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
+
             <Image
               src="https://dm-game.com/pics/clanpic/clan_278.gif"
-              alt="На главную"
-              width={32}
-              height={32}
+              alt="Главная"
+              width={19}
+              height={19}
               unoptimized
-              className="h-8 w-8 object-contain"
+              className="object-contain"
             />
-          </span>
+
+          </div>
         </Link>
 
-        <div className="hidden items-center gap-2 lg:flex">
+        {/* Desktop */}
+        <nav className="hidden lg:flex items-center gap-8">
+
           {navLinks.map(({ href, label }) => (
+
             <Link
               key={href}
               href={href}
               className={[
-                "rounded-lg px-4 py-2 text-sm font-medium transition",
+                "text-[15px] font-medium transition-colors",
                 isActive(href)
-                  ? "bg-[#d0b16f]/15 text-[#f0d991]"
-                  : "text-[#c9ced6] hover:bg-white/5 hover:text-[#f0d991]",
+                  ? "text-[#b86a16]"
+                  : "text-[#d8d8d8] hover:text-[#d18b31]",
               ].join(" ")}
             >
               {label}
             </Link>
+
           ))}
-        </div>
+
+        </nav>
+
+        {/* Mobile */}
 
         <button
-          className="lg:hidden rounded-lg px-3 py-2 text-[#c9ced6] hover:bg-white/5"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Меню"
+          className="ml-auto lg:hidden text-[#d8d8d8]"
+          onClick={() => setOpen(!open)}
         >
-          {open ? "✕" : "☰"}
+          ☰
         </button>
+
       </div>
 
       {open && (
-        <div className="border-t border-[#3b414a] bg-[#20242b] lg:hidden">
+
+        <div className="lg:hidden bg-[#2a2f37] border-t border-[#454b55]">
+
           {navLinks.map(({ href, label }) => (
+
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
               className={[
-                "block border-b border-[#3b414a] px-6 py-3 text-sm font-medium",
+                "block px-6 py-4 border-b border-[#454b55]",
                 isActive(href)
-                  ? "text-[#f0d991]"
-                  : "text-[#c9ced6] hover:bg-white/5 hover:text-[#f0d991]",
+                  ? "text-[#b86a16]"
+                  : "text-[#d8d8d8]",
               ].join(" ")}
             >
               {label}
             </Link>
+
           ))}
+
         </div>
+
       )}
-    </nav>
+
+    </header>
   );
 }
