@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "die Wölfchen",
-  description: "Официальный сайт клана die Wölfchen — элитный клан в браузерной игре Dark Masses.",
+  description: "Официальный сайт клана die Wölfchen.",
 };
 
 export default function RootLayout({
