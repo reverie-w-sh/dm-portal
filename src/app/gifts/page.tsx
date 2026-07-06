@@ -30,30 +30,42 @@ export default function GiftsPage() {
       </p>
 
       <div className="glass rounded-2xl p-6 mb-10">
-        <h2 className="text-xl font-bold text-ink mb-4">
-          Как заказать подарок
-        </h2>
+       <h2 className="text-xl font-bold text-ink mb-4">
+  Как заказать подарок 🐺
+</h2>
 
-        <ol className="list-decimal ml-5 space-y-2 text-sm text-ink-dim">
-          
-          <li>Скачайте понравившийся подарок на этой страничке.</li>
+<ol className="list-decimal ml-5 space-y-3 text-sm text-ink-dim">
+  <li>Скачайте понравившийся подарок на этой странице.</li>
 
-          <li>Загрузите его в игре:</li>
+  <li>
+    Загрузите его в игре:
+    <ul className="list-disc ml-6 mt-2 space-y-2">
+      <li>
+        Перейдите в раздел{" "}
+        <a
+          href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent hover:underline font-semibold"
+        >
+          Услуги комотдела → Личные подарки
+        </a>
+      </li>
 
-          <li>
-            Перейдите в раздел{" "}
-            <a
-              href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline font-semibold"
-            >
-              Услуги комотдела → Личные подарки
-            </a>
-          </li>
-          
-          <li>На вашем счёте должно быть минимум <b>3 ТГ</b>. Размер подарка должен быть 60х60px</li>
-        </ol>
+      <li>
+        На вашем счету должно быть не менее <strong>3 ТГ</strong>.
+      </li>
+
+      <li>
+        Размер изображения должен быть <strong>60×60 px</strong>.
+      </li>
+
+      <li>
+        Загрузите подарок, впишите название, сохраните. Нажмите «Выдать 35 шт.»
+      </li>
+    </ul>
+  </li>
+</ol>
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
