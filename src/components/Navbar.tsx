@@ -6,54 +6,43 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/members", label: 'Состав клана "Волчата"', exact: false },
-  { href: "/clans", label: "Другие кланы ДМ", exact: false },
-  { href: "/links", label: "Разности", exact: false },
+  { href: "/members", label: 'Состав клана "Волчата"' },
+  { href: "/clans", label: "Другие кланы ДМ" },
+  { href: "/links", label: "Разности" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  const isActive = (href: string, exact?: boolean) =>
-    exact ? pathname === href : pathname.startsWith(href);
+  const isActive = (href: string) => pathname.startsWith(href);
 
   return (
-    <nav
-      className="sticky top-0 z-50 border-b border-white/[0.06]"
-      style={{ background: "rgba(6, 8, 12, 0.85)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)" }}
-    >
-      <div className="max-w-[1180px] mx-auto px-6 flex items-center justify-between h-14">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 shrink-0 group"
-          onClick={() => setOpen(false)}
-        >
-          <div className="w-7 h-7 rounded overflow-hidden shrink-0">
+    <nav className="sticky top-0 z-50 border-b border-[#3b414a] bg-[#20242b]">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+        <Link href="/" onClick={() => setOpen(false)} className="shrink-0">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d8d2c0] shadow-md">
             <Image
               src="https://dm-game.com/pics/clanpic/clan_278.gif"
-              alt="die Wölfchen icon"
-              width={28}
-              height={28}
+              alt="На главную"
+              width={32}
+              height={32}
               unoptimized
-              className="w-full h-full object-cover"
+              className="h-8 w-8 object-contain"
             />
-          </div>
-
+          </span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map(({ href, label, exact }) => (
+        <div className="hidden items-center gap-2 lg:flex">
+          {navLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className={[
-                "px-3 py-1.5 rounded-lg text-[13px] font-medium transition-colors",
-                isActive(href, exact)
-                  ? "bg-accent/10 text-accent"
-                  : "text-ink-dim hover:text-ink hover:bg-white/5",
+                "rounded-lg px-4 py-2 text-sm font-medium transition",
+                isActive(href)
+                  ? "bg-[#d0b16f]/15 text-[#f0d991]"
+                  : "text-[#c9ced6] hover:bg-white/5 hover:text-[#f0d991]",
               ].join(" ")}
             >
               {label}
@@ -61,37 +50,27 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button
-          className="lg:hidden text-ink-dim hover:text-ink transition-colors p-2"
+          className="lg:hidden rounded-lg px-3 py-2 text-[#c9ced6] hover:bg-white/5"
           onClick={() => setOpen((v) => !v)}
           aria-label="Меню"
         >
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-            {open ? (
-              <path fillRule="evenodd" clipRule="evenodd"
-                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" />
-            ) : (
-              <path fillRule="evenodd" clipRule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" />
-            )}
-          </svg>
+          {open ? "✕" : "☰"}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="lg:hidden border-t border-white/[0.06]" style={{ background: "rgba(6,8,12,0.97)" }}>
-          {navLinks.map(({ href, label, exact }) => (
+        <div className="border-t border-[#3b414a] bg-[#20242b] lg:hidden">
+          {navLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               onClick={() => setOpen(false)}
               className={[
-                "block px-6 py-3.5 text-sm font-medium border-b border-white/[0.04] transition-colors",
-                isActive(href, exact)
-                  ? "text-accent bg-accent/5"
-                  : "text-ink-dim hover:text-ink hover:bg-white/5",
+                "block border-b border-[#3b414a] px-6 py-3 text-sm font-medium",
+                isActive(href)
+                  ? "text-[#f0d991]"
+                  : "text-[#c9ced6] hover:bg-white/5 hover:text-[#f0d991]",
               ].join(" ")}
             >
               {label}
