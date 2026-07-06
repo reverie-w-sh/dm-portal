@@ -1,8 +1,8 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import clansData from "../../../data/clans.json";
 
-const OUR_CLAN_ID = "woelfchen";
+const OUR_CLAN_ID = "278";
 
 const values = [
   {
