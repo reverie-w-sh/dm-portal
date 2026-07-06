@@ -42,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/clans.json data/players.json data/rating-scan.md data/sync-status.json
-         if git diff --cached --quiet; then
+          if git diff --cached --quiet; then
             echo "Нет изменений в данных — коммит не нужен."
           else
             git commit -m "chore: auto-sync clan data"
