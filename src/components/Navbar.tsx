@@ -6,9 +6,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/members", label: 'Состав клана "Волчата"' },
-  { href: "/clans", label: "Другие кланы ДМ" },
-  { href: "/links", label: "Разности" },
+  { href: "/members", label: 'Состав клана "Волчата"', exact: false },
+  { href: "/clans", label: "Другие кланы ДМ", exact: false },
+  { href: "/links", label: "Разности", exact: false },
 ];
 
 export default function Navbar() {
