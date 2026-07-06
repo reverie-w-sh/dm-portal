@@ -26,13 +26,14 @@ export default function ClansPage() {
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
       <div className="mb-2">
-        <h1 className="text-3xl font-black text-ink tracking-tight">
-          Кланы и состав
-        </h1>
-        <p className="text-ink-muted text-sm mt-1">
-          {clansData.length} кланов в игре Dark Masses
-        </p>
-      </div>
+        <div className="mb-2">
+  <h1 className="text-3xl font-black text-[#e6e6e6] tracking-tight">
+    Кланы ДМ. Состав
+  </h1>
+  <p className="text-[#b9bec6] text-sm mt-1">
+    Всего в мире {clansData.length} кланов
+  </p>
+</div>
       <div className="divider-accent mb-8" />
 
       {/* Controls */}
