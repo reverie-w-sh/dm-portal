@@ -15,26 +15,30 @@ export default function MembersPage() {
     <div className="max-w-[1180px] mx-auto px-6 py-10">
 
       {/* Clan header */}
-      <div className="glass rounded-2xl p-6 mb-8">
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-xl overflow-hidden shrink-0 border border-white/10">
-            <Image
-              src={clan.crestSmall}
-              alt={clan.name}
-              width={48}
-              height={48}
-              unoptimized
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <div>
-            <h1 className="text-2xl font-black text-ink tracking-tight">{clan.name}</h1>
-            <p className="text-ink-muted text-sm mt-0.5">
-              {clan.slogan ? `${clan.slogan} · ` : ""}{clan.membersCount} участников
-            </p>
-          </div>
-        </div>
-      </div>
+<div className="glass rounded-2xl p-6 mb-8">
+  <div className="flex items-center gap-5">
+    <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 bg-[#d3d3d3] border border-black/15">
+      <Image
+        src="https://dm-game.com/pics/clanpic/clan_278_b.jpg"
+        alt={clan.name}
+        width={80}
+        height={80}
+        unoptimized
+        className="w-full h-full object-contain"
+      />
+    </div>
+
+    <div>
+      <h1 className="text-3xl font-black text-ink tracking-tight">
+        {clan.name}
+      </h1>
+
+      <p className="text-ink-muted text-sm mt-1">
+        {clan.membersCount} участников
+      </p>
+    </div>
+  </div>
+</div>
 
       {/* Members table */}
       <div className="glass rounded-2xl overflow-hidden">
