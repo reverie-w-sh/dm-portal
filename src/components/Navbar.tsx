@@ -6,12 +6,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "/",        label: "Главная",          exact: true },
-  { href: "/about",   label: "О клане" },
-  { href: "/members", label: "Состав" },
-  { href: "/clans",   label: "Кланы и состав" },
-  { href: "/ratings", label: "Планшет охотника" },
-  { href: "/links",   label: "Полезное" },
+  { href: "/members", label: 'Состав клана "Волчата"' },
+  { href: "/clans", label: "Другие кланы ДМ" },
+  { href: "/links", label: "Разности" },
 ];
 
 export default function Navbar() {
@@ -43,9 +40,7 @@ export default function Navbar() {
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="font-semibold text-ink group-hover:text-accent transition-colors text-sm tracking-wide">
-            die Wölfchen
-          </span>
+
         </Link>
 
         {/* Desktop nav */}
