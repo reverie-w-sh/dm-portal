@@ -27,7 +27,7 @@ export default function ClansPage() {
     <div className="max-w-[1180px] mx-auto px-6 py-10">
       <div className="mb-2">
         <h1 className="text-3xl font-black text-[#e6e6e6] tracking-tight">
-          Другие кланы ДМ
+          Все кланы ДМ. Состав
         </h1>
         <p className="text-[#b9bec6] text-sm mt-1">
           Всего в мире {clansData.length} кланов
