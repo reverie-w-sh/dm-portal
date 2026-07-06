@@ -9,8 +9,11 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "900"],
 });
 
-export const metadata: Metadata = {
-  title: "die Wölfchen",
+export const metadata = {
+  title: {
+    default: "die Wölfchen",
+    template: "%s | die Wölfchen",
+  },
   description: "Официальный сайт клана die Wölfchen.",
 };
 
