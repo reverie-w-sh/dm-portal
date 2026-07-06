@@ -37,6 +37,9 @@ jobs:
       - name: Step 3 — update players from profiles
         run: npx tsx scripts/update-players-from-profiles.ts
 
+      - name: Step 4 — rebuild clan members lists
+        run: npx tsx scripts/rebuild-clan-members.ts
+        
       - name: Commit and push updated data
         run: |
           git config user.name "github-actions[bot]"
