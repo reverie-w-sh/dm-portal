@@ -20,7 +20,23 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#7b4a18]/60 bg-[#252a31] shadow-[0_8px_28px_rgba(0,0,0,0.35)]">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_45%)]" />
+<div
+  className="absolute inset-0 pointer-events-none"
+  style={{
+    background: `
+      linear-gradient(to bottom,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.02) 35%,
+        rgba(0,0,0,.18)
+      ),
+      radial-gradient(
+        ellipse at top,
+        rgba(255,255,255,.12),
+        transparent 65%
+      )
+    `,
+  }}
+/>
 
       <div className="relative max-w-[1180px] mx-auto h-16 px-6 flex items-center">
         <Link href="/" onClick={() => setOpen(false)} className="mr-10 shrink-0">
