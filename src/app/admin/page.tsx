@@ -175,7 +175,7 @@ export default function AdminPage() {
 
           {runUrl && (
             
-              href={runUrl}
+             <a href={runUrl}
               target="_blank"
               rel="noreferrer"
               className="text-xs text-[#3d9bff] underline mt-2 inline-block"
