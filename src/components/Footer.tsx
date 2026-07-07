@@ -18,23 +18,35 @@ export default function Footer() {
 
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
 
-          <Link href="/" className="group" title="На главную">
+          <Link
+            href="/"
+            className="group relative"
+            title="На главную"
+          >
+            <img
+              src="/icons/footer-heart-button-40.png"
+              alt=""
+              className="w-10 h-10 select-none"
+              draggable={false}
+            />
 
-            <div className="relative w-10 h-10">
-
-  <img
-    src="/icons/footer-heart-button-40.png"
-    alt=""
-    className="absolute inset-0 w-10 h-10"
-  />
-
-  <img
-    src="https://dm-game.com/pics/clanpic/clan_278.gif"
-    alt="Главная"
-    className="absolute left-1/2 top-1/2 w-[19px] h-[19px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-110"
-  />
-
-</div>
+            <img
+              src="/icons/clan-paw.gif"
+              alt="Главная"
+              draggable={false}
+              className="
+                absolute
+                left-1/2
+                top-1/2
+                w-[19px]
+                h-[19px]
+                -translate-x-1/2
+                -translate-y-1/2
+                transition-transform
+                duration-300
+                group-hover:scale-110
+              "
+            />
           </Link>
 
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
@@ -46,15 +58,18 @@ export default function Footer() {
         <nav className="flex flex-wrap justify-center gap-8 text-sm">
 
           {footerLinks.map((item) => (
-
             <Link
               key={item.href}
               href={item.href}
-              className="text-[#b9bec6] transition-all duration-300 hover:text-[#ffd58d]"
+              className="
+                text-[#b9bec6]
+                hover:text-[#ffd58d]
+                transition-colors
+                duration-300
+              "
             >
               {item.label}
             </Link>
-
           ))}
 
         </nav>
@@ -65,7 +80,13 @@ export default function Footer() {
 
           <Link
             href="/"
-            className="text-[11px] tracking-wide text-[#747474] transition-colors hover:text-[#9b9b9b]"
+            className="
+              text-[11px]
+              tracking-wide
+              text-[#727272]
+              hover:text-[#9b9b9b]
+              transition-colors
+            "
           >
             ♥ 2026 © A&amp;W ♥
           </Link>
