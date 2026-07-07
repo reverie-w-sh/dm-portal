@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { SyncStatus } from "../api/admin/sync/route";
 
 type SyncState = "idle" | "running" | "success" | "error";
-
-type ApiPayload = SyncStatus & { ok: boolean; message: string; output: string };
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleString("ru-RU", {
@@ -24,7 +22,7 @@ function formatDuration(ms: number): string {
 
 const STATE_LABEL: Record<SyncState, string> = {
   idle:    "Готово к обновлению",
-  running: "Обновление данных...",
+  running: "Обновление данных на GitHub Actions...",
   success: "Данные успешно обновлены",
   error:   "Ошибка обновления",
 };
@@ -47,7 +45,8 @@ function StatRow({ label, value }: { label: string; value: number | string }) {
 
 export default function AdminPage() {
   const [syncState,     setSyncState]     = useState<SyncState>("idle");
-  const [output,        setOutput]        = useState<string>("");
+  const [message,       setMessage]       = useState<string>("");
+  const [runUrl,        setRunUrl]        = useState<string | null>(null);
   const [lastUpdatedAt, setLastUpdatedAt] = useState<string | null>(null);
   const [durationMs,    setDurationMs]    = useState<number | null>(null);
   const [clansCount,    setClansCount]    = useState<number | null>(null);
@@ -56,38 +55,68 @@ export default function AdminPage() {
   const [emptyPositions,setEmptyPositions]= useState<number | null>(null);
   const [errorsCount,   setErrorsCount]   = useState<number | null>(null);
 
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
   function applyStatus(data: SyncStatus) {
     if (data.lastUpdatedAt)  setLastUpdatedAt(data.lastUpdatedAt);
     if (data.lastResult)     setSyncState(data.lastResult);
-    if (data.durationMs     !== null) setDurationMs(data.durationMs);
+    setDurationMs(data.durationMs);
     if (data.clansCount     !== null) setClansCount(data.clansCount);
     if (data.playersCount   !== null) setPlayersCount(data.playersCount);
     if (data.positionsFound !== null) setPositionsFound(data.positionsFound);
     if (data.emptyPositions !== null) setEmptyPositions(data.emptyPositions);
     if (data.errorsCount    !== null) setErrorsCount(data.errorsCount);
-    if (data.lastOutputShort)         setOutput(data.lastOutputShort);
+    if (data.runUrl)         setRunUrl(data.runUrl);
+    return data.lastResult;
+  }
+
+  function startPolling() {
+    if (pollRef.current) clearInterval(pollRef.current);
+    pollRef.current = setInterval(async () => {
+      try {
+        const res = await fetch("/api/admin/sync");
+        const data: SyncStatus = await res.json();
+        const result = applyStatus(data);
+        if (result === "success" || result === "error") {
+          if (pollRef.current) clearInterval(pollRef.current);
+        }
+      } catch {
+        /* пробуем ещё раз на следующем тике */
+      }
+    }, 8000);
   }
 
   useEffect(() => {
     fetch("/api/admin/sync")
       .then((r) => r.json())
-      .then(applyStatus)
+      .then((data: SyncStatus) => {
+        const result = applyStatus(data);
+        if (result === "running") startPolling();
+      })
       .catch(() => {});
+
+    return () => {
+      if (pollRef.current) clearInterval(pollRef.current);
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleSync = async () => {
     setSyncState("running");
-    setOutput("");
+    setMessage("");
     try {
       const res = await fetch("/api/admin/sync", { method: "POST" });
-      const data: ApiPayload = await res.json();
-      setSyncState(data.ok ? "success" : "error");
-      setOutput(data.output ?? "");
-      applyStatus(data);
+      const data = await res.json();
+      if (!data.ok) {
+        setSyncState("error");
+        setMessage(data.message ?? "Неизвестная ошибка");
+        return;
+      }
+      setMessage(data.message ?? "");
+      startPolling();
     } catch (err) {
       setSyncState("error");
-      setOutput(String(err));
+      setMessage(String(err));
     }
   };
 
@@ -135,8 +164,24 @@ export default function AdminPage() {
 
           {isRunning && (
             <p className="text-xs text-ink-muted mt-2">
-              Шаги выполняются последовательно. Шаг 3 (обновление профилей) может занять несколько минут — не закрывайте страницу.
+              Запущено на GitHub Actions — обычно занимает 3–4 минуты. Страницу можно закрыть,
+              обновление продолжится само по себе.
             </p>
+          )}
+
+          {message && !isRunning && (
+            <p className="text-xs text-ink-muted mt-2">{message}</p>
+          )}
+
+          {runUrl && (
+            
+              href={runUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs text-[#3d9bff] underline mt-2 inline-block"
+            >
+              Открыть запуск на GitHub →
+            </a>
           )}
         </div>
 
@@ -161,13 +206,10 @@ export default function AdminPage() {
             {(errorsCount !== null || durationMs !== null) && (
               <>
                 <div className="divider my-4" />
-                <p className="text-xs text-ink-muted mb-2">Последняя синхронизация</p>
+                <p className="text-xs text-ink-muted mb-2">Последний запуск</p>
                 <div className="space-y-1">
                   <p className="text-sm font-medium" style={{ color: lastOk ? "#4ade80" : "#f87171" }}>
                     {lastOk ? "✓ Успешно" : "✗ Ошибка"}
-                    {errorsCount !== null && errorsCount > 0 && (
-                      <span className="ml-2 text-xs text-[#f87171]">({errorsCount} ошиб.)</span>
-                    )}
                   </p>
                   {durationMs !== null && (
                     <p className="text-sm text-ink-muted">
@@ -177,21 +219,6 @@ export default function AdminPage() {
                 </div>
               </>
             )}
-          </div>
-        )}
-
-        {/* ── Output log ───────────────────────────────── */}
-        {output && (
-          <div className="glass rounded-2xl p-5">
-            <h3 className="text-[11px] font-semibold text-ink-muted uppercase tracking-wider mb-3">
-              Вывод
-            </h3>
-            <pre
-              className="text-[11px] text-ink-dim overflow-auto leading-relaxed whitespace-pre-wrap"
-              style={{ fontFamily: "monospace", maxHeight: "22rem" }}
-            >
-              {output}
-            </pre>
           </div>
         )}
 
