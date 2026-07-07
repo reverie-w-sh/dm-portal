@@ -295,7 +295,7 @@
 2. gelikova[8] — cuid=24947 — https://dm-game.com/index.php?file=infouser&cuid=24947
 3. Teufel[8] — cuid=24926 — https://dm-game.com/index.php?file=infouser&cuid=24926
 4. тупик101[8] — cuid=3943 — https://dm-game.com/index.php?file=infouser&cuid=3943
-5. египтянин[5] — cuid=28595 — https://dm-game.com/index.php?file=infouser&cuid=28595
+5. египтянин[6] — cuid=28595 — https://dm-game.com/index.php?file=infouser&cuid=28595
 
 ## die Wölfchen — CLAN 278 — знайдено 17
 
