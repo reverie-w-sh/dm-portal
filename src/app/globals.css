@@ -126,3 +126,83 @@ img.clan-icon {
   background: rgba(255, 255, 255, 0.07);
   color: #cc7722;
 }
+
+/* ===== Карты Дома Боли ===== */
+
+.kp-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.kp-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:20px;
+
+    transition:.25s;
+
+}
+
+.kp-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(255,255,255,.20);
+
+    box-shadow:
+        0 0 18px rgba(255,255,255,.10),
+        0 0 45px rgba(255,255,255,.08);
+
+}
+
+.kp-card img{
+
+    width:100%;
+
+    display:block;
+
+    border-radius:12px;
+
+}
+
+.kp-title{
+
+    text-align:center;
+
+    margin-top:14px;
+
+    font-weight:700;
+
+    color:var(--ink);
+
+}
+
+@media(max-width:900px){
+
+.kp-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:640px){
+
+.kp-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
