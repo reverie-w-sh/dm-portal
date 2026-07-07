@@ -20,66 +20,21 @@ export default function Footer() {
 
           <Link href="/" className="group" title="На главную">
 
-            <div
-              className="relative flex h-10 w-10 items-center justify-center rounded-lg overflow-hidden border border-[#b9b9b9] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:border-[#ffd58d]"
-              style={{
-                background:
-                  "linear-gradient(180deg,#efefef 0%,#d9d9d9 55%,#cfcfcf 100%)",
-                boxShadow:
-                  "0 6px 18px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.9)",
-              }}
-            >
+            <div className="relative w-10 h-10">
 
-              {/* Светлая часть гравировки */}
+  <img
+    src="/icons/footer-heart-button-40.png"
+    alt=""
+    className="absolute inset-0 w-10 h-10"
+  />
 
-              <svg
-                width="38"
-                height="38"
-                viewBox="0 0 100 100"
-                className="absolute"
-                style={{
-                  transform: "translate(-0.8px,-0.8px)",
-                  opacity: .55,
-                }}
-              >
-                <path
-                  d="M50 88 L17 55 C4 42 6 20 24 18 C36 17 45 24 50 31 C55 24 64 17 76 18 C94 20 96 42 83 55 Z"
-                  fill="none"
-                  stroke="#ffffff"
-                  strokeWidth="5"
-                />
-              </svg>
+  <img
+    src="https://dm-game.com/pics/clanpic/clan_278.gif"
+    alt="Главная"
+    className="absolute left-1/2 top-1/2 w-[19px] h-[19px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 group-hover:scale-110"
+  />
 
-              {/* Темная часть гравировки */}
-
-              <svg
-                width="38"
-                height="38"
-                viewBox="0 0 100 100"
-                className="absolute"
-                style={{
-                  transform: "translate(.8px,.8px)",
-                  opacity: .28,
-                }}
-              >
-                <path
-                  d="M50 88 L17 55 C4 42 6 20 24 18 C36 17 45 24 50 31 C55 24 64 17 76 18 C94 20 96 42 83 55 Z"
-                  fill="none"
-                  stroke="#4b4f54"
-                  strokeWidth="5"
-                />
-              </svg>
-
-              {/* Наша лапка */}
-
-              <img
-                src="https://dm-game.com/pics/clanpic/clan_278.gif"
-                alt="Главная"
-                className="relative z-10 w-[19px] h-[19px]"
-              />
-
-            </div>
-
+</div>
           </Link>
 
           <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
