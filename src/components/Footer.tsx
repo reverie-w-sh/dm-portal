@@ -14,47 +14,42 @@ export default function Footer() {
 
         {/* Разделитель */}
 
-        <div className="mb-8 flex items-center gap-5">
+        <div className="flex items-center gap-5 mb-8">
 
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
 
           <Link
             href="/"
-            className="group relative block w-10 h-10 shrink-0"
-            title="На главную"
+            className="relative block w-10 h-10 shrink-0"
+            title="Главная"
           >
-            {/* Кнопка */}
-
             <img
               src="/icons/footer-heart-button-40.png"
               alt=""
+              width={40}
+              height={40}
               draggable={false}
-              className="absolute inset-0 w-full h-full select-none"
+              className="block w-10 h-10"
             />
-
-            {/* Наша лапка */}
 
             <img
               src="/icons/clan-paw.gif"
-              alt="Главная"
+              alt=""
+              width={19}
+              height={19}
               draggable={false}
-              className="
-                absolute
-                left-1/2
-                top-1/2
-                w-[19px]
-                h-[19px]
-                -translate-x-1/2
-                -translate-y-1/2
-                select-none
-                transition-transform
-                duration-300
-                group-hover:scale-110
-              "
+              className="absolute"
+              style={{
+                left: "50%",
+                top: "50%",
+                width: "19px",
+                height: "19px",
+                transform: "translate(-50%, -50%)",
+              }}
             />
           </Link>
 
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
 
         </div>
 
@@ -66,12 +61,7 @@ export default function Footer() {
             <Link
               key={item.href}
               href={item.href}
-              className="
-                text-[#b9bec6]
-                transition-colors
-                duration-300
-                hover:text-[#ffd58d]
-              "
+              className="text-[#b9bec6] hover:text-[#ffd58d] transition-colors"
             >
               {item.label}
             </Link>
@@ -82,21 +72,9 @@ export default function Footer() {
         {/* Подпись */}
 
         <div className="mt-6 text-center">
-
-          <Link
-            href="/"
-            className="
-              text-[11px]
-              tracking-wide
-              text-[#747474]
-              transition-colors
-              duration-300
-              hover:text-[#a5a5a5]
-            "
-          >
+          <span className="text-[11px] text-[#747474]">
             ♥ 2026 © A&amp;W ♥
-          </Link>
-
+          </span>
         </div>
 
       </div>
