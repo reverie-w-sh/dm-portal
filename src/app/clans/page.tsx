@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import clansData from "../../../data/clans.json";
+import lastSync from "../../../data/last-sync.json";
 import ClanCard from "@/components/ClanCard";
 import SearchBar from "@/components/SearchBar";
 
@@ -11,6 +12,13 @@ const SORT_LABELS: Record<SortKey, string> = {
   members: "К-во участников",
   name: "Название",
 };
+
+function formatLastSync(iso: string): string {
+  return new Date(iso).toLocaleString("ru-RU", {
+    day: "2-digit", month: "2-digit", year: "numeric",
+    hour: "2-digit", minute: "2-digit",
+  });
+}
 
 export default function ClansPage() {
   const [search, setSearch] = useState("");
@@ -32,10 +40,11 @@ export default function ClansPage() {
         <p className="text-[#b9bec6] text-sm mt-1">
           Всего в мире {clansData.length} кланов
         </p>
+        <p className="text-[#b9bec6]/70 text-xs mt-1">
+          Обновление данных: {formatLastSync(lastSync.updatedAt)}
+        </p>
       </div>
-
       <div className="divider-accent mb-8" />
-
       <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <div className="flex-1">
           <SearchBar
@@ -44,12 +53,10 @@ export default function ClansPage() {
             placeholder="Поиск клана по названию..."
           />
         </div>
-
         <div className="flex items-center gap-2">
           <span className="text-[#b9bec6] text-xs uppercase tracking-wider whitespace-nowrap">
             Сорт.
           </span>
-
           {(Object.keys(SORT_LABELS) as SortKey[]).map((key) => (
             <button
               key={key}
@@ -66,7 +73,6 @@ export default function ClansPage() {
           ))}
         </div>
       </div>
-
       {filtered.length > 0 ? (
         <div className="space-y-3">
           {filtered.map((clan) => (
