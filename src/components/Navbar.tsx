@@ -8,6 +8,7 @@ import { useState } from "react";
 const navLinks = [
   { href: "/members", label: 'Состав клана "Волчата"' },
   { href: "/clans", label: "Другие кланы ДМ" },
+  { href: "/gallery", label: "Галерея" },
   { href: "/gifts", label: "Подарочки" },
   { href: "/links", label: "Что-то полезное" },
 ];
@@ -77,72 +78,3 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-10 lg:flex">
           {navLinks.map(({ href, label }) => {
-            const active = isActive(href);
-
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={[
-                  "group relative py-2 text-[15px] font-semibold tracking-wide transition-all duration-300",
-                  active
-                    ? "text-[#ffd58d] drop-shadow-[0_0_8px_rgba(255,213,141,.25)]"
-                    : "text-[#dddddd] hover:text-[#ffd58d]",
-                ].join(" ")}
-              >
-                {label}
-
-                <span
-                  className={[
-                    "absolute left-0 -bottom-[11px] h-[2px] rounded-full transition-all duration-300",
-                    active
-                      ? "w-full opacity-100"
-                      : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100",
-                  ].join(" ")}
-                  style={{
-                    background:
-                      "linear-gradient(90deg,#8b4d14,#e7bb70,#8b4d14)",
-                    boxShadow: "0 0 10px rgba(231,187,112,.45)",
-                  }}
-                />
-              </Link>
-            );
-          })}
-        </nav>
-
-        <button
-          className="ml-auto rounded-lg border border-[#555] px-3 py-2 text-[#ddd] transition hover:border-[#ffd58d] hover:text-[#ffd58d] lg:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Меню"
-        >
-          {open ? "✕" : "☰"}
-        </button>
-      </div>
-
-      {open && (
-        <div
-          className="lg:hidden border-t border-[#4c5159]"
-          style={{
-            background: "linear-gradient(180deg,#383e46,#2b3037)",
-          }}
-        >
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className={[
-                "block border-b border-[#454b55] px-6 py-4 font-semibold transition-colors",
-                isActive(href)
-                  ? "text-[#ffd58d]"
-                  : "text-[#dddddd] hover:text-[#ffd58d]",
-              ].join(" ")}
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      )}
-    </header>
-  );
-}
