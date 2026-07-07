@@ -159,21 +159,20 @@
 5. Kitty[8] — cuid=2310 — https://dm-game.com/index.php?file=infouser&cuid=2310
 6. Lesik[8] — cuid=1972 — https://dm-game.com/index.php?file=infouser&cuid=1972
 7. Nikolay8692[8] — cuid=19347 — https://dm-game.com/index.php?file=infouser&cuid=19347
-8. Sambuka[8] — cuid=13079 — https://dm-game.com/index.php?file=infouser&cuid=13079
-9. Риддик[8] — cuid=4425 — https://dm-game.com/index.php?file=infouser&cuid=4425
+8. Риддик[8] — cuid=4425 — https://dm-game.com/index.php?file=infouser&cuid=4425
+9. Юнона[8] — cuid=13079 — https://dm-game.com/index.php?file=infouser&cuid=13079
 10. Огненный_Феникс[7] — cuid=4271 — https://dm-game.com/index.php?file=infouser&cuid=4271
 11. Anatoly8695[6] — cuid=19353 — https://dm-game.com/index.php?file=infouser&cuid=19353
 12. ПрИмАрХ[6] — cuid=21766 — https://dm-game.com/index.php?file=infouser&cuid=21766
 
-## Клинки Великого Рэндома — CLAN 223 — знайдено 7
+## Клинки Великого Рэндома — CLAN 223 — знайдено 6
 
 1. Orka[10] — cuid=2329 — https://dm-game.com/index.php?file=infouser&cuid=2329
 2. МРАЗОТА[10] — cuid=4834 — https://dm-game.com/index.php?file=infouser&cuid=4834
 3. eugen_pos[9] — cuid=2013 — https://dm-game.com/index.php?file=infouser&cuid=2013
-4. mirotvorec[9] — cuid=10032 — https://dm-game.com/index.php?file=infouser&cuid=10032
-5. Гаденыш[9] — cuid=4745 — https://dm-game.com/index.php?file=infouser&cuid=4745
-6. Горлум[9] — cuid=6123 — https://dm-game.com/index.php?file=infouser&cuid=6123
-7. Careless[7] — cuid=3191 — https://dm-game.com/index.php?file=infouser&cuid=3191
+4. Гаденыш[9] — cuid=4745 — https://dm-game.com/index.php?file=infouser&cuid=4745
+5. Горлум[9] — cuid=6123 — https://dm-game.com/index.php?file=infouser&cuid=6123
+6. Careless[7] — cuid=3191 — https://dm-game.com/index.php?file=infouser&cuid=3191
 
 ## Падшие и Ангелы — CLAN 232 — знайдено 42
 
