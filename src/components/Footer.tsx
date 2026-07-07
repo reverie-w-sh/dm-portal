@@ -14,42 +14,43 @@ export default function Footer() {
 
         {/* Разделитель */}
 
-        <div className="flex items-center gap-5 mb-8">
+        <div className="mb-8 flex items-center gap-5">
 
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
 
           <Link
             href="/"
-            className="relative block w-10 h-10 shrink-0"
             title="Главная"
+            className="
+              group
+              w-10
+              h-10
+              rounded-xl
+              border
+              border-[#b9b9b9]
+              bg-[#d3d3d3]
+              shadow-[0_4px_12px_rgba(0,0,0,.35),inset_0_1px_0_rgba(255,255,255,.75)]
+              flex
+              items-center
+              justify-center
+              shrink-0
+              transition-all
+              duration-300
+              hover:-translate-y-0.5
+              hover:border-[#ffd58d]
+            "
           >
             <img
-              src="/icons/footer-heart-button-40.png"
-              alt=""
-              width={40}
-              height={40}
-              draggable={false}
-              className="block w-10 h-10"
-            />
-
-            <img
               src="/icons/clan-paw.gif"
-              alt=""
+              alt="Главная"
               width={19}
               height={19}
               draggable={false}
-              className="absolute"
-              style={{
-                left: "50%",
-                top: "50%",
-                width: "19px",
-                height: "19px",
-                transform: "translate(-50%, -50%)",
-              }}
+              className="w-[19px] h-[19px] select-none"
             />
           </Link>
 
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
 
         </div>
 
@@ -61,7 +62,12 @@ export default function Footer() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[#b9bec6] hover:text-[#ffd58d] transition-colors"
+              className="
+                text-[#b9bec6]
+                transition-colors
+                duration-300
+                hover:text-[#ffd58d]
+              "
             >
               {item.label}
             </Link>
@@ -72,7 +78,7 @@ export default function Footer() {
         {/* Подпись */}
 
         <div className="mt-6 text-center">
-          <span className="text-[11px] text-[#747474]">
+          <span className="text-[11px] tracking-wide text-[#747474]">
             ♥ 2026 © A&amp;W ♥
           </span>
         </div>
