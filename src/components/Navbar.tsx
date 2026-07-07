@@ -65,7 +65,7 @@ export default function Navbar() {
             }}
           >
             <Image
-              src="https://dm-game.com/pics/clanpic/clan_278.gif"
+              src="/icons/clan-paw.gif"
               alt="Главная"
               width={19}
               height={19}
