@@ -8,15 +8,15 @@ export default function GiftsPage() {
     { title: "Любовь у волков", file: "/gifts/love.gif" },
     { title: "Лес", file: "/gifts/forest.png" },
     { title: "Лапка", file: "/gifts/lapka.gif" },
-    { title: "Волчица", file: "/gifts/Volchisa.gif" },
-    { title: "Magic Wolf", file: "/gifts/MagicWolf.gif" },    
-    { title: "Кофе", file: "/gifts/coffee.gif" },
-    { title: ":)", file: "/gifts/hug.gif" },
     { title: "Обнимашки", file: "/gifts/hug1.gif" },
     { title: "Обнимашки", file: "/gifts/hug2.gif" },
     { title: "Любовь и Волчата", file: "/gifts/hug3.gif" },
     { title: "Любовь у Волчат", file: "/gifts/hug4.gif" },
-  ];
+    { title: "Волчица", file: "/gifts/Volchisa.gif" },
+    { title: "Magic Wolf", file: "/gifts/MagicWolf.gif" },    
+    { title: "Кофе", file: "/gifts/coffee.gif" },
+    { title: ":)", file: "/gifts/hug.gif" },
+ ];
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
