@@ -14,9 +14,11 @@ export default function LinksPage() {
 
         <Link
           href="/dim-boli"
-          className="useful-card"
+          className="glass rounded-2xl p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(255,255,255,.15)]"
         >
-          <div className="text-4xl mb-4">🗺️</div>
+          <div className="text-5xl mb-5">
+            🗺️
+          </div>
 
           <h2 className="text-xl font-bold text-ink mb-2">
             Карты Дома Боли (КП)
@@ -25,6 +27,7 @@ export default function LinksPage() {
           <p className="text-ink-muted text-sm">
             Все 6 карт Кровавого Подземелья.
           </p>
+
         </Link>
 
       </div>
