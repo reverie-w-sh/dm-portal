@@ -8,8 +8,8 @@ import SearchBar from "@/components/SearchBar";
 type SortKey = "members" | "name";
 
 const SORT_LABELS: Record<SortKey, string> = {
-  members: "Участники",
-  name: "Имя",
+  members: "К-во участников",
+  name: "Название",
 };
 
 export default function ClansPage() {
