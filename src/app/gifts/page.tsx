@@ -6,16 +6,16 @@ export default function GiftsPage() {
     { title: "Вою на луну", file: "/gifts/moon.gif" },
     { title: "Оборотень", file: "/gifts/werewolf.gif" },
     { title: "Любовь у волков", file: "/gifts/love.gif" },
-    { title: "Волчица", file: "/gifts/Volchisa.gif" },
-    { title: "Magic Wolf", file: "/gifts/MagicWolf.gif" },
-    { title: "Лапка", file: "/gifts/lapka.gif" },
-    { title: "Кофе", file: "/gifts/coffee.gif" },
     { title: "Лес", file: "/gifts/forest.png" },
-    { title: "Обнимашки", file: "/gifts/hug.gif" },
+    { title: "Лапка", file: "/gifts/lapka.gif" },
+    { title: "Волчица", file: "/gifts/Volchisa.gif" },
+    { title: "Magic Wolf", file: "/gifts/MagicWolf.gif" },    
+    { title: "Кофе", file: "/gifts/coffee.gif" },
+    { title: ":)", file: "/gifts/hug.gif" },
     { title: "Обнимашки", file: "/gifts/hug1.gif" },
     { title: "Обнимашки", file: "/gifts/hug2.gif" },
-    { title: "Обнимашки", file: "/gifts/hug3.gif" },
-    { title: "Обнимашки", file: "/gifts/hug4.gif" },
+    { title: "Любовь и Волчата", file: "/gifts/hug3.gif" },
+    { title: "Любовь у Волчат", file: "/gifts/hug4.gif" },
   ];
 
   return (
@@ -26,12 +26,12 @@ export default function GiftsPage() {
       </h1>
 
       <p className="text-[#b9bec6] text-sm mt-1 mb-8">
-        Клановые подарочки
+        Клановые подарочки 🐺
       </p>
 
       <div className="glass rounded-2xl p-6 mb-10">
        <h2 className="text-xl font-bold text-ink mb-4">
-  Как заказать подарок 🐺
+  Как заказать подарок 
 </h2>
 
 <ol className="list-decimal ml-5 space-y-3 text-sm text-ink-dim">
