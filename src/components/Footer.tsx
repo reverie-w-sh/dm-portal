@@ -20,15 +20,19 @@ export default function Footer() {
 
           <Link
             href="/"
-            className="group relative"
+            className="group relative block w-10 h-10 shrink-0"
             title="На главную"
           >
+            {/* Кнопка */}
+
             <img
               src="/icons/footer-heart-button-40.png"
               alt=""
-              className="w-10 h-10 select-none"
               draggable={false}
+              className="absolute inset-0 w-full h-full select-none"
             />
+
+            {/* Наша лапка */}
 
             <img
               src="/icons/clan-paw.gif"
@@ -42,6 +46,7 @@ export default function Footer() {
                 h-[19px]
                 -translate-x-1/2
                 -translate-y-1/2
+                select-none
                 transition-transform
                 duration-300
                 group-hover:scale-110
@@ -63,9 +68,9 @@ export default function Footer() {
               href={item.href}
               className="
                 text-[#b9bec6]
-                hover:text-[#ffd58d]
                 transition-colors
                 duration-300
+                hover:text-[#ffd58d]
               "
             >
               {item.label}
@@ -83,9 +88,10 @@ export default function Footer() {
             className="
               text-[11px]
               tracking-wide
-              text-[#727272]
-              hover:text-[#9b9b9b]
+              text-[#747474]
               transition-colors
+              duration-300
+              hover:text-[#a5a5a5]
             "
           >
             ♥ 2026 © A&amp;W ♥
