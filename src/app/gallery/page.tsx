@@ -7,6 +7,7 @@ type Category = "pictures" | "smileys" | "voplots" | "portraits";
 
 interface GalleryItem {
   src: string;
+  title: string;
   category: Category;
 }
 
@@ -23,63 +24,63 @@ const CATEGORY_ORDER: Category[] = ["pictures", "smileys", "voplots", "portraits
 // затем добавь сюда новую строку с именем файла, подписью и категорией.
 const GALLERY: GalleryItem[] = [
   
- { src: "/gallery/auf1.png",            category: "pictures" },
- { src: "/gallery/auf2.png",              category: "pictures" }, 
- { src: "/gallery/lapa-1.png",              category: "pictures" },
- { src: "/gallery/lapa-2.png",               category: "pictures" },
- { src: "/gallery/pack-family-fire.jpg",              category: "pictures" },
- { src: "/gallery/lapka.gif",             category: "pictures" },
- { src: "/gallery/for-you.gif",             category: "pictures" },  
- { src: "/gallery/popcorn.png",             category: "pictures" }, 
- { src: "/gallery/ak.gif",              category: "pictures" },
- { src: "/gallery/allania.gif",          category: "pictures" },
- { src: "/gallery/aw-0-1.gif",             category: "pictures" },  
- { src: "/gallery/aw-1-1.gif",             category: "pictures" },  
- { src: "/gallery/aw-2-1.gif",            category: "pictures" },  
- { src: "/gallery/aw-3-1.gif",          category: "pictures" },  
- { src: "/gallery/aw-4-1.gif",            category: "pictures" },  
- { src: "/gallery/ххххх.png",         category: "pictures" },   
+ { src: "/gallery/auf1.png",       title: "АУФЬ!",         category: "pictures" },
+ { src: "/gallery/auf2.png",       title: "АУФЬ!",         category: "pictures" }, 
+ { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
+ { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
+ { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
+ { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },
+ { src: "/gallery/for-you.gif",       title: "Для тебя)",         category: "pictures" },  
+ { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
+ { src: "/gallery/ak.gif",       title: "A&K",         category: "pictures" },
+ { src: "/gallery/allania.gif",       title: "A",         category: "pictures" },
+ { src: "/gallery/aw-0-1.gif",       title: "W&A",         category: "pictures" },  
+ { src: "/gallery/aw-1-1.gif",       title: "W&A",         category: "pictures" },  
+ { src: "/gallery/aw-2-1.gif",       title: "W&A",         category: "pictures" },  
+ { src: "/gallery/aw-3-1.gif",       title: "W&A",         category: "pictures" },  
+ { src: "/gallery/aw-4-1.gif",       title: "W&A",         category: "pictures" },  
+ { src: "/gallery/ххххх.png",       title: "W&A",         category: "pictures" },   
   
-  { src: "/gallery/wolf-blood-forest.jpg",  category: "pictures" },
-  { src: "/gallery/wolf-blood-white.jpg",   category: "pictures" },
-  { src: "/gallery/wolf-blue-moon.jpg",      category: "pictures" },
-  { src: "/gallery/pup-hand-red.jpg",             category: "pictures" },
-  { src: "/gallery/pup-hand-blue.jpg",        category: "pictures" },
+  { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "pictures" },
+  { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "pictures" },
+  { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом",     category: "pictures" },
+  { src: "/gallery/pup-hand-red.jpg",      title: "Малыш стаи",            category: "pictures" },
+  { src: "/gallery/pup-hand-blue.jpg",     title: "Искра во тьме",         category: "pictures" },
   
-  { src: "/gallery/warrior-and-wolf.jpg",     category: "portraits" },
-  { src: "/gallery/allania.png",                       category: "portraits" },  
-  { src: "/gallery/clan.gif",            category: "portraits" },  
-  { src: "/gallery/clan2.png",                category: "portraits" },  
+  { src: "/gallery/warrior-and-wolf.jpg",  title: "Warrior & his Wolf",      category: "portraits" },
+  { src: "/gallery/allania.png",          title: "White",                  category: "portraits" },  
+  { src: "/gallery/clan.gif",       title: "Клановый",         category: "portraits" },  
+  { src: "/gallery/clan2.png",          title: "Клановый",                  category: "portraits" },  
 
-  { src: "/gallery/voplot-wolfchen.gif",     category: "voplots" },
-  { src: "/gallery/voplot-volk.gif",            category: "voplots" },
-  { src: "/gallery/voplot-volchica.gif",    category: "voplots" },
-  { src: "/gallery/voplot-volchica-3.gif",   category: "voplots" },
+  { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
+  { src: "/gallery/voplot-volk.gif",       title: "Волк",       category: "voplots" },
+  { src: "/gallery/voplot-volchica.gif",   title: "Волчица",    category: "voplots" },
+  { src: "/gallery/voplot-volchica-3.gif", title: "Волчица3",   category: "voplots" },
 
-  { src: "/gallery/smileys/auf.gif",                category: "smileys" },
-  { src: "/gallery/smileys/popcorn-girls.gif",                category: "smileys" },
-  { src: "/gallery/smileys/wolf-girl-allania.gif",                    category: "smileys" },
+  { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
+  { src: "/gallery/smileys/popcorn-girls.gif",     title: "Лавочка",             category: "smileys" },
+  { src: "/gallery/smileys/wolf-girl-allania.gif",           title: "Волчица Аланьки",             category: "smileys" },
 
-  { src: "/gallery/smileys/wolf-girl-katya.gif",        category: "smileys" },
-  { src: "/gallery/smileys/wolf-girl-vova.gif",          category: "smileys" },
-  { src: "/gallery/smileys/wolf-girl-vova-1.gif",          category: "smileys" },
-  { src: "/gallery/smileys/wolf-girl-asta.gif",        category: "smileys" },
-  { src: "/gallery/smileys/play.gif",           category: "smileys" },
-  { src: "/gallery/smileys/kiss-1.gif",                     category: "smileys" },
-  { src: "/gallery/smileys/kiss-2.gif",                  category: "smileys" },
-  { src: "/gallery/smileys/kiss-3.gif",                 category: "smileys" },
-  { src: "/gallery/smileys/hug-wave.gif",                     category: "smileys" },
-  { src: "/gallery/smileys/wanteck-allania-hug.gif",                 category: "smileys" },
-  { src: "/gallery/smileys/sad-wolf.gif",                  category: "smileys" },
-  { src: "/gallery/smileys/carrying-off.gif",                 category: "smileys" },  
-  { src: "/gallery/smileys/popcorn-cubs.gif",       category: "smileys" },
-  { src: "/gallery/smileys/drinking-coffee.gif",            category: "smileys" },
-  { src: "/gallery/smileys/watermelon.gif",              category: "smileys" },
-  { src: "/gallery/smileys/hug-hearts.gif",               category: "smileys" },
-  { src: "/gallery/smileys/chibi-sit.gif",                    category: "smileys" },
-  { src: "/gallery/smileys/good-morning-mug.gif",      category: "smileys" },
-  { src: "/gallery/smileys/coffee-for-you.gif",       category: "smileys" },
-  { src: "/gallery/smileys/morning-coffee.gif",          category: "smileys" },
+  { src: "/gallery/smileys/wolf-girl-katya.gif",   title: "Волчица Катерины",        category: "smileys" },
+  { src: "/gallery/smileys/wolf-girl-vova.gif",    title: "Волчица Лени",        category: "smileys" },
+  { src: "/gallery/smileys/wolf-girl-vova-1.gif",    title: "Волчица Лени",        category: "smileys" },
+  { src: "/gallery/smileys/wolf-girl-asta.gif",    title: "Волчица Асталависты",        category: "smileys" },
+  { src: "/gallery/smileys/play.gif",          title: "Волчата играются",   category: "smileys" },
+  { src: "/gallery/smileys/kiss-1.gif",            title: "Любовь Волчат",             category: "smileys" },
+  { src: "/gallery/smileys/kiss-2.gif",            title: "Любовь Волчат 2",           category: "smileys" },
+  { src: "/gallery/smileys/kiss-3.gif",            title: "Любовь Волчат 3",           category: "smileys" },
+  { src: "/gallery/smileys/hug-wave.gif",          title: "Клановые Волчата. Обнимашки",               category: "smileys" },
+  { src: "/gallery/smileys/wanteck-allania-hug.gif",       title: "Волчата Аллании и Вантека",             category: "smileys" },
+  { src: "/gallery/smileys/sad-wolf.gif",       title: "Волчица в печали",             category: "smileys" },
+  { src: "/gallery/smileys/carrying-off.gif",      title: "I'm taking you... for reasons",              category: "smileys" },  
+  { src: "/gallery/smileys/popcorn-cubs.gif",      title: "Попкорн",   category: "smileys" },
+  { src: "/gallery/smileys/drinking-coffee.gif",   title: "Кофе",           category: "smileys" },
+  { src: "/gallery/smileys/watermelon.gif",        title: "Арбузик",             category: "smileys" },
+  { src: "/gallery/smileys/hug-hearts.gif",        title: "Обнимашки",           category: "smileys" },
+  { src: "/gallery/smileys/chibi-sit.gif",         title: "Лапки устали",               category: "smileys" },
+  { src: "/gallery/smileys/good-morning-mug.gif",  title: "Доброе утро",         category: "smileys" },
+  { src: "/gallery/smileys/coffee-for-you.gif",    title: "Кофе для тебя",       category: "smileys" },
+  { src: "/gallery/smileys/morning-coffee.gif",    title: "Кавуся",       category: "smileys" },
 ];
 
 function scrollToCategory(key: Category) {
@@ -173,9 +174,6 @@ export default function GalleryPage() {
                           className="max-w-full max-h-full w-auto h-auto object-contain"
                         />
                       </div>
-                      <p className="px-3 py-2 text-xs font-medium text-[#333] bg-[#c7c7c7] truncate">
-                        {item.title}
-                      </p>
                     </button>
                   ))}
                 </div>
@@ -196,9 +194,6 @@ export default function GalleryPage() {
                         className="w-full h-auto object-cover"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
-                      <p className="px-4 py-3 text-sm font-medium text-ink">
-                        {item.title}
-                      </p>
                     </button>
                   ))}
                 </div>
@@ -265,7 +260,6 @@ export default function GalleryPage() {
                 priority
               />
             </div>
-            <p className="text-[#e6e6e6] text-sm font-medium">{active.title}</p>
           </div>
         </div>
       )}
