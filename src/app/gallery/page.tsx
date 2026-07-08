@@ -47,8 +47,8 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/clan.gif",       title: "Клановый",         category: "portraits" },  
   { src: "/gallery/clan2.png",          title: "Клановый",                  category: "portraits" },  
 
-  { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
     { src: "/gallery/voplot-wolfchen-1.gif",   title: "Wölfchen",   category: "voplots" },
+  { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
   { src: "/gallery/voplot-volk.gif",       title: "Волк",       category: "voplots" },
   { src: "/gallery/voplot-volchica.gif",   title: "Волчица",    category: "voplots" },
   { src: "/gallery/voplot-volchica-3.gif", title: "Волчица3",   category: "voplots" },
