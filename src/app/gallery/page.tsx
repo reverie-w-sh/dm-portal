@@ -3,36 +3,91 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 
+type Category = "pictures" | "smileys" | "voplots" | "portraits";
+
 interface GalleryItem {
   src: string;
   title: string;
+  category: Category;
 }
 
+const CATEGORY_LABELS: Record<Category, string> = {
+  pictures:  "Картинки",
+  smileys:   "Смайлы",
+  voplots:   "Воплоты",
+  portraits: "Образы персонажей",
+};
+
+const CATEGORY_ORDER: Category[] = ["pictures", "smileys", "voplots", "portraits"];
+
 // Чтобы добавить новую картинку: залей файл в public/gallery/ на GitHub,
-// затем добавь сюда новую строку с именем файла и подписью.
+// затем добавь сюда новую строку с именем файла, подписью и категорией.
 const GALLERY: GalleryItem[] = [
-  { src: "/gallery/pack-family-fire.jpg",  title: "У костра" },
-  { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица" },
-  { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом" },
-  { src: "/gallery/pup-hand-red.jpg",      title: "Малыш стаи" },
-  { src: "/gallery/pup-hand-blue.jpg",     title: "Искра во тьме" },
+  
+    { src: "/gallery/auf1.png",       title: "АУФЬ!",         category: "pictures" },
+    { src: "/gallery/auf2.png",       title: "АУФЬ!",         category: "pictures" }, 
+      { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
+      { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
+  { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
+  { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "pictures" },
+    { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "pictures" },
+  { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом",     category: "pictures" },
+  { src: "/gallery/pup-hand-red.jpg",      title: "Малыш стаи",            category: "pictures" },
+  { src: "/gallery/pup-hand-blue.jpg",     title: "Искра во тьме",         category: "pictures" },
+  { src: "/gallery/warrior-and-wolf.jpg",  title: "Warrior & his Wolf",      category: "portraits" },
+  { src: "/gallery/allania.png",  title: "White",      category: "portraits" },  
+
+  { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
+  { src: "/gallery/voplot-volk.gif",       title: "Волк",       category: "voplots" },
+  { src: "/gallery/voplot-volchica.gif",   title: "Волчица",    category: "voplots" },
+  { src: "/gallery/voplot-volchica-3.gif", title: "Волчица3",   category: "voplots" },
+
+    { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
+  { src: "/gallery/smileys/popcorn-girls.gif",     title: "Лавочка",             category: "smileys" },
+  { src: "/gallery/smileys/wolf-girl-allania.gif",           title: "Волчица Аланьки",             category: "smileys" },
+
+  { src: "/gallery/smileys/wolf-girl-katya.gif",   title: "Волчица Катерины",        category: "smileys" },
+    { src: "/gallery/smileys/wolf-girl-vova.gif",    title: "Волчица Лени",        category: "smileys" },
+      { src: "/gallery/smileys/wolf-girl-vova-1.gif",    title: "Волчица Лени",        category: "smileys" },
+      { src: "/gallery/smileys/wolf-girl-asta.gif",    title: "Волчица Асталависты",        category: "smileys" },
+  { src: "/gallery/smileys/play.gif",          title: "Волчата играются",   category: "smileys" },
+    { src: "/gallery/smileys/kiss-1.gif",            title: "Любовь Волчат",             category: "smileys" },
+  { src: "/gallery/smileys/kiss-2.gif",            title: "Любовь Волчат 2",           category: "smileys" },
+  { src: "/gallery/smileys/kiss-3.gif",            title: "Любовь Волчат 3",           category: "smileys" },
+  { src: "/gallery/smileys/hug-wave.gif",          title: "Клановые Волчата. Обнимашки",               category: "smileys" },
+  { src: "/gallery/smileys/wanteck-allania-hug.gif",       title: "Волчата Аллании и Вантека",             category: "smileys" },
+    { src: "/gallery/smileys/sad-wolf.gif",       title: "Волчица в печали",             category: "smileys" },
+  { src: "/gallery/smileys/carrying-off.gif",      title: "I'm taking you... for reasons",              category: "smileys" },  
+  { src: "/gallery/smileys/popcorn-cubs.gif",      title: "Попкорн",   category: "smileys" },
+  { src: "/gallery/smileys/drinking-coffee.gif",   title: "Кофе",           category: "smileys" },
+  { src: "/gallery/smileys/watermelon.gif",        title: "Арбузик",             category: "smileys" },
+  { src: "/gallery/smileys/hug-hearts.gif",        title: "Обнимашки",           category: "smileys" },
+  { src: "/gallery/smileys/chibi-sit.gif",         title: "Лапки устали",               category: "smileys" },
+  { src: "/gallery/smileys/good-morning-mug.gif",  title: "Доброе утро",         category: "smileys" },
+  { src: "/gallery/smileys/coffee-for-you.gif",    title: "Кофе для тебя",       category: "smileys" },
+  { src: "/gallery/smileys/morning-coffee.gif",    title: "Кавуся",       category: "smileys" },
 ];
 
-export default function GalleryPage() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+function scrollToCategory(key: Category) {
+  document.getElementById(`section-${key}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-  const close = useCallback(() => setActiveIndex(null), []);
+export default function GalleryPage() {
+  const [activeItems, setActiveItems] = useState<GalleryItem[] | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+
+  const close = useCallback(() => setActiveItems(null), []);
   const showPrev = useCallback(
-    () => setActiveIndex((i) => (i === null ? null : (i - 1 + GALLERY.length) % GALLERY.length)),
-    [],
+    () => setActiveIndex((i) => (activeItems ? (i - 1 + activeItems.length) % activeItems.length : 0)),
+    [activeItems],
   );
   const showNext = useCallback(
-    () => setActiveIndex((i) => (i === null ? null : (i + 1) % GALLERY.length)),
-    [],
+    () => setActiveIndex((i) => (activeItems ? (i + 1) % activeItems.length : 0)),
+    [activeItems],
   );
 
   useEffect(() => {
-    if (activeIndex === null) return;
+    if (!activeItems) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowLeft") showPrev();
@@ -40,9 +95,9 @@ export default function GalleryPage() {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [activeIndex, close, showPrev, showNext]);
+  }, [activeItems, close, showPrev, showNext]);
 
-  const active = activeIndex !== null ? GALLERY[activeIndex] : null;
+  const active = activeItems ? activeItems[activeIndex] : null;
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
@@ -51,39 +106,98 @@ export default function GalleryPage() {
           Галерея
         </h1>
         <p className="text-ink-muted text-sm mt-1">
-          Арты нашего клана — {GALLERY.length} {GALLERY.length === 1 ? "картина" : "картин"}
+          Всё, что рисовалось для нашего клана
         </p>
       </div>
-      <div className="divider-accent mb-8" />
+      <div className="divider-accent mb-6" />
 
-      {GALLERY.length > 0 ? (
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
-          {GALLERY.map((item, i) => (
+      {/* Быстрые ссылки-якоря на разделы ниже */}
+      <div className="flex flex-wrap gap-2 mb-10 sticky top-[68px] z-30 py-2 -mx-2 px-2 backdrop-blur-sm">
+        {CATEGORY_ORDER.map((key) => {
+          const count = GALLERY.filter((g) => g.category === key).length;
+          return (
             <button
-              key={item.src}
-              onClick={() => setActiveIndex(i)}
-              className="glass-hover glass rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left"
+              key={key}
+              onClick={() => scrollToCategory(key)}
+              className="text-xs px-4 py-2.5 rounded-lg border border-white/10 text-ink-muted hover:text-ink hover:border-white/20 transition-colors font-medium"
             >
-              <Image
-                src={item.src}
-                alt={item.title}
-                width={800}
-                height={800}
-                className="w-full h-auto object-cover"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
-              <p className="px-4 py-3 text-sm font-medium text-ink">
-                {item.title}
-              </p>
+              {CATEGORY_LABELS[key]} · {count}
             </button>
-          ))}
-        </div>
-      ) : (
-        <div className="glass rounded-2xl p-14 text-center">
-          <div className="text-4xl mb-3 opacity-20">🖼</div>
-          <p className="text-ink-muted text-sm">Пока здесь пусто</p>
-        </div>
-      )}
+          );
+        })}
+      </div>
+
+      {CATEGORY_ORDER.map((key) => {
+        const items = GALLERY.filter((g) => g.category === key);
+        const isSmileys = key === "smileys";
+
+        return (
+          <section key={key} id={`section-${key}`} className="mb-14 scroll-mt-32">
+            <h2 className="text-xl font-bold text-ink mb-5">
+              {CATEGORY_LABELS[key]}
+            </h2>
+
+            {items.length > 0 ? (
+              isSmileys ? (
+                // Смайлы: сетка мелких карточек на светло-серой подложке — так же,
+                // как они будут смотреться в чате (фон чата #d3d3d3).
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                  {items.map((item, i) => (
+                    <button
+                      key={item.src}
+                      onClick={() => { setActiveItems(items); setActiveIndex(i); }}
+                      className="rounded-xl overflow-hidden cursor-zoom-in text-left border border-black/10 hover:border-[#b86a16]/50 transition-colors"
+                      style={{ background: "#d3d3d3" }}
+                    >
+                      <div className="aspect-square flex items-center justify-center p-3">
+                        <Image
+                          src={item.src}
+                          alt={item.title}
+                          width={300}
+                          height={300}
+                          unoptimized
+                          className="max-w-full max-h-full w-auto h-auto object-contain"
+                        />
+                      </div>
+                      <p className="px-3 py-2 text-xs font-medium text-[#333] bg-[#c7c7c7] truncate">
+                        {item.title}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+                  {items.map((item, i) => (
+                    <button
+                      key={item.src}
+                      onClick={() => { setActiveItems(items); setActiveIndex(i); }}
+                      className="glass-hover glass rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left"
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        width={800}
+                        height={800}
+                        unoptimized={item.src.endsWith(".gif")}
+                        className="w-full h-auto object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                      <p className="px-4 py-3 text-sm font-medium text-ink">
+                        {item.title}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              )
+            ) : (
+              <div className="glass rounded-2xl p-14 text-center">
+                <div className="text-4xl mb-3 opacity-20">🖼</div>
+                <p className="text-ink-muted text-sm">Пока здесь пусто</p>
+              </div>
+            )}
+          </section>
+        );
+      })}
 
       {/* ── Lightbox ─────────────────────────────────── */}
       {active && (
@@ -123,14 +237,20 @@ export default function GalleryPage() {
             className="max-w-[92vw] max-h-[86vh] flex flex-col items-center gap-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={active.src}
-              alt={active.title}
-              width={1600}
-              height={1600}
-              className="max-w-[92vw] max-h-[76vh] w-auto h-auto object-contain rounded-xl"
-              priority
-            />
+            <div
+              className="rounded-xl p-4 flex items-center justify-center"
+              style={{ background: active.src.includes("/smileys/") ? "#d3d3d3" : "transparent" }}
+            >
+              <Image
+                src={active.src}
+                alt={active.title}
+                width={1600}
+                height={1600}
+                unoptimized={active.src.endsWith(".gif")}
+                className="max-w-[88vw] max-h-[70vh] w-auto h-auto object-contain"
+                priority
+              />
+            </div>
             <p className="text-[#e6e6e6] text-sm font-medium">{active.title}</p>
           </div>
         </div>
