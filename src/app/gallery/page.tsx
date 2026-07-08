@@ -24,7 +24,7 @@ const CATEGORY_ORDER: Category[] = ["pictures", "smileys", "voplots", "portraits
 // затем добавь сюда новую строку с именем файла, подписью и категорией.
 const GALLERY: GalleryItem[] = [
   
- { src: "/gallery/auf1.png",       title: "АУФЬ!",         category: "pictures" },
+ { src: "/gallery/auf1.png",            category: "pictures" },
  { src: "/gallery/auf2.png",       title: "АУФЬ!",         category: "pictures" }, 
  { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
  { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
