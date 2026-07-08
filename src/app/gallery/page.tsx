@@ -29,6 +29,8 @@ const GALLERY: GalleryItem[] = [
       { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
       { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
   { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
+        { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },
+        { src: "/gallery/for-you.gif",       title: "Для тебя)",         category: "pictures" },  
       { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
   { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "pictures" },
     { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "pictures" },
