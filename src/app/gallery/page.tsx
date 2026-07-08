@@ -142,9 +142,10 @@ export default function GalleryPage() {
         })}
       </div>
 
-      {CATEGORY_ORDER.map((key) => {
+{CATEGORY_ORDER.map((key) => {
         const items = GALLERY.filter((g) => g.category === key);
         const isSmileys = key === "smileys";
+        const isVoplots = key === "voplots";
 
         return (
           <section key={key} id={`section-${key}`} className="mb-14 scroll-mt-32">
@@ -174,6 +175,26 @@ export default function GalleryPage() {
                           className="max-w-full max-h-full w-auto h-auto object-contain"
                         />
                       </div>
+                    </button>
+                  ))}
+                </div>
+              ) : isVoplots ? (
+                // Воплоты: показываем в их родном размере (205px шириной), не растягивая.
+                <div className="flex flex-wrap gap-4">
+                  {items.map((item, i) => (
+                    <button
+                      key={item.src}
+                      onClick={() => { setActiveItems(items); setActiveIndex(i); }}
+                      className="glass-hover glass rounded-2xl overflow-hidden cursor-zoom-in shrink-0"
+                    >
+                      <Image
+                        src={item.src}
+                        alt={item.title}
+                        width={205}
+                        height={283}
+                        unoptimized
+                        className="block w-[205px] h-auto"
+                      />
                     </button>
                   ))}
                 </div>
