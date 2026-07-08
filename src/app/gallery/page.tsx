@@ -29,13 +29,15 @@ const GALLERY: GalleryItem[] = [
       { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
       { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
   { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
+      { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
   { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "pictures" },
     { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "pictures" },
   { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом",     category: "pictures" },
   { src: "/gallery/pup-hand-red.jpg",      title: "Малыш стаи",            category: "pictures" },
   { src: "/gallery/pup-hand-blue.jpg",     title: "Искра во тьме",         category: "pictures" },
+  
   { src: "/gallery/warrior-and-wolf.jpg",  title: "Warrior & his Wolf",      category: "portraits" },
-  { src: "/gallery/allania.png",  title: "White",      category: "portraits" },  
+  { src: "/gallery/allania.png",          title: "White",                  category: "portraits" },  
 
   { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
   { src: "/gallery/voplot-volk.gif",       title: "Волк",       category: "voplots" },
