@@ -181,7 +181,7 @@
   },
   {
     "cuid": "4155",
-    "nick": "_GRACIA_",
+    "nick": "на удаление08_07_26",
     "level": 10,
     "clanId": "",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4155",
@@ -222,7 +222,7 @@
   {
     "cuid": "15069",
     "nick": "Gudini",
-    "level": 12,
+    "level": 10,
     "clanId": "243",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=15069",
     "position": "Глава сообщества",
@@ -1112,7 +1112,7 @@
   {
     "cuid": "1244",
     "nick": "Юпитер",
-    "level": 15,
+    "level": 13,
     "clanId": "247",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1244",
     "position": "Юпитер",
@@ -1252,7 +1252,7 @@
   {
     "cuid": "10420",
     "nick": "InDigo",
-    "level": 12,
+    "level": 15,
     "clanId": "200",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
     "position": "InDigo",
@@ -1262,7 +1262,7 @@
   {
     "cuid": "4116",
     "nick": "Tequila",
-    "level": 15,
+    "level": 12,
     "clanId": "200",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4116",
     "position": "Tequila",
@@ -1651,8 +1651,8 @@
   },
   {
     "cuid": "10032",
-    "nick": "mirotvorec",
-    "level": 12,
+    "nick": "_GRACIA_",
+    "level": 9,
     "clanId": "",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10032",
     "position": "",
@@ -1662,7 +1662,7 @@
   {
     "cuid": "6123",
     "nick": "Горлум",
-    "level": 9,
+    "level": 10,
     "clanId": "223",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6123",
     "position": "Смéагол",
@@ -1892,7 +1892,7 @@
   {
     "cuid": "8772",
     "nick": "Hanibal",
-    "level": 12,
+    "level": 10,
     "clanId": "232",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8772",
     "position": "Hanibal. Советник",
@@ -2728,5 +2728,15 @@
     "position": "Офицер штаба",
     "clanIcon": "clan_250.gif",
     "clanName": "Shadows of the Dusk"
+  },
+  {
+    "cuid": "17624",
+    "nick": "Sambuka",
+    "level": 5,
+    "clanId": "237",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17624",
+    "position": "Член сообщества",
+    "clanIcon": "clan_237.gif",
+    "clanName": "Каратели"
   }
 ]

@@ -238,7 +238,7 @@
 15. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
 16. БЛИК[6] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
 
-## Каратели — CLAN 237 — знайдено 8
+## Каратели — CLAN 237 — знайдено 9
 
 1. KITANA[11] — cuid=2878 — https://dm-game.com/index.php?file=infouser&cuid=2878
 2. MaNSoN[9] — cuid=8641 — https://dm-game.com/index.php?file=infouser&cuid=8641
@@ -248,6 +248,7 @@
 6. Клеопатра[8] — cuid=3189 — https://dm-game.com/index.php?file=infouser&cuid=3189
 7. тедо 1[8] — cuid=2317 — https://dm-game.com/index.php?file=infouser&cuid=2317
 8. Majesty[7] — cuid=18354 — https://dm-game.com/index.php?file=infouser&cuid=18354
+9. Sambuka[5] — cuid=17624 — https://dm-game.com/index.php?file=infouser&cuid=17624
 
 ## Київська Русь (на роспуск) — CLAN 241 — знайдено 1
 
