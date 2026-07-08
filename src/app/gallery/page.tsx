@@ -24,14 +24,24 @@ const CATEGORY_ORDER: Category[] = ["pictures", "smileys", "voplots", "portraits
 // затем добавь сюда новую строку с именем файла, подписью и категорией.
 const GALLERY: GalleryItem[] = [
   
-    { src: "/gallery/auf1.png",       title: "АУФЬ!",         category: "pictures" },
-    { src: "/gallery/auf2.png",       title: "АУФЬ!",         category: "pictures" }, 
-      { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
-      { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
-  { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
-        { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },
-        { src: "/gallery/for-you.gif",       title: "Для тебя)",         category: "pictures" },  
-      { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
+ { src: "/gallery/auf1.png",       title: "АУФЬ!",         category: "pictures" },
+ { src: "/gallery/auf2.png",       title: "АУФЬ!",         category: "pictures" }, 
+ { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
+ { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
+ { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
+ { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },
+ { src: "/gallery/for-you.gif",       title: "Для тебя)",         category: "pictures" },  
+ { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
+        { src: "/gallery/ak.gif",       title: "A&K",         category: "pictures" },
+        { src: "/gallery/allania.gif",       title: "A",         category: "pictures" },
+        { src: "/gallery/aw-0-1.gif",       title: "W&A",         category: "pictures" },  
+          { src: "/gallery/aw-0-1.gif",       title: "W&A",         category: "pictures" },  
+          { src: "/gallery/aw-1-1.gif",       title: "W&A",         category: "pictures" },  
+          { src: "/gallery/aw-2-1.gif",       title: "W&A",         category: "pictures" },  
+          { src: "/gallery/aw-3-1.gif",       title: "W&A",         category: "pictures" },  
+          { src: "/gallery/aw-4-1.gif",       title: "W&A",         category: "pictures" },  
+ { src: "/gallery/ххххх.png",       title: "W&A",         category: "pictures" },   
+  
   { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "pictures" },
     { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "pictures" },
   { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом",     category: "pictures" },
@@ -40,6 +50,8 @@ const GALLERY: GalleryItem[] = [
   
   { src: "/gallery/warrior-and-wolf.jpg",  title: "Warrior & his Wolf",      category: "portraits" },
   { src: "/gallery/allania.png",          title: "White",                  category: "portraits" },  
+          { src: "/gallery/clan.gif",       title: "Клановый",         category: "portraits" },  
+    { src: "/gallery/clan2.png",          title: "Клановый",                  category: "portraits" },  
 
   { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
   { src: "/gallery/voplot-volk.gif",       title: "Волк",       category: "voplots" },
