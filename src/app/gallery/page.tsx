@@ -29,7 +29,6 @@ const GALLERY: GalleryItem[] = [
  { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
  { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
  { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
- { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },
  { src: "/gallery/for-you.gif",       title: "Для тебя)",         category: "pictures" },  
  { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
  { src: "/gallery/ak.gif",       title: "A&K",         category: "pictures" },
@@ -59,6 +58,7 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/pup-hand-blue.jpg",     title: "Искра во тьме",         category: "voplots" },
 
   { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
+   { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "smileys" },
   { src: "/gallery/smileys/popcorn-girls.gif",     title: "Лавочка",             category: "smileys" },
   { src: "/gallery/smileys/wolf-girl-allania.gif",           title: "Волчица Аланьки",             category: "smileys" },
 
