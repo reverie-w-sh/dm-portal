@@ -7,7 +7,6 @@ type Category = "pictures" | "smileys" | "voplots" | "portraits";
 
 interface GalleryItem {
   src: string;
-  title: string;
   category: Category;
 }
 
