@@ -176,17 +176,8 @@ img.clan-icon {
   text-shadow: 0 0 8px rgba(139, 20, 20, 0.45);
 }
 
-@media (max-width: 900px) {
-  .kp-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* Search map wrapper */
 
-@media (max-width: 640px) {
-  .kp-grid {
-    grid-template-columns: 1fr;
-  }
-}
 .kp-map-wrap {
   position: relative;
   overflow: hidden;
@@ -220,12 +211,13 @@ img.clan-icon {
 
 .kp-reveal-zone {
   position: absolute;
-  width: 18.75%;
-  height: 18.75%;
+  width: 15.6%;
+  height: 15.6%;
+  transform: translate(9.4%, 9.4%);
   box-shadow:
     0 0 0 9999px rgba(0, 0, 0, 0.72),
-    0 0 0 3px rgba(255, 0, 0, 0.95),
-    0 0 18px rgba(255, 0, 0, 0.65);
+    0 0 0 2px rgba(255, 0, 0, 0.95),
+    0 0 14px rgba(255, 0, 0, 0.6);
   background: transparent;
 }
 
@@ -237,21 +229,39 @@ img.clan-icon {
 
 .kp-player-marker {
   position: absolute;
-  width: 6.25%;
-  height: 6.25%;
+  width: 5.2%;
+  height: 5.2%;
   border: 2px solid #ff2b2b;
-  transform: translate(0, 0);
-  box-shadow: 0 0 14px rgba(255, 0, 0, 0.85);
+  transform: translate(10%, 10%);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.85);
 }
 
-.kp-empty-map {
-  width: min(520px, 92vw);
-  aspect-ratio: 1 / 1;
+/* Empty coordinate picker */
+
+.kp-picker {
+  width: min(500px, 84vw);
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  border: 2px solid rgba(184, 106, 22, 0.65);
+  grid-template-columns: 32px repeat(16, 1fr);
+  grid-template-rows: 28px repeat(16, 1fr);
   background: #14100d;
+  border: 2px solid rgba(184, 106, 22, 0.65);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+}
+
+.kp-picker-corner {
+  background: rgba(20, 14, 10, 0.95);
+}
+
+.kp-picker-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0b877;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(20, 14, 10, 0.95);
+  border: 1px solid rgba(184, 106, 22, 0.25);
+  user-select: none;
 }
 
 .kp-empty-cell {
@@ -267,4 +277,26 @@ img.clan-icon {
 .kp-empty-cell-selected {
   background: rgba(255, 0, 0, 0.7);
   box-shadow: inset 0 0 0 2px #ffdddd;
+}
+
+@media (max-width: 900px) {
+  .kp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .kp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kp-picker {
+    width: min(440px, 82vw);
+    grid-template-columns: 24px repeat(16, 1fr);
+    grid-template-rows: 24px repeat(16, 1fr);
+  }
+
+  .kp-picker-label {
+    font-size: 0.6rem;
+  }
 }
