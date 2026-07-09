@@ -23,7 +23,7 @@ export default function GiftsPage() {
     { title: "Кофе", file: "/gifts/coffee.gif" },
         { title: "Кофе", file: "/gifts/coffee1.gif" },
         { title: "Кофе", file: "/gifts/coffee2.gif" },
-        { title: "Кофе", file: "/gifts/coffee-tommy.gif" },
+        { title: "Кофе", file: "/gifts/coffee-tommy.gif", personal: true },
     { title: ":)", file: "/gifts/hug.gif" },
      { title: ":)", file: "/gifts/lavochka.gif" },   
          { title: ":)", file: "/gifts/len-g.gif" },   
@@ -53,7 +53,7 @@ export default function GiftsPage() {
     <ul className="list-disc ml-6 mt-2 space-y-2">
       <li>
         Перейдите в раздел{" "}
-        <a
+        
           href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
           target="_blank"
           rel="noopener noreferrer"
@@ -98,17 +98,23 @@ export default function GiftsPage() {
 
             </div>
 
-            <div className="text-center font-semibold text-ink mb-4">
-              {gift.title}
-            </div>
-
-            <a
-              href={gift.file}
-              download
-              className="btn-primary w-full text-center"
-            >
-              ⬇ Скачать
-            </a>
+            {gift.personal ? (
+              <button
+                type="button"
+                disabled
+                className="w-full text-center rounded-xl px-4 py-2.5 text-sm font-semibold text-ink-muted border border-white/10 cursor-not-allowed opacity-70"
+              >
+                Сорри, нельзя скачать :)
+              </button>
+            ) : (
+              
+                href={gift.file}
+                download
+                className="btn-primary w-full text-center"
+              >
+                ⬇ Скачать
+              </a>
+            )}
 
           </div>
 
