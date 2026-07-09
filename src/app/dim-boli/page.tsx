@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 
 const MAPS: Record<number, string[]> = {
   1: [
@@ -141,14 +141,6 @@ function isRoad(mapId: number, coord: Coord) {
   return MAPS[mapId][coord.row][coord.col] === ".";
 }
 
-function isInRevealZone(coord: Coord, zones: Coord[]) {
-  return zones.some(
-    (z) =>
-      Math.abs(z.col - coord.col) <= 1 &&
-      Math.abs(z.row - coord.row) <= 1
-  );
-}
-
 export default function DimBoliPage() {
   const [selected, setSelected] = useState<number | null>(null);
   const [zoomed, setZoomed] = useState(false);
@@ -201,12 +193,28 @@ export default function DimBoliPage() {
     );
   }, [coords]);
 
+  const sortedMapIds = useMemo(() => {
+    return [1, 2, 3, 4, 5, 6].sort((a, b) => {
+      if (!searchMode || coords.length === 0) return a - b;
+
+      const aMatch = matchingMaps.includes(a);
+      const bMatch = matchingMaps.includes(b);
+
+      if (aMatch && !bMatch) return -1;
+      if (!aMatch && bMatch) return 1;
+
+      return a - b;
+    });
+  }, [searchMode, coords.length, matchingMaps]);
+
   const isSolved = coords.length > 0 && matchingMaps.length === 1;
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
+
       if (selected === null) return;
+
       if (e.key === "ArrowRight") nextMap();
       if (e.key === "ArrowLeft") prevMap();
     };
@@ -270,24 +278,38 @@ export default function DimBoliPage() {
               </button>
             </div>
 
-            <div className="kp-empty-map mx-auto mb-6">
-              {Array.from({ length: 16 }).map((_, row) =>
-                Array.from({ length: 16 }).map((_, col) => {
-                  const label = `${LETTERS[col]}${row + 1}`;
-                  const selectedCoord = coords.some((c) => c.label === label);
+            <div className="kp-picker mx-auto mb-6">
+              <div className="kp-picker-corner" />
 
-                  return (
-                    <button
-                      key={label}
-                      className={`kp-empty-cell ${
-                        selectedCoord ? "kp-empty-cell-selected" : ""
-                      }`}
-                      title={label}
-                      onClick={() => addCoord(label)}
-                    />
-                  );
-                })
-              )}
+              {LETTERS.map((letter) => (
+                <div key={`top-${letter}`} className="kp-picker-label">
+                  {letter}
+                </div>
+              ))}
+
+              {Array.from({ length: 16 }).map((_, row) => (
+                <Fragment key={`row-${row}`}>
+                  <div className="kp-picker-label">{row + 1}</div>
+
+                  {Array.from({ length: 16 }).map((_, col) => {
+                    const label = `${LETTERS[col]}${row + 1}`;
+                    const selectedCoord = coords.some(
+                      (c) => c.label === label
+                    );
+
+                    return (
+                      <button
+                        key={label}
+                        className={`kp-empty-cell ${
+                          selectedCoord ? "kp-empty-cell-selected" : ""
+                        }`}
+                        title={label}
+                        onClick={() => addCoord(label)}
+                      />
+                    );
+                  })}
+                </Fragment>
+              ))}
             </div>
 
             {coords.length > 0 && (
@@ -326,7 +348,7 @@ export default function DimBoliPage() {
         )}
 
         <div className={`kp-grid ${searchMode ? "kp-search-active" : ""}`}>
-          {[1, 2, 3, 4, 5, 6].map((id) => {
+          {sortedMapIds.map((id) => {
             const matches = matchingMaps.includes(id);
             const hiddenBySearch = searchMode && coords.length > 0 && !matches;
             const revealAll = isSolved && matches;
