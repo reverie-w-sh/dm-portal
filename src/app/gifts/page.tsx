@@ -102,7 +102,7 @@ export default function GiftsPage() {
               </button>
             ) : (
               
-                href={gift.file}
+              <a href={gift.file}
                 download
                 className="btn-primary w-full text-center"
               >
