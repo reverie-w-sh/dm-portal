@@ -59,7 +59,7 @@ export default function DimBoliPage() {
                 setZoomed(false);
               }}
             >
-              <img src={`/kp-maps/kp-map${id}.jpg`} alt={`Карта ${id}`} />
+              <img src={`/kp-maps/kp-map${id}.png`} alt={`Карта ${id}`} />
 
               <div className="kp-title">Карта {id}</div>
             </div>
@@ -115,7 +115,7 @@ export default function DimBoliPage() {
           </button>
 
           <img
-            src={`/kp-maps/kp-map${selected}.jpg`}
+            src={`/kp-maps/kp-map${selected}.png`}
             alt={`Карта ${selected}`}
             className={`rounded-xl shadow-2xl transition-transform duration-300 ${
               zoomed
