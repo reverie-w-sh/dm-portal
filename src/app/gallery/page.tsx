@@ -31,15 +31,14 @@ const GALLERY: GalleryItem[] = [
  { src: "/gallery/pack-family-fire.jpg",  title: "У костра",              category: "pictures" },
  { src: "/gallery/for-you.gif",       title: "Для тебя)",         category: "pictures" },  
  { src: "/gallery/popcorn.png",       title: "Лавочка :)",         category: "pictures" }, 
- { src: "/gallery/ak.gif",       title: "A&K",         category: "pictures" },
- { src: "/gallery/allania.gif",       title: "A",         category: "pictures" },
- { src: "/gallery/aw-0-1.gif",       title: "W&A",         category: "pictures" },  
- { src: "/gallery/aw-1-1.gif",       title: "W&A",         category: "pictures" },  
- { src: "/gallery/aw-2-1.gif",       title: "W&A",         category: "pictures" },  
- { src: "/gallery/aw-3-1.gif",       title: "W&A",         category: "pictures" },  
- { src: "/gallery/aw-4-1.gif",       title: "W&A",         category: "pictures" },  
- { src: "/gallery/ххххх.png",       title: "W&A",         category: "pictures" },   
- { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },  
+ { src: "/gallery/ak.gif",       title: "Образ A&K",         category: "pictures" },
+ { src: "/gallery/allania.gif",       title: "Образ A",         category: "pictures" },
+ { src: "/gallery/aw-0-1.gif",       title: "Образ W&A",         category: "pictures" },  
+ { src: "/gallery/aw-1-1.gif",       title: "Образ W&A",         category: "pictures" },  
+ { src: "/gallery/aw-2-1.gif",       title: "Образ W&A",         category: "pictures" },  
+ { src: "/gallery/aw-3-1.gif",       title: "Образ W&A",         category: "pictures" },  
+ { src: "/gallery/aw-4-1.gif",       title: "Образ W&A",         category: "pictures" },  
+ { src: "/gallery/ххххх.png",       title: "Образ W&A",         category: "pictures" },   
 
   
   { src: "/gallery/warrior-and-wolf.jpg",  title: "Warrior & his Wolf",      category: "portraits" },
@@ -197,7 +196,7 @@ export default function GalleryPage() {
                         width={205}
                         height={283}
                         unoptimized
-                        className="block w-[205px] h-auto"
+                        className="block  w-auto h-[283px]"
                       />
                     </button>
                   ))}
