@@ -176,8 +176,6 @@ img.clan-icon {
   text-shadow: 0 0 8px rgba(139, 20, 20, 0.45);
 }
 
-/* Search map wrapper */
-
 .kp-map-wrap {
   position: relative;
   overflow: hidden;
@@ -202,38 +200,15 @@ img.clan-icon {
   pointer-events: none;
 }
 
-.kp-map-mask {
+.kp-grid-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.72);
+  left: 7.82%;
+  top: 7.65%;
+  width: 84.1%;
+  height: 84.1%;
   pointer-events: none;
-}
-
-.kp-reveal-zone {
-  position: absolute;
-  width: 15.6%;
-  height: 15.6%;
-  transform: translate(9.4%, 9.4%);
-  box-shadow:
-    0 0 0 9999px rgba(0, 0, 0, 0.72),
-    0 0 0 2px rgba(255, 0, 0, 0.95),
-    0 0 14px rgba(255, 0, 0, 0.6);
-  background: transparent;
-}
-
-.kp-map-markers {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.kp-player-marker {
-  position: absolute;
-  width: 5.2%;
-  height: 5.2%;
-  border: 2px solid #ff2b2b;
-  transform: translate(10%, 10%);
-  box-shadow: 0 0 12px rgba(255, 0, 0, 0.85);
+  overflow: visible;
+  filter: drop-shadow(0 0 6px rgba(255, 0, 0, 0.75));
 }
 
 /* Empty coordinate picker */
@@ -241,14 +216,12 @@ img.clan-icon {
 .kp-picker {
   width: min(500px, 84vw);
   aspect-ratio: 1 / 1;
-
   display: grid;
   grid-template-columns: 32px repeat(16, 1fr);
   grid-template-rows: 32px repeat(16, 1fr);
-
   background: #14100d;
-  border: 2px solid rgba(184,106,22,.65);
-  box-shadow: 0 0 30px rgba(0,0,0,.35);
+  border: 2px solid rgba(184, 106, 22, 0.65);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
 }
 
 .kp-picker-corner {
