@@ -173,7 +173,6 @@ export default function DimBoliPage() {
 
   const addCoord = (value: string) => {
     const parsed = parseCoord(value);
-
     if (!parsed) return;
 
     setCoords((current) => {
@@ -368,34 +367,89 @@ export default function DimBoliPage() {
                 <div className="kp-map-wrap">
                   <img src={`/kp-maps/kp-map${id}.png`} alt={`Карта ${id}`} />
 
-                  {searchMode && coords.length > 0 && !revealAll && matches && (
-                    <div className="kp-map-mask">
-                      {coords.map((coord) => (
-                        <div
-                          key={coord.label}
-                          className="kp-reveal-zone"
-                          style={{
-                            left: `${(coord.col - 1) * 6.25}%`,
-                            top: `${(coord.row - 1) * 6.25}%`,
-                          }}
-                        />
-                      ))}
-                    </div>
-                  )}
-
                   {searchMode && coords.length > 0 && matches && (
-                    <div className="kp-map-markers">
+                    <svg
+                      className="kp-grid-overlay"
+                      viewBox="0 0 16 16"
+                      preserveAspectRatio="none"
+                    >
+                      {!revealAll && (
+                        <>
+                          <defs>
+                            <mask id={`kp-mask-${id}`}>
+                              <rect
+                                x="0"
+                                y="0"
+                                width="16"
+                                height="16"
+                                fill="white"
+                              />
+
+                              {coords.map((coord) => {
+                                const x = Math.max(coord.col - 1, 0);
+                                const y = Math.max(coord.row - 1, 0);
+                                const w = Math.min(3, 16 - x);
+                                const h = Math.min(3, 16 - y);
+
+                                return (
+                                  <rect
+                                    key={`hole-${coord.label}`}
+                                    x={x}
+                                    y={y}
+                                    width={w}
+                                    height={h}
+                                    fill="black"
+                                  />
+                                );
+                              })}
+                            </mask>
+                          </defs>
+
+                          <rect
+                            x="0"
+                            y="0"
+                            width="16"
+                            height="16"
+                            fill="black"
+                            opacity="0.72"
+                            mask={`url(#kp-mask-${id})`}
+                          />
+                        </>
+                      )}
+
+                      {coords.map((coord) => {
+                        const x = Math.max(coord.col - 1, 0);
+                        const y = Math.max(coord.row - 1, 0);
+                        const w = Math.min(3, 16 - x);
+                        const h = Math.min(3, 16 - y);
+
+                        return (
+                          <rect
+                            key={`zone-${coord.label}`}
+                            x={x}
+                            y={y}
+                            width={w}
+                            height={h}
+                            fill="none"
+                            stroke="#ff2b2b"
+                            strokeWidth="0.12"
+                          />
+                        );
+                      })}
+
                       {coords.map((coord) => (
-                        <div
-                          key={coord.label}
-                          className="kp-player-marker"
-                          style={{
-                            left: `${coord.col * 6.25}%`,
-                            top: `${coord.row * 6.25}%`,
-                          }}
+                        <rect
+                          key={`marker-${coord.label}`}
+                          x={coord.col}
+                          y={coord.row}
+                          width="1"
+                          height="1"
+                          fill="none"
+                          stroke="#ff2b2b"
+                          strokeWidth="0.16"
                         />
                       ))}
-                    </div>
+                    </svg>
                   )}
                 </div>
 
