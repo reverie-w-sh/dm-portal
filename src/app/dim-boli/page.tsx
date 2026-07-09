@@ -1,11 +1,162 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+const MAPS: Record<number, string[]> = {
+  1: [
+    "...#....##.#.#..",
+    ".#....#....#.#..",
+    ".####.#.####.##.",
+    ".#....#.......#.",
+    ".####...#..#.##.",
+    "....###.##.#....",
+    ".##.....#..#.###",
+    "###.#.###..#....",
+    ".##.#.....##.##.",
+    "....#..#......#.",
+    ".#.##.#########.",
+    ".#.#.....#....#.",
+    ".#.#.###.#.#..#.",
+    "##.#.#...#.####.",
+    ".....###.#.#....",
+    "..#....#.....#..",
+  ],
+  2: [
+    "...#...#.....#..",
+    ".#.###.#.#.###..",
+    "##...#.###...##.",
+    ".#.#.#.....#....",
+    ".###.###.#.#.##.",
+    "......#..###..#.",
+    "##.#.##.##.##.#.",
+    "...#.#........##",
+    "####...#..###...",
+    ".#.##.#####...##",
+    ".#........##....",
+    "...#.#.#...#.##.",
+    "####.###.#...#..",
+    "...#..#..#.###.#",
+    ".#...##.####.#..",
+    ".#.#.........#..",
+  ],
+  3: [
+    ".......#....#...",
+    "..##.###.#..#.#.",
+    "..#......#....#.",
+    "###.########.##.",
+    "..#.#......#.#..",
+    "....#......#.#.#",
+    "##.##..##..###..",
+    ".......##......#",
+    ".##.#..##..###..",
+    ".#..#......#.#.#",
+    ".##.#......#.#..",
+    "....########....",
+    ".##..#..#....###",
+    ".#...#....#..#..",
+    ".#.#####.#####..",
+    ".#..............",
+  ],
+  4: [
+    ".............#..",
+    "##....#.####.#..",
+    "#..####....#.#..",
+    "#.##....####.##.",
+    ".....##.........",
+    ".###.####.#.#.#.",
+    ".#........#.###.",
+    "##.###.##.#...##",
+    ".....#.##.###...",
+    ".###.#........#.",
+    ".#.....###.##.#.",
+    "##.#####.####.#.",
+    "...#...#........",
+    ".#.#.#.###.#.###",
+    ".#...#.....#.#..",
+    ".#..##...###....",
+  ],
+  5: [
+    "..............#.",
+    "###.####.###....",
+    ".............#..",
+    ".####.####...#.#",
+    "...........#.#..",
+    "###.######.#....",
+    "....#..#.#.###.#",
+    ".####....#......",
+    "....#.##.#.###..",
+    "###.#..#.....##.",
+    "....#..#.###.#..",
+    "..#.####..#.....",
+    "#.#.......#.####",
+    "..####.##.#.....",
+    "....#...#.#.#...",
+    "###...#.....#...",
+  ],
+  6: [
+    "...####.........",
+    ".#.#........###.",
+    ".#.#.#####.##.#.",
+    ".#.#.#...#......",
+    ".###.#.#.#.###..",
+    ".#...#.#.#...##.",
+    ".#.#.#.#.#.#.#..",
+    ".#.#.......#.#.#",
+    ".#.#########.#..",
+    ".#...........##.",
+    ".###..###..###..",
+    "......###.......",
+    ".#.#..###.#.#.#.",
+    "................",
+    ".#.#..#.#..#.#..",
+    "......#.#.......",
+  ],
+};
+
+const LETTERS = "ABCDEFGHIJKLMNOP".split("");
+
+type Coord = {
+  col: number;
+  row: number;
+  label: string;
+};
+
+function parseCoord(value: string): Coord | null {
+  const cleaned = value.trim().toUpperCase().replace(/\s+/g, "");
+  const match = cleaned.match(/^([A-P])([1-9]|1[0-6])$/);
+
+  if (!match) return null;
+
+  const col = LETTERS.indexOf(match[1]);
+  const row = Number(match[2]) - 1;
+
+  return {
+    col,
+    row,
+    label: `${match[1]}${match[2]}`,
+  };
+}
+
+function isRoad(mapId: number, coord: Coord) {
+  return MAPS[mapId][coord.row][coord.col] === ".";
+}
+
+function isInRevealZone(coord: Coord, zones: Coord[]) {
+  return zones.some(
+    (z) =>
+      Math.abs(z.col - coord.col) <= 1 &&
+      Math.abs(z.row - coord.row) <= 1
+  );
+}
 
 export default function DimBoliPage() {
   const [selected, setSelected] = useState<number | null>(null);
   const [zoomed, setZoomed] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+
+  const [searchMode, setSearchMode] = useState(false);
+  const [coordInput, setCoordInput] = useState("");
+  const [coords, setCoords] = useState<Coord[]>([]);
 
   const close = () => {
     setSelected(null);
@@ -28,6 +179,30 @@ export default function DimBoliPage() {
     setZoomed(false);
   };
 
+  const addCoord = (value: string) => {
+    const parsed = parseCoord(value);
+
+    if (!parsed) return;
+
+    setCoords((current) => {
+      const exists = current.some((c) => c.label === parsed.label);
+      if (exists) return current;
+      return [...current, parsed];
+    });
+
+    setCoordInput("");
+  };
+
+  const matchingMaps = useMemo(() => {
+    if (coords.length === 0) return [1, 2, 3, 4, 5, 6];
+
+    return [1, 2, 3, 4, 5, 6].filter((mapId) =>
+      coords.every((coord) => isRoad(mapId, coord))
+    );
+  }, [coords]);
+
+  const isSolved = coords.length > 0 && matchingMaps.length === 1;
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
@@ -47,23 +222,165 @@ export default function DimBoliPage() {
           Карты Дома Боли (Кровавого Подземелья)
         </h1>
 
-        <div className="divider-accent mb-10" />
+        <div className="divider-accent mb-8" />
 
-        <div className="kp-grid">
-          {[1, 2, 3, 4, 5, 6].map((id) => (
-            <div
-              key={id}
-              className="kp-card cursor-pointer"
-              onClick={() => {
-                setSelected(id);
-                setZoomed(false);
-              }}
-            >
-              <img src={`/kp-maps/kp-map${id}.png`} alt={`Карта ${id}`} />
+        <div className="flex justify-center mb-8">
+          <button
+            className="btn-primary"
+            onClick={() => setSearchMode((v) => !v)}
+          >
+            {searchMode ? "Скрыть поиск" : "Найти свою карту"}
+          </button>
+        </div>
 
-              <div className="kp-title">Карта {id}</div>
+        {searchMode && (
+          <div className="glass rounded-2xl p-6 mb-10">
+            <h2 className="text-xl font-black text-ink mb-2 text-center">
+              Поиск карты по известным координатам
+            </h2>
+
+            <p className="text-ink-muted text-sm text-center mb-6">
+              Впиши координату, где точно есть дорога. Например: H11. Или выбери
+              клетку на пустой карте.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+              <input
+                value={coordInput}
+                onChange={(e) => setCoordInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") addCoord(coordInput);
+                }}
+                placeholder="Например: H11"
+                className="px-4 py-3 rounded-xl bg-white/80 text-ink outline-none border border-black/10 text-center uppercase"
+              />
+
+              <button
+                className="btn-primary"
+                onClick={() => addCoord(coordInput)}
+              >
+                Добавить
+              </button>
+
+              <button
+                className="btn-secondary bg-dark-card"
+                onClick={() => setCoords([])}
+              >
+                Очистить
+              </button>
             </div>
-          ))}
+
+            <div className="kp-empty-map mx-auto mb-6">
+              {Array.from({ length: 16 }).map((_, row) =>
+                Array.from({ length: 16 }).map((_, col) => {
+                  const label = `${LETTERS[col]}${row + 1}`;
+                  const selectedCoord = coords.some((c) => c.label === label);
+
+                  return (
+                    <button
+                      key={label}
+                      className={`kp-empty-cell ${
+                        selectedCoord ? "kp-empty-cell-selected" : ""
+                      }`}
+                      title={label}
+                      onClick={() => addCoord(label)}
+                    />
+                  );
+                })
+              )}
+            </div>
+
+            {coords.length > 0 && (
+              <div className="text-center">
+                <div className="text-ink font-bold mb-2">
+                  Известные координаты:
+                </div>
+
+                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                  {coords.map((coord) => (
+                    <button
+                      key={coord.label}
+                      className="px-3 py-1 rounded-full bg-dark text-white text-sm"
+                      onClick={() =>
+                        setCoords((current) =>
+                          current.filter((c) => c.label !== coord.label)
+                        )
+                      }
+                    >
+                      {coord.label} ×
+                    </button>
+                  ))}
+                </div>
+
+                <div className="text-ink-muted text-sm">
+                  Подходящие карты:{" "}
+                  <b className="text-ink">
+                    {matchingMaps.length > 0
+                      ? matchingMaps.map((id) => `Карта ${id}`).join(", ")
+                      : "нет совпадений"}
+                  </b>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className={`kp-grid ${searchMode ? "kp-search-active" : ""}`}>
+          {[1, 2, 3, 4, 5, 6].map((id) => {
+            const matches = matchingMaps.includes(id);
+            const hiddenBySearch = searchMode && coords.length > 0 && !matches;
+            const revealAll = isSolved && matches;
+
+            return (
+              <div
+                key={id}
+                className={`kp-card cursor-pointer ${
+                  hiddenBySearch ? "kp-card-hidden" : ""
+                }`}
+                onClick={() => {
+                  if (hiddenBySearch) return;
+                  setSelected(id);
+                  setZoomed(false);
+                }}
+              >
+                <div className="kp-map-wrap">
+                  <img src={`/kp-maps/kp-map${id}.png`} alt={`Карта ${id}`} />
+
+                  {searchMode && coords.length > 0 && !revealAll && matches && (
+                    <div className="kp-map-mask">
+                      {coords.map((coord) => (
+                        <div
+                          key={coord.label}
+                          className="kp-reveal-zone"
+                          style={{
+                            left: `${(coord.col - 1) * 6.25}%`,
+                            top: `${(coord.row - 1) * 6.25}%`,
+                          }}
+                        />
+                      ))}
+                    </div>
+                  )}
+
+                  {searchMode && coords.length > 0 && matches && (
+                    <div className="kp-map-markers">
+                      {coords.map((coord) => (
+                        <div
+                          key={coord.label}
+                          className="kp-player-marker"
+                          style={{
+                            left: `${coord.col * 6.25}%`,
+                            top: `${coord.row * 6.25}%`,
+                          }}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="kp-title">Карта {id}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
