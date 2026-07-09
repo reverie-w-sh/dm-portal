@@ -247,8 +247,8 @@ export default function DimBoliPage() {
             </h2>
 
             <p className="text-ink-muted text-sm text-center mb-6">
-              Впиши координату, где точно есть дорога. Например: H11. Или выбери
-              клетку на пустой карте.
+              Впиши координату, где точно есть дорога. Например ту, где ты стоишь. Или выбери
+              клетку на пустой карте. Добавляй координаты до тех пор, пока не останется одна подходящая карта. Удачи! :)
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
@@ -258,8 +258,8 @@ export default function DimBoliPage() {
                 onKeyDown={(e) => {
                   if (e.key === "Enter") addCoord(coordInput);
                 }}
-                placeholder="Например: H11"
-                className="px-4 py-3 rounded-xl bg-white/80 text-ink outline-none border border-black/10 text-center uppercase"
+                placeholder="Где ты? пиши сюда :) Например: H11"
+                className="px-4 py-3 rounded-xl bg-white/80 text-ink outline-none border border-black/10 text-center normal-case text-sm"
               />
 
               <button
