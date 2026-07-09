@@ -39,7 +39,7 @@ const GALLERY: GalleryItem[] = [
  { src: "/gallery/aw-3-1.gif",       title: "W&A",         category: "pictures" },  
  { src: "/gallery/aw-4-1.gif",       title: "W&A",         category: "pictures" },  
  { src: "/gallery/ххххх.png",       title: "W&A",         category: "pictures" },   
-  
+ { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "pictures" },  
 
   
   { src: "/gallery/warrior-and-wolf.jpg",  title: "Warrior & his Wolf",      category: "portraits" },
@@ -47,21 +47,21 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/clan.gif",       title: "Клановый",         category: "portraits" },  
   { src: "/gallery/clan2.png",          title: "Клановый",                  category: "portraits" },  
 
-    { src: "/gallery/voplot-wolfchen-1.gif",   title: "Wölfchen",   category: "voplots" },
+  { src: "/gallery/voplot-wolfchen-1.gif",   title: "Wölfchen",   category: "voplots" },
   { src: "/gallery/voplot-wolfchen.gif",   title: "Wölfchen",   category: "voplots" },
   { src: "/gallery/voplot-volk.gif",       title: "Волк",       category: "voplots" },
   { src: "/gallery/voplot-volchica.gif",   title: "Волчица",    category: "voplots" },
   { src: "/gallery/voplot-volchica-3.gif", title: "Волчица3",   category: "voplots" },
   { src: "/gallery/pup-hand-red.jpg",      title: "Малыш стаи",            category: "voplots" },
   { src: "/gallery/pup-hand-blue.jpg",     title: "Искра во тьме",         category: "voplots" },  
-    { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом",     category: "voplots" },
-    { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "voplots" },
+  { src: "/gallery/wolf-blue-moon.jpg",    title: "Под лунным светом",     category: "voplots" },
+  { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "voplots" },
   { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "voplots" },
 
 
 
   { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
-   { src: "/gallery/lapka.gif",       title: "Лапка клана",         category: "smileys" },
+
   { src: "/gallery/smileys/popcorn-girls.gif",     title: "Лавочка",             category: "smileys" },
   { src: "/gallery/smileys/wolf-girl-allania.gif",           title: "Волчица Аланьки",             category: "smileys" },
 
