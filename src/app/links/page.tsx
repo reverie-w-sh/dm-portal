@@ -13,7 +13,7 @@ export default function LinksPage() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <Link
-          href="/dim-boli"
+          href="/dom-boli"
           className="glass rounded-2xl p-8 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(255,255,255,.15)]"
         >
           <div className="text-5xl mb-5">
