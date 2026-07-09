@@ -180,6 +180,14 @@ export default function DimBoliPage() {
       if (exists) return current;
       return [...current, parsed];
     });
+  };
+
+  const addCoords = (text: string) => {
+    text
+      .toUpperCase()
+      .split(/[\s,;]+/)
+      .filter(Boolean)
+      .forEach(addCoord);
 
     setCoordInput("");
   };
@@ -247,8 +255,9 @@ export default function DimBoliPage() {
             </h2>
 
             <p className="text-ink-muted text-sm text-center mb-6">
-              Впиши координату, где точно есть дорога. Например, H11. Или выбери
-              клетку на пустой карте. Добавляй координаты до тех пор, пока не останется одна подходящая карта. Удачи! :)
+              Впиши координаты, где точно есть дорога. Например: H11, H12, G12.
+              Или выбери клетки на пустой карте. Добавляй координаты до тех пор,
+              пока не останется одна подходящая карта. Удачи! :)
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
@@ -256,7 +265,7 @@ export default function DimBoliPage() {
                 value={coordInput}
                 onChange={(e) => setCoordInput(e.target.value)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") addCoord(coordInput);
+                  if (e.key === "Enter") addCoords(coordInput);
                 }}
                 placeholder="Где ты? пиши сюда :)"
                 className="px-4 py-3 rounded-xl bg-white/80 text-ink outline-none border border-black/10 text-center normal-case text-sm"
@@ -264,7 +273,7 @@ export default function DimBoliPage() {
 
               <button
                 className="btn-primary"
-                onClick={() => addCoord(coordInput)}
+                onClick={() => addCoords(coordInput)}
               >
                 Добавить
               </button>
