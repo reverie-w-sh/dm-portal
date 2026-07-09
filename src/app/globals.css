@@ -240,12 +240,15 @@ img.clan-icon {
 
 .kp-picker {
   width: min(500px, 84vw);
+  aspect-ratio: 1 / 1;
+
   display: grid;
   grid-template-columns: 32px repeat(16, 1fr);
-  grid-template-rows: 28px repeat(16, 1fr);
+  grid-template-rows: 32px repeat(16, 1fr);
+
   background: #14100d;
-  border: 2px solid rgba(184, 106, 22, 0.65);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(184,106,22,.65);
+  box-shadow: 0 0 30px rgba(0,0,0,.35);
 }
 
 .kp-picker-corner {
