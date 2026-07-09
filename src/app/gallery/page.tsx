@@ -125,7 +125,7 @@ export default function GalleryPage() {
           Галерея
         </h1>
         <p className="text-ink-muted text-sm mt-1">
-          Всё, что рисовалось для нашего клана
+          Всякое разное :) 
         </p>
       </div>
       <div className="divider-accent mb-6" />
