@@ -13,6 +13,9 @@ export default function GiftsPage() {
     { title: "Любовь и Волчата", file: "/gifts/hug3.gif" },
     { title: "Любовь у Волчат", file: "/gifts/hug4.gif" },
     { title: "Лапка", file: "/gifts/lapka-fire-g.gif" },  
+    { title: "Лапка", file: "/gifts/auf-g" },  
+    { title: "Лапка", file: "/gifts/gerb.gif" },  
+     { title: "Лапка", file: "/gifts/wolf-g.gif" },     
         { title: "Волчонок", file: "/gifts/wolfchen.gif" },
     { title: "Волчица", file: "/gifts/Volchisa.gif" },
     { title: "Magic Wolf", file: "/gifts/MagicWolf.gif" },    
@@ -22,6 +25,7 @@ export default function GiftsPage() {
         { title: "Кофе", file: "/gifts/coffee-tommy.gif" },
     { title: ":)", file: "/gifts/hug.gif" },
      { title: ":)", file: "/gifts/lavochka.gif" },   
+         { title: ":)", file: "/gifts/len-g.gif" },   
  ];
 
   return (
