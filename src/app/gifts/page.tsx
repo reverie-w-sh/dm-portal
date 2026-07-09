@@ -53,7 +53,7 @@ export default function GiftsPage() {
               <li>
                 Перейдите в раздел{" "}
                 
-                  href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
+                  <a href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent hover:underline font-semibold"
