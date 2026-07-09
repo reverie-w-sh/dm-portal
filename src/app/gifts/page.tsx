@@ -13,7 +13,7 @@ export default function GiftsPage() {
     { title: "Любовь и Волчата", file: "/gifts/hug3.gif" },
     { title: "Любовь у Волчат", file: "/gifts/hug4.gif" },
     { title: "Лапка", file: "/gifts/lapka-fire-g.gif" },  
-    { title: "Лапка", file: "/gifts/auf-g.gift" },  
+    { title: "Лапка", file: "/gifts/auf-g.gif" },  
     { title: "Лапка", file: "/gifts/gerb.gif" },  
      { title: "Лапка", file: "/gifts/wolf-g.gif" },  
            { title: "Волчонок", file: "/gifts/wolfchen.gif" }, 
