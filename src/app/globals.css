@@ -187,3 +187,84 @@ img.clan-icon {
     grid-template-columns: 1fr;
   }
 }
+.kp-map-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.kp-map-wrap img {
+  width: 100%;
+  display: block;
+}
+
+.kp-search-active .kp-card {
+  opacity: 0.45;
+}
+
+.kp-search-active .kp-card:not(.kp-card-hidden) {
+  opacity: 1;
+}
+
+.kp-card-hidden {
+  opacity: 0.12 !important;
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
+.kp-map-mask {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  pointer-events: none;
+}
+
+.kp-reveal-zone {
+  position: absolute;
+  width: 18.75%;
+  height: 18.75%;
+  box-shadow:
+    0 0 0 9999px rgba(0, 0, 0, 0.72),
+    0 0 0 3px rgba(255, 0, 0, 0.95),
+    0 0 18px rgba(255, 0, 0, 0.65);
+  background: transparent;
+}
+
+.kp-map-markers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.kp-player-marker {
+  position: absolute;
+  width: 6.25%;
+  height: 6.25%;
+  border: 2px solid #ff2b2b;
+  transform: translate(0, 0);
+  box-shadow: 0 0 14px rgba(255, 0, 0, 0.85);
+}
+
+.kp-empty-map {
+  width: min(520px, 92vw);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  border: 2px solid rgba(184, 106, 22, 0.65);
+  background: #14100d;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+}
+
+.kp-empty-cell {
+  border: 1px solid rgba(184, 106, 22, 0.25);
+  background: rgba(224, 184, 119, 0.18);
+  transition: 0.15s;
+}
+
+.kp-empty-cell:hover {
+  background: rgba(224, 184, 119, 0.45);
+}
+
+.kp-empty-cell-selected {
+  background: rgba(255, 0, 0, 0.7);
+  box-shadow: inset 0 0 0 2px #ffdddd;
+}
