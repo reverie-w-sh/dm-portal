@@ -196,7 +196,7 @@ export default function GalleryPage() {
                         width={205}
                         height={283}
                         unoptimized
-                        className="block  w-auto h-[283px]"
+                        className="block  w-[205px] h-[283px]"
                       />
                     </button>
                   ))}
