@@ -236,7 +236,7 @@ export default function DimBoliPage() {
             className="btn-primary"
             onClick={() => setSearchMode((v) => !v)}
           >
-            {searchMode ? "Скрыть поиск" : "Ты в КП? Найди свою карту"}
+            {searchMode ? "Скрыть поиск" : "В КП? Найди свою карту"}
           </button>
         </div>
 
