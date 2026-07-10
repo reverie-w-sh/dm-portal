@@ -21,7 +21,7 @@ export default function LinksPage() {
           </h2>
 
           <p className="text-ink-muted text-sm">
-            Все 6 карт Кровавого Подземелья.
+            Все 6 карт Кровавого Подземелья. Поиск карты по координатам.
           </p>
         </Link>
 
@@ -32,11 +32,11 @@ export default function LinksPage() {
           <div className="text-5xl mb-5">😄</div>
 
           <h2 className="text-xl font-bold text-ink mb-2">
-            Рейтинг особистих смайликів
+            Личные смайлики
           </h2>
 
           <p className="text-ink-muted text-sm">
-            У кого найбільша особиста колекція
+            Посмотреть личные смайликовые коллекции. У кого сколько каких)
           </p>
         </Link>
       </div>
