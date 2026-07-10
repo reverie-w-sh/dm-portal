@@ -6,10 +6,11 @@ import lastSync from "../../../data/last-sync.json";
 import ClanCard from "@/components/ClanCard";
 import SearchBar from "@/components/SearchBar";
 
-type SortKey = "members" | "name";
+type SortKey = "members" | "smiles" | "name";
 
 const SORT_LABELS: Record<SortKey, string> = {
-  members: "К-во участников",
+  members: "Участники",
+  smiles: "Смайлики",
   name: "Название",
 };
 
@@ -26,10 +27,19 @@ export default function ClansPage() {
 
   const filtered = clansData
     .filter((c) => c.name.toLowerCase().includes(search.toLowerCase()))
-    .sort((a, b) => {
-      if (sortBy === "members") return b.membersCount - a.membersCount;
-      return a.name.localeCompare(b.name);
-    });
+  .sort((a, b) => {
+    switch (sortBy) {
+      case "members":
+        return b.membersCount - a.membersCount;
+
+      case "smiles":
+        return (b.smilesCount ?? 0) - (a.smilesCount ?? 0);
+
+      case "name":
+      default:
+        return a.name.localeCompare(b.name, "ru");
+  }
+  });
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
