@@ -8,6 +8,11 @@ type RouteContext = {
   }>;
 };
 
+type ClanSmile = {
+  src: string;
+  code: string;
+};
+
 function getAttribute(tag: string, attribute: string): string | null {
   const match = tag.match(
     new RegExp(`${attribute}\\s*=\\s*["']([^"']+)["']`, "i")
@@ -51,10 +56,7 @@ export async function GET(
     const html = await response.text();
     const imageTags = html.match(/<img\b[^>]*>/gi) ?? [];
 
-    const smiles: Array<{
-      src: string;
-      code: string;
-    }> = [];
+    const smiles: ClanSmile[] = [];
 
     for (const tag of imageTags) {
       const src = getAttribute(tag, "src");
@@ -62,40 +64,41 @@ export async function GET(
 
       if (!src) continue;
 
-      // Прибираємо подвійні слеші в шляху,
-      // але не чіпаємо https://
+      // Виправляємо подвійні слеші в старих адресах DM.
       const normalizedSrc = src.replace(/([^:]\/)\/+/g, "$1");
 
-      let absoluteSrc: string;
+      let imageUrl: URL;
 
       try {
-        absoluteSrc = new URL(
-          normalizedSrc,
-          "https://dm-game.com"
-        ).href;
+        imageUrl = new URL(normalizedSrc, "https://dm-game.com");
       } catch {
         continue;
       }
 
-      const pathname = new URL(absoluteSrc).pathname.toLowerCase();
+      const pathname = imageUrl.pathname.toLowerCase();
       const filename = pathname.split("/").pop() ?? "";
 
-      // aa.gif — перший загальний смайлик.
-      // На ньому зупиняємося.
+      /*
+       * aa.gif — перший загальний смайлик.
+       * Усе, що було перед ним, належить конкретному клану.
+       */
       if (filename === "aa.gif") {
         break;
       }
 
-      // Беремо тільки смайлики конкретного клану.
-      const clanFolder = `/smiles/clan${clanId}/`;
-
-      if (!pathname.includes(clanFolder.toLowerCase())) {
+      // Беремо тільки GIF-смайлики.
+      if (!filename.endsWith(".gif")) {
         continue;
       }
 
+      const code = alt
+        .replace(/^:+/, "")
+        .replace(/:+$/, "")
+        .trim();
+
       smiles.push({
-        src: absoluteSrc,
-        code: alt.replace(/^:+/, ""),
+        src: imageUrl.href,
+        code,
       });
     }
 
