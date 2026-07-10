@@ -3,12 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import clansData from "../../../../data/clans.json";
 import playersData from "../../../../data/players.json";
+import ClanSmiles from "@/components/ClanSmiles";
 
 export async function generateStaticParams() {
   return clansData.map((c) => ({ clanId: c.clanId }));
 }
 
-export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">) {
+export default async function ClanDetailPage(
+  props: PageProps<"/clans/[clanId]">
+) {
   const { clanId } = await props.params;
   const clan = clansData.find((c) => c.clanId === clanId);
 
@@ -55,15 +58,54 @@ export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">
             <h1 className="text-2xl sm:text-3xl font-black text-ink tracking-tight mb-1">
               {clan.name}
             </h1>
+
             {clan.slogan && (
-              <p className="text-ink-muted text-sm mb-3">{clan.slogan}</p>
+              <p className="text-ink-muted text-sm mb-3">
+                {clan.slogan}
+              </p>
             )}
+
             <div className="text-sm text-ink-muted">
               {clan.membersCount} участников
             </div>
           </div>
         </div>
       </div>
+
+      {/* Clan smiles */}
+      <details className="group glass rounded-2xl mb-6 overflow-hidden">
+        <summary
+          className="
+            flex items-center justify-between
+            px-5 py-4
+            cursor-pointer select-none
+            list-none
+            hover:bg-white/[0.03]
+            transition-colors
+            [&::-webkit-details-marker]:hidden
+          "
+        >
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-semibold text-ink-muted uppercase tracking-wider">
+              Клановые смайлики :)
+            </span>
+          </div>
+
+          <span
+            className="
+              text-ink-muted text-lg
+              transition-transform duration-200
+              group-open:rotate-180
+            "
+          >
+           ⌄
+          </span>
+        </summary>
+
+        <div className="border-t border-white/[0.06] px-5 py-5">
+          <ClanSmiles clanId={clan.clanId} />
+        </div>
+      </details>
 
       {/* Members */}
       <div className="glass rounded-2xl overflow-hidden">
@@ -75,10 +117,10 @@ export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">
 
         {members.length > 0 ? (
           <>
-            {/* Desktop header — show Должность only when clan has positions */}
+            {/* Desktop header */}
             {hasPositions ? (
               <div className="hidden sm:grid grid-cols-[32px_1fr_70px_1fr_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
-                <div></div>
+                <div />
                 <div>Ник</div>
                 <div className="text-center">Уровень</div>
                 <div>Должность</div>
@@ -86,7 +128,7 @@ export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">
               </div>
             ) : (
               <div className="hidden sm:grid grid-cols-[32px_1fr_70px_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
-                <div></div>
+                <div />
                 <div>Ник</div>
                 <div className="text-center">Уровень</div>
                 <div className="text-right">Профиль</div>
@@ -121,7 +163,10 @@ export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">
 
                 {/* Nick */}
                 <div className="flex-1 min-w-0">
-                  <span className="font-medium text-ink text-sm">{player.nick}</span>
+                  <span className="font-medium text-ink text-sm">
+                    {player.nick}
+                  </span>
+
                   <div className="text-ink-muted text-xs sm:hidden mt-0.5">
                     Ур. {player.level}
                     {player.position ? ` · ${player.position}` : ""}
@@ -130,10 +175,12 @@ export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">
 
                 {/* Level */}
                 <div className="hidden sm:flex justify-center">
-                  <span className="text-accent font-black text-base">{player.level}</span>
+                  <span className="text-accent font-black text-base">
+                    {player.level}
+                  </span>
                 </div>
 
-                {/* Position (only when clan has positions) */}
+                {/* Position */}
                 {hasPositions && (
                   <div className="hidden sm:block min-w-0">
                     <span className="text-ink-dim text-sm truncate block">
@@ -162,7 +209,9 @@ export default async function ClanDetailPage(props: PageProps<"/clans/[clanId]">
           </>
         ) : (
           <div className="p-10 text-center">
-            <p className="text-ink-muted text-sm">Участники не указаны</p>
+            <p className="text-ink-muted text-sm">
+              Участники не указаны
+            </p>
           </div>
         )}
       </div>
