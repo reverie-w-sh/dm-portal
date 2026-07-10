@@ -32,9 +32,17 @@ export default function ClanCard({ clan }: { clan: Clan }) {
           <h3 className="font-semibold text-ink group-hover:text-accent transition-colors truncate text-[15px]">
             {clan.name}
           </h3>
-          <div className="text-xs text-ink-muted mt-0.5">
-            {clan.membersCount} участников
-          </div>
+<div className="flex items-center gap-5 mt-1 text-sm text-ink-muted">
+  <div className="flex items-center gap-1">
+    <span>👫</span>
+    <span>{clan.membersCount}</span>
+  </div>
+
+  <div className="flex items-center gap-1">
+    <span>😊</span>
+    <span>{clan.smilesCount ?? 0}</span>
+  </div>
+</div>
         </div>
       </div>
     </Link>
