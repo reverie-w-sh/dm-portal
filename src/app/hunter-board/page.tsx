@@ -1,19 +1,15 @@
 import HunterBoard from "@/components/HunterBoard";
 
+export const metadata = {
+  title: "Планшет охотника | Wölfchen",
+  description:
+    "Удобный планшет для ручной охоты: карта 4×4, отметки зверей, направления поиска и подсчёт очков.",
+};
+
 export default function HunterBoardPage() {
   return (
-    <main className="min-h-screen bg-black text-white p-6">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-3xl font-black tracking-tight mb-2">
-          🐺 Планшет охотника
-        </h1>
-
-        <p className="text-white/60 mb-6">
-          Отмечай найденное. Данные сохраняются только на этом устройстве.
-        </p>
-
-        <HunterBoard />
-      </div>
+    <main className="min-h-screen px-3 py-6 sm:px-6 sm:py-10">
+      <HunterBoard />
     </main>
   );
 }
