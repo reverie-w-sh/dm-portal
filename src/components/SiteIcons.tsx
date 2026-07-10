@@ -172,3 +172,70 @@ export function PlayersIcon({ className }: IconProps) {
     </svg>
   );
 }
+
+export function HunterBoardIcon({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      {/* планшет */}
+      <rect
+        x="10"
+        y="8"
+        width="38"
+        height="48"
+        rx="5"
+        stroke="currentColor"
+        strokeWidth="2.4"
+      />
+
+      {/* крепление */}
+      <rect
+        x="22"
+        y="4"
+        width="14"
+        height="7"
+        rx="2.5"
+        stroke="currentColor"
+        strokeWidth="2.4"
+      />
+
+      {/* сетка */}
+      <path
+        d="M22 20V44M34 20V44M10 20H48M10 32H48M10 44H48"
+        stroke="#67B7FF"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+
+      {/* лапка */}
+      <g transform="translate(25 26)">
+        <circle cx="7" cy="9" r="3.2" fill="#67B7FF" />
+        <circle cx="2.5" cy="4.5" r="1.3" fill="#67B7FF" />
+        <circle cx="6" cy="2.3" r="1.3" fill="#67B7FF" />
+        <circle cx="10" cy="2.3" r="1.3" fill="#67B7FF" />
+        <circle cx="13.5" cy="4.5" r="1.3" fill="#67B7FF" />
+      </g>
+
+      {/* карандаш */}
+      <path
+        d="M50 46L58 54"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M47.5 48.5L50 46L58 54L55.5 56.5L47.5 48.5Z"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+    </svg>
+  );
+}
