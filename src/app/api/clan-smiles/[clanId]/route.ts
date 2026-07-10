@@ -50,37 +50,59 @@ export async function GET(
 
     const html = await response.text();
     const imageTags = html.match(/<img\b[^>]*>/gi) ?? [];
-    const clanFolder = `/smiles/clan${clanId}/`;
 
-    const smiles = imageTags
-      .map((tag) => {
-        const src = getAttribute(tag, "src");
-        const alt = getAttribute(tag, "alt") ?? "";
+    const smiles: Array<{
+      src: string;
+      code: string;
+    }> = [];
 
-        if (!src) return null;
+    for (const tag of imageTags) {
+      const src = getAttribute(tag, "src");
+      const alt = getAttribute(tag, "alt") ?? "";
 
-        const absoluteSrc = new URL(src, "https://dm-game.com").href;
+      if (!src) continue;
 
-        if (!absoluteSrc.includes(clanFolder)) {
-          return null;
-        }
+      // Прибираємо подвійні слеші в шляху,
+      // але не чіпаємо https://
+      const normalizedSrc = src.replace(/([^:]\/)\/+/g, "$1");
 
-        return {
-          src: absoluteSrc,
-          code: alt.replace(/^:+/, ""),
-        };
-      })
-      .filter(
-        (
-          smile
-        ): smile is {
-          src: string;
-          code: string;
-        } => smile !== null
-      );
+      let absoluteSrc: string;
+
+      try {
+        absoluteSrc = new URL(
+          normalizedSrc,
+          "https://dm-game.com"
+        ).href;
+      } catch {
+        continue;
+      }
+
+      const pathname = new URL(absoluteSrc).pathname.toLowerCase();
+      const filename = pathname.split("/").pop() ?? "";
+
+      // aa.gif — перший загальний смайлик.
+      // На ньому зупиняємося.
+      if (filename === "aa.gif") {
+        break;
+      }
+
+      // Беремо тільки смайлики конкретного клану.
+      const clanFolder = `/smiles/clan${clanId}/`;
+
+      if (!pathname.includes(clanFolder.toLowerCase())) {
+        continue;
+      }
+
+      smiles.push({
+        src: absoluteSrc,
+        code: alt.replace(/^:+/, ""),
+      });
+    }
 
     const uniqueSmiles = Array.from(
-      new Map(smiles.map((smile) => [smile.src, smile])).values()
+      new Map(
+        smiles.map((smile) => [smile.src, smile])
+      ).values()
     );
 
     return NextResponse.json({
