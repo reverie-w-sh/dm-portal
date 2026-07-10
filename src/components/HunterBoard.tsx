@@ -34,6 +34,12 @@ const SEARCH_ORDER: SearchResult[] = [
   "plus3",
 ];
 
+const POSITIVE_SEARCH_ORDER: SearchResult[] = [
+  "none",
+  "plus1",
+  "plus3",
+];
+
 const ANIMAL_LIMITS: Record<
   Exclude<AnimalType, "unknown">,
   number
@@ -55,27 +61,27 @@ const ANIMALS: Record<
   unknown: {
     emoji: "",
     name: "Ничего",
-    cellClass: "bg-white/10",
+    cellClass: "bg-[#292f37]",
   },
   rabbit: {
     emoji: "🐰",
     name: "Заяц",
-    cellClass: "bg-amber-100/90",
+    cellClass: "bg-amber-100",
   },
   wolf: {
     emoji: "🐺",
     name: "Волк",
-    cellClass: "bg-slate-200/90",
+    cellClass: "bg-slate-200",
   },
   boar: {
     emoji: "🐗",
     name: "Кабан",
-    cellClass: "bg-orange-100/90",
+    cellClass: "bg-orange-100",
   },
   bear: {
     emoji: "🐻",
     name: "Медведь",
-    cellClass: "bg-yellow-100/90",
+    cellClass: "bg-yellow-100",
   },
 };
 
@@ -90,22 +96,22 @@ const SEARCHES: Record<
   none: {
     label: "",
     title: "Не проверено",
-    className: "bg-white/10 text-white/25",
+    className: "bg-[#232931] text-white/25 hover:bg-[#2c333d]",
   },
   miss: {
     label: "×",
     title: "Никого не нашли",
-    className: "bg-rose-100 text-rose-700",
+    className: "bg-rose-100 text-rose-700 hover:bg-rose-200",
   },
   plus1: {
     label: "+1",
     title: "Зверь найден, шкурку взять не удалось",
-    className: "bg-amber-100 text-amber-800",
+    className: "bg-amber-100 text-amber-800 hover:bg-amber-200",
   },
   plus3: {
     label: "+3",
     title: "Зверь найден, шкурка получена",
-    className: "bg-emerald-100 text-emerald-800",
+    className: "bg-emerald-100 text-emerald-800 hover:bg-emerald-200",
   },
 };
 
@@ -189,10 +195,7 @@ function getNextAllowedAnimal(
       return candidate;
     }
 
-    const limit = ANIMAL_LIMITS[candidate];
-    const currentCount = counts[candidate];
-
-    if (currentCount < limit) {
+    if (counts[candidate] < ANIMAL_LIMITS[candidate]) {
       return candidate;
     }
   }
@@ -212,12 +215,10 @@ export default function HunterBoard() {
 
   useEffect(() => {
     try {
-      const savedBoard =
-        localStorage.getItem(STORAGE_KEY);
+      const savedBoard = localStorage.getItem(STORAGE_KEY);
 
       if (savedBoard) {
-        const parsed: unknown =
-          JSON.parse(savedBoard);
+        const parsed: unknown = JSON.parse(savedBoard);
 
         if (
           Array.isArray(parsed) &&
@@ -281,12 +282,35 @@ export default function HunterBoard() {
       currentBoard.map((cell, index) => {
         if (index !== cellIndex) return cell;
 
+        const nextAnimal = getNextAllowedAnimal(
+          cell.animal,
+          currentBoard,
+        );
+
+        let nextSearches = cell.searches;
+
+        /*
+         * Если в старых сохранённых данных уже было
+         * три крестика, а теперь выбирается зверь,
+         * последний крестик убираем.
+         */
+        if (
+          nextAnimal !== "unknown" &&
+          cell.searches.filter(
+            (result) => result === "miss",
+          ).length === 3
+        ) {
+          nextSearches = [
+            cell.searches[0],
+            cell.searches[1],
+            "none",
+          ];
+        }
+
         return {
           ...cell,
-          animal: getNextAllowedAnimal(
-            cell.animal,
-            currentBoard,
-          ),
+          animal: nextAnimal,
+          searches: nextSearches,
         };
       }),
     );
@@ -303,6 +327,10 @@ export default function HunterBoard() {
         const positiveSearchIndex =
           cell.searches.findIndex(isPositiveResult);
 
+        /*
+         * После +1 или +3 другие пустые направления
+         * больше не нажимаются.
+         */
         if (
           positiveSearchIndex !== -1 &&
           positiveSearchIndex !== searchIndex
@@ -314,16 +342,43 @@ export default function HunterBoard() {
           ...cell.searches,
         ];
 
-        newSearches[searchIndex] = getNextValue(
-          SEARCH_ORDER,
-          newSearches[searchIndex],
-        );
+        const missCountInOtherSearches =
+          cell.searches.filter(
+            (result, indexInCell) =>
+              indexInCell !== searchIndex &&
+              result === "miss",
+          ).length;
 
-        if (
-          isPositiveResult(
+        /*
+         * Если в клетке есть зверь и уже стоят
+         * два крестика, в последнем направлении
+         * крестика быть не может.
+         *
+         * Поэтому цикл будет:
+         * пусто → +1 → +3 → пусто.
+         */
+        const mustContainAnimal =
+          cell.animal !== "unknown" &&
+          missCountInOtherSearches === 2;
+
+        if (mustContainAnimal) {
+          newSearches[searchIndex] = getNextValue(
+            POSITIVE_SEARCH_ORDER,
             newSearches[searchIndex],
-          )
-        ) {
+          );
+        } else {
+          newSearches[searchIndex] = getNextValue(
+            SEARCH_ORDER,
+            newSearches[searchIndex],
+          );
+        }
+
+        /*
+         * В одной клетке может быть только
+         * один результат +1 или +3.
+         * Уже поставленные крестики сохраняются.
+         */
+        if (isPositiveResult(newSearches[searchIndex])) {
           newSearches.forEach(
             (result, indexInCell) => {
               if (
@@ -365,17 +420,16 @@ export default function HunterBoard() {
           Планшет охотника
         </h1>
 
-        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-          Нажимай на верхнюю часть клетки,
-          чтобы отметить найденного зверя.
-          Нижние три поля — поиск слева,
-          по центру и справа. Подсказка: выбор происходит посредством многократного нажатия на одну клеточку :) 
+        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
+          Нажимай на верхнюю часть клетки, чтобы отметить найденного зверя. 
+          Нижние три поля — поиск слева, по центру и справа. 
+          Подсказка: выбор происходит посредством последовательных нажатий на одну клеточку :)
         </p>
       </div>
 
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_220px]">
-        <div className="glass rounded-3xl p-2.5 shadow-sm sm:p-4">
-          <div className="mb-2 grid grid-cols-4 gap-1.5 pl-7 text-center text-xs font-bold text-white/50 sm:gap-2 sm:pl-9">
+        <div className="rounded-3xl border border-white/10 bg-[#20252c] p-2.5 shadow-2xl sm:p-4">
+          <div className="mb-2 grid grid-cols-4 gap-1.5 pl-7 text-center text-xs font-bold text-slate-400 sm:gap-2 sm:pl-9">
             <span>1</span>
             <span>2</span>
             <span>3</span>
@@ -383,7 +437,7 @@ export default function HunterBoard() {
           </div>
 
           <div className="flex gap-1.5 sm:gap-2">
-            <div className="grid w-6 shrink-0 grid-rows-4 gap-1.5 py-0.5 text-center text-xs font-bold text-white/50 sm:w-7 sm:gap-2">
+            <div className="grid w-6 shrink-0 grid-rows-4 gap-1.5 py-0.5 text-center text-xs font-bold text-slate-400 sm:w-7 sm:gap-2">
               <span className="flex items-center justify-center">
                 A
               </span>
@@ -403,14 +457,11 @@ export default function HunterBoard() {
 
             <div className="grid min-w-0 flex-1 grid-cols-4 gap-1.5 sm:gap-2">
               {board.map((cell, cellIndex) => {
-                const animal =
-                  ANIMALS[cell.animal];
+                const animal = ANIMALS[cell.animal];
 
-                const missCount =
-                  cell.searches.filter(
-                    (result) =>
-                      result === "miss",
-                  ).length;
+                const missCount = cell.searches.filter(
+                  (result) => result === "miss",
+                ).length;
 
                 const positiveSearchIndex =
                   cell.searches.findIndex(
@@ -421,7 +472,7 @@ export default function HunterBoard() {
                   <div
                     key={cellIndex}
                     className={[
-                      "min-w-0 overflow-hidden rounded-xl border border-white/15 shadow-sm",
+                      "min-w-0 overflow-hidden rounded-xl border border-white/10 shadow-md",
                       animal.cellClass,
                     ].join(" ")}
                   >
@@ -434,11 +485,10 @@ export default function HunterBoard() {
                       aria-label={`Клетка ${
                         cellIndex + 1
                       }: ${animal.name}`}
-                      className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-black/10 transition hover:brightness-[0.98] active:scale-[0.98] sm:aspect-[1.3/1]"
+                      className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-black/20 transition hover:brightness-105 active:scale-[0.98] sm:aspect-[1.3/1]"
                     >
-                      {cell.animal ===
-                      "unknown" ? (
-                        <span className="text-xl font-light text-black/20 sm:text-3xl">
+                      {cell.animal === "unknown" ? (
+                        <span className="text-2xl font-light text-white/25 sm:text-3xl">
                           ·
                         </span>
                       ) : (
@@ -447,24 +497,20 @@ export default function HunterBoard() {
                         </span>
                       )}
 
-                      {missCount === 2 &&
-                        positiveSearchIndex ===
-                          -1 && (
+                      {cell.animal !== "unknown" &&
+                        missCount === 2 &&
+                        positiveSearchIndex === -1 && (
                           <span
-                            className="absolute right-1 top-1 h-2 w-2 rounded-full bg-amber-400 shadow-sm"
-                            title="Два направления пустые — проверь оставшееся"
+                            className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.9)]"
+                            title="Зверь находится в оставшемся направлении"
                           />
                         )}
                     </button>
 
-                    <div className="grid grid-cols-3 divide-x divide-black/10">
+                    <div className="grid grid-cols-3 divide-x divide-white/10">
                       {cell.searches.map(
-                        (
-                          result,
-                          searchIndex,
-                        ) => {
-                          const search =
-                            SEARCHES[result];
+                        (result, searchIndex) => {
+                          const search = SEARCHES[result];
 
                           const directionNames = [
                             "слева",
@@ -473,11 +519,15 @@ export default function HunterBoard() {
                           ];
 
                           const isDisabled =
-                            positiveSearchIndex !==
-                              -1 &&
-                            positiveSearchIndex !==
-                              searchIndex &&
+                            positiveSearchIndex !== -1 &&
+                            positiveSearchIndex !== searchIndex &&
                             result === "none";
+
+                          const isCertainDirection =
+                            cell.animal !== "unknown" &&
+                            missCount === 2 &&
+                            result === "none" &&
+                            positiveSearchIndex === -1;
 
                           return (
                             <button
@@ -487,34 +537,35 @@ export default function HunterBoard() {
                               onClick={() =>
                                 changeSearchResult(
                                   cellIndex,
-                                  searchIndex as
-                                    | 0
-                                    | 1
-                                    | 2,
+                                  searchIndex as 0 | 1 | 2,
                                 )
                               }
                               title={
                                 isDisabled
                                   ? "Зверь уже найден в другом направлении"
-                                  : `${directionNames[searchIndex]}: ${search.title}`
-                              }
-                              aria-label={
-                                isDisabled
-                                  ? `${directionNames[searchIndex]}: недоступно`
-                                  : `${directionNames[searchIndex]}: ${search.title}`
+                                  : isCertainDirection
+                                    ? "Зверь точно находится здесь"
+                                    : `${directionNames[searchIndex]}: ${search.title}`
                               }
                               className={[
-                                "flex h-8 min-w-0 items-center justify-center text-[11px] font-black transition sm:h-10 sm:text-sm",
+                                "relative flex h-9 min-w-0 items-center justify-center text-xs font-black transition sm:h-10 sm:text-sm",
 
                                 isDisabled
-                                  ? "cursor-not-allowed bg-black/20 text-white/20"
+                                  ? "cursor-not-allowed bg-[#171b20] text-transparent"
                                   : `${search.className} active:scale-95`,
+
+                                isCertainDirection
+                                  ? "ring-2 ring-inset ring-amber-400"
+                                  : "",
                               ].join(" ")}
                             >
                               {isDisabled
                                 ? ""
-                                : search.label ||
-                                  "·"}
+                                : search.label || "·"}
+
+                              {isCertainDirection && (
+                                <span className="absolute right-1 top-1 h-1.5 w-1.5 rounded-full bg-amber-400" />
+                              )}
                             </button>
                           );
                         },
@@ -526,31 +577,22 @@ export default function HunterBoard() {
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-white/10 pt-3 text-xs text-white/60">
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/10 pt-3 text-xs text-slate-300">
             <span>
-              <b className="text-rose-300">
-                ×
-              </b>{" "}
-              — никого
+              <b className="text-rose-400">×</b> — никого
             </span>
 
             <span>
-              <b className="text-amber-300">
-                +1
-              </b>{" "}
-              — без шкурки
+              <b className="text-amber-400">+1</b> — без шкурки
             </span>
 
             <span>
-              <b className="text-emerald-300">
-                +3
-              </b>{" "}
-              — шкурка
+              <b className="text-emerald-400">+3</b> — шкурка
             </span>
           </div>
         </div>
 
-        <aside className="glass h-fit rounded-3xl p-4 text-white shadow-sm sm:p-5">
+        <aside className="h-fit rounded-3xl border border-white/10 bg-[#20252c] p-4 text-white shadow-2xl sm:p-5">
           <h2 className="text-lg font-black text-white">
             Статистика
           </h2>
@@ -585,8 +627,8 @@ export default function HunterBoard() {
             />
           </div>
 
-          <div className="mt-4 rounded-2xl bg-white/10 p-4 text-center">
-            <div className="text-xs font-bold uppercase tracking-wide text-white/50">
+          <div className="mt-4 rounded-2xl border border-white/10 bg-[#292f37] p-4 text-center">
+            <div className="text-xs font-bold uppercase tracking-wide text-slate-400">
               Очки
             </div>
 
@@ -595,7 +637,7 @@ export default function HunterBoard() {
             </div>
           </div>
 
-          <div className="mt-3 text-center text-xs text-white/50">
+          <div className="mt-3 text-center text-xs text-slate-400">
             Отмечено поисков:{" "}
             {statistics.checkedSearches}
           </div>
@@ -606,13 +648,13 @@ export default function HunterBoard() {
               onClick={() =>
                 setShowResetConfirm(true)
               }
-              className="mt-5 w-full rounded-xl border border-rose-300/30 bg-rose-500/15 px-4 py-3 text-sm font-bold text-rose-200 transition hover:bg-rose-500/25 active:scale-[0.98]"
+              className="mt-5 w-full rounded-xl border border-rose-400/30 bg-rose-500/15 px-4 py-3 text-sm font-bold text-rose-300 transition hover:bg-rose-500/25 active:scale-[0.98]"
             >
               Очистить планшет
             </button>
           ) : (
-            <div className="mt-5 rounded-2xl border border-rose-300/30 bg-rose-500/15 p-3">
-              <p className="text-center text-xs font-semibold text-rose-100">
+            <div className="mt-5 rounded-2xl border border-rose-400/30 bg-rose-500/10 p-3">
+              <p className="text-center text-xs font-semibold text-rose-200">
                 Очистить все клетки и очки?
               </p>
 
@@ -622,7 +664,7 @@ export default function HunterBoard() {
                   onClick={() =>
                     setShowResetConfirm(false)
                   }
-                  className="rounded-lg bg-white/10 px-3 py-2 text-xs font-bold text-white/70"
+                  className="rounded-lg bg-white/10 px-3 py-2 text-xs font-bold text-white/70 hover:bg-white/15"
                 >
                   Отмена
                 </button>
@@ -630,7 +672,7 @@ export default function HunterBoard() {
                 <button
                   type="button"
                   onClick={resetBoard}
-                  className="rounded-lg bg-rose-600 px-3 py-2 text-xs font-bold text-white"
+                  className="rounded-lg bg-rose-600 px-3 py-2 text-xs font-bold text-white hover:bg-rose-500"
                 >
                   Очистить
                 </button>
@@ -638,9 +680,8 @@ export default function HunterBoard() {
             </div>
           )}
 
-          <p className="mt-4 text-center text-[11px] leading-relaxed text-white/40">
-            Планшет автоматически сохраняется
-            в этом браузере, на случай если случайно обновишь страницу или закроешь.
+          <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-500">
+            Планшет автоматически сохраняется в этом браузере, на случай если случайно обновишь страницу или закроешь.
           </p>
         </aside>
       </div>
@@ -662,11 +703,11 @@ function StatRow({
   const completed = value >= total;
 
   return (
-    <div className="flex items-center justify-between rounded-xl bg-white/10 px-3 py-2">
+    <div className="flex items-center justify-between rounded-xl border border-white/5 bg-[#292f37] px-3 py-2">
       <div className="flex items-center gap-2">
         <span>{emoji}</span>
 
-        <span className="text-sm font-semibold text-white/70">
+        <span className="text-sm font-semibold text-slate-300">
           {name}
         </span>
       </div>
@@ -675,7 +716,7 @@ function StatRow({
         className={[
           "text-sm font-black",
           completed
-            ? "text-emerald-300"
+            ? "text-emerald-400"
             : "text-white",
         ].join(" ")}
       >
