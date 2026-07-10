@@ -10,7 +10,7 @@ const navLinks = [
   { href: "/clans", label: "Другие кланы ДМ" },
   { href: "/gallery", label: "Галерея" },
   { href: "/gifts", label: "Подарочки" },
-  { href: "/links", label: "Что-то полезное" },
+  { href: "/links", label: "Тут тоже что-то есть :)" },
 ];
 
 export default function Navbar() {
