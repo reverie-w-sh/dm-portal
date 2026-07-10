@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   MapIcon,
   SmilesCollectionIcon,
+  HunterBoardIcon,
 } from "@/components/SiteIcons";
 
 const usefulLinks = [
@@ -21,6 +22,14 @@ const usefulLinks = [
     description:
       "Посмотреть личные смайликовые коллекции: у кого сколько и какие :)",
   },
+  {
+    href: "/hunter-board",
+    icon: HunterBoardIcon,
+    category: "Полезное :)",
+    title: "Планшет охотника",
+    description:
+      "Удобный (я проверяла! :)) планшет для охоты: карта 4×4, выбираем зверя, записываем результаты поиска в трёх направлениях, очки считаются автоматически. Больше не нужно искать блокнотик и карандаш!",
+  },
 ];
 
 export default function LinksPage() {
@@ -32,11 +41,13 @@ export default function LinksPage() {
         </p>
 
         <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
-          Карты, коллекции и другие материалы, которые могут пригодиться в игре. 
+          Карты, коллекции и другие материалы, которые могут пригодиться в игре.
         </p>
+
         <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
           А могут и не пригодиться :)
         </p>
+
         <div className="divider-accent mt-7" />
       </div>
 
@@ -54,8 +65,8 @@ export default function LinksPage() {
 
               <div className="relative">
                 <div className="flex items-start">
-  <Icon className="w-16 h-16 text-ink transition-transform duration-300 group-hover:scale-[1.04]" />
-</div>
+                  <Icon className="w-16 h-16 text-ink transition-transform duration-300 group-hover:scale-[1.04]" />
+                </div>
 
                 <div className="mt-7">
                   <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink-muted mb-3">
@@ -70,7 +81,6 @@ export default function LinksPage() {
                     {item.description}
                   </p>
                 </div>
-
               </div>
             </Link>
           );
