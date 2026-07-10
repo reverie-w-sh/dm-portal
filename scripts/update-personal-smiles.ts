@@ -62,11 +62,9 @@ function normalizeImageUrl(src: string): URL | null {
   }
 }
 
-function getPersonalSmiles(html: string, cuid: string): string[] {
+function getPersonalSmiles(html: string): string[] {
   const imageTags = html.match(/<img\b[^>]*>/gi) ?? [];
   const uniqueSmiles = new Set<string>();
-
-  const expectedFolder = `/layout/all/smiles/${cuid}/`;
 
   for (const tag of imageTags) {
     const src = getAttribute(tag, "src");
@@ -81,14 +79,17 @@ function getPersonalSmiles(html: string, cuid: string): string[] {
     const filename = pathname.split("/").pop() ?? "";
 
     /*
-     * Беремо лише GIF із персональної папки
-     * конкретного гравця.
+     * all_angel.gif — перший загальний смайлик.
+     * Усі GIF перед ним на сторінці є особистими.
      *
-     * Наприклад:
-     * /layout/all/smiles/4394/prv_allania40.gif
+     * Не перевіряємо папку cuid, бо старі особисті
+     * смайлики можуть лежати:
+     * - у загальній папці;
+     * - у папці іншого cuid;
+     * - у папці самого гравця.
      */
-    if (!pathname.includes(expectedFolder.toLowerCase())) {
-      continue;
+    if (filename === "all_angel.gif") {
+      break;
     }
 
     if (!filename.endsWith(".gif")) {
@@ -125,7 +126,7 @@ async function getPlayerPersonalSmiles(
 
   const html = await response.text();
 
-  return getPersonalSmiles(html, cuid);
+  return getPersonalSmiles(html);
 }
 
 async function processPlayer(
