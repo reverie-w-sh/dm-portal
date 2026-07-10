@@ -680,8 +680,8 @@ export default function HunterBoard() {
             </div>
           )}
 
-          <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-500">
-            Планшет автоматически сохраняется в этом браузере, на случай если случайно обновишь страницу или закроешь.
+          <p className="mt-4 text-[11px] leading-relaxed text-slate-500">
+            Планшет автоматически сохраняется в этом браузере, на случай, если случайно обновишь страницу или закроешь.
           </p>
         </aside>
       </div>
