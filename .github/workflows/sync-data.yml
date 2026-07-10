@@ -44,7 +44,10 @@ jobs:
       - name: Step 5 — update clan smiles count
         run: npm run update-clan-smiles
 
-      - name: Step 6 — write sync timestamp
+      - name: Step 6 — update personal smiles
+        run: npx tsx scripts/update-personal-smiles.ts
+
+      - name: Step 7 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
       - name: Commit and push updated data
@@ -55,6 +58,7 @@ jobs:
           git add \
             data/clans.json \
             data/players.json \
+            data/personal-smiles.json \
             data/rating-scan.md \
             data/sync-status.json \
             data/last-sync.json
