@@ -425,12 +425,6 @@ export default function HunterBoard() {
           Нижние три поля — поиск слева, по центру и справа. 
           Подсказка: выбор происходит посредством последовательных нажатий на одну клеточку :)
         </p>
-        <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-slate-500">
-          Даже не пытайся добавить пятого зайца, третьего волка / кабана или второго медведя!
-        </p>
-          <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-slate-500">
-          Наш планшет не позволит тебе этого) А также снять две шкурки с одного зверька))
-        </p>
       </div>
 
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_220px]">
