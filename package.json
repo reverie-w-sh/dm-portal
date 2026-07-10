@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "update-clan-smiles": "tsx scripts/update-clan-smiles.ts",
     "lint": "eslint"
   },
   "dependencies": {
