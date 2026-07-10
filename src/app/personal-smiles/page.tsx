@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import personalSmilesData from "@/data/personal-smiles.json";
+import personalSmilesData from "../../../data/personal-smiles.json";
 
 type PlayerWithSmiles = {
   cuid: string;
