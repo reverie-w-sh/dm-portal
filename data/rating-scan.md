@@ -150,20 +150,19 @@
 10. Подколодная[8] — cuid=1279 — https://dm-game.com/index.php?file=infouser&cuid=1279
 11. Умницa[8] — cuid=2128 — https://dm-game.com/index.php?file=infouser&cuid=2128
 
-## Викинги — CLAN 221 — знайдено 12
+## Викинги — CLAN 221 — знайдено 11
 
 1. Антип[10] — cuid=7273 — https://dm-game.com/index.php?file=infouser&cuid=7273
 2. Двоешник[10] — cuid=6093 — https://dm-game.com/index.php?file=infouser&cuid=6093
-3. Death[9] — cuid=15102 — https://dm-game.com/index.php?file=infouser&cuid=15102
-4. russ7707[9] — cuid=2208 — https://dm-game.com/index.php?file=infouser&cuid=2208
-5. Kitty[8] — cuid=2310 — https://dm-game.com/index.php?file=infouser&cuid=2310
-6. Lesik[8] — cuid=1972 — https://dm-game.com/index.php?file=infouser&cuid=1972
-7. Nikolay8692[8] — cuid=19347 — https://dm-game.com/index.php?file=infouser&cuid=19347
-8. Риддик[8] — cuid=4425 — https://dm-game.com/index.php?file=infouser&cuid=4425
-9. Юнона[8] — cuid=13079 — https://dm-game.com/index.php?file=infouser&cuid=13079
-10. Огненный_Феникс[7] — cuid=4271 — https://dm-game.com/index.php?file=infouser&cuid=4271
-11. Anatoly8695[6] — cuid=19353 — https://dm-game.com/index.php?file=infouser&cuid=19353
-12. ПрИмАрХ[6] — cuid=21766 — https://dm-game.com/index.php?file=infouser&cuid=21766
+3. russ7707[9] — cuid=2208 — https://dm-game.com/index.php?file=infouser&cuid=2208
+4. Kitty[8] — cuid=2310 — https://dm-game.com/index.php?file=infouser&cuid=2310
+5. Lesik[8] — cuid=1972 — https://dm-game.com/index.php?file=infouser&cuid=1972
+6. Nikolay8692[8] — cuid=19347 — https://dm-game.com/index.php?file=infouser&cuid=19347
+7. Риддик[8] — cuid=4425 — https://dm-game.com/index.php?file=infouser&cuid=4425
+8. Юнона[8] — cuid=13079 — https://dm-game.com/index.php?file=infouser&cuid=13079
+9. Огненный_Феникс[7] — cuid=4271 — https://dm-game.com/index.php?file=infouser&cuid=4271
+10. Anatoly8695[6] — cuid=19353 — https://dm-game.com/index.php?file=infouser&cuid=19353
+11. ПрИмАрХ[6] — cuid=21766 — https://dm-game.com/index.php?file=infouser&cuid=21766
 
 ## Клинки Великого Рэндома — CLAN 223 — знайдено 6
 
