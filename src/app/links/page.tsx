@@ -34,7 +34,7 @@ export default function LinksPage() {
         <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
           Карты, коллекции и другие материалы, которые могут пригодиться в игре. 
         </p>
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-ink-muted mb-3">
+        <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
           А могут и не пригодиться :)
         </p>
         <div className="divider-accent mt-7" />
