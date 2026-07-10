@@ -28,7 +28,7 @@ type PersonalSmilesPlayer = {
 const PLAYERS_FILE = path.join(
   process.cwd(),
   "data",
-  ""players.json""
+  "players.json"
 );
 
 const OUTPUT_FILE = path.join(
