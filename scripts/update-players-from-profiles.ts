@@ -1,20 +1,6 @@
 /**
  * Fetches live profile pages for every real player in data/players.json
  * and updates their fields from the parsed HTML.
- *
-* Fields updated: nick, level, clanId, clanName, clanIcon, position, profileUrl
- *
- * clanId IS updated from the live profile (fixed 2026-07-06): players.json
- * and clans.json both use the game's numeric clan ID ("278"), so this is
- * safe. This is what makes players who left the clan disappear from the
- * Members page — without it, a departed member's old clanId would linger
- * forever since scan-ratings.ts skips clanless players entirely.
- *
- *
- * Skipped: players whose cuid is not a plain number (placeholder entries).
- *
- * Usage:
- *   npx tsx scripts/update-players-from-profiles.ts
  */
 
 import * as fs from "node:fs";
@@ -22,8 +8,8 @@ import * as path from "node:path";
 import { parseProfileHtml } from "./parse-profile";
 
 const PLAYERS_PATH = path.resolve("data/players.json");
-const BASE_URL     = "https://dm-game.com/index.php?file=infouser&cuid=";
-const DELAY_MS     = 300;
+const BASE_URL = "https://dm-game.com/index.php?file=infouser&cuid=";
+const DELAY_MS = 300;
 
 interface Player {
   cuid: string;
@@ -39,63 +25,112 @@ interface Player {
 }
 
 function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function fetchHtml(cuid: string): Promise<string> {
-  const res = await fetch(`${BASE_URL}${cuid}`, {
-    headers: { "User-Agent": "Mozilla/5.0 (compatible; DM-Portal-Scanner/1.0)" },
+  const response = await fetch(`${BASE_URL}${cuid}`, {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (compatible; DM-Portal-Scanner/1.0)",
+    },
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.text();
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+
+  return response.text();
 }
 
 async function main(): Promise<void> {
-  const players: Player[] = JSON.parse(fs.readFileSync(PLAYERS_PATH, "utf-8"));
+  const players: Player[] = JSON.parse(
+    fs.readFileSync(PLAYERS_PATH, "utf-8"),
+  );
 
-  const realPlayers  = players.filter((p) => /^\d+$/.test(p.cuid));
+  const realPlayers = players.filter((player) =>
+    /^\d+$/.test(player.cuid),
+  );
+
   const skippedCount = players.length - realPlayers.length;
 
-  let updatedCount   = 0;
-  let posFoundCount  = 0;
-  let emptyPosCount  = 0;
-  let errorCount     = 0;
+  let updatedCount = 0;
+  let posFoundCount = 0;
+  let emptyPosCount = 0;
+  let errorCount = 0;
 
-  for (let i = 0; i < realPlayers.length; i++) {
-    const player = realPlayers[i];
-    if (i > 0) await sleep(DELAY_MS);
+  for (let index = 0; index < realPlayers.length; index++) {
+    const player = realPlayers[index];
+
+    if (index > 0) {
+      await sleep(DELAY_MS);
+    }
 
     process.stdout.write(
-      `[${i + 1}/${realPlayers.length}] cuid=${player.cuid} (${player.nick}) … `,
+      `[${index + 1}/${realPlayers.length}] ` +
+        `cuid=${player.cuid} (${player.nick}) … `,
     );
 
     try {
-      const html   = await fetchHtml(player.cuid);
+      const html = await fetchHtml(player.cuid);
       const parsed = parseProfileHtml(html);
 
-     if (parsed.nick  !== null) player.nick  = parsed.nick;
-      if (parsed.level !== null) player.level = parsed.level;
-      player.reincarnationLevel = parsed.reincarnationLevel;
-      if (parsed.clanId !== null) player.clanId = parsed.clanId;
-      if (parsed.clanName !== null) player.clanName = parsed.clanName;
-      if (parsed.clanIcon !== null) player.clanIcon = parsed.clanIcon;
-      player.position   = parsed.position;
+      if (parsed.nick !== null) {
+        player.nick = parsed.nick;
+      }
+
+      if (parsed.level !== null) {
+        player.level = parsed.level;
+      }
+
+      player.reincarnationLevel =
+        parsed.reincarnationLevel;
+
+      if (parsed.clanId !== null) {
+        player.clanId = parsed.clanId;
+      }
+
+      if (parsed.clanName !== null) {
+        player.clanName = parsed.clanName;
+      }
+
+      if (parsed.clanIcon !== null) {
+        player.clanIcon = parsed.clanIcon;
+      }
+
+      player.position = parsed.position;
       player.profileUrl = `${BASE_URL}${player.cuid}`;
 
-      if (parsed.position) posFoundCount++;
-      else emptyPosCount++;
+      if (parsed.position) {
+        posFoundCount++;
+      } else {
+        emptyPosCount++;
+      }
 
       updatedCount++;
+
       process.stdout.write(
-        `OK  lv=${parsed.level}  pos="${parsed.position || "—"}"\n`,
+        `OK  lv=${parsed.level ?? "?"}  ` +
+          `reinc=${parsed.reincarnationLevel ?? "—"}  ` +
+          `pos="${parsed.position || "—"}"\n`,
       );
-    } catch (err) {
+    } catch (error) {
       errorCount++;
-      process.stdout.write(`FAIL — ${(err as Error).message}\n`);
+
+      process.stdout.write(
+        `FAIL — ${
+          error instanceof Error
+            ? error.message
+            : "Неизвестная ошибка"
+        }\n`,
+      );
     }
   }
 
-  fs.writeFileSync(PLAYERS_PATH, JSON.stringify(players, null, 2) + "\n", "utf-8");
+  fs.writeFileSync(
+    PLAYERS_PATH,
+    `${JSON.stringify(players, null, 2)}\n`,
+    "utf-8",
+  );
 
   console.log("\n─── Summary ──────────────────────────────────────────────────");
   console.log(`  Total in file:        ${players.length}`);
@@ -108,7 +143,13 @@ async function main(): Promise<void> {
   console.log("──────────────────────────────────────────────────────────────");
 }
 
-main().catch((err) => {
-  console.error("Fatal:", (err as Error).message);
+main().catch((error) => {
+  console.error(
+    "Fatal:",
+    error instanceof Error
+      ? error.message
+      : error,
+  );
+
   process.exit(1);
 });
