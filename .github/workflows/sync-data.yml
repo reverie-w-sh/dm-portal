@@ -50,6 +50,9 @@ jobs:
       - name: Step 7 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
+      - name: Step 8 — build events history
+        run: npx tsx scripts/build-events.ts
+
       - name: Commit and push updated data
         run: |
           git config user.name "github-actions[bot]"
@@ -61,7 +64,9 @@ jobs:
             data/personal-smiles.json \
             data/rating-scan.md \
             data/sync-status.json \
-            data/last-sync.json
+            data/last-sync.json \
+            data/events.json \
+            data/history/last-state.json
 
           if git diff --cached --quiet; then
             echo "Нет изменений в данных — коммит не нужен."
