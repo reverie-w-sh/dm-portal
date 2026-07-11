@@ -287,22 +287,34 @@ export default function HunterBoard() {
           currentBoard,
         );
 
-        let nextSearches = cell.searches;
+        let nextSearches: HunterCell["searches"] = [
+          ...cell.searches,
+        ];
 
         /*
-         * Если в старых сохранённых данных уже было
-         * три крестика, а теперь выбирается зверь,
-         * последний крестик убираем.
+         * Если зверя убрали, очки в клетке больше
+         * невозможны. Хрестики при этом остаются.
+         */
+        if (nextAnimal === "unknown") {
+          nextSearches = nextSearches.map((result) =>
+            isPositiveResult(result) ? "none" : result,
+          ) as HunterCell["searches"];
+        }
+
+        /*
+         * Если в сохранённых данных вдруг уже есть
+         * три крестика, а мы выбираем зверя,
+         * третий крестик убираем.
          */
         if (
           nextAnimal !== "unknown" &&
-          cell.searches.filter(
+          nextSearches.filter(
             (result) => result === "miss",
           ).length === 3
         ) {
           nextSearches = [
-            cell.searches[0],
-            cell.searches[1],
+            nextSearches[0],
+            nextSearches[1],
             "none",
           ];
         }
@@ -328,8 +340,8 @@ export default function HunterBoard() {
           cell.searches.findIndex(isPositiveResult);
 
         /*
-         * После +1 или +3 другие пустые направления
-         * больше не нажимаются.
+         * Если +1 или +3 уже стоит в другом направлении,
+         * остальные пустые направления не нажимаются.
          */
         if (
           positiveSearchIndex !== -1 &&
@@ -342,6 +354,8 @@ export default function HunterBoard() {
           ...cell.searches,
         ];
 
+        const hasAnimal = cell.animal !== "unknown";
+
         const missCountInOtherSearches =
           cell.searches.filter(
             (result, indexInCell) =>
@@ -349,24 +363,28 @@ export default function HunterBoard() {
               result === "miss",
           ).length;
 
-        /*
-         * Если в клетке есть зверь и уже стоят
-         * два крестика, в последнем направлении
-         * крестика быть не может.
-         *
-         * Поэтому цикл будет:
-         * пусто → +1 → +3 → пусто.
-         */
-        const mustContainAnimal =
-          cell.animal !== "unknown" &&
-          missCountInOtherSearches === 2;
-
-        if (mustContainAnimal) {
+        if (!hasAnimal) {
+          /*
+           * Пока зверь не выбран,
+           * можно поставить только крестик.
+           */
+          newSearches[searchIndex] =
+            newSearches[searchIndex] === "none"
+              ? "miss"
+              : "none";
+        } else if (missCountInOtherSearches === 2) {
+          /*
+           * Если зверь есть и два направления уже пустые,
+           * в последней точке доступны только +1 и +3.
+           */
           newSearches[searchIndex] = getNextValue(
             POSITIVE_SEARCH_ORDER,
             newSearches[searchIndex],
           );
         } else {
+          /*
+           * Обычный цикл для клетки со зверем.
+           */
           newSearches[searchIndex] = getNextValue(
             SEARCH_ORDER,
             newSearches[searchIndex],
@@ -374,9 +392,9 @@ export default function HunterBoard() {
         }
 
         /*
-         * В одной клетке может быть только
-         * один результат +1 или +3.
-         * Уже поставленные крестики сохраняются.
+         * В одной клетке может быть только один
+         * положительный результат.
+         * Хрестики при этом не удаляются.
          */
         if (isPositiveResult(newSearches[searchIndex])) {
           newSearches.forEach(
@@ -420,10 +438,12 @@ export default function HunterBoard() {
           Планшет охотника
         </h1>
 
-        <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-300 sm:text-base">
-          Нажимай на верхнюю часть клетки, чтобы отметить найденного зверя. 
-          Нижние три поля — поиск слева, по центру и справа. 
-          Подсказка: выбор происходит посредством последовательных нажатий на одну клеточку :)
+        <p className="mt-2 max-w-3xl text-[13px] leading-relaxed text-slate-500">
+          Нажимай на верхнюю часть клетки, чтобы отметить
+          найденного зверя. Нижние три поля — поиск слева,
+          по центру и справа. Подсказка: выбор происходит
+          посредством последовательных нажатий на одну
+          клеточку :)
         </p>
       </div>
 
@@ -481,7 +501,7 @@ export default function HunterBoard() {
                       onClick={() =>
                         changeAnimal(cellIndex)
                       }
-                      title={`${animal.name}. Нажми, чтобы изменить`}
+                      title={`${animal.name}. Нажмите, чтобы изменить`}
                       aria-label={`Клетка ${
                         cellIndex + 1
                       }: ${animal.name}`}
@@ -680,8 +700,8 @@ export default function HunterBoard() {
             </div>
           )}
 
-          <p className="mt-4 text-[11px] leading-relaxed text-slate-500">
-            Планшет автоматически сохраняется в этом браузере, на случай, если случайно обновишь страницу или закроешь.
+          <p className="mt-4 text-center text-[11px] leading-relaxed text-slate-500">
+            Планшет автоматически сохраняется в этом браузере.
           </p>
         </aside>
       </div>
