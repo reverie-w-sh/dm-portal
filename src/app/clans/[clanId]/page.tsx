@@ -5,24 +5,77 @@ import clansData from "../../../../data/clans.json";
 import playersData from "../../../../data/players.json";
 import ClanSmiles from "@/components/ClanSmiles";
 
+type Player = {
+  cuid: string;
+  nick: string;
+  level: number;
+  reincarnationLevel?: number | null;
+  position?: string;
+  profileUrl?: string;
+};
+
 export async function generateStaticParams() {
-  return clansData.map((c) => ({ clanId: c.clanId }));
+  return clansData.map((clan) => ({
+    clanId: clan.clanId,
+  }));
 }
 
 export default async function ClanDetailPage(
   props: PageProps<"/clans/[clanId]">
 ) {
   const { clanId } = await props.params;
-  const clan = clansData.find((c) => c.clanId === clanId);
 
-  if (!clan) notFound();
+  const clan = clansData.find(
+    (item) => item.clanId === clanId
+  );
 
-  const members = playersData
-    .filter((p) => clan.members.includes(p.cuid))
-    .sort((a, b) => b.level - a.level);
+  if (!clan) {
+    notFound();
+  }
 
-  const hasRealCrest = clan.crestLarge.startsWith("http");
-  const hasPositions = members.some((m) => m.position);
+  const members = (playersData as Player[])
+    .filter((player) =>
+      clan.members.includes(player.cuid)
+    )
+    .sort((a, b) => {
+      /*
+       * Спочатку сортуємо за основним рівнем:
+       * 15, 14, 13...
+       */
+      if (b.level !== a.level) {
+        return b.level - a.level;
+      }
+
+      /*
+       * Якщо основний рівень однаковий,
+       * сортуємо за рівнем реінкарнації:
+       * 15/14, 15/13, 15/12...
+       *
+       * Персонажі без реінкарнації йдуть нижче.
+       */
+      const reincarnationDifference =
+        (b.reincarnationLevel ?? 0) -
+        (a.reincarnationLevel ?? 0);
+
+      if (reincarnationDifference !== 0) {
+        return reincarnationDifference;
+      }
+
+      /*
+       * Якщо рівні повністю однакові,
+       * сортуємо за ніком.
+       */
+      return a.nick.localeCompare(b.nick, "ru", {
+        sensitivity: "base",
+      });
+    });
+
+  const hasRealCrest =
+    clan.crestLarge.startsWith("http");
+
+  const hasPositions = members.some(
+    (member) => member.position
+  );
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
@@ -98,7 +151,7 @@ export default async function ClanDetailPage(
               group-open:rotate-180
             "
           >
-           ⌄
+            ⌄
           </span>
         </summary>
 
@@ -119,19 +172,33 @@ export default async function ClanDetailPage(
           <>
             {/* Desktop header */}
             {hasPositions ? (
-              <div className="hidden sm:grid grid-cols-[32px_1fr_70px_1fr_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
+              <div className="hidden sm:grid grid-cols-[32px_1fr_70px_70px_1fr_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
                 <div />
                 <div>Ник</div>
-                <div className="text-center">Уровень</div>
+                <div className="text-center">
+                  Уровень
+                </div>
+                <div className="text-center">
+                  Реинк.
+                </div>
                 <div>Должность</div>
-                <div className="text-right">Профиль</div>
+                <div className="text-right">
+                  Профиль
+                </div>
               </div>
             ) : (
-              <div className="hidden sm:grid grid-cols-[32px_1fr_70px_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
+              <div className="hidden sm:grid grid-cols-[32px_1fr_70px_70px_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
                 <div />
                 <div>Ник</div>
-                <div className="text-center">Уровень</div>
-                <div className="text-right">Профиль</div>
+                <div className="text-center">
+                  Уровень
+                </div>
+                <div className="text-center">
+                  Реинк.
+                </div>
+                <div className="text-right">
+                  Профиль
+                </div>
               </div>
             )}
 
@@ -141,8 +208,8 @@ export default async function ClanDetailPage(
                 className={[
                   "flex items-center gap-3 px-5 py-3.5 border-b border-white/[0.04] last:border-0 hover:bg-white/[0.03] transition-colors",
                   hasPositions
-                    ? "sm:grid sm:grid-cols-[32px_1fr_70px_1fr_90px]"
-                    : "sm:grid sm:grid-cols-[32px_1fr_70px_90px]",
+                    ? "sm:grid sm:grid-cols-[32px_1fr_70px_70px_1fr_90px]"
+                    : "sm:grid sm:grid-cols-[32px_1fr_70px_70px_90px]",
                 ].join(" ")}
               >
                 {/* Icon */}
@@ -169,7 +236,12 @@ export default async function ClanDetailPage(
 
                   <div className="text-ink-muted text-xs sm:hidden mt-0.5">
                     Ур. {player.level}
-                    {player.position ? ` · ${player.position}` : ""}
+                    {player.reincarnationLevel != null
+                      ? ` · Реинк. ${player.reincarnationLevel}`
+                      : ""}
+                    {player.position
+                      ? ` · ${player.position}`
+                      : ""}
                   </div>
                 </div>
 
@@ -177,6 +249,13 @@ export default async function ClanDetailPage(
                 <div className="hidden sm:flex justify-center">
                   <span className="text-accent font-black text-base">
                     {player.level}
+                  </span>
+                </div>
+
+                {/* Reincarnation */}
+                <div className="hidden sm:flex justify-center">
+                  <span className="text-ink-dim font-semibold text-sm">
+                    {player.reincarnationLevel ?? "—"}
                   </span>
                 </div>
 
@@ -201,7 +280,9 @@ export default async function ClanDetailPage(
                       Профиль ↗
                     </a>
                   ) : (
-                    <span className="text-xs text-ink-muted">—</span>
+                    <span className="text-xs text-ink-muted">
+                      —
+                    </span>
                   )}
                 </div>
               </div>
