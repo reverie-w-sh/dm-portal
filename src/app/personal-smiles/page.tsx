@@ -1,7 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import {
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import personalSmilesData from "../../../data/personal-smiles.json";
+import lastSync from "../../../data/last-sync.json";
+import EventsFeed from "@/components/EventsFeed";
 
 type PlayerWithSmiles = {
   cuid: string;
@@ -18,11 +24,26 @@ type PlayerWithSmiles = {
 
 type SortType = "count" | "nick";
 
+function formatLastSync(iso: string): string {
+  return new Date(iso).toLocaleString("uk-UA", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+}
+
 export default function PersonalSmilesPage() {
-  const [sortType, setSortType] = useState<SortType>("count");
-  const [openedPlayers, setOpenedPlayers] = useState<Set<string>>(
-    new Set()
-  );
+  const [sortType, setSortType] =
+    useState<SortType>("count");
+
+  const [openedPlayers, setOpenedPlayers] =
+    useState<Set<string>>(new Set());
+
+  const playerElements = useRef<
+    Map<string, HTMLElement>
+  >(new Map());
 
   const players = useMemo(() => {
     const result = [
@@ -39,7 +60,8 @@ export default function PersonalSmilesPage() {
 
     return result.sort((a, b) => {
       const countDifference =
-        b.personalSmilesCount - a.personalSmilesCount;
+        b.personalSmilesCount -
+        a.personalSmilesCount;
 
       if (countDifference !== 0) {
         return countDifference;
@@ -65,6 +87,30 @@ export default function PersonalSmilesPage() {
     });
   }
 
+  function openPlayerFromEvent(cuid: string) {
+    setOpenedPlayers((current) => {
+      const next = new Set(current);
+      next.add(cuid);
+
+      return next;
+    });
+
+    /*
+     * Даём React время развернуть коллекцию,
+     * после чего плавно прокручиваем страницу
+     * к нужному игроку.
+     */
+    window.setTimeout(() => {
+      const element =
+        playerElements.current.get(cuid);
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }
+
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
       <div className="mb-8">
@@ -73,16 +119,28 @@ export default function PersonalSmilesPage() {
             🙂
           </div>
 
-          <div>
+          <div className="min-w-0 flex-1">
             <h1 className="text-3xl font-black text-ink tracking-tight">
               Особисті колекції смайликів
             </h1>
 
             <p className="text-ink-muted mt-2 max-w-2xl">
-              Тут зібрані особисті смайлики гравців ДМ.
-              Колекцію кожного гравця можна розгорнути та
-              переглянути прямо на сторінці.
+              Тут зібрані особисті смайлики гравців
+              ДМ. Колекцію кожного гравця можна
+              розгорнути та переглянути прямо на
+              сторінці.
             </p>
+
+            <p className="text-ink-muted/70 text-xs mt-2">
+              Оновлення даних:{" "}
+              {formatLastSync(lastSync.updatedAt)}
+            </p>
+
+            <EventsFeed
+              scope="personal-smiles"
+              variant="light"
+              onOpenPlayer={openPlayerFromEvent}
+            />
           </div>
         </div>
 
@@ -141,7 +199,8 @@ export default function PersonalSmilesPage() {
       ) : (
         <div className="space-y-4">
           {players.map((player) => {
-            const isOpened = openedPlayers.has(player.cuid);
+            const isOpened =
+              openedPlayers.has(player.cuid);
 
             const clanCrestUrl = player.clanId
               ? `https://dm-game.com/pics/clanpic/clan_${player.clanId}.gif`
@@ -150,7 +209,20 @@ export default function PersonalSmilesPage() {
             return (
               <article
                 key={player.cuid}
-                className="glass rounded-2xl overflow-hidden border border-white/30 transition-shadow hover:shadow-[0_12px_35px_rgba(0,0,0,.08)]"
+                id={`player-${player.cuid}`}
+                ref={(element) => {
+                  if (element) {
+                    playerElements.current.set(
+                      player.cuid,
+                      element
+                    );
+                  } else {
+                    playerElements.current.delete(
+                      player.cuid
+                    );
+                  }
+                }}
+                className="glass scroll-mt-6 rounded-2xl overflow-hidden border border-white/30 transition-shadow hover:shadow-[0_12px_35px_rgba(0,0,0,.08)]"
               >
                 <div className="p-5 md:p-6">
                   <div className="flex flex-col md:flex-row md:items-center gap-5">
@@ -170,13 +242,16 @@ export default function PersonalSmilesPage() {
                           className="inline-flex items-center gap-2 text-xl font-black text-ink hover:opacity-65 transition-opacity break-words"
                         >
                           {player.nick}
+
                           <span className="text-xs font-normal">
                             ↗
                           </span>
                         </a>
 
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-2 text-sm text-ink-muted">
-                          <span>{player.level} рівень</span>
+                          <span>
+                            {player.level} рівень
+                          </span>
 
                           {player.clanName && (
                             <span className="flex items-center gap-2">
@@ -191,7 +266,9 @@ export default function PersonalSmilesPage() {
                                 />
                               )}
 
-                              <span>{player.clanName}</span>
+                              <span>
+                                {player.clanName}
+                              </span>
                             </span>
                           )}
                         </div>
@@ -232,7 +309,10 @@ export default function PersonalSmilesPage() {
                   <div className="border-t border-black/10 bg-white/20 px-5 py-6 md:px-6">
                     <div className="flex flex-wrap items-center justify-center gap-3">
                       {player.personalSmiles.map(
-                        (smileUrl, smileIndex) => (
+                        (
+                          smileUrl,
+                          smileIndex
+                        ) => (
                           <a
                             key={`${player.cuid}-${smileUrl}`}
                             href={smileUrl}
@@ -246,9 +326,9 @@ export default function PersonalSmilesPage() {
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={smileUrl}
-                              alt={`Смайлик ${player.nick} ${
-                                smileIndex + 1
-                              }`}
+                              alt={`Смайлик ${
+                                player.nick
+                              } ${smileIndex + 1}`}
                               loading="lazy"
                               className="max-w-[100px] max-h-[100px] object-contain"
                             />
