@@ -29,6 +29,7 @@ interface Player {
   cuid: string;
   nick: string;
   level: number;
+  reincarnationLevel?: number | null;
   clanId: string;
   profileUrl?: string;
   position?: string;
@@ -74,6 +75,7 @@ async function main(): Promise<void> {
 
      if (parsed.nick  !== null) player.nick  = parsed.nick;
       if (parsed.level !== null) player.level = parsed.level;
+      player.reincarnationLevel = parsed.reincarnationLevel;
       if (parsed.clanId !== null) player.clanId = parsed.clanId;
       if (parsed.clanName !== null) player.clanName = parsed.clanName;
       if (parsed.clanIcon !== null) player.clanIcon = parsed.clanIcon;
