@@ -1122,7 +1122,7 @@
   {
     "cuid": "22733",
     "nick": "Bukashka",
-    "level": 9,
+    "level": 11,
     "clanId": "235",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22733",
     "position": "Букашечка",
@@ -1202,7 +1202,7 @@
   {
     "cuid": "1960",
     "nick": "Таракашка",
-    "level": 11,
+    "level": 17,
     "clanId": "200",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1960",
     "position": "Насекомое",
@@ -1413,11 +1413,11 @@
     "cuid": "3358",
     "nick": "Jeweler",
     "level": 11,
-    "clanId": "200",
+    "clanId": "",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3358",
-    "position": "Jeweler",
-    "clanIcon": "clan_200.gif",
-    "clanName": "Грезы Единорога"
+    "position": "",
+    "clanIcon": "",
+    "clanName": ""
   },
   {
     "cuid": "10338",
@@ -2522,7 +2522,7 @@
   {
     "cuid": "12284",
     "nick": "Bloodthirsty warrior",
-    "level": 8,
+    "level": 10,
     "clanId": "216",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=12284",
     "position": "Лайтовый:)",
@@ -2743,10 +2743,10 @@
     "cuid": "27105",
     "nick": "Mentalist",
     "level": 6,
-    "clanId": "278",
+    "clanId": "",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27105",
-    "position": "Член сообщества",
-    "clanIcon": "clan_278.gif",
-    "clanName": "die Wölfchen"
+    "position": "",
+    "clanIcon": "",
+    "clanName": ""
   }
 ]
