@@ -84,9 +84,8 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/smileys/good-morning-mug.gif",  title: "Доброе утро",         category: "smileys" },
   { src: "/gallery/smileys/coffee-for-you.gif",    title: "Кофе для тебя",       category: "smileys" },
   { src: "/gallery/smileys/morning-coffee.gif",    title: "Кавуся",       category: "smileys" },
-  { src: "/gallery/smileys/wolf-clan-s-1.gif",    title: "Волчонок и монитор 1",       category: "smileys" },
-  { src: "/gallery/smileys/wolf-clan-s-2.gif",    title: "Волчонок и монитор 2",       category: "smileys" },
   { src: "/gallery/smileys/wolf-clan-s-3.gif",    title: "Волчонок и монитор 3",       category: "smileys" },
+  { src: "/gallery/smileys/wolf-clan-s-1.gif",    title: "Волчонок и монитор 1",       category: "smileys" },
 ];
 
 function scrollToCategory(key: Category) {
