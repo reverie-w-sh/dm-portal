@@ -42,8 +42,13 @@ function printResult(r: ParsedProfile, index: number, total: number): void {
 }
 
 const EMPTY: ParsedProfile = {
-  cuid: null, nick: null, level: null,
-  clanId: null, clanName: null, clanIcon: null,
+  cuid: null,
+  nick: null,
+  level: null,
+  reincarnationLevel: null,
+  clanId: null,
+  clanName: null,
+  clanIcon: null,
   position: "",
 };
 
