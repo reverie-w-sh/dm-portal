@@ -2,10 +2,11 @@ export interface ParsedProfile {
   cuid: string | null;
   nick: string | null;
   level: number | null;
+  reincarnationLevel: number | null;
   clanId: string | null;
   clanName: string | null;
   clanIcon: string | null;
-  position: string;       // "" when absent; render as "—" in UI
+  position: string;
 }
 
 /**
@@ -39,6 +40,49 @@ export function parseProfileHtml(html: string): ParsedProfile {
   const nick     = snbArgs[2]  ?? null;
   const levelRaw = snbArgs[3];
   const level    = levelRaw !== undefined ? parseInt(levelRaw, 10) : null;
+  /*
+ * Возрождение:
+ *
+ * <b>Возрождение :</b>
+ * ...
+ * Nick[12]
+ */
+
+let reincarnationLevel: number | null = null;
+
+const rebirthMatch =
+  /Возрождение[\s\S]{0,300}?\[(\d+)\]/i.exec(html);
+
+if (rebirthMatch) {
+  reincarnationLevel = parseInt(rebirthMatch[1], 10);
+}
+
+/*
+ * В ДМ профиль может быть открыт как на основном персонаже,
+ * так и на реинкарнации.
+ *
+ * Всегда сохраняем:
+ *
+ * level               = большее число
+ * reincarnationLevel  = меньшее число
+ */
+let finalLevel = level;
+let finalReincarnationLevel = reincarnationLevel;
+
+if (
+  level !== null &&
+  reincarnationLevel !== null
+) {
+  finalLevel = Math.max(
+    level,
+    reincarnationLevel
+  );
+
+  finalReincarnationLevel = Math.min(
+    level,
+    reincarnationLevel
+  );
+}
   const clanIcon = snbArgs[8]  ?? null;
   const clanName = snbArgs[10] ?? null;
 
@@ -81,5 +125,14 @@ export function parseProfileHtml(html: string): ParsedProfile {
     }
   }
 
-  return { cuid, nick, level, clanId, clanName, clanIcon, position };
+  return {
+  cuid,
+  nick,
+  level: finalLevel,
+  reincarnationLevel: finalReincarnationLevel,
+  clanId,
+  clanName,
+  clanIcon,
+  position,
+};
 }
