@@ -641,7 +641,7 @@ export default function HunterBoard() {
 
             <StatRow
               emoji="🐻"
-              name="Медведи"
+              name="Медведь"
               value={statistics.bear}
               total={1}
             />
