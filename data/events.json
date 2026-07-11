@@ -1,5 +1,33 @@
 [
   {
+    "id": "01409f4e-9581-4b03-906d-8891f36e65db",
+    "syncId": "2026-07-11T22:02:58.308Z",
+    "createdAt": "2026-07-11T22:02:58.308Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "3419",
+    "characterName": "Prophet",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3419",
+    "clanId": "206",
+    "clanName": "Бомжи Кровожадного Мира",
+    "oldPosition": "",
+    "newPosition": "Prophet"
+  },
+  {
+    "id": "263429a6-ec48-4487-9a92-cd152a0144d2",
+    "syncId": "2026-07-11T22:02:58.308Z",
+    "createdAt": "2026-07-11T22:02:58.308Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "7450",
+    "characterName": "13Strannik",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7450",
+    "clanId": "206",
+    "clanName": "Бомжи Кровожадного Мира",
+    "oldPosition": "123",
+    "newPosition": ""
+  },
+  {
     "id": "a4c920ae-d76c-492a-a86a-7d6a68786219",
     "syncId": "2026-07-11T20:51:01.205Z",
     "createdAt": "2026-07-11T20:51:01.205Z",
