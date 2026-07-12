@@ -104,20 +104,19 @@ export default function ClanCard({
         </div>
 
         {clan.allianceId && clan.allianceName && (
-          <div className="hidden sm:flex shrink-0 items-center justify-end gap-2 max-w-[260px] ml-4 text-right">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={allianceSmallUrl}
-              alt=""
-              width={24}
-              height={24}
-              className="w-6 h-6 object-contain shrink-0"
-            />
+<div className="hidden sm:flex shrink-0 items-center justify-end gap-2 max-w-[260px] ml-4">
+  <span className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors truncate text-right">
+    {clan.allianceName}
+  </span>
 
-            <span className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors truncate">
-              {clan.allianceName}
-            </span>
-          </div>
+  <img
+    src={allianceSmallUrl}
+    alt=""
+    width={24}
+    height={24}
+    className="w-6 h-6 object-contain shrink-0"
+  />
+</div>
         )}
       </div>
     </Link>
