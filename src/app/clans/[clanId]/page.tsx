@@ -1,9 +1,22 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import clansData from "../../../../data/clans.json";
-import playersData from "../../../../data/players.json";
+import clansJson from "../../../../data/clans.json";
+import playersJson from "../../../../data/players.json";
 import ClanSmiles from "@/components/ClanSmiles";
+
+type Clan = {
+  clanId: string;
+  name: string;
+  icon?: string;
+  slogan?: string;
+  crestSmall?: string;
+  crestLarge: string;
+  membersCount: number;
+  members: string[];
+  allianceId?: string;
+  allianceName?: string;
+};
 
 type Player = {
   cuid: string;
@@ -14,6 +27,9 @@ type Player = {
   profileUrl?: string;
 };
 
+const clansData = clansJson as Clan[];
+const playersData = playersJson as Player[];
+
 export async function generateStaticParams() {
   return clansData.map((clan) => ({
     clanId: clan.clanId,
@@ -21,38 +37,27 @@ export async function generateStaticParams() {
 }
 
 export default async function ClanDetailPage(
-  props: PageProps<"/clans/[clanId]">
+  props: PageProps<"/clans/[clanId]">,
 ) {
   const { clanId } = await props.params;
 
   const clan = clansData.find(
-    (item) => item.clanId === clanId
+    (item) => item.clanId === clanId,
   );
 
   if (!clan) {
     notFound();
   }
 
-  const members = (playersData as Player[])
+  const members = playersData
     .filter((player) =>
-      clan.members.includes(player.cuid)
+      clan.members.includes(player.cuid),
     )
     .sort((a, b) => {
-      /*
-       * Спочатку сортуємо за основним рівнем:
-       * 15, 14, 13...
-       */
       if (b.level !== a.level) {
         return b.level - a.level;
       }
 
-      /*
-       * Якщо основний рівень однаковий,
-       * сортуємо за рівнем реінкарнації:
-       * 15/14, 15/13, 15/12...
-       *
-       * Персонажі без реінкарнації йдуть нижче.
-       */
       const reincarnationDifference =
         (b.reincarnationLevel ?? 0) -
         (a.reincarnationLevel ?? 0);
@@ -61,21 +66,40 @@ export default async function ClanDetailPage(
         return reincarnationDifference;
       }
 
-      /*
-       * Якщо рівні повністю однакові,
-       * сортуємо за ніком.
-       */
-      return a.nick.localeCompare(b.nick, "ru", {
-        sensitivity: "base",
-      });
+      return a.nick.localeCompare(
+        b.nick,
+        "ru",
+        { sensitivity: "base" },
+      );
     });
+
+  const allianceClans =
+    clan.allianceId
+      ? clansData
+          .filter(
+            (item) =>
+              item.allianceId === clan.allianceId &&
+              item.clanId !== clan.clanId,
+          )
+          .sort((a, b) =>
+            a.name.localeCompare(
+              b.name,
+              "ru",
+              { sensitivity: "base" },
+            ),
+          )
+      : [];
 
   const hasRealCrest =
     clan.crestLarge.startsWith("http");
 
   const hasPositions = members.some(
-    (member) => member.position
+    (member) => member.position,
   );
+
+  const allianceLargeUrl = clan.allianceId
+    ? `https://dm-game.com/pics/alc/ali_${clan.allianceId}_b.jpg`
+    : "";
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
@@ -86,71 +110,118 @@ export default async function ClanDetailPage(
         ← Кланы и состав
       </Link>
 
-      {/* Clan header */}
       <div className="glass rounded-2xl p-6 mb-6">
-        <div className="flex flex-col sm:flex-row gap-5 items-start">
-          <div className="shrink-0">
-            {hasRealCrest ? (
-              <div className="relative w-24 h-24 rounded-xl overflow-hidden border border-white/10">
-                <Image
-                  src={clan.crestLarge}
-                  alt={`${clan.name} герб`}
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
+        <div className="flex flex-col lg:flex-row gap-7 items-start">
+          <div className="flex flex-col sm:flex-row gap-5 items-start flex-1 min-w-0">
+            <div className="shrink-0">
+              {hasRealCrest ? (
+                <div className="relative w-24 h-24 rounded-xl overflow-hidden border border-white/10">
+                  <Image
+                    src={clan.crestLarge}
+                    alt={`${clan.name} герб`}
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
+                </div>
+              ) : (
+                <div className="w-24 h-24 glass rounded-xl flex items-center justify-center text-4xl">
+                  {clan.icon ?? "🛡"}
+                </div>
+              )}
+            </div>
+
+            <div className="flex-1 min-w-0">
+              <h1 className="text-2xl sm:text-3xl font-black text-ink tracking-tight mb-1">
+                {clan.name}
+              </h1>
+
+              {clan.slogan && (
+                <p className="text-ink-muted text-sm mb-3">
+                  {clan.slogan}
+                </p>
+              )}
+
+              <div className="text-sm text-ink-muted">
+                {clan.membersCount} участников
               </div>
-            ) : (
-              <div className="w-24 h-24 glass rounded-xl flex items-center justify-center text-4xl">
-                {clan.icon ?? "🛡"}
-              </div>
-            )}
-          </div>
-
-          <div className="flex-1">
-            <h1 className="text-2xl sm:text-3xl font-black text-ink tracking-tight mb-1">
-              {clan.name}
-            </h1>
-
-            {clan.slogan && (
-              <p className="text-ink-muted text-sm mb-3">
-                {clan.slogan}
-              </p>
-            )}
-
-            <div className="text-sm text-ink-muted">
-              {clan.membersCount} участников
             </div>
           </div>
+
+          {clan.allianceId && clan.allianceName && (
+            <aside className="w-full lg:w-[360px] lg:border-l lg:border-black/10 lg:pl-7">
+              <div className="flex items-center gap-4">
+                <div className="relative w-20 h-20 rounded-xl overflow-hidden border border-black/10 bg-white/40 shrink-0">
+                  <Image
+                    src={allianceLargeUrl}
+                    alt={`Альянс ${clan.allianceName}`}
+                    fill
+                    unoptimized
+                    className="object-contain"
+                  />
+                </div>
+
+                <div className="min-w-0">
+                  <div className="text-[11px] uppercase tracking-wider text-ink-muted">
+                    Альянс
+                  </div>
+
+                  <div className="font-black text-ink text-lg mt-1">
+                    {clan.allianceName}
+                  </div>
+                </div>
+              </div>
+
+              {allianceClans.length > 0 && (
+                <div className="mt-5">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-ink-muted mb-2">
+                    В одном альянсе с:
+                  </div>
+
+                  <div className="space-y-2">
+                    {allianceClans.map(
+                      (allianceClan) => (
+                        <Link
+                          key={allianceClan.clanId}
+                          href={`/clans/${allianceClan.clanId}`}
+                          className="flex items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-white/40 transition-colors"
+                        >
+                          {allianceClan.crestSmall ? (
+                            <Image
+                              src={allianceClan.crestSmall}
+                              alt=""
+                              width={19}
+                              height={19}
+                              unoptimized
+                              className="w-[19px] h-[19px] object-contain shrink-0"
+                            />
+                          ) : (
+                            <span className="w-[19px] text-center">
+                              {allianceClan.icon ?? "🛡"}
+                            </span>
+                          )}
+
+                          <span className="text-sm font-semibold text-ink truncate">
+                            {allianceClan.name}
+                          </span>
+                        </Link>
+                      ),
+                    )}
+                  </div>
+                </div>
+              )}
+            </aside>
+          )}
         </div>
       </div>
 
-      {/* Clan smiles */}
       <details className="group glass rounded-2xl mb-6 overflow-hidden">
-        <summary
-          className="
-            flex items-center justify-between
-            px-5 py-4
-            cursor-pointer select-none
-            list-none
-            hover:bg-white/[0.03]
-            transition-colors
-            [&::-webkit-details-marker]:hidden
-          "
-        >
-          <div className="flex items-center gap-2">
-            <span className="text-sm font-semibold text-ink-muted uppercase tracking-wider">
-              Клановые смайлики :)
-            </span>
-          </div>
+        <summary className="flex items-center justify-between px-5 py-4 cursor-pointer select-none list-none hover:bg-white/[0.03] transition-colors [&::-webkit-details-marker]:hidden">
+          <span className="text-sm font-semibold text-ink-muted uppercase tracking-wider">
+            Клановые смайлики :)
+          </span>
 
-          <span
-            className="
-              text-ink-muted text-lg
-              transition-transform duration-200
-              group-open:rotate-180
-            "
-          >
+          <span className="text-ink-muted text-lg transition-transform duration-200 group-open:rotate-180">
             ⌄
           </span>
         </summary>
@@ -160,7 +231,6 @@ export default async function ClanDetailPage(
         </div>
       </details>
 
-      {/* Members */}
       <div className="glass rounded-2xl overflow-hidden">
         <div className="px-5 py-3 border-b border-white/[0.06]">
           <h2 className="text-sm font-semibold text-ink-muted uppercase tracking-wider">
@@ -170,35 +240,22 @@ export default async function ClanDetailPage(
 
         {members.length > 0 ? (
           <>
-            {/* Desktop header */}
             {hasPositions ? (
               <div className="hidden sm:grid grid-cols-[32px_1fr_70px_70px_1fr_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
                 <div />
                 <div>Ник</div>
-                <div className="text-center">
-                  Уровень
-                </div>
-                <div className="text-center">
-                  Реинк.
-                </div>
+                <div className="text-center">Уровень</div>
+                <div className="text-center">Реинк.</div>
                 <div>Должность</div>
-                <div className="text-right">
-                  Профиль
-                </div>
+                <div className="text-right">Профиль</div>
               </div>
             ) : (
               <div className="hidden sm:grid grid-cols-[32px_1fr_70px_70px_90px] gap-3 px-5 py-2 text-[11px] font-medium text-ink-muted uppercase tracking-wider border-b border-white/[0.05]">
                 <div />
                 <div>Ник</div>
-                <div className="text-center">
-                  Уровень
-                </div>
-                <div className="text-center">
-                  Реинк.
-                </div>
-                <div className="text-right">
-                  Профиль
-                </div>
+                <div className="text-center">Уровень</div>
+                <div className="text-center">Реинк.</div>
+                <div className="text-right">Профиль</div>
               </div>
             )}
 
@@ -212,7 +269,6 @@ export default async function ClanDetailPage(
                     : "sm:grid sm:grid-cols-[32px_1fr_70px_70px_90px]",
                 ].join(" ")}
               >
-                {/* Icon */}
                 <div className="w-7 h-7 rounded overflow-hidden shrink-0 border border-white/10 flex items-center justify-center text-sm">
                   {clan.crestSmall ? (
                     <Image
@@ -228,7 +284,6 @@ export default async function ClanDetailPage(
                   )}
                 </div>
 
-                {/* Nick */}
                 <div className="flex-1 min-w-0">
                   <span className="font-medium text-ink text-sm">
                     {player.nick}
@@ -245,21 +300,18 @@ export default async function ClanDetailPage(
                   </div>
                 </div>
 
-                {/* Level */}
                 <div className="hidden sm:flex justify-center">
                   <span className="text-accent font-black text-base">
                     {player.level}
                   </span>
                 </div>
 
-                {/* Reincarnation */}
                 <div className="hidden sm:flex justify-center">
                   <span className="text-ink-dim font-semibold text-sm">
                     {player.reincarnationLevel ?? "—"}
                   </span>
                 </div>
 
-                {/* Position */}
                 {hasPositions && (
                   <div className="hidden sm:block min-w-0">
                     <span className="text-ink-dim text-sm truncate block">
@@ -268,7 +320,6 @@ export default async function ClanDetailPage(
                   </div>
                 )}
 
-                {/* Profile */}
                 <div className="text-right shrink-0">
                   {player.profileUrl ? (
                     <a
