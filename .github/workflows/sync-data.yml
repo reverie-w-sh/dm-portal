@@ -2,9 +2,8 @@ name: Sync clan data from dm-game.com
 
 on:
   schedule:
-    # Дважды в день: 03:00 и 15:00 UTC
     - cron: "0 3,15 * * *"
-  workflow_dispatch: {} # позволяет запустить вручную кнопкой на GitHub
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -41,16 +40,19 @@ jobs:
       - name: Step 4 — rebuild clan members lists
         run: npx tsx scripts/rebuild-clan-members.ts
 
-      - name: Step 5 — update clan smiles count
+      - name: Step 5 — update clan alliances
+        run: npx tsx scripts/update-clan-alliances.ts
+
+      - name: Step 6 — update clan smiles count
         run: npm run update-clan-smiles
 
-      - name: Step 6 — update personal smiles
+      - name: Step 7 — update personal smiles
         run: npx tsx scripts/update-personal-smiles.ts
 
-      - name: Step 7 — write sync timestamp
+      - name: Step 8 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
-      - name: Step 8 — build events history
+      - name: Step 9 — build events history
         run: npx tsx scripts/build-events.ts
 
       - name: Commit and push updated data
