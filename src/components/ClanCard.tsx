@@ -13,18 +13,80 @@ interface Clan {
   allianceName?: string;
 }
 
+type ClanCardProps = {
+  clan: Clan;
+  comparisonMode?: boolean;
+  selectedForComparison?: boolean;
+  comparisonDisabled?: boolean;
+  onToggleComparison?: (clanId: string) => void;
+};
+
 export default function ClanCard({
   clan,
-}: {
-  clan: Clan;
-}) {
+  comparisonMode = false,
+  selectedForComparison = false,
+  comparisonDisabled = false,
+  onToggleComparison,
+}: ClanCardProps) {
   const allianceSmallUrl = clan.allianceId
     ? `https://dm-game.com/pics/alc/ali_${clan.allianceId}.gif`
     : "";
 
   return (
-    <Link href={`/clans/${clan.clanId}`}>
-      <div className="glass glass-hover rounded-2xl p-5 flex items-center gap-[10px] cursor-pointer group">
+    <div
+      className={[
+        "glass glass-hover rounded-2xl flex items-center cursor-pointer group transition-all",
+        selectedForComparison
+          ? "ring-2 ring-accent/45 bg-accent/[0.06]"
+          : "",
+      ].join(" ")}
+    >
+      {comparisonMode && (
+        <button
+          type="button"
+          onClick={() => onToggleComparison?.(clan.clanId)}
+          disabled={comparisonDisabled && !selectedForComparison}
+          aria-pressed={selectedForComparison}
+          title={
+            selectedForComparison
+              ? "Убрать из сравнения"
+              : comparisonDisabled
+                ? "Можно выбрать максимум 3 клана"
+                : "Добавить к сравнению"
+          }
+          className={[
+            "ml-4 shrink-0 w-6 h-6 rounded-lg border flex items-center justify-center transition-all",
+            selectedForComparison
+              ? "border-accent/60 bg-accent/15 text-accent"
+              : "border-black/10 bg-white/35 text-ink-muted hover:bg-white/70 hover:text-ink",
+            comparisonDisabled && !selectedForComparison
+              ? "opacity-35 cursor-not-allowed"
+              : "",
+          ].join(" ")}
+        >
+          {selectedForComparison ? (
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="w-4 h-4"
+              aria-hidden="true"
+            >
+              <path d="m5 12 4 4L19 6" />
+            </svg>
+          ) : (
+            <span className="w-2 h-2 rounded-full border border-current" />
+          )}
+        </button>
+      )}
+
+      <Link
+        href={`/clans/${clan.clanId}`}
+        className="flex-1 min-w-0 p-5 flex items-center gap-[10px]"
+      >
         <div
           className="shrink-0 flex items-center justify-center"
           style={{ width: 19, height: 19 }}
@@ -37,10 +99,7 @@ export default function ClanCard({
               width={19}
               height={19}
               className="clan-icon"
-              style={{
-                objectFit: "contain",
-                display: "block",
-              }}
+              style={{ objectFit: "contain", display: "block" }}
             />
           ) : (
             <span style={{ fontSize: 14 }}>
@@ -74,7 +133,6 @@ export default function ClanCard({
                 <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
               </svg>
-
               <span>{clan.membersCount}</span>
             </span>
 
@@ -97,28 +155,28 @@ export default function ClanCard({
                 <path d="M9 9h.01" />
                 <path d="M15 9h.01" />
               </svg>
-
               <span>{clan.smilesCount ?? 0}</span>
             </span>
           </div>
         </div>
 
         {clan.allianceId && clan.allianceName && (
-<div className="hidden sm:flex shrink-0 items-center justify-end gap-2 w-[280px] ml-4">
-  <span className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors truncate text-right">
-    {clan.allianceName}
-  </span>
+          <div className="hidden sm:flex shrink-0 items-center justify-end gap-2 w-[280px] ml-4">
+            <span className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors truncate text-right">
+              {clan.allianceName}
+            </span>
 
-  <img
-    src={allianceSmallUrl}
-    alt=""
-    width={24}
-    height={24}
-    className="w-6 h-6 object-contain shrink-0"
-  />
-</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={allianceSmallUrl}
+              alt=""
+              width={24}
+              height={24}
+              className="w-6 h-6 object-contain shrink-0"
+            />
+          </div>
         )}
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
