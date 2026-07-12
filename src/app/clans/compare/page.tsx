@@ -575,12 +575,10 @@ export default async function CompareClansPage({
       </div>
 
       <p className="text-center text-xs text-ink-muted mt-7">
-  <span>
+
     🙂 Смайлик на нос = количество клановых смайликов ÷ количество участников.
     <br />
     Да, мы тоже не знаем, зачем это считать))
-  </span>
-</div>
       </p>
     </div>
   );
