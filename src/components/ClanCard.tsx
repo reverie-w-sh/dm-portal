@@ -104,7 +104,7 @@ export default function ClanCard({
         </div>
 
         {clan.allianceId && clan.allianceName && (
-<div className="hidden sm:flex shrink-0 items-center justify-end gap-2 max-w-[260px] ml-4">
+<div className="hidden sm:flex shrink-0 items-center justify-end gap-2 w-[280px] ml-4">
   <span className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors truncate text-right">
     {clan.allianceName}
   </span>
