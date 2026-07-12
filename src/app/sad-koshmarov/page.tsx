@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import gardenMap from "@/data/garden-map.json";
+import gardenMap from "../../../data/garden-map.json";
 
 const MIN_CELL = 12;
 const MAX_CELL = 34;
