@@ -6,16 +6,35 @@ export interface ParsedProfile {
   clanId: string | null;
   clanName: string | null;
   clanIcon: string | null;
+  allianceId: string | null;
+  allianceName: string | null;
   position: string;
 }
 
+/**
+ * Extract a player profile from raw HTML of a dm-game.com profile page.
+ *
+ * level:
+ *   Always stores the greater of the active level and rebirth level.
+ *
+ * reincarnationLevel:
+ *   Always stores the smaller of the two levels.
+ *
+ * allianceId/allianceName:
+ *   Read from images such as:
+ *     /pics/alc/ali_23.gif
+ *     /pics/alc/ali_23_b.jpg
+ *   and alt/title="Альянс: Тени Прошлого".
+ */
 export function parseProfileHtml(html: string): ParsedProfile {
   const snbRaw = /showNameBlock\(([^)]+)\)/.exec(html)?.[1] ?? null;
 
   const snbArgs: string[] = [];
+
   if (snbRaw) {
     const re = /'([^']*)'/g;
     let match: RegExpExecArray | null;
+
     while ((match = re.exec(snbRaw)) !== null) {
       snbArgs.push(match[1]);
     }
@@ -33,8 +52,14 @@ export function parseProfileHtml(html: string): ParsedProfile {
   const clanIcon = snbArgs[8] ?? null;
   const clanName = snbArgs[10] ?? null;
 
+  // ── Reincarnation level ──────────────────────────────────────────────────
+  const reincarnationBlock =
+    /<b>\s*Возрождение\s*:?\s*<\/b>([\s\S]*?)(?:<br>\s*<br>|<\/div>)/i.exec(
+      html,
+    )?.[1] ?? "";
+
   const reincarnationMatch =
-    /Возрождение\s*:?\s*[\s\S]{0,500}?\[(\d+)\]/i.exec(html);
+    /\[(\d+)\]/i.exec(reincarnationBlock);
 
   const secondLevel = reincarnationMatch
     ? Number.parseInt(reincarnationMatch[1], 10)
@@ -53,6 +78,7 @@ export function parseProfileHtml(html: string): ParsedProfile {
     reincarnationLevel = Math.min(activeLevel, secondLevel);
   }
 
+  // ── Clan ─────────────────────────────────────────────────────────────────
   let clanId: string | null = null;
 
   if (clanIcon) {
@@ -67,6 +93,55 @@ export function parseProfileHtml(html: string): ParsedProfile {
     clanId = "";
   }
 
+  // ── Alliance ─────────────────────────────────────────────────────────────
+  // null = profile could not be parsed
+  // ""   = profile was parsed and the character's clan has no alliance
+  let allianceId: string | null = snbRaw ? "" : null;
+  let allianceName: string | null = snbRaw ? "" : null;
+
+  const imageTags = html.match(/<img\b[^>]*>/gi) ?? [];
+
+  for (const tag of imageTags) {
+    const src =
+      /\bsrc\s*=\s*["']([^"']+)["']/i.exec(tag)?.[1] ?? "";
+
+    const allianceIdMatch =
+      /\/pics\/alc\/ali_(\d+)(?:_b)?\.(?:gif|jpe?g|png)/i.exec(src);
+
+    if (!allianceIdMatch) {
+      continue;
+    }
+
+    allianceId = allianceIdMatch[1];
+
+    const alt =
+      /\balt\s*=\s*["']([^"']*)["']/i.exec(tag)?.[1] ?? "";
+
+    const title =
+      /\btitle\s*=\s*["']([^"']*)["']/i.exec(tag)?.[1] ?? "";
+
+    const label = alt || title;
+    const nameMatch = /Альянс\s*:\s*(.+)/i.exec(label);
+
+    if (nameMatch?.[1]) {
+      allianceName = nameMatch[1].trim();
+    }
+  }
+
+  /*
+   * Sometimes the small alliance icon has no alt/title while the large icon
+   * contains the name. Search the full HTML independently from the ID.
+   */
+  if (allianceId && !allianceName) {
+    const allianceNameMatch =
+      /(?:alt|title)\s*=\s*["']Альянс\s*:\s*([^"']+)["']/i.exec(html);
+
+    if (allianceNameMatch?.[1]) {
+      allianceName = allianceNameMatch[1].trim();
+    }
+  }
+
+  // ── Position ─────────────────────────────────────────────────────────────
   const descAdd =
     /<div[^>]*id="set_DescAdd"[^>]*>([\s\S]*?)<\/div>/.exec(html)?.[1] ?? "";
 
@@ -96,6 +171,8 @@ export function parseProfileHtml(html: string): ParsedProfile {
     clanId,
     clanName,
     clanIcon,
+    allianceId,
+    allianceName,
     position,
   };
 }

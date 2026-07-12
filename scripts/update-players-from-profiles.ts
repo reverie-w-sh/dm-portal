@@ -1,6 +1,10 @@
 /**
  * Fetches live profile pages for every real player in data/players.json
  * and updates their fields from the parsed HTML.
+ *
+ * Fields updated:
+ * nick, level, reincarnationLevel, clanId, clanName, clanIcon,
+ * allianceId, allianceName, position, profileUrl
  */
 
 import * as fs from "node:fs";
@@ -21,6 +25,8 @@ interface Player {
   position?: string;
   clanName?: string;
   clanIcon?: string;
+  allianceId?: string;
+  allianceName?: string;
   [key: string]: unknown;
 }
 
@@ -56,6 +62,7 @@ async function main(): Promise<void> {
   let updatedCount = 0;
   let posFoundCount = 0;
   let emptyPosCount = 0;
+  let alliancesFoundCount = 0;
   let errorCount = 0;
 
   for (let index = 0; index < realPlayers.length; index++) {
@@ -97,6 +104,14 @@ async function main(): Promise<void> {
         player.clanIcon = parsed.clanIcon;
       }
 
+      if (parsed.allianceId !== null) {
+        player.allianceId = parsed.allianceId;
+      }
+
+      if (parsed.allianceName !== null) {
+        player.allianceName = parsed.allianceName;
+      }
+
       player.position = parsed.position;
       player.profileUrl = `${BASE_URL}${player.cuid}`;
 
@@ -106,11 +121,16 @@ async function main(): Promise<void> {
         emptyPosCount++;
       }
 
+      if (parsed.allianceId) {
+        alliancesFoundCount++;
+      }
+
       updatedCount++;
 
       process.stdout.write(
         `OK  lv=${parsed.level ?? "?"}  ` +
           `reinc=${parsed.reincarnationLevel ?? "—"}  ` +
+          `alliance="${parsed.allianceName || "—"}"  ` +
           `pos="${parsed.position || "—"}"\n`,
       );
     } catch (error) {
@@ -139,6 +159,7 @@ async function main(): Promise<void> {
   console.log(`  Updated:              ${updatedCount}`);
   console.log(`  Positions found:      ${posFoundCount}`);
   console.log(`  Empty positions:      ${emptyPosCount}`);
+  console.log(`  Alliance profiles:    ${alliancesFoundCount}`);
   console.log(`  Errors:               ${errorCount}`);
   console.log("──────────────────────────────────────────────────────────────");
 }
@@ -146,9 +167,7 @@ async function main(): Promise<void> {
 main().catch((error) => {
   console.error(
     "Fatal:",
-    error instanceof Error
-      ? error.message
-      : error,
+    error instanceof Error ? error.message : error,
   );
 
   process.exit(1);
