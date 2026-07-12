@@ -1,17 +1,35 @@
 "use client";
 
 import { useState } from "react";
-import clansData from "../../../data/clans.json";
+import clansJson from "../../../data/clans.json";
 import lastSync from "../../../data/last-sync.json";
 import ClanCard from "@/components/ClanCard";
 import SearchBar from "@/components/SearchBar";
 import EventsFeed from "@/components/EventsFeed";
 
-type SortKey = "members" | "smiles" | "name";
+type Clan = {
+  clanId: string;
+  name: string;
+  icon?: string;
+  crestSmall?: string;
+  membersCount: number;
+  smilesCount?: number;
+  allianceId?: string;
+  allianceName?: string;
+};
+
+type SortKey =
+  | "members"
+  | "smiles"
+  | "alliance"
+  | "name";
+
+const clansData = clansJson as Clan[];
 
 const SORT_LABELS: Record<SortKey, string> = {
   members: "Участники",
   smiles: "♥ Смайлики ♥",
+  alliance: "Альянс",
   name: "Название",
 };
 
@@ -34,7 +52,7 @@ export default function ClansPage() {
     .filter((clan) =>
       clan.name
         .toLowerCase()
-        .includes(search.trim().toLowerCase())
+        .includes(search.trim().toLowerCase()),
     )
     .sort((a, b) => {
       switch (sortBy) {
@@ -47,9 +65,46 @@ export default function ClansPage() {
             (a.smilesCount ?? 0)
           );
 
+        case "alliance": {
+          const aAlliance =
+            a.allianceName?.trim() ?? "";
+
+          const bAlliance =
+            b.allianceName?.trim() ?? "";
+
+          if (aAlliance && !bAlliance) {
+            return -1;
+          }
+
+          if (!aAlliance && bAlliance) {
+            return 1;
+          }
+
+          const allianceDifference =
+            aAlliance.localeCompare(
+              bAlliance,
+              "ru",
+              { sensitivity: "base" },
+            );
+
+          if (allianceDifference !== 0) {
+            return allianceDifference;
+          }
+
+          return a.name.localeCompare(
+            b.name,
+            "ru",
+            { sensitivity: "base" },
+          );
+        }
+
         case "name":
         default:
-          return a.name.localeCompare(b.name, "ru");
+          return a.name.localeCompare(
+            b.name,
+            "ru",
+            { sensitivity: "base" },
+          );
       }
     });
 
@@ -57,7 +112,7 @@ export default function ClansPage() {
     <div className="max-w-[1180px] mx-auto px-6 py-10">
       <div className="mb-2">
         <h1 className="text-3xl font-black text-[#e6e6e6] tracking-tight">
-          Все кланы ДМ. Состав. Смайлики
+          Все кланы ДМ. Составы. Альянсы. Смайлики
         </h1>
 
         <p className="text-[#b9bec6] text-sm mt-1">
@@ -86,7 +141,7 @@ export default function ClansPage() {
           />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[#b9bec6] text-xs uppercase tracking-wider whitespace-nowrap">
             Сорт.
           </span>
@@ -106,7 +161,7 @@ export default function ClansPage() {
               >
                 {SORT_LABELS[key]}
               </button>
-            )
+            ),
           )}
         </div>
       </div>
