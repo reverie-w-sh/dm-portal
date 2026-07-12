@@ -121,9 +121,13 @@ export default function ClansPage() {
 
   const selectedClans = selectedClanIds
     .map((clanId) =>
-      clansData.find((clan) => clan.clanId === clanId),
+      clansData.find(
+        (clan) => clan.clanId === clanId,
+      ),
     )
-    .filter((clan): clan is Clan => Boolean(clan));
+    .filter(
+      (clan): clan is Clan => Boolean(clan),
+    );
 
   function toggleComparisonMode() {
     setComparisonMode((current) => {
@@ -135,11 +139,14 @@ export default function ClansPage() {
     });
   }
 
-  function toggleClanForComparison(clanId: string) {
+  function toggleClanForComparison(
+    clanId: string,
+  ) {
     setSelectedClanIds((current) => {
       if (current.includes(clanId)) {
         return current.filter(
-          (selectedId) => selectedId !== clanId,
+          (selectedId) =>
+            selectedId !== clanId,
         );
       }
 
@@ -153,8 +160,18 @@ export default function ClansPage() {
 
   const compareHref =
     selectedClanIds.length >= 2
-      ? `/clans/compare?ids=${selectedClanIds.join(",")}`
+      ? `/clans/compare?ids=${selectedClanIds.join(
+          ",",
+        )}`
       : "#";
+
+  const comparisonButtonClass = [
+    "flex-1 sm:flex-none",
+    "inline-flex items-center justify-center",
+    "whitespace-nowrap",
+    "px-4 py-2.5 rounded-xl border",
+    "text-sm font-bold transition-all",
+  ].join(" ");
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10 pb-32">
@@ -182,7 +199,7 @@ export default function ClansPage() {
 
       <div className="flex flex-col gap-4 mb-6">
         <div className="flex flex-col sm:flex-row gap-3">
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <SearchBar
               value={search}
               onChange={setSearch}
@@ -190,20 +207,32 @@ export default function ClansPage() {
             />
           </div>
 
-          <button
-            type="button"
-            onClick={toggleComparisonMode}
-            className={[
-              "px-4 py-2.5 rounded-xl border text-sm font-bold transition-all",
-              comparisonMode
-                ? "border-accent/45 text-accent bg-accent/10"
-                : "border-white/10 text-[#d9dde3] bg-white/[0.04] hover:bg-white/[0.08]",
-            ].join(" ")}
-          >
-            {comparisonMode
-              ? "Закрыть сравнение"
-              : "Сравнить кланы"}
-          </button>
+          <div className="grid grid-cols-2 sm:flex gap-2 shrink-0">
+            <button
+              type="button"
+              onClick={toggleComparisonMode}
+              className={[
+                comparisonButtonClass,
+                comparisonMode
+                  ? "border-accent/45 text-accent bg-accent/10"
+                  : "border-white/10 text-[#d9dde3] bg-white/[0.04] hover:bg-white/[0.08]",
+              ].join(" ")}
+            >
+              {comparisonMode
+                ? "Закрыть сравнение"
+                : "Сравнить кланы"}
+            </button>
+
+            <Link
+              href="/alliances"
+              className={[
+                comparisonButtonClass,
+                "border-white/10 text-[#d9dde3] bg-white/[0.04] hover:bg-white/[0.08]",
+              ].join(" ")}
+            >
+              Сравнить альянсы
+            </Link>
+          </div>
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
@@ -211,23 +240,23 @@ export default function ClansPage() {
             Сорт.
           </span>
 
-          {(Object.keys(SORT_LABELS) as SortKey[]).map(
-            (key) => (
-              <button
-                key={key}
-                type="button"
-                onClick={() => setSortBy(key)}
-                className={[
-                  "text-xs px-3 py-2 rounded-lg border transition-colors",
-                  sortBy === key
-                    ? "border-accent/40 text-accent bg-accent/10"
-                    : "border-white/10 text-[#b9bec6] hover:text-[#e6e6e6] hover:border-white/20",
-                ].join(" ")}
-              >
-                {SORT_LABELS[key]}
-              </button>
-            ),
-          )}
+          {(Object.keys(
+            SORT_LABELS,
+          ) as SortKey[]).map((key) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setSortBy(key)}
+              className={[
+                "text-xs px-3 py-2 rounded-lg border transition-colors",
+                sortBy === key
+                  ? "border-accent/40 text-accent bg-accent/10"
+                  : "border-white/10 text-[#b9bec6] hover:text-[#e6e6e6] hover:border-white/20",
+              ].join(" ")}
+            >
+              {SORT_LABELS[key]}
+            </button>
+          ))}
         </div>
 
         {comparisonMode && (
@@ -249,7 +278,9 @@ export default function ClansPage() {
               )}
               comparisonDisabled={
                 selectedClanIds.length >= 3 &&
-                !selectedClanIds.includes(clan.clanId)
+                !selectedClanIds.includes(
+                  clan.clanId,
+                )
               }
               onToggleComparison={
                 toggleClanForComparison
@@ -264,60 +295,68 @@ export default function ClansPage() {
           </div>
 
           <p className="text-ink-muted text-sm">
-            Кланов не найдено для &ldquo;{search}&rdquo;
+            Кланов не найдено для &ldquo;
+            {search}&rdquo;
           </p>
         </div>
       )}
 
-      {comparisonMode && selectedClans.length > 0 && (
-        <div className="fixed left-1/2 bottom-5 z-50 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[900px]">
-          <div className="glass rounded-2xl border border-white/15 shadow-[0_18px_55px_rgba(0,0,0,.28)] px-5 py-4 backdrop-blur-xl">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              <div className="flex-1 min-w-0">
-                <div className="text-[11px] uppercase tracking-wider text-ink-muted mb-1">
-                  Выбрано: {selectedClans.length} из 3
-                </div>
+      {comparisonMode &&
+        selectedClans.length > 0 && (
+          <div className="fixed left-1/2 bottom-5 z-50 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[900px]">
+            <div className="glass rounded-2xl border border-white/15 shadow-[0_18px_55px_rgba(0,0,0,.28)] px-5 py-4 backdrop-blur-xl">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="flex-1 min-w-0">
+                  <div className="text-[11px] uppercase tracking-wider text-ink-muted mb-1">
+                    Выбрано:{" "}
+                    {selectedClans.length} из 3
+                  </div>
 
-                <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm font-semibold text-ink">
-                  {selectedClans.map((clan, index) => (
-                    <span key={clan.clanId}>
-                      {index > 0 && (
-                        <span className="text-ink-muted mr-2">
-                          •
+                  <div className="flex flex-wrap gap-x-2 gap-y-1 text-sm font-semibold text-ink">
+                    {selectedClans.map(
+                      (clan, index) => (
+                        <span key={clan.clanId}>
+                          {index > 0 && (
+                            <span className="text-ink-muted mr-2">
+                              •
+                            </span>
+                          )}
+
+                          {clan.name}
                         </span>
-                      )}
-                      {clan.name}
-                    </span>
-                  ))}
+                      ),
+                    )}
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-2 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => setSelectedClanIds([])}
-                  className="px-4 py-2.5 rounded-xl border border-black/10 bg-white/35 text-sm font-bold text-ink-muted hover:text-ink hover:bg-white/60 transition-all"
-                >
-                  Очистить
-                </button>
-
-                {selectedClanIds.length >= 2 ? (
-                  <Link
-                    href={compareHref}
-                    className="px-5 py-2.5 rounded-xl border border-accent/50 bg-accent/15 text-accent text-sm font-black hover:bg-accent/20 transition-all"
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setSelectedClanIds([])
+                    }
+                    className="px-4 py-2.5 rounded-xl border border-black/10 bg-white/35 text-sm font-bold text-ink-muted hover:text-ink hover:bg-white/60 transition-all"
                   >
-                    Сравнить
-                  </Link>
-                ) : (
-                  <span className="px-5 py-2.5 rounded-xl border border-black/10 bg-white/20 text-ink-muted/50 text-sm font-black cursor-not-allowed">
-                    Сравнить
-                  </span>
-                )}
+                    Очистить
+                  </button>
+
+                  {selectedClanIds.length >= 2 ? (
+                    <Link
+                      href={compareHref}
+                      className="px-5 py-2.5 rounded-xl border border-accent/50 bg-accent/15 text-accent text-sm font-black hover:bg-accent/20 transition-all"
+                    >
+                      Сравнить
+                    </Link>
+                  ) : (
+                    <span className="px-5 py-2.5 rounded-xl border border-black/10 bg-white/20 text-ink-muted/50 text-sm font-black cursor-not-allowed">
+                      Сравнить
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }
