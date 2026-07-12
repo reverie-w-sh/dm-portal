@@ -385,7 +385,7 @@ export default async function CompareClansPage({
                 className="p-5 border-l border-black/10 hover:bg-white/35 transition-colors"
               >
                 <div className="flex flex-col items-center text-center gap-3">
-                  <div className="relative w-16 h-16 rounded-xl overflow-hidden border border-black/10 bg-white/50">
+                  <div className="relative w-16 h-16 rounded-xl overflow-hidden border border-black/10 bg-[#d4d4d4]">
                     {clan.crestLarge ? (
                       <Image
                         src={clan.crestLarge}
