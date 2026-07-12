@@ -41,7 +41,7 @@
 27. Деревянный Как Стекло[8] — cuid=16303 — https://dm-game.com/index.php?file=infouser&cuid=16303
 28. ЛиН Орк[8] — cuid=8049 — https://dm-game.com/index.php?file=infouser&cuid=8049
 29. Слета[8] — cuid=1285 — https://dm-game.com/index.php?file=infouser&cuid=1285
-30. манюня[6] — cuid=28487 — https://dm-game.com/index.php?file=infouser&cuid=28487
+30. манюня[7] — cuid=28487 — https://dm-game.com/index.php?file=infouser&cuid=28487
 31. Таргрим Несокрушимый[6] — cuid=27172 — https://dm-game.com/index.php?file=infouser&cuid=27172
 
 ## Бомжи Кровожадного Мира — CLAN 206 — знайдено 15
