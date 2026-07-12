@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 interface Clan {
@@ -7,9 +9,19 @@ interface Clan {
   crestSmall?: string;
   membersCount: number;
   smilesCount?: number;
+  allianceId?: string;
+  allianceName?: string;
 }
 
-export default function ClanCard({ clan }: { clan: Clan }) {
+export default function ClanCard({
+  clan,
+}: {
+  clan: Clan;
+}) {
+  const allianceSmallUrl = clan.allianceId
+    ? `https://dm-game.com/pics/alc/ali_${clan.allianceId}.gif`
+    : "";
+
   return (
     <Link href={`/clans/${clan.clanId}`}>
       <div className="glass glass-hover rounded-2xl p-5 flex items-center gap-[10px] cursor-pointer group">
@@ -43,7 +55,6 @@ export default function ClanCard({ clan }: { clan: Clan }) {
           </h3>
 
           <div className="flex items-center gap-4 mt-1 text-xs text-ink-muted">
-            {/* Участники */}
             <span
               className="inline-flex items-center gap-1.5"
               title={`${clan.membersCount} участников`}
@@ -67,7 +78,6 @@ export default function ClanCard({ clan }: { clan: Clan }) {
               <span>{clan.membersCount}</span>
             </span>
 
-            {/* Смайлики */}
             <span
               className="inline-flex items-center gap-1.5"
               title={`${clan.smilesCount ?? 0} клановых смайликов`}
@@ -92,6 +102,23 @@ export default function ClanCard({ clan }: { clan: Clan }) {
             </span>
           </div>
         </div>
+
+        {clan.allianceId && clan.allianceName && (
+          <div className="hidden sm:flex shrink-0 items-center justify-end gap-2 max-w-[260px] ml-4 text-right">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={allianceSmallUrl}
+              alt=""
+              width={24}
+              height={24}
+              className="w-6 h-6 object-contain shrink-0"
+            />
+
+            <span className="text-xs font-semibold text-ink-muted group-hover:text-ink transition-colors truncate">
+              {clan.allianceName}
+            </span>
+          </div>
+        )}
       </div>
     </Link>
   );
