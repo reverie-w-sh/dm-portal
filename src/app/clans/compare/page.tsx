@@ -163,10 +163,18 @@ function WinnerValue({
       <span>{children}</span>
 
       {isWinner && (
-        <EngravedPawIcon
-          className="w-[17px] h-[17px] text-accent"
-          title="Лучший результат"
-        />
+<svg
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  strokeWidth="2.2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="w-4 h-4 text-accent"
+  aria-hidden="true"
+>
+  <path d="m5 12 4 4L19 6" />
+</svg>
       )}
     </div>
   );
@@ -352,7 +360,7 @@ export default async function CompareClansPage({
         </h1>
 
         <p className="text-ink-muted text-sm mt-2">
-          От двух до трёх кланов — без лишней серьёзности :)
+          Выбери для сравнения два-три клана, посмотрим, кто круче :)
         </p>
       </div>
 
@@ -567,8 +575,29 @@ export default async function CompareClansPage({
       </div>
 
       <p className="text-center text-xs text-ink-muted mt-7">
-        🙂 «Смайлик на нос :)» = количество клановых смайликов,
-        поделённое на количество участников.
+<div className="flex items-center justify-center gap-2 text-xs text-ink-muted mt-7">
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-4 h-4 text-accent"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="9" />
+    <path d="M8.5 14.5s1.3 2 3.5 2 3.5-2 3.5-2" />
+    <path d="M9 9h.01" />
+    <path d="M15 9h.01" />
+  </svg>
+
+  <span>
+    Смайлик на нос = количество клановых смайликов ÷ количество участников.
+    <br />
+    Да, мы тоже не знаем, зачем это считать))
+  </span>
+</div>
       </p>
     </div>
   );
