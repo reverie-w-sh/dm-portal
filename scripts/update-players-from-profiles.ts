@@ -27,6 +27,7 @@ interface Player {
   clanIcon?: string;
   allianceId?: string;
   allianceName?: string;
+  inactiveMinutes?: number | null;
   [key: string]: unknown;
 }
 
@@ -113,6 +114,7 @@ async function main(): Promise<void> {
       }
 
       player.position = parsed.position;
+      player.inactiveMinutes = parsed.inactiveMinutes;
       player.profileUrl = `${BASE_URL}${player.cuid}`;
 
       if (parsed.position) {
@@ -127,12 +129,13 @@ async function main(): Promise<void> {
 
       updatedCount++;
 
-      process.stdout.write(
-        `OK  lv=${parsed.level ?? "?"}  ` +
-          `reinc=${parsed.reincarnationLevel ?? "—"}  ` +
-          `alliance="${parsed.allianceName || "—"}"  ` +
-          `pos="${parsed.position || "—"}"\n`,
-      );
+process.stdout.write(
+  `OK  lv=${parsed.level ?? "?"}  ` +
+    `reinc=${parsed.reincarnationLevel ?? "—"}  ` +
+    `inactive=${parsed.inactiveMinutes ?? "—"} min  ` +
+    `alliance="${parsed.allianceName || "—"}"  ` +
+    `pos="${parsed.position || "—"}"\n`,
+);
     } catch (error) {
       errorCount++;
 
