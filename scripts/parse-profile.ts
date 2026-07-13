@@ -9,6 +9,7 @@ export interface ParsedProfile {
   allianceId: string | null;
   allianceName: string | null;
   position: string;
+  inactiveMinutes: number | null;
 }
 
 /**
@@ -26,6 +27,96 @@ export interface ParsedProfile {
  *     /pics/alc/ali_23_b.jpg
  *   and alt/title="Альянс: Тени Прошлого".
  */
+function htmlToPlainText(html: string): string {
+  return html
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/&quot;/gi, '"')
+    .replace(/&amp;/gi, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function parseInactiveMinutes(html: string): number | null {
+  const text = htmlToPlainText(html);
+
+  /*
+   * Якщо персонаж зараз онлайн, вважаємо,
+   * що він заходив менше хвилини тому.
+   */
+  if (/Персонаж\s+находится\s+Online/i.test(text)) {
+    return 0;
+  }
+
+  /*
+   * Приклади:
+   *
+   * вход: 08:37, ждём : 1 час 28 минут 55 секунд
+   *
+   * вход: 20.03.2026 12:57,
+   * скучаем :( 3 мес 23 дней 20 часов 9 минут 49 секунд
+   */
+  const activityMatch =
+    /(?:жд[её]м|скучаем)\s*:?\s*\(?\s*([\s\S]{0,160}?)(?=(?:Последний раз виделись|Зарегистрирован|Персонаж находится|$))/i.exec(
+      text
+    );
+
+  if (!activityMatch) {
+    return null;
+  }
+
+  const duration = activityMatch[1];
+
+  const months =
+    Number.parseInt(
+      /(\d+)\s*мес/i.exec(duration)?.[1] ?? "0",
+      10
+    ) || 0;
+
+  const days =
+    Number.parseInt(
+      /(\d+)\s*(?:день|дня|дней)/i.exec(duration)?.[1] ??
+        "0",
+      10
+    ) || 0;
+
+  const hours =
+    Number.parseInt(
+      /(\d+)\s*(?:час|часа|часов)/i.exec(duration)?.[1] ??
+        "0",
+      10
+    ) || 0;
+
+  const minutes =
+    Number.parseInt(
+      /(\d+)\s*(?:минута|минуты|минут)/i.exec(duration)?.[1] ??
+        "0",
+      10
+    ) || 0;
+
+  const seconds =
+    Number.parseInt(
+      /(\d+)\s*(?:секунда|секунды|секунд)/i.exec(duration)?.[1] ??
+        "0",
+      10
+    ) || 0;
+
+  /*
+   * Для кольорових категорій точна календарна
+   * довжина місяця не потрібна, беремо 30 днів.
+   */
+  const totalMinutes =
+    months * 30 * 24 * 60 +
+    days * 24 * 60 +
+    hours * 60 +
+    minutes +
+    seconds / 60;
+
+  return Math.floor(totalMinutes);
+}
+
 export function parseProfileHtml(html: string): ParsedProfile {
   const snbRaw = /showNameBlock\(([^)]+)\)/.exec(html)?.[1] ?? null;
 
@@ -162,7 +253,8 @@ export function parseProfileHtml(html: string): ParsedProfile {
       }
     }
   }
-
+const inactiveMinutes =
+  parseInactiveMinutes(html);
   return {
     cuid,
     nick,
@@ -174,5 +266,6 @@ export function parseProfileHtml(html: string): ParsedProfile {
     allianceId,
     allianceName,
     position,
+    inactiveMinutes,
   };
 }
