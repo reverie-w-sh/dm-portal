@@ -861,7 +861,7 @@ export default function GardenPublicPage() {
                     Показать сохранённый маршрут
                   </span>
                   <span className="mt-0.5 block text-xs text-slate-600">
-                    Маршрут капитана, бои, точки и опасные места
+                    Маршрут, бои, точки
                   </span>
                 </span>
                 <input
