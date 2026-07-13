@@ -45,12 +45,7 @@ type EditorSnapshot = {
   battleMarkers: BattleMarker[];
 };
 
-const BOSSES: Boss[] = [
-  { coord: "J13", kind: "adjutant", label: "Адъютант" },
-  { coord: "p22", kind: "adjutant", label: "Адъютант" },
-  { coord: "M26", kind: "adjutant", label: "Адъютант" },
-  { coord: "S38", kind: "king", label: "Трухлявый дендроид" },
-];
+const BOSSES = (officialLayers.bosses ?? []) as Boss[];
 
 const EMPTY_ROUTE: string[] = [];
 
