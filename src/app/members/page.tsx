@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import clansJson from "../../../data/clans.json";
 import playersJson from "../../../data/players.json";
+import {
+  ActivityDot,
+  ActivityLegend,
+} from "@/components/ActivityStatus";
 
 const OUR_CLAN_ID = "278";
 
@@ -23,6 +27,7 @@ type Player = {
   position?: string;
   profileUrl?: string;
   clanId: string;
+  inactiveMinutes?: number | null;
 };
 
 const clansData = clansJson as Clan[];
@@ -80,6 +85,9 @@ export default function MembersPage() {
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
+      <div className="mb-5">
+  <ActivityLegend />
+</div>
       <div className="glass rounded-2xl p-6 mb-8">
         <div className="flex flex-col lg:flex-row gap-7 items-start">
           <div className="flex items-center gap-5 flex-1">
@@ -204,10 +212,17 @@ export default function MembersPage() {
               />
             </div>
 
-            <div className="flex-1 min-w-0">
-              <span className="font-medium text-ink text-sm">
-                {player.nick}
-              </span>
+{/* Nick */}
+<div className="flex-1 min-w-0">
+  <div className="flex items-center gap-2">
+    <ActivityDot
+      inactiveMinutes={player.inactiveMinutes}
+    />
+
+    <span className="font-medium text-ink text-sm">
+      {player.nick}
+    </span>
+  </div>
 
               <div className="text-ink-muted text-xs sm:hidden mt-0.5">
                 Ур. {player.level}
