@@ -466,7 +466,7 @@ export default function GardenPublicPage() {
       const to = (toValue ?? quickTo).trim();
 
       if (!coordinateSet.has(from) || !coordinateSet.has(to)) {
-        notify("Проверьте координаты. Регистр букв важен");
+        notify("Проверь координаты. Регистр букв важен");
         return false;
       }
 
@@ -522,13 +522,13 @@ export default function GardenPublicPage() {
           const point = parseCoord(coord, columns);
 
           if (!point || gardenMap.grid[point.row]?.[point.col] !== 0) {
-            notify("Выберите проходную клетку");
+            notify("Выбери проходную клетку");
             return;
           }
 
           setQuickClickStart(coord);
           setQuickFrom(coord);
-          notify(`Начало быстрого маршрута: ${coord}. Выберите конечную точку`);
+          notify(`Начало быстрого маршрута: ${coord}. Выбери конечную точку`);
           return;
         }
 
@@ -560,7 +560,7 @@ export default function GardenPublicPage() {
 
   const addMyMarker = useCallback(() => {
     if (!selectedCoord) {
-      notify("Сначала выберите клетку");
+      notify("Сначала выбери клетку");
       return;
     }
 
@@ -766,8 +766,8 @@ export default function GardenPublicPage() {
             Сад кошмаров
           </h1>
           <p className="mt-1 text-sm text-slate-600">
-            Наведите на клетку, чтобы увидеть координату. Клик копирует её,
-            а в режиме маршрута — добавляет клетку в ваш личный путь.
+            Наведи на клетку, чтобы увидеть координату. Клик копирует её,
+            а в режиме маршрута — добавляет клетку в твой личный путь.
           </p>
         </header>
 
@@ -836,7 +836,7 @@ export default function GardenPublicPage() {
               {message ||
                 (copiedCoord
                   ? `✓ ${copiedCoord} скопировано`
-                  : displayCoord || "Наведите на клетку")}
+                  : displayCoord || "Наведи на клетку")}
             </div>
           </div>
 
@@ -861,7 +861,7 @@ export default function GardenPublicPage() {
                     Показать сохранённый маршрут
                   </span>
                   <span className="mt-0.5 block text-xs text-slate-600">
-                    Маршрут капитана, бои, точки и опасные места
+                    Маршрут, бои, точки
                   </span>
                 </span>
                 <input
@@ -936,9 +936,7 @@ export default function GardenPublicPage() {
               </button>
 
               <p className="mt-2 text-xs text-slate-600">
-                Нажмите начальную клетку, затем следующую точку. Можно кликать
-                далеко: путь по проходам добавится автоматически. Возвращаться
-                по уже пройденным клеткам можно.
+                Нажми начальную клетку, затем следующую точку, следующую.. и так далее
               </p>
 
               <div className="mt-3 grid grid-cols-2 gap-2">
@@ -986,8 +984,8 @@ export default function GardenPublicPage() {
               </div>
 
               <p className="mt-2 text-xs text-slate-600">
-                Постройте отдельный зелёный путь между любыми двумя проходными
-                клетками. Он не соединяется с вашим синим маршрутом.
+                Построй отдельный путь между любыми двумя проходными
+                клетками. Он не соединяется с основным маршрутом.
               </p>
 
               <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-2">
@@ -1039,8 +1037,8 @@ export default function GardenPublicPage() {
               >
                 {quickClickMode
                   ? quickClickStart
-                    ? `Начало ${quickClickStart} — выберите конец`
-                    : "Выберите первую точку на карте"
+                    ? `Начало ${quickClickStart} — выбери конец`
+                    : "Выбери первую точку на карте"
                   : "Построить двумя кликами"}
               </button>
 
