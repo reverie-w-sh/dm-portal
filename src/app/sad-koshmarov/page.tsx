@@ -32,8 +32,13 @@ type CustomMarker = {
   label: string;
 };
 
+type BattleMarker = {
+  coord: string;
+  label: string;
+};
+
 const BOSSES: Boss[] = [
-  { coord: "W20", kind: "adjutant", label: "Адъютант" },
+  { coord: "J13", kind: "adjutant", label: "Адъютант" },
   { coord: "p22", kind: "adjutant", label: "Адъютант" },
   { coord: "M26", kind: "adjutant", label: "Адъютант" },
   { coord: "S38", kind: "king", label: "Трухлявый дендроид" },
@@ -49,13 +54,51 @@ function normalizeCoord(value: string) {
   return value.trim();
 }
 
-function areAdjacent(a: string, b: string, columns: string[]) {
-  const aCol = columns.indexOf(a.charAt(0));
-  const bCol = columns.indexOf(b.charAt(0));
-  const aRow = Number(a.slice(1)) - 1;
-  const bRow = Number(b.slice(1)) - 1;
+function parseCoord(coord: string, columns: string[]) {
+  const col = columns.indexOf(coord.charAt(0));
+  const row = Number(coord.slice(1)) - 1;
 
-  return Math.abs(aCol - bCol) + Math.abs(aRow - bRow) === 1;
+  if (col < 0 || !Number.isInteger(row) || row < 0) {
+    return null;
+  }
+
+  return { col, row };
+}
+
+function getStraightSegment(
+  from: string,
+  to: string,
+  columns: string[]
+): string[] | null {
+  const start = parseCoord(from, columns);
+  const end = parseCoord(to, columns);
+
+  if (!start || !end) return null;
+
+  const sameRow = start.row === end.row;
+  const sameCol = start.col === end.col;
+
+  if (!sameRow && !sameCol) return null;
+
+  const cells: string[] = [];
+
+  if (sameRow) {
+    const step = end.col > start.col ? 1 : -1;
+
+    for (let col = start.col + step; ; col += step) {
+      cells.push(`${columns[col]}${start.row + 1}`);
+      if (col === end.col) break;
+    }
+  } else {
+    const step = end.row > start.row ? 1 : -1;
+
+    for (let row = start.row + step; ; row += step) {
+      cells.push(`${columns[start.col]}${row + 1}`);
+      if (row === end.row) break;
+    }
+  }
+
+  return cells;
 }
 
 export default function GardenNightmaresPage() {
@@ -75,13 +118,15 @@ export default function GardenNightmaresPage() {
   const [showRoute, setShowRoute] = useState(true);
   const [showDanger, setShowDanger] = useState(false);
   const [showMarkers, setShowMarkers] = useState(true);
-  const [showGrid, setShowGrid] = useState(true);
+  const [showBattles, setShowBattles] = useState(true);
 
   const [routeEditMode, setRouteEditMode] = useState(false);
   const [route, setRoute] = useState<string[]>(EMPTY_ROUTE);
   const [dangerCells, setDangerCells] = useState<string[]>([]);
   const [customMarkers, setCustomMarkers] = useState<CustomMarker[]>([]);
+  const [battleMarkers, setBattleMarkers] = useState<BattleMarker[]>([]);
   const [markerLabel, setMarkerLabel] = useState("Метка");
+  const [battleLabel, setBattleLabel] = useState("Бой");
   const [message, setMessage] = useState("");
 
   const dragState = useRef({
@@ -128,6 +173,11 @@ export default function GardenNightmaresPage() {
     [customMarkers]
   );
 
+  const battleMap = useMemo(
+    () => new Map(battleMarkers.map((marker) => [marker.coord, marker])),
+    [battleMarkers]
+  );
+
   const getCoord = useCallback(
     (col: number, row: number) => `${columns[col]}${row + 1}`,
     [columns]
@@ -138,10 +188,12 @@ export default function GardenNightmaresPage() {
       const storedRoute = localStorage.getItem("garden-route");
       const storedDanger = localStorage.getItem("garden-danger");
       const storedMarkers = localStorage.getItem("garden-markers");
+      const storedBattles = localStorage.getItem("garden-battles");
 
       if (storedRoute) setRoute(JSON.parse(storedRoute));
       if (storedDanger) setDangerCells(JSON.parse(storedDanger));
       if (storedMarkers) setCustomMarkers(JSON.parse(storedMarkers));
+      if (storedBattles) setBattleMarkers(JSON.parse(storedBattles));
     } catch {
       // Повреждённые локальные данные просто игнорируем.
     }
@@ -158,6 +210,10 @@ export default function GardenNightmaresPage() {
   useEffect(() => {
     localStorage.setItem("garden-markers", JSON.stringify(customMarkers));
   }, [customMarkers]);
+
+  useEffect(() => {
+    localStorage.setItem("garden-battles", JSON.stringify(battleMarkers));
+  }, [battleMarkers]);
 
   const notify = useCallback((text: string) => {
     setMessage(text);
@@ -267,8 +323,17 @@ export default function GardenNightmaresPage() {
 
   const handleCellClick = useCallback(
     (coord: string) => {
+      setSelectedCoord(coord);
+
       if (routeEditMode) {
         setRoute((current) => {
+          const target = parseCoord(coord, columns);
+
+          if (!target || gardenMap.grid[target.row]?.[target.col] !== 0) {
+            notify("Маршрут можно прокладывать только по проходам");
+            return current;
+          }
+
           if (current.length === 0) return [coord];
 
           const last = current[current.length - 1];
@@ -277,17 +342,34 @@ export default function GardenNightmaresPage() {
             return current.slice(0, -1);
           }
 
-          if (!areAdjacent(last, coord, columns)) {
-            notify("Маршрут можно продолжать только в соседнюю клетку");
+          const segment = getStraightSegment(last, coord, columns);
+
+          if (!segment) {
+            notify("Выберите клетку по прямой: вверх, вниз, влево или вправо");
             return current;
           }
 
-          if (current.includes(coord)) {
-            notify("Эта клетка уже есть в маршруте");
+          const blocked = segment.find((item) => {
+            const point = parseCoord(item, columns);
+            return (
+              !point ||
+              gardenMap.grid[point.row]?.[point.col] !== 0
+            );
+          });
+
+          if (blocked) {
+            notify(`На пути есть стена: ${blocked}`);
             return current;
           }
 
-          return [...current, coord];
+          const repeated = segment.find((item) => current.includes(item));
+
+          if (repeated) {
+            notify(`Клетка ${repeated} уже есть в маршруте`);
+            return current;
+          }
+
+          return [...current, ...segment];
         });
         return;
       }
@@ -328,11 +410,43 @@ export default function GardenNightmaresPage() {
     [markerLabel, notify]
   );
 
+  const addBattle = useCallback(
+    (coord: string) => {
+      const label = battleLabel.trim() || "Бой";
+
+      setBattleMarkers((current) => {
+        const exists = current.find((item) => item.coord === coord);
+
+        if (exists) {
+          return current.map((item) =>
+            item.coord === coord ? { ...item, label } : item
+          );
+        }
+
+        return [...current, { coord, label }];
+      });
+
+      notify(`Бой добавлен: ${coord}`);
+    },
+    [battleLabel, notify]
+  );
+
+  const removeBattle = useCallback(
+    (coord: string) => {
+      setBattleMarkers((current) =>
+        current.filter((item) => item.coord !== coord)
+      );
+      notify(`Бой удалён: ${coord}`);
+    },
+    [notify]
+  );
+
   const exportLayers = useCallback(() => {
     const payload = {
       route,
       dangerCells,
       customMarkers,
+      battleMarkers,
       bosses: BOSSES,
     };
 
@@ -345,7 +459,7 @@ export default function GardenNightmaresPage() {
     a.download = "garden-layers.json";
     a.click();
     URL.revokeObjectURL(url);
-  }, [customMarkers, dangerCells, route]);
+  }, [battleMarkers, customMarkers, dangerCells, route]);
 
   const importLayers = useCallback(
     (file: File) => {
@@ -361,6 +475,9 @@ export default function GardenNightmaresPage() {
           }
           if (Array.isArray(parsed.customMarkers)) {
             setCustomMarkers(parsed.customMarkers);
+          }
+          if (Array.isArray(parsed.battleMarkers)) {
+            setBattleMarkers(parsed.battleMarkers);
           }
 
           notify("Слои загружены");
@@ -529,9 +646,11 @@ export default function GardenNightmaresPage() {
 
   const hoveredRow = hovered?.row ?? -1;
   const hoveredCol = hovered?.col ?? -1;
-  const activeCoord = hovered?.coord || selectedCoord;
+  const displayCoord = hovered?.coord || selectedCoord;
+  const activeCoord = selectedCoord || hovered?.coord || "";
   const activeBoss = activeCoord ? bossesByCoord.get(activeCoord) : undefined;
   const activeMarker = activeCoord ? markerMap.get(activeCoord) : undefined;
+  const activeBattle = activeCoord ? battleMap.get(activeCoord) : undefined;
   const activeRouteStep =
     activeCoord && routeIndex.has(activeCoord)
       ? Number(routeIndex.get(activeCoord)) + 1
@@ -610,14 +729,14 @@ export default function GardenNightmaresPage() {
             <div
               className="min-w-[220px] rounded-xl border px-4 py-2.5 text-center font-black"
               style={{
-                borderColor: activeCoord ? ACCENT : "#cbd5e1",
-                background: activeCoord ? "#edf7fd" : "#ffffff",
+                borderColor: displayCoord ? ACCENT : "#cbd5e1",
+                background: displayCoord ? "#edf7fd" : "#ffffff",
               }}
             >
               {message ||
                 (copiedCoord
                   ? `✓ ${copiedCoord} скопировано`
-                  : activeCoord || "Наведите на клетку")}
+                  : displayCoord || "Наведите на клетку")}
             </div>
           </div>
 
@@ -642,7 +761,7 @@ export default function GardenNightmaresPage() {
                   ["Маршрут", showRoute, setShowRoute],
                   ["Опасные места", showDanger, setShowDanger],
                   ["Мои метки", showMarkers, setShowMarkers],
-                  ["Сетка", showGrid, setShowGrid],
+                  ["Бои", showBattles, setShowBattles],
                 ].map(([label, checked, setter]) => (
                   <label
                     key={String(label)}
@@ -662,7 +781,7 @@ export default function GardenNightmaresPage() {
               </div>
 
               <div className="mt-4 space-y-2 text-xs text-slate-600">
-                <p><span className="inline-block h-3 w-3 rounded-full bg-red-500" /> Адъютанты: W20, p22, M26</p>
+                <p><span className="inline-block h-3 w-3 rounded-full bg-red-500" /> Адъютанты: J13, p22, M26</p>
                 <p><span className="inline-block h-3 w-3 rounded-full bg-blue-500" /> Царь: S38</p>
               </div>
             </section>
@@ -688,7 +807,7 @@ export default function GardenNightmaresPage() {
               </button>
 
               <p className="mt-2 text-xs text-slate-600">
-                Нажимайте соседние клетки по порядку. Повторный клик по последней клетке отменяет последний шаг.
+                Можно нажимать соседнюю клетку или сразу дальнюю клетку по прямой. Все проходные клетки между ними добавятся автоматически. Повторный клик по последней клетке отменяет последний шаг.
               </p>
 
               <div className="mt-3 grid grid-cols-2 gap-2">
@@ -740,6 +859,12 @@ export default function GardenNightmaresPage() {
                   </div>
                 )}
 
+                {activeBattle && (
+                  <div className="mt-1 text-sm font-bold">
+                    ⚔ {activeBattle.label}
+                  </div>
+                )}
+
                 {activeRouteStep && (
                   <div className="mt-1 text-xs text-slate-600">
                     Шаг маршрута №{activeRouteStep}
@@ -774,6 +899,31 @@ export default function GardenNightmaresPage() {
                 >
                   Добавить свою метку
                 </button>
+
+                <div className="my-1 border-t border-slate-200" />
+
+                <input
+                  value={battleLabel}
+                  onChange={(event) => setBattleLabel(event.target.value)}
+                  placeholder="Название боя"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-sky-400"
+                />
+
+                <button
+                  type="button"
+                  disabled={!activeCoord}
+                  onClick={() =>
+                    activeCoord &&
+                    (battleMap.has(activeCoord)
+                      ? removeBattle(activeCoord)
+                      : addBattle(activeCoord))
+                  }
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
+                >
+                  {activeCoord && battleMap.has(activeCoord)
+                    ? "Убрать бой"
+                    : "Добавить бой"}
+                </button>
               </div>
             </section>
 
@@ -805,7 +955,7 @@ export default function GardenNightmaresPage() {
               </div>
 
               <p className="mt-2 text-xs text-slate-500">
-                Маршрут и метки автоматически сохраняются в этом браузере.
+                Маршрут, метки и бои автоматически сохраняются в этом браузере.
               </p>
             </section>
           </aside>
@@ -875,6 +1025,7 @@ export default function GardenNightmaresPage() {
                       const isFlashing = flashCoord === coord;
                       const boss = bossesByCoord.get(coord);
                       const marker = markerMap.get(coord);
+                      const battle = battleMap.get(coord);
                       const routeStep = routeIndex.get(coord);
                       const dangerous = dangerSet.has(coord);
 
@@ -899,7 +1050,7 @@ export default function GardenNightmaresPage() {
                             height: cellSize,
                             background: isWall ? WALL : PASSAGE,
                             boxShadow: [
-                              showGrid ? `inset -1px -1px 0 ${GRID}` : "",
+                              `inset -1px -1px 0 ${GRID}`,
                               isAxisHovered
                                 ? `inset 0 0 0 1px rgba(127,180,216,.45)`
                                 : "",
@@ -936,6 +1087,16 @@ export default function GardenNightmaresPage() {
 
                           {showMarkers && marker && (
                             <span className="absolute left-[12%] top-[12%] h-[42%] w-[42%] rounded-full bg-violet-500 ring-1 ring-white" />
+                          )}
+
+                          {showBattles && battle && (
+                            <span
+                              className="absolute inset-0 z-20 flex items-center justify-center text-[11px] font-black leading-none drop-shadow"
+                              title={battle.label}
+                              aria-label={battle.label}
+                            >
+                              ⚔
+                            </span>
                           )}
 
                           {showBosses && boss && (
