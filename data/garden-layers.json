@@ -648,22 +648,22 @@
   ],
   "bosses": [
     {
-      "coord": "J13",
+      "coord": "j13",
       "kind": "adjutant",
       "label": "Адъютант"
     },
     {
-      "coord": "p22",
+      "coord": "P22",
       "kind": "adjutant",
       "label": "Адъютант"
     },
     {
-      "coord": "M26",
+      "coord": "m26",
       "kind": "adjutant",
       "label": "Адъютант"
     },
     {
-      "coord": "S38",
+      "coord": "s38",
       "kind": "king",
       "label": "Трухлявый дендроид"
     }
