@@ -4,6 +4,10 @@ import Link from "next/link";
 import clansJson from "../../../../data/clans.json";
 import playersJson from "../../../../data/players.json";
 import ClanSmiles from "@/components/ClanSmiles";
+import {
+  ActivityDot,
+  ActivityLegend,
+} from "@/components/ActivityStatus";
 
 type Clan = {
   clanId: string;
@@ -25,6 +29,7 @@ type Player = {
   reincarnationLevel?: number | null;
   position?: string;
   profileUrl?: string;
+  inactiveMinutes?: number | null;
 };
 
 const clansData = clansJson as Clan[];
@@ -103,12 +108,18 @@ export default async function ClanDetailPage(
 
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
-      <Link
-        href="/clans"
-        className="inline-flex items-center gap-1.5 text-ink-muted text-xs font-medium hover:text-accent transition-colors mb-8"
-      >
-        ← Кланы и состав
-      </Link>
+<div className="mb-8">
+  <Link
+    href="/clans"
+    className="inline-flex items-center gap-1.5 text-ink-muted text-xs font-medium hover:text-accent transition-colors"
+  >
+    ← Кланы и состав
+  </Link>
+
+  <div className="mt-2">
+    <ActivityLegend />
+  </div>
+</div>
 
       <div className="glass rounded-2xl p-6 mb-6">
         <div className="flex flex-col lg:flex-row gap-7 items-start">
@@ -284,10 +295,17 @@ export default async function ClanDetailPage(
                   )}
                 </div>
 
-                <div className="flex-1 min-w-0">
-                  <span className="font-medium text-ink text-sm">
-                    {player.nick}
-                  </span>
+{/* Nick */}
+<div className="flex-1 min-w-0">
+  <div className="flex items-center gap-2">
+    <ActivityDot
+      inactiveMinutes={player.inactiveMinutes}
+    />
+
+    <span className="font-medium text-ink text-sm">
+      {player.nick}
+    </span>
+  </div>
 
                   <div className="text-ink-muted text-xs sm:hidden mt-0.5">
                     Ур. {player.level}
