@@ -167,6 +167,80 @@ function findWalkablePath(
   return null;
 }
 
+
+function findWalkablePathAvoiding(
+  from: string,
+  to: string,
+  columns: string[],
+  grid: number[][],
+  blockedCoord: string
+): string[] | null {
+  const start = parseCoord(from, columns);
+  const end = parseCoord(to, columns);
+
+  if (!start || !end) return null;
+
+  const key = (col: number, row: number) => `${col},${row}`;
+  const queue: Array<{ col: number; row: number }> = [start];
+  const previous = new Map<string, string | null>();
+
+  previous.set(key(start.col, start.row), null);
+
+  const directions = [
+    { dc: 1, dr: 0 },
+    { dc: -1, dr: 0 },
+    { dc: 0, dr: 1 },
+    { dc: 0, dr: -1 },
+  ];
+
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+
+    if (current.col === end.col && current.row === end.row) {
+      const reversed: string[] = [];
+      let currentKey: string | null = key(end.col, end.row);
+
+      while (currentKey) {
+        const [colText, rowText] = currentKey.split(",");
+        const col = Number(colText);
+        const row = Number(rowText);
+
+        reversed.push(`${columns[col]}${row + 1}`);
+        currentKey = previous.get(currentKey) ?? null;
+      }
+
+      reversed.reverse();
+      return reversed.slice(1, -1);
+    }
+
+    for (const { dc, dr } of directions) {
+      const col = current.col + dc;
+      const row = current.row + dr;
+      const coord = `${columns[col] ?? ""}${row + 1}`;
+
+      if (
+        col < 0 ||
+        row < 0 ||
+        col >= columns.length ||
+        row >= grid.length ||
+        grid[row]?.[col] !== 0 ||
+        coord === blockedCoord
+      ) {
+        continue;
+      }
+
+      const nextKey = key(col, row);
+
+      if (previous.has(nextKey)) continue;
+
+      previous.set(nextKey, key(current.col, current.row));
+      queue.push({ col, row });
+    }
+  }
+
+  return null;
+}
+
 export default function GardenNightmaresPage() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -516,6 +590,16 @@ export default function GardenNightmaresPage() {
     [markerLabel, notify]
   );
 
+  const removeMarker = useCallback(
+    (coord: string) => {
+      setCustomMarkers((current) =>
+        current.filter((item) => item.coord !== coord)
+      );
+      notify(`Метка удалена: ${coord}`);
+    },
+    [notify]
+  );
+
   const addBattle = useCallback(
     (coord: string) => {
       const label = battleLabel.trim() || "Бой";
@@ -566,6 +650,91 @@ export default function GardenNightmaresPage() {
     a.click();
     URL.revokeObjectURL(url);
   }, [battleMarkers, customMarkers, dangerCells, route]);
+
+  const removeRouteStep = useCallback(
+    (stepNumber: number) => {
+      const index = stepNumber - 1;
+
+      if (index < 0 || index >= route.length) return;
+
+      setRoute((current) => {
+        if (index < 0 || index >= current.length) return current;
+
+        if (current.length === 1) {
+          setRouteCursorIndex(null);
+          notify(`Шаг №${stepNumber} удалён`);
+          return [];
+        }
+
+        if (index === 0) {
+          setRouteCursorIndex(0);
+          notify(`Шаг №${stepNumber} удалён`);
+          return current.slice(1);
+        }
+
+        if (index === current.length - 1) {
+          setRouteCursorIndex(current.length - 2);
+          notify(`Шаг №${stepNumber} удалён`);
+          return current.slice(0, -1);
+        }
+
+        const previousCoord = current[index - 1];
+        const removedCoord = current[index];
+        const nextCoord = current[index + 1];
+
+        const previousPoint = parseCoord(previousCoord, columns);
+        const nextPoint = parseCoord(nextCoord, columns);
+
+        if (!previousPoint || !nextPoint) return current;
+
+        const areNeighbours =
+          Math.abs(previousPoint.col - nextPoint.col) +
+            Math.abs(previousPoint.row - nextPoint.row) ===
+          1;
+
+        if (areNeighbours) {
+          const next = [
+            ...current.slice(0, index),
+            ...current.slice(index + 1),
+          ];
+          setRouteCursorIndex(Math.max(0, index - 1));
+          notify(`Шаг №${stepNumber} удалён`);
+          return next;
+        }
+
+        const bridge = findWalkablePathAvoiding(
+          previousCoord,
+          nextCoord,
+          columns,
+          mineMap.grid as number[][],
+          removedCoord
+        );
+
+        if (bridge === null) {
+          notify(
+            `Точку ${removedCoord} нельзя удалить отдельно: без неё маршрут разрывается`
+          );
+          return current;
+        }
+
+        const next = [
+          ...current.slice(0, index),
+          ...bridge,
+          ...current.slice(index + 1),
+        ];
+
+        setRouteCursorIndex(Math.max(0, index - 1 + bridge.length));
+        notify(
+          bridge.length > 0
+            ? `Шаг №${stepNumber} удалён, обход добавлен автоматически`
+            : `Шаг №${stepNumber} удалён`
+        );
+
+        return next;
+      });
+    },
+    [columns, notify, route]
+  );
 
   const continueRouteFromStep = useCallback(
     (stepNumber: number) => {
@@ -1068,18 +1237,31 @@ export default function GardenNightmaresPage() {
               {activeRouteSteps.length > 0 && (
                 <div className="mt-3 space-y-2">
                   <div className="text-xs font-bold text-slate-500">
-                    Вставить ответвление:
+                    Редактировать маршрут:
                   </div>
 
                   {activeRouteSteps.map((step) => (
-                    <button
-                      key={`continue-${step}`}
-                      type="button"
-                      onClick={() => continueRouteFromStep(step)}
-                      className="w-full rounded-xl border border-sky-300 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100"
+                    <div
+                      key={`route-step-${step}`}
+                      className="grid grid-cols-[1fr_auto] gap-2"
                     >
-                      Вставить после шага №{step}
-                    </button>
+                      <button
+                        type="button"
+                        onClick={() => continueRouteFromStep(step)}
+                        className="rounded-xl border border-sky-300 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100"
+                      >
+                        Вставить после шага №{step}
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => removeRouteStep(step)}
+                        className="rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-700 hover:bg-red-100"
+                        title={`Удалить шаг №${step}`}
+                      >
+                        Удалить
+                      </button>
+                    </div>
                   ))}
                 </div>
               )}
@@ -1109,8 +1291,20 @@ export default function GardenNightmaresPage() {
                   onClick={() => activeCoord && addMarker(activeCoord)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
                 >
-                  Добавить свою метку
+                  {activeCoord && markerMap.has(activeCoord)
+                    ? "Изменить метку"
+                    : "Добавить свою метку"}
                 </button>
+
+                {activeCoord && markerMap.has(activeCoord) && (
+                  <button
+                    type="button"
+                    onClick={() => removeMarker(activeCoord)}
+                    className="w-full rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-700 hover:bg-red-100"
+                  >
+                    Удалить метку
+                  </button>
+                )}
 
                 <div className="my-1 border-t border-slate-200" />
 
