@@ -234,6 +234,13 @@ export default function GardenNightmaresPage() {
   const rows = gardenMap.height;
   const cols = gardenMap.width;
 
+  const notify = useCallback((text: string) => {
+    setMessage(text);
+    window.setTimeout(() => {
+      setMessage((current) => (current === text ? "" : current));
+    }, 1600);
+  }, []);
+
   const currentSnapshot = useCallback(
     (): EditorSnapshot => ({
       route: [...route],
@@ -369,13 +376,6 @@ export default function GardenNightmaresPage() {
   useEffect(() => {
     localStorage.setItem("garden-battles", JSON.stringify(battleMarkers));
   }, [battleMarkers]);
-
-  const notify = useCallback((text: string) => {
-    setMessage(text);
-    window.setTimeout(() => {
-      setMessage((current) => (current === text ? "" : current));
-    }, 1600);
-  }, []);
 
   const copyCoord = useCallback(
     async (coord: string) => {
