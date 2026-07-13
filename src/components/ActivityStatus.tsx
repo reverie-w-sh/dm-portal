@@ -114,7 +114,7 @@ export function ActivityLegend() {
     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-muted">
       Вход: 
       <LegendItem color="#39a96b">
-        < 48 часов
+        менее 48 часов назад
       </LegendItem>
 
       <LegendItem color="#d97706">
