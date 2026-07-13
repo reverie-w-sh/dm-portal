@@ -607,6 +607,17 @@ export default function GardenNightmaresPage() {
     [markerLabel, notify, rememberBeforeChange]
   );
 
+  const removeMarker = useCallback(
+    (coord: string) => {
+      rememberBeforeChange();
+      setCustomMarkers((current) =>
+        current.filter((item) => item.coord !== coord)
+      );
+      notify(`Метка удалена: ${coord}`);
+    },
+    [notify, rememberBeforeChange]
+  );
+
   const addBattle = useCallback(
     (coord: string) => {
       const label = battleLabel.trim() || "Бой";
@@ -1344,8 +1355,20 @@ export default function GardenNightmaresPage() {
                   onClick={() => activeCoord && addMarker(activeCoord)}
                   className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
                 >
-                  Добавить свою метку
+                  {activeCoord && markerMap.has(activeCoord)
+                    ? "Изменить метку"
+                    : "Добавить свою метку"}
                 </button>
+
+                {activeCoord && markerMap.has(activeCoord) && (
+                  <button
+                    type="button"
+                    onClick={() => removeMarker(activeCoord)}
+                    className="w-full rounded-xl border border-red-200 bg-red-50 px-3 py-2 text-sm font-bold text-red-700 hover:bg-red-100"
+                  >
+                    Удалить метку
+                  </button>
+                )}
 
                 <div className="my-1 border-t border-slate-200" />
 
