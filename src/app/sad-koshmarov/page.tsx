@@ -101,6 +101,77 @@ function getStraightSegment(
   return cells;
 }
 
+function findWalkablePath(
+  from: string,
+  to: string,
+  columns: string[],
+  grid: number[][]
+): string[] | null {
+  const start = parseCoord(from, columns);
+  const end = parseCoord(to, columns);
+
+  if (!start || !end) return null;
+  if (grid[end.row]?.[end.col] !== 0) return null;
+
+  const key = (col: number, row: number) => `${col},${row}`;
+  const queue: Array<{ col: number; row: number }> = [start];
+  const previous = new Map<string, string | null>();
+
+  previous.set(key(start.col, start.row), null);
+
+  const directions = [
+    { dc: 1, dr: 0 },
+    { dc: -1, dr: 0 },
+    { dc: 0, dr: 1 },
+    { dc: 0, dr: -1 },
+  ];
+
+  while (queue.length > 0) {
+    const current = queue.shift()!;
+
+    if (current.col === end.col && current.row === end.row) {
+      const reversed: string[] = [];
+      let currentKey: string | null = key(end.col, end.row);
+
+      while (currentKey) {
+        const [colText, rowText] = currentKey.split(",");
+        const col = Number(colText);
+        const row = Number(rowText);
+
+        reversed.push(`${columns[col]}${row + 1}`);
+        currentKey = previous.get(currentKey) ?? null;
+      }
+
+      reversed.reverse();
+      return reversed.slice(1);
+    }
+
+    for (const { dc, dr } of directions) {
+      const col = current.col + dc;
+      const row = current.row + dr;
+
+      if (
+        col < 0 ||
+        row < 0 ||
+        col >= columns.length ||
+        row >= grid.length ||
+        grid[row]?.[col] !== 0
+      ) {
+        continue;
+      }
+
+      const nextKey = key(col, row);
+
+      if (previous.has(nextKey)) continue;
+
+      previous.set(nextKey, key(current.col, current.row));
+      queue.push({ col, row });
+    }
+  }
+
+  return null;
+}
+
 export default function GardenNightmaresPage() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -342,31 +413,47 @@ export default function GardenNightmaresPage() {
             return current.slice(0, -1);
           }
 
-          const segment = getStraightSegment(last, coord, columns);
+          const straightSegment = getStraightSegment(last, coord, columns);
 
-          if (!segment) {
-            notify("Выберите клетку по прямой: вверх, вниз, влево или вправо");
-            return current;
+          let segment = straightSegment;
+
+          if (straightSegment) {
+            const blocked = straightSegment.find((item) => {
+              const point = parseCoord(item, columns);
+              return (
+                !point ||
+                gardenMap.grid[point.row]?.[point.col] !== 0
+              );
+            });
+
+            if (blocked) {
+              segment = null;
+            }
           }
 
-          const blocked = segment.find((item) => {
-            const point = parseCoord(item, columns);
-            return (
-              !point ||
-              gardenMap.grid[point.row]?.[point.col] !== 0
+          if (!segment) {
+            segment = findWalkablePath(
+              last,
+              coord,
+              columns,
+              gardenMap.grid as number[][]
             );
-          });
+          }
 
-          if (blocked) {
-            notify(`На пути есть стена: ${blocked}`);
+          if (!segment || segment.length === 0) {
+            notify("До этой клетки нет прохода");
             return current;
           }
 
           const repeated = segment.find((item) => current.includes(item));
 
           if (repeated) {
-            notify(`Клетка ${repeated} уже есть в маршруте`);
+            notify(`Автоматический путь возвращается в ${repeated}. Выберите другую точку или отмените несколько шагов`);
             return current;
+          }
+
+          if (!straightSegment) {
+            notify(`Добавлен путь до ${coord}: ${segment.length} клеток`);
           }
 
           return [...current, ...segment];
@@ -807,7 +894,7 @@ export default function GardenNightmaresPage() {
               </button>
 
               <p className="mt-2 text-xs text-slate-600">
-                Можно нажимать соседнюю клетку или сразу дальнюю клетку по прямой. Все проходные клетки между ними добавятся автоматически. Повторный клик по последней клетке отменяет последний шаг.
+                Можно нажать любую доступную клетку. По прямой маршрут добавится сразу, а в остальных случаях редактор сам найдёт путь по проходам. Обязательно проверьте, что выбран именно нужный безопасный коридор. Повторный клик по последней клетке отменяет последний шаг.
               </p>
 
               <div className="mt-3 grid grid-cols-2 gap-2">
