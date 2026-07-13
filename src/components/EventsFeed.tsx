@@ -224,19 +224,34 @@ export default function EventsFeed({
         lastSync.updatedAt
       );
 
-      result[currentPeriod] = scopedEvents.filter(
-        (event) => {
-          if (currentPeriod === "sync") {
-            return event.syncId === lastSync.updatedAt;
-          }
+result[currentPeriod] = scopedEvents.filter(
+  (event) => {
+    /*
+     * Изменения должностей показываем только
+     * с момента последнего обновления.
+     *
+     * В истории за 7 и 30 дней их не выводим,
+     * чтобы они не забивали действительно
+     * важные события.
+     */
+    if (
+      currentPeriod !== "sync" &&
+      event.type === "player_position_changed"
+    ) {
+      return false;
+    }
 
-          const eventTime = new Date(
-            event.createdAt
-          ).getTime();
+    if (currentPeriod === "sync") {
+      return event.syncId === lastSync.updatedAt;
+    }
 
-          return eventTime >= startTime;
-        }
-      );
+    const eventTime = new Date(
+      event.createdAt
+    ).getTime();
+
+    return eventTime >= startTime;
+  }
+);
     }
 
     return result;
