@@ -6,6 +6,7 @@ import gardenMap from "../../../data/garden-map.json";
 const MIN_CELL = 12;
 const MAX_CELL = 34;
 const DEFAULT_CELL = 20;
+
 const WALL = "#343a40";
 const PASSAGE = "#eef5fa";
 const GRID = "#cfd8e3";
@@ -14,16 +15,52 @@ const ACCENT = "#7fb4d8";
 const ACCENT_STRONG = "#4f8fba";
 const TEXT = "#25313b";
 
-type HoveredCell = { row: number; col: number; coord: string } | null;
+type HoveredCell = {
+  row: number;
+  col: number;
+  coord: string;
+} | null;
 
-const clamp = (value: number, min: number, max: number) =>
-  Math.min(max, Math.max(min, value));
+type Boss = {
+  coord: string;
+  kind: "adjutant" | "king";
+  label: string;
+};
+
+type CustomMarker = {
+  coord: string;
+  label: string;
+};
+
+const BOSSES: Boss[] = [
+  { coord: "W20", kind: "adjutant", label: "Адъютант" },
+  { coord: "p22", kind: "adjutant", label: "Адъютант" },
+  { coord: "M26", kind: "adjutant", label: "Адъютант" },
+  { coord: "S38", kind: "king", label: "Трухлявый дендроид" },
+];
+
+const EMPTY_ROUTE: string[] = [];
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function normalizeCoord(value: string) {
+  return value.trim();
+}
+
+function areAdjacent(a: string, b: string, columns: string[]) {
+  const aCol = columns.indexOf(a.charAt(0));
+  const bCol = columns.indexOf(b.charAt(0));
+  const aRow = Number(a.slice(1)) - 1;
+  const bRow = Number(b.slice(1)) - 1;
+
+  return Math.abs(aCol - bCol) + Math.abs(aRow - bRow) === 1;
+}
 
 export default function GardenNightmaresPage() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
-  const drag = useRef({ active: false, x: 0, y: 0, left: 0, top: 0 });
-  const pinch = useRef({ distance: 0, size: DEFAULT_CELL });
 
   const [cellSize, setCellSize] = useState(DEFAULT_CELL);
   const [hovered, setHovered] = useState<HoveredCell>(null);
@@ -31,8 +68,34 @@ export default function GardenNightmaresPage() {
   const [copiedCoord, setCopiedCoord] = useState("");
   const [query, setQuery] = useState("");
   const [flashCoord, setFlashCoord] = useState("");
-  const [spacePressed, setSpacePressed] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [spacePressed, setSpacePressed] = useState(false);
+
+  const [showBosses, setShowBosses] = useState(true);
+  const [showRoute, setShowRoute] = useState(true);
+  const [showDanger, setShowDanger] = useState(false);
+  const [showMarkers, setShowMarkers] = useState(true);
+  const [showGrid, setShowGrid] = useState(true);
+
+  const [routeEditMode, setRouteEditMode] = useState(false);
+  const [route, setRoute] = useState<string[]>(EMPTY_ROUTE);
+  const [dangerCells, setDangerCells] = useState<string[]>([]);
+  const [customMarkers, setCustomMarkers] = useState<CustomMarker[]>([]);
+  const [markerLabel, setMarkerLabel] = useState("Метка");
+  const [message, setMessage] = useState("");
+
+  const dragState = useRef({
+    active: false,
+    startX: 0,
+    startY: 0,
+    scrollLeft: 0,
+    scrollTop: 0,
+  });
+
+  const touchState = useRef({
+    startDistance: 0,
+    startCellSize: DEFAULT_CELL,
+  });
 
   const columns = gardenMap.columns;
   const rows = gardenMap.height;
@@ -48,45 +111,108 @@ export default function GardenNightmaresPage() {
     return set;
   }, [columns, cols, rows]);
 
+  const bossesByCoord = useMemo(
+    () => new Map(BOSSES.map((boss) => [boss.coord, boss])),
+    []
+  );
+
+  const routeIndex = useMemo(
+    () => new Map(route.map((coord, index) => [coord, index])),
+    [route]
+  );
+
+  const dangerSet = useMemo(() => new Set(dangerCells), [dangerCells]);
+
+  const markerMap = useMemo(
+    () => new Map(customMarkers.map((marker) => [marker.coord, marker])),
+    [customMarkers]
+  );
+
   const getCoord = useCallback(
     (col: number, row: number) => `${columns[col]}${row + 1}`,
     [columns]
   );
 
-  const copyCoord = useCallback(async (coord: string) => {
-    if (!coord) return;
+  useEffect(() => {
     try {
-      await navigator.clipboard.writeText(coord);
+      const storedRoute = localStorage.getItem("garden-route");
+      const storedDanger = localStorage.getItem("garden-danger");
+      const storedMarkers = localStorage.getItem("garden-markers");
+
+      if (storedRoute) setRoute(JSON.parse(storedRoute));
+      if (storedDanger) setDangerCells(JSON.parse(storedDanger));
+      if (storedMarkers) setCustomMarkers(JSON.parse(storedMarkers));
     } catch {
-      const area = document.createElement("textarea");
-      area.value = coord;
-      area.style.position = "fixed";
-      area.style.opacity = "0";
-      document.body.appendChild(area);
-      area.select();
-      document.execCommand("copy");
-      area.remove();
+      // Повреждённые локальные данные просто игнорируем.
     }
-    setSelectedCoord(coord);
-    setCopiedCoord(coord);
-    window.setTimeout(() => {
-      setCopiedCoord((current) => (current === coord ? "" : current));
-    }, 1200);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("garden-route", JSON.stringify(route));
+  }, [route]);
+
+  useEffect(() => {
+    localStorage.setItem("garden-danger", JSON.stringify(dangerCells));
+  }, [dangerCells]);
+
+  useEffect(() => {
+    localStorage.setItem("garden-markers", JSON.stringify(customMarkers));
+  }, [customMarkers]);
+
+  const notify = useCallback((text: string) => {
+    setMessage(text);
+    window.setTimeout(() => {
+      setMessage((current) => (current === text ? "" : current));
+    }, 1600);
+  }, []);
+
+  const copyCoord = useCallback(
+    async (coord: string) => {
+      if (!coord) return;
+
+      try {
+        await navigator.clipboard.writeText(coord);
+      } catch {
+        const textarea = document.createElement("textarea");
+        textarea.value = coord;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        textarea.remove();
+      }
+
+      setSelectedCoord(coord);
+      setCopiedCoord(coord);
+      notify(`✓ ${coord} скопировано`);
+
+      window.setTimeout(() => {
+        setCopiedCoord((current) => (current === coord ? "" : current));
+      }, 1200);
+    },
+    [notify]
+  );
 
   const zoomTo = useCallback(
     (nextSize: number) => {
       const viewport = viewportRef.current;
+      const oldSize = cellSize;
       const newSize = clamp(nextSize, MIN_CELL, MAX_CELL);
-      if (!viewport || newSize === cellSize) {
+
+      if (!viewport) {
         setCellSize(newSize);
         return;
       }
 
+      if (newSize === oldSize) return;
+
       const centerX = viewport.scrollLeft + viewport.clientWidth / 2;
       const centerY = viewport.scrollTop + viewport.clientHeight / 2;
-      const ratio = newSize / cellSize;
+      const ratio = newSize / oldSize;
+
       setCellSize(newSize);
+
       requestAnimationFrame(() => {
         viewport.scrollLeft = centerX * ratio - viewport.clientWidth / 2;
         viewport.scrollTop = centerY * ratio - viewport.clientHeight / 2;
@@ -96,39 +222,160 @@ export default function GardenNightmaresPage() {
   );
 
   const centerOnCoord = useCallback(
-    (raw: string) => {
-      const coord = raw.trim();
-      if (!coordinateSet.has(coord)) return false;
-      const col = columns.indexOf(coord.charAt(0));
-      const row = Number(coord.slice(1)) - 1;
+    (coord: string) => {
+      const normalized = normalizeCoord(coord);
+      if (!coordinateSet.has(normalized)) return false;
+
+      const letter = normalized.charAt(0);
+      const rowNumber = Number(normalized.slice(1));
+      const col = columns.indexOf(letter);
+      const row = rowNumber - 1;
       const viewport = viewportRef.current;
+
       if (!viewport || col < 0 || row < 0) return false;
 
-      const label = 34;
+      const labelSize = 34;
+      const targetX = labelSize + col * cellSize + cellSize / 2;
+      const targetY = labelSize + row * cellSize + cellSize / 2;
+
       viewport.scrollTo({
-        left: Math.max(0, label + col * cellSize - viewport.clientWidth / 2),
-        top: Math.max(0, label + row * cellSize - viewport.clientHeight / 2),
+        left: Math.max(0, targetX - viewport.clientWidth / 2),
+        top: Math.max(0, targetY - viewport.clientHeight / 2),
         behavior: "smooth",
       });
-      setSelectedCoord(coord);
-      setFlashCoord(coord);
+
+      setFlashCoord(normalized);
+      setSelectedCoord(normalized);
+
       window.setTimeout(() => {
-        setFlashCoord((current) => (current === coord ? "" : current));
+        setFlashCoord((current) => (current === normalized ? "" : current));
       }, 1500);
+
       return true;
     },
     [cellSize, columns, coordinateSet]
   );
 
   const handleSearch = useCallback(() => {
-    if (!centerOnCoord(query)) {
+    const normalized = normalizeCoord(query);
+    if (!centerOnCoord(normalized)) {
       setFlashCoord("INVALID");
+      notify("Такой координаты нет");
       window.setTimeout(() => setFlashCoord(""), 900);
     }
-  }, [centerOnCoord, query]);
+  }, [centerOnCoord, notify, query]);
+
+  const handleCellClick = useCallback(
+    (coord: string) => {
+      if (routeEditMode) {
+        setRoute((current) => {
+          if (current.length === 0) return [coord];
+
+          const last = current[current.length - 1];
+
+          if (last === coord) {
+            return current.slice(0, -1);
+          }
+
+          if (!areAdjacent(last, coord, columns)) {
+            notify("Маршрут можно продолжать только в соседнюю клетку");
+            return current;
+          }
+
+          if (current.includes(coord)) {
+            notify("Эта клетка уже есть в маршруте");
+            return current;
+          }
+
+          return [...current, coord];
+        });
+        return;
+      }
+
+      void copyCoord(coord);
+    },
+    [columns, copyCoord, notify, routeEditMode]
+  );
+
+  const toggleDanger = useCallback(
+    (coord: string) => {
+      setDangerCells((current) =>
+        current.includes(coord)
+          ? current.filter((item) => item !== coord)
+          : [...current, coord]
+      );
+    },
+    []
+  );
+
+  const addMarker = useCallback(
+    (coord: string) => {
+      const label = markerLabel.trim() || "Метка";
+
+      setCustomMarkers((current) => {
+        const exists = current.find((item) => item.coord === coord);
+        if (exists) {
+          return current.map((item) =>
+            item.coord === coord ? { ...item, label } : item
+          );
+        }
+
+        return [...current, { coord, label }];
+      });
+
+      notify(`Метка добавлена: ${coord}`);
+    },
+    [markerLabel, notify]
+  );
+
+  const exportLayers = useCallback(() => {
+    const payload = {
+      route,
+      dangerCells,
+      customMarkers,
+      bosses: BOSSES,
+    };
+
+    const blob = new Blob([JSON.stringify(payload, null, 2)], {
+      type: "application/json",
+    });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "garden-layers.json";
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [customMarkers, dangerCells, route]);
+
+  const importLayers = useCallback(
+    (file: File) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(String(reader.result));
+
+          if (Array.isArray(parsed.route)) setRoute(parsed.route);
+          if (Array.isArray(parsed.dangerCells)) {
+            setDangerCells(parsed.dangerCells);
+          }
+          if (Array.isArray(parsed.customMarkers)) {
+            setCustomMarkers(parsed.customMarkers);
+          }
+
+          notify("Слои загружены");
+        } catch {
+          notify("Не удалось прочитать файл");
+        }
+      };
+
+      reader.readAsText(file);
+    },
+    [notify]
+  );
 
   useEffect(() => {
-    const keyDown = (event: KeyboardEvent) => {
+    const onKeyDown = (event: KeyboardEvent) => {
       const target = event.target as HTMLElement | null;
       const typing =
         target?.tagName === "INPUT" ||
@@ -139,57 +386,84 @@ export default function GardenNightmaresPage() {
         event.preventDefault();
         setSpacePressed(true);
       }
+
       if (typing) return;
 
       if (event.key.toLowerCase() === "c" && hovered?.coord) {
         event.preventDefault();
         void copyCoord(hovered.coord);
-      } else if (event.key.toLowerCase() === "f") {
+      }
+
+      if (event.key.toLowerCase() === "f") {
         event.preventDefault();
         searchInputRef.current?.focus();
         searchInputRef.current?.select();
-      } else if (event.key === "0") {
+      }
+
+      if (event.key === "0") {
         event.preventDefault();
         zoomTo(DEFAULT_CELL);
-      } else if (event.key === "+" || event.key === "=") {
+      }
+
+      if (event.key === "+" || event.key === "=") {
         event.preventDefault();
         zoomTo(cellSize + 2);
-      } else if (event.key === "-" || event.key === "_") {
+      }
+
+      if (event.key === "-" || event.key === "_") {
         event.preventDefault();
         zoomTo(cellSize - 2);
       }
+
+      if (event.key === "Escape" && routeEditMode) {
+        setRouteEditMode(false);
+      }
+
+      if (
+        (event.key === "Backspace" || event.key === "Delete") &&
+        routeEditMode
+      ) {
+        event.preventDefault();
+        setRoute((current) => current.slice(0, -1));
+      }
     };
 
-    const keyUp = (event: KeyboardEvent) => {
+    const onKeyUp = (event: KeyboardEvent) => {
       if (event.code === "Space") {
         setSpacePressed(false);
-        drag.current.active = false;
+        dragState.current.active = false;
         setIsDragging(false);
       }
     };
 
-    window.addEventListener("keydown", keyDown);
-    window.addEventListener("keyup", keyUp);
+    window.addEventListener("keydown", onKeyDown);
+    window.addEventListener("keyup", onKeyUp);
+
     return () => {
-      window.removeEventListener("keydown", keyDown);
-      window.removeEventListener("keyup", keyUp);
+      window.removeEventListener("keydown", onKeyDown);
+      window.removeEventListener("keyup", onKeyUp);
     };
-  }, [cellSize, copyCoord, hovered, zoomTo]);
+  }, [cellSize, copyCoord, hovered, routeEditMode, zoomTo]);
 
   const beginDrag = (event: React.PointerEvent<HTMLDivElement>) => {
     const viewport = viewportRef.current;
     if (!viewport) return;
-    const allowed =
-      spacePressed || event.button === 1 || (event.pointerType === "touch" && event.isPrimary);
-    if (!allowed) return;
 
-    drag.current = {
+    const shouldDrag =
+      spacePressed ||
+      event.button === 1 ||
+      (event.pointerType === "touch" && event.isPrimary);
+
+    if (!shouldDrag) return;
+
+    dragState.current = {
       active: true,
-      x: event.clientX,
-      y: event.clientY,
-      left: viewport.scrollLeft,
-      top: viewport.scrollTop,
+      startX: event.clientX,
+      startY: event.clientY,
+      scrollLeft: viewport.scrollLeft,
+      scrollTop: viewport.scrollTop,
     };
+
     viewport.setPointerCapture(event.pointerId);
     setIsDragging(true);
     event.preventDefault();
@@ -197,17 +471,22 @@ export default function GardenNightmaresPage() {
 
   const moveDrag = (event: React.PointerEvent<HTMLDivElement>) => {
     const viewport = viewportRef.current;
-    if (!viewport || !drag.current.active) return;
-    viewport.scrollLeft = drag.current.left - (event.clientX - drag.current.x);
-    viewport.scrollTop = drag.current.top - (event.clientY - drag.current.y);
+    if (!viewport || !dragState.current.active) return;
+
+    viewport.scrollLeft =
+      dragState.current.scrollLeft - (event.clientX - dragState.current.startX);
+    viewport.scrollTop =
+      dragState.current.scrollTop - (event.clientY - dragState.current.startY);
   };
 
   const endDrag = (event: React.PointerEvent<HTMLDivElement>) => {
     const viewport = viewportRef.current;
+
     if (viewport?.hasPointerCapture(event.pointerId)) {
       viewport.releasePointerCapture(event.pointerId);
     }
-    drag.current.active = false;
+
+    dragState.current.active = false;
     setIsDragging(false);
   };
 
@@ -219,139 +498,509 @@ export default function GardenNightmaresPage() {
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
     if (event.touches.length !== 2) return;
-    const a = event.touches[0];
-    const b = event.touches[1];
-    pinch.current.distance = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-    pinch.current.size = cellSize;
+
+    const [a, b] = [event.touches[0], event.touches[1]];
+
+    touchState.current.startDistance = Math.hypot(
+      a.clientX - b.clientX,
+      a.clientY - b.clientY
+    );
+    touchState.current.startCellSize = cellSize;
   };
 
   const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length !== 2 || !pinch.current.distance) return;
-    const a = event.touches[0];
-    const b = event.touches[1];
-    const distance = Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
-    setCellSize(clamp(Math.round(pinch.current.size * (distance / pinch.current.distance)), MIN_CELL, MAX_CELL));
+    if (event.touches.length !== 2 || !touchState.current.startDistance) return;
+
+    const [a, b] = [event.touches[0], event.touches[1]];
+    const distance = Math.hypot(
+      a.clientX - b.clientX,
+      a.clientY - b.clientY
+    );
+    const ratio = distance / touchState.current.startDistance;
+
+    setCellSize(
+      clamp(
+        Math.round(touchState.current.startCellSize * ratio),
+        MIN_CELL,
+        MAX_CELL
+      )
+    );
   };
 
   const hoveredRow = hovered?.row ?? -1;
   const hoveredCol = hovered?.col ?? -1;
+  const activeCoord = hovered?.coord || selectedCoord;
+  const activeBoss = activeCoord ? bossesByCoord.get(activeCoord) : undefined;
+  const activeMarker = activeCoord ? markerMap.get(activeCoord) : undefined;
+  const activeRouteStep =
+    activeCoord && routeIndex.has(activeCoord)
+      ? Number(routeIndex.get(activeCoord)) + 1
+      : null;
 
   return (
-    <main className="min-h-screen px-3 py-5 sm:px-6" style={{ background: PAGE_BG, color: TEXT }}>
+    <main
+      className="min-h-screen px-3 py-5 sm:px-6"
+      style={{ background: PAGE_BG, color: TEXT }}
+    >
       <div className="mx-auto max-w-[1500px]">
         <header className="mb-4">
-          <h1 className="text-2xl font-black tracking-tight sm:text-3xl">Сад кошмаров</h1>
-          <p className="mt-1 text-sm text-slate-600">Карта для проверки координат. Маршруты добавим следующим этапом.</p>
+          <h1 className="text-2xl font-black tracking-tight sm:text-3xl">
+            Сад кошмаров
+          </h1>
+          <p className="mt-1 text-sm text-slate-600">
+            Интерактивная карта, слои и редактор безопасного маршрута.
+          </p>
         </header>
 
         <section className="mb-4 rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm">
-          <div className="flex flex-col gap-3 lg:flex-row lg:items-end">
+          <div className="flex flex-col gap-3 xl:flex-row xl:items-end">
             <label className="block flex-1">
-              <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-slate-500">Найти координату</span>
+              <span className="mb-1 block text-xs font-bold uppercase tracking-wide text-slate-500">
+                Найти координату
+              </span>
               <div className="flex gap-2">
                 <input
                   ref={searchInputRef}
                   value={query}
                   onChange={(event) => setQuery(event.target.value)}
-                  onKeyDown={(event) => event.key === "Enter" && handleSearch()}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") handleSearch();
+                  }}
                   placeholder="Например: M27"
-                  className={`min-w-0 flex-1 rounded-xl border bg-white px-4 py-2.5 text-center font-bold outline-none transition ${flashCoord === "INVALID" ? "border-red-400 ring-2 ring-red-100" : "border-slate-300 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"}`}
+                  className={`min-w-0 flex-1 rounded-xl border bg-white px-4 py-2.5 text-center font-bold outline-none transition ${
+                    flashCoord === "INVALID"
+                      ? "border-red-400 ring-2 ring-red-100"
+                      : "border-slate-300 focus:border-sky-400 focus:ring-2 focus:ring-sky-100"
+                  }`}
                 />
-                <button type="button" onClick={handleSearch} className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 font-bold transition hover:bg-slate-50">Найти</button>
+                <button
+                  type="button"
+                  onClick={handleSearch}
+                  className="rounded-xl border border-slate-300 bg-white px-4 py-2.5 font-bold hover:bg-slate-50"
+                >
+                  Найти
+                </button>
               </div>
             </label>
 
             <div className="flex flex-wrap items-center gap-2">
-              <button type="button" onClick={() => zoomTo(cellSize - 2)} className="h-11 min-w-11 rounded-xl border border-slate-300 bg-white font-black hover:bg-slate-50" title="Уменьшить масштаб (−)">−</button>
-              <button type="button" onClick={() => zoomTo(DEFAULT_CELL)} className="h-11 rounded-xl border border-slate-300 bg-white px-3 font-bold hover:bg-slate-50" title="Вернуть масштаб 100% (0)">{Math.round((cellSize / DEFAULT_CELL) * 100)}%</button>
-              <button type="button" onClick={() => zoomTo(cellSize + 2)} className="h-11 min-w-11 rounded-xl border border-slate-300 bg-white font-black hover:bg-slate-50" title="Увеличить масштаб (+)">+</button>
+              <button
+                type="button"
+                onClick={() => zoomTo(cellSize - 2)}
+                className="h-11 min-w-11 rounded-xl border border-slate-300 bg-white font-black hover:bg-slate-50"
+              >
+                −
+              </button>
+              <button
+                type="button"
+                onClick={() => zoomTo(DEFAULT_CELL)}
+                className="h-11 rounded-xl border border-slate-300 bg-white px-3 font-bold hover:bg-slate-50"
+              >
+                {Math.round((cellSize / DEFAULT_CELL) * 100)}%
+              </button>
+              <button
+                type="button"
+                onClick={() => zoomTo(cellSize + 2)}
+                className="h-11 min-w-11 rounded-xl border border-slate-300 bg-white font-black hover:bg-slate-50"
+              >
+                +
+              </button>
             </div>
 
-            <div className="min-w-[190px] rounded-xl border px-4 py-2.5 text-center font-black" style={{ borderColor: hovered?.coord || selectedCoord ? ACCENT : "#cbd5e1", background: hovered?.coord || selectedCoord ? "#edf7fd" : "#fff" }}>
-              {copiedCoord ? `✓ ${copiedCoord} скопировано` : hovered?.coord || selectedCoord || "Наведите на клетку"}
+            <div
+              className="min-w-[220px] rounded-xl border px-4 py-2.5 text-center font-black"
+              style={{
+                borderColor: activeCoord ? ACCENT : "#cbd5e1",
+                background: activeCoord ? "#edf7fd" : "#ffffff",
+              }}
+            >
+              {message ||
+                (copiedCoord
+                  ? `✓ ${copiedCoord} скопировано`
+                  : activeCoord || "Наведите на клетку")}
             </div>
           </div>
 
           <div className="mt-4 grid gap-2 text-sm text-slate-600 sm:grid-cols-2 xl:grid-cols-4">
             <p><b>C</b> — скопировать координату под курсором.</p>
-            <p><b>F</b> — перейти к поиску координаты.</p>
-            <p><b>+ / − / 0</b> — изменить или сбросить масштаб.</p>
+            <p><b>F</b> — перейти к поиску.</p>
+            <p><b>+ / − / 0</b> — изменить масштаб.</p>
             <p><b>Пробел + мышь</b> — перетащить карту.</p>
-            <p className="sm:col-span-2"><b>Клик по клетке</b> — скопировать её координату в буфер обмена.</p>
-            <p className="sm:col-span-2"><b>Ctrl + колесо</b> или жест двумя пальцами — изменить масштаб.</p>
+            <p className="sm:col-span-2"><b>Клик по клетке</b> — скопировать координату.</p>
+            <p className="sm:col-span-2"><b>Ctrl + колесо</b> или два пальца — масштаб.</p>
           </div>
         </section>
 
-        <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white/85 shadow-sm">
-          <div
-            ref={viewportRef}
-            className={`relative max-h-[78vh] overflow-auto ${isDragging ? "cursor-grabbing" : spacePressed ? "cursor-grab" : ""}`}
-            onPointerDown={beginDrag}
-            onPointerMove={moveDrag}
-            onPointerUp={endDrag}
-            onPointerCancel={endDrag}
-            onWheel={handleWheel}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-          >
-            <div className="grid w-max select-none" style={{ gridTemplateColumns: `34px repeat(${cols}, ${cellSize}px) 34px`, gridTemplateRows: `34px repeat(${rows}, ${cellSize}px) 34px`, background: PAGE_BG }}>
-              <div className="sticky left-0 top-0 z-30 bg-[#f5f9ff]" />
-              {columns.map((letter, col) => (
-                <div key={`top-${letter}`} className="sticky top-0 z-20 flex items-center justify-center border-b text-xs font-black" style={{ height: 34, borderColor: GRID, background: hoveredCol === col ? "#dceefa" : PAGE_BG, color: hoveredCol === col ? ACCENT_STRONG : TEXT }}>{letter}</div>
-              ))}
-              <div className="sticky right-0 top-0 z-30 bg-[#f5f9ff]" />
+        <div className="grid gap-4 xl:grid-cols-[310px_minmax(0,1fr)]">
+          <aside className="space-y-4">
+            <section className="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+              <h2 className="mb-3 text-lg font-black">Слои карты</h2>
 
-              {gardenMap.grid.map((row, rowIndex) => (
-                <div key={`row-${rowIndex}`} className="contents">
-                  <div className="sticky left-0 z-20 flex items-center justify-center border-r text-xs font-black" style={{ width: 34, borderColor: GRID, background: hoveredRow === rowIndex ? "#dceefa" : PAGE_BG, color: hoveredRow === rowIndex ? ACCENT_STRONG : TEXT }}>{rowIndex + 1}</div>
+              <div className="space-y-2 text-sm">
+                {[
+                  ["Боссы", showBosses, setShowBosses],
+                  ["Маршрут", showRoute, setShowRoute],
+                  ["Опасные места", showDanger, setShowDanger],
+                  ["Мои метки", showMarkers, setShowMarkers],
+                  ["Сетка", showGrid, setShowGrid],
+                ].map(([label, checked, setter]) => (
+                  <label
+                    key={String(label)}
+                    className="flex cursor-pointer items-center justify-between rounded-xl border border-slate-200 px-3 py-2 hover:bg-slate-50"
+                  >
+                    <span className="font-bold">{String(label)}</span>
+                    <input
+                      type="checkbox"
+                      checked={Boolean(checked)}
+                      onChange={(event) =>
+                        (setter as (value: boolean) => void)(event.target.checked)
+                      }
+                      className="h-4 w-4"
+                    />
+                  </label>
+                ))}
+              </div>
 
-                  {row.map((isWall, colIndex) => {
-                    const coord = getCoord(colIndex, rowIndex);
-                    const isHovered = hoveredRow === rowIndex && hoveredCol === colIndex;
-                    const isAxisHovered = hoveredRow === rowIndex || hoveredCol === colIndex;
-                    const isSelected = selectedCoord === coord;
-                    const isFlashing = flashCoord === coord;
-                    const shadows = [
-                      `inset -1px -1px 0 ${GRID}`,
-                      isAxisHovered ? "inset 0 0 0 1px rgba(127,180,216,.45)" : "",
-                      isHovered ? `inset 0 0 0 3px ${ACCENT_STRONG}` : "",
-                      isSelected ? `inset 0 0 0 2px ${ACCENT}` : "",
-                      isFlashing ? "0 0 0 4px rgba(79,143,186,.55)" : "",
-                    ].filter(Boolean).join(",");
+              <div className="mt-4 space-y-2 text-xs text-slate-600">
+                <p><span className="inline-block h-3 w-3 rounded-full bg-red-500" /> Адъютанты: W20, p22, M26</p>
+                <p><span className="inline-block h-3 w-3 rounded-full bg-blue-500" /> Царь: S38</p>
+              </div>
+            </section>
 
-                    return (
-                      <button
-                        key={coord}
-                        type="button"
-                        aria-label={`Координата ${coord}`}
-                        title={coord}
-                        onMouseEnter={() => setHovered({ row: rowIndex, col: colIndex, coord })}
-                        onMouseLeave={() => setHovered(null)}
-                        onFocus={() => setHovered({ row: rowIndex, col: colIndex, coord })}
-                        onBlur={() => setHovered(null)}
-                        onClick={() => void copyCoord(coord)}
-                        className="relative m-0 block border-0 p-0 outline-none"
-                        style={{ width: cellSize, height: cellSize, background: isWall ? WALL : PASSAGE, boxShadow: shadows, zIndex: isHovered || isFlashing ? 5 : 1 }}
-                      >
-                        {isHovered && (
-                          <span className="pointer-events-none absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 rounded-md px-1.5 py-0.5 text-[10px] font-black shadow" style={{ background: "#fff", color: TEXT, border: `1px solid ${ACCENT}`, whiteSpace: "nowrap" }}>{coord}</span>
-                        )}
-                      </button>
-                    );
-                  })}
+            <section className="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+              <div className="flex items-center justify-between gap-2">
+                <h2 className="text-lg font-black">Маршрут</h2>
+                <span className="text-xs font-bold text-slate-500">
+                  {route.length} клеток
+                </span>
+              </div>
 
-                  <div className="sticky right-0 z-20 flex items-center justify-center border-l text-xs font-black" style={{ width: 34, borderColor: GRID, background: hoveredRow === rowIndex ? "#dceefa" : PAGE_BG, color: hoveredRow === rowIndex ? ACCENT_STRONG : TEXT }}>{rowIndex + 1}</div>
+              <button
+                type="button"
+                onClick={() => setRouteEditMode((current) => !current)}
+                className={`mt-3 w-full rounded-xl px-3 py-2.5 font-black ${
+                  routeEditMode
+                    ? "bg-sky-600 text-white"
+                    : "border border-slate-300 bg-white hover:bg-slate-50"
+                }`}
+              >
+                {routeEditMode ? "Редактор включён" : "Рисовать маршрут"}
+              </button>
+
+              <p className="mt-2 text-xs text-slate-600">
+                Нажимайте соседние клетки по порядку. Повторный клик по последней клетке отменяет последний шаг.
+              </p>
+
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => setRoute((current) => current.slice(0, -1))}
+                  disabled={!route.length}
+                  className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
+                >
+                  Отменить шаг
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setRoute([]);
+                    notify("Маршрут очищен");
+                  }}
+                  disabled={!route.length}
+                  className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
+                >
+                  Очистить
+                </button>
+              </div>
+
+              {!!route.length && (
+                <div className="mt-3 max-h-36 overflow-auto rounded-xl bg-slate-50 p-3 text-xs leading-5">
+                  {route.join(" → ")}
                 </div>
-              ))}
+              )}
+            </section>
 
-              <div className="sticky bottom-0 left-0 z-30 bg-[#f5f9ff]" />
-              {columns.map((letter, col) => (
-                <div key={`bottom-${letter}`} className="sticky bottom-0 z-20 flex items-center justify-center border-t text-xs font-black" style={{ height: 34, borderColor: GRID, background: hoveredCol === col ? "#dceefa" : PAGE_BG, color: hoveredCol === col ? ACCENT_STRONG : TEXT }}>{letter}</div>
-              ))}
-              <div className="sticky bottom-0 right-0 z-30 bg-[#f5f9ff]" />
+            <section className="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+              <h2 className="text-lg font-black">Выбранная клетка</h2>
+
+              <div className="mt-3 rounded-xl bg-slate-50 p-3 text-center">
+                <div className="text-2xl font-black">
+                  {activeCoord || "—"}
+                </div>
+
+                {activeBoss && (
+                  <div className="mt-1 text-sm font-bold">
+                    {activeBoss.label}
+                  </div>
+                )}
+
+                {activeMarker && (
+                  <div className="mt-1 text-sm font-bold">
+                    {activeMarker.label}
+                  </div>
+                )}
+
+                {activeRouteStep && (
+                  <div className="mt-1 text-xs text-slate-600">
+                    Шаг маршрута №{activeRouteStep}
+                  </div>
+                )}
+              </div>
+
+              <div className="mt-3 space-y-2">
+                <button
+                  type="button"
+                  disabled={!activeCoord}
+                  onClick={() => activeCoord && toggleDanger(activeCoord)}
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
+                >
+                  {activeCoord && dangerSet.has(activeCoord)
+                    ? "Убрать опасную точку"
+                    : "Отметить как опасную"}
+                </button>
+
+                <input
+                  value={markerLabel}
+                  onChange={(event) => setMarkerLabel(event.target.value)}
+                  placeholder="Название метки"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-sky-400"
+                />
+
+                <button
+                  type="button"
+                  disabled={!activeCoord}
+                  onClick={() => activeCoord && addMarker(activeCoord)}
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
+                >
+                  Добавить свою метку
+                </button>
+              </div>
+            </section>
+
+            <section className="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
+              <h2 className="text-lg font-black">Сохранение</h2>
+
+              <div className="mt-3 grid gap-2">
+                <button
+                  type="button"
+                  onClick={exportLayers}
+                  className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold"
+                >
+                  Скачать слои JSON
+                </button>
+
+                <label className="cursor-pointer rounded-xl border border-slate-300 bg-white px-3 py-2 text-center text-sm font-bold">
+                  Загрузить слои JSON
+                  <input
+                    type="file"
+                    accept="application/json"
+                    className="hidden"
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      if (file) importLayers(file);
+                      event.currentTarget.value = "";
+                    }}
+                  />
+                </label>
+              </div>
+
+              <p className="mt-2 text-xs text-slate-500">
+                Маршрут и метки автоматически сохраняются в этом браузере.
+              </p>
+            </section>
+          </aside>
+
+          <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white/85 shadow-sm">
+            <div
+              ref={viewportRef}
+              className={`relative max-h-[82vh] overflow-auto ${
+                isDragging ? "cursor-grabbing" : spacePressed ? "cursor-grab" : ""
+              }`}
+              onPointerDown={beginDrag}
+              onPointerMove={moveDrag}
+              onPointerUp={endDrag}
+              onPointerCancel={endDrag}
+              onWheel={handleWheel}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+            >
+              <div
+                className="grid w-max select-none"
+                style={{
+                  gridTemplateColumns: `34px repeat(${cols}, ${cellSize}px) 34px`,
+                  gridTemplateRows: `34px repeat(${rows}, ${cellSize}px) 34px`,
+                  background: PAGE_BG,
+                }}
+              >
+                <div className="sticky left-0 top-0 z-30 bg-[#f5f9ff]" />
+
+                {columns.map((letter, col) => (
+                  <div
+                    key={`top-${letter}`}
+                    className="sticky top-0 z-20 flex items-center justify-center border-b text-xs font-black"
+                    style={{
+                      height: 34,
+                      borderColor: GRID,
+                      background: hoveredCol === col ? "#dceefa" : PAGE_BG,
+                      color: hoveredCol === col ? ACCENT_STRONG : TEXT,
+                    }}
+                  >
+                    {letter}
+                  </div>
+                ))}
+
+                <div className="sticky right-0 top-0 z-30 bg-[#f5f9ff]" />
+
+                {gardenMap.grid.map((row, rowIndex) => (
+                  <div key={`row-${rowIndex}`} className="contents">
+                    <div
+                      className="sticky left-0 z-20 flex items-center justify-center border-r text-xs font-black"
+                      style={{
+                        width: 34,
+                        borderColor: GRID,
+                        background: hoveredRow === rowIndex ? "#dceefa" : PAGE_BG,
+                        color: hoveredRow === rowIndex ? ACCENT_STRONG : TEXT,
+                      }}
+                    >
+                      {rowIndex + 1}
+                    </div>
+
+                    {row.map((isWall, colIndex) => {
+                      const coord = getCoord(colIndex, rowIndex);
+                      const isHovered =
+                        hoveredRow === rowIndex && hoveredCol === colIndex;
+                      const isAxisHovered =
+                        hoveredRow === rowIndex || hoveredCol === colIndex;
+                      const isSelected = selectedCoord === coord;
+                      const isFlashing = flashCoord === coord;
+                      const boss = bossesByCoord.get(coord);
+                      const marker = markerMap.get(coord);
+                      const routeStep = routeIndex.get(coord);
+                      const dangerous = dangerSet.has(coord);
+
+                      return (
+                        <button
+                          key={coord}
+                          type="button"
+                          aria-label={`Координата ${coord}`}
+                          title={coord}
+                          onMouseEnter={() =>
+                            setHovered({ row: rowIndex, col: colIndex, coord })
+                          }
+                          onMouseLeave={() => setHovered(null)}
+                          onFocus={() =>
+                            setHovered({ row: rowIndex, col: colIndex, coord })
+                          }
+                          onBlur={() => setHovered(null)}
+                          onClick={() => handleCellClick(coord)}
+                          className="relative m-0 block border-0 p-0 outline-none"
+                          style={{
+                            width: cellSize,
+                            height: cellSize,
+                            background: isWall ? WALL : PASSAGE,
+                            boxShadow: [
+                              showGrid ? `inset -1px -1px 0 ${GRID}` : "",
+                              isAxisHovered
+                                ? `inset 0 0 0 1px rgba(127,180,216,.45)`
+                                : "",
+                              isHovered
+                                ? `inset 0 0 0 3px ${ACCENT_STRONG}`
+                                : "",
+                              isSelected
+                                ? `inset 0 0 0 2px ${ACCENT}`
+                                : "",
+                              isFlashing
+                                ? `0 0 0 4px rgba(79,143,186,.55)`
+                                : "",
+                            ]
+                              .filter(Boolean)
+                              .join(","),
+                            zIndex: isHovered || isFlashing ? 8 : 1,
+                          }}
+                        >
+                          {showRoute && routeStep !== undefined && (
+                            <span
+                              className="absolute inset-[18%] rounded-sm"
+                              style={{
+                                background: "rgba(245, 158, 11, .75)",
+                                boxShadow: "0 0 0 1px rgba(146, 64, 14, .55)",
+                              }}
+                            />
+                          )}
+
+                          {showDanger && dangerous && (
+                            <span className="absolute inset-[12%] flex items-center justify-center rounded-full bg-rose-600 text-[9px] font-black text-white">
+                              !
+                            </span>
+                          )}
+
+                          {showMarkers && marker && (
+                            <span className="absolute left-[12%] top-[12%] h-[42%] w-[42%] rounded-full bg-violet-500 ring-1 ring-white" />
+                          )}
+
+                          {showBosses && boss && (
+                            <span
+                              className={`absolute inset-[20%] rounded-full ring-2 ring-white ${
+                                boss.kind === "king"
+                                  ? "bg-blue-600"
+                                  : "bg-red-600"
+                              }`}
+                            />
+                          )}
+
+                          {isHovered && (
+                            <span
+                              className="pointer-events-none absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 rounded-md px-1.5 py-0.5 text-[10px] font-black shadow"
+                              style={{
+                                background: "#ffffff",
+                                color: TEXT,
+                                border: `1px solid ${ACCENT}`,
+                                whiteSpace: "nowrap",
+                              }}
+                            >
+                              {coord}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+
+                    <div
+                      className="sticky right-0 z-20 flex items-center justify-center border-l text-xs font-black"
+                      style={{
+                        width: 34,
+                        borderColor: GRID,
+                        background: hoveredRow === rowIndex ? "#dceefa" : PAGE_BG,
+                        color: hoveredRow === rowIndex ? ACCENT_STRONG : TEXT,
+                      }}
+                    >
+                      {rowIndex + 1}
+                    </div>
+                  </div>
+                ))}
+
+                <div className="sticky bottom-0 left-0 z-30 bg-[#f5f9ff]" />
+
+                {columns.map((letter, col) => (
+                  <div
+                    key={`bottom-${letter}`}
+                    className="sticky bottom-0 z-20 flex items-center justify-center border-t text-xs font-black"
+                    style={{
+                      height: 34,
+                      borderColor: GRID,
+                      background: hoveredCol === col ? "#dceefa" : PAGE_BG,
+                      color: hoveredCol === col ? ACCENT_STRONG : TEXT,
+                    }}
+                  >
+                    {letter}
+                  </div>
+                ))}
+
+                <div className="sticky bottom-0 right-0 z-30 bg-[#f5f9ff]" />
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </main>
   );
