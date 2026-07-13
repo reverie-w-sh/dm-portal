@@ -30,6 +30,17 @@ type PersonalMarker = {
   label: string;
 };
 
+type BossMarker = {
+  coord: string;
+  kind: "adjutant" | "king";
+  label: string;
+};
+
+type OfficialPoint = {
+  coord: string;
+  label: string;
+};
+
 function clamp(value: number, min: number, max: number) {
   return Math.min(max, Math.max(min, value));
 }
@@ -261,30 +272,31 @@ export default function GardenPublicPage() {
 
   const officialBossMap = useMemo(
     () =>
-      new Map(
-        (officialLayers.bosses ?? []).map((item) => [item.coord, item])
+      new Map<string, BossMarker>(
+        ((officialLayers.bosses ?? []) as BossMarker[]).map((item) => [
+          item.coord,
+          item,
+        ])
       ),
     []
   );
 
   const officialBattleMap = useMemo(
     () =>
-      new Map(
-        (officialLayers.battleMarkers ?? []).map((item) => [
-          item.coord,
-          item,
-        ])
+      new Map<string, OfficialPoint>(
+        ((officialLayers.battleMarkers ?? []) as OfficialPoint[]).map(
+          (item) => [item.coord, item]
+        )
       ),
     []
   );
 
   const officialMarkerMap = useMemo(
     () =>
-      new Map(
-        (officialLayers.customMarkers ?? []).map((item) => [
-          item.coord,
-          item,
-        ])
+      new Map<string, OfficialPoint>(
+        ((officialLayers.customMarkers ?? []) as OfficialPoint[]).map(
+          (item) => [item.coord, item]
+        )
       ),
     []
   );
