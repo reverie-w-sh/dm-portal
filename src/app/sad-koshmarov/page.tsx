@@ -193,6 +193,7 @@ export default function GardenNightmaresPage() {
 
   const [routeEditMode, setRouteEditMode] = useState(false);
   const [route, setRoute] = useState<string[]>(EMPTY_ROUTE);
+  const [routeCursorIndex, setRouteCursorIndex] = useState<number | null>(null);
   const [dangerCells, setDangerCells] = useState<string[]>([]);
   const [customMarkers, setCustomMarkers] = useState<CustomMarker[]>([]);
   const [battleMarkers, setBattleMarkers] = useState<BattleMarker[]>([]);
@@ -412,15 +413,25 @@ export default function GardenNightmaresPage() {
             return current;
           }
 
-          if (current.length === 0) return [coord];
-
-          const last = current[current.length - 1];
-
-          if (last === coord) {
-            return current.slice(0, -1);
+          if (current.length === 0) {
+            setRouteCursorIndex(0);
+            return [coord];
           }
 
-          const straightSegment = getStraightSegment(last, coord, columns);
+          const cursor =
+            routeCursorIndex !== null &&
+            routeCursorIndex >= 0 &&
+            routeCursorIndex < current.length
+              ? routeCursorIndex
+              : current.length - 1;
+
+          const startCoord = current[cursor];
+
+          const straightSegment = getStraightSegment(
+            startCoord,
+            coord,
+            columns
+          );
 
           let segment = straightSegment;
 
@@ -440,7 +451,7 @@ export default function GardenNightmaresPage() {
 
           if (!segment) {
             segment = findWalkablePath(
-              last,
+              startCoord,
               coord,
               columns,
               gardenMap.grid as number[][]
@@ -452,24 +463,31 @@ export default function GardenNightmaresPage() {
             return current;
           }
 
-          if (!straightSegment) {
-            const returnsToRoute = segment.some((item) => current.includes(item));
+          const insertAt = cursor + 1;
+          const next = [
+            ...current.slice(0, insertAt),
+            ...segment,
+            ...current.slice(insertAt),
+          ];
 
-            notify(
-              returnsToRoute
-                ? `Добавлено возвращение до ${coord}: ${segment.length} клеток`
-                : `Добавлен путь до ${coord}: ${segment.length} клеток`
-            );
-          }
+          setRouteCursorIndex(cursor + segment.length);
 
-          return [...current, ...segment];
+          const isMiddleInsert = cursor < current.length - 1;
+
+          notify(
+            isMiddleInsert
+              ? `Ответвление вставлено после шага №${cursor + 1}`
+              : `Маршрут продолжен до ${coord}`
+          );
+
+          return next;
         });
         return;
       }
 
       void copyCoord(coord);
     },
-    [columns, copyCoord, notify, routeEditMode]
+    [columns, copyCoord, notify, routeCursorIndex, routeEditMode]
   );
 
   const toggleDanger = useCallback(
@@ -554,6 +572,55 @@ export default function GardenNightmaresPage() {
     URL.revokeObjectURL(url);
   }, [battleMarkers, customMarkers, dangerCells, route]);
 
+  const continueRouteFromStep = useCallback(
+    (stepNumber: number) => {
+      const index = stepNumber - 1;
+
+      if (index < 0 || index >= route.length) return;
+
+      setRouteCursorIndex(index);
+      setRouteEditMode(true);
+      setSelectedCoord(route[index]);
+      notify(`Продолжение маршрута после шага №${stepNumber}`);
+    },
+    [notify, route]
+  );
+
+  const continueRouteFromEnd = useCallback(() => {
+    if (!route.length) return;
+
+    setRouteCursorIndex(route.length - 1);
+    setRouteEditMode(true);
+    setSelectedCoord(route[route.length - 1]);
+    notify("Продолжение маршрута с последней клетки");
+  }, [notify, route]);
+
+  const undoRouteStep = useCallback(() => {
+    setRoute((current) => {
+      if (!current.length) return current;
+
+      const cursor =
+        routeCursorIndex !== null &&
+        routeCursorIndex >= 0 &&
+        routeCursorIndex < current.length
+          ? routeCursorIndex
+          : current.length - 1;
+
+      if (cursor <= 0) {
+        setRouteCursorIndex(null);
+        return current.slice(1);
+      }
+
+      const next = [
+        ...current.slice(0, cursor),
+        ...current.slice(cursor + 1),
+      ];
+
+      setRouteCursorIndex(cursor - 1);
+      return next;
+    });
+  }, [routeCursorIndex]);
+
   const importLayers = useCallback(
     (file: File) => {
       const reader = new FileReader();
@@ -562,7 +629,12 @@ export default function GardenNightmaresPage() {
         try {
           const parsed = JSON.parse(String(reader.result));
 
-          if (Array.isArray(parsed.route)) setRoute(parsed.route);
+          if (Array.isArray(parsed.route)) {
+            setRoute(parsed.route);
+            setRouteCursorIndex(
+              parsed.route.length > 0 ? parsed.route.length - 1 : null
+            );
+          }
           if (Array.isArray(parsed.dangerCells)) {
             setDangerCells(parsed.dangerCells);
           }
@@ -634,7 +706,7 @@ export default function GardenNightmaresPage() {
         routeEditMode
       ) {
         event.preventDefault();
-        setRoute((current) => current.slice(0, -1));
+        undoRouteStep();
       }
     };
 
@@ -653,7 +725,7 @@ export default function GardenNightmaresPage() {
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("keyup", onKeyUp);
     };
-  }, [cellSize, copyCoord, hovered, routeEditMode, zoomTo]);
+  }, [cellSize, copyCoord, hovered, routeEditMode, undoRouteStep, zoomTo]);
 
   const beginDrag = (event: React.PointerEvent<HTMLDivElement>) => {
     const viewport = viewportRef.current;
@@ -889,7 +961,17 @@ export default function GardenNightmaresPage() {
 
               <button
                 type="button"
-                onClick={() => setRouteEditMode((current) => !current)}
+                onClick={() => {
+                  setRouteEditMode((current) => {
+                    const next = !current;
+
+                    if (next && route.length > 0 && routeCursorIndex === null) {
+                      setRouteCursorIndex(route.length - 1);
+                    }
+
+                    return next;
+                  });
+                }}
                 className={`mt-3 w-full rounded-xl px-3 py-2.5 font-black ${
                   routeEditMode
                     ? "bg-sky-600 text-white"
@@ -900,13 +982,37 @@ export default function GardenNightmaresPage() {
               </button>
 
               <p className="mt-2 text-xs text-slate-600">
-                Можно нажать любую доступную клетку. По прямой маршрут добавится сразу, а в остальных случаях редактор сам найдёт путь по проходам. Маршрут может возвращаться по уже пройденным клеткам — это нужно для тупиков и боёв. Обязательно проверьте, что выбран именно нужный безопасный коридор. Повторный клик по последней клетке отменяет последний шаг.
+                Обычно маршрут продолжается с последней клетки. Чтобы вставить новый
+                заход в середину старого маршрута, выключите редактор, выберите нужную
+                клетку и нажмите ниже «Вставить после шага №…». Затем нарисуйте заход
+                и возвращение: старая часть маршрута после точки вставки сохранится.
               </p>
+
+              {route.length > 0 && (
+                <div className="mt-3 rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-900">
+                  Точка продолжения:{" "}
+                  <b>
+                    {routeCursorIndex !== null && route[routeCursorIndex]
+                      ? `${route[routeCursorIndex]} — шаг №${routeCursorIndex + 1}`
+                      : `${route[route.length - 1]} — конец маршрута`}
+                  </b>
+                </div>
+              )}
+
+              {route.length > 0 && routeCursorIndex !== route.length - 1 && (
+                <button
+                  type="button"
+                  onClick={continueRouteFromEnd}
+                  className="mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold hover:bg-slate-50"
+                >
+                  Продолжать с конца маршрута
+                </button>
+              )}
 
               <div className="mt-3 grid grid-cols-2 gap-2">
                 <button
                   type="button"
-                  onClick={() => setRoute((current) => current.slice(0, -1))}
+                  onClick={undoRouteStep}
                   disabled={!route.length}
                   className="rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
                 >
@@ -916,6 +1022,7 @@ export default function GardenNightmaresPage() {
                   type="button"
                   onClick={() => {
                     setRoute([]);
+                    setRouteCursorIndex(null);
                     notify("Маршрут очищен");
                   }}
                   disabled={!route.length}
@@ -966,6 +1073,25 @@ export default function GardenNightmaresPage() {
                   </div>
                 )}
               </div>
+
+              {activeRouteSteps.length > 0 && (
+                <div className="mt-3 space-y-2">
+                  <div className="text-xs font-bold text-slate-500">
+                    Вставить ответвление:
+                  </div>
+
+                  {activeRouteSteps.map((step) => (
+                    <button
+                      key={`continue-${step}`}
+                      type="button"
+                      onClick={() => continueRouteFromStep(step)}
+                      className="w-full rounded-xl border border-sky-300 bg-sky-50 px-3 py-2 text-sm font-bold text-sky-900 hover:bg-sky-100"
+                    >
+                      Вставить после шага №{step}
+                    </button>
+                  ))}
+                </div>
+              )}
 
               <div className="mt-3 space-y-2">
                 <button
@@ -1175,9 +1301,26 @@ export default function GardenNightmaresPage() {
                           )}
 
                           {showDanger && dangerous && (
-                            <span className="absolute inset-[12%] flex items-center justify-center rounded-full bg-rose-600 text-[9px] font-black text-white">
-                              !
-                            </span>
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="absolute inset-[12%] z-20"
+                              aria-label="Опасное место"
+                            >
+                              <path
+                                d="M12 2.8 22 20.5H2Z"
+                                fill="#facc15"
+                                stroke="#854d0e"
+                                strokeWidth="1.7"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M12 8v6"
+                                stroke="#422006"
+                                strokeWidth="2.2"
+                                strokeLinecap="round"
+                              />
+                              <circle cx="12" cy="17.2" r="1.15" fill="#422006" />
+                            </svg>
                           )}
 
                           {showMarkers && marker && (
