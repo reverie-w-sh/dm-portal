@@ -421,10 +421,10 @@ export default function GardenNightmaresPage() {
 
   useEffect(() => {
     try {
-      const storedRoute = localStorage.getItem("garden-route");
-      const storedDanger = localStorage.getItem("garden-danger");
-      const storedMarkers = localStorage.getItem("garden-markers");
-      const storedBattles = localStorage.getItem("garden-battles");
+      const storedRoute = localStorage.getItem("garden-route-case-v2");
+      const storedDanger = localStorage.getItem("garden-danger-case-v2");
+      const storedMarkers = localStorage.getItem("garden-markers-case-v2");
+      const storedBattles = localStorage.getItem("garden-battles-case-v2");
 
       if (storedRoute) setRoute(JSON.parse(storedRoute));
       if (storedDanger) setDangerCells(JSON.parse(storedDanger));
@@ -436,19 +436,19 @@ export default function GardenNightmaresPage() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("garden-route", JSON.stringify(route));
+    localStorage.setItem("garden-route-case-v2", JSON.stringify(route));
   }, [route]);
 
   useEffect(() => {
-    localStorage.setItem("garden-danger", JSON.stringify(dangerCells));
+    localStorage.setItem("garden-danger-case-v2", JSON.stringify(dangerCells));
   }, [dangerCells]);
 
   useEffect(() => {
-    localStorage.setItem("garden-markers", JSON.stringify(customMarkers));
+    localStorage.setItem("garden-markers-case-v2", JSON.stringify(customMarkers));
   }, [customMarkers]);
 
   useEffect(() => {
-    localStorage.setItem("garden-battles", JSON.stringify(battleMarkers));
+    localStorage.setItem("garden-battles-case-v2", JSON.stringify(battleMarkers));
   }, [battleMarkers]);
 
   const copyCoord = useCallback(
