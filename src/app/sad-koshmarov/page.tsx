@@ -232,10 +232,17 @@ export default function GardenNightmaresPage() {
     []
   );
 
-  const routeIndex = useMemo(
-    () => new Map(route.map((coord, index) => [coord, index])),
-    [route]
-  );
+  const routeStepsByCoord = useMemo(() => {
+    const map = new Map<string, number[]>();
+
+    route.forEach((coord, index) => {
+      const steps = map.get(coord) ?? [];
+      steps.push(index + 1);
+      map.set(coord, steps);
+    });
+
+    return map;
+  }, [route]);
 
   const dangerSet = useMemo(() => new Set(dangerCells), [dangerCells]);
 
@@ -445,15 +452,14 @@ export default function GardenNightmaresPage() {
             return current;
           }
 
-          const repeated = segment.find((item) => current.includes(item));
-
-          if (repeated) {
-            notify(`Автоматический путь возвращается в ${repeated}. Выберите другую точку или отмените несколько шагов`);
-            return current;
-          }
-
           if (!straightSegment) {
-            notify(`Добавлен путь до ${coord}: ${segment.length} клеток`);
+            const returnsToRoute = segment.some((item) => current.includes(item));
+
+            notify(
+              returnsToRoute
+                ? `Добавлено возвращение до ${coord}: ${segment.length} клеток`
+                : `Добавлен путь до ${coord}: ${segment.length} клеток`
+            );
           }
 
           return [...current, ...segment];
@@ -738,10 +744,10 @@ export default function GardenNightmaresPage() {
   const activeBoss = activeCoord ? bossesByCoord.get(activeCoord) : undefined;
   const activeMarker = activeCoord ? markerMap.get(activeCoord) : undefined;
   const activeBattle = activeCoord ? battleMap.get(activeCoord) : undefined;
-  const activeRouteStep =
-    activeCoord && routeIndex.has(activeCoord)
-      ? Number(routeIndex.get(activeCoord)) + 1
-      : null;
+  const activeRouteSteps =
+    activeCoord && routeStepsByCoord.has(activeCoord)
+      ? routeStepsByCoord.get(activeCoord) ?? []
+      : [];
 
   return (
     <main
@@ -894,7 +900,7 @@ export default function GardenNightmaresPage() {
               </button>
 
               <p className="mt-2 text-xs text-slate-600">
-                Можно нажать любую доступную клетку. По прямой маршрут добавится сразу, а в остальных случаях редактор сам найдёт путь по проходам. Обязательно проверьте, что выбран именно нужный безопасный коридор. Повторный клик по последней клетке отменяет последний шаг.
+                Можно нажать любую доступную клетку. По прямой маршрут добавится сразу, а в остальных случаях редактор сам найдёт путь по проходам. Маршрут может возвращаться по уже пройденным клеткам — это нужно для тупиков и боёв. Обязательно проверьте, что выбран именно нужный безопасный коридор. Повторный клик по последней клетке отменяет последний шаг.
               </p>
 
               <div className="mt-3 grid grid-cols-2 gap-2">
@@ -952,9 +958,11 @@ export default function GardenNightmaresPage() {
                   </div>
                 )}
 
-                {activeRouteStep && (
+                {activeRouteSteps.length > 0 && (
                   <div className="mt-1 text-xs text-slate-600">
-                    Шаг маршрута №{activeRouteStep}
+                    {activeRouteSteps.length === 1
+                      ? `Шаг маршрута №${activeRouteSteps[0]}`
+                      : `Шаги маршрута: ${activeRouteSteps.join(", ")}`}
                   </div>
                 )}
               </div>
@@ -1113,7 +1121,7 @@ export default function GardenNightmaresPage() {
                       const boss = bossesByCoord.get(coord);
                       const marker = markerMap.get(coord);
                       const battle = battleMap.get(coord);
-                      const routeStep = routeIndex.get(coord);
+                      const routeSteps = routeStepsByCoord.get(coord);
                       const dangerous = dangerSet.has(coord);
 
                       return (
@@ -1156,7 +1164,7 @@ export default function GardenNightmaresPage() {
                             zIndex: isHovered || isFlashing ? 8 : 1,
                           }}
                         >
-                          {showRoute && routeStep !== undefined && (
+                          {showRoute && routeSteps && routeSteps.length > 0 && (
                             <span
                               className="absolute inset-[18%] rounded-sm"
                               style={{
