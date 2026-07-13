@@ -473,7 +473,7 @@
     "reincarnationLevel": 12,
     "allianceId": "25",
     "allianceName": "Анархия",
-    "inactiveMinutes": 0
+    "inactiveMinutes": null
   },
   {
     "cuid": "2010",
@@ -879,7 +879,7 @@
     "reincarnationLevel": 8,
     "allianceId": "",
     "allianceName": "",
-    "inactiveMinutes": null
+    "inactiveMinutes": 0
   },
   {
     "cuid": "23017",
@@ -3007,7 +3007,7 @@
     "reincarnationLevel": null,
     "allianceId": "23",
     "allianceName": "Тени Прошлого",
-    "inactiveMinutes": 0
+    "inactiveMinutes": null
   },
   {
     "cuid": "13883",
