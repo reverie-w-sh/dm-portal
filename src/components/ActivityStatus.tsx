@@ -19,34 +19,35 @@ function getActivityCategory(
     inactiveMinutes !== null &&
     inactiveMinutes !== undefined
   ) {
-   if (inactiveMinutes < TWO_DAYS_MINUTES) {
-  return {
-    color: "#2fbf71",
-    label: "Заходил менее 48 часов назад",
-  };
-}
+    if (inactiveMinutes < TWO_DAYS_MINUTES) {
+      return {
+        color: "#39a96b",
+        label: "Заходил менее 48 часов назад",
+      };
+    }
 
-if (inactiveMinutes < SEVEN_DAYS_MINUTES) {
-  return {
-    color: "#d97706",
-    label: "Заходил от 2 до 7 дней назад",
-  };
-}
+    if (inactiveMinutes < SEVEN_DAYS_MINUTES) {
+      return {
+        color: "#d97706",
+        label: "Заходил от 2 до 7 дней назад",
+      };
+    }
 
-if (inactiveMinutes < THIRTY_DAYS_MINUTES) {
-  return {
-    color: "#374151",   // було #6b7280
-    label: "Заходил от 7 до 30 дней назад",
-  };
-}
+    if (inactiveMinutes < THIRTY_DAYS_MINUTES) {
+      return {
+        color: "#4d525a",
+        label: "Заходил от 7 до 30 дней назад",
+      };
+    }
 
-return {
-  color: "#9ca3af",     // світло-сірий
-  label: "Заходил больше месяца назад",
-};
+    return {
+      color: "#8c929b",
+      label: "Заходил больше месяца назад",
+    };
+  }
 
   return {
-    color: "#4d525a",
+    color: "#8c929b",
     label: "Нет данных о последнем входе",
   };
 }
@@ -111,22 +112,23 @@ function LegendItem({
 export function ActivityLegend() {
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-muted">
-      Вход: 
-<LegendItem color="#2fbf71">
-  меньше 48 часов назад
-</LegendItem>
+      <span>Вход:</span>
 
-<LegendItem color="#d97706">
-  2–7 дней
-</LegendItem>
+      <LegendItem color="#39a96b">
+        менее 48 часов назад
+      </LegendItem>
 
-<LegendItem color="#374151">
-  7–30 дней
-</LegendItem>
+      <LegendItem color="#d97706">
+        2–7 дней
+      </LegendItem>
 
-<LegendItem color="#9ca3af">
-  больше месяца
-</LegendItem>
+      <LegendItem color="#4d525a">
+        7–30 дней
+      </LegendItem>
+
+      <LegendItem color="#8c929b">
+        больше месяца
+      </LegendItem>
     </div>
   );
 }
