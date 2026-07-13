@@ -60,6 +60,14 @@ function printResult(
   );
 
   console.log(
+  `  inactive:   ${
+    result.inactiveMinutes !== null
+      ? `${result.inactiveMinutes} min`
+      : "(not found)"
+  }`
+);
+
+  console.log(
     `  clanId:     ${result.clanId ?? "(none)"}`,
   );
 
@@ -95,6 +103,7 @@ const EMPTY: ParsedProfile = {
   allianceId: null,
   allianceName: null,
   position: "",
+  inactiveMinutes: null,
 };
 
 async function main(): Promise<void> {
