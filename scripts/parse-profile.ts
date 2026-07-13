@@ -47,15 +47,16 @@ function parseInactiveMinutes(html: string): number | null {
   }
 
   /*
-   * Приклади:
+   * Варианты:
+   *
    * ждём : 1 час 28 минут 55 секунд
    * скучаем :( 3 мес 23 дней 20 часов 9 минут 49 секунд
+   * ждём : -1 часов 47 минут 46 секунд
    *
-   * Беремо текст після "ждём" або "скучаем"
-   * до наступного службового поля.
+   * В ДМ иногда первый компонент времени бывает отрицательным.
    */
   const activityMatch =
-    /(?:жд[её]м|скучаем)[\s:()]*((?:\d+\s*(?:мес(?:яц(?:а|ев)?)?|день|дня|дней|час|часа|часов|минута|минуты|минут|секунда|секунды|секунд)\s*)+)/i.exec(
+    /(?:жд[её]м|скучаем)[\s:()]*((?:-?\d+\s*(?:мес(?:яц(?:а|ев)?)?|день|дня|дней|час|часа|часов|минута|минуты|минут|секунда|секунды|секунд)\s*)+)/i.exec(
       text
     );
 
@@ -65,39 +66,39 @@ function parseInactiveMinutes(html: string): number | null {
 
   const duration = activityMatch[1];
 
-  const months =
-    Number.parseInt(
-      /(\d+)\s*мес/i.exec(duration)?.[1] ?? "0",
-      10
-    ) || 0;
+  function getDurationPart(
+    pattern: RegExp
+  ): number {
+    const raw = pattern.exec(duration)?.[1];
 
-  const days =
-    Number.parseInt(
-      /(\d+)\s*(?:день|дня|дней)/i.exec(duration)?.[1] ??
-        "0",
-      10
-    ) || 0;
+    if (raw === undefined) {
+      return 0;
+    }
 
-  const hours =
-    Number.parseInt(
-      /(\d+)\s*(?:час|часа|часов)/i.exec(duration)?.[1] ??
-        "0",
-      10
-    ) || 0;
+    const value = Number.parseInt(raw, 10);
 
-  const minutes =
-    Number.parseInt(
-      /(\d+)\s*(?:минута|минуты|минут)/i.exec(duration)?.[1] ??
-        "0",
-      10
-    ) || 0;
+    return Number.isFinite(value) ? value : 0;
+  }
 
-  const seconds =
-    Number.parseInt(
-      /(\d+)\s*(?:секунда|секунды|секунд)/i.exec(duration)?.[1] ??
-        "0",
-      10
-    ) || 0;
+  const months = getDurationPart(
+    /(-?\d+)\s*мес/i
+  );
+
+  const days = getDurationPart(
+    /(-?\d+)\s*(?:день|дня|дней)/i
+  );
+
+  const hours = getDurationPart(
+    /(-?\d+)\s*(?:час|часа|часов)/i
+  );
+
+  const minutes = getDurationPart(
+    /(-?\d+)\s*(?:минута|минуты|минут)/i
+  );
+
+  const seconds = getDurationPart(
+    /(-?\d+)\s*(?:секунда|секунды|секунд)/i
+  );
 
   const totalMinutes =
     months * 30 * 24 * 60 +
@@ -106,7 +107,11 @@ function parseInactiveMinutes(html: string): number | null {
     minutes +
     seconds / 60;
 
-  return Math.floor(totalMinutes);
+  /*
+   * Отрицательное время — особенность/ошибка вывода ДМ.
+   * Для статуса активности считаем его недавним входом.
+   */
+  return Math.max(0, Math.floor(totalMinutes));
 }
 
 export function parseProfileHtml(html: string): ParsedProfile {
