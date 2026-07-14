@@ -289,6 +289,22 @@ export default function GardenPublicPage() {
     []
   );
 
+  const adjutants = useMemo(
+    () =>
+      (officialLayers.bosses ?? []).filter(
+        (boss) => boss.kind === "adjutant"
+      ),
+    []
+  );
+
+  const kings = useMemo(
+    () =>
+      (officialLayers.bosses ?? []).filter(
+        (boss) => boss.kind === "king"
+      ),
+    []
+  );
+
   const myRouteSet = useMemo(() => new Set(myRoute), [myRoute]);
   const quickRouteSet = useMemo(() => new Set(quickRoute), [quickRoute]);
   const myMarkerMap = useMemo(
@@ -882,6 +898,48 @@ export default function GardenPublicPage() {
                 />
               </label>
 
+              {showBosses && (
+                <div className="mt-3 space-y-2 rounded-xl bg-slate-50 p-3 text-sm">
+                  {adjutants.length > 0 && (
+                    <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1">
+                      <span className="h-3 w-3 shrink-0 rounded-full bg-red-500" />
+                      <span className="font-bold">Адъютанты:</span>
+                      {adjutants.map((boss, index) => (
+                        <span key={boss.coord}>
+                          <button
+                            type="button"
+                            onClick={() => centerOnCoord(boss.coord)}
+                            className="font-bold text-sky-700 underline decoration-dotted underline-offset-2 hover:text-sky-900"
+                            title={`Показать ${boss.coord} на карте`}
+                          >
+                            {boss.coord}
+                          </button>
+                          {index < adjutants.length - 1 ? "," : ""}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {kings.map((boss) => (
+                    <div
+                      key={boss.coord}
+                      className="flex flex-wrap items-center gap-x-1.5 gap-y-1"
+                    >
+                      <span className="h-3 w-3 shrink-0 rounded-full bg-blue-500" />
+                      <span className="font-bold">{boss.label}:</span>
+                      <button
+                        type="button"
+                        onClick={() => centerOnCoord(boss.coord)}
+                        className="font-bold text-sky-700 underline decoration-dotted underline-offset-2 hover:text-sky-900"
+                        title={`Показать ${boss.coord} на карте`}
+                      >
+                        {boss.coord}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <label className="mt-2 flex cursor-pointer items-center justify-between rounded-xl border border-slate-200 px-3 py-2">
                 <span className="font-bold">Мой маршрут</span>
                 <input
@@ -1117,7 +1175,7 @@ export default function GardenPublicPage() {
               )}
 
               <p className="mt-2 text-xs text-slate-500">
-                Личные метки видны только вам и остаются в этом браузере.
+                Личные метки видны только тебе и остаются в этом браузере.
               </p>
             </section>
           </aside>

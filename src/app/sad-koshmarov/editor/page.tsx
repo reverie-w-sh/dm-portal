@@ -280,6 +280,10 @@ export default function GardenNightmaresPage() {
   const [publishKey, setPublishKey] = useState("");
   const [changeText, setChangeText] = useState("");
   const [isPublishing, setIsPublishing] = useState(false);
+  const [publishStatus, setPublishStatus] = useState<{
+    type: "success" | "error" | "info";
+    text: string;
+  } | null>(null);
   const [timelineQuery, setTimelineQuery] = useState("");
   const [timelineOpen, setTimelineOpen] = useState(true);
   const [historyPast, setHistoryPast] = useState<EditorSnapshot[]>([]);
@@ -724,10 +728,16 @@ export default function GardenNightmaresPage() {
     const key = publishKey.trim();
 
     if (!key) {
-      notify("Введите ключ публикации");
+      const text = "Введи ключ публикации";
+      setPublishStatus({ type: "error", text });
+      notify(text);
       return;
     }
 
+    setPublishStatus({
+      type: "info",
+      text: "Публикую файл в GitHub…",
+    });
     setIsPublishing(true);
 
     try {
@@ -766,14 +776,16 @@ export default function GardenNightmaresPage() {
         throw new Error(result.error || "Не удалось опубликовать");
       }
 
-      notify(
-        `Версия ${nextVersion} опубликована. Vercel уже обновляет сайт`
-      );
+      const text =
+        `Версия ${nextVersion} опубликована. Vercel уже обновляет сайт`;
+      setPublishStatus({ type: "success", text });
+      notify(text);
       setChangeText("");
     } catch (error) {
-      notify(
-        error instanceof Error ? error.message : "Ошибка публикации"
-      );
+      const text =
+        error instanceof Error ? error.message : "Ошибка публикации";
+      setPublishStatus({ type: "error", text });
+      notify(text);
     } finally {
       setIsPublishing(false);
     }
@@ -1675,6 +1687,20 @@ export default function GardenNightmaresPage() {
               >
                 {isPublishing ? "Публикуется…" : "Опубликовать маршрут"}
               </button>
+
+              {publishStatus && (
+                <div
+                  className={`mt-2 rounded-xl border px-3 py-2 text-sm font-bold ${
+                    publishStatus.type === "success"
+                      ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                      : publishStatus.type === "error"
+                        ? "border-red-200 bg-red-50 text-red-700"
+                        : "border-sky-200 bg-white text-sky-800"
+                  }`}
+                >
+                  {publishStatus.text}
+                </div>
+              )}
             </section>
 
             <section className="rounded-2xl border border-slate-200 bg-white/85 p-4 shadow-sm">
