@@ -746,7 +746,10 @@ export default function GardenNightmaresPage() {
         .map((item) => item.trim())
         .filter(Boolean);
 
-      const nextVersion = Number(officialLayers.version || 0) + 1;
+      const nextVersion =
+        Number(
+          (officialLayers as { version?: number }).version ?? 0
+        ) + 1;
 
       const response = await fetch("/api/sad-koshmarov/publish", {
         method: "POST",
