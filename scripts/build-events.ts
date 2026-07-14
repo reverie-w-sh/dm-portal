@@ -27,7 +27,7 @@ const EVENTS_PATH = path.join(DATA_DIR, "events.json");
 const HISTORY_DIR = path.join(DATA_DIR, "history");
 const LAST_STATE_PATH = path.join(HISTORY_DIR, "last-state.json");
 
-const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+const NINETY_DAYS_MS = 90 * 24 * 60 * 60 * 1000;
 
 interface Player {
   cuid: string;
@@ -509,7 +509,7 @@ async function main(): Promise<void> {
     [],
   );
 
-  const cutoff = Date.now() - THIRTY_DAYS_MS;
+  const cutoff = Date.now() - NINETY_DAYS_MS;
 
   const recentStoredEvents = storedEvents.filter((event) => {
     const time = new Date(event.createdAt).getTime();
@@ -580,7 +580,7 @@ async function main(): Promise<void> {
 
   console.log(`Синхронизация: ${syncId}`);
   console.log(`Новых событий: ${newEvents.length}`);
-  console.log(`Событий за последние 30 дней: ${allEvents.length}`);
+  console.log(`Событий за последние 90 дней: ${allEvents.length}`);
   console.log(`Обновлён файл: ${EVENTS_PATH}`);
   console.log(`Обновлён снимок: ${LAST_STATE_PATH}`);
 }
