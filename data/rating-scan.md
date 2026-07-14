@@ -232,8 +232,8 @@
 12. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
 13. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
 14. Mixser[7] — cuid=27221 — https://dm-game.com/index.php?file=infouser&cuid=27221
-15. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
-16. БЛИК[6] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
+15. БЛИК[7] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
+16. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
 
 ## Каратели — CLAN 237 — знайдено 9
 
