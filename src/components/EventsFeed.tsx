@@ -814,7 +814,7 @@ export default function EventsFeed({
             >
               {showPositions
                 ? "Скрыть изменения должностей"
-                : "Показать всю историю"}
+                : "Показать изменения должностей"}
             </button>
           )}
         </div>
