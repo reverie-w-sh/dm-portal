@@ -516,7 +516,7 @@ const hasAnimal =
                       onClick={() =>
                         changeAnimal(cellIndex)
                       }
-                      title={`${animal.name}. Нажмите, чтобы изменить`}
+                      title={`${animal.name}. Нажми, чтобы изменить`}
                       aria-label={`Клетка ${
                         cellIndex + 1
                       }: ${animal.name}`}
