@@ -221,7 +221,41 @@ function isOurClan(
     "die wölfchen"
   );
 }
+function JoinClanIcon() {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      className="w-4 h-4 shrink-0"
+      fill="none"
+      stroke="#39a96b"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 3h7v14H4z" />
+      <path d="M9 10h7" />
+      <path d="M13 6l4 4-4 4" />
+    </svg>
+  );
+}
 
+function LeaveClanIcon() {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      className="w-4 h-4 shrink-0"
+      fill="none"
+      stroke="#d85b5b"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 3h7v14H9z" />
+      <path d="M11 10H4" />
+      <path d="M8 6l-4 4 4 4" />
+    </svg>
+  );
+}
 export default function EventsFeed({
   scope,
   variant = "dark",
@@ -434,9 +468,9 @@ export default function EventsFeed({
     ) {
       return (
         <p className={mainTextClass}>
-          <span className="mr-2">
-            🟢
-          </span>
+<span className="mr-2 inline-flex">
+  <JoinClanIcon />
+</span>
 
           <CharacterLink
             profileUrl={
@@ -470,9 +504,9 @@ export default function EventsFeed({
     ) {
       return (
         <p className={mainTextClass}>
-          <span className="mr-2">
-            🔴
-          </span>
+<span className="mr-2 inline-flex">
+  <LeaveClanIcon />
+</span>
 
           <CharacterLink
             profileUrl={
