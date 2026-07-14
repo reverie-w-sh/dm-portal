@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import mineMap from "../../../data/malachite-map.json";
-import officialLayers from "../../../data/malachite-layers.json";
+import shadowMap from "../../../data/shadow-forest-map.json";
+import officialLayers from "../../../data/shadow-forest-layers.json";
 
 const MIN_CELL = 12;
 const MAX_CELL = 34;
@@ -53,7 +53,7 @@ function parseCoord(coord: string, columns: string[]) {
     col < 0 ||
     !Number.isInteger(row) ||
     row < 0 ||
-    row >= mineMap.height
+    row >= shadowMap.height
   ) {
     return null;
   }
@@ -212,17 +212,17 @@ export default function GardenPublicPage() {
     startCellSize: DEFAULT_CELL,
   });
 
-  const columns = mineMap.columns;
-  const rows = mineMap.height;
-  const cols = mineMap.width;
+  const columns = shadowMap.columns;
+  const rows = shadowMap.height;
+  const cols = shadowMap.width;
 
   useEffect(() => {
     try {
-      const storedRoute = localStorage.getItem("malachite-player-route-v2");
-      const storedMarkers = localStorage.getItem("malachite-player-markers-v2");
-      const storedQuickRoute = localStorage.getItem("malachite-player-quick-route-v1");
-      const storedQuickFrom = localStorage.getItem("malachite-player-quick-from-v1");
-      const storedQuickTo = localStorage.getItem("malachite-player-quick-to-v1");
+      const storedRoute = localStorage.getItem("shadow-forest-player-route-v2");
+      const storedMarkers = localStorage.getItem("shadow-forest-player-markers-v2");
+      const storedQuickRoute = localStorage.getItem("shadow-forest-player-quick-route-v1");
+      const storedQuickFrom = localStorage.getItem("shadow-forest-player-quick-from-v1");
+      const storedQuickTo = localStorage.getItem("shadow-forest-player-quick-to-v1");
 
       if (storedRoute) setMyRoute(JSON.parse(storedRoute));
       if (storedMarkers) setMyMarkers(JSON.parse(storedMarkers));
@@ -235,17 +235,17 @@ export default function GardenPublicPage() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("malachite-player-route-v2", JSON.stringify(myRoute));
+    localStorage.setItem("shadow-forest-player-route-v2", JSON.stringify(myRoute));
   }, [myRoute]);
 
   useEffect(() => {
-    localStorage.setItem("malachite-player-markers-v2", JSON.stringify(myMarkers));
+    localStorage.setItem("shadow-forest-player-markers-v2", JSON.stringify(myMarkers));
   }, [myMarkers]);
 
   useEffect(() => {
-    localStorage.setItem("malachite-player-quick-route-v1", JSON.stringify(quickRoute));
-    localStorage.setItem("malachite-player-quick-from-v1", quickFrom);
-    localStorage.setItem("malachite-player-quick-to-v1", quickTo);
+    localStorage.setItem("shadow-forest-player-quick-route-v1", JSON.stringify(quickRoute));
+    localStorage.setItem("shadow-forest-player-quick-from-v1", quickFrom);
+    localStorage.setItem("shadow-forest-player-quick-to-v1", quickTo);
   }, [quickFrom, quickRoute, quickTo]);
 
   const coordinateSet = useMemo(() => {
@@ -438,7 +438,7 @@ export default function GardenPublicPage() {
       setMyRoute((current) => {
         const target = parseCoord(coord, columns);
 
-        if (!target || mineMap.grid[target.row]?.[target.col] !== 0) {
+        if (!target || shadowMap.grid[target.row]?.[target.col] !== 0) {
           notify("Маршрут можно прокладывать только по проходам");
           return current;
         }
@@ -460,7 +460,7 @@ export default function GardenPublicPage() {
         if (segment) {
           const blocked = segment.some((item) => {
             const point = parseCoord(item, columns);
-            return !point || mineMap.grid[point.row]?.[point.col] !== 0;
+            return !point || shadowMap.grid[point.row]?.[point.col] !== 0;
           });
 
           if (blocked) segment = null;
@@ -471,7 +471,7 @@ export default function GardenPublicPage() {
             last,
             coord,
             columns,
-            mineMap.grid as number[][]
+            shadowMap.grid as number[][]
           );
         }
 
@@ -503,8 +503,8 @@ export default function GardenPublicPage() {
       if (
         !start ||
         !finish ||
-        mineMap.grid[start.row]?.[start.col] !== 0 ||
-        mineMap.grid[finish.row]?.[finish.col] !== 0
+        shadowMap.grid[start.row]?.[start.col] !== 0 ||
+        shadowMap.grid[finish.row]?.[finish.col] !== 0
       ) {
         notify("Начальная и конечная точки должны быть проходами");
         return false;
@@ -522,7 +522,7 @@ export default function GardenPublicPage() {
         from,
         to,
         columns,
-        mineMap.grid as number[][]
+        shadowMap.grid as number[][]
       );
 
       if (!segment?.length) {
@@ -548,7 +548,7 @@ export default function GardenPublicPage() {
         if (!quickClickStart) {
           const point = parseCoord(coord, columns);
 
-          if (!point || mineMap.grid[point.row]?.[point.col] !== 0) {
+          if (!point || shadowMap.grid[point.row]?.[point.col] !== 0) {
             notify("Выбери проходную клетку");
             return;
           }
@@ -790,7 +790,7 @@ export default function GardenPublicPage() {
       <div className="mx-auto max-w-[1500px]">
         <header className="mb-4">
           <h1 className="text-2xl font-black tracking-tight sm:text-3xl">
-            Малахитовые Рудники
+            Лес Теней
           </h1>
           <p className="mt-1 text-sm text-slate-600">
             Наведи на клетку, чтобы увидеть координату. Клик копирует её,
@@ -1232,7 +1232,7 @@ export default function GardenPublicPage() {
 
                 <div className="sticky right-0 top-0 z-30 bg-[#f5f9ff]" />
 
-                {mineMap.grid.map((row, rowIndex) => (
+                {shadowMap.grid.map((row, rowIndex) => (
                   <div key={`row-${rowIndex}`} className="contents">
                     <div
                       className="sticky left-0 z-20 flex items-center justify-center border-r text-xs font-black"

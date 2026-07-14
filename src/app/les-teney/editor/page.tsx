@@ -1,8 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import mineMap from "../../../../data/malachite-map.json";
-import officialLayers from "../../../../data/malachite-layers.json";
+import shadowMap from "../../../../data/shadow-forest-map.json";
+import officialLayers from "../../../../data/shadow-forest-layers.json";
 
 const MIN_CELL = 12;
 const MAX_CELL = 34;
@@ -248,7 +248,7 @@ function findWalkablePathAvoiding(
   return null;
 }
 
-export default function MalachiteMinesEditorPage() {
+export default function ShadowForestEditorPage() {
   const viewportRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -303,9 +303,9 @@ export default function MalachiteMinesEditorPage() {
     startCellSize: DEFAULT_CELL,
   });
 
-  const columns = mineMap.columns;
-  const rows = mineMap.height;
-  const cols = mineMap.width;
+  const columns = shadowMap.columns;
+  const rows = shadowMap.height;
+  const cols = shadowMap.width;
 
   const notify = useCallback((text: string) => {
     setMessage(text);
@@ -422,11 +422,11 @@ export default function MalachiteMinesEditorPage() {
 
   useEffect(() => {
     try {
-      const storedRoute = localStorage.getItem("malachite-route-case-v2");
-      const storedDanger = localStorage.getItem("malachite-danger-case-v2");
-      const storedMarkers = localStorage.getItem("malachite-markers-case-v2");
-      const storedBattles = localStorage.getItem("malachite-battles-case-v2");
-      const storedBosses = localStorage.getItem("malachite-bosses-case-v2");
+      const storedRoute = localStorage.getItem("shadow-forest-route-case-v2");
+      const storedDanger = localStorage.getItem("shadow-forest-danger-case-v2");
+      const storedMarkers = localStorage.getItem("shadow-forest-markers-case-v2");
+      const storedBattles = localStorage.getItem("shadow-forest-battles-case-v2");
+      const storedBosses = localStorage.getItem("shadow-forest-bosses-case-v2");
 
       if (storedRoute) setRoute(JSON.parse(storedRoute));
       if (storedDanger) setDangerCells(JSON.parse(storedDanger));
@@ -439,23 +439,23 @@ export default function MalachiteMinesEditorPage() {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("malachite-route-case-v2", JSON.stringify(route));
+    localStorage.setItem("shadow-forest-route-case-v2", JSON.stringify(route));
   }, [route]);
 
   useEffect(() => {
-    localStorage.setItem("malachite-danger-case-v2", JSON.stringify(dangerCells));
+    localStorage.setItem("shadow-forest-danger-case-v2", JSON.stringify(dangerCells));
   }, [dangerCells]);
 
   useEffect(() => {
-    localStorage.setItem("malachite-markers-case-v2", JSON.stringify(customMarkers));
+    localStorage.setItem("shadow-forest-markers-case-v2", JSON.stringify(customMarkers));
   }, [customMarkers]);
 
   useEffect(() => {
-    localStorage.setItem("malachite-battles-case-v2", JSON.stringify(battleMarkers));
+    localStorage.setItem("shadow-forest-battles-case-v2", JSON.stringify(battleMarkers));
   }, [battleMarkers]);
 
   useEffect(() => {
-    localStorage.setItem("malachite-bosses-case-v2", JSON.stringify(bosses));
+    localStorage.setItem("shadow-forest-bosses-case-v2", JSON.stringify(bosses));
   }, [bosses]);
 
   const copyCoord = useCallback(
@@ -566,7 +566,7 @@ export default function MalachiteMinesEditorPage() {
         setRoute((current) => {
           const target = parseCoord(coord, columns);
 
-          if (!target || mineMap.grid[target.row]?.[target.col] !== 0) {
+          if (!target || shadowMap.grid[target.row]?.[target.col] !== 0) {
             notify("Маршрут можно прокладывать только по проходам");
             return current;
           }
@@ -598,7 +598,7 @@ export default function MalachiteMinesEditorPage() {
               const point = parseCoord(item, columns);
               return (
                 !point ||
-                mineMap.grid[point.row]?.[point.col] !== 0
+                shadowMap.grid[point.row]?.[point.col] !== 0
               );
             });
 
@@ -612,7 +612,7 @@ export default function MalachiteMinesEditorPage() {
               startCoord,
               coord,
               columns,
-              mineMap.grid as number[][]
+              shadowMap.grid as number[][]
             );
           }
 
@@ -759,11 +759,11 @@ export default function MalachiteMinesEditorPage() {
           (officialLayers as { version?: number }).version ?? 0
         ) + 1;
 
-      const response = await fetch("/api/malahitovye-rudniki/publish", {
+      const response = await fetch("/api/les-teney/publish", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-malachite-publish-key": key,
+          "x-shadow-forest-publish-key": key,
         },
         body: JSON.stringify({
           version: nextVersion,
@@ -825,7 +825,7 @@ export default function MalachiteMinesEditorPage() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "malachite-layers.json";
+    a.download = "shadow-forest-layers.json";
     a.click();
     URL.revokeObjectURL(url);
   }, [battleMarkers, bosses, customMarkers, dangerCells, route]);
@@ -904,7 +904,7 @@ export default function MalachiteMinesEditorPage() {
           previousCoord,
           nextCoord,
           columns,
-          mineMap.grid as number[][],
+          shadowMap.grid as number[][],
           removedCoord
         );
 
@@ -1237,7 +1237,7 @@ export default function MalachiteMinesEditorPage() {
         <header className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h1 className="text-2xl font-black tracking-tight sm:text-3xl">
-              Малахитовые Рудники — редактор
+              Лес Теней — редактор
             </h1>
             <p className="mt-1 text-sm text-slate-600">
               Официальный маршрут, слои и временная шкала шагов.
@@ -1816,7 +1816,7 @@ export default function MalachiteMinesEditorPage() {
 
                 <div className="sticky right-0 top-0 z-30 bg-[#f5f9ff]" />
 
-                {mineMap.grid.map((row, rowIndex) => (
+                {shadowMap.grid.map((row, rowIndex) => (
                   <div key={`row-${rowIndex}`} className="contents">
                     <div
                       className="sticky left-0 z-20 flex items-center justify-center border-r text-xs font-black"
