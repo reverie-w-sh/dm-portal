@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 type AnimalType =
   | "unknown"
+  | "empty"
   | "rabbit"
   | "wolf"
   | "boar"
@@ -21,6 +22,7 @@ const BOARD_SIZE = 16;
 
 const ANIMAL_ORDER: AnimalType[] = [
   "unknown",
+  "empty",
   "rabbit",
   "wolf",
   "boar",
@@ -41,7 +43,7 @@ const POSITIVE_SEARCH_ORDER: SearchResult[] = [
 ];
 
 const ANIMAL_LIMITS: Record<
-  Exclude<AnimalType, "unknown">,
+  Exclude<AnimalType, "unknown" | "empty">,
   number
 > = {
   rabbit: 4,
@@ -63,6 +65,11 @@ const ANIMALS: Record<
     name: "Ничего",
     cellClass: "bg-[#292f37]",
   },
+  empty: {
+  emoji: "×",
+  name: "Пустая клетка",
+  cellClass: "bg-[#343a43]",
+},
   rabbit: {
     emoji: "🐰",
     name: "Заяц",
@@ -191,9 +198,12 @@ function getNextAllowedAnimal(
         (currentIndex + step) % ANIMAL_ORDER.length
       ];
 
-    if (candidate === "unknown") {
-      return candidate;
-    }
+if (
+  candidate === "unknown" ||
+  candidate === "empty"
+) {
+  return candidate;
+}
 
     if (counts[candidate] < ANIMAL_LIMITS[candidate]) {
       return candidate;
@@ -295,7 +305,10 @@ export default function HunterBoard() {
          * Если зверя убрали, очки в клетке больше
          * невозможны. Хрестики при этом остаются.
          */
-        if (nextAnimal === "unknown") {
+if (
+  nextAnimal === "unknown" ||
+  nextAnimal === "empty"
+) {
           nextSearches = nextSearches.map((result) =>
             isPositiveResult(result) ? "none" : result,
           ) as HunterCell["searches"];
@@ -354,7 +367,9 @@ export default function HunterBoard() {
           ...cell.searches,
         ];
 
-        const hasAnimal = cell.animal !== "unknown";
+const hasAnimal =
+  cell.animal !== "unknown" &&
+  cell.animal !== "empty";
 
         const missCountInOtherSearches =
           cell.searches.filter(
@@ -507,15 +522,19 @@ export default function HunterBoard() {
                       }: ${animal.name}`}
                       className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-black/20 transition hover:brightness-105 active:scale-[0.98] sm:aspect-[1.3/1]"
                     >
-                      {cell.animal === "unknown" ? (
-                        <span className="text-2xl font-light text-white/25 sm:text-3xl">
-                          ·
-                        </span>
-                      ) : (
-                        <span className="text-2xl sm:text-4xl">
-                          {animal.emoji}
-                        </span>
-                      )}
+{cell.animal === "unknown" ? (
+  <span className="text-2xl font-light text-white/25 sm:text-3xl">
+    ·
+  </span>
+) : cell.animal === "empty" ? (
+  <span className="text-3xl font-light text-slate-500 sm:text-4xl">
+    ×
+  </span>
+) : (
+  <span className="text-2xl sm:text-4xl">
+    {animal.emoji}
+  </span>
+)}
 
                       {cell.animal !== "unknown" &&
                         missCount === 2 &&
