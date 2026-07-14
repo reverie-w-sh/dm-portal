@@ -8,7 +8,7 @@
  *   - data/last-sync.json
  *
  * Первый запуск только создаёт базовый снимок и НЕ генерирует ложные события.
- * События старше 30 дней автоматически удаляются.
+ * События старше 90 дней автоматически удаляются.
  *
  * Usage:
  *   npx tsx scripts/build-events.ts
@@ -113,20 +113,6 @@ type SiteEvent =
       profileUrl: string;
       clanId: string;
       clanName: string;
-    }
-  | {
-      id: string;
-      syncId: string;
-      createdAt: string;
-      scope: "clans";
-      type: "player_changed_clan";
-      characterId: string;
-      characterName: string;
-      profileUrl: string;
-      oldClanId: string;
-      oldClanName: string;
-      newClanId: string;
-      newClanName: string;
     }
   | {
       id: string;
@@ -329,23 +315,39 @@ function buildEvents(
         ),
       });
     } else if (oldClanId && newClanId && oldClanId !== newClanId) {
+      /*
+       * Между двумя синхронизациями персонаж оказался в другом клане.
+       * В игре нельзя перейти напрямую, поэтому создаём две реальные
+       * операции: выход из старого клана и вступление в новый.
+       */
       events.push({
         id: randomUUID(),
         syncId,
         createdAt: syncId,
         scope: "clans",
-        type: "player_changed_clan",
+        type: "player_left_clan",
         characterId: cuid,
         characterName,
         profileUrl,
-        oldClanId,
-        oldClanName: clanNameFrom(
+        clanId: oldClanId,
+        clanName: clanNameFrom(
           oldClanId,
           previousPlayer.clanName,
           previousClans,
         ),
-        newClanId,
-        newClanName: clanNameFrom(
+      });
+
+      events.push({
+        id: randomUUID(),
+        syncId,
+        createdAt: syncId,
+        scope: "clans",
+        type: "player_joined_clan",
+        characterId: cuid,
+        characterName,
+        profileUrl,
+        clanId: newClanId,
+        clanName: clanNameFrom(
           newClanId,
           currentPlayer.clanName,
           currentClans,
