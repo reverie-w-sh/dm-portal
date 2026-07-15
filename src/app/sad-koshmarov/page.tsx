@@ -1399,7 +1399,7 @@ export default function GardenPublicPage() {
                                 d="M8.8 11.2 5 15.1M15.2 11.2l3.8 3.9M10.7 14.9 8.1 21M13.3 14.9l2.6 6.1"
                                 fill="none"
                                 stroke="#090909"
-                                strokeWidth="2.1"
+                                strokeWidth="1.8"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />
