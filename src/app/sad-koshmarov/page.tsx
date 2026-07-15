@@ -1371,23 +1371,35 @@ export default function GardenPublicPage() {
                           {showSavedRoute && mob && (
                             <svg
                               viewBox="0 0 24 24"
-                              className="absolute inset-[8%] z-20"
+                              className="absolute inset-[5%] z-20"
                               aria-label={mob?.label ?? "Моб"}
                             >
                               <title>{mob?.label ?? "Моб"}</title>
+
+                              {/* Рогатая треугольная голова */}
                               <path
-                                d="M8.7 7.1 7 2.8l3.1 2L12 2.4l1.9 2.4 3.1-2-1.7 4.3-1.5 1.6h-3.6Z"
+                                d="M7.6 7.7 6.6 2.5l3.2 2.2L12 2l2.2 2.7 3.2-2.2-1 5.2L12 9.4Z"
                                 fill="#090909"
                               />
+
+                              {/* Острые наплечники */}
                               <path
-                                d="M5.2 10.3 9 8.4l1.5 1.3h3l1.5-1.3 3.8 1.9-3.3 1.1H8.5Z"
+                                d="M3.7 10.6 9.1 8.4 10.3 10h3.4l1.2-1.6 5.4 2.2-4.7 1.4H8.4Z"
                                 fill="#090909"
                               />
+
+                              {/* Короткое, не слишком тонкое туловище */}
                               <path
-                                d="M12 10.1v6.3M8.4 11.3 5.6 15M15.6 11.3l2.8 3.7M12 16.4l-2.8 4M12 16.4l2.8 4"
+                                d="M9.2 10.4h5.6l.7 6.1-3.5 1.2-3.5-1.2Z"
+                                fill="#090909"
+                              />
+
+                              {/* Руки и ноги; ноги начинаются выше */}
+                              <path
+                                d="M8.8 11.2 5 15.1M15.2 11.2l3.8 3.9M10.7 14.9 8.1 21M13.3 14.9l2.6 6.1"
                                 fill="none"
                                 stroke="#090909"
-                                strokeWidth="1.9"
+                                strokeWidth="2.1"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                               />
