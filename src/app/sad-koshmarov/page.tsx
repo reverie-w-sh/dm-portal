@@ -278,6 +278,17 @@ export default function GardenPublicPage() {
     []
   );
 
+  const officialMobMap = useMemo(
+    () =>
+      new Map(
+        ((officialLayers.mobMarkers ?? []) as PersonalMarker[]).map((item) => [
+          item.coord,
+          item,
+        ])
+      ),
+    []
+  );
+
   const officialMarkerMap = useMemo(
     () =>
       new Map(
@@ -1245,6 +1256,7 @@ export default function GardenPublicPage() {
                       const isFlashing = flashCoord === coord;
                       const boss = officialBossMap.get(coord);
                       const battle = officialBattleMap.get(coord);
+                      const mob = officialMobMap.get(coord);
                       const officialMarker = officialMarkerMap.get(coord);
                       const myMarker = myMarkerMap.get(coord);
 
@@ -1349,11 +1361,35 @@ export default function GardenPublicPage() {
 
                           {showSavedRoute && battle && (
                             <span
-                              className="absolute inset-0 z-20 flex items-center justify-center text-[12px] font-black leading-none drop-shadow"
+                              className="absolute inset-[-8%] z-20 flex items-center justify-center text-[16px] font-black leading-none drop-shadow"
                               title={battle.label}
                             >
                               ⚔
                             </span>
+                          )}
+
+                          {showSavedRoute && mob && (
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="absolute inset-[8%] z-20"
+                              aria-label={mob.label}
+                            >
+                              <title>{mob.label}</title>
+                              <path
+                                d="M8.4 7.8 6.5 3.4l3.2 2.1L12 3l2.3 2.5 3.2-2.1-1.9 4.4-1.7 2.1h-3.8Z"
+                                fill="#090909"
+                              />
+                              <path
+                                d="M3.5 12.4 8.2 9.6l2.2 2h3.2l2.2-2 4.7 2.8-3.3 2.5-.9 6.1H7.7l-.9-6.1Z"
+                                fill="#090909"
+                              />
+                              <path
+                                d="M8.6 20.2 6.9 22.5M15.4 20.2l1.7 2.3"
+                                stroke="#090909"
+                                strokeWidth="2.4"
+                                strokeLinecap="round"
+                              />
+                            </svg>
                           )}
 
                           {showBosses && boss && (

@@ -38,11 +38,17 @@ type BattleMarker = {
   label: string;
 };
 
+type MobMarker = {
+  coord: string;
+  label: string;
+};
+
 type EditorSnapshot = {
   route: string[];
   dangerCells: string[];
   customMarkers: CustomMarker[];
   battleMarkers: BattleMarker[];
+  mobMarkers: MobMarker[];
   bosses: Boss[];
 };
 
@@ -266,6 +272,7 @@ export default function MalachiteMinesEditorPage() {
   const [showDanger, setShowDanger] = useState(false);
   const [showMarkers, setShowMarkers] = useState(true);
   const [showBattles, setShowBattles] = useState(true);
+  const [showMobs, setShowMobs] = useState(true);
 
   const [routeEditMode, setRouteEditMode] = useState(false);
   const [route, setRoute] = useState<string[]>(officialLayers.route ?? EMPTY_ROUTE);
@@ -273,9 +280,11 @@ export default function MalachiteMinesEditorPage() {
   const [dangerCells, setDangerCells] = useState<string[]>(officialLayers.dangerCells ?? []);
   const [customMarkers, setCustomMarkers] = useState<CustomMarker[]>(officialLayers.customMarkers ?? []);
   const [battleMarkers, setBattleMarkers] = useState<BattleMarker[]>(officialLayers.battleMarkers ?? []);
+  const [mobMarkers, setMobMarkers] = useState<MobMarker[]>(officialLayers.mobMarkers ?? []);
   const [bosses, setBosses] = useState<Boss[]>((officialLayers.bosses ?? []) as Boss[]);
   const [markerLabel, setMarkerLabel] = useState("Метка");
   const [battleLabel, setBattleLabel] = useState("Бой");
+  const [mobLabel, setMobLabel] = useState("Моб");
   const [message, setMessage] = useState("");
   const [publishKey, setPublishKey] = useState("");
   const [changeText, setChangeText] = useState("");
@@ -320,9 +329,10 @@ export default function MalachiteMinesEditorPage() {
       dangerCells: [...dangerCells],
       customMarkers: customMarkers.map((item) => ({ ...item })),
       battleMarkers: battleMarkers.map((item) => ({ ...item })),
+      mobMarkers: mobMarkers.map((item) => ({ ...item })),
       bosses: bosses.map((item) => ({ ...item })),
     }),
-    [battleMarkers, bosses, customMarkers, dangerCells, route]
+    [battleMarkers, bosses, customMarkers, dangerCells, mobMarkers, route]
   );
 
   const applySnapshot = useCallback((snapshot: EditorSnapshot) => {
@@ -331,6 +341,7 @@ export default function MalachiteMinesEditorPage() {
     setDangerCells([...snapshot.dangerCells]);
     setCustomMarkers(snapshot.customMarkers.map((item) => ({ ...item })));
     setBattleMarkers(snapshot.battleMarkers.map((item) => ({ ...item })));
+    setMobMarkers(snapshot.mobMarkers.map((item) => ({ ...item })));
     setBosses(snapshot.bosses.map((item) => ({ ...item })));
     setRouteCursorIndex(
       snapshot.route.length > 0 ? snapshot.route.length - 1 : null
@@ -415,6 +426,11 @@ export default function MalachiteMinesEditorPage() {
     [battleMarkers]
   );
 
+  const mobMap = useMemo(
+    () => new Map(mobMarkers.map((marker) => [marker.coord, marker])),
+    [mobMarkers]
+  );
+
   const getCoord = useCallback(
     (col: number, row: number) => `${columns[col]}${row + 1}`,
     [columns]
@@ -426,12 +442,14 @@ export default function MalachiteMinesEditorPage() {
       const storedDanger = localStorage.getItem("malachite-danger-case-v2");
       const storedMarkers = localStorage.getItem("malachite-markers-case-v2");
       const storedBattles = localStorage.getItem("malachite-battles-case-v2");
+      const storedMobs = localStorage.getItem("malachite-mobs-case-v2");
       const storedBosses = localStorage.getItem("malachite-bosses-case-v2");
 
       if (storedRoute) setRoute(JSON.parse(storedRoute));
       if (storedDanger) setDangerCells(JSON.parse(storedDanger));
       if (storedMarkers) setCustomMarkers(JSON.parse(storedMarkers));
       if (storedBattles) setBattleMarkers(JSON.parse(storedBattles));
+      if (storedMobs) setMobMarkers(JSON.parse(storedMobs));
       if (storedBosses) setBosses(JSON.parse(storedBosses));
     } catch {
       // Повреждённые локальные данные просто игнорируем.
@@ -453,6 +471,10 @@ export default function MalachiteMinesEditorPage() {
   useEffect(() => {
     localStorage.setItem("malachite-battles-case-v2", JSON.stringify(battleMarkers));
   }, [battleMarkers]);
+
+  useEffect(() => {
+    localStorage.setItem("malachite-mobs-case-v2", JSON.stringify(mobMarkers));
+  }, [mobMarkers]);
 
   useEffect(() => {
     localStorage.setItem("malachite-bosses-case-v2", JSON.stringify(bosses));
@@ -732,6 +754,35 @@ export default function MalachiteMinesEditorPage() {
     [notify, rememberBeforeChange]
   );
 
+  const addMob = useCallback(
+    (coord: string) => {
+      const label = mobLabel.trim() || "Моб";
+      rememberBeforeChange();
+
+      setMobMarkers((current) => {
+        const exists = current.find((item) => item.coord === coord);
+        if (exists) {
+          return current.map((item) =>
+            item.coord === coord ? { ...item, label } : item
+          );
+        }
+        return [...current, { coord, label }];
+      });
+
+      notify(`Моб добавлен: ${coord}`);
+    },
+    [mobLabel, notify, rememberBeforeChange]
+  );
+
+  const removeMob = useCallback(
+    (coord: string) => {
+      rememberBeforeChange();
+      setMobMarkers((current) => current.filter((item) => item.coord !== coord));
+      notify(`Моб удалён: ${coord}`);
+    },
+    [notify, rememberBeforeChange]
+  );
+
   const publishOfficialLayers = useCallback(async () => {
     const key = publishKey.trim();
 
@@ -828,7 +879,7 @@ export default function MalachiteMinesEditorPage() {
     a.download = "malachite-layers.json";
     a.click();
     URL.revokeObjectURL(url);
-  }, [battleMarkers, bosses, customMarkers, dangerCells, route]);
+  }, [battleMarkers, bosses, customMarkers, dangerCells, mobMarkers, route]);
 
 
   const setBoss = useCallback((coord: string, kind: "adjutant" | "king") => {
@@ -1007,6 +1058,9 @@ export default function MalachiteMinesEditorPage() {
           }
           if (Array.isArray(parsed.battleMarkers)) {
             setBattleMarkers(parsed.battleMarkers);
+          }
+          if (Array.isArray(parsed.mobMarkers)) {
+            setMobMarkers(parsed.mobMarkers);
           }
 
           notify("Слои загружены");
@@ -1207,6 +1261,7 @@ export default function MalachiteMinesEditorPage() {
   const activeBoss = activeCoord ? bossesByCoord.get(activeCoord) : undefined;
   const activeMarker = activeCoord ? markerMap.get(activeCoord) : undefined;
   const activeBattle = activeCoord ? battleMap.get(activeCoord) : undefined;
+  const activeMob = activeCoord ? mobMap.get(activeCoord) : undefined;
   const activeRouteSteps =
     activeCoord && routeStepsByCoord.has(activeCoord)
       ? routeStepsByCoord.get(activeCoord) ?? []
@@ -1331,7 +1386,7 @@ export default function MalachiteMinesEditorPage() {
               {message ||
                 (copiedCoord
                   ? `✓ ${copiedCoord} скопировано`
-                  : displayCoord || "Наведи на клетку")}
+                  : displayCoord || "Наведите на клетку")}
             </div>
           </div>
 
@@ -1359,6 +1414,7 @@ export default function MalachiteMinesEditorPage() {
                   ["Опасные места", showDanger, setShowDanger],
                   ["Мои метки", showMarkers, setShowMarkers],
                   ["Бои", showBattles, setShowBattles],
+                  ["Мобы", showMobs, setShowMobs],
                 ].map(([label, checked, setter]) => (
                   <label
                     key={String(label)}
@@ -1508,6 +1564,12 @@ export default function MalachiteMinesEditorPage() {
                   </div>
                 )}
 
+                {activeMob && (
+                  <div className="mt-1 text-sm font-bold">
+                    ◼ {activeMob.label}
+                  </div>
+                )}
+
                 {activeRouteSteps.length > 0 && (
                   <div className="mt-1 text-xs text-slate-600">
                     {activeRouteSteps.length === 1
@@ -1612,6 +1674,31 @@ export default function MalachiteMinesEditorPage() {
                   {activeCoord && battleMap.has(activeCoord)
                     ? "Убрать бой"
                     : "Добавить бой"}
+                </button>
+
+                <div className="my-1 border-t border-slate-200" />
+
+                <input
+                  value={mobLabel}
+                  onChange={(event) => setMobLabel(event.target.value)}
+                  placeholder="Название моба"
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-sky-400"
+                />
+
+                <button
+                  type="button"
+                  disabled={!activeCoord}
+                  onClick={() =>
+                    activeCoord &&
+                    (mobMap.has(activeCoord)
+                      ? removeMob(activeCoord)
+                      : addMob(activeCoord))
+                  }
+                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold disabled:opacity-40"
+                >
+                  {activeCoord && mobMap.has(activeCoord)
+                    ? "Убрать моба"
+                    : "Добавить моба"}
                 </button>
               </div>
             </section>
@@ -1841,6 +1928,7 @@ export default function MalachiteMinesEditorPage() {
                       const boss = bossesByCoord.get(coord);
                       const marker = markerMap.get(coord);
                       const battle = battleMap.get(coord);
+                      const mob = mobMap.get(coord);
                       const routeSteps = routeStepsByCoord.get(coord);
                       const dangerous = dangerSet.has(coord);
 
@@ -1923,12 +2011,36 @@ export default function MalachiteMinesEditorPage() {
 
                           {showBattles && battle && (
                             <span
-                              className="absolute inset-0 z-20 flex items-center justify-center text-[11px] font-black leading-none drop-shadow"
+                              className="absolute inset-[-8%] z-20 flex items-center justify-center text-[15px] font-black leading-none drop-shadow"
                               title={battle.label}
                               aria-label={battle.label}
                             >
                               ⚔
                             </span>
+                          )}
+
+                          {showMobs && mob && (
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="absolute inset-[8%] z-20"
+                              aria-label={mob.label}
+                            >
+                              <title>{mob.label}</title>
+                              <path
+                                d="M8.4 7.8 6.5 3.4l3.2 2.1L12 3l2.3 2.5 3.2-2.1-1.9 4.4-1.7 2.1h-3.8Z"
+                                fill="#090909"
+                              />
+                              <path
+                                d="M3.5 12.4 8.2 9.6l2.2 2h3.2l2.2-2 4.7 2.8-3.3 2.5-.9 6.1H7.7l-.9-6.1Z"
+                                fill="#090909"
+                              />
+                              <path
+                                d="M8.6 20.2 6.9 22.5M15.4 20.2l1.7 2.3"
+                                stroke="#090909"
+                                strokeWidth="2.4"
+                                strokeLinecap="round"
+                              />
+                            </svg>
                           )}
 
                           {showBosses && boss && (
