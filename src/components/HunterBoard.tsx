@@ -10,7 +10,12 @@ type AnimalType =
   | "boar"
   | "bear";
 
-type SearchResult = "none" | "miss" | "plus1" | "plus3";
+type SearchResult =
+  | "none"
+  | "miss"
+  | "plus1"
+  | "plus3"
+  | "plus6";
 
 interface HunterCell {
   animal: AnimalType;
@@ -34,12 +39,14 @@ const SEARCH_ORDER: SearchResult[] = [
   "miss",
   "plus1",
   "plus3",
+  "plus6",
 ];
 
 const POSITIVE_SEARCH_ORDER: SearchResult[] = [
   "none",
   "plus1",
   "plus3",
+  "plus6",
 ];
 
 const ANIMAL_LIMITS: Record<
@@ -120,6 +127,12 @@ const SEARCHES: Record<
     title: "Зверь найден, шкурка получена",
     className: "bg-emerald-100 text-emerald-800 hover:bg-emerald-200",
   },
+  plus6: {
+  label: "+6",
+  title: "Получены две шкурки",
+  className:
+    "bg-violet-100 text-violet-800 hover:bg-violet-200",
+},
 };
 
 function createEmptyBoard(): HunterCell[] {
@@ -138,12 +151,17 @@ function getNextValue<T>(values: T[], current: T): T {
 function getSearchPoints(result: SearchResult): number {
   if (result === "plus1") return 1;
   if (result === "plus3") return 3;
+  if (result === "plus6") return 6;
 
   return 0;
 }
 
 function isPositiveResult(result: SearchResult): boolean {
-  return result === "plus1" || result === "plus3";
+  return (
+    result === "plus1" ||
+    result === "plus3" ||
+    result === "plus6"
+  );
 }
 
 function isHunterCell(value: unknown): value is HunterCell {
@@ -628,6 +646,10 @@ const hasAnimal =
             <span>
               <b className="text-emerald-400">+3</b> — шкурка
             </span>
+
+            <span>
+  <b className="text-violet-400">+6</b> — две шкурки
+</span>
           </div>
         </div>
 
