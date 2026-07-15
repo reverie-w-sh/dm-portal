@@ -1950,21 +1950,25 @@ export default function GardenNightmaresPage() {
 
                           {showDanger && dangerous && (
                             <svg
-                              viewBox="0 0 12 12"
+                              viewBox="0 0 24 24"
                               className="absolute inset-[12%] z-20"
-                              aria-label={mob.label}
+                              aria-label="Опасное место"
                             >
-                              <title>{mob.label}</title>
-                              <path d="M3 2 L5 0.5 L6 1.5 L7 0.5 L9 2 L6 4 Z" fill="#111"/>
-                              <path d="M2 4 L4 3 L4.5 4.5 L2.5 5 Z" fill="#111"/>
-                              <path d="M10 4 L8 3 L7.5 4.5 L9.5 5 Z" fill="#111"/>
-                              <rect x="4.5" y="4" width="3" height="3.5" rx="0.5" fill="#111"/>
-                              <line x1="4" y1="5.5" x2="2" y2="6.5" stroke="#111" strokeWidth="1" />
-                              <line x1="8" y1="5.5" x2="10" y2="6.5" stroke="#111" strokeWidth="1" />
-                              <line x1="5.2" y1="6.5" x2="3.5" y2="10" stroke="#111" strokeWidth="1" />
-                              <line x1="6.8" y1="6.5" x2="8.5" y2="10" stroke="#111" strokeWidth="1" />
+                              <path
+                                d="M12 2.8 22 20.5H2Z"
+                                fill="#facc15"
+                                stroke="#854d0e"
+                                strokeWidth="1.7"
+                                strokeLinejoin="round"
+                              />
+                              <path
+                                d="M12 8v6"
+                                stroke="#422006"
+                                strokeWidth="2.2"
+                                strokeLinecap="round"
+                              />
+                              <circle cx="12" cy="17.2" r="1.15" fill="#422006" />
                             </svg>
-
                           )}
 
                           {showMarkers && marker && (
@@ -1983,21 +1987,28 @@ export default function GardenNightmaresPage() {
 
                           {showMobs && mob && (
                             <svg
-                              viewBox="0 0 12 12"
-                              className="absolute inset-[12%] z-20"
-                              aria-label={mob.label}
+                              viewBox="0 0 24 24"
+                              className="absolute inset-[8%] z-20"
+                              aria-label={mob?.label ?? "Моб"}
                             >
-                              <title>{mob.label}</title>
-                              <path d="M3 2 L5 0.5 L6 1.5 L7 0.5 L9 2 L6 4 Z" fill="#111"/>
-                              <path d="M2 4 L4 3 L4.5 4.5 L2.5 5 Z" fill="#111"/>
-                              <path d="M10 4 L8 3 L7.5 4.5 L9.5 5 Z" fill="#111"/>
-                              <rect x="4.5" y="4" width="3" height="3.5" rx="0.5" fill="#111"/>
-                              <line x1="4" y1="5.5" x2="2" y2="6.5" stroke="#111" strokeWidth="1" />
-                              <line x1="8" y1="5.5" x2="10" y2="6.5" stroke="#111" strokeWidth="1" />
-                              <line x1="5.2" y1="6.5" x2="3.5" y2="10" stroke="#111" strokeWidth="1" />
-                              <line x1="6.8" y1="6.5" x2="8.5" y2="10" stroke="#111" strokeWidth="1" />
+                              <title>{mob?.label ?? "Моб"}</title>
+                              <path
+                                d="M8.7 7.1 7 2.8l3.1 2L12 2.4l1.9 2.4 3.1-2-1.7 4.3-1.5 1.6h-3.6Z"
+                                fill="#090909"
+                              />
+                              <path
+                                d="M5.2 10.3 9 8.4l1.5 1.3h3l1.5-1.3 3.8 1.9-3.3 1.1H8.5Z"
+                                fill="#090909"
+                              />
+                              <path
+                                d="M12 10.1v6.3M8.4 11.3 5.6 15M15.6 11.3l2.8 3.7M12 16.4l-2.8 4M12 16.4l2.8 4"
+                                fill="none"
+                                stroke="#090909"
+                                strokeWidth="1.9"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
                             </svg>
-
                           )}
 
                           {showBosses && boss && (
