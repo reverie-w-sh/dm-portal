@@ -547,6 +547,14 @@
     {
       "coord": "R14",
       "label": "Метка"
+    },
+    {
+      "coord": "X27",
+      "label": "Метка"
+    },
+    {
+      "coord": "t41",
+      "label": "Метка"
     }
   ],
   "battleMarkers": [
@@ -712,6 +720,22 @@
     },
     {
       "coord": "M35",
+      "label": "Бой"
+    },
+    {
+      "coord": "K33",
+      "label": "Бой"
+    },
+    {
+      "coord": "G48",
+      "label": "Бой"
+    },
+    {
+      "coord": "B50",
+      "label": "Бой"
+    },
+    {
+      "coord": "d16",
       "label": "Бой"
     }
   ],
