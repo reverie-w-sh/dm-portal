@@ -281,7 +281,7 @@ export default function GardenNightmaresPage() {
   const [dangerCells, setDangerCells] = useState<string[]>(officialLayers.dangerCells ?? []);
   const [customMarkers, setCustomMarkers] = useState<CustomMarker[]>(officialLayers.customMarkers ?? []);
   const [battleMarkers, setBattleMarkers] = useState<BattleMarker[]>(officialLayers.battleMarkers ?? []);
-  const [mobMarkers, setMobMarkers] = useState<MobMarker[]>(officialLayers.mobMarkers ?? []);
+  const [mobMarkers, setMobMarkers] = useState<MobMarker[]>((officialLayers as { mobMarkers?: MobMarker[] }).mobMarkers ?? []);
   const [markerLabel, setMarkerLabel] = useState("Метка");
   const [battleLabel, setBattleLabel] = useState("Бой");
   const [mobLabel, setMobLabel] = useState("Моб");

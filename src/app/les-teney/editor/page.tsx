@@ -280,7 +280,7 @@ export default function ShadowForestEditorPage() {
   const [dangerCells, setDangerCells] = useState<string[]>(officialLayers.dangerCells ?? []);
   const [customMarkers, setCustomMarkers] = useState<CustomMarker[]>(officialLayers.customMarkers ?? []);
   const [battleMarkers, setBattleMarkers] = useState<BattleMarker[]>(officialLayers.battleMarkers ?? []);
-  const [mobMarkers, setMobMarkers] = useState<MobMarker[]>(officialLayers.mobMarkers ?? []);
+  const [mobMarkers, setMobMarkers] = useState<MobMarker[]>((officialLayers as { mobMarkers?: MobMarker[] }).mobMarkers ?? []);
   const [bosses, setBosses] = useState<Boss[]>((officialLayers.bosses ?? []) as Boss[]);
   const [markerLabel, setMarkerLabel] = useState("Метка");
   const [battleLabel, setBattleLabel] = useState("Бой");

@@ -292,7 +292,7 @@ export default function GardenPublicPage() {
   const officialMobMap = useMemo(
     () =>
       new Map(
-        ((officialLayers.mobMarkers ?? []) as PersonalMarker[]).map((item) => [
+        (((officialLayers as { mobMarkers?: PersonalMarker[] }).mobMarkers ?? []) as PersonalMarker[]).map((item) => [
           item.coord,
           item,
         ])
