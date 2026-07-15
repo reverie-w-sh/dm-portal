@@ -1376,18 +1376,20 @@ export default function GardenPublicPage() {
                             >
                               <title>{mob.label}</title>
                               <path
-                                d="M8.4 7.8 6.5 3.4l3.2 2.1L12 3l2.3 2.5 3.2-2.1-1.9 4.4-1.7 2.1h-3.8Z"
+                                d="M8.7 7.1 7 2.8l3.1 2L12 2.4l1.9 2.4 3.1-2-1.7 4.3-1.5 1.6h-3.6Z"
                                 fill="#090909"
                               />
                               <path
-                                d="M3.5 12.4 8.2 9.6l2.2 2h3.2l2.2-2 4.7 2.8-3.3 2.5-.9 6.1H7.7l-.9-6.1Z"
+                                d="M5.2 10.3 9 8.4l1.5 1.3h3l1.5-1.3 3.8 1.9-3.3 1.1H8.5Z"
                                 fill="#090909"
                               />
                               <path
-                                d="M8.6 20.2 6.9 22.5M15.4 20.2l1.7 2.3"
+                                d="M12 10.1v6.3M8.4 11.3 5.6 15M15.6 11.3l2.8 3.7M12 16.4l-2.8 4M12 16.4l2.8 4"
+                                fill="none"
                                 stroke="#090909"
-                                strokeWidth="2.4"
+                                strokeWidth="1.9"
                                 strokeLinecap="round"
+                                strokeLinejoin="round"
                               />
                             </svg>
                           )}
