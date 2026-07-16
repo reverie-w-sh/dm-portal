@@ -6,5 +6,26 @@
   "dangerCells": [],
   "customMarkers": [],
   "battleMarkers": [],
-  "bosses": []
+  "bosses": [
+    {
+      "coord": "t22",
+      "kind": "adjutant",
+      "label": "Адъютант"
+    },
+    {
+      "coord": "k36",
+      "kind": "adjutant",
+      "label": "Адъютант"
+    },
+    {
+      "coord": "G28",
+      "kind": "adjutant",
+      "label": "Адъютант"
+    },
+    {
+      "coord": "M34",
+      "kind": "king",
+      "label": "Царь"
+    }
+  ]
 }
