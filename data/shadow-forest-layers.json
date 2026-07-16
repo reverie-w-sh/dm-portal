@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updatedAt": "",
   "changes": [],
   "route": [],
@@ -18,14 +18,14 @@
       "label": "Адъютант"
     },
     {
-      "coord": "x36",
-      "kind": "king",
-      "label": "Царь"
-    },
-    {
       "coord": "l27",
       "kind": "adjutant",
       "label": "Адъютант"
+    },
+    {
+      "coord": "x36",
+      "kind": "king",
+      "label": "Царь"
     }
   ]
 }

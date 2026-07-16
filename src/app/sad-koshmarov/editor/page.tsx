@@ -2024,13 +2024,31 @@ export default function GardenNightmaresPage() {
                           )}
 
                           {showBosses && boss && (
-                            <span
-                              className={`absolute inset-[20%] rounded-full ring-2 ring-white ${
-                                boss.kind === "king"
-                                  ? "bg-blue-600"
-                                  : "bg-red-600"
-                              }`}
-                            />
+                            <svg
+                              viewBox="0 0 24 24"
+                              className="absolute inset-[5%] z-20"
+                              aria-label={boss.label}
+                            >
+                              <title>{boss.label}</title>
+                              <g
+                                fill={boss.kind === "king" ? "#8b0000" : "#c62828"}
+                                stroke={boss.kind === "king" ? "#ff4d3d" : "none"}
+                                strokeWidth={boss.kind === "king" ? 0.7 : 0}
+                                strokeLinejoin="round"
+                              >
+                                <path d="M7.6 7.7 6.6 2.5l3.2 2.2L12 2l2.2 2.7 3.2-2.2-1 5.2L12 9.4Z" />
+                                <path d="M3.7 10.6 9.1 8.4 10.3 10h3.4l1.2-1.6 5.4 2.2-4.7 1.4H8.4Z" />
+                                <path d="M9.95 10.4h4.1l.5 6.1L12 17.5l-2.55-1Z" />
+                              </g>
+                              <path
+                                d="M8.8 11.2 5 15.1M15.2 11.2l3.8 3.9M10.7 14.9 8.1 21M13.3 14.9l2.6 6.1"
+                                fill="none"
+                                stroke={boss.kind === "king" ? "#8b0000" : "#c62828"}
+                                strokeWidth="1.55"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
                           )}
 
                           {isHovered && (
