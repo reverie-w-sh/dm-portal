@@ -1,5 +1,45 @@
 [
   {
+    "id": "6a4c64c0-1c07-403d-86de-e4b791c5be78",
+    "syncId": "2026-07-16T05:50:44.556Z",
+    "createdAt": "2026-07-16T05:50:44.556Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "8717",
+    "characterName": "Смех из Палаты",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни"
+  },
+  {
+    "id": "bf8e92e3-216c-4eb9-bea4-f474cb93be4c",
+    "syncId": "2026-07-16T05:50:44.556Z",
+    "createdAt": "2026-07-16T05:50:44.556Z",
+    "scope": "clans",
+    "type": "clan_smile_added",
+    "clanId": "278",
+    "clanName": "die Wölfchen",
+    "amount": 3,
+    "oldCount": 23,
+    "newCount": 26
+  },
+  {
+    "id": "2dd3cd5f-d36b-4b03-9023-18f4469b9e58",
+    "syncId": "2026-07-16T05:50:44.556Z",
+    "createdAt": "2026-07-16T05:50:44.556Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "2094",
+    "characterName": "Мишаня",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2094",
+    "amount": 1,
+    "oldCount": 23,
+    "newCount": 24,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/4116/prv_murlove24.gif"
+    ]
+  },
+  {
     "id": "defc8d1a-d065-4a38-be91-4e7d4b2d3629",
     "syncId": "2026-07-14T05:41:26.649Z",
     "createdAt": "2026-07-14T05:41:26.649Z",

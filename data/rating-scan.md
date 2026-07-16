@@ -62,34 +62,35 @@
 14. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 15. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 26
+## Лесные Оборотни — CLAN 212 — знайдено 27
 
 1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
 2. Милли[12] — cuid=1927 — https://dm-game.com/index.php?file=infouser&cuid=1927
 3. BlackGeneral[11] — cuid=6250 — https://dm-game.com/index.php?file=infouser&cuid=6250
 4. Pretty[11] — cuid=2041 — https://dm-game.com/index.php?file=infouser&cuid=2041
 5. Serg[11] — cuid=1985 — https://dm-game.com/index.php?file=infouser&cuid=1985
-6. Takezo[10] — cuid=7224 — https://dm-game.com/index.php?file=infouser&cuid=7224
-7. Fistashka[9] — cuid=24697 — https://dm-game.com/index.php?file=infouser&cuid=24697
-8. marlllboro[9] — cuid=10227 — https://dm-game.com/index.php?file=infouser&cuid=10227
-9. melnikov[9] — cuid=1401 — https://dm-game.com/index.php?file=infouser&cuid=1401
-10. Vazilin[9] — cuid=7167 — https://dm-game.com/index.php?file=infouser&cuid=7167
-11. Apmagedon_ua[8] — cuid=10370 — https://dm-game.com/index.php?file=infouser&cuid=10370
-12. ARTICK[8] — cuid=17223 — https://dm-game.com/index.php?file=infouser&cuid=17223
-13. black metals[8] — cuid=19013 — https://dm-game.com/index.php?file=infouser&cuid=19013
-14. Black_knight[8] — cuid=6662 — https://dm-game.com/index.php?file=infouser&cuid=6662
-15. DooMavoD[8] — cuid=27046 — https://dm-game.com/index.php?file=infouser&cuid=27046
-16. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
-17. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
-18. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
-19. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
-20. SHPILwarKIEV[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
-21. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-22. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
-23. Отец Алисы Дмитриевны[8] — cuid=26588 — https://dm-game.com/index.php?file=infouser&cuid=26588
-24. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
-25. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
-26. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
+6. Смех из Палаты[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
+7. Takezo[10] — cuid=7224 — https://dm-game.com/index.php?file=infouser&cuid=7224
+8. Fistashka[9] — cuid=24697 — https://dm-game.com/index.php?file=infouser&cuid=24697
+9. marlllboro[9] — cuid=10227 — https://dm-game.com/index.php?file=infouser&cuid=10227
+10. melnikov[9] — cuid=1401 — https://dm-game.com/index.php?file=infouser&cuid=1401
+11. Vazilin[9] — cuid=7167 — https://dm-game.com/index.php?file=infouser&cuid=7167
+12. Apmagedon_ua[8] — cuid=10370 — https://dm-game.com/index.php?file=infouser&cuid=10370
+13. ARTICK[8] — cuid=17223 — https://dm-game.com/index.php?file=infouser&cuid=17223
+14. black metals[8] — cuid=19013 — https://dm-game.com/index.php?file=infouser&cuid=19013
+15. Black_knight[8] — cuid=6662 — https://dm-game.com/index.php?file=infouser&cuid=6662
+16. DooMavoD[8] — cuid=27046 — https://dm-game.com/index.php?file=infouser&cuid=27046
+17. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
+18. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
+19. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
+20. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
+21. SHPILwarKIEV[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
+22. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
+23. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
+24. Отец Алисы Дмитриевны[8] — cuid=26588 — https://dm-game.com/index.php?file=infouser&cuid=26588
+25. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+26. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
+27. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
 ## Ozune — CLAN 213 — знайдено 26
 
