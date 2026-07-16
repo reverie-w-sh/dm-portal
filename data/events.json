@@ -1,5 +1,33 @@
 [
   {
+    "id": "973fd36c-be1e-4346-b7ef-f72d4fc14b18",
+    "syncId": "2026-07-16T16:27:50.400Z",
+    "createdAt": "2026-07-16T16:27:50.400Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "17507",
+    "characterName": "немец",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17507",
+    "clanId": "278",
+    "clanName": "die Wölfchen",
+    "oldPosition": "немец",
+    "newPosition": "Молчун"
+  },
+  {
+    "id": "90a630bd-1acf-4129-98ef-b312bf604b19",
+    "syncId": "2026-07-16T16:27:50.400Z",
+    "createdAt": "2026-07-16T16:27:50.400Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "16989",
+    "characterName": "Асталависта",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=16989",
+    "clanId": "278",
+    "clanName": "die Wölfchen",
+    "oldPosition": "Асталависта",
+    "newPosition": "Ворчун"
+  },
+  {
     "id": "6a4c64c0-1c07-403d-86de-e4b791c5be78",
     "syncId": "2026-07-16T05:50:44.556Z",
     "createdAt": "2026-07-16T05:50:44.556Z",
