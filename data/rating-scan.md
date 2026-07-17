@@ -296,7 +296,7 @@
 4. тупик101[8] — cuid=3943 — https://dm-game.com/index.php?file=infouser&cuid=3943
 5. египтянин[6] — cuid=28595 — https://dm-game.com/index.php?file=infouser&cuid=28595
 
-## die Wölfchen — CLAN 278 — знайдено 17
+## die Wölfchen — CLAN 278 — знайдено 18
 
 1. Артур[14] — cuid=7939 — https://dm-game.com/index.php?file=infouser&cuid=7939
 2. Катерина[14] — cuid=111 — https://dm-game.com/index.php?file=infouser&cuid=111
@@ -309,10 +309,11 @@
 9. Allania[9] — cuid=4394 — https://dm-game.com/index.php?file=infouser&cuid=4394
 10. kamazik[9] — cuid=1980 — https://dm-game.com/index.php?file=infouser&cuid=1980
 11. Mentalist[9] — cuid=3358 — https://dm-game.com/index.php?file=infouser&cuid=3358
-12. Чудик[9] — cuid=19182 — https://dm-game.com/index.php?file=infouser&cuid=19182
-13. kristi[8] — cuid=3780 — https://dm-game.com/index.php?file=infouser&cuid=3780
-14. songre[8] — cuid=1996 — https://dm-game.com/index.php?file=infouser&cuid=1996
-15. Асталависта[8] — cuid=16989 — https://dm-game.com/index.php?file=infouser&cuid=16989
-16. Stealer[5] — cuid=21916 — https://dm-game.com/index.php?file=infouser&cuid=21916
-17. мастер[4] — cuid=22522 — https://dm-game.com/index.php?file=infouser&cuid=22522
+12. немец[9] — cuid=17507 — https://dm-game.com/index.php?file=infouser&cuid=17507
+13. Чудик[9] — cuid=19182 — https://dm-game.com/index.php?file=infouser&cuid=19182
+14. kristi[8] — cuid=3780 — https://dm-game.com/index.php?file=infouser&cuid=3780
+15. songre[8] — cuid=1996 — https://dm-game.com/index.php?file=infouser&cuid=1996
+16. Асталависта[8] — cuid=16989 — https://dm-game.com/index.php?file=infouser&cuid=16989
+17. Stealer[5] — cuid=21916 — https://dm-game.com/index.php?file=infouser&cuid=21916
+18. мастер[4] — cuid=22522 — https://dm-game.com/index.php?file=infouser&cuid=22522
 
