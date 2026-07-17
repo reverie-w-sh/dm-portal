@@ -99,7 +99,7 @@ export default function GiftsPage() {
                 disabled
                 className="w-full text-center rounded-xl px-4 py-2.5 text-sm font-semibold text-ink-muted border border-white/10 cursor-not-allowed opacity-70"
               >
-                Сорри, нельзя скачать :)
+                Приватный, не надо его скачивать :)
               </button>
             ) : (
               
