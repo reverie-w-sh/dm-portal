@@ -68,6 +68,7 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/smileys/wolf-girl-vova.gif",    title: "Волчица Лени",        category: "smileys" },
   { src: "/gallery/smileys/wolf-girl-vova-1.gif",    title: "Волчица Лени",        category: "smileys" },
   { src: "/gallery/smileys/wolf-girl-asta.gif",    title: "Волчица Асталависты",        category: "smileys" },
+  { src: "/gallery/smileys/wolf-chechir-smile.gif",    title: "Чеширский волчонок",        category: "smileys" },  
   { src: "/gallery/smileys/play.gif",          title: "Волчата играются",   category: "smileys" },
   { src: "/gallery/smileys/kiss-1.gif",            title: "Любовь Волчат",             category: "smileys" },
   { src: "/gallery/smileys/kiss-2.gif",            title: "Любовь Волчат 2",           category: "smileys" },
