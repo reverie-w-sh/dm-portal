@@ -1,5 +1,69 @@
 [
   {
+    "id": "4a028f7c-ff4e-4604-a288-e6ddc8cc5c65",
+    "syncId": "2026-07-18T11:50:26.046Z",
+    "createdAt": "2026-07-18T11:50:26.046Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "13079",
+    "characterName": "Юнона",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=13079",
+    "clanId": "221",
+    "clanName": "Викинги",
+    "oldPosition": "Sambuka",
+    "newPosition": "жена Юпитера"
+  },
+  {
+    "id": "b735c083-33c8-4908-a5bc-5f042d9accf9",
+    "syncId": "2026-07-18T11:50:26.046Z",
+    "createdAt": "2026-07-18T11:50:26.046Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "4394",
+    "characterName": "Allania",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4394",
+    "amount": 1,
+    "oldCount": 35,
+    "newCount": 36,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/4394/prv_allania_wanteck2.gif"
+    ]
+  },
+  {
+    "id": "214e0e18-554a-47fb-b7fc-d862a31f999a",
+    "syncId": "2026-07-18T11:50:26.046Z",
+    "createdAt": "2026-07-18T11:50:26.046Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "2171",
+    "characterName": "WanTeck",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2171",
+    "amount": 3,
+    "oldCount": 29,
+    "newCount": 32,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/4394/prv_allania_wanteck2.gif",
+      "https://dm-game.com/layout/all/smiles/19182/prv_wanteck28.gif",
+      "https://dm-game.com/layout/all/smiles/19182/prv_wanteck29.gif"
+    ]
+  },
+  {
+    "id": "8b718092-74e8-4636-8649-284b1a68b3f8",
+    "syncId": "2026-07-18T11:50:26.046Z",
+    "createdAt": "2026-07-18T11:50:26.046Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "4116",
+    "characterName": "Tequila",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4116",
+    "amount": 1,
+    "oldCount": 19,
+    "newCount": 20,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/4116/prv_murlove24.gif"
+    ]
+  },
+  {
     "id": "973fd36c-be1e-4346-b7ef-f72d4fc14b18",
     "syncId": "2026-07-16T16:27:50.400Z",
     "createdAt": "2026-07-16T16:27:50.400Z",
