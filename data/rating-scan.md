@@ -214,23 +214,24 @@
 41. Волк[4] — cuid=27239 — https://dm-game.com/index.php?file=infouser&cuid=27239
 42. Жорик с 90X[4] — cuid=24415 — https://dm-game.com/index.php?file=infouser&cuid=24415
 
-## Храм Мечей — CLAN 235 — знайдено 15
+## Храм Мечей — CLAN 235 — знайдено 16
 
 1. Викки[12] — cuid=1931 — https://dm-game.com/index.php?file=infouser&cuid=1931
-2. Стьюи[11] — cuid=5285 — https://dm-game.com/index.php?file=infouser&cuid=5285
-3. АреоН[10] — cuid=4603 — https://dm-game.com/index.php?file=infouser&cuid=4603
-4. МАСКА[10] — cuid=1921 — https://dm-game.com/index.php?file=infouser&cuid=1921
-5. Bukashka[9] — cuid=22733 — https://dm-game.com/index.php?file=infouser&cuid=22733
-6. Marishka[9] — cuid=9727 — https://dm-game.com/index.php?file=infouser&cuid=9727
-7. АйринС[9] — cuid=1520 — https://dm-game.com/index.php?file=infouser&cuid=1520
-8. Янотик[9] — cuid=23733 — https://dm-game.com/index.php?file=infouser&cuid=23733
-9. DanGar[8] — cuid=7938 — https://dm-game.com/index.php?file=infouser&cuid=7938
-10. Onix[8] — cuid=6253 — https://dm-game.com/index.php?file=infouser&cuid=6253
-11. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
-12. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
-13. Mixser[7] — cuid=27221 — https://dm-game.com/index.php?file=infouser&cuid=27221
-14. БЛИК[7] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
-15. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
+2. FaLLeN[11] — cuid=10023 — https://dm-game.com/index.php?file=infouser&cuid=10023
+3. Стьюи[11] — cuid=5285 — https://dm-game.com/index.php?file=infouser&cuid=5285
+4. АреоН[10] — cuid=4603 — https://dm-game.com/index.php?file=infouser&cuid=4603
+5. МАСКА[10] — cuid=1921 — https://dm-game.com/index.php?file=infouser&cuid=1921
+6. Bukashka[9] — cuid=22733 — https://dm-game.com/index.php?file=infouser&cuid=22733
+7. Marishka[9] — cuid=9727 — https://dm-game.com/index.php?file=infouser&cuid=9727
+8. АйринС[9] — cuid=1520 — https://dm-game.com/index.php?file=infouser&cuid=1520
+9. Янотик[9] — cuid=23733 — https://dm-game.com/index.php?file=infouser&cuid=23733
+10. DanGar[8] — cuid=7938 — https://dm-game.com/index.php?file=infouser&cuid=7938
+11. Onix[8] — cuid=6253 — https://dm-game.com/index.php?file=infouser&cuid=6253
+12. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
+13. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
+14. Mixser[7] — cuid=27221 — https://dm-game.com/index.php?file=infouser&cuid=27221
+15. БЛИК[7] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
+16. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
 
 ## Каратели — CLAN 237 — знайдено 9
 
