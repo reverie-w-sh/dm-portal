@@ -233,17 +233,18 @@
 15. БЛИК[7] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
 16. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
 
-## Каратели — CLAN 237 — знайдено 9
+## Каратели — CLAN 237 — знайдено 10
 
 1. KITANA[11] — cuid=2878 — https://dm-game.com/index.php?file=infouser&cuid=2878
-2. MaNSoN[9] — cuid=8641 — https://dm-game.com/index.php?file=infouser&cuid=8641
-3. Mr_X[9] — cuid=2155 — https://dm-game.com/index.php?file=infouser&cuid=2155
-4. Tutti_Frutti[9] — cuid=1846 — https://dm-game.com/index.php?file=infouser&cuid=1846
-5. Mary Kate[8] — cuid=11898 — https://dm-game.com/index.php?file=infouser&cuid=11898
-6. Клеопатра[8] — cuid=3189 — https://dm-game.com/index.php?file=infouser&cuid=3189
-7. тедо 1[8] — cuid=2317 — https://dm-game.com/index.php?file=infouser&cuid=2317
-8. Majesty[7] — cuid=18354 — https://dm-game.com/index.php?file=infouser&cuid=18354
-9. Sambuka[5] — cuid=17624 — https://dm-game.com/index.php?file=infouser&cuid=17624
+2. Death[9] — cuid=15102 — https://dm-game.com/index.php?file=infouser&cuid=15102
+3. MaNSoN[9] — cuid=8641 — https://dm-game.com/index.php?file=infouser&cuid=8641
+4. Mr_X[9] — cuid=2155 — https://dm-game.com/index.php?file=infouser&cuid=2155
+5. Tutti_Frutti[9] — cuid=1846 — https://dm-game.com/index.php?file=infouser&cuid=1846
+6. Mary Kate[8] — cuid=11898 — https://dm-game.com/index.php?file=infouser&cuid=11898
+7. Клеопатра[8] — cuid=3189 — https://dm-game.com/index.php?file=infouser&cuid=3189
+8. тедо 1[8] — cuid=2317 — https://dm-game.com/index.php?file=infouser&cuid=2317
+9. Majesty[7] — cuid=18354 — https://dm-game.com/index.php?file=infouser&cuid=18354
+10. Sambuka[5] — cuid=17624 — https://dm-game.com/index.php?file=infouser&cuid=17624
 
 ## Київська Русь (на роспуск) — CLAN 241 — знайдено 1
 
