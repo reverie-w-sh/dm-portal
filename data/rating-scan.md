@@ -1,8 +1,10 @@
-## Хранители — CLAN 7 — знайдено 3
+## Хранители — CLAN 7 — знайдено 5
 
-1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-2. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
-3. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
+2. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
+3. как не крути[9] — cuid=4807 — https://dm-game.com/index.php?file=infouser&cuid=4807
+4. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
+5. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -277,12 +279,13 @@
 9. Nik[8] — cuid=27039 — https://dm-game.com/index.php?file=infouser&cuid=27039
 10. Невия[6] — cuid=24167 — https://dm-game.com/index.php?file=infouser&cuid=24167
 
-## Phoenix (клан мультов) набор — CLAN 249 — знайдено 4
+## Phoenix (клан мультов) набор — CLAN 249 — знайдено 5
 
 1. Noelvena[8] — cuid=1958 — https://dm-game.com/index.php?file=infouser&cuid=1958
 2. Rastix[8] — cuid=23017 — https://dm-game.com/index.php?file=infouser&cuid=23017
 3. skytango[8] — cuid=22796 — https://dm-game.com/index.php?file=infouser&cuid=22796
 4. Xanuga[7] — cuid=5573 — https://dm-game.com/index.php?file=infouser&cuid=5573
+5. Чиловый парень[6] — cuid=28463 — https://dm-game.com/index.php?file=infouser&cuid=28463
 
 ## Shadows of the Dusk — CLAN 250 — знайдено 5
 

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-07-20T11:24:49.974Z",
+  "createdAt": "2026-07-20T16:42:52.206Z",
   "players": [
     {
       "cuid": "7939",
@@ -2116,9 +2116,9 @@
     {
       "cuid": "9756",
       "nick": "Piranha",
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "7",
+      "clanName": "Хранители",
+      "position": "Послушник",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=9756"
     },
     {
@@ -2200,6 +2200,14 @@
       "clanName": "",
       "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27105"
+    },
+    {
+      "cuid": "4807",
+      "nick": "как не крути",
+      "clanId": "7",
+      "clanName": "Хранители",
+      "position": "Послушник боец",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4807"
     }
   ],
   "clans": [
@@ -3395,6 +3403,17 @@
         "https://dm-game.com/layout/all/smiles/prv_angelbes1.gif",
         "https://dm-game.com/layout/all/smiles/prv_angelbes2.gif",
         "https://dm-game.com/layout/all/smiles/prv_angelbes3.gif"
+      ]
+    },
+    {
+      "cuid": "4807",
+      "nick": "как не крути",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4807",
+      "personalSmilesCount": 3,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/prv_liberty1.gif",
+        "https://dm-game.com/layout/all/smiles/prv_liberty2.gif",
+        "https://dm-game.com/layout/all/smiles/girl_cool.gif"
       ]
     },
     {
