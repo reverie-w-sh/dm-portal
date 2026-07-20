@@ -218,9 +218,9 @@
 
 1. Викки[12] — cuid=1931 — https://dm-game.com/index.php?file=infouser&cuid=1931
 2. FaLLeN[11] — cuid=10023 — https://dm-game.com/index.php?file=infouser&cuid=10023
-3. Стьюи[11] — cuid=5285 — https://dm-game.com/index.php?file=infouser&cuid=5285
-4. АреоН[10] — cuid=4603 — https://dm-game.com/index.php?file=infouser&cuid=4603
-5. МАСКА[10] — cuid=1921 — https://dm-game.com/index.php?file=infouser&cuid=1921
+3. МАСКА[11] — cuid=1921 — https://dm-game.com/index.php?file=infouser&cuid=1921
+4. Стьюи[11] — cuid=5285 — https://dm-game.com/index.php?file=infouser&cuid=5285
+5. АреоН[10] — cuid=4603 — https://dm-game.com/index.php?file=infouser&cuid=4603
 6. Bukashka[9] — cuid=22733 — https://dm-game.com/index.php?file=infouser&cuid=22733
 7. Marishka[9] — cuid=9727 — https://dm-game.com/index.php?file=infouser&cuid=9727
 8. АйринС[9] — cuid=1520 — https://dm-game.com/index.php?file=infouser&cuid=1520
