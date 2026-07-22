@@ -1,10 +1,7 @@
-## Хранители — CLAN 7 — знайдено 5
+## Хранители — CLAN 7 — знайдено 2
 
-1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
-2. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-3. как не крути[9] — cuid=4807 — https://dm-game.com/index.php?file=infouser&cuid=4807
-4. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
-5. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
+2. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -272,9 +269,9 @@
 3. Луч света[12] — cuid=1365 — https://dm-game.com/index.php?file=infouser&cuid=1365
 4. Мишаня[12] — cuid=2094 — https://dm-game.com/index.php?file=infouser&cuid=2094
 5. Крикс[11] — cuid=5605 — https://dm-game.com/index.php?file=infouser&cuid=5605
-6. 911[9] — cuid=22619 — https://dm-game.com/index.php?file=infouser&cuid=22619
-7. Ангел из преисподней[9] — cuid=24289 — https://dm-game.com/index.php?file=infouser&cuid=24289
-8. Гарпий[9] — cuid=12846 — https://dm-game.com/index.php?file=infouser&cuid=12846
+6. Ангел из преисподней[9] — cuid=24289 — https://dm-game.com/index.php?file=infouser&cuid=24289
+7. Гарпий[9] — cuid=12846 — https://dm-game.com/index.php?file=infouser&cuid=12846
+8. 911[8] — cuid=22619 — https://dm-game.com/index.php?file=infouser&cuid=22619
 9. Nik[8] — cuid=27039 — https://dm-game.com/index.php?file=infouser&cuid=27039
 10. Невия[6] — cuid=24167 — https://dm-game.com/index.php?file=infouser&cuid=24167
 
