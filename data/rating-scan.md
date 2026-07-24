@@ -80,9 +80,9 @@
 15. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
 16. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
 17. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
-18. SHPILwarKIEV[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
-19. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-20. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
+18. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
+19. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
+20. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
 21. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 22. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
 23. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
