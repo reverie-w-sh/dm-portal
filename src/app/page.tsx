@@ -5,27 +5,27 @@ const desktopHotspots = [
   {
     href: "/members",
     label: "Открыть состав клана «Волчата»",
-    className: "left-[7.24%] top-[58.24%] h-[31.14%] w-[15.67%]",
+    className: "left-[7.66%] top-[58.88%] h-[29.86%] w-[14.86%]",
   },
   {
     href: "/gifts",
     label: "Открыть раздел «Подарочки»",
-    className: "left-[24.22%] top-[58.24%] h-[31.14%] w-[15.55%]",
+    className: "left-[24.64%] top-[58.88%] h-[29.86%] w-[14.74%]",
   },
   {
     href: "/dungeons",
     label: "Открыть карты подземелий",
-    className: "left-[41.03%] top-[58.24%] h-[31.14%] w-[15.55%]",
+    className: "left-[41.45%] top-[58.88%] h-[29.86%] w-[14.74%]",
   },
   {
     href: "/personal-smiles",
     label: "Открыть личные смайлики",
-    className: "left-[58.61%] top-[58.24%] h-[31.14%] w-[15.55%]",
+    className: "left-[59.03%] top-[58.88%] h-[29.86%] w-[14.74%]",
   },
   {
     href: "/ratings",
     label: "Открыть рейтинги",
-    className: "left-[75.60%] top-[58.24%] h-[31.14%] w-[15.61%]",
+    className: "left-[76.02%] top-[58.88%] h-[29.86%] w-[14.80%]",
   },
 ];
 
@@ -80,9 +80,9 @@ function DesktopHotspot({
           bg-amber-100/0
           transition-[background-color,filter] duration-200 ease-out
           group-hover:bg-amber-100/[0.055]
-          group-hover:[filter:drop-shadow(0_0_10px_rgba(245,190,92,0.58))]
+          group-hover:[filter:drop-shadow(0_0_6px_rgba(245,190,92,0.48))]
           group-focus-visible:bg-amber-100/[0.075]
-          group-focus-visible:[filter:drop-shadow(0_0_12px_rgba(245,190,92,0.72))]
+          group-focus-visible:[filter:drop-shadow(0_0_8px_rgba(245,190,92,0.62))]
         "
       >
         <span
