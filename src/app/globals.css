@@ -276,3 +276,128 @@ img.clan-icon {
     font-size: 0.6rem;
   }
 }
+
+/* ===== Зал Славы. Рейтинги. ===== */
+.ratings-page {
+  min-height: 100%;
+  color: #e9dfcf;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(139, 76, 20, .13), transparent 34rem),
+    linear-gradient(180deg, #080909 0%, #0b0d0e 45%, #080909 100%);
+}
+
+.ratings-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 24px 0;
+}
+
+.ratings-hero-image {
+  width: 100%;
+  aspect-ratio: 1089 / 287;
+  background: url('/images/ratings-hero.webp') center / cover no-repeat;
+  border: 1px solid rgba(197, 139, 65, .3);
+  box-shadow: 0 18px 50px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,218,151,.06);
+}
+
+.ratings-content { max-width: 1120px; margin: 0 auto; padding: 18px 24px 70px; }
+.ratings-curious {
+  margin: 0 0 24px;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #eadfca;
+  font-size: clamp(1.08rem, 2vw, 1.45rem);
+  text-shadow: 0 1px 8px rgba(0,0,0,.75);
+}
+
+.ratings-section { margin-top: 27px; }
+.ratings-section-title {
+  display: flex; align-items: center; gap: 16px;
+  margin: 0 0 17px;
+  color: #d6a75e;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.25rem, 2.4vw, 1.72rem);
+  font-weight: 400;
+  text-align: center;
+}
+.ratings-section-title::before, .ratings-section-title::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(190,126,39,.62), transparent);
+}
+
+.profession-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.profession-card, .general-card {
+  appearance: none; color: inherit; cursor: pointer;
+  border: 1px solid rgba(188,124,37,.6);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.profession-card {
+  min-height: 104px; padding: 13px 15px;
+  display: grid; grid-template-columns: 46px 1fr auto; align-items: center; gap: 12px;
+  background: linear-gradient(145deg, rgba(29,29,27,.97), rgba(10,11,11,.98));
+  font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; text-align: left;
+  box-shadow: inset 0 0 25px rgba(255,255,255,.018), 0 9px 18px rgba(0,0,0,.32);
+}
+.profession-icon { display:flex; align-items:center; justify-content:center; width:44px; height:44px; font-size:1.75rem; color:#d5a34e; filter: sepia(.25); }
+.rating-arrow { color: #d89935; font-size: 1.4rem; }
+.profession-card:hover, .general-card:hover, .profession-card.is-active, .general-card.is-active {
+  transform: translateY(-2px); border-color: #e4b764;
+  box-shadow: 0 0 0 1px rgba(228,183,100,.14), 0 12px 30px rgba(0,0,0,.46), inset 0 0 30px rgba(184,106,22,.08);
+}
+
+.general-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.general-card {
+  min-height: 132px; padding: 20px;
+  display:grid; grid-template-columns:70px 1fr auto; gap:16px; align-items:center; text-align:left;
+  background:#131313;
+}
+.general-burgundy { background: radial-gradient(circle at 20% 50%, rgba(103,24,25,.32), transparent 55%), #160e0f; }
+.general-blue { background: radial-gradient(circle at 20% 50%, rgba(20,68,87,.3), transparent 55%), #0c1317; }
+.general-green { background: radial-gradient(circle at 20% 50%, rgba(27,84,46,.3), transparent 55%), #0c1510; }
+.general-icon { width:64px; height:64px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(218,161,71,.62); border-radius:50%; color:#e2b45f; font-size:2.1rem; box-shadow:inset 0 0 18px rgba(190,120,35,.16); }
+.general-copy { display:flex; flex-direction:column; gap:7px; }
+.general-copy strong { font:400 1.22rem Georgia,'Times New Roman',serif; color:#f0dfbd; }
+.general-copy small { color:#bc9e72; line-height:1.35; }
+
+.rating-board { scroll-margin-top: 92px; margin-top:32px; border:1px solid rgba(187,124,39,.55); background:rgba(12,13,13,.95); box-shadow:0 22px 55px rgba(0,0,0,.46); }
+.rating-board-head { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px 26px; border-bottom:1px solid rgba(187,124,39,.32); background:linear-gradient(180deg,rgba(91,52,17,.18),transparent); }
+.rating-board-kicker { margin:0 0 4px; color:#a9834b; text-transform:uppercase; letter-spacing:.18em; font-size:.69rem; }
+.rating-board h2 { margin:0; color:#eed6a9; font:400 clamp(1.5rem,3vw,2rem) Georgia,'Times New Roman',serif; }
+.rating-board-symbol { color:#d9a548; font-size:2.2rem; }
+.rating-table-wrap { overflow-x:auto; }
+.rating-table { width:100%; border-collapse:collapse; }
+.rating-table th { padding:12px 18px; text-align:left; color:#a88757; font-size:.72rem; text-transform:uppercase; letter-spacing:.11em; background:rgba(255,255,255,.025); }
+.rating-table td { padding:13px 18px; border-top:1px solid rgba(255,255,255,.055); }
+.rating-table tbody tr:hover { background:rgba(199,137,48,.055); }
+.rating-table a { color:#e8dfd0; text-decoration:none; }
+.rating-table a:hover { color:#edbd6d; }
+.rank-cell { width:76px; color:#d9ad64; font-weight:700; }
+.level { margin-left:4px; color:#9c805b; font-size:.85em; }
+.value-cell { text-align:right; color:#d7b372; font-variant-numeric:tabular-nums; }
+.rating-table th:last-child { text-align:right; }
+.rating-empty { padding:46px 24px; text-align:center; color:#a9987e; }
+
+@media (max-width: 860px) {
+  .profession-grid { grid-template-columns:repeat(2,1fr); }
+  .general-grid { grid-template-columns:1fr; }
+  .general-card { min-height:112px; }
+}
+
+@media (max-width: 560px) {
+  .ratings-hero { padding:12px 0 0; }
+  .ratings-hero-image { border-left:0; border-right:0; aspect-ratio: 1089 / 310; background-size:cover; }
+  .ratings-content { padding:15px 12px 48px; }
+  .ratings-curious { margin-bottom:17px; }
+  .ratings-section { margin-top:22px; }
+  .ratings-section-title { gap:8px; font-size:1.18rem; }
+  .profession-grid { gap:8px; }
+  .profession-card { min-height:76px; grid-template-columns:34px 1fr auto; gap:7px; padding:9px 10px; font-size:.91rem; }
+  .profession-icon { width:32px; height:32px; font-size:1.28rem; }
+  .general-card { min-height:96px; grid-template-columns:50px 1fr auto; padding:13px; gap:11px; }
+  .general-icon { width:48px; height:48px; font-size:1.55rem; }
+  .general-copy strong { font-size:1rem; }
+  .general-copy small { font-size:.72rem; }
+  .rating-board-head { padding:17px 16px; }
+  .rating-table th, .rating-table td { padding:11px 12px; }
+  .rank-cell { width:52px; }
+}

@@ -1,0 +1,739 @@
+{
+  "updatedAt": "2026-07-25T21:35:33+02:00",
+  "ratings": {
+    "fishing": {
+      "title": "Лучшие рыболовы",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Takezo",
+          "level": 10,
+          "value": 43039
+        },
+        {
+          "rank": 2,
+          "name": "BlackGeneral",
+          "level": 11,
+          "value": 40204
+        },
+        {
+          "rank": 3,
+          "name": "Zorro",
+          "level": 12,
+          "value": 39307
+        },
+        {
+          "rank": 4,
+          "name": "Tequila",
+          "level": 15,
+          "value": 37602
+        },
+        {
+          "rank": 5,
+          "name": "Юпитер",
+          "level": 15,
+          "value": 32920
+        },
+        {
+          "rank": 6,
+          "name": "Милли",
+          "level": 14,
+          "value": 30030
+        },
+        {
+          "rank": 7,
+          "name": "InDigo",
+          "level": 12,
+          "value": 28925
+        },
+        {
+          "rank": 8,
+          "name": "Серж",
+          "level": 10,
+          "value": 21693
+        },
+        {
+          "rank": 9,
+          "name": "Black_knight",
+          "level": 8,
+          "value": 26111
+        },
+        {
+          "rank": 10,
+          "name": "Луч света",
+          "level": 15,
+          "value": 25796
+        },
+        {
+          "rank": 11,
+          "name": "Александр Николаевич",
+          "level": 11,
+          "value": 26094
+        },
+        {
+          "rank": 12,
+          "name": "Викки",
+          "level": 13,
+          "value": 24257
+        },
+        {
+          "rank": 13,
+          "name": "Горлум",
+          "level": 9,
+          "value": 23481
+        },
+        {
+          "rank": 14,
+          "name": "Мужские слезы",
+          "level": 12,
+          "value": 24872
+        },
+        {
+          "rank": 15,
+          "name": "ЭХО",
+          "level": 13,
+          "value": 22647
+        },
+        {
+          "rank": 16,
+          "name": "Fistashka",
+          "level": 11,
+          "value": 17548
+        },
+        {
+          "rank": 17,
+          "name": "FaLLeN",
+          "level": 12,
+          "value": 17327
+        },
+        {
+          "rank": 18,
+          "name": "07rus",
+          "level": 9,
+          "value": 17124
+        },
+        {
+          "rank": 19,
+          "name": "MAX PAYNE",
+          "level": 15,
+          "value": 17387
+        },
+        {
+          "rank": 20,
+          "name": "Hanibal",
+          "level": 10,
+          "value": 16720
+        }
+      ]
+    },
+    "collector": {
+      "title": "Лучшие собиратели",
+      "valueLabel": "Очки",
+      "items": []
+    },
+    "hunter": {
+      "title": "Лучшие охотники",
+      "valueLabel": "Очки",
+      "items": []
+    },
+    "blacksmith": {
+      "title": "Лучшие кузнецы",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 250070
+        },
+        {
+          "rank": 2,
+          "name": "Tequila",
+          "level": 15,
+          "value": 244043
+        },
+        {
+          "rank": 3,
+          "name": "Allania",
+          "level": 11,
+          "value": 226064
+        },
+        {
+          "rank": 4,
+          "name": "_GRACIA_",
+          "level": 9,
+          "value": 131353
+        },
+        {
+          "rank": 5,
+          "name": "sinful",
+          "level": 11,
+          "value": 111843
+        },
+        {
+          "rank": 6,
+          "name": "ХОМ",
+          "level": 12,
+          "value": 111646
+        },
+        {
+          "rank": 7,
+          "name": "Gudini",
+          "level": 12,
+          "value": 110885
+        },
+        {
+          "rank": 8,
+          "name": "Таракашка",
+          "level": 17,
+          "value": 107056
+        },
+        {
+          "rank": 9,
+          "name": "FaLLeN",
+          "level": 12,
+          "value": 104083
+        },
+        {
+          "rank": 10,
+          "name": "CoMeBaCk",
+          "level": 11,
+          "value": 102483
+        },
+        {
+          "rank": 11,
+          "name": "IhorU",
+          "level": 12,
+          "value": 101414
+        },
+        {
+          "rank": 12,
+          "name": "Takezo",
+          "level": 10,
+          "value": 69279
+        },
+        {
+          "rank": 13,
+          "name": "InDigo",
+          "level": 12,
+          "value": 65739
+        },
+        {
+          "rank": 14,
+          "name": "KITANA",
+          "level": 14,
+          "value": 59392
+        },
+        {
+          "rank": 15,
+          "name": "Sharik",
+          "level": 16,
+          "value": 56456
+        },
+        {
+          "rank": 16,
+          "name": "Мора",
+          "level": 11,
+          "value": 55115
+        },
+        {
+          "rank": 17,
+          "name": "Внезаконник",
+          "level": 13,
+          "value": 52685
+        },
+        {
+          "rank": 18,
+          "name": "Артур",
+          "level": 16,
+          "value": 51082
+        },
+        {
+          "rank": 19,
+          "name": "Милли",
+          "level": 14,
+          "value": 49105
+        },
+        {
+          "rank": 20,
+          "name": "Мужские слезы",
+          "level": 12,
+          "value": 45634
+        }
+      ]
+    },
+    "leatherworker": {
+      "title": "Лучшие кожевники",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Rüdiger",
+          "level": 12,
+          "value": 1000
+        },
+        {
+          "rank": 2,
+          "name": "Викки",
+          "level": 13,
+          "value": 602
+        },
+        {
+          "rank": 3,
+          "name": "Torturer",
+          "level": 14,
+          "value": 602
+        },
+        {
+          "rank": 4,
+          "name": "KITANA",
+          "level": 14,
+          "value": 601
+        },
+        {
+          "rank": 5,
+          "name": "Таракашка",
+          "level": 11,
+          "value": 600
+        },
+        {
+          "rank": 6,
+          "name": "Катерина",
+          "level": 16,
+          "value": 600
+        },
+        {
+          "rank": 7,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 600
+        },
+        {
+          "rank": 8,
+          "name": "Pantera",
+          "level": 14,
+          "value": 600
+        },
+        {
+          "rank": 9,
+          "name": "Мужские слезы",
+          "level": 12,
+          "value": 600
+        },
+        {
+          "rank": 10,
+          "name": "ФКСПАРТАK",
+          "level": 12,
+          "value": 566
+        }
+      ]
+    },
+    "doctor": {
+      "title": "Лучшие лекари",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Артур",
+          "level": 16,
+          "value": 2000
+        },
+        {
+          "rank": 2,
+          "name": "Таракашка",
+          "level": 11,
+          "value": 2000
+        },
+        {
+          "rank": 3,
+          "name": "Катерина",
+          "level": 16,
+          "value": 2000
+        },
+        {
+          "rank": 4,
+          "name": "KiraYan",
+          "level": 15,
+          "value": 1707
+        },
+        {
+          "rank": 5,
+          "name": "sinful",
+          "level": 11,
+          "value": 1677
+        },
+        {
+          "rank": 6,
+          "name": "InDigo",
+          "level": 12,
+          "value": 1591
+        },
+        {
+          "rank": 7,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 1513
+        },
+        {
+          "rank": 8,
+          "name": "MAX PAYNE",
+          "level": 15,
+          "value": 1513
+        },
+        {
+          "rank": 9,
+          "name": "Zorro",
+          "level": 12,
+          "value": 1510
+        },
+        {
+          "rank": 10,
+          "name": "Sharik",
+          "level": 16,
+          "value": 1508
+        }
+      ]
+    },
+    "alchemy": {
+      "title": "Лучшие алхимики",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "InDigo",
+          "level": 12,
+          "value": 20668
+        },
+        {
+          "rank": 2,
+          "name": "Дэмбель",
+          "level": 16,
+          "value": 20086
+        },
+        {
+          "rank": 3,
+          "name": "Таракашка",
+          "level": 11,
+          "value": 10966
+        },
+        {
+          "rank": 4,
+          "name": "Torturer",
+          "level": 14,
+          "value": 10854
+        },
+        {
+          "rank": 5,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 10672
+        },
+        {
+          "rank": 6,
+          "name": "Викки",
+          "level": 13,
+          "value": 10078
+        },
+        {
+          "rank": 7,
+          "name": "Артур",
+          "level": 16,
+          "value": 9549
+        },
+        {
+          "rank": 8,
+          "name": "Iheannacho",
+          "level": 13,
+          "value": 9017
+        },
+        {
+          "rank": 9,
+          "name": "Катерина",
+          "level": 16,
+          "value": 8224
+        },
+        {
+          "rank": 10,
+          "name": "FaLLeN",
+          "level": 12,
+          "value": 8006
+        }
+      ]
+    },
+    "enchanter": {
+      "title": "Лучшие заклинатели",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Дэмбель",
+          "level": 16,
+          "value": 10567
+        },
+        {
+          "rank": 2,
+          "name": "Таракашка",
+          "level": 11,
+          "value": 3002
+        },
+        {
+          "rank": 3,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 2004
+        },
+        {
+          "rank": 4,
+          "name": "Sharik",
+          "level": 16,
+          "value": 1674
+        },
+        {
+          "rank": 5,
+          "name": "Артур",
+          "level": 16,
+          "value": 1660
+        },
+        {
+          "rank": 6,
+          "name": "Mr_X",
+          "level": 12,
+          "value": 1547
+        },
+        {
+          "rank": 7,
+          "name": "Катерина",
+          "level": 16,
+          "value": 1522
+        },
+        {
+          "rank": 8,
+          "name": "FaLLeN",
+          "level": 12,
+          "value": 1124
+        },
+        {
+          "rank": 9,
+          "name": "KITANA",
+          "level": 14,
+          "value": 982
+        },
+        {
+          "rank": 10,
+          "name": "Iheannacho",
+          "level": 13,
+          "value": 940
+        }
+      ]
+    },
+    "seer": {
+      "title": "Лучшие ведуны",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Мишаня",
+          "level": 12,
+          "value": 20000
+        },
+        {
+          "rank": 2,
+          "name": "Mr_X",
+          "level": 12,
+          "value": 20000
+        },
+        {
+          "rank": 3,
+          "name": "EMYNATOR",
+          "level": 13,
+          "value": 20000
+        },
+        {
+          "rank": 4,
+          "name": "Таракашка",
+          "level": 11,
+          "value": 20000
+        },
+        {
+          "rank": 5,
+          "name": "Pantera",
+          "level": 14,
+          "value": 20000
+        },
+        {
+          "rank": 6,
+          "name": "Дэмбель",
+          "level": 16,
+          "value": 20000
+        },
+        {
+          "rank": 7,
+          "name": "KITANA",
+          "level": 14,
+          "value": 20000
+        },
+        {
+          "rank": 8,
+          "name": "Torturer",
+          "level": 14,
+          "value": 20000
+        },
+        {
+          "rank": 9,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 19015
+        },
+        {
+          "rank": 10,
+          "name": "sinful",
+          "level": 11,
+          "value": 18000
+        }
+      ]
+    },
+    "shooter": {
+      "title": "Лучшие стрелки",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Таракашка",
+          "level": 11,
+          "value": 2912
+        },
+        {
+          "rank": 2,
+          "name": "Mr_X",
+          "level": 12,
+          "value": 2771
+        },
+        {
+          "rank": 3,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 1227
+        },
+        {
+          "rank": 4,
+          "name": "Tequila",
+          "level": 15,
+          "value": 1069
+        },
+        {
+          "rank": 5,
+          "name": "Мужские слезы",
+          "level": 12,
+          "value": 1021
+        },
+        {
+          "rank": 6,
+          "name": "Torturer",
+          "level": 14,
+          "value": 1001
+        },
+        {
+          "rank": 7,
+          "name": "Мишаня",
+          "level": 12,
+          "value": 742
+        },
+        {
+          "rank": 8,
+          "name": "Бабай",
+          "level": 11,
+          "value": 680
+        },
+        {
+          "rank": 9,
+          "name": "Zorro",
+          "level": 12,
+          "value": 655
+        },
+        {
+          "rank": 10,
+          "name": "sinful",
+          "level": 11,
+          "value": 570
+        }
+      ]
+    },
+    "players": {
+      "title": "Рейтинг игроков",
+      "valueLabel": "Опыт",
+      "items": []
+    },
+    "communities": {
+      "title": "Рейтинг сообществ",
+      "valueLabel": "Визиты",
+      "items": []
+    },
+    "achievements": {
+      "title": "Рейтинг достижений",
+      "valueLabel": "Очки достижений",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Rüdiger",
+          "level": 12,
+          "value": 12
+        },
+        {
+          "rank": 2,
+          "name": "Катерина",
+          "level": 16,
+          "value": 473
+        },
+        {
+          "rank": 3,
+          "name": "Ice",
+          "level": 11,
+          "value": 343
+        },
+        {
+          "rank": 4,
+          "name": "DANIK",
+          "level": 7,
+          "value": 13
+        },
+        {
+          "rank": 5,
+          "name": "ZeGa",
+          "level": 8,
+          "value": 6
+        },
+        {
+          "rank": 6,
+          "name": "JinnyKidman",
+          "level": 10,
+          "value": 187
+        },
+        {
+          "rank": 7,
+          "name": "Melinda",
+          "level": 9,
+          "value": 177
+        },
+        {
+          "rank": 8,
+          "name": "Дормидонт",
+          "level": 9,
+          "value": 403
+        },
+        {
+          "rank": 9,
+          "name": "Oliver",
+          "level": 9,
+          "value": 121
+        },
+        {
+          "rank": 10,
+          "name": "vorchun",
+          "level": 8,
+          "value": 143
+        }
+      ]
+    }
+  }
+}
