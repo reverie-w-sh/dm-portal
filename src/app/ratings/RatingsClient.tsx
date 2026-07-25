@@ -51,7 +51,7 @@ export default function RatingsClient({ data }: { data: RatingsData }) {
     <section className="ratings-hero" aria-label="Зал Славы. Рейтинги."><div className="ratings-hero-image" /></section>
     <div className="ratings-content">
       <p className="ratings-curious">Таааак.. что тут у нас интересненького...</p>
-      <section className="ratings-section"><h2 className="ratings-section-title"><span>Лучшие в профессиях</span></h2>
+      <section className="ratings-section"><h2 className="ratings-section-title"><span>Мастера своего дела</span></h2>
         <div className="profession-grid">{professions.map((card) => <button key={card.key} type="button" className={`profession-card ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}><span className="profession-icon" aria-hidden>{card.icon}</span><span>{card.label}</span><span className="rating-arrow" aria-hidden>→</span></button>)}</div>
       </section>
       <section className="ratings-section"><h2 className="ratings-section-title"><span>Общие рейтинги</span></h2>
