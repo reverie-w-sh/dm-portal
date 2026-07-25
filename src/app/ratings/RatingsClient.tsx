@@ -3,118 +3,72 @@
 import { useEffect, useMemo, useState } from "react";
 
 type RatingItem = { rank: number; name: string; level?: number; value: number | string };
+type PlayerItem = { rank: number; name: string; level?: number; experience: string; experienceValue: number; monsterWins: number; playerWins: number };
 type Rating = { title: string; valueLabel: string; items: RatingItem[] };
-type RatingsData = { updatedAt?: string; ratings: Record<string, Rating> };
-
+type RatingsData = { updatedAt?: string; ratings: Record<string, Rating>; players?: { title: string; items: PlayerItem[] } };
 type Card = { key: string; label: string; icon: string; tone?: string; subtitle?: string };
+type PlayerSort = "experience" | "monsterWins" | "playerWins";
 
 const professions: Card[] = [
-  { key: "fishing", label: "Рыболов", icon: "🎣" },
-  { key: "collector", label: "Собиратель", icon: "🌿" },
-  { key: "hunter", label: "Охотник", icon: "🏹" },
-  { key: "blacksmith", label: "Кузнец", icon: "⚒" },
-  { key: "leatherworker", label: "Кожевник", icon: "🛡" },
-  { key: "doctor", label: "Лекарь", icon: "♥" },
-  { key: "alchemy", label: "Алхимик", icon: "⚗" },
-  { key: "enchanter", label: "Заклинатель", icon: "✦" },
-  { key: "seer", label: "Ведун", icon: "🔮" },
-  { key: "shooter", label: "Стрелок", icon: "◎" },
+  { key: "fishing", label: "Рыболов", icon: "🎣" }, { key: "collector", label: "Собиратель", icon: "🌿" },
+  { key: "hunter", label: "Охотник", icon: "🏹" }, { key: "blacksmith", label: "Кузнец", icon: "⚒" },
+  { key: "leatherworker", label: "Кожевник", icon: "🛡" }, { key: "doctor", label: "Лекарь", icon: "♥" },
+  { key: "alchemy", label: "Алхимик", icon: "⚗" }, { key: "enchanter", label: "Заклинатель", icon: "✦" },
+  { key: "seer", label: "Ведун", icon: "🔮" }, { key: "shooter", label: "Стрелок", icon: "◎" },
 ];
-
 const general: Card[] = [
-  { key: "players", label: "Рейтинг игроков", icon: "♛", tone: "burgundy", subtitle: "Опыт, победы над монстрами и игроками" },
+  { key: "players", label: "Рейтинг игроков", icon: "♛", tone: "burgundy", subtitle: "Опыт и победы" },
   { key: "communities", label: "Рейтинг сообществ", icon: "🐾", tone: "blue", subtitle: "Кланы Древнего Мира" },
-  { key: "achievements", label: "Рейтинг достижений", icon: "★", tone: "green", subtitle: "Лучшие игроки по очкам достижений" },
+  { key: "achievements", label: "Рейтинг достижений", icon: "★", tone: "green", subtitle: "По очкам достижений" },
 ];
 
-function rankMark(rank: number) {
-  if (rank === 1) return "🥇";
-  if (rank === 2) return "🥈";
-  if (rank === 3) return "🥉";
-  return rank;
-}
+function rankMark(rank: number) { return rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank; }
+function playerLink(name: string) { return `https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(name)}`; }
 
 export default function RatingsClient({ data }: { data: RatingsData }) {
   const firstAvailable = professions.find((item) => data.ratings[item.key]?.items?.length)?.key ?? "fishing";
   const [active, setActive] = useState(firstAvailable);
+  const [playerSort, setPlayerSort] = useState<PlayerSort>("experience");
 
   useEffect(() => {
     const key = window.location.hash.replace("#", "");
-    if (key && data.ratings[key]) setActive(key);
+    if (key === "players" || data.ratings[key]) setActive(key);
   }, [data.ratings]);
 
   const rating = useMemo(() => data.ratings[active], [active, data.ratings]);
+  const players = useMemo(() => {
+    const source = [...(data.players?.items ?? [])];
+    const field = playerSort === "experience" ? "experienceValue" : playerSort;
+    return source.sort((a, b) => b[field] - a[field] || b.experienceValue - a.experienceValue || a.name.localeCompare(b.name, "ru"));
+  }, [data.players?.items, playerSort]);
 
   function choose(key: string) {
-    setActive(key);
-    window.history.replaceState(null, "", `#${key}`);
+    setActive(key); window.history.replaceState(null, "", `#${key}`);
     requestAnimationFrame(() => document.getElementById("rating-table")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
-  return (
-    <div className="ratings-page">
-      <section className="ratings-hero" aria-label="Зал Славы. Рейтинги.">
-        <div className="ratings-hero-image" />
+  return <div className="ratings-page">
+    <section className="ratings-hero" aria-label="Зал Славы. Рейтинги."><div className="ratings-hero-image" /></section>
+    <div className="ratings-content">
+      <p className="ratings-curious">Таааак.. что тут у нас интересненького...</p>
+      <section className="ratings-section"><h2 className="ratings-section-title"><span>Лучшие в профессиях</span></h2>
+        <div className="profession-grid">{professions.map((card) => <button key={card.key} type="button" className={`profession-card ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}><span className="profession-icon" aria-hidden>{card.icon}</span><span>{card.label}</span><span className="rating-arrow" aria-hidden>→</span></button>)}</div>
       </section>
+      <section className="ratings-section"><h2 className="ratings-section-title"><span>Общие рейтинги</span></h2>
+        <div className="general-grid">{general.map((card) => <button key={card.key} type="button" className={`general-card general-${card.tone} ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}><span className="general-icon" aria-hidden>{card.icon}</span><span className="general-copy"><strong>{card.label}</strong><small>{card.subtitle}</small></span><span className="rating-arrow" aria-hidden>→</span></button>)}</div>
+      </section>
+      <section id="rating-table" className="rating-board">
+        <div className="rating-board-head"><div><p className="rating-board-kicker">Зал Славы</p><h2>{active === "players" ? "Рейтинг игроков" : rating?.title ?? "Рейтинг"}</h2></div><span className="rating-board-symbol" aria-hidden>{[...professions, ...general].find((item) => item.key === active)?.icon ?? "★"}</span></div>
 
-      <div className="ratings-content">
-        <p className="ratings-curious">Таааак.. что тут у нас интересненького...</p>
-
-        <section className="ratings-section">
-          <h2 className="ratings-section-title"><span>Лучшие в профессиях</span></h2>
-          <div className="profession-grid">
-            {professions.map((card) => (
-              <button key={card.key} type="button" className={`profession-card ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}>
-                <span className="profession-icon" aria-hidden>{card.icon}</span>
-                <span>{card.label}</span>
-                <span className="rating-arrow" aria-hidden>→</span>
-              </button>
-            ))}
+        {active === "players" ? <>
+          <div className="player-sort" aria-label="Сортировка рейтинга игроков">
+            <button type="button" className={playerSort === "experience" ? "is-active" : ""} onClick={() => setPlayerSort("experience")}>По опыту</button>
+            <button type="button" className={playerSort === "monsterWins" ? "is-active" : ""} onClick={() => setPlayerSort("monsterWins")}>Победы над монстрами</button>
+            <button type="button" className={playerSort === "playerWins" ? "is-active" : ""} onClick={() => setPlayerSort("playerWins")}>Победы над игроками</button>
           </div>
-        </section>
-
-        <section className="ratings-section">
-          <h2 className="ratings-section-title"><span>Общие рейтинги</span></h2>
-          <div className="general-grid">
-            {general.map((card) => (
-              <button key={card.key} type="button" className={`general-card general-${card.tone} ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}>
-                <span className="general-icon" aria-hidden>{card.icon}</span>
-                <span className="general-copy"><strong>{card.label}</strong><small>{card.subtitle}</small></span>
-                <span className="rating-arrow" aria-hidden>→</span>
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section id="rating-table" className="rating-board">
-          <div className="rating-board-head">
-            <div>
-              <p className="rating-board-kicker">Зал Славы</p>
-              <h2>{rating?.title ?? "Рейтинг"}</h2>
-            </div>
-            <span className="rating-board-symbol" aria-hidden>{[...professions, ...general].find((item) => item.key === active)?.icon ?? "★"}</span>
-          </div>
-
-          {rating?.items?.length ? (
-            <div className="rating-table-wrap">
-              <table className="rating-table">
-                <thead><tr><th>№</th><th>Ник</th><th>{rating.valueLabel}</th></tr></thead>
-                <tbody>
-                  {rating.items.map((item, index) => (
-                    <tr key={`${item.rank}-${item.name}-${index}`}>
-                      <td className="rank-cell">{rankMark(item.rank)}</td>
-                      <td><a href={`https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(item.name)}`} target="_blank" rel="noreferrer">{item.name}{item.level ? <span className="level">[{item.level}]</span> : null}</a></td>
-                      <td className="value-cell">{typeof item.value === "number" ? item.value.toLocaleString("ru-RU") : item.value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          ) : (
-            <div className="rating-empty">Данные этого рейтинга подтянутся при ближайшем обновлении.</div>
-          )}
-        </section>
-      </div>
+          {players.length ? <div className="rating-table-wrap"><table className="rating-table player-rating-table"><thead><tr><th>№</th><th>Ник</th><th>Опыт / след. ур.</th><th>Монстры</th><th>Игроки</th></tr></thead><tbody>{players.map((item, index) => <tr key={`${item.name}-${index}`}><td className="rank-cell">{rankMark(index + 1)}</td><td><a href={playerLink(item.name)} target="_blank" rel="noreferrer">{item.name}{item.level ? <span className="level">[{item.level}]</span> : null}</a></td><td className="value-cell">{item.experience}</td><td className="value-cell">{item.monsterWins.toLocaleString("ru-RU")}</td><td className="value-cell">{item.playerWins.toLocaleString("ru-RU")}</td></tr>)}</tbody></table></div> : <div className="rating-empty">Данные рейтинга игроков подтянутся при ближайшем обновлении.</div>}
+        </> : rating?.items?.length ? <div className="rating-table-wrap"><table className="rating-table"><thead><tr><th>№</th><th>Ник</th><th>{rating.valueLabel}</th></tr></thead><tbody>{rating.items.map((item, index) => <tr key={`${item.rank}-${item.name}-${index}`}><td className="rank-cell">{rankMark(item.rank)}</td><td><a href={playerLink(item.name)} target="_blank" rel="noreferrer">{item.name}{item.level ? <span className="level">[{item.level}]</span> : null}</a></td><td className="value-cell">{typeof item.value === "number" ? item.value.toLocaleString("ru-RU") : item.value}</td></tr>)}</tbody></table></div> : <div className="rating-empty">Данные этого рейтинга подтянутся при ближайшем обновлении.</div>}
+      </section>
     </div>
-  );
+  </div>;
 }
