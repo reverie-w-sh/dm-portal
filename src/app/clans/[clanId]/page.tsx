@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,6 +40,31 @@ export async function generateStaticParams() {
   return clansData.map((clan) => ({
     clanId: clan.clanId,
   }));
+}
+
+export async function generateMetadata(
+  props: PageProps<"/clans/[clanId]">,
+): Promise<Metadata> {
+  const { clanId } = await props.params;
+  const clan = clansData.find((item) => item.clanId === clanId);
+
+  if (!clan) {
+    return {
+      title: "Клан не найден — «Древний Мир» (DM)",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const title = `${clan.name} — клан «Древнего Мира» (DM)`;
+  const description = `Информация о клане ${clan.name}: состав участников, альянс, уровни игроков и статистика в игре «Древний Мир» (DM).`;
+  const canonical = `/clans/${clan.clanId}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: { title, description, url: canonical },
+  };
 }
 
 export default async function ClanDetailPage(
