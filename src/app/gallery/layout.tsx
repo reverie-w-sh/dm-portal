@@ -1,26 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Галерея die Wölfchen — «Древний Мир» (DM)',
   description: 'Арты, волки, эльфы и памятные моменты клана die Wölfchen из игры «Древний Мир» (DM).',
-  alternates: { canonical: '/gallery' },
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    siteName: "die Wölfchen",
-    url: "/gallery",
-    title: "Галерея die Wölfchen — «Древний Мир» (DM)",
-    description: "Арты, волки, эльфы и памятные моменты клана die Wölfchen из игры «Древний Мир» (DM).",
-    images: [{ url: "/icon.png", width: 512, height: 512, alt: "die Wölfchen" }],
-  },
-  twitter: {
-    card: "summary",
-    title: "Галерея die Wölfchen — «Древний Мир» (DM)",
-    description: "Арты, волки, эльфы и памятные моменты клана die Wölfchen из игры «Древний Мир» (DM).",
-    images: ["/icon.png"],
-  },
-};
+  path: "/gallery",
+  image: "/og/gallery.webp",
+  imageAlt: 'Галерея эльфов клана die Wölfchen',
+});
 
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return children;
 }

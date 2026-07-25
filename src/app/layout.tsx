@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { SITE_NAME, SITE_URL } from "@/lib/metadata";
 
 const inter = Inter({
   variable: "--font-inter-src",
@@ -10,21 +11,21 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700", "900"],
 });
 
-const siteUrl = "https://wolfchen-clan.com";
+const defaultTitle = "die Wölfchen — клан игры «Древний Мир» (DM)";
 const defaultDescription =
   "Сайт клана die Wölfchen в игре «Древний Мир» (DM) — продолжении и аналоге игры BloodyWorld (КМ). Участники клана, карты подземелий, личные смайлики, подарочки и полезные инструменты для игроков.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "die Wölfchen — клан игры «Древний Мир» (DM)",
-    template: "%s | die Wölfchen",
+    default: defaultTitle,
+    template: `%s | ${SITE_NAME}`,
   },
   description: defaultDescription,
-  applicationName: "die Wölfchen",
-  authors: [{ name: "die Wölfchen" }],
-  creator: "die Wölfchen",
-  publisher: "die Wölfchen",
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   keywords: [
     "Древний Мир",
     "DM",
@@ -42,17 +43,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: siteUrl,
-    siteName: "die Wölfchen",
-    title: "die Wölfchen — клан игры «Древний Мир» (DM)",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: defaultTitle,
     description: defaultDescription,
-    images: [{ url: "/icon.png", width: 512, height: 512, alt: "die Wölfchen" }],
+    images: [
+      {
+        url: "/og/home.webp",
+        width: 1200,
+        height: 630,
+        alt: "Белая и тёмная волчицы клана die Wölfchen на фоне замка",
+        type: "image/webp",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "die Wölfchen — клан игры «Древний Мир» (DM)",
+    card: "summary_large_image",
+    title: defaultTitle,
     description: defaultDescription,
-    images: ["/icon.png"],
+    images: ["/og/home.webp"],
   },
   robots: {
     index: true,
@@ -67,7 +76,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="ru" className={inter.variable}>
       <body className="min-h-screen bg-dark text-ink flex flex-col">

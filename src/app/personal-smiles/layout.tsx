@@ -1,26 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Личные смайлики игроков «Древнего Мира» (DM)',
   description: 'Коллекция личных смайликов игроков игры «Древний Мир» (DM). Ищи друзей, редкие смайлики и новые пополнения коллекции.',
-  alternates: { canonical: '/personal-smiles' },
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    siteName: "die Wölfchen",
-    url: "/personal-smiles",
-    title: "Личные смайлики игроков «Древнего Мира» (DM)",
-    description: "Коллекция личных смайликов игроков игры «Древний Мир» (DM). Ищи друзей, редкие смайлики и новые пополнения коллекции.",
-    images: [{ url: "/icon.png", width: 512, height: 512, alt: "die Wölfchen" }],
-  },
-  twitter: {
-    card: "summary",
-    title: "Личные смайлики игроков «Древнего Мира» (DM)",
-    description: "Коллекция личных смайликов игроков игры «Древний Мир» (DM). Ищи друзей, редкие смайлики и новые пополнения коллекции.",
-    images: ["/icon.png"],
-  },
-};
+  path: "/personal-smiles",
+  image: "/og/personal-smiles.webp",
+  imageAlt: 'Милый волчонок и личные смайлики игроков',
+});
 
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return children;
 }

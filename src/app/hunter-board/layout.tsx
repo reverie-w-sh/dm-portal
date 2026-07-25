@@ -1,26 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Планшет охотника — «Древний Мир» (DM)',
   description: 'Планшет охотника с автоматическим подсчётом очков для игроков «Древнего Мира» (DM).',
-  alternates: { canonical: '/hunter-board' },
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    siteName: "die Wölfchen",
-    url: "/hunter-board",
-    title: "Планшет охотника — «Древний Мир» (DM)",
-    description: "Планшет охотника с автоматическим подсчётом очков для игроков «Древнего Мира» (DM).",
-    images: [{ url: "/icon.png", width: 512, height: 512, alt: "die Wölfchen" }],
-  },
-  twitter: {
-    card: "summary",
-    title: "Планшет охотника — «Древний Мир» (DM)",
-    description: "Планшет охотника с автоматическим подсчётом очков для игроков «Древнего Мира» (DM).",
-    images: ["/icon.png"],
-  },
-};
+  path: "/hunter-board",
+  image: "/og/hunter-board.webp",
+  imageAlt: 'Планшет охотника игры «Древний Мир»',
+});
 
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return children;
 }

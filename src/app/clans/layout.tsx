@@ -1,26 +1,15 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: 'Кланы игры «Древний Мир» (DM)',
   description: 'Список кланов игры «Древний Мир» (DM): участники, альянсы, клановые смайлики и сравнение кланов. Продолжение и аналог легендарной игры BloodyWorld (КМ).',
-  alternates: { canonical: '/clans' },
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    siteName: "die Wölfchen",
-    url: "/clans",
-    title: "Кланы игры «Древний Мир» (DM)",
-    description: "Список кланов игры «Древний Мир» (DM): участники, альянсы, клановые смайлики и сравнение кланов. Продолжение и аналог легендарной игры BloodyWorld (КМ).",
-    images: [{ url: "/icon.png", width: 512, height: 512, alt: "die Wölfchen" }],
-  },
-  twitter: {
-    card: "summary",
-    title: "Кланы игры «Древний Мир» (DM)",
-    description: "Список кланов игры «Древний Мир» (DM): участники, альянсы, клановые смайлики и сравнение кланов. Продолжение и аналог легендарной игры BloodyWorld (КМ).",
-    images: ["/icon.png"],
-  },
-};
+  path: "/clans",
+  image: "/og/clans.webp",
+  imageAlt: 'Коллекция гербов кланов игры «Древний Мир»',
+});
 
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return children;
 }
