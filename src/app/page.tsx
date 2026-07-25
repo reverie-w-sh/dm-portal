@@ -70,32 +70,22 @@ function DesktopHotspot({
     <Link
       href={href}
       aria-label={label}
-      title={label}
       className={`group absolute z-10 outline-none ${className}`}
     >
       <span
         className="
-          absolute inset-0
-          [clip-path:polygon(8%_0,92%_0,100%_8%,100%_92%,92%_100%,8%_100%,0_92%,0_8%)]
+          absolute inset-[3px]
+          [clip-path:polygon(7%_0,93%_0,100%_7%,100%_93%,93%_100%,7%_100%,0_93%,0_7%)]
           bg-amber-100/0
-          transition-[background-color,filter] duration-200 ease-out
+          shadow-[inset_0_0_0_0_rgba(247,201,119,0),inset_0_0_0_rgba(247,201,119,0)]
+          transition-[background-color,box-shadow,filter] duration-200 ease-out
           group-hover:bg-amber-100/[0.055]
-          group-hover:[filter:drop-shadow(0_0_6px_rgba(245,190,92,0.48))]
-          group-focus-visible:bg-amber-100/[0.075]
-          group-focus-visible:[filter:drop-shadow(0_0_8px_rgba(245,190,92,0.62))]
+          group-hover:shadow-[inset_0_0_18px_rgba(247,201,119,0.15),inset_0_0_2px_rgba(255,224,166,0.34)]
+          group-hover:[filter:brightness(1.055)]
+          group-focus-visible:bg-amber-100/[0.07]
+          group-focus-visible:shadow-[inset_0_0_20px_rgba(247,201,119,0.19),inset_0_0_3px_rgba(255,224,166,0.42)]
         "
-      >
-        <span
-          className="
-            absolute inset-0
-            [clip-path:polygon(8%_0,92%_0,100%_8%,100%_92%,92%_100%,8%_100%,0_92%,0_8%)]
-            shadow-[inset_0_0_0_0_rgba(247,201,119,0)]
-            transition-shadow duration-200 ease-out
-            group-hover:shadow-[inset_0_0_0_2px_rgba(247,201,119,0.9),inset_0_0_24px_rgba(247,201,119,0.08)]
-            group-focus-visible:shadow-[inset_0_0_0_2px_rgba(255,220,150,1),inset_0_0_28px_rgba(247,201,119,0.12)]
-          "
-        />
-      </span>
+      />
     </Link>
   );
 }
