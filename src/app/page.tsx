@@ -126,10 +126,34 @@ function MobileHotspot({
 
 export default function Home() {
   return (
-    <main className="min-h-[calc(100vh-64px)] px-2 py-3 sm:px-4 sm:py-5">
+    <main className="relative min-h-[calc(100vh-64px)] overflow-hidden px-2 py-3 sm:px-4 sm:py-5">
+      <div className="pointer-events-none absolute inset-0 -z-20 hidden md:block">
+        <Image
+          src="/images/home-background-desktop.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 -z-20 md:hidden">
+        <Image
+          src="/images/home-background-mobile.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(5,5,4,0.10)_0%,rgba(5,5,4,0.34)_48%,rgba(5,5,4,0.72)_100%)]" />
+
       <section className="mx-auto w-full max-w-[1672px]">
         <div className="hidden md:block">
-          <div className="overflow-hidden rounded-3xl border border-black/10 bg-black shadow-2xl">
+          <div className="overflow-hidden rounded-3xl border border-[#8d5f2c]/35 bg-black/75 shadow-2xl backdrop-blur-[1px]">
             <div className="relative aspect-[1672/550]">
               <Image
                 src="/images/home-desktop.webp"
@@ -142,7 +166,7 @@ export default function Home() {
               <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black to-transparent" />
             </div>
 
-            <div className="bg-black px-5 pb-8 pt-1 lg:px-8">
+            <div className="bg-black/55 px-5 pb-8 pt-1 backdrop-blur-[2px] lg:px-8">
               <div className="grid grid-cols-5 gap-3 xl:gap-5">
                 {desktopCards.map((card) => (
                   <DesktopCard key={card.href} {...card} />
@@ -153,7 +177,7 @@ export default function Home() {
         </div>
 
         <div className="md:hidden">
-          <div className="relative mx-auto aspect-[941/1672] w-full max-w-[520px] overflow-hidden rounded-2xl border border-black/10 bg-black shadow-2xl">
+          <div className="relative mx-auto aspect-[941/1672] w-full max-w-[520px] overflow-hidden rounded-2xl border border-[#8d5f2c]/35 bg-black/65 shadow-2xl backdrop-blur-[1px]">
             <Image
               src="/images/home-mobile.webp"
               alt="Главная страница клана die Wölfchen"
