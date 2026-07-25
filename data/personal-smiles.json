@@ -1741,20 +1741,6 @@
     ]
   },
   {
-    "cuid": "8717",
-    "nick": "Смех из Палаты",
-    "level": 14,
-    "clanId": "",
-    "clanName": "",
-    "clanIcon": "",
-    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
-    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=8717",
-    "personalSmilesCount": 1,
-    "personalSmiles": [
-      "https://dm-game.com/layout/all/smiles/prv_scream1.gif"
-    ]
-  },
-  {
     "cuid": "2128",
     "nick": "Умницa",
     "level": 9,
@@ -1836,6 +1822,20 @@
     "personalSmilesCount": 1,
     "personalSmiles": [
       "https://dm-game.com/layout/all/smiles/prv_badboy.gif"
+    ]
+  },
+  {
+    "cuid": "8717",
+    "nick": "Fistashka",
+    "level": 14,
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "clanIcon": "clan_212.gif",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=8717",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_scream1.gif"
     ]
   },
   {

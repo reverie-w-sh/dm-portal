@@ -1,5 +1,29 @@
 [
   {
+    "id": "2e3b94ed-57b3-4f50-a5f5-f234ed9b0348",
+    "syncId": "2026-07-25T05:52:03.462Z",
+    "createdAt": "2026-07-25T05:52:03.462Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни"
+  },
+  {
+    "id": "c865bc61-c17c-44ee-8764-3d6eb2f2a425",
+    "syncId": "2026-07-25T05:52:03.462Z",
+    "createdAt": "2026-07-25T05:52:03.462Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "26263",
+    "characterName": "на удаление24_07_2026",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=26263",
+    "clanId": "213",
+    "clanName": "Ozune"
+  },
+  {
     "id": "094f9ba3-5b76-4b0b-9057-cc79f857a4f8",
     "syncId": "2026-07-23T06:11:21.108Z",
     "createdAt": "2026-07-23T06:11:21.108Z",

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-07-24T16:52:20.292Z",
+  "createdAt": "2026-07-25T05:52:03.462Z",
   "players": [
     {
       "cuid": "7939",
@@ -1355,10 +1355,10 @@
     },
     {
       "cuid": "8717",
-      "nick": "Смех из Палаты",
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "nick": "Fistashka",
+      "clanId": "212",
+      "clanName": "Лесные Оборотни",
+      "position": "Дама черной масти",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717"
     },
     {
@@ -1395,7 +1395,7 @@
     },
     {
       "cuid": "24697",
-      "nick": "Fistashka",
+      "nick": "Лялечка",
       "clanId": "212",
       "clanName": "Лесные Оборотни",
       "position": "дама черной масти",
@@ -1747,9 +1747,9 @@
     },
     {
       "cuid": "26263",
-      "nick": "Bublik",
-      "clanId": "213",
-      "clanName": "Ozune",
+      "nick": "на удаление24_07_2026",
+      "clanId": "",
+      "clanName": "",
       "position": "Баранка",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=26263"
     },
@@ -3675,15 +3675,6 @@
       ]
     },
     {
-      "cuid": "8717",
-      "nick": "Смех из Палаты",
-      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
-      "personalSmilesCount": 1,
-      "personalSmiles": [
-        "https://dm-game.com/layout/all/smiles/prv_scream1.gif"
-      ]
-    },
-    {
       "cuid": "2128",
       "nick": "Умницa",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2128",
@@ -3735,6 +3726,15 @@
       "personalSmilesCount": 1,
       "personalSmiles": [
         "https://dm-game.com/layout/all/smiles/prv_badboy.gif"
+      ]
+    },
+    {
+      "cuid": "8717",
+      "nick": "Fistashka",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+      "personalSmilesCount": 1,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/prv_scream1.gif"
       ]
     },
     {
