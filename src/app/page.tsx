@@ -5,27 +5,27 @@ const desktopHotspots = [
   {
     href: "/members",
     label: "Открыть состав клана «Волчата»",
-    className: "left-[7.66%] top-[58.88%] h-[29.86%] w-[14.86%]",
+    className: "left-[7.66%] top-[58.88%] h-[31.14%] w-[15.67%]",
   },
   {
     href: "/gifts",
     label: "Открыть раздел «Подарочки»",
-    className: "left-[24.64%] top-[58.88%] h-[29.86%] w-[14.74%]",
+    className: "left-[24.64%] top-[58.88%] h-[31.14%] w-[15.55%]",
   },
   {
     href: "/dungeons",
     label: "Открыть карты подземелий",
-    className: "left-[41.45%] top-[58.88%] h-[29.86%] w-[14.74%]",
+    className: "left-[41.45%] top-[58.88%] h-[31.14%] w-[15.55%]",
   },
   {
     href: "/personal-smiles",
     label: "Открыть личные смайлики",
-    className: "left-[59.03%] top-[58.88%] h-[29.86%] w-[14.74%]",
+    className: "left-[59.03%] top-[58.88%] h-[31.14%] w-[15.55%]",
   },
   {
     href: "/ratings",
     label: "Открыть рейтинги",
-    className: "left-[76.02%] top-[58.88%] h-[29.86%] w-[14.80%]",
+    className: "left-[76.02%] top-[58.88%] h-[31.14%] w-[15.61%]",
   },
 ];
 
