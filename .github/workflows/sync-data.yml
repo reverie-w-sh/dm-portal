@@ -49,10 +49,13 @@ jobs:
       - name: Step 7 — update personal smiles
         run: npx tsx scripts/update-personal-smiles.ts
 
-      - name: Step 8 — write sync timestamp
+      - name: Step 8 — update ratings
+        run: npx tsx scripts/update-ratings.ts
+
+      - name: Step 9 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
-      - name: Step 9 — build events history
+      - name: Step 10 — build events history
         run: npx tsx scripts/build-events.ts
 
       - name: Commit and push updated data
@@ -68,6 +71,7 @@ jobs:
             data/sync-status.json \
             data/last-sync.json \
             data/events.json \
+            data/ratings.json \
             data/history/last-state.json
 
           if git diff --cached --quiet; then
