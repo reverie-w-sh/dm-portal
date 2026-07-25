@@ -5,27 +5,27 @@ const desktopHotspots = [
   {
     href: "/members",
     label: "Открыть состав клана «Волчата»",
-    className: "left-[7.1%] top-[58.2%] h-[31.2%] w-[15.3%]",
+    className: "left-[7.24%] top-[58.24%] h-[31.14%] w-[15.67%]",
   },
   {
     href: "/gifts",
     label: "Открыть раздел «Подарочки»",
-    className: "left-[24.2%] top-[58.2%] h-[31.2%] w-[15.3%]",
+    className: "left-[24.22%] top-[58.24%] h-[31.14%] w-[15.55%]",
   },
   {
     href: "/dungeons",
     label: "Открыть карты подземелий",
-    className: "left-[41.0%] top-[58.2%] h-[31.2%] w-[15.6%]",
+    className: "left-[41.03%] top-[58.24%] h-[31.14%] w-[15.55%]",
   },
   {
     href: "/personal-smiles",
     label: "Открыть личные смайлики",
-    className: "left-[58.3%] top-[58.2%] h-[31.2%] w-[15.4%]",
+    className: "left-[58.61%] top-[58.24%] h-[31.14%] w-[15.55%]",
   },
   {
     href: "/ratings",
     label: "Открыть рейтинги",
-    className: "left-[75.2%] top-[58.2%] h-[31.2%] w-[15.5%]",
+    className: "left-[75.60%] top-[58.24%] h-[31.14%] w-[15.61%]",
   },
 ];
 
@@ -57,7 +57,7 @@ const mobileHotspots = [
   },
 ];
 
-function Hotspot({
+function DesktopHotspot({
   href,
   label,
   className,
@@ -71,10 +71,51 @@ function Hotspot({
       href={href}
       aria-label={label}
       title={label}
-      className={`group absolute z-10 rounded-[7%] outline-none ${className}`}
+      className={`group absolute z-10 outline-none ${className}`}
     >
-      <span className="absolute inset-0 rounded-[7%] border-2 border-transparent transition duration-200 group-hover:-translate-y-[1.5%] group-hover:border-amber-200/70 group-hover:bg-amber-100/10 group-hover:shadow-[0_0_24px_rgba(251,191,36,0.32)] group-focus-visible:border-amber-200 group-focus-visible:bg-amber-100/15 group-focus-visible:shadow-[0_0_24px_rgba(251,191,36,0.4)]" />
+      <span
+        className="
+          absolute inset-0
+          [clip-path:polygon(8%_0,92%_0,100%_8%,100%_92%,92%_100%,8%_100%,0_92%,0_8%)]
+          bg-amber-100/0
+          transition-[background-color,filter] duration-200 ease-out
+          group-hover:bg-amber-100/[0.055]
+          group-hover:[filter:drop-shadow(0_0_10px_rgba(245,190,92,0.58))]
+          group-focus-visible:bg-amber-100/[0.075]
+          group-focus-visible:[filter:drop-shadow(0_0_12px_rgba(245,190,92,0.72))]
+        "
+      >
+        <span
+          className="
+            absolute inset-0
+            [clip-path:polygon(8%_0,92%_0,100%_8%,100%_92%,92%_100%,8%_100%,0_92%,0_8%)]
+            shadow-[inset_0_0_0_0_rgba(247,201,119,0)]
+            transition-shadow duration-200 ease-out
+            group-hover:shadow-[inset_0_0_0_2px_rgba(247,201,119,0.9),inset_0_0_24px_rgba(247,201,119,0.08)]
+            group-focus-visible:shadow-[inset_0_0_0_2px_rgba(255,220,150,1),inset_0_0_28px_rgba(247,201,119,0.12)]
+          "
+        />
+      </span>
     </Link>
+  );
+}
+
+function MobileHotspot({
+  href,
+  label,
+  className,
+}: {
+  href: string;
+  label: string;
+  className: string;
+}) {
+  return (
+    <Link
+      href={href}
+      aria-label={label}
+      title={label}
+      className={`absolute z-10 ${className}`}
+    />
   );
 }
 
@@ -94,7 +135,7 @@ export default function Home() {
             />
 
             {desktopHotspots.map((hotspot) => (
-              <Hotspot key={hotspot.href} {...hotspot} />
+              <DesktopHotspot key={hotspot.href} {...hotspot} />
             ))}
           </div>
         </div>
@@ -111,7 +152,7 @@ export default function Home() {
             />
 
             {mobileHotspots.map((hotspot) => (
-              <Hotspot key={hotspot.href} {...hotspot} />
+              <MobileHotspot key={hotspot.href} {...hotspot} />
             ))}
           </div>
         </div>
