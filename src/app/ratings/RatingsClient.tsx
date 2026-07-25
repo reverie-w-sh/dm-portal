@@ -6,20 +6,26 @@ type RatingItem = { rank: number; name: string; level?: number; value: number | 
 type PlayerItem = { rank: number; name: string; level?: number; experience: string; experienceValue: number; monsterWins: number; playerWins: number };
 type Rating = { title: string; valueLabel: string; items: RatingItem[] };
 type RatingsData = { updatedAt?: string; ratings: Record<string, Rating>; players?: { title: string; items: PlayerItem[] } };
-type Card = { key: string; label: string; icon: string; tone?: string; subtitle?: string };
+type Card = { key: string; label: string; image: string; tone?: string; subtitle?: string };
 type PlayerSort = "experience" | "monsterWins" | "playerWins";
 
 const professions: Card[] = [
-  { key: "fishing", label: "Рыболов", icon: "🎣" }, { key: "collector", label: "Собиратель", icon: "🌿" },
-  { key: "hunter", label: "Охотник", icon: "🏹" }, { key: "blacksmith", label: "Кузнец", icon: "⚒" },
-  { key: "leatherworker", label: "Кожевник", icon: "🛡" }, { key: "doctor", label: "Лекарь", icon: "♥" },
-  { key: "alchemy", label: "Алхимик", icon: "⚗" }, { key: "enchanter", label: "Заклинатель", icon: "✦" },
-  { key: "seer", label: "Ведун", icon: "🔮" }, { key: "shooter", label: "Стрелок", icon: "◎" },
+  { key: "fishing", label: "Рыболов", image: "/images/ratings/fishing.webp" },
+  { key: "collector", label: "Собиратель", image: "/images/ratings/collector.webp" },
+  { key: "hunter", label: "Охотник", image: "/images/ratings/hunter.webp" },
+  { key: "blacksmith", label: "Кузнец", image: "/images/ratings/blacksmith.webp" },
+  { key: "leatherworker", label: "Кожевник", image: "/images/ratings/leatherworker.webp" },
+  { key: "doctor", label: "Лекарь", image: "/images/ratings/doctor.webp" },
+  { key: "alchemy", label: "Алхимик", image: "/images/ratings/alchemy.webp" },
+  { key: "enchanter", label: "Заклинатель", image: "/images/ratings/enchanter.webp" },
+  { key: "seer", label: "Ведун", image: "/images/ratings/seer.webp" },
+  { key: "shooter", label: "Стрелок", image: "/images/ratings/shooter.webp" },
 ];
+
 const general: Card[] = [
-  { key: "players", label: "Рейтинг игроков", icon: "♛", tone: "burgundy", subtitle: "Опыт и победы" },
-  { key: "communities", label: "Рейтинг сообществ", icon: "🐾", tone: "blue", subtitle: "Кланы Древнего Мира" },
-  { key: "achievements", label: "Рейтинг достижений", icon: "★", tone: "green", subtitle: "По очкам достижений" },
+  { key: "players", label: "Рейтинг игроков", image: "/images/ratings/players.webp", tone: "burgundy", subtitle: "Опыт, победы над монстрами и игроками" },
+  { key: "communities", label: "Рейтинг сообществ", image: "/images/ratings/communities.webp", tone: "blue", subtitle: "Кланы Древнего Мира" },
+  { key: "achievements", label: "Рейтинг достижений", image: "/images/ratings/achievements.webp", tone: "green", subtitle: "Лучшие игроки по очкам достижений" },
 ];
 
 function rankMark(rank: number) { return rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank; }
@@ -36,6 +42,7 @@ export default function RatingsClient({ data }: { data: RatingsData }) {
   }, [data.ratings]);
 
   const rating = useMemo(() => data.ratings[active], [active, data.ratings]);
+  const selectedCard = [...professions, ...general].find((item) => item.key === active);
   const players = useMemo(() => {
     const source = [...(data.players?.items ?? [])];
     const field = playerSort === "experience" ? "experienceValue" : playerSort;
@@ -43,22 +50,46 @@ export default function RatingsClient({ data }: { data: RatingsData }) {
   }, [data.players?.items, playerSort]);
 
   function choose(key: string) {
-    setActive(key); window.history.replaceState(null, "", `#${key}`);
+    setActive(key);
+    window.history.replaceState(null, "", `#${key}`);
     requestAnimationFrame(() => document.getElementById("rating-table")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   }
 
   return <div className="ratings-page">
-    <section className="ratings-hero" aria-label="Зал Славы. Рейтинги."><div className="ratings-hero-image" /></section>
+    <section className="ratings-hero" aria-label="Зал Славы. Рейтинги.">
+      <div className="ratings-hero-image" />
+    </section>
+
     <div className="ratings-content">
       <p className="ratings-curious">Таааак.. что тут у нас интересненького...</p>
-      <section className="ratings-section"><h2 className="ratings-section-title"><span>Мастера своего дела</span></h2>
-        <div className="profession-grid">{professions.map((card) => <button key={card.key} type="button" className={`profession-card ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}><span className="profession-icon" aria-hidden>{card.icon}</span><span>{card.label}</span><span className="rating-arrow" aria-hidden>→</span></button>)}</div>
+
+      <section className="ratings-section ratings-general-section">
+        <h2 className="ratings-section-title"><span>Общие рейтинги</span></h2>
+        <div className="general-grid">
+          {general.map((card) => <button key={card.key} type="button" className={`general-card general-${card.tone} ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}>
+            <span className="general-emblem"><img src={card.image} alt="" /></span>
+            <span className="general-copy"><strong>{card.label}</strong><small>{card.subtitle}</small></span>
+            <span className="rating-arrow" aria-hidden>→</span>
+          </button>)}
+        </div>
       </section>
-      <section className="ratings-section"><h2 className="ratings-section-title"><span>Общие рейтинги</span></h2>
-        <div className="general-grid">{general.map((card) => <button key={card.key} type="button" className={`general-card general-${card.tone} ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}><span className="general-icon" aria-hidden>{card.icon}</span><span className="general-copy"><strong>{card.label}</strong><small>{card.subtitle}</small></span><span className="rating-arrow" aria-hidden>→</span></button>)}</div>
+
+      <section className="ratings-section">
+        <h2 className="ratings-section-title"><span>Мастера своего дела</span></h2>
+        <div className="profession-grid">
+          {professions.map((card) => <button key={card.key} type="button" className={`profession-card ${active === card.key ? "is-active" : ""}`} onClick={() => choose(card.key)}>
+            <span className="profession-art"><img src={card.image} alt="" /></span>
+            <span className="profession-label">{card.label}</span>
+            <span className="rating-arrow" aria-hidden>→</span>
+          </button>)}
+        </div>
       </section>
+
       <section id="rating-table" className="rating-board">
-        <div className="rating-board-head"><div><p className="rating-board-kicker">Зал Славы</p><h2>{active === "players" ? "Рейтинг игроков" : rating?.title ?? "Рейтинг"}</h2></div><span className="rating-board-symbol" aria-hidden>{[...professions, ...general].find((item) => item.key === active)?.icon ?? "★"}</span></div>
+        <div className="rating-board-head">
+          <div><p className="rating-board-kicker">Зал Славы</p><h2>{active === "players" ? "Рейтинг игроков" : rating?.title ?? "Рейтинг"}</h2></div>
+          {selectedCard ? <span className="rating-board-symbol"><img src={selectedCard.image} alt="" /></span> : null}
+        </div>
 
         {active === "players" ? <>
           <div className="player-sort" aria-label="Сортировка рейтинга игроков">
