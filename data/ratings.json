@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T12:29:57.419Z",
+  "updatedAt": "2026-07-26T14:30:41.239Z",
   "ratings": {
     "fishing": {
       "title": "Лучшие рыболовы",
@@ -9,121 +9,121 @@
           "rank": 1,
           "name": "Takezo",
           "level": 10,
-          "value": 1908
+          "value": 43051
         },
         {
           "rank": 2,
           "name": "BlackGeneral",
           "level": 11,
-          "value": 1658
+          "value": 40204
         },
         {
           "rank": 3,
           "name": "Zorro",
           "level": 15,
-          "value": 1804
+          "value": 39308
         },
         {
           "rank": 4,
           "name": "Tequila",
           "level": 15,
-          "value": 2248
+          "value": 37614
         },
         {
           "rank": 5,
           "name": "Юпитер",
           "level": 15,
-          "value": 1826
+          "value": 32925
         },
         {
           "rank": 6,
           "name": "Милли",
           "level": 14,
-          "value": 1144
+          "value": 30030
         },
         {
           "rank": 7,
           "name": "InDigo",
           "level": 12,
-          "value": 1663
+          "value": 28938
         },
         {
           "rank": 8,
           "name": "Серж",
           "level": 10,
-          "value": 361
+          "value": 21693
         },
         {
           "rank": 9,
           "name": "Black_knight",
           "level": 8,
-          "value": 1199
+          "value": 26113
         },
         {
           "rank": 10,
           "name": "Луч света",
           "level": 15,
-          "value": 1506
+          "value": 25803
         },
         {
           "rank": 11,
           "name": "Александр Николаевич",
           "level": 15,
-          "value": 1456
+          "value": 26106
         },
         {
           "rank": 12,
           "name": "Викки",
           "level": 13,
-          "value": 899
+          "value": 24257
         },
         {
           "rank": 13,
           "name": "Горлум",
           "level": 9,
-          "value": 1092
+          "value": 23488
         },
         {
           "rank": 14,
           "name": "Мужские слезы",
           "level": 12,
-          "value": 977
+          "value": 24872
         },
         {
           "rank": 15,
           "name": "ЭХО",
           "level": 13,
-          "value": 1406
+          "value": 22663
         },
         {
           "rank": 16,
           "name": "Fistashka",
           "level": 14,
-          "value": 916
+          "value": 17550
         },
         {
           "rank": 17,
           "name": "FaLLeN",
           "level": 12,
-          "value": 1069
+          "value": 17334
         },
         {
           "rank": 18,
           "name": "07rus",
           "level": 9,
-          "value": 243
+          "value": 17124
         },
         {
           "rank": 19,
           "name": "MAX PAYNE",
           "level": 15,
-          "value": 1008
+          "value": 17394
         },
         {
           "rank": 20,
           "name": "Hanibal",
           "level": 12,
-          "value": 1007
+          "value": 16724
         }
       ]
     },
@@ -411,7 +411,7 @@
           "rank": 5,
           "name": "sinful",
           "level": 15,
-          "value": 111846
+          "value": 111847
         },
         {
           "rank": 6,
@@ -429,13 +429,13 @@
           "rank": 8,
           "name": "Таракашка",
           "level": 17,
-          "value": 107056
+          "value": 107065
         },
         {
           "rank": 9,
           "name": "FaLLeN",
           "level": 12,
-          "value": 104083
+          "value": 104090
         },
         {
           "rank": 10,
@@ -1136,7 +1136,7 @@
       ]
     },
     "shooter": {
-      "title": "Лучшие стрелки",
+      "title": "Лучшие производители болтов",
       "valueLabel": "Очки",
       "items": [
         {
@@ -1262,9 +1262,100 @@
       ]
     },
     "communities": {
-      "title": "Рейтинг сообществ",
-      "valueLabel": "Визиты",
-      "items": []
+      "title": "Кланы по количеству побед",
+      "valueLabel": "Победы",
+      "items": [
+        {
+          "rank": 1,
+          "name": "27479",
+          "value": 27479
+        },
+        {
+          "rank": 2,
+          "name": "26947",
+          "value": 26947
+        },
+        {
+          "rank": 3,
+          "name": "24000",
+          "value": 24000
+        },
+        {
+          "rank": 4,
+          "name": "17149",
+          "value": 17149
+        },
+        {
+          "rank": 5,
+          "name": "16523",
+          "value": 16523
+        },
+        {
+          "rank": 6,
+          "name": "14270",
+          "value": 14270
+        },
+        {
+          "rank": 7,
+          "name": "9486",
+          "value": 9486
+        },
+        {
+          "rank": 8,
+          "name": "9276",
+          "value": 9276
+        },
+        {
+          "rank": 9,
+          "name": "9165",
+          "value": 9165
+        },
+        {
+          "rank": 10,
+          "name": "6966",
+          "value": 6966
+        },
+        {
+          "rank": 11,
+          "name": "5596",
+          "value": 5596
+        },
+        {
+          "rank": 12,
+          "name": "5392",
+          "value": 5392
+        },
+        {
+          "rank": 13,
+          "name": "3213",
+          "value": 3213
+        },
+        {
+          "rank": 14,
+          "name": "3201",
+          "value": 3201
+        },
+        {
+          "rank": 15,
+          "name": "1771",
+          "value": 1771
+        },
+        {
+          "rank": 16,
+          "name": "1284",
+          "value": 1284
+        },
+        {
+          "rank": 17,
+          "name": "1023",
+          "value": 1023
+        },
+        {
+          "rank": 18,
+          "name": "453",
+          "value": 453
+        }
+      ]
     },
     "achievements": {
       "title": "Рейтинг достижений",
@@ -1329,6 +1420,2062 @@
           "name": "vorchun",
           "level": 8,
           "value": 143
+        }
+      ]
+    },
+    "hunting": {
+      "title": "Лучшие охотники",
+      "valueLabel": "Очки",
+      "items": [
+        {
+          "rank": 1,
+          "name": "InDigo",
+          "level": 12,
+          "value": 244892
+        },
+        {
+          "rank": 2,
+          "name": "Викки",
+          "level": 13,
+          "value": 151705
+        },
+        {
+          "rank": 3,
+          "name": "Hanibal",
+          "level": 12,
+          "value": 145490
+        },
+        {
+          "rank": 4,
+          "name": "Takezo",
+          "level": 10,
+          "value": 141984
+        },
+        {
+          "rank": 5,
+          "name": "Юпитер",
+          "level": 15,
+          "value": 125930
+        },
+        {
+          "rank": 6,
+          "name": "Мужские слезы",
+          "level": 12,
+          "value": 122723
+        },
+        {
+          "rank": 7,
+          "name": "Милли",
+          "level": 14,
+          "value": 122670
+        },
+        {
+          "rank": 8,
+          "name": "Серж",
+          "level": 10,
+          "value": 99269
+        },
+        {
+          "rank": 9,
+          "name": "МАСКА",
+          "level": 12,
+          "value": 98674
+        },
+        {
+          "rank": 10,
+          "name": "Александр Николаевич",
+          "level": 15,
+          "value": 91199
+        },
+        {
+          "rank": 11,
+          "name": "Горлум",
+          "level": 9,
+          "value": 86270
+        },
+        {
+          "rank": 12,
+          "name": "Латыш",
+          "level": 12,
+          "value": 79447
+        },
+        {
+          "rank": 13,
+          "name": "K9000",
+          "level": 11,
+          "value": 78394
+        },
+        {
+          "rank": 14,
+          "name": "Tequila",
+          "level": 15,
+          "value": 77070
+        },
+        {
+          "rank": 15,
+          "name": "белый вепрь",
+          "level": 11,
+          "value": 70818
+        },
+        {
+          "rank": 16,
+          "name": "Zorro",
+          "level": 15,
+          "value": 69841
+        },
+        {
+          "rank": 17,
+          "name": "ХОМ",
+          "level": 12,
+          "value": 66432
+        },
+        {
+          "rank": 18,
+          "name": "WanTeck",
+          "level": 15,
+          "value": 53068
+        },
+        {
+          "rank": 19,
+          "name": "07rus",
+          "level": 9,
+          "value": 52976
+        },
+        {
+          "rank": 20,
+          "name": "Катерина",
+          "level": 16,
+          "value": 52544
+        }
+      ]
+    },
+    "communitiesVictories": {
+      "title": "Кланы по количеству побед",
+      "valueLabel": "Победы",
+      "items": [
+        {
+          "rank": 1,
+          "name": "27479",
+          "value": 27479
+        },
+        {
+          "rank": 2,
+          "name": "26947",
+          "value": 26947
+        },
+        {
+          "rank": 3,
+          "name": "24000",
+          "value": 24000
+        },
+        {
+          "rank": 4,
+          "name": "17149",
+          "value": 17149
+        },
+        {
+          "rank": 5,
+          "name": "16523",
+          "value": 16523
+        },
+        {
+          "rank": 6,
+          "name": "14270",
+          "value": 14270
+        },
+        {
+          "rank": 7,
+          "name": "9486",
+          "value": 9486
+        },
+        {
+          "rank": 8,
+          "name": "9276",
+          "value": 9276
+        },
+        {
+          "rank": 9,
+          "name": "9165",
+          "value": 9165
+        },
+        {
+          "rank": 10,
+          "name": "6966",
+          "value": 6966
+        },
+        {
+          "rank": 11,
+          "name": "5596",
+          "value": 5596
+        },
+        {
+          "rank": 12,
+          "name": "5392",
+          "value": 5392
+        },
+        {
+          "rank": 13,
+          "name": "3213",
+          "value": 3213
+        },
+        {
+          "rank": 14,
+          "name": "3201",
+          "value": 3201
+        },
+        {
+          "rank": 15,
+          "name": "1771",
+          "value": 1771
+        },
+        {
+          "rank": 16,
+          "name": "1284",
+          "value": 1284
+        },
+        {
+          "rank": 17,
+          "name": "1023",
+          "value": 1023
+        },
+        {
+          "rank": 18,
+          "name": "453",
+          "value": 453
+        }
+      ]
+    },
+    "communitiesRatio": {
+      "title": "Кланы по соотношению побед и поражений",
+      "valueLabel": "Победы / поражения",
+      "items": [
+        {
+          "rank": 1,
+          "name": "победы",
+          "value": "победы"
+        },
+        {
+          "rank": 2,
+          "name": "453",
+          "value": "453"
+        },
+        {
+          "rank": 3,
+          "name": "1771",
+          "value": "1771"
+        },
+        {
+          "rank": 4,
+          "name": "9276",
+          "value": "9276"
+        },
+        {
+          "rank": 5,
+          "name": "3201",
+          "value": "3201"
+        },
+        {
+          "rank": 6,
+          "name": "24000",
+          "value": "24000"
+        },
+        {
+          "rank": 7,
+          "name": "27479",
+          "value": "27479"
+        },
+        {
+          "rank": 8,
+          "name": "26947",
+          "value": "26947"
+        },
+        {
+          "rank": 9,
+          "name": "9165",
+          "value": "9165"
+        },
+        {
+          "rank": 10,
+          "name": "14270",
+          "value": "14270"
+        },
+        {
+          "rank": 11,
+          "name": "3213",
+          "value": "3213"
+        },
+        {
+          "rank": 12,
+          "name": "9486",
+          "value": "9486"
+        },
+        {
+          "rank": 13,
+          "name": "5596",
+          "value": "5596"
+        },
+        {
+          "rank": 14,
+          "name": "16523",
+          "value": "16523"
+        },
+        {
+          "rank": 15,
+          "name": "1023",
+          "value": "1023"
+        },
+        {
+          "rank": 16,
+          "name": "1284",
+          "value": "1284"
+        },
+        {
+          "rank": 17,
+          "name": "6966",
+          "value": "6966"
+        },
+        {
+          "rank": 18,
+          "name": "17149",
+          "value": "17149"
+        },
+        {
+          "rank": 19,
+          "name": "5392",
+          "value": "5392"
+        }
+      ]
+    },
+    "communitiesDate": {
+      "title": "Кланы по дате создания",
+      "valueLabel": "Дата создания",
+      "items": [
+        {
+          "rank": 1,
+          "name": "дата создания",
+          "value": "дата создания"
+        },
+        {
+          "rank": 2,
+          "name": "0000-00-00 00:00:00",
+          "value": "0000-00-00 00:00:00"
+        },
+        {
+          "rank": 3,
+          "name": "2015-03-24 22:00:22",
+          "value": "2015-03-24 22:00:22"
+        },
+        {
+          "rank": 4,
+          "name": "2015-04-03 11:47:34",
+          "value": "2015-04-03 11:47:34"
+        },
+        {
+          "rank": 5,
+          "name": "2015-04-20 00:05:51",
+          "value": "2015-04-20 00:05:51"
+        },
+        {
+          "rank": 6,
+          "name": "2018-04-28 22:23:28",
+          "value": "2018-04-28 22:23:28"
+        },
+        {
+          "rank": 7,
+          "name": "2018-04-28 22:23:28",
+          "value": "2018-04-28 22:23:28"
+        },
+        {
+          "rank": 8,
+          "name": "2018-04-29 13:10:17",
+          "value": "2018-04-29 13:10:17"
+        },
+        {
+          "rank": 9,
+          "name": "2018-05-02 21:11:33",
+          "value": "2018-05-02 21:11:33"
+        },
+        {
+          "rank": 10,
+          "name": "2018-05-18 11:06:29",
+          "value": "2018-05-18 11:06:29"
+        },
+        {
+          "rank": 11,
+          "name": "2018-05-23 00:23:52",
+          "value": "2018-05-23 00:23:52"
+        },
+        {
+          "rank": 12,
+          "name": "2018-06-10 21:41:04",
+          "value": "2018-06-10 21:41:04"
+        },
+        {
+          "rank": 13,
+          "name": "2019-01-11 00:18:28",
+          "value": "2019-01-11 00:18:28"
+        },
+        {
+          "rank": 14,
+          "name": "2019-04-15 22:52:25",
+          "value": "2019-04-15 22:52:25"
+        },
+        {
+          "rank": 15,
+          "name": "2020-01-30 14:52:43",
+          "value": "2020-01-30 14:52:43"
+        },
+        {
+          "rank": 16,
+          "name": "2022-05-19 17:54:48",
+          "value": "2022-05-19 17:54:48"
+        },
+        {
+          "rank": 17,
+          "name": "2023-08-21 11:23:35",
+          "value": "2023-08-21 11:23:35"
+        },
+        {
+          "rank": 18,
+          "name": "2025-03-29 16:21:00",
+          "value": "2025-03-29 16:21:00"
+        },
+        {
+          "rank": 19,
+          "name": "2025-04-06 15:04:40",
+          "value": "2025-04-06 15:04:40"
+        },
+        {
+          "rank": 20,
+          "name": "2025-04-16 12:21:07",
+          "value": "2025-04-16 12:21:07"
+        },
+        {
+          "rank": 21,
+          "name": "2026-02-11 23:54:14",
+          "value": "2026-02-11 23:54:14"
+        }
+      ]
+    },
+    "players": {
+      "title": "Рейтинг игроков",
+      "valueLabel": "Опыт",
+      "items": [
+        {
+          "rank": 1,
+          "name": "Кол. опыта",
+          "value": 0,
+          "experience": 0,
+          "monsterWins": 0,
+          "playerWins": 0
+        },
+        {
+          "rank": 2,
+          "name": "Опыт/след. ур.",
+          "value": 0,
+          "experience": 0,
+          "monsterWins": 0,
+          "playerWins": 0
+        },
+        {
+          "rank": 3,
+          "name": "44801563/45360000 (558437)",
+          "value": 44801563,
+          "experience": 44801563,
+          "monsterWins": 44801563,
+          "playerWins": 0
+        },
+        {
+          "rank": 4,
+          "name": "835045013/863360000 (28314987)",
+          "value": 835045013,
+          "experience": 835045013,
+          "monsterWins": 835045013,
+          "playerWins": 0
+        },
+        {
+          "rank": 5,
+          "name": "284324715/295360000 (11035285)",
+          "value": 284324715,
+          "experience": 284324715,
+          "monsterWins": 284324715,
+          "playerWins": 0
+        },
+        {
+          "rank": 6,
+          "name": "34601492/36360000 (1758508)",
+          "value": 34601492,
+          "experience": 34601492,
+          "monsterWins": 34601492,
+          "playerWins": 0
+        },
+        {
+          "rank": 7,
+          "name": "20746905/21760000 (1013095)",
+          "value": 20746905,
+          "experience": 20746905,
+          "monsterWins": 20746905,
+          "playerWins": 0
+        },
+        {
+          "rank": 8,
+          "name": "93901730/99360000 (5458270)",
+          "value": 93901730,
+          "experience": 93901730,
+          "monsterWins": 93901730,
+          "playerWins": 0
+        },
+        {
+          "rank": 9,
+          "name": "500619977/527360000 (26740023)",
+          "value": 500619977,
+          "experience": 500619977,
+          "monsterWins": 500619977,
+          "playerWins": 0
+        },
+        {
+          "rank": 10,
+          "name": "120095576/123360000 (3264424)",
+          "value": 120095576,
+          "experience": 120095576,
+          "monsterWins": 120095576,
+          "playerWins": 0
+        },
+        {
+          "rank": 11,
+          "name": "59164351/61360000 (2195649)",
+          "value": 59164351,
+          "experience": 59164351,
+          "monsterWins": 59164351,
+          "playerWins": 0
+        },
+        {
+          "rank": 12,
+          "name": "41128258/42360000 (1231742)",
+          "value": 41128258,
+          "experience": 41128258,
+          "monsterWins": 41128258,
+          "playerWins": 0
+        },
+        {
+          "rank": 13,
+          "name": "53732916/57360000 (3627084)",
+          "value": 53732916,
+          "experience": 53732916,
+          "monsterWins": 53732916,
+          "playerWins": 0
+        },
+        {
+          "rank": 14,
+          "name": "39065578/40360000 (1294422)",
+          "value": 39065578,
+          "experience": 39065578,
+          "monsterWins": 39065578,
+          "playerWins": 0
+        },
+        {
+          "rank": 15,
+          "name": "49658140/53360000 (3701860)",
+          "value": 49658140,
+          "experience": 49658140,
+          "monsterWins": 49658140,
+          "playerWins": 0
+        },
+        {
+          "rank": 16,
+          "name": "26395016/28360000 (1964984)",
+          "value": 26395016,
+          "experience": 26395016,
+          "monsterWins": 26395016,
+          "playerWins": 0
+        },
+        {
+          "rank": 17,
+          "name": "114888082/115360000 (471918)",
+          "value": 114888082,
+          "experience": 114888082,
+          "monsterWins": 114888082,
+          "playerWins": 0
+        },
+        {
+          "rank": 18,
+          "name": "1358183513/1375360000 (17176487)",
+          "value": 1358183513,
+          "experience": 1358183513,
+          "monsterWins": 1358183513,
+          "playerWins": 0
+        },
+        {
+          "rank": 19,
+          "name": "23218579/24360000 (1141421)",
+          "value": 23218579,
+          "experience": 23218579,
+          "monsterWins": 23218579,
+          "playerWins": 0
+        },
+        {
+          "rank": 20,
+          "name": "27049819/28360000 (1310181)",
+          "value": 27049819,
+          "experience": 27049819,
+          "monsterWins": 27049819,
+          "playerWins": 0
+        },
+        {
+          "rank": 21,
+          "name": "20844786/21760000 (915214)",
+          "value": 20844786,
+          "experience": 20844786,
+          "monsterWins": 20844786,
+          "playerWins": 0
+        },
+        {
+          "rank": 22,
+          "name": "52035711/53360000 (1324289)",
+          "value": 52035711,
+          "experience": 52035711,
+          "monsterWins": 52035711,
+          "playerWins": 0
+        },
+        {
+          "rank": 23,
+          "name": "25108293/26360000 (1251707)",
+          "value": 25108293,
+          "experience": 25108293,
+          "monsterWins": 25108293,
+          "playerWins": 0
+        },
+        {
+          "rank": 24,
+          "name": "5992299/9760000 (3767701)",
+          "value": 5992299,
+          "experience": 5992299,
+          "monsterWins": 5992299,
+          "playerWins": 0
+        },
+        {
+          "rank": 25,
+          "name": "147312340/147360000 (47660)",
+          "value": 147312340,
+          "experience": 147312340,
+          "monsterWins": 147312340,
+          "playerWins": 0
+        },
+        {
+          "rank": 26,
+          "name": "1071619536/1119360000 (47740464)",
+          "value": 1071619536,
+          "experience": 1071619536,
+          "monsterWins": 1071619536,
+          "playerWins": 0
+        },
+        {
+          "rank": 27,
+          "name": "31088790/32360000 (1271210)",
+          "value": 31088790,
+          "experience": 31088790,
+          "monsterWins": 31088790,
+          "playerWins": 0
+        },
+        {
+          "rank": 28,
+          "name": "882173954/927360000 (45186046)",
+          "value": 882173954,
+          "experience": 882173954,
+          "monsterWins": 882173954,
+          "playerWins": 0
+        },
+        {
+          "rank": 29,
+          "name": "118764759/123360000 (4595241)",
+          "value": 118764759,
+          "experience": 118764759,
+          "monsterWins": 118764759,
+          "playerWins": 0
+        },
+        {
+          "rank": 30,
+          "name": "16228694/16960000 (731306)",
+          "value": 16228694,
+          "experience": 16228694,
+          "monsterWins": 16228694,
+          "playerWins": 0
+        },
+        {
+          "rank": 31,
+          "name": "47113803/49360000 (2246197)",
+          "value": 47113803,
+          "experience": 47113803,
+          "monsterWins": 47113803,
+          "playerWins": 0
+        },
+        {
+          "rank": 32,
+          "name": "35955520/36360000 (404480)",
+          "value": 35955520,
+          "experience": 35955520,
+          "monsterWins": 35955520,
+          "playerWins": 0
+        },
+        {
+          "rank": 33,
+          "name": "111059128/115360000 (4300872)",
+          "value": 111059128,
+          "experience": 111059128,
+          "monsterWins": 111059128,
+          "playerWins": 0
+        },
+        {
+          "rank": 34,
+          "name": "4126601/4242000 (115399)",
+          "value": 4126601,
+          "experience": 4126601,
+          "monsterWins": 4126601,
+          "playerWins": 0
+        },
+        {
+          "rank": 35,
+          "name": "1612869247/1727360000 (114490753)",
+          "value": 1612869247,
+          "experience": 1612869247,
+          "monsterWins": 1612869247,
+          "playerWins": 0
+        },
+        {
+          "rank": 36,
+          "name": "2563484/2842000 (278516)",
+          "value": 2563484,
+          "experience": 2563484,
+          "monsterWins": 2563484,
+          "playerWins": 0
+        },
+        {
+          "rank": 37,
+          "name": "2545848887/2623360000 (77511113)",
+          "value": 2545848887,
+          "experience": 2545848887,
+          "monsterWins": 2545848887,
+          "playerWins": 0
+        },
+        {
+          "rank": 38,
+          "name": "11985735/12160000 (174265)",
+          "value": 11985735,
+          "experience": 11985735,
+          "monsterWins": 11985735,
+          "playerWins": 0
+        },
+        {
+          "rank": 39,
+          "name": "379177637/399360000 (20182363)",
+          "value": 379177637,
+          "experience": 379177637,
+          "monsterWins": 379177637,
+          "playerWins": 0
+        },
+        {
+          "rank": 40,
+          "name": "1565560791/1599360000 (33799209)",
+          "value": 1565560791,
+          "experience": 1565560791,
+          "monsterWins": 1565560791,
+          "playerWins": 0
+        },
+        {
+          "rank": 41,
+          "name": "183965653/199360000 (15394347)",
+          "value": 183965653,
+          "experience": 183965653,
+          "monsterWins": 183965653,
+          "playerWins": 0
+        },
+        {
+          "rank": 42,
+          "name": "145119465/147360000 (2240535)",
+          "value": 145119465,
+          "experience": 145119465,
+          "monsterWins": 145119465,
+          "playerWins": 0
+        },
+        {
+          "rank": 43,
+          "name": "145691858/147360000 (1668142)",
+          "value": 145691858,
+          "experience": 145691858,
+          "monsterWins": 145691858,
+          "playerWins": 0
+        },
+        {
+          "rank": 44,
+          "name": "478974771/495360000 (16385229)",
+          "value": 478974771,
+          "experience": 478974771,
+          "monsterWins": 478974771,
+          "playerWins": 0
+        },
+        {
+          "rank": 45,
+          "name": "33763447/34360000 (596553)",
+          "value": 33763447,
+          "experience": 33763447,
+          "monsterWins": 33763447,
+          "playerWins": 0
+        },
+        {
+          "rank": 46,
+          "name": "53118253/53360000 (241747)",
+          "value": 53118253,
+          "experience": 53118253,
+          "monsterWins": 53118253,
+          "playerWins": 0
+        },
+        {
+          "rank": 47,
+          "name": "145380988/147360000 (1979012)",
+          "value": 145380988,
+          "experience": 145380988,
+          "monsterWins": 145380988,
+          "playerWins": 0
+        },
+        {
+          "rank": 48,
+          "name": "81018504/81360000 (341496)",
+          "value": 81018504,
+          "experience": 81018504,
+          "monsterWins": 81018504,
+          "playerWins": 0
+        },
+        {
+          "rank": 49,
+          "name": "607329270/623360000 (16030730)",
+          "value": 607329270,
+          "experience": 607329270,
+          "monsterWins": 607329270,
+          "playerWins": 0
+        },
+        {
+          "rank": 50,
+          "name": "96331224/99360000 (3028776)",
+          "value": 96331224,
+          "experience": 96331224,
+          "monsterWins": 96331224,
+          "playerWins": 0
+        },
+        {
+          "rank": 51,
+          "name": "1382920588/1471360000 (88439412)",
+          "value": 1382920588,
+          "experience": 1382920588,
+          "monsterWins": 1382920588,
+          "playerWins": 0
+        },
+        {
+          "rank": 52,
+          "name": "25476896/26360000 (883104)",
+          "value": 25476896,
+          "experience": 25476896,
+          "monsterWins": 25476896,
+          "playerWins": 0
+        },
+        {
+          "rank": 53,
+          "name": "351668149/367360000 (15691851)",
+          "value": 351668149,
+          "experience": 351668149,
+          "monsterWins": 351668149,
+          "playerWins": 0
+        },
+        {
+          "rank": 54,
+          "name": "37363062/38360000 (996938)",
+          "value": 37363062,
+          "experience": 37363062,
+          "monsterWins": 37363062,
+          "playerWins": 0
+        },
+        {
+          "rank": 55,
+          "name": "1137194091/1183360000 (46165909)",
+          "value": 1137194091,
+          "experience": 1137194091,
+          "monsterWins": 1137194091,
+          "playerWins": 0
+        },
+        {
+          "rank": 56,
+          "name": "38069360/38360000 (290640)",
+          "value": 38069360,
+          "experience": 38069360,
+          "monsterWins": 38069360,
+          "playerWins": 0
+        },
+        {
+          "rank": 57,
+          "name": "50858041/53360000 (2501959)",
+          "value": 50858041,
+          "experience": 50858041,
+          "monsterWins": 50858041,
+          "playerWins": 0
+        },
+        {
+          "rank": 58,
+          "name": "733658790/735360000 (1701210)",
+          "value": 733658790,
+          "experience": 733658790,
+          "monsterWins": 733658790,
+          "playerWins": 0
+        },
+        {
+          "rank": 59,
+          "name": "169868162/171360000 (1491838)",
+          "value": 169868162,
+          "experience": 169868162,
+          "monsterWins": 169868162,
+          "playerWins": 0
+        },
+        {
+          "rank": 60,
+          "name": "69014278/69360000 (345722)",
+          "value": 69014278,
+          "experience": 69014278,
+          "monsterWins": 69014278,
+          "playerWins": 0
+        },
+        {
+          "rank": 61,
+          "name": "44108845/45360000 (1251155)",
+          "value": 44108845,
+          "experience": 44108845,
+          "monsterWins": 44108845,
+          "playerWins": 0
+        },
+        {
+          "rank": 62,
+          "name": "89518250/91360000 (1841750)",
+          "value": 89518250,
+          "experience": 89518250,
+          "monsterWins": 89518250,
+          "playerWins": 0
+        },
+        {
+          "rank": 63,
+          "name": "3142113980/3199360000 (57246020)",
+          "value": 3142113980,
+          "experience": 3142113980,
+          "monsterWins": 3142113980,
+          "playerWins": 0
+        },
+        {
+          "rank": 64,
+          "name": "39330628/40360000 (1029372)",
+          "value": 39330628,
+          "experience": 39330628,
+          "monsterWins": 39330628,
+          "playerWins": 0
+        },
+        {
+          "rank": 65,
+          "name": "147397453/155360000 (7962547)",
+          "value": 147397453,
+          "experience": 147397453,
+          "monsterWins": 147397453,
+          "playerWins": 0
+        },
+        {
+          "rank": 66,
+          "name": "124978379/131360000 (6381621)",
+          "value": 124978379,
+          "experience": 124978379,
+          "monsterWins": 124978379,
+          "playerWins": 0
+        },
+        {
+          "rank": 67,
+          "name": "23158269/24360000 (1201731)",
+          "value": 23158269,
+          "experience": 23158269,
+          "monsterWins": 23158269,
+          "playerWins": 0
+        },
+        {
+          "rank": 68,
+          "name": "16491263/16960000 (468737)",
+          "value": 16491263,
+          "experience": 16491263,
+          "monsterWins": 16491263,
+          "playerWins": 0
+        },
+        {
+          "rank": 69,
+          "name": "42805219/45360000 (2554781)",
+          "value": 42805219,
+          "experience": 42805219,
+          "monsterWins": 42805219,
+          "playerWins": 0
+        },
+        {
+          "rank": 70,
+          "name": "807369466/863360000 (55990534)",
+          "value": 807369466,
+          "experience": 807369466,
+          "monsterWins": 807369466,
+          "playerWins": 0
+        },
+        {
+          "rank": 71,
+          "name": "52117506/53360000 (1242494)",
+          "value": 52117506,
+          "experience": 52117506,
+          "monsterWins": 52117506,
+          "playerWins": 0
+        },
+        {
+          "rank": 72,
+          "name": "34687080/36360000 (1672920)",
+          "value": 34687080,
+          "experience": 34687080,
+          "monsterWins": 34687080,
+          "playerWins": 0
+        },
+        {
+          "rank": 73,
+          "name": "67373204/69360000 (1986796)",
+          "value": 67373204,
+          "experience": 67373204,
+          "monsterWins": 67373204,
+          "playerWins": 0
+        },
+        {
+          "rank": 74,
+          "name": "81496479/85360000 (3863521)",
+          "value": 81496479,
+          "experience": 81496479,
+          "monsterWins": 81496479,
+          "playerWins": 0
+        },
+        {
+          "rank": 75,
+          "name": "440193714/463360000 (23166286)",
+          "value": 440193714,
+          "experience": 440193714,
+          "monsterWins": 440193714,
+          "playerWins": 0
+        },
+        {
+          "rank": 76,
+          "name": "6491089/9760000 (3268911)",
+          "value": 6491089,
+          "experience": 6491089,
+          "monsterWins": 6491089,
+          "playerWins": 0
+        },
+        {
+          "rank": 77,
+          "name": "27470701/28360000 (889299)",
+          "value": 27470701,
+          "experience": 27470701,
+          "monsterWins": 27470701,
+          "playerWins": 0
+        },
+        {
+          "rank": 78,
+          "name": "27821177/28360000 (538823)",
+          "value": 27821177,
+          "experience": 27821177,
+          "monsterWins": 27821177,
+          "playerWins": 0
+        },
+        {
+          "rank": 79,
+          "name": "37427073/38360000 (932927)",
+          "value": 37427073,
+          "experience": 37427073,
+          "monsterWins": 37427073,
+          "playerWins": 0
+        },
+        {
+          "rank": 80,
+          "name": "16088043/16960000 (871957)",
+          "value": 16088043,
+          "experience": 16088043,
+          "monsterWins": 16088043,
+          "playerWins": 0
+        },
+        {
+          "rank": 81,
+          "name": "35425222/36360000 (934778)",
+          "value": 35425222,
+          "experience": 35425222,
+          "monsterWins": 35425222,
+          "playerWins": 0
+        },
+        {
+          "rank": 82,
+          "name": "1492608/2842000 (1349392)",
+          "value": 1492608,
+          "experience": 1492608,
+          "monsterWins": 1492608,
+          "playerWins": 0
+        },
+        {
+          "rank": 83,
+          "name": "111128552/115360000 (4231448)",
+          "value": 111128552,
+          "experience": 111128552,
+          "monsterWins": 111128552,
+          "playerWins": 0
+        },
+        {
+          "rank": 84,
+          "name": "77111660/77360000 (248340)",
+          "value": 77111660,
+          "experience": 77111660,
+          "monsterWins": 77111660,
+          "playerWins": 0
+        },
+        {
+          "rank": 85,
+          "name": "9412318/9760000 (347682)",
+          "value": 9412318,
+          "experience": 9412318,
+          "monsterWins": 9412318,
+          "playerWins": 0
+        },
+        {
+          "rank": 86,
+          "name": "44447330/45360000 (912670)",
+          "value": 44447330,
+          "experience": 44447330,
+          "monsterWins": 44447330,
+          "playerWins": 0
+        },
+        {
+          "rank": 87,
+          "name": "264475774/279360000 (14884226)",
+          "value": 264475774,
+          "experience": 264475774,
+          "monsterWins": 264475774,
+          "playerWins": 0
+        },
+        {
+          "rank": 88,
+          "name": "46457142/49360000 (2902858)",
+          "value": 46457142,
+          "experience": 46457142,
+          "monsterWins": 46457142,
+          "playerWins": 0
+        },
+        {
+          "rank": 89,
+          "name": "35709903/36360000 (650097)",
+          "value": 35709903,
+          "experience": 35709903,
+          "monsterWins": 35709903,
+          "playerWins": 0
+        },
+        {
+          "rank": 90,
+          "name": "45760384/49360000 (3599616)",
+          "value": 45760384,
+          "experience": 45760384,
+          "monsterWins": 45760384,
+          "playerWins": 0
+        },
+        {
+          "rank": 91,
+          "name": "39338236/40360000 (1021764)",
+          "value": 39338236,
+          "experience": 39338236,
+          "monsterWins": 39338236,
+          "playerWins": 0
+        },
+        {
+          "rank": 92,
+          "name": "925077038/927360000 (2282962)",
+          "value": 925077038,
+          "experience": 925077038,
+          "monsterWins": 925077038,
+          "playerWins": 0
+        },
+        {
+          "rank": 93,
+          "name": "11986252/12160000 (173748)",
+          "value": 11986252,
+          "experience": 11986252,
+          "monsterWins": 11986252,
+          "playerWins": 0
+        },
+        {
+          "rank": 94,
+          "name": "181666139/183360000 (1693861)",
+          "value": 181666139,
+          "experience": 181666139,
+          "monsterWins": 181666139,
+          "playerWins": 0
+        },
+        {
+          "rank": 95,
+          "name": "25636238/26360000 (723762)",
+          "value": 25636238,
+          "experience": 25636238,
+          "monsterWins": 25636238,
+          "playerWins": 0
+        },
+        {
+          "rank": 96,
+          "name": "955121260/991360000 (36238740)",
+          "value": 955121260,
+          "experience": 955121260,
+          "monsterWins": 955121260,
+          "playerWins": 0
+        },
+        {
+          "rank": 97,
+          "name": "194486686/199360000 (4873314)",
+          "value": 194486686,
+          "experience": 194486686,
+          "monsterWins": 194486686,
+          "playerWins": 0
+        },
+        {
+          "rank": 98,
+          "name": "26912063/28360000 (1447937)",
+          "value": 26912063,
+          "experience": 26912063,
+          "monsterWins": 26912063,
+          "playerWins": 0
+        },
+        {
+          "rank": 99,
+          "name": "15524449/15760000 (235551)",
+          "value": 15524449,
+          "experience": 15524449,
+          "monsterWins": 15524449,
+          "playerWins": 0
+        },
+        {
+          "rank": 100,
+          "name": "15971820/16960000 (988180)",
+          "value": 15971820,
+          "experience": 15971820,
+          "monsterWins": 15971820,
+          "playerWins": 0
+        },
+        {
+          "rank": 101,
+          "name": "76271592/77360000 (1088408)",
+          "value": 76271592,
+          "experience": 76271592,
+          "monsterWins": 76271592,
+          "playerWins": 0
+        },
+        {
+          "rank": 102,
+          "name": "1618649/2842000 (1223351)",
+          "value": 1618649,
+          "experience": 1618649,
+          "monsterWins": 1618649,
+          "playerWins": 0
+        },
+        {
+          "rank": 103,
+          "name": "38153825/38360000 (206175)",
+          "value": 38153825,
+          "experience": 38153825,
+          "monsterWins": 38153825,
+          "playerWins": 0
+        },
+        {
+          "rank": 104,
+          "name": "504626113/527360000 (22733887)",
+          "value": 504626113,
+          "experience": 504626113,
+          "monsterWins": 504626113,
+          "playerWins": 0
+        },
+        {
+          "rank": 105,
+          "name": "20418275/20560000 (141725)",
+          "value": 20418275,
+          "experience": 20418275,
+          "monsterWins": 20418275,
+          "playerWins": 0
+        },
+        {
+          "rank": 106,
+          "name": "70530649/73360000 (2829351)",
+          "value": 70530649,
+          "experience": 70530649,
+          "monsterWins": 70530649,
+          "playerWins": 0
+        },
+        {
+          "rank": 107,
+          "name": "112362859/115360000 (2997141)",
+          "value": 112362859,
+          "experience": 112362859,
+          "monsterWins": 112362859,
+          "playerWins": 0
+        },
+        {
+          "rank": 108,
+          "name": "2722693325/2751360000 (28666675)",
+          "value": 2722693325,
+          "experience": 2722693325,
+          "monsterWins": 2722693325,
+          "playerWins": 0
+        },
+        {
+          "rank": 109,
+          "name": "39570987/40360000 (789013)",
+          "value": 39570987,
+          "experience": 39570987,
+          "monsterWins": 39570987,
+          "playerWins": 0
+        },
+        {
+          "rank": 110,
+          "name": "119909381/123360000 (3450619)",
+          "value": 119909381,
+          "experience": 119909381,
+          "monsterWins": 119909381,
+          "playerWins": 0
+        },
+        {
+          "rank": 111,
+          "name": "46304141/49360000 (3055859)",
+          "value": 46304141,
+          "experience": 46304141,
+          "monsterWins": 46304141,
+          "playerWins": 0
+        },
+        {
+          "rank": 112,
+          "name": "25092323/26360000 (1267677)",
+          "value": 25092323,
+          "experience": 25092323,
+          "monsterWins": 25092323,
+          "playerWins": 0
+        },
+        {
+          "rank": 113,
+          "name": "22999508/24360000 (1360492)",
+          "value": 22999508,
+          "experience": 22999508,
+          "monsterWins": 22999508,
+          "playerWins": 0
+        },
+        {
+          "rank": 114,
+          "name": "27578637/28360000 (781363)",
+          "value": 27578637,
+          "experience": 27578637,
+          "monsterWins": 27578637,
+          "playerWins": 0
+        },
+        {
+          "rank": 115,
+          "name": "13771919/14560000 (788081)",
+          "value": 13771919,
+          "experience": 13771919,
+          "monsterWins": 13771919,
+          "playerWins": 0
+        },
+        {
+          "rank": 116,
+          "name": "34219913/34360000 (140087)",
+          "value": 34219913,
+          "experience": 34219913,
+          "monsterWins": 34219913,
+          "playerWins": 0
+        },
+        {
+          "rank": 117,
+          "name": "138766645/139360000 (593355)",
+          "value": 138766645,
+          "experience": 138766645,
+          "monsterWins": 138766645,
+          "playerWins": 0
+        },
+        {
+          "rank": 118,
+          "name": "17613241/18160000 (546759)",
+          "value": 17613241,
+          "experience": 17613241,
+          "monsterWins": 17613241,
+          "playerWins": 0
+        },
+        {
+          "rank": 119,
+          "name": "1215963541/1247360000 (31396459)",
+          "value": 1215963541,
+          "experience": 1215963541,
+          "monsterWins": 1215963541,
+          "playerWins": 0
+        },
+        {
+          "rank": 120,
+          "name": "40138064/40360000 (221936)",
+          "value": 40138064,
+          "experience": 40138064,
+          "monsterWins": 40138064,
+          "playerWins": 0
+        },
+        {
+          "rank": 121,
+          "name": "17593174/18160000 (566826)",
+          "value": 17593174,
+          "experience": 17593174,
+          "monsterWins": 17593174,
+          "playerWins": 0
+        },
+        {
+          "rank": 122,
+          "name": "91991581/99360000 (7368419)",
+          "value": 91991581,
+          "experience": 91991581,
+          "monsterWins": 91991581,
+          "playerWins": 0
+        },
+        {
+          "rank": 123,
+          "name": "3397671/3542000 (144329)",
+          "value": 3397671,
+          "experience": 3397671,
+          "monsterWins": 3397671,
+          "playerWins": 0
+        },
+        {
+          "rank": 124,
+          "name": "31187774/32360000 (1172226)",
+          "value": 31187774,
+          "experience": 31187774,
+          "monsterWins": 31187774,
+          "playerWins": 0
+        },
+        {
+          "rank": 125,
+          "name": "30882002/32360000 (1477998)",
+          "value": 30882002,
+          "experience": 30882002,
+          "monsterWins": 30882002,
+          "playerWins": 0
+        },
+        {
+          "rank": 126,
+          "name": "32964569/34360000 (1395431)",
+          "value": 32964569,
+          "experience": 32964569,
+          "monsterWins": 32964569,
+          "playerWins": 0
+        },
+        {
+          "rank": 127,
+          "name": "16543331/16960000 (416669)",
+          "value": 16543331,
+          "experience": 16543331,
+          "monsterWins": 16543331,
+          "playerWins": 0
+        },
+        {
+          "rank": 128,
+          "name": "19180567/19360000 (179433)",
+          "value": 19180567,
+          "experience": 19180567,
+          "monsterWins": 19180567,
+          "playerWins": 0
+        },
+        {
+          "rank": 129,
+          "name": "4732544/4942000 (209456)",
+          "value": 4732544,
+          "experience": 4732544,
+          "monsterWins": 4732544,
+          "playerWins": 0
+        },
+        {
+          "rank": 130,
+          "name": "1140905/2842000 (1701095)",
+          "value": 1140905,
+          "experience": 1140905,
+          "monsterWins": 1140905,
+          "playerWins": 0
+        },
+        {
+          "rank": 131,
+          "name": "18654059/19360000 (705941)",
+          "value": 18654059,
+          "experience": 18654059,
+          "monsterWins": 18654059,
+          "playerWins": 0
+        },
+        {
+          "rank": 132,
+          "name": "65021738/65360000 (338262)",
+          "value": 65021738,
+          "experience": 65021738,
+          "monsterWins": 65021738,
+          "playerWins": 0
+        },
+        {
+          "rank": 133,
+          "name": "13736089/14560000 (823911)",
+          "value": 13736089,
+          "experience": 13736089,
+          "monsterWins": 13736089,
+          "playerWins": 0
+        },
+        {
+          "rank": 134,
+          "name": "9115754/9760000 (644246)",
+          "value": 9115754,
+          "experience": 9115754,
+          "monsterWins": 9115754,
+          "playerWins": 0
+        },
+        {
+          "rank": 135,
+          "name": "68163412/69360000 (1196588)",
+          "value": 68163412,
+          "experience": 68163412,
+          "monsterWins": 68163412,
+          "playerWins": 0
+        },
+        {
+          "rank": 136,
+          "name": "9189979/9760000 (570021)",
+          "value": 9189979,
+          "experience": 9189979,
+          "monsterWins": 9189979,
+          "playerWins": 0
+        },
+        {
+          "rank": 137,
+          "name": "46891505/49360000 (2468495)",
+          "value": 46891505,
+          "experience": 46891505,
+          "monsterWins": 46891505,
+          "playerWins": 0
+        },
+        {
+          "rank": 138,
+          "name": "12363811/13360000 (996189)",
+          "value": 12363811,
+          "experience": 12363811,
+          "monsterWins": 12363811,
+          "playerWins": 0
+        },
+        {
+          "rank": 139,
+          "name": "72162367/73360000 (1197633)",
+          "value": 72162367,
+          "experience": 72162367,
+          "monsterWins": 72162367,
+          "playerWins": 0
+        },
+        {
+          "rank": 140,
+          "name": "14595445/15760000 (1164555)",
+          "value": 14595445,
+          "experience": 14595445,
+          "monsterWins": 14595445,
+          "playerWins": 0
+        },
+        {
+          "rank": 141,
+          "name": "1454970/2842000 (1387030)",
+          "value": 1454970,
+          "experience": 1454970,
+          "monsterWins": 1454970,
+          "playerWins": 0
+        },
+        {
+          "rank": 142,
+          "name": "28426232/30360000 (1933768)",
+          "value": 28426232,
+          "experience": 28426232,
+          "monsterWins": 28426232,
+          "playerWins": 0
+        },
+        {
+          "rank": 143,
+          "name": "6513129/9760000 (3246871)",
+          "value": 6513129,
+          "experience": 6513129,
+          "monsterWins": 6513129,
+          "playerWins": 0
+        },
+        {
+          "rank": 144,
+          "name": "7670840/9760000 (2089160)",
+          "value": 7670840,
+          "experience": 7670840,
+          "monsterWins": 7670840,
+          "playerWins": 0
+        },
+        {
+          "rank": 145,
+          "name": "24916935/26360000 (1443065)",
+          "value": 24916935,
+          "experience": 24916935,
+          "monsterWins": 24916935,
+          "playerWins": 0
+        },
+        {
+          "rank": 146,
+          "name": "4620620/4942000 (321380)",
+          "value": 4620620,
+          "experience": 4620620,
+          "monsterWins": 4620620,
+          "playerWins": 0
+        },
+        {
+          "rank": 147,
+          "name": "62702542/65360000 (2657458)",
+          "value": 62702542,
+          "experience": 62702542,
+          "monsterWins": 62702542,
+          "playerWins": 0
+        },
+        {
+          "rank": 148,
+          "name": "16327026/16960000 (632974)",
+          "value": 16327026,
+          "experience": 16327026,
+          "monsterWins": 16327026,
+          "playerWins": 0
+        },
+        {
+          "rank": 149,
+          "name": "19233527/19360000 (126473)",
+          "value": 19233527,
+          "experience": 19233527,
+          "monsterWins": 19233527,
+          "playerWins": 0
+        },
+        {
+          "rank": 150,
+          "name": "99441092/107360000 (7918908)",
+          "value": 99441092,
+          "experience": 99441092,
+          "monsterWins": 99441092,
+          "playerWins": 0
+        },
+        {
+          "rank": 151,
+          "name": "12151348/12160000 (8652)",
+          "value": 12151348,
+          "experience": 12151348,
+          "monsterWins": 12151348,
+          "playerWins": 0
+        },
+        {
+          "rank": 152,
+          "name": "13117108/13360000 (242892)",
+          "value": 13117108,
+          "experience": 13117108,
+          "monsterWins": 13117108,
+          "playerWins": 0
+        },
+        {
+          "rank": 153,
+          "name": "11939066/12160000 (220934)",
+          "value": 11939066,
+          "experience": 11939066,
+          "monsterWins": 11939066,
+          "playerWins": 0
+        },
+        {
+          "rank": 154,
+          "name": "13509298/14560000 (1050702)",
+          "value": 13509298,
+          "experience": 13509298,
+          "monsterWins": 13509298,
+          "playerWins": 0
+        },
+        {
+          "rank": 155,
+          "name": "7337612/9760000 (2422388)",
+          "value": 7337612,
+          "experience": 7337612,
+          "monsterWins": 7337612,
+          "playerWins": 0
+        },
+        {
+          "rank": 156,
+          "name": "39507992/40360000 (852008)",
+          "value": 39507992,
+          "experience": 39507992,
+          "monsterWins": 39507992,
+          "playerWins": 0
+        },
+        {
+          "rank": 157,
+          "name": "15752453/15760000 (7547)",
+          "value": 15752453,
+          "experience": 15752453,
+          "monsterWins": 15752453,
+          "playerWins": 0
+        },
+        {
+          "rank": 158,
+          "name": "13003466/13360000 (356534)",
+          "value": 13003466,
+          "experience": 13003466,
+          "monsterWins": 13003466,
+          "playerWins": 0
+        },
+        {
+          "rank": 159,
+          "name": "5655327/5992000 (336673)",
+          "value": 5655327,
+          "experience": 5655327,
+          "monsterWins": 5655327,
+          "playerWins": 0
+        },
+        {
+          "rank": 160,
+          "name": "22862438/24360000 (1497562)",
+          "value": 22862438,
+          "experience": 22862438,
+          "monsterWins": 22862438,
+          "playerWins": 0
+        },
+        {
+          "rank": 161,
+          "name": "3938917/4242000 (303083)",
+          "value": 3938917,
+          "experience": 3938917,
+          "monsterWins": 3938917,
+          "playerWins": 0
+        },
+        {
+          "rank": 162,
+          "name": "3953973/4242000 (288027)",
+          "value": 3953973,
+          "experience": 3953973,
+          "monsterWins": 3953973,
+          "playerWins": 0
+        },
+        {
+          "rank": 163,
+          "name": "18953110/19360000 (406890)",
+          "value": 18953110,
+          "experience": 18953110,
+          "monsterWins": 18953110,
+          "playerWins": 0
+        },
+        {
+          "rank": 164,
+          "name": "819571/865500 (45929)",
+          "value": 819571,
+          "experience": 819571,
+          "monsterWins": 819571,
+          "playerWins": 0
+        },
+        {
+          "rank": 165,
+          "name": "817665/865500 (47835)",
+          "value": 817665,
+          "experience": 817665,
+          "monsterWins": 817665,
+          "playerWins": 0
+        },
+        {
+          "rank": 166,
+          "name": "817663/865500 (47837)",
+          "value": 817663,
+          "experience": 817663,
+          "monsterWins": 817663,
+          "playerWins": 0
+        },
+        {
+          "rank": 167,
+          "name": "815870/865500 (49630)",
+          "value": 815870,
+          "experience": 815870,
+          "monsterWins": 815870,
+          "playerWins": 0
+        },
+        {
+          "rank": 168,
+          "name": "817663/865500 (47837)",
+          "value": 817663,
+          "experience": 817663,
+          "monsterWins": 817663,
+          "playerWins": 0
+        },
+        {
+          "rank": 169,
+          "name": "854222/865500 (11278)",
+          "value": 854222,
+          "experience": 854222,
+          "monsterWins": 854222,
+          "playerWins": 0
+        },
+        {
+          "rank": 170,
+          "name": "854371/865500 (11129)",
+          "value": 854371,
+          "experience": 854371,
+          "monsterWins": 854371,
+          "playerWins": 0
+        },
+        {
+          "rank": 171,
+          "name": "26952272/28360000 (1407728)",
+          "value": 26952272,
+          "experience": 26952272,
+          "monsterWins": 26952272,
+          "playerWins": 0
+        },
+        {
+          "rank": 172,
+          "name": "2020021/2842000 (821979)",
+          "value": 2020021,
+          "experience": 2020021,
+          "monsterWins": 2020021,
+          "playerWins": 0
+        },
+        {
+          "rank": 173,
+          "name": "16480756/16960000 (479244)",
+          "value": 16480756,
+          "experience": 16480756,
+          "monsterWins": 16480756,
+          "playerWins": 0
+        },
+        {
+          "rank": 174,
+          "name": "6520171/9760000 (3239829)",
+          "value": 6520171,
+          "experience": 6520171,
+          "monsterWins": 6520171,
+          "playerWins": 0
+        },
+        {
+          "rank": 175,
+          "name": "9591657/9760000 (168343)",
+          "value": 9591657,
+          "experience": 9591657,
+          "monsterWins": 9591657,
+          "playerWins": 0
+        },
+        {
+          "rank": 176,
+          "name": "24897974/26360000 (1462026)",
+          "value": 24897974,
+          "experience": 24897974,
+          "monsterWins": 24897974,
+          "playerWins": 0
+        },
+        {
+          "rank": 177,
+          "name": "7614117/9760000 (2145883)",
+          "value": 7614117,
+          "experience": 7614117,
+          "monsterWins": 7614117,
+          "playerWins": 0
+        },
+        {
+          "rank": 178,
+          "name": "99981862/107360000 (7378138)",
+          "value": 99981862,
+          "experience": 99981862,
+          "monsterWins": 99981862,
+          "playerWins": 0
+        },
+        {
+          "rank": 179,
+          "name": "2937144/3192000 (254856)",
+          "value": 2937144,
+          "experience": 2937144,
+          "monsterWins": 2937144,
+          "playerWins": 0
+        },
+        {
+          "rank": 180,
+          "name": "3032268/3192000 (159732)",
+          "value": 3032268,
+          "experience": 3032268,
+          "monsterWins": 3032268,
+          "playerWins": 0
+        },
+        {
+          "rank": 181,
+          "name": "14292244/14560000 (267756)",
+          "value": 14292244,
+          "experience": 14292244,
+          "monsterWins": 14292244,
+          "playerWins": 0
+        },
+        {
+          "rank": 182,
+          "name": "19705190/20560000 (854810)",
+          "value": 19705190,
+          "experience": 19705190,
+          "monsterWins": 19705190,
+          "playerWins": 0
+        },
+        {
+          "rank": 183,
+          "name": "6697221/9760000 (3062779)",
+          "value": 6697221,
+          "experience": 6697221,
+          "monsterWins": 6697221,
+          "playerWins": 0
+        },
+        {
+          "rank": 184,
+          "name": "92312964/99360000 (7047036)",
+          "value": 92312964,
+          "experience": 92312964,
+          "monsterWins": 92312964,
+          "playerWins": 0
+        },
+        {
+          "rank": 185,
+          "name": "7358531/9760000 (2401469)",
+          "value": 7358531,
+          "experience": 7358531,
+          "monsterWins": 7358531,
+          "playerWins": 0
+        },
+        {
+          "rank": 186,
+          "name": "7393324/9760000 (2366676)",
+          "value": 7393324,
+          "experience": 7393324,
+          "monsterWins": 7393324,
+          "playerWins": 0
+        },
+        {
+          "rank": 187,
+          "name": "8394685/9760000 (1365315)",
+          "value": 8394685,
+          "experience": 8394685,
+          "monsterWins": 8394685,
+          "playerWins": 0
+        },
+        {
+          "rank": 188,
+          "name": "4104490/4242000 (137510)",
+          "value": 4104490,
+          "experience": 4104490,
+          "monsterWins": 4104490,
+          "playerWins": 0
+        },
+        {
+          "rank": 189,
+          "name": "7087189/9760000 (2672811)",
+          "value": 7087189,
+          "experience": 7087189,
+          "monsterWins": 7087189,
+          "playerWins": 0
+        },
+        {
+          "rank": 190,
+          "name": "3067374/3192000 (124626)",
+          "value": 3067374,
+          "experience": 3067374,
+          "monsterWins": 3067374,
+          "playerWins": 0
+        },
+        {
+          "rank": 191,
+          "name": "1235042/2842000 (1606958)",
+          "value": 1235042,
+          "experience": 1235042,
+          "monsterWins": 1235042,
+          "playerWins": 0
+        },
+        {
+          "rank": 192,
+          "name": "9496799/9760000 (263201)",
+          "value": 9496799,
+          "experience": 9496799,
+          "monsterWins": 9496799,
+          "playerWins": 0
+        },
+        {
+          "rank": 193,
+          "name": "47690520/49360000 (1669480)",
+          "value": 47690520,
+          "experience": 47690520,
+          "monsterWins": 47690520,
+          "playerWins": 0
+        },
+        {
+          "rank": 194,
+          "name": "6567810/9760000 (3192190)",
+          "value": 6567810,
+          "experience": 6567810,
+          "monsterWins": 6567810,
+          "playerWins": 0
+        },
+        {
+          "rank": 195,
+          "name": "6456608/9760000 (3303392)",
+          "value": 6456608,
+          "experience": 6456608,
+          "monsterWins": 6456608,
+          "playerWins": 0
+        },
+        {
+          "rank": 196,
+          "name": "9755141/9760000 (4859)",
+          "value": 9755141,
+          "experience": 9755141,
+          "monsterWins": 9755141,
+          "playerWins": 0
+        },
+        {
+          "rank": 197,
+          "name": "8206480/9760000 (1553520)",
+          "value": 8206480,
+          "experience": 8206480,
+          "monsterWins": 8206480,
+          "playerWins": 0
+        },
+        {
+          "rank": 198,
+          "name": "13313217/13360000 (46783)",
+          "value": 13313217,
+          "experience": 13313217,
+          "monsterWins": 13313217,
+          "playerWins": 0
+        },
+        {
+          "rank": 199,
+          "name": "3871105/3892000 (20895)",
+          "value": 3871105,
+          "experience": 3871105,
+          "monsterWins": 3871105,
+          "playerWins": 0
+        },
+        {
+          "rank": 200,
+          "name": "7001397/9760000 (2758603)",
+          "value": 7001397,
+          "experience": 7001397,
+          "monsterWins": 7001397,
+          "playerWins": 0
+        },
+        {
+          "rank": 201,
+          "name": "9471261/9760000 (288739)",
+          "value": 9471261,
+          "experience": 9471261,
+          "monsterWins": 9471261,
+          "playerWins": 0
+        },
+        {
+          "rank": 202,
+          "name": "3376211/3542000 (165789)",
+          "value": 3376211,
+          "experience": 3376211,
+          "monsterWins": 3376211,
+          "playerWins": 0
         }
       ]
     }
