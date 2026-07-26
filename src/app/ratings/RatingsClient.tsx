@@ -6,6 +6,8 @@ import styles from "./RatingsClient.module.css";
 type RatingItem = {
   rank?: number;
   name: string;
+  nick?: string;
+  login?: string;
   level?: number;
   value?: number | string;
   experience?: number;
@@ -18,7 +20,9 @@ type RatingItem = {
   players?: number;
   clanIcon?: string;
   clanCrest?: string;
+  clanCrestSmall?: string;
   crestSmall?: string;
+  icon?: string;
   clan?: { icon?: string; crestSmall?: string };
 };
 
@@ -87,14 +91,62 @@ function playerValue(item: RatingItem, sort: PlayerSort) {
   return numberFrom(item.playerWins, item.winsPlayers, item.players);
 }
 
-function clanIcon(item: RatingItem) {
-  return (
-    item.clanIcon ??
-    item.clanCrest ??
-    item.crestSmall ??
-    item.clan?.crestSmall ??
-    item.clan?.icon
-  );
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+function directoryPlayer(
+  directory: unknown,
+  playerName: string,
+): Partial<RatingItem> | undefined {
+  const normalizedName = playerName.trim().toLocaleLowerCase("ru-RU");
+
+  function isSamePlayer(value: unknown) {
+    if (!isRecord(value)) return false;
+    const candidate = value.name ?? value.nick ?? value.login;
+    return (
+      typeof candidate === "string" &&
+      candidate.trim().toLocaleLowerCase("ru-RU") === normalizedName
+    );
+  }
+
+  if (Array.isArray(directory)) {
+    return directory.find(isSamePlayer) as Partial<RatingItem> | undefined;
+  }
+
+  if (!isRecord(directory)) return undefined;
+
+  const direct =
+    directory[playerName] ??
+    directory[normalizedName] ??
+    Object.entries(directory).find(
+      ([key]) => key.trim().toLocaleLowerCase("ru-RU") === normalizedName,
+    )?.[1];
+
+  if (isRecord(direct)) return direct as Partial<RatingItem>;
+
+  return Object.values(directory).find(isSamePlayer) as
+    | Partial<RatingItem>
+    | undefined;
+}
+
+function clanIcon(
+  item: RatingItem,
+  directoryItem?: Partial<RatingItem>,
+) {
+  for (const source of [item, directoryItem]) {
+    if (!source) continue;
+    const icon =
+      source.clanIcon ??
+      source.clanCrest ??
+      source.clanCrestSmall ??
+      source.crestSmall ??
+      source.clan?.crestSmall ??
+      source.clan?.icon ??
+      source.icon;
+    if (icon) return icon;
+  }
+  return undefined;
 }
 
 function formatValue(value: number | string | undefined) {
@@ -102,7 +154,13 @@ function formatValue(value: number | string | undefined) {
   return value ?? "—";
 }
 
-export default function RatingsClient({ data }: { data: RatingsData }) {
+export default function RatingsClient({
+  data,
+  playerDirectory,
+}: {
+  data: RatingsData;
+  playerDirectory?: unknown;
+}) {
   const firstProfession =
     professions.find((item) => data.ratings[item.key]?.items?.length)?.key ??
     "fishing";
@@ -245,7 +303,10 @@ export default function RatingsClient({ data }: { data: RatingsData }) {
                   </thead>
                   <tbody>
                     {playerItems.map((item, index) => {
-                      const crest = clanIcon(item);
+                      const crest = clanIcon(
+                        item,
+                        directoryPlayer(playerDirectory, item.name),
+                      );
                       return (
                         <tr key={`${item.name}-${index}`}>
                           <td>{index + 1}</td>
@@ -297,7 +358,10 @@ export default function RatingsClient({ data }: { data: RatingsData }) {
                   </thead>
                   <tbody>
                     {rating.items.map((item, index) => {
-                      const crest = clanIcon(item);
+                      const crest = clanIcon(
+                        item,
+                        directoryPlayer(playerDirectory, item.name),
+                      );
                       return (
                         <tr key={`${item.name}-${index}`}>
                           <td>{item.rank ?? index + 1}</td>
