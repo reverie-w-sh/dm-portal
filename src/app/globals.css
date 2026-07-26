@@ -280,95 +280,95 @@ img.clan-icon {
 /* ===== Зал Славы. Рейтинги. ===== */
 .ratings-page {
   min-height: 100%;
-  color: #e9dfcf;
+  color: #eadfcd;
   background:
-    radial-gradient(circle at 50% 0%, rgba(139, 76, 20, .13), transparent 34rem),
-    linear-gradient(180deg, #080909 0%, #0b0d0e 45%, #080909 100%);
+    radial-gradient(circle at 50% 0%, rgba(119, 68, 20, .19), transparent 36rem),
+    linear-gradient(180deg, #070808 0%, #0a0c0c 47%, #070808 100%);
 }
-
-.ratings-hero {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 22px 24px 0;
-}
-
+.ratings-hero { max-width: 1180px; margin: 0 auto; padding: 20px 24px 0; }
 .ratings-hero-image {
-  width: 100%;
-  aspect-ratio: 1089 / 287;
+  width: 100%; aspect-ratio: 1089 / 287;
   background: url('/images/ratings-hero.webp') center / cover no-repeat;
-  border: 1px solid rgba(197, 139, 65, .3);
-  box-shadow: 0 18px 50px rgba(0,0,0,.55), inset 0 0 0 1px rgba(255,218,151,.06);
+  border: 1px solid rgba(207, 145, 57, .48);
+  box-shadow: 0 22px 58px rgba(0,0,0,.68), inset 0 0 0 1px rgba(255,225,162,.07);
 }
-
-.ratings-content { max-width: 1120px; margin: 0 auto; padding: 18px 24px 70px; }
+.ratings-content { max-width: 1120px; margin: 0 auto; padding: 18px 24px 72px; }
 .ratings-curious {
-  margin: 0 0 24px;
-  text-align: center;
-  font-family: Georgia, 'Times New Roman', serif;
-  color: #eadfca;
-  font-size: clamp(1.08rem, 2vw, 1.45rem);
-  text-shadow: 0 1px 8px rgba(0,0,0,.75);
+  margin: 0 0 26px; text-align: center;
+  font: italic 400 clamp(1.08rem, 2vw, 1.48rem) Georgia, 'Times New Roman', serif;
+  color: #d9ad65; text-shadow: 0 2px 12px #000;
 }
-
-.ratings-section { margin-top: 27px; }
+.ratings-section { margin-top: 31px; }
 .ratings-section-title {
-  display: flex; align-items: center; gap: 16px;
-  margin: 0 0 17px;
-  color: #d6a75e;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.25rem, 2.4vw, 1.72rem);
-  font-weight: 400;
+  display: flex; align-items: center; gap: 15px; margin: 0 0 18px;
+  color: #d4a45b; font: 400 clamp(1.35rem, 2.5vw, 1.84rem) Georgia, 'Times New Roman', serif;
   text-align: center;
 }
 .ratings-section-title::before, .ratings-section-title::after {
   content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(190,126,39,.62), transparent);
+  background: linear-gradient(90deg, transparent, rgba(213,151,62,.7), transparent);
+}
+.ratings-section-title span::before, .ratings-section-title span::after { content:'✦'; margin:0 9px; font-size:.55em; vertical-align:middle; color:#bd8233; }
+.general-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.general-card, .profession-card {
+  appearance:none; position:relative; overflow:hidden; cursor:pointer; color:inherit;
+  border:1px solid rgba(190,127,39,.7); background:#111;
+  box-shadow:inset 0 0 0 1px rgba(255,220,150,.035), 0 13px 30px rgba(0,0,0,.42);
+  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.general-card::before, .profession-card::before {
+  content:''; position:absolute; inset:5px; pointer-events:none;
+  border:1px solid rgba(210,151,65,.18);
+}
+.general-card:hover, .profession-card:hover, .general-card.is-active, .profession-card.is-active {
+  transform:translateY(-3px); border-color:#e0ad57;
+  box-shadow:0 0 0 1px rgba(232,184,101,.13), 0 17px 38px rgba(0,0,0,.58), inset 0 0 36px rgba(173,96,19,.09);
 }
 
-.profession-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.profession-card, .general-card {
-  appearance: none; color: inherit; cursor: pointer;
-  border: 1px solid rgba(188,124,37,.6);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
+.general-card:focus-visible, .profession-card:focus-visible {
+  outline:none;
+  border-color:#f0bc69;
+  box-shadow:0 0 24px rgba(255,208,119,.7), inset 0 0 30px rgba(255,198,94,.18);
 }
-.profession-card {
-  min-height: 104px; padding: 13px 15px;
-  display: grid; grid-template-columns: 46px 1fr auto; align-items: center; gap: 12px;
-  background: linear-gradient(145deg, rgba(29,29,27,.97), rgba(10,11,11,.98));
-  font-family: Georgia, 'Times New Roman', serif; font-size: 1.05rem; text-align: left;
-  box-shadow: inset 0 0 25px rgba(255,255,255,.018), 0 9px 18px rgba(0,0,0,.32);
+.general-card .rating-arrow, .profession-card .rating-arrow { transition:transform .2s ease-out, color .2s ease-out; }
+.general-card:hover .rating-arrow, .profession-card:hover .rating-arrow,
+.general-card.is-active .rating-arrow, .profession-card.is-active .rating-arrow { transform:translateX(4px); color:#f0bc69; }
+.general-card.is-active, .profession-card.is-active {
+  box-shadow:0 0 24px rgba(235,177,75,.52), inset 0 0 30px rgba(255,198,94,.2);
 }
-.profession-icon { display:flex; align-items:center; justify-content:center; width:44px; height:44px; font-size:1.75rem; color:#d5a34e; filter: sepia(.25); }
-.rating-arrow { color: #d89935; font-size: 1.4rem; }
-.profession-card:hover, .general-card:hover, .profession-card.is-active, .general-card.is-active {
-  transform: translateY(-2px); border-color: #e4b764;
-  box-shadow: 0 0 0 1px rgba(228,183,100,.14), 0 12px 30px rgba(0,0,0,.46), inset 0 0 30px rgba(184,106,22,.08);
-}
-
-.general-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .general-card {
-  min-height: 132px; padding: 20px;
-  display:grid; grid-template-columns:70px 1fr auto; gap:16px; align-items:center; text-align:left;
-  background:#131313;
+  min-height:250px; padding:22px 20px 19px; display:flex; flex-direction:column; align-items:center; text-align:center;
 }
-.general-burgundy { background: radial-gradient(circle at 20% 50%, rgba(103,24,25,.32), transparent 55%), #160e0f; }
-.general-blue { background: radial-gradient(circle at 20% 50%, rgba(20,68,87,.3), transparent 55%), #0c1317; }
-.general-green { background: radial-gradient(circle at 20% 50%, rgba(27,84,46,.3), transparent 55%), #0c1510; }
-.general-icon { width:64px; height:64px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(218,161,71,.62); border-radius:50%; color:#e2b45f; font-size:2.1rem; box-shadow:inset 0 0 18px rgba(190,120,35,.16); }
-.general-copy { display:flex; flex-direction:column; gap:7px; }
-.general-copy strong { font:400 1.22rem Georgia,'Times New Roman',serif; color:#f0dfbd; }
-.general-copy small { color:#bc9e72; line-height:1.35; }
-
-.rating-board { scroll-margin-top: 92px; margin-top:32px; border:1px solid rgba(187,124,39,.55); background:rgba(12,13,13,.95); box-shadow:0 22px 55px rgba(0,0,0,.46); }
-.rating-board-head { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px 26px; border-bottom:1px solid rgba(187,124,39,.32); background:linear-gradient(180deg,rgba(91,52,17,.18),transparent); }
-.rating-board-kicker { margin:0 0 4px; color:#a9834b; text-transform:uppercase; letter-spacing:.18em; font-size:.69rem; }
-.rating-board h2 { margin:0; color:#eed6a9; font:400 clamp(1.5rem,3vw,2rem) Georgia,'Times New Roman',serif; }
-.rating-board-symbol { color:#d9a548; font-size:2.2rem; }
+.general-burgundy { background:radial-gradient(circle at 50% 28%, rgba(113,34,30,.36), transparent 48%), linear-gradient(145deg,#1d1111,#090b0b); }
+.general-blue { background:radial-gradient(circle at 50% 28%, rgba(31,79,101,.35), transparent 48%), linear-gradient(145deg,#0e1920,#080b0d); }
+.general-green { background:radial-gradient(circle at 50% 28%, rgba(37,91,52,.34), transparent 48%), linear-gradient(145deg,#101d14,#080b09); }
+.general-emblem { width:112px; height:112px; margin-bottom:11px; border-radius:50%; overflow:hidden; border:1px solid rgba(221,166,77,.58); box-shadow:0 0 26px rgba(194,126,30,.18); }
+.general-emblem img { width:100%; height:100%; object-fit:cover; transform:scale(1.18); }
+.general-copy { display:flex; flex-direction:column; gap:8px; align-items:center; }
+.general-copy strong { color:#f0ddba; font:400 1.34rem Georgia,'Times New Roman',serif; }
+.general-copy small { max-width:250px; color:#bca17b; line-height:1.45; }
+.rating-arrow { color:#d99b3d; font-size:1.52rem; line-height:1; }
+.general-card > .rating-arrow { position:absolute; right:19px; bottom:16px; }
+.profession-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.profession-card {
+  min-height:142px; padding:10px 11px 13px; display:grid; grid-template-rows:88px auto; grid-template-columns:1fr auto; align-items:center;
+  background:linear-gradient(145deg,rgba(27,26,23,.98),rgba(7,9,9,.99)); text-align:left;
+}
+.profession-art { grid-column:1 / -1; justify-self:center; width:88px; height:88px; overflow:hidden; border-radius:50%; }
+.profession-art img { width:100%; height:100%; object-fit:cover; transform:scale(1.22); filter:saturate(.92) contrast(1.05); }
+.profession-label { padding-left:7px; color:#dfbf87; font:400 1.05rem Georgia,'Times New Roman',serif; }
+.profession-card > .rating-arrow { padding-right:5px; }
+.rating-board { scroll-margin-top:92px; margin-top:38px; overflow:hidden; border:1px solid rgba(190,127,39,.68); background:rgba(9,11,11,.97); box-shadow:0 25px 64px rgba(0,0,0,.58); }
+.rating-board-head { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px 26px; border-bottom:1px solid rgba(188,125,39,.34); background:linear-gradient(180deg,rgba(94,54,17,.23),transparent); }
+.rating-board-kicker { margin:0 0 4px; color:#9f7a45; text-transform:uppercase; letter-spacing:.2em; font-size:.68rem; }
+.rating-board h2 { margin:0; color:#edd4a5; font:400 clamp(1.5rem,3vw,2.05rem) Georgia,'Times New Roman',serif; }
+.rating-board-symbol { width:62px; height:62px; overflow:hidden; border-radius:50%; border:1px solid rgba(209,149,62,.52); }
+.rating-board-symbol img { width:100%; height:100%; object-fit:cover; transform:scale(1.2); }
 .rating-table-wrap { overflow-x:auto; }
 .rating-table { width:100%; border-collapse:collapse; }
-.rating-table th { padding:12px 18px; text-align:left; color:#a88757; font-size:.72rem; text-transform:uppercase; letter-spacing:.11em; background:rgba(255,255,255,.025); }
+.rating-table th { padding:12px 18px; text-align:left; color:#aa8857; font-size:.72rem; text-transform:uppercase; letter-spacing:.11em; background:rgba(255,255,255,.025); }
 .rating-table td { padding:13px 18px; border-top:1px solid rgba(255,255,255,.055); }
-.rating-table tbody tr:hover { background:rgba(199,137,48,.055); }
+.rating-table tbody tr:hover { background:rgba(199,137,48,.06); }
 .rating-table a { color:#e8dfd0; text-decoration:none; }
 .rating-table a:hover { color:#edbd6d; }
 .rank-cell { width:76px; color:#d9ad64; font-weight:700; }
@@ -376,39 +376,17 @@ img.clan-icon {
 .value-cell { text-align:right; color:#d7b372; font-variant-numeric:tabular-nums; }
 .rating-table th:last-child { text-align:right; }
 .rating-empty { padding:46px 24px; text-align:center; color:#a9987e; }
-
-@media (max-width: 860px) {
-  .profession-grid { grid-template-columns:repeat(2,1fr); }
-  .general-grid { grid-template-columns:1fr; }
-  .general-card { min-height:112px; }
-}
-
-@media (max-width: 560px) {
-  .ratings-hero { padding:12px 0 0; }
-  .ratings-hero-image { border-left:0; border-right:0; aspect-ratio: 1089 / 310; background-size:cover; }
-  .ratings-content { padding:15px 12px 48px; }
-  .ratings-curious { margin-bottom:17px; }
-  .ratings-section { margin-top:22px; }
-  .ratings-section-title { gap:8px; font-size:1.18rem; }
-  .profession-grid { gap:8px; }
-  .profession-card { min-height:76px; grid-template-columns:34px 1fr auto; gap:7px; padding:9px 10px; font-size:.91rem; }
-  .profession-icon { width:32px; height:32px; font-size:1.28rem; }
-  .general-card { min-height:96px; grid-template-columns:50px 1fr auto; padding:13px; gap:11px; }
-  .general-icon { width:48px; height:48px; font-size:1.55rem; }
-  .general-copy strong { font-size:1rem; }
-  .general-copy small { font-size:.72rem; }
-  .rating-board-head { padding:17px 16px; }
-  .rating-table th, .rating-table td { padding:11px 12px; }
-  .rank-cell { width:52px; }
-}
-
-/* Rating players sorting */
-.player-sort { display:flex; flex-wrap:wrap; gap:10px; padding:0 24px 18px; }
-.player-sort button { border:1px solid rgba(163,121,58,.38); border-radius:999px; padding:9px 14px; background:rgba(255,255,255,.72); color:#4b3727; font-weight:700; cursor:pointer; }
-.player-sort button:hover, .player-sort button.is-active { background:#7f2637; color:#fff8e8; border-color:#7f2637; }
+.player-sort { display:flex; flex-wrap:wrap; gap:10px; padding:18px 24px; border-bottom:1px solid rgba(190,127,39,.2); }
+.player-sort button { border:1px solid rgba(190,127,39,.46); border-radius:2px; padding:9px 14px; background:#151311; color:#cbb083; font-weight:700; cursor:pointer; }
+.player-sort button:hover, .player-sort button.is-active { background:linear-gradient(180deg,#8b3a2f,#64231f); color:#fff1d4; border-color:#d49b4e; box-shadow:inset 0 0 15px rgba(255,194,91,.12); }
 .player-rating-table th:nth-child(n+3), .player-rating-table td:nth-child(n+3) { text-align:right; white-space:nowrap; }
-@media (max-width: 720px) {
-  .player-sort { padding:0 14px 14px; gap:7px; }
-  .player-sort button { flex:1 1 100%; }
-  .player-rating-table { min-width:720px; }
+@media (max-width:900px) { .profession-grid{grid-template-columns:repeat(2,1fr)} .general-grid{grid-template-columns:1fr} .general-card{min-height:190px; display:grid; grid-template-columns:110px 1fr auto; text-align:left; gap:16px} .general-emblem{margin:0} .general-copy{align-items:flex-start} .general-card>.rating-arrow{position:static} }
+@media (max-width:560px) {
+  .ratings-hero{padding:10px 0 0}.ratings-hero-image{border-left:0;border-right:0;aspect-ratio:1089/310;background-size:cover}
+  .ratings-content{padding:14px 12px 48px}.ratings-curious{margin-bottom:19px;font-size:1rem}.ratings-section{margin-top:24px}
+  .ratings-section-title{gap:5px;font-size:1.18rem}.ratings-section-title span::before,.ratings-section-title span::after{margin:0 5px}
+  .profession-grid{gap:8px}.profession-card{min-height:118px;grid-template-rows:70px auto;padding:8px}.profession-art{width:70px;height:70px}.profession-label{font-size:.92rem;padding-left:4px}
+  .general-card{min-height:128px;grid-template-columns:76px 1fr auto;padding:13px;gap:10px}.general-emblem{width:74px;height:74px}.general-copy strong{font-size:1rem}.general-copy small{font-size:.72rem}.general-card>.rating-arrow{font-size:1.2rem}
+  .rating-board-head{padding:16px}.rating-board-symbol{width:48px;height:48px}.rating-table th,.rating-table td{padding:11px 12px}.rank-cell{width:52px}
+  .player-sort{padding:14px;gap:7px}.player-sort button{flex:1 1 100%}.player-rating-table{min-width:720px}
 }
