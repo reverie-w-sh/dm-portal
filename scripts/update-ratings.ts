@@ -245,7 +245,7 @@ async function parsePlayers(page: Page) {
     .filter((row): row is PlayerApiRow => {
       if (!row) return false;
       const name = clean(String(row.username ?? ""));
-      return name && !/^mob\d+[a-z]*$/iu.test(name);
+      return Boolean(name) && !/^mob\d+[a-z]*$/iu.test(name);
     })
     .map((row, index) => {
       const name = clean(String(row.username ?? ""));
