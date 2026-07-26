@@ -323,9 +323,12 @@ img.clan-icon {
 .ratings-subtitle {
   margin: 0 0 26px;
   text-align: center;
-  color: #ddd1bd;
+  color: #e0ba70;
+  font-family: var(--font-inter-src, system-ui, sans-serif);
   font-size: clamp(18px, 2vw, 31px);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.025em;
   text-shadow: 0 1px 12px rgba(0,0,0,.9);
 }
 
