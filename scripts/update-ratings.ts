@@ -29,6 +29,14 @@ type TableCandidate = {
   headers: string[];
 };
 
+type PlayerApiRow = {
+  username?: string;
+  level?: string | number;
+  experience?: string | number;
+  statBattleMonstr?: string | number;
+  statBattleWin?: string | number;
+};
+
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, "data", "ratings.json");
 const BASE = "https://dm-game.com/?file=library&page=";
@@ -52,33 +60,32 @@ const COMMUNITY_SOURCES = [
     pageName: "rating&sortType=quantityVictory&x=61&y=6",
     title: "Кланы по количеству побед",
     valueLabel: "Победы",
-    valueHeaders: [/кол.*побед/u, /^побед/u, /побед/u],
-    valueKind: "number" as const,
+    valueColumn: 2,
   },
   {
     key: "communitiesRatio",
     pageName: "rating&sortType=ratioVL&x=27&y=3",
     title: "Кланы по соотношению побед и поражений",
     valueLabel: "Победы / поражения",
-    valueHeaders: [
-      /соотнош/u,
-      /отнош/u,
-      /побед.*пораж/u,
-      /коэффициент/u,
-      /процент/u,
-      /%/u,
-    ],
-    valueKind: "text" as const,
+    valueColumn: 4,
   },
   {
     key: "communitiesDate",
     pageName: "rating&sortType=date&x=51&y=3",
     title: "Кланы по дате создания",
     valueLabel: "Дата создания",
-    valueHeaders: [/дата/u],
-    valueKind: "text" as const,
+    valueColumn: 2,
   },
 ] as const;
+
+const FIXED_ACHIEVEMENTS: Item[] = [
+  { rank: 1, name: "WanTeck", level: 15, value: 624 },
+  { rank: 2, name: "Мужские слезы", level: 12, value: 602 },
+  { rank: 3, name: "Таракашка", level: 17, value: 599 },
+  { rank: 4, name: "Torturer", level: 14, value: 547 },
+  { rank: 5, name: "MAX PAYNE", level: 15, value: 532 },
+  { rank: 6, name: "Юпитер", level: 15, value: 532 },
+];
 
 function clean(value: string) {
   return value
@@ -220,108 +227,77 @@ async function parseProfession(page: Page, pageName: string) {
   });
 }
 
-async function parseAchievements(page: Page) {
-  await openRating(page, "ratingAchievementRate");
-  return parseRankedTable(await getTables(page), {
-    nameHeaders: [/^ник/u, /игрок/u],
-    valueHeaders: [/очки достиж/u, /очк/u],
-    preferLast: true,
-    valueKind: "number",
-  });
-}
-
-function parsePlayersFromTables(tables: string[][][]) {
-  const found = candidates(
-    tables,
-    [/^ник/u, /игрок/u],
-    [/опыт/u, /монстр/u, /побед над игрок/u],
-  ).filter((candidate) => {
-    const text = candidate.headers.join(" ");
-    return (
-      /опыт/u.test(text) &&
-      /монстр/u.test(text) &&
-      /побед над игрок/u.test(text)
-    );
-  });
-
-  if (!found.length) return [] as Item[];
-  const candidate = [...found].sort(
-    (a, b) => b.rows.length - b.headerIndex - (a.rows.length - a.headerIndex),
-  )[0];
-
-  const rankColumn = headerIndex(candidate.headers, [/^№/u, /^#$/u]);
-  const nameColumn = headerIndex(candidate.headers, [/^ник/u, /игрок/u]);
-  const experienceColumn = headerIndex(candidate.headers, [/опыт/u]);
-  const monsterColumn = headerIndex(candidate.headers, [/монстр/u]);
-  const playerColumn = candidate.headers.findIndex(
-    (header, index) => index !== nameColumn && /побед над игрок/u.test(header),
-  );
-  const items: Item[] = [];
-
-  for (const row of candidate.rows.slice(candidate.headerIndex + 1)) {
-    if (
-      row.length <=
-      Math.max(nameColumn, experienceColumn, monsterColumn, playerColumn)
-    ) {
-      continue;
-    }
-
-    const parsedName = nameAndLevel(row[nameColumn] || "");
-    if (!parsedName.name || /^вернуться$/iu.test(parsedName.name)) continue;
-
-    const experience = numeric(row[experienceColumn] || "") ?? 0;
-    const monsterWins = numeric(row[monsterColumn] || "") ?? 0;
-    const playerWins = numeric(row[playerColumn] || "") ?? 0;
-    const explicitRank =
-      rankColumn >= 0 ? numeric(row[rankColumn] || "") : undefined;
-
-    items.push({
-      rank: explicitRank ?? items.length + 1,
-      name: parsedName.name,
-      level: parsedName.level,
-      value: experience,
-      experience,
-      monsterWins,
-      playerWins,
-    });
-  }
-
-  return items;
+function fixedAchievements() {
+  return FIXED_ACHIEVEMENTS.map((item) => ({ ...item }));
 }
 
 async function parsePlayers(page: Page) {
-  const versions: Item[][] = [];
-  const labels = ["Кол. опыта", "Побед над монстрами", "Побед над игроками"];
-
-  await openRating(page, "ratingPeople");
-  versions.push(parsePlayersFromTables(await getTables(page)));
-
-  for (const label of labels) {
-    await openRating(page, "ratingPeople");
-    const selects = page.locator("select");
-    const count = await selects.count();
-
-    for (let index = 0; index < count; index += 1) {
-      const select = selects.nth(index);
-      const options = await select.locator("option").evaluateAll((nodes) =>
-        nodes.map((node) => ({
-          value: (node as HTMLOptionElement).value,
-          label: (node.textContent || "").replace(/\s+/g, " ").trim(),
-        })),
-      );
-      const option = options.find(
-        (item) => normalized(item.label) === normalized(label),
-      );
-      if (!option) continue;
-
-      await select.selectOption(option.value);
-      await page.waitForTimeout(1_500);
-      versions.push(parsePlayersFromTables(await getTables(page)));
-      break;
-    }
+  const response = await page.request.get(
+    `${BASE}ratingPeople&ajax=1&order_by=experience&cur_lvl=0`,
+    { headers: { Accept: "application/json" } },
+  );
+  if (!response.ok()) {
+    throw new Error(`ratingPeople API: HTTP ${response.status()}`);
   }
 
-  return versions.sort((a, b) => b.length - a.length)[0] ?? [];
+  const rows = (await response.json()) as Array<PlayerApiRow | null>;
+  return rows
+    .filter((row): row is PlayerApiRow => {
+      if (!row) return false;
+      const name = clean(String(row.username ?? ""));
+      return name && !/^mob\d+[a-z]*$/iu.test(name);
+    })
+    .map((row, index) => {
+      const name = clean(String(row.username ?? ""));
+      const experience = Number(row.experience ?? 0);
+      const monsterWins = Number(row.statBattleMonstr ?? 0);
+      const playerWins = Number(row.statBattleWin ?? 0);
+
+      return {
+        rank: index + 1,
+        name,
+        level: Number(row.level ?? 0) || undefined,
+        value: Number.isFinite(experience) ? experience : 0,
+        experience: Number.isFinite(experience) ? experience : 0,
+        monsterWins: Number.isFinite(monsterWins) ? monsterWins : 0,
+        playerWins: Number.isFinite(playerWins) ? playerWins : 0,
+      };
+    });
+}
+
+async function parseCommunity(
+  page: Page,
+  source: (typeof COMMUNITY_SOURCES)[number],
+) {
+  await openRating(page, source.pageName);
+  return page.locator('table.tb-br tr:has(a[href*="clanId="])').evaluateAll(
+    (rows, valueColumn) =>
+      rows
+        .map((row, index) => {
+          const cells = Array.from(row.children).filter(
+            (cell) => cell.tagName === "TD",
+          );
+          const name =
+            row
+              .querySelector('a[href*="clanId="] b')
+              ?.textContent?.replace(/\u00a0/g, " ")
+              .replace(/\s+/g, " ")
+              .trim() ?? "";
+          const value =
+            cells[valueColumn]?.textContent
+              ?.replace(/\u00a0/g, " ")
+              .replace(/\s+/g, " ")
+              .trim() ?? "";
+
+          if (!name || !value) return null;
+          return { rank: index + 1, name, value };
+        })
+        .filter(
+          (item): item is { rank: number; name: string; value: string } =>
+            item !== null,
+        ),
+    source.valueColumn,
+  );
 }
 
 async function main() {
@@ -353,27 +329,20 @@ async function main() {
     }
 
     try {
-      const items = await parseAchievements(page);
-      if (items.length) {
-        next.ratings.achievements = {
-          title: "Рейтинг достижений",
-          valueLabel: "Очки достижений",
-          items,
-        };
-      }
-      console.log(`achievements: ${items.length || "сохранены прежние"}`);
+      const items = fixedAchievements();
+      next.ratings.achievements = {
+        title: "Рейтинг достижений",
+        valueLabel: "Очки достижений",
+        items,
+      };
+      console.log(`achievements: ${items.length} (фиксировано)`);
     } catch (error) {
       console.warn("achievements: не удалось обновить", error);
     }
 
     for (const source of COMMUNITY_SOURCES) {
       try {
-        await openRating(page, source.pageName);
-        const items = parseRankedTable(await getTables(page), {
-          nameHeaders: [/имя сообщества/u, /сообществ/u, /клан/u],
-          valueHeaders: [...source.valueHeaders],
-          valueKind: source.valueKind,
-        });
+        const items = await parseCommunity(page, source);
         if (items.length) {
           next.ratings[source.key] = {
             title: source.title,
