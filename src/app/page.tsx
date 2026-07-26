@@ -126,7 +126,7 @@ function MobileHotspot({
 
 export default function Home() {
   return (
-    <main className="relative min-h-[calc(100vh-64px)] overflow-hidden px-2 py-3 sm:px-4 sm:py-5">
+    <main className="relative overflow-hidden px-2 py-3 sm:px-4 sm:py-5">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-20 bg-repeat [background-size:768px_512px] md:[background-size:1152px_768px]"

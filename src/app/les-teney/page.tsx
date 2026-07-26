@@ -8,13 +8,13 @@ const MIN_CELL = 12;
 const MAX_CELL = 34;
 const DEFAULT_CELL = 20;
 
-const WALL = "#343a40";
-const PASSAGE = "#eef5fa";
-const GRID = "#cfd8e3";
-const PAGE_BG = "#f5f9ff";
+const WALL = "#343532";
+const PASSAGE = "#f0f1ed";
+const GRID = "#d2d0c8";
+const PAGE_BG = "#f3f0e8";
 const ACCENT = "#7fb4d8";
 const ACCENT_STRONG = "#4f8fba";
-const TEXT = "#25313b";
+const TEXT = "#30312e";
 const OFFICIAL_ROUTE = "#f59e0b";
 const PERSONAL_ROUTE = "#2563eb";
 const PERSONAL_MARKER = "#14b8a6";
@@ -1224,7 +1224,7 @@ export default function GardenPublicPage() {
                   background: PAGE_BG,
                 }}
               >
-                <div className="sticky left-0 top-0 z-30 bg-[#f5f9ff]" />
+                <div className="sticky left-0 top-0 z-30 bg-[#f3f0e8]" />
 
                 {columns.map((letter, col) => (
                   <div
@@ -1241,7 +1241,7 @@ export default function GardenPublicPage() {
                   </div>
                 ))}
 
-                <div className="sticky right-0 top-0 z-30 bg-[#f5f9ff]" />
+                <div className="sticky right-0 top-0 z-30 bg-[#f3f0e8]" />
 
                 {shadowMap.grid.map((row, rowIndex) => (
                   <div key={`row-${rowIndex}`} className="contents">
@@ -1491,7 +1491,7 @@ export default function GardenPublicPage() {
                   </div>
                 ))}
 
-                <div className="sticky bottom-0 left-0 z-30 bg-[#f5f9ff]" />
+                <div className="sticky bottom-0 left-0 z-30 bg-[#f3f0e8]" />
 
                 {columns.map((letter, col) => (
                   <div
@@ -1508,7 +1508,7 @@ export default function GardenPublicPage() {
                   </div>
                 ))}
 
-                <div className="sticky bottom-0 right-0 z-30 bg-[#f5f9ff]" />
+                <div className="sticky bottom-0 right-0 z-30 bg-[#f3f0e8]" />
               </div>
             </div>
           </section>

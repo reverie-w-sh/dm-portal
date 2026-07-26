@@ -9,14 +9,14 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-24 mb-8">
+    <footer className="mt-12 border-t border-[#6f4c22]/45 bg-[linear-gradient(180deg,rgba(10,11,10,.12),rgba(8,9,8,.34))] py-8">
       <div className="max-w-[1180px] mx-auto px-6">
 
         {/* Разделитель */}
 
-        <div className="mb-8 flex items-center gap-5">
+        <div className="mb-6 flex items-center gap-5">
 
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#81643f]/60 to-transparent" />
 
           <Link
             href="/"
@@ -27,9 +27,9 @@ export default function Footer() {
               h-10
               rounded-xl
               border
-              border-[#b9b9b9]
-              bg-[#d3d3d3]
-              shadow-[0_4px_12px_rgba(0,0,0,.35),inset_0_1px_0_rgba(255,255,255,.75)]
+              border-[#9d917f]
+              bg-[#c9c2b8]
+              shadow-[0_4px_12px_rgba(0,0,0,.38),inset_0_1px_0_rgba(255,255,255,.6)]
               flex
               items-center
               justify-center
@@ -37,7 +37,7 @@ export default function Footer() {
               transition-all
               duration-300
               hover:-translate-y-0.5
-              hover:border-[#ffd58d]
+              hover:border-[#d8a551]
             "
           >
             <img
@@ -50,23 +50,23 @@ export default function Footer() {
             />
           </Link>
 
-          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#555b64] to-transparent" />
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#81643f]/60 to-transparent" />
 
         </div>
 
         {/* Меню */}
 
-        <nav className="flex flex-wrap justify-center gap-8 text-sm">
+        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">
 
           {footerLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className="
-                text-[#b9bec6]
+                text-[#bdb4a8]
                 transition-colors
                 duration-300
-                hover:text-[#ffd58d]
+                hover:text-[#e2b56d]
               "
             >
               {item.label}
@@ -77,8 +77,8 @@ export default function Footer() {
 
         {/* Подпись */}
 
-        <div className="mt-6 text-center">
-          <span className="text-[11px] tracking-wide text-[#747474]">
+        <div className="mt-5 text-center">
+          <span className="text-[11px] tracking-wide text-[#776c5e]">
             ♥ 2026 © A&amp;W ♥
           </span>
         </div>

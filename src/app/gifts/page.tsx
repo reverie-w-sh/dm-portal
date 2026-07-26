@@ -85,7 +85,7 @@ export default function GiftsPage() {
             key={gift.file}
             className="glass rounded-2xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:shadow-xl"
           >
-            <div className="w-full h-36 rounded-xl bg-[#d3d3d3] border border-black/10 flex items-center justify-center mb-4">
+            <div className="w-full h-36 rounded-xl bg-[#cec8bf] border border-[#a99e91] flex items-center justify-center mb-4">
               <img
                 src={gift.file}
                 alt={gift.title}

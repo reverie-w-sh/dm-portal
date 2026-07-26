@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-accent:       #b86a16;
-  --color-accent-muted: #8d5110;
+  --color-accent:       #b47722;
+  --color-accent-muted: #835619;
 
-  --color-dark:         #1b1e23;
-  --color-dark-card:    #2a2f37;
-  --color-dark-raised:  #343a43;
+  --color-dark:         #191b1d;
+  --color-dark-card:    #262824;
+  --color-dark-raised:  #30322e;
 
-  --color-ink:          #2f3134;
-  --color-ink-dim:      #5f6266;
-  --color-ink-muted:    #7a7d82;
+  --color-ink:          #2d2924;
+  --color-ink-dim:      #625b52;
+  --color-ink-muted:    #7b7369;
 
   --font-inter: var(--font-inter-src);
 }
@@ -24,7 +24,9 @@ html {
 }
 
 body {
-  background: #1b1e23;
+  background:
+    radial-gradient(circle at 50% -12rem, rgba(129, 82, 25, 0.1), transparent 34rem),
+    linear-gradient(180deg, #1a1c1e 0%, #181a1c 48%, #161819 100%);
   color: #e6e6e6;
   font-family: var(--font-inter-src, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
@@ -41,62 +43,74 @@ img.clan-icon {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1b1e23;
+  background: #191b1d;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(184, 106, 22, 0.45);
+  background: rgba(180, 119, 34, 0.45);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(184, 106, 22, 0.7);
+  background: rgba(180, 119, 34, 0.72);
 }
 
 /* Cards */
 .glass {
-  background: #d3d3d3;
-  border: 1px solid #b6b6b6;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  background: #d4cfc7;
+  border: 1px solid #aaa095;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    0 18px 40px rgba(0, 0, 0, 0.24);
 }
 
 .glass-sm {
-  background: #d3d3d3;
-  border: 1px solid #b6b6b6;
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+  background: #d4cfc7;
+  border: 1px solid #aaa095;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 8px 22px rgba(0, 0, 0, 0.14);
 }
 
 .glass-hover {
-  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .glass-hover:hover {
-  background: #dddddd;
-  border-color: #b86a16;
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+  background: #ddd8d0;
+  border-color: #b47722;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    0 15px 34px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(180, 119, 34, 0.08);
+  transform: translateY(-1px);
 }
 
 /* Dividers */
 .divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(120, 120, 120, 0.65), transparent);
+  background: linear-gradient(to right, transparent, rgba(151, 135, 113, 0.52), transparent);
 }
 
 .divider-accent {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(184, 106, 22, 0.55), transparent);
+  background: linear-gradient(to right, transparent, rgba(180, 119, 34, 0.58), transparent);
 }
 
 /* Crest */
 .crest-glow {
   box-shadow:
-    0 0 0 1px rgba(184, 106, 22, 0.35),
+    0 0 0 1px rgba(180, 119, 34, 0.38),
     0 12px 28px rgba(0, 0, 0, 0.22);
 }
 
 /* Buttons */
 .btn-primary {
-  background: #b86a16;
+  background: #a96b1d;
   color: #ffffff;
   font-weight: 700;
   border-radius: 10px;
@@ -107,8 +121,10 @@ img.clan-icon {
 }
 
 .btn-primary:hover {
-  background: #cc7722;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  background: #bd7923;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.24),
+    0 0 16px rgba(180, 119, 34, 0.12);
   transform: translateY(-1px);
 }
 
@@ -124,7 +140,7 @@ img.clan-icon {
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.07);
-  color: #cc7722;
+  color: #d19a4b;
 }
 
 /* ===== Карты Дома Боли ===== */

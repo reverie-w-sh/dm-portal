@@ -21,17 +21,17 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 overflow-hidden border-b border-[#6b4622] shadow-[0_12px_35px_rgba(0,0,0,.45)]"
+      className="sticky top-0 z-50 overflow-hidden border-b border-[#745022] shadow-[0_12px_35px_rgba(0,0,0,.42)]"
       style={{
         background:
-          "linear-gradient(180deg,#444b54 0%,#383e46 20%,#2e333b 55%,#262a31 100%)",
+          "linear-gradient(180deg,#3b3c3d 0%,#323330 22%,#292b29 58%,#222421 100%)",
       }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(255,255,255,.13), rgba(255,255,255,.04) 28%, transparent 62%), radial-gradient(circle at center, transparent 35%, rgba(0,0,0,.2) 100%)",
+            "linear-gradient(to bottom, rgba(255,255,255,.105), rgba(255,255,255,.025) 30%, transparent 64%), radial-gradient(circle at center, rgba(156,105,39,.035), rgba(0,0,0,.22) 100%)",
         }}
       />
 
@@ -39,7 +39,7 @@ export default function Navbar() {
         className="absolute top-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(to right, transparent, rgba(255,210,130,.65), transparent)",
+            "linear-gradient(to right, transparent, rgba(222,190,137,.42), transparent)",
         }}
       />
 
@@ -47,7 +47,7 @@ export default function Navbar() {
         className="absolute bottom-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(to right, transparent, rgba(184,106,22,.7), transparent)",
+            "linear-gradient(to right, transparent, rgba(180,119,34,.78), transparent)",
         }}
       />
 
@@ -58,11 +58,11 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
         >
           <div
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#b5b5b5] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#ffd58d]"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#9d917f] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d8a551]"
             style={{
-              background: "#d3d3d3",
+              background: "linear-gradient(145deg,#d6d1c9,#beb6aa)",
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,.85), 0 4px 14px rgba(0,0,0,.35)",
+                "inset 0 1px 0 rgba(255,255,255,.7), 0 4px 14px rgba(0,0,0,.38)",
             }}
           >
             <Image
@@ -87,8 +87,8 @@ export default function Navbar() {
                 className={[
                   "group relative py-2 text-[15px] font-semibold tracking-wide transition-all duration-300",
                   active
-                    ? "text-[#ffd58d] drop-shadow-[0_0_8px_rgba(255,213,141,.25)]"
-                    : "text-[#dddddd] hover:text-[#ffd58d]",
+                    ? "text-[#e2b56d] drop-shadow-[0_0_8px_rgba(226,181,109,.2)]"
+                    : "text-[#d8d3cb] hover:text-[#e2b56d]",
                 ].join(" ")}
               >
                 {label}
@@ -102,8 +102,8 @@ export default function Navbar() {
                   ].join(" ")}
                   style={{
                     background:
-                      "linear-gradient(90deg,#8b4d14,#e7bb70,#8b4d14)",
-                    boxShadow: "0 0 10px rgba(231,187,112,.45)",
+                      "linear-gradient(90deg,#75501f,#d39a45,#75501f)",
+                    boxShadow: "0 0 10px rgba(211,154,69,.35)",
                   }}
                 />
               </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
         </nav>
 
         <button
-          className="ml-auto rounded-lg border border-[#555] px-3 py-2 text-[#ddd] transition hover:border-[#ffd58d] hover:text-[#ffd58d] lg:hidden"
+          className="ml-auto rounded-lg border border-[#625e55] bg-black/10 px-3 py-2 text-[#d8d3cb] transition hover:border-[#d8a551] hover:text-[#e2b56d] lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Меню"
         >
@@ -122,9 +122,9 @@ export default function Navbar() {
 
       {open && (
         <div
-          className="lg:hidden border-t border-[#4c5159]"
+          className="lg:hidden border-t border-[#504a40]"
           style={{
-            background: "linear-gradient(180deg,#383e46,#2b3037)",
+            background: "linear-gradient(180deg,#30312e,#232522)",
           }}
         >
           {navLinks.map(({ href, label }) => (
@@ -133,10 +133,10 @@ export default function Navbar() {
               href={href}
               onClick={() => setOpen(false)}
               className={[
-                "block border-b border-[#454b55] px-6 py-4 font-semibold transition-colors",
+                "block border-b border-[#47453f] px-6 py-4 font-semibold transition-colors",
                 isActive(href)
-                  ? "text-[#ffd58d]"
-                  : "text-[#dddddd] hover:text-[#ffd58d]",
+                  ? "text-[#e2b56d]"
+                  : "text-[#d8d3cb] hover:text-[#e2b56d]",
               ].join(" ")}
             >
               {label}
