@@ -52,11 +52,12 @@
 .curiosity {
   margin: 0;
   padding: 10px 0 17px;
-  color: #ddd6cd;
-  font:
-    400 clamp(1.02rem, 2vw, 1.35rem) Georgia,
-    "Times New Roman",
-    serif;
+  color: #ecd4a6;
+  font-family: var(--font-inter-src, system-ui, sans-serif);
+  font-size: clamp(1.02rem, 2vw, 1.35rem);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.025em;
   text-align: center;
   text-shadow: 0 2px 8px #000;
 }

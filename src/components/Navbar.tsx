@@ -87,8 +87,8 @@ export default function Navbar() {
                 className={[
                   "group relative py-2 text-[15px] font-semibold tracking-wide transition-all duration-300",
                   active
-                    ? "text-[#f0d49a] drop-shadow-[0_0_8px_rgba(240,212,154,.2)]"
-                    : "text-[#e0ba70] hover:text-[#f0d49a]",
+                    ? "text-[#efc678] drop-shadow-[0_0_8px_rgba(239,198,120,.2)]"
+                    : "text-[#ecd4a6] hover:text-[#efc678]",
                 ].join(" ")}
               >
                 {label}
@@ -112,7 +112,7 @@ export default function Navbar() {
         </nav>
 
         <button
-          className="ml-auto rounded-lg border border-[#625e55] bg-black/10 px-3 py-2 text-[#e0ba70] transition hover:border-[#d8a551] hover:text-[#f0d49a] lg:hidden"
+          className="ml-auto rounded-lg border border-[#625e55] bg-black/10 px-3 py-2 text-[#ecd4a6] transition hover:border-[#d8a551] hover:text-[#efc678] lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Меню"
         >
@@ -135,8 +135,8 @@ export default function Navbar() {
               className={[
                 "block border-b border-[#47453f] px-6 py-4 font-semibold transition-colors",
                 isActive(href)
-                  ? "text-[#f0d49a]"
-                  : "text-[#e0ba70] hover:text-[#f0d49a]",
+                  ? "text-[#efc678]"
+                  : "text-[#ecd4a6] hover:text-[#efc678]",
               ].join(" ")}
             >
               {label}
