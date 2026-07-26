@@ -277,116 +277,199 @@ img.clan-icon {
   }
 }
 
-/* ===== Зал Славы. Рейтинги. ===== */
-.ratings-page {
-  min-height: 100%;
-  color: #eadfcd;
+/* ───────────────── Ratings / Hall of Fame ───────────────── */
+.ratings-shell {
+  min-height: 100vh;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 50% 0%, rgba(119, 68, 20, .19), transparent 36rem),
-    linear-gradient(180deg, #070808 0%, #0a0c0c 47%, #070808 100%);
-}
-.ratings-hero { max-width: 1180px; margin: 0 auto; padding: 20px 24px 0; }
-.ratings-hero-image {
-  width: 100%; aspect-ratio: 1089 / 287;
-  background: url('/images/ratings-hero.webp') center / cover no-repeat;
-  border: 1px solid rgba(207, 145, 57, .48);
-  box-shadow: 0 22px 58px rgba(0,0,0,.68), inset 0 0 0 1px rgba(255,225,162,.07);
-}
-.ratings-content { max-width: 1120px; margin: 0 auto; padding: 18px 24px 72px; }
-.ratings-curious {
-  margin: 0 0 26px; text-align: center;
-  font: italic 400 clamp(1.08rem, 2vw, 1.48rem) Georgia, 'Times New Roman', serif;
-  color: #d9ad65; text-shadow: 0 2px 12px #000;
-}
-.ratings-section { margin-top: 31px; }
-.ratings-section-title {
-  display: flex; align-items: center; gap: 15px; margin: 0 0 18px;
-  color: #d4a45b; font: 400 clamp(1.35rem, 2.5vw, 1.84rem) Georgia, 'Times New Roman', serif;
-  text-align: center;
-}
-.ratings-section-title::before, .ratings-section-title::after {
-  content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(213,151,62,.7), transparent);
-}
-.ratings-section-title span::before, .ratings-section-title span::after { content:'✦'; margin:0 9px; font-size:.55em; vertical-align:middle; color:#bd8233; }
-.general-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-.general-card, .profession-card {
-  appearance:none; position:relative; overflow:hidden; cursor:pointer; color:inherit;
-  border:1px solid rgba(190,127,39,.7); background:#111;
-  box-shadow:inset 0 0 0 1px rgba(255,220,150,.035), 0 13px 30px rgba(0,0,0,.42);
-  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-}
-.general-card::before, .profession-card::before {
-  content:''; position:absolute; inset:5px; pointer-events:none;
-  border:1px solid rgba(210,151,65,.18);
-}
-.general-card:hover, .profession-card:hover, .general-card.is-active, .profession-card.is-active {
-  transform:translateY(-3px); border-color:#e0ad57;
-  box-shadow:0 0 0 1px rgba(232,184,101,.13), 0 17px 38px rgba(0,0,0,.58), inset 0 0 36px rgba(173,96,19,.09);
+    radial-gradient(circle at 50% 0%, rgba(93, 52, 12, .18), transparent 32rem),
+    linear-gradient(180deg, #080a0a 0%, #090c0c 45%, #070909 100%);
+  color: #e8d6b0;
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-.general-card:focus-visible, .profession-card:focus-visible {
-  outline:none;
-  border-color:#f0bc69;
-  box-shadow:0 0 24px rgba(255,208,119,.7), inset 0 0 30px rgba(255,198,94,.18);
+.ratings-hero {
+  position: relative;
+  width: min(100% - 24px, 1540px);
+  margin: 10px auto 0;
+  aspect-ratio: 1540 / 405;
+  overflow: hidden;
+  border: 1px solid rgba(190, 125, 28, .58);
+  box-shadow: 0 20px 65px rgba(0,0,0,.55);
 }
-.general-card .rating-arrow, .profession-card .rating-arrow { transition:transform .2s ease-out, color .2s ease-out; }
-.general-card:hover .rating-arrow, .profession-card:hover .rating-arrow,
-.general-card.is-active .rating-arrow, .profession-card.is-active .rating-arrow { transform:translateX(4px); color:#f0bc69; }
-.general-card.is-active, .profession-card.is-active {
-  box-shadow:0 0 24px rgba(235,177,75,.52), inset 0 0 30px rgba(255,198,94,.2);
+
+.ratings-inner {
+  width: min(100% - 32px, 1420px);
+  margin: 0 auto;
+  padding: 18px 0 54px;
 }
-.general-card {
-  min-height:250px; padding:22px 20px 19px; display:flex; flex-direction:column; align-items:center; text-align:center;
+
+.ratings-subtitle {
+  margin: 0 0 26px;
+  text-align: center;
+  color: #ddd1bd;
+  font-size: clamp(18px, 2vw, 31px);
+  font-style: italic;
+  text-shadow: 0 1px 12px rgba(0,0,0,.9);
 }
-.general-burgundy { background:radial-gradient(circle at 50% 28%, rgba(113,34,30,.36), transparent 48%), linear-gradient(145deg,#1d1111,#090b0b); }
-.general-blue { background:radial-gradient(circle at 50% 28%, rgba(31,79,101,.35), transparent 48%), linear-gradient(145deg,#0e1920,#080b0d); }
-.general-green { background:radial-gradient(circle at 50% 28%, rgba(37,91,52,.34), transparent 48%), linear-gradient(145deg,#101d14,#080b09); }
-.general-emblem { width:112px; height:112px; margin-bottom:11px; border-radius:50%; overflow:hidden; border:1px solid rgba(221,166,77,.58); box-shadow:0 0 26px rgba(194,126,30,.18); }
-.general-emblem img { width:100%; height:100%; object-fit:cover; transform:scale(1.18); }
-.general-copy { display:flex; flex-direction:column; gap:8px; align-items:center; }
-.general-copy strong { color:#f0ddba; font:400 1.34rem Georgia,'Times New Roman',serif; }
-.general-copy small { max-width:250px; color:#bca17b; line-height:1.45; }
-.rating-arrow { color:#d99b3d; font-size:1.52rem; line-height:1; }
-.general-card > .rating-arrow { position:absolute; right:19px; bottom:16px; }
-.profession-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
-.profession-card {
-  min-height:142px; padding:10px 11px 13px; display:grid; grid-template-rows:88px auto; grid-template-columns:1fr auto; align-items:center;
-  background:linear-gradient(145deg,rgba(27,26,23,.98),rgba(7,9,9,.99)); text-align:left;
+
+.ratings-title-row {
+  display: grid;
+  grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr);
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0 20px;
+  color: #dca03e;
+  font-size: clamp(23px, 2.6vw, 36px);
+  font-weight: 400;
+  text-align: center;
 }
-.profession-art { grid-column:1 / -1; justify-self:center; width:88px; height:88px; overflow:hidden; border-radius:50%; }
-.profession-art img { width:100%; height:100%; object-fit:cover; transform:scale(1.22); filter:saturate(.92) contrast(1.05); }
-.profession-label { padding-left:7px; color:#dfbf87; font:400 1.05rem Georgia,'Times New Roman',serif; }
-.profession-card > .rating-arrow { padding-right:5px; }
-.rating-board { scroll-margin-top:92px; margin-top:38px; overflow:hidden; border:1px solid rgba(190,127,39,.68); background:rgba(9,11,11,.97); box-shadow:0 25px 64px rgba(0,0,0,.58); }
-.rating-board-head { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px 26px; border-bottom:1px solid rgba(188,125,39,.34); background:linear-gradient(180deg,rgba(94,54,17,.23),transparent); }
-.rating-board-kicker { margin:0 0 4px; color:#9f7a45; text-transform:uppercase; letter-spacing:.2em; font-size:.68rem; }
-.rating-board h2 { margin:0; color:#edd4a5; font:400 clamp(1.5rem,3vw,2.05rem) Georgia,'Times New Roman',serif; }
-.rating-board-symbol { width:62px; height:62px; overflow:hidden; border-radius:50%; border:1px solid rgba(209,149,62,.52); }
-.rating-board-symbol img { width:100%; height:100%; object-fit:cover; transform:scale(1.2); }
-.rating-table-wrap { overflow-x:auto; }
-.rating-table { width:100%; border-collapse:collapse; }
-.rating-table th { padding:12px 18px; text-align:left; color:#aa8857; font-size:.72rem; text-transform:uppercase; letter-spacing:.11em; background:rgba(255,255,255,.025); }
-.rating-table td { padding:13px 18px; border-top:1px solid rgba(255,255,255,.055); }
-.rating-table tbody tr:hover { background:rgba(199,137,48,.06); }
-.rating-table a { color:#e8dfd0; text-decoration:none; }
-.rating-table a:hover { color:#edbd6d; }
-.rank-cell { width:76px; color:#d9ad64; font-weight:700; }
-.level { margin-left:4px; color:#9c805b; font-size:.85em; }
-.value-cell { text-align:right; color:#d7b372; font-variant-numeric:tabular-nums; }
-.rating-table th:last-child { text-align:right; }
-.rating-empty { padding:46px 24px; text-align:center; color:#a9987e; }
-.player-sort { display:flex; flex-wrap:wrap; gap:10px; padding:18px 24px; border-bottom:1px solid rgba(190,127,39,.2); }
-.player-sort button { border:1px solid rgba(190,127,39,.46); border-radius:2px; padding:9px 14px; background:#151311; color:#cbb083; font-weight:700; cursor:pointer; }
-.player-sort button:hover, .player-sort button.is-active { background:linear-gradient(180deg,#8b3a2f,#64231f); color:#fff1d4; border-color:#d49b4e; box-shadow:inset 0 0 15px rgba(255,194,91,.12); }
-.player-rating-table th:nth-child(n+3), .player-rating-table td:nth-child(n+3) { text-align:right; white-space:nowrap; }
-@media (max-width:900px) { .profession-grid{grid-template-columns:repeat(2,1fr)} .general-grid{grid-template-columns:1fr} .general-card{min-height:190px; display:grid; grid-template-columns:110px 1fr auto; text-align:left; gap:16px} .general-emblem{margin:0} .general-copy{align-items:flex-start} .general-card>.rating-arrow{position:static} }
-@media (max-width:560px) {
-  .ratings-hero{padding:10px 0 0}.ratings-hero-image{border-left:0;border-right:0;aspect-ratio:1089/310;background-size:cover}
-  .ratings-content{padding:14px 12px 48px}.ratings-curious{margin-bottom:19px;font-size:1rem}.ratings-section{margin-top:24px}
-  .ratings-section-title{gap:5px;font-size:1.18rem}.ratings-section-title span::before,.ratings-section-title span::after{margin:0 5px}
-  .profession-grid{gap:8px}.profession-card{min-height:118px;grid-template-rows:70px auto;padding:8px}.profession-art{width:70px;height:70px}.profession-label{font-size:.92rem;padding-left:4px}
-  .general-card{min-height:128px;grid-template-columns:76px 1fr auto;padding:13px;gap:10px}.general-emblem{width:74px;height:74px}.general-copy strong{font-size:1rem}.general-copy small{font-size:.72rem}.general-card>.rating-arrow{font-size:1.2rem}
-  .rating-board-head{padding:16px}.rating-board-symbol{width:48px;height:48px}.rating-table th,.rating-table td{padding:11px 12px}.rank-cell{width:52px}
-  .player-sort{padding:14px;gap:7px}.player-sort button{flex:1 1 100%}.player-rating-table{min-width:720px}
+.ratings-title-row strong { font-weight: 400; }
+.ratings-title-row > span { height: 1px; background: linear-gradient(90deg, transparent, rgba(183,118,27,.65)); }
+.ratings-title-row > span:last-child { background: linear-gradient(90deg, rgba(183,118,27,.65), transparent); }
+
+.ratings-profession-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ratings-profession-card,
+.ratings-general-card {
+  position: relative;
+  appearance: none;
+  cursor: pointer;
+  color: #efd49d;
+  border: 1px solid #875918;
+  background: linear-gradient(145deg, #171917, #090b0b);
+  box-shadow: inset 0 0 0 5px #0b0d0c, inset 0 0 0 6px rgba(173,112,27,.38), 0 10px 24px rgba(0,0,0,.35);
+  transition: transform .2s ease, filter .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.ratings-profession-card:hover,
+.ratings-general-card:hover,
+.ratings-profession-card.is-active,
+.ratings-general-card.is-active {
+  transform: translateY(-4px);
+  filter: brightness(1.13) saturate(1.07);
+  border-color: #d69a36;
+  box-shadow: inset 0 0 0 5px #0b0d0c, inset 0 0 0 6px rgba(229,165,58,.65), 0 0 28px rgba(224,154,39,.24), 0 18px 30px rgba(0,0,0,.55);
+}
+.ratings-profession-card:focus-visible,
+.ratings-general-card:focus-visible { outline: 2px solid #e7b357; outline-offset: 3px; }
+
+.ratings-profession-card {
+  min-height: 142px;
+  padding: 10px 48px 14px 14px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: end;
+  text-align: left;
+  font-size: clamp(17px, 1.5vw, 23px);
+}
+.ratings-profession-icon {
+  width: 86px;
+  height: 86px;
+  justify-self: center;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,.75));
+}
+.ratings-profession-card > b,
+.ratings-general-card > b {
+  position: absolute;
+  right: 17px;
+  bottom: 12px;
+  color: #e5a22e;
+  font: 400 28px/1 Arial, sans-serif;
+  transition: transform .2s ease;
+}
+.ratings-profession-card:hover > b,
+.ratings-general-card:hover > b { transform: translateX(5px); }
+
+.ratings-general-block { margin-top: 26px; }
+.ratings-general-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.ratings-general-card {
+  min-height: 310px;
+  padding: 18px 28px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+.ratings-general-red { background: radial-gradient(circle at 50% 40%, #321a19, #120b0c 72%); }
+.ratings-general-blue { background: radial-gradient(circle at 50% 40%, #132934, #081015 72%); }
+.ratings-general-green { background: radial-gradient(circle at 50% 40%, #18311d, #09110b 72%); }
+.ratings-general-icon { width: 145px; height: 145px; object-fit: contain; filter: drop-shadow(0 10px 16px rgba(0,0,0,.65)); }
+.ratings-general-card strong { font-size: clamp(23px, 2.2vw, 34px); font-weight: 400; }
+.ratings-general-card small { max-width: 300px; margin-top: 8px; color: #d8b66f; font-size: clamp(14px, 1.2vw, 18px); line-height: 1.35; }
+
+.ratings-updated { margin: 20px 0 14px; text-align: center; color: #a89069; font-size: 16px; }
+.ratings-updated span { margin-right: 8px; color: #d49a31; font-size: 22px; vertical-align: -2px; }
+
+.ratings-board {
+  scroll-margin-top: 86px;
+  overflow: hidden;
+  border: 1px solid rgba(154,102,30,.42);
+  border-radius: 12px;
+  background: rgba(7,10,10,.92);
+  box-shadow: inset 0 1px rgba(255,255,255,.02), 0 22px 50px rgba(0,0,0,.4);
+}
+.ratings-tabs { display: flex; align-items: end; gap: 10px; padding: 0 8px; border-bottom: 1px solid rgba(139,91,27,.36); }
+.ratings-tabs button {
+  min-width: 215px;
+  padding: 13px 22px 11px;
+  color: #bca47a;
+  border: 1px solid rgba(112,83,43,.52);
+  border-bottom: 0;
+  background: linear-gradient(#151817, #0c0f0f);
+  font: inherit;
+  font-size: 18px;
+  cursor: pointer;
+  clip-path: polygon(7% 0, 93% 0, 100% 18%, 100% 100%, 0 100%, 0 18%);
+}
+.ratings-tabs button.is-active { color: #f0d49a; border-color: #c88b2f; background: linear-gradient(180deg, #4b351b, #17120c 65%); box-shadow: inset 0 0 18px rgba(216,146,39,.26); }
+
+.ratings-player-sort { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 14px; border-bottom: 1px solid rgba(139,91,27,.25); }
+.ratings-player-sort button { padding: 8px 13px; color: #bba47c; border: 1px solid rgba(142,94,29,.45); border-radius: 999px; background: #0c100f; cursor: pointer; }
+.ratings-player-sort button.is-active { color: #f2d69f; border-color: #cb8c2f; background: #2a1d0e; }
+
+.ratings-table-wrap { overflow-x: auto; }
+.ratings-table { width: 100%; min-width: 680px; border-collapse: collapse; color: #d9bf89; font-size: 16px; }
+.ratings-table th, .ratings-table td { padding: 13px 16px; border-right: 1px solid rgba(131,91,37,.28); border-bottom: 1px solid rgba(131,91,37,.28); text-align: center; white-space: nowrap; }
+.ratings-table th { color: #d4b87d; background: linear-gradient(180deg, #151817, #0e1110); font-weight: 400; }
+.ratings-table th:nth-child(2), .ratings-table td:nth-child(2) { text-align: left; }
+.ratings-table tbody tr { transition: background .15s ease; }
+.ratings-table tbody tr:hover { background: rgba(169,111,28,.085); }
+.ratings-table a { color: #e0ba70; text-decoration: none; }
+.ratings-table a:hover { color: #ffd997; }
+.ratings-player-name { display: inline-flex; align-items: center; gap: 10px; }
+.ratings-player-name img { width: 24px; height: 24px; object-fit: contain; image-rendering: pixelated; }
+.ratings-no-clan { width: 24px; height: 24px; display: inline-block; }
+.ratings-empty { padding: 38px 20px; text-align: center; color: #a89069; }
+
+@media (max-width: 900px) {
+  .ratings-profession-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ratings-general-grid { grid-template-columns: 1fr; }
+  .ratings-general-card { min-height: 245px; }
+  .ratings-tabs { overflow-x: auto; }
+  .ratings-tabs button { min-width: 190px; }
+}
+
+@media (max-width: 560px) {
+  .ratings-hero { width: 100%; margin-top: 0; aspect-ratio: 16 / 7; border-left: 0; border-right: 0; }
+  .ratings-inner { width: min(100% - 18px, 1420px); padding-top: 13px; }
+  .ratings-subtitle { margin-bottom: 20px; font-size: 17px; }
+  .ratings-title-row { gap: 7px; font-size: 23px; }
+  .ratings-profession-grid { gap: 8px; }
+  .ratings-profession-card { min-height: 116px; padding: 8px 34px 10px 10px; font-size: 17px; }
+  .ratings-profession-icon { width: 66px; height: 66px; }
+  .ratings-profession-card > b { right: 10px; bottom: 9px; font-size: 22px; }
+  .ratings-general-grid { gap: 12px; }
+  .ratings-general-card { min-height: 225px; padding: 14px 20px 32px; }
+  .ratings-general-icon { width: 118px; height: 118px; }
+  .ratings-general-card strong { font-size: 25px; }
+  .ratings-updated { font-size: 13px; line-height: 1.45; }
+  .ratings-table { font-size: 14px; }
+  .ratings-table th, .ratings-table td { padding: 11px 12px; }
 }
