@@ -131,64 +131,46 @@ export default function RatingsClient({
 
   return (
     <main className="ratings-shell">
-      <section className="ratings-hero" aria-label="Зал Славы. Рейтинги.">
-        <Image
-          src="/images/ratings-hero.webp"
-          alt="Зал Славы. Рейтинги."
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-      </section>
+      <div className="ratings-artwork-wrap">
+        <div className="ratings-artwork">
+          <Image
+            src="/images/ratings-panel-desktop.webp"
+            alt="Зал Славы. Рейтинги. Мастера своего дела и общие рейтинги"
+            fill
+            priority
+            sizes="(max-width: 1100px) 100vw, 1024px"
+            className="ratings-artwork-image"
+          />
 
-      <div className="ratings-inner">
-        <p className="ratings-subtitle">Таааак.. что тут у нас интересненького...</p>
-
-        <section>
-          <SectionTitle>Мастера своего дела</SectionTitle>
-          <div className="ratings-profession-grid">
+          <div className="ratings-artwork-professions" aria-label="Мастера своего дела">
             {professions.map((card) => (
               <button
                 key={card.key}
                 type="button"
                 onClick={() => selectRating(card.key)}
-                className={`ratings-profession-card ${active === card.key ? "is-active" : ""}`}
+                className={active === card.key ? "is-active" : ""}
+                aria-label={card.label}
                 aria-pressed={active === card.key}
-              >
-                <Image src={card.image} alt="" width={150} height={150} className="ratings-profession-icon" />
-                <span>{card.label}</span>
-                <b aria-hidden="true">→</b>
-              </button>
+              />
             ))}
           </div>
-        </section>
 
-        <section className="ratings-general-block">
-          <SectionTitle>Общие рейтинги</SectionTitle>
-          <div className="ratings-general-grid">
+          <div className="ratings-artwork-general" aria-label="Общие рейтинги">
             {general.map((card) => (
               <button
                 key={card.key}
                 type="button"
                 onClick={() => selectRating(card.key)}
-                className={`ratings-general-card ratings-general-${card.tone} ${active === card.key ? "is-active" : ""}`}
+                className={active === card.key ? "is-active" : ""}
+                aria-label={card.label}
                 aria-pressed={active === card.key}
-              >
-                <Image src={card.image} alt="" width={230} height={230} className="ratings-general-icon" />
-                <strong>{card.label}</strong>
-                <small>{card.subtitle}</small>
-                <b aria-hidden="true">→</b>
-              </button>
+              />
             ))}
           </div>
-        </section>
+        </div>
+      </div>
 
-        <p className="ratings-updated">
-          <span aria-hidden="true">◷</span>
-          Данные обновляются каждые 6 часов. Последнее обновление: {formatUpdate(data.updatedAt)}
-        </p>
-
+      <div className="ratings-inner ratings-inner-board">
         <section id="ratings-table" className="ratings-board">
           <nav className="ratings-tabs" aria-label="Общие рейтинги">
             {general.map((card) => (

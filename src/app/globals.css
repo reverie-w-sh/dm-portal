@@ -473,3 +473,94 @@ img.clan-icon {
   .ratings-table { font-size: 14px; }
   .ratings-table th, .ratings-table td { padding: 11px 12px; }
 }
+
+/* Ratings approved artwork layout */
+.ratings-artwork-wrap {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 0 12px;
+}
+.ratings-artwork {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1024 / 1125;
+  overflow: hidden;
+  background: #080a0a;
+  box-shadow: 0 20px 65px rgba(0,0,0,.5);
+}
+.ratings-artwork-image {
+  object-fit: contain;
+  object-position: top center;
+  user-select: none;
+  pointer-events: none;
+}
+.ratings-artwork-professions,
+.ratings-artwork-general {
+  position: absolute;
+  display: grid;
+  z-index: 2;
+}
+.ratings-artwork-professions {
+  left: 2.7%;
+  right: 9.1%;
+  top: 33.8%;
+  height: 29.8%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2.2% 1.6%;
+}
+.ratings-artwork-general {
+  left: 2.7%;
+  right: 9.1%;
+  top: 70.7%;
+  height: 24.2%;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8%;
+}
+.ratings-artwork button {
+  position: relative;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: box-shadow .2s ease, transform .2s ease, background .2s ease;
+}
+.ratings-artwork button::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  pointer-events: none;
+}
+.ratings-artwork button:hover,
+.ratings-artwork button.is-active {
+  transform: translateY(-2px);
+  background: rgba(226,155,43,.035);
+  box-shadow: 0 0 24px rgba(226,155,43,.24), inset 0 0 20px rgba(226,155,43,.08);
+}
+.ratings-artwork button:hover::after,
+.ratings-artwork button.is-active::after {
+  border-color: rgba(245,184,79,.8);
+}
+.ratings-artwork button:focus-visible {
+  outline: 2px solid #f0b44f;
+  outline-offset: 2px;
+}
+.ratings-inner-board {
+  padding-top: 0;
+  margin-top: -4px;
+}
+.ratings-inner-board .ratings-board {
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .ratings-artwork-wrap { padding: 0; overflow-x: auto; }
+  .ratings-artwork {
+    width: 760px;
+    min-width: 760px;
+  }
+  .ratings-inner-board { width: min(100% - 12px, 1420px); }
+}
