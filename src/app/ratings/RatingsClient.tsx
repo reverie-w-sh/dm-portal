@@ -1,202 +1,241 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
+import styles from "./RatingsClient.module.css";
 
-type RatingItem = { rank: number; name: string; level?: number; value: number | string };
-type PlayerItem = {
-  rank: number;
+type RatingItem = {
+  rank?: number;
   name: string;
   level?: number;
-  experience: string;
-  experienceValue: number;
-  monsterWins: number;
-  playerWins: number;
+  value?: number | string;
+  experience?: number;
+  exp?: number;
+  monsterWins?: number;
+  winsMonsters?: number;
+  monsters?: number;
+  playerWins?: number;
+  winsPlayers?: number;
+  players?: number;
+  clanIcon?: string;
+  clanCrest?: string;
+  crestSmall?: string;
+  clan?: { icon?: string; crestSmall?: string };
 };
-type Rating = { title: string; valueLabel: string; items: RatingItem[] };
+
+type Rating = {
+  title: string;
+  valueLabel?: string;
+  items: RatingItem[];
+};
+
 type RatingsData = {
   updatedAt?: string;
   ratings: Record<string, Rating>;
-  players?: { title: string; items: PlayerItem[] };
 };
-type DirectoryEntry = { clanId?: string; clanName?: string; clanIcon?: string };
-type PlayerDirectory = Record<string, DirectoryEntry>;
-type Card = { key: string; label: string; image: string; subtitle?: string; tone?: "red" | "blue" | "green" };
+
+type Card = {
+  key: string;
+  label: string;
+  image: string;
+};
+
 type PlayerSort = "experience" | "monsterWins" | "playerWins";
 
 const professions: Card[] = [
-  { key: "fishing", label: "Рыболов", image: "/images/ratings/fishing.webp" },
-  { key: "collector", label: "Собиратель", image: "/images/ratings/collector.webp" },
-  { key: "hunter", label: "Охотник", image: "/images/ratings/hunter.webp" },
-  { key: "blacksmith", label: "Кузнец", image: "/images/ratings/blacksmith.webp" },
-  { key: "leatherworker", label: "Кожевник", image: "/images/ratings/leatherworker.webp" },
-  { key: "doctor", label: "Лекарь", image: "/images/ratings/doctor.webp" },
-  { key: "alchemy", label: "Алхимик", image: "/images/ratings/alchemy.webp" },
-  { key: "enchanter", label: "Заклинатель", image: "/images/ratings/enchanter.webp" },
-  { key: "seer", label: "Ведун", image: "/images/ratings/seer.webp" },
-  { key: "shooter", label: "Стрелок", image: "/images/ratings/shooter.webp" },
+  { key: "fishing", label: "Рыболов", image: "fishing.webp" },
+  { key: "collector", label: "Собиратель", image: "collector.webp" },
+  { key: "hunting", label: "Охотник", image: "hunting.webp" },
+  { key: "blacksmith", label: "Кузнец", image: "blacksmith.webp" },
+  { key: "leatherworker", label: "Кожевник", image: "leatherworker.webp" },
+  { key: "doctor", label: "Лекарь", image: "doctor.webp" },
+  { key: "alchemy", label: "Алхимик", image: "alchemy.webp" },
+  { key: "enchanter", label: "Заклинатель", image: "enchanter.webp" },
+  { key: "seer", label: "Ведун", image: "seer.webp" },
+  { key: "shooter", label: "Стрелок", image: "shooter.webp" },
 ];
 
 const general: Card[] = [
-  {
-    key: "players",
-    label: "Рейтинг игроков",
-    image: "/images/ratings/players.webp",
-    subtitle: "Опыт, победы над монстрами и игроками",
-    tone: "red",
-  },
-  {
-    key: "communities",
-    label: "Рейтинг сообществ",
-    image: "/images/ratings/communities.webp",
-    subtitle: "Кланы Древнего Мира",
-    tone: "blue",
-  },
-  {
-    key: "achievements",
-    label: "Рейтинг достижений",
-    image: "/images/ratings/achievements.webp",
-    subtitle: "Лучшие игроки по очкам достижений",
-    tone: "green",
-  },
+  { key: "players", label: "Рейтинг игроков", image: "players.webp" },
+  { key: "communities", label: "Рейтинг сообществ", image: "communities.webp" },
+  { key: "achievements", label: "Рейтинг достижений", image: "achievements.webp" },
 ];
 
-function playerLink(name: string) {
-  return `https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(name)}`;
+const playerSortLabels: Record<PlayerSort, string> = {
+  experience: "По опыту",
+  monsterWins: "По победам над монстрами",
+  playerWins: "По победам над игроками",
+};
+
+function numberFrom(...values: unknown[]) {
+  for (const value of values) {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    if (typeof value === "string") {
+      const parsed = Number(value.replace(/[^\d-]/g, ""));
+      if (Number.isFinite(parsed)) return parsed;
+    }
+  }
+  return 0;
 }
 
-function formatUpdate(value?: string) {
-  if (!value) return "ещё не обновлялись";
-  const date = new Date(value);
-  if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat("ru-RU", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  }).format(date);
+function playerValue(item: RatingItem, sort: PlayerSort) {
+  if (sort === "experience") {
+    return numberFrom(item.experience, item.exp, item.value);
+  }
+  if (sort === "monsterWins") {
+    return numberFrom(item.monsterWins, item.winsMonsters, item.monsters);
+  }
+  return numberFrom(item.playerWins, item.winsPlayers, item.players);
 }
 
-function rankText(rank: number) {
-  return rank.toLocaleString("ru-RU");
-}
-
-function SectionTitle({ children }: { children: string }) {
+function clanIcon(item: RatingItem) {
   return (
-    <h2 className="ratings-title-row">
-      <span aria-hidden="true" />
-      <strong>✦ {children} ✦</strong>
-      <span aria-hidden="true" />
-    </h2>
+    item.clanIcon ??
+    item.clanCrest ??
+    item.crestSmall ??
+    item.clan?.crestSmall ??
+    item.clan?.icon
   );
 }
 
-export default function RatingsClient({
-  data,
-  playerDirectory,
-}: {
-  data: RatingsData;
-  playerDirectory: PlayerDirectory;
-}) {
-  const firstAvailable =
-    professions.find((item) => data.ratings[item.key]?.items?.length)?.key ?? "players";
+function formatValue(value: number | string | undefined) {
+  if (typeof value === "number") return value.toLocaleString("ru-RU");
+  return value ?? "—";
+}
+
+export default function RatingsClient({ data }: { data: RatingsData }) {
+  const firstProfession =
+    professions.find((item) => data.ratings[item.key]?.items?.length)?.key ??
+    "fishing";
+  const firstAvailable = data.ratings.players?.items?.length
+    ? "players"
+    : firstProfession;
+
   const [active, setActive] = useState(firstAvailable);
   const [playerSort, setPlayerSort] = useState<PlayerSort>("experience");
 
   useEffect(() => {
-    const hash = window.location.hash.slice(1);
-    if (hash === "players" || data.ratings[hash]) setActive(hash);
+    const key = window.location.hash.replace("#", "");
+    if (key && data.ratings[key]) setActive(key);
   }, [data.ratings]);
 
-  const activeRating = data.ratings[active];
-  const sortedPlayers = useMemo(() => {
-    const list = [...(data.players?.items ?? [])];
-    const field = playerSort === "experience" ? "experienceValue" : playerSort;
-    return list.sort(
-      (a, b) =>
-        b[field] - a[field] ||
-        b.experienceValue - a.experienceValue ||
-        a.name.localeCompare(b.name, "ru"),
+  const rating = data.ratings[active];
+  const playerItems = useMemo(() => {
+    if (active !== "players" || !rating?.items) return [];
+    return [...rating.items].sort(
+      (a, b) => playerValue(b, playerSort) - playerValue(a, playerSort),
     );
-  }, [data.players?.items, playerSort]);
+  }, [active, playerSort, rating]);
 
-  function selectRating(key: string) {
+  function choose(key: string) {
     setActive(key);
     window.history.replaceState(null, "", `#${key}`);
     requestAnimationFrame(() => {
-      document.getElementById("ratings-table")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document
+        .getElementById("rating-table")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
   return (
-    <main className="ratings-shell">
-      <div className="ratings-artwork-wrap">
-        <div className="ratings-artwork">
-          <Image
-            src="/images/ratings-panel-desktop.webp"
-            alt="Зал Славы. Рейтинги. Мастера своего дела и общие рейтинги"
-            fill
-            priority
-            sizes="(max-width: 1100px) 100vw, 1024px"
-            className="ratings-artwork-image"
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <picture>
+          <source
+            media="(max-width: 700px)"
+            srcSet="/images/ratings/hero-mobile.webp"
           />
+          <img
+            src="/images/ratings/hero-desktop.webp"
+            alt=""
+            width={1089}
+            height={287}
+          />
+        </picture>
+        <h1 className={styles.mobileTitle}>Зал Славы. Рейтинги.</h1>
+      </section>
 
-          <div className="ratings-artwork-professions" aria-label="Мастера своего дела">
+      <div className={styles.content}>
+        <p className={styles.curiosity}>
+          Таааак.. что тут у нас интересненького...
+        </p>
+
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Мастера своего дела</h2>
+          <div className={styles.professionGrid}>
             {professions.map((card) => (
               <button
                 key={card.key}
                 type="button"
-                onClick={() => selectRating(card.key)}
-                className={active === card.key ? "is-active" : ""}
-                aria-label={card.label}
+                aria-label={`Открыть рейтинг: ${card.label}`}
                 aria-pressed={active === card.key}
-              />
-            ))}
-          </div>
-
-          <div className="ratings-artwork-general" aria-label="Общие рейтинги">
-            {general.map((card) => (
-              <button
-                key={card.key}
-                type="button"
-                onClick={() => selectRating(card.key)}
-                className={active === card.key ? "is-active" : ""}
-                aria-label={card.label}
-                aria-pressed={active === card.key}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="ratings-inner ratings-inner-board">
-        <section id="ratings-table" className="ratings-board">
-          <nav className="ratings-tabs" aria-label="Общие рейтинги">
-            {general.map((card) => (
-              <button
-                key={card.key}
-                type="button"
-                onClick={() => selectRating(card.key)}
-                className={active === card.key ? "is-active" : ""}
+                className={`${styles.imageButton} ${
+                  active === card.key ? styles.active : ""
+                }`}
+                onClick={() => choose(card.key)}
               >
-                {card.label}
+                <img
+                  src={`/images/ratings/cards/${card.image}`}
+                  alt=""
+                  loading="lazy"
+                />
               </button>
             ))}
-          </nav>
+          </div>
+        </section>
 
-          {active === "players" ? (
-            <>
-              <div className="ratings-player-sort" aria-label="Сортировка рейтинга игроков">
-                <button className={playerSort === "experience" ? "is-active" : ""} onClick={() => setPlayerSort("experience")}>По опыту</button>
-                <button className={playerSort === "monsterWins" ? "is-active" : ""} onClick={() => setPlayerSort("monsterWins")}>По победам над монстрами</button>
-                <button className={playerSort === "playerWins" ? "is-active" : ""} onClick={() => setPlayerSort("playerWins")}>По победам над игроками</button>
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Общие рейтинги</h2>
+          <div className={styles.generalGrid}>
+            {general.map((card) => (
+              <button
+                key={card.key}
+                type="button"
+                aria-label={`Открыть: ${card.label}`}
+                aria-pressed={active === card.key}
+                className={`${styles.imageButton} ${styles.generalButton} ${
+                  active === card.key ? styles.active : ""
+                }`}
+                onClick={() => choose(card.key)}
+              >
+                <img
+                  src={`/images/ratings/cards/${card.image}`}
+                  alt=""
+                  loading="lazy"
+                />
+              </button>
+            ))}
+          </div>
+        </section>
+
+        <section id="rating-table" className={styles.board}>
+          <div className={styles.boardHead}>
+            <div>
+              <span>Зал Славы</span>
+              <h2>{rating?.title ?? "Рейтинг"}</h2>
+            </div>
+            {active === "players" ? (
+              <div className={styles.sorts}>
+                {(Object.keys(playerSortLabels) as PlayerSort[]).map((key) => (
+                  <button
+                    key={key}
+                    type="button"
+                    className={playerSort === key ? styles.sortActive : ""}
+                    onClick={() => setPlayerSort(key)}
+                  >
+                    {playerSortLabels[key]}
+                  </button>
+                ))}
               </div>
-              <div className="ratings-table-wrap">
-                <table className="ratings-table ratings-player-table">
+            ) : null}
+          </div>
+
+          {rating?.items?.length ? (
+            <div className={styles.tableWrap}>
+              {active === "players" ? (
+                <table className={styles.table}>
                   <thead>
                     <tr>
-                      <th>#</th>
+                      <th>№</th>
                       <th>Игрок</th>
                       <th>Уровень</th>
                       <th>Опыт</th>
@@ -205,59 +244,98 @@ export default function RatingsClient({
                     </tr>
                   </thead>
                   <tbody>
-                    {sortedPlayers.map((player, index) => {
-                      const directory = playerDirectory[player.name.toLocaleLowerCase("ru")];
-                      const clanImage = directory?.clanId
-                        ? `https://dm-game.com/pics/clanpic/clan_${directory.clanId}.gif`
-                        : directory?.clanIcon
-                          ? `https://dm-game.com/pics/clanpic/${directory.clanIcon}`
-                          : null;
+                    {playerItems.map((item, index) => {
+                      const crest = clanIcon(item);
                       return (
-                        <tr key={`${player.name}-${index}`}>
-                          <td>{rankText(index + 1)}</td>
+                        <tr key={`${item.name}-${index}`}>
+                          <td>{index + 1}</td>
                           <td>
-                            <a href={playerLink(player.name)} target="_blank" rel="noreferrer" className="ratings-player-name">
-                              {clanImage ? (
-                                // eslint-disable-next-line @next/next/no-img-element
-                                <img src={clanImage} alt={directory?.clanName ? `Клан ${directory.clanName}` : "Эмблема клана"} title={directory?.clanName} />
+                            <a
+                              className={styles.player}
+                              href={`https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(item.name)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {crest ? (
+                                <img src={crest} alt="" width={19} height={19} />
                               ) : (
-                                <span className="ratings-no-clan" aria-hidden="true" />
+                                <span className={styles.emptyCrest} />
                               )}
-                              <span>{player.name}</span>
+                              {item.name}
                             </a>
                           </td>
-                          <td>{player.level ?? "—"}</td>
-                          <td>{player.experience}</td>
-                          <td>{player.monsterWins.toLocaleString("ru-RU")}</td>
-                          <td>{player.playerWins.toLocaleString("ru-RU")}</td>
+                          <td>{item.level ?? "—"}</td>
+                          <td>
+                            {playerValue(item, "experience").toLocaleString(
+                              "ru-RU",
+                            )}
+                          </td>
+                          <td>
+                            {playerValue(item, "monsterWins").toLocaleString(
+                              "ru-RU",
+                            )}
+                          </td>
+                          <td>
+                            {playerValue(item, "playerWins").toLocaleString(
+                              "ru-RU",
+                            )}
+                          </td>
                         </tr>
                       );
                     })}
                   </tbody>
                 </table>
-              </div>
-            </>
-          ) : activeRating?.items?.length ? (
-            <div className="ratings-table-wrap">
-              <table className="ratings-table">
-                <thead>
-                  <tr><th>#</th><th>Игрок</th><th>{activeRating.valueLabel}</th></tr>
-                </thead>
-                <tbody>
-                  {activeRating.items.map((item) => (
-                    <tr key={`${item.rank}-${item.name}`}>
-                      <td>{rankText(item.rank)}</td>
-                      <td><a href={playerLink(item.name)} target="_blank" rel="noreferrer">{item.name}{item.level ? ` [${item.level}]` : ""}</a></td>
-                      <td>{typeof item.value === "number" ? item.value.toLocaleString("ru-RU") : item.value}</td>
+              ) : (
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>№</th>
+                      <th>Игрок</th>
+                      <th>Уровень</th>
+                      <th>{rating.valueLabel ?? "Очки"}</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {rating.items.map((item, index) => {
+                      const crest = clanIcon(item);
+                      return (
+                        <tr key={`${item.name}-${index}`}>
+                          <td>{item.rank ?? index + 1}</td>
+                          <td>
+                            <a
+                              className={styles.player}
+                              href={`https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(item.name)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {crest ? (
+                                <img src={crest} alt="" width={19} height={19} />
+                              ) : null}
+                              {item.name}
+                            </a>
+                          </td>
+                          <td>{item.level ?? "—"}</td>
+                          <td>{formatValue(item.value)}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              )}
             </div>
           ) : (
-            <p className="ratings-empty">Данные этого рейтинга подтянутся при ближайшем обновлении.</p>
+            <p className={styles.empty}>
+              Данные этого рейтинга подтянутся при ближайшем обновлении.
+            </p>
           )}
         </section>
+
+        {data.updatedAt ? (
+          <p className={styles.updated}>
+            Данные обновляются каждые 6 часов. Последнее обновление:{" "}
+            {new Date(data.updatedAt).toLocaleString("ru-RU")}
+          </p>
+        ) : null}
       </div>
     </main>
   );
