@@ -3,7 +3,11 @@
   padding: 20px 14px 70px;
   color: #e9dfcf;
   background:
-    radial-gradient(circle at 50% 0, rgba(116, 67, 22, 0.14), transparent 42rem),
+    radial-gradient(
+      circle at 50% 0,
+      rgba(116, 67, 22, 0.14),
+      transparent 42rem
+    ),
     linear-gradient(180deg, #050707, #090b0b 50%, #050707);
 }
 
@@ -49,7 +53,10 @@
   margin: 0;
   padding: 10px 0 17px;
   color: #ddd6cd;
-  font: 400 clamp(1.02rem, 2vw, 1.35rem) Georgia, "Times New Roman", serif;
+  font:
+    400 clamp(1.02rem, 2vw, 1.35rem) Georgia,
+    "Times New Roman",
+    serif;
   text-align: center;
   text-shadow: 0 2px 8px #000;
 }
@@ -64,7 +71,10 @@
   gap: 13px;
   margin: 0 0 17px;
   color: #dda64d;
-  font: 400 clamp(1.35rem, 2.7vw, 1.8rem) Georgia, "Times New Roman", serif;
+  font:
+    400 clamp(1.35rem, 2.7vw, 1.8rem) Georgia,
+    "Times New Roman",
+    serif;
   text-align: center;
 }
 
@@ -74,7 +84,12 @@
   height: 1px;
   flex: 1;
   content: "";
-  background: linear-gradient(90deg, transparent, rgba(184, 119, 34, 0.68), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 119, 34, 0.68),
+    transparent
+  );
 }
 
 .professionGrid {
@@ -108,7 +123,9 @@
     0 9px
   );
   cursor: pointer;
-  transition: transform 150ms ease, filter 150ms ease;
+  transition:
+    transform 150ms ease,
+    filter 150ms ease;
 }
 
 .professionInner,
@@ -135,20 +152,27 @@
   display: block;
   width: min(112px, 76%);
   height: 96px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  filter: drop-shadow(0 7px 7px rgba(0, 0, 0, 0.58));
 }
 
 .professionLabel {
   align-self: flex-start;
   color: #e3c48e;
-  font: 400 1.06rem Georgia, "Times New Roman", serif;
+  font:
+    400 1.06rem Georgia,
+    "Times New Roman",
+    serif;
   white-space: nowrap;
 }
 
 .arrow {
   color: #d99325;
-  font: 400 1.5rem Georgia, "Times New Roman", serif;
+  font:
+    400 1.5rem Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .professionInner > .arrow {
@@ -173,8 +197,9 @@
   display: block;
   width: min(168px, 72%);
   height: 142px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  filter: drop-shadow(0 8px 9px rgba(0, 0, 0, 0.62));
 }
 
 .generalCopy {
@@ -187,13 +212,19 @@
 
 .generalCopy strong {
   color: #ead09d;
-  font: 400 clamp(1.08rem, 2.2vw, 1.42rem) Georgia, "Times New Roman", serif;
+  font:
+    400 clamp(1.08rem, 2.2vw, 1.42rem) Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .generalCopy small {
   max-width: 230px;
   color: #c4a879;
-  font: 400 0.88rem/1.35 Georgia, "Times New Roman", serif;
+  font:
+    400 0.88rem/1.35 Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .generalInner > .arrow {
@@ -257,7 +288,10 @@
 .boardHead h2 {
   margin: 4px 0 0;
   color: #ecd4a6;
-  font: 400 clamp(1.38rem, 2.8vw, 1.95rem) Georgia, "Times New Roman", serif;
+  font:
+    400 clamp(1.38rem, 2.8vw, 1.95rem) Georgia,
+    "Times New Roman",
+    serif;
 }
 
 .sorts {
@@ -326,8 +360,9 @@
   font-variant-numeric: tabular-nums;
 }
 
-.table td {
-  color: #ded4c4;
+.table td:first-child,
+.table td:last-child {
+  color: #a88c66;
 }
 
 .table tbody tr:hover {
@@ -335,7 +370,7 @@
 }
 
 .player {
-  color: #eadfce;
+  color: #ecd4a6;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -388,7 +423,10 @@
     padding: 9px 10px 5px;
     color: #e4bd74;
     background: #050707;
-    font: 400 clamp(1.55rem, 7.8vw, 2.15rem) Georgia, "Times New Roman", serif;
+    font:
+      400 clamp(1.55rem, 7.8vw, 2.15rem) Georgia,
+      "Times New Roman",
+      serif;
     text-align: center;
   }
 

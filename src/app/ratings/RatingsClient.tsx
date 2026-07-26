@@ -38,18 +38,19 @@ type Card = {
 };
 
 type PlayerSort = "experience" | "monsterWins" | "playerWins";
+type CommunitySort = "victories" | "ratio" | "date";
 
 const professions: Card[] = [
-  { key: "fishing", label: "Рыболов", icon: "fishing.webp" },
-  { key: "collector", label: "Собиратель", icon: "collector.webp" },
-  { key: "hunting", label: "Охотник", icon: "hunting.webp" },
-  { key: "blacksmith", label: "Кузнец", icon: "blacksmith.webp" },
-  { key: "leatherworker", label: "Кожевник", icon: "leatherworker.webp" },
-  { key: "doctor", label: "Лекарь", icon: "doctor.webp" },
-  { key: "alchemy", label: "Алхимик", icon: "alchemy.webp" },
-  { key: "enchanter", label: "Заклинатель", icon: "enchanter.webp" },
-  { key: "seer", label: "Ведун", icon: "seer.webp" },
-  { key: "shooter", label: "Стрелок", icon: "shooter.webp" },
+  { key: "fishing", label: "Рыболов", icon: "fishing.png" },
+  { key: "collector", label: "Собиратель", icon: "collector.png" },
+  { key: "hunting", label: "Охотник", icon: "hunting.png" },
+  { key: "blacksmith", label: "Кузнец", icon: "blacksmith.png" },
+  { key: "leatherworker", label: "Кожевник", icon: "leatherworker.png" },
+  { key: "doctor", label: "Лекарь", icon: "doctor.png" },
+  { key: "alchemy", label: "Алхимик", icon: "alchemy.png" },
+  { key: "enchanter", label: "Заклинатель", icon: "enchanter.png" },
+  { key: "seer", label: "Ведун", icon: "seer.png" },
+  { key: "shooter", label: "Стрелок", icon: "shooter.png" },
 ];
 
 const general: Card[] = [
@@ -57,21 +58,21 @@ const general: Card[] = [
     key: "players",
     label: "Рейтинг игроков",
     subtitle: "Опыт, победы над монстрами и игроками",
-    icon: "players.webp",
+    icon: "players.png",
     tone: "red",
   },
   {
     key: "communities",
     label: "Рейтинг сообществ",
     subtitle: "Кланы Древнего Мира",
-    icon: "communities.webp",
+    icon: "communities.png",
     tone: "blue",
   },
   {
     key: "achievements",
     label: "Рейтинг достижений",
     subtitle: "Лучшие игроки по очкам достижений",
-    icon: "achievements.webp",
+    icon: "achievements.png",
     tone: "green",
   },
 ];
@@ -88,6 +89,18 @@ const playerColumnLabels: Record<PlayerSort, string> = {
   playerWins: "Победы над игроками",
 };
 
+const communitySortLabels: Record<CommunitySort, string> = {
+  victories: "По количеству побед",
+  ratio: "По соотношению побед и поражений",
+  date: "По дате создания",
+};
+
+const communityRatingKeys: Record<CommunitySort, string> = {
+  victories: "communitiesVictories",
+  ratio: "communitiesRatio",
+  date: "communitiesDate",
+};
+
 function numberFrom(...values: unknown[]) {
   for (const value of values) {
     if (typeof value === "number" && Number.isFinite(value)) return value;
@@ -97,6 +110,57 @@ function numberFrom(...values: unknown[]) {
     }
   }
   return 0;
+}
+
+function optionalNumberFrom(...values: unknown[]) {
+  for (const value of values) {
+    if (typeof value === "number" && Number.isFinite(value)) return value;
+    if (typeof value === "string" && value.trim()) {
+      const parsed = Number(value.replace(/[^\d-]/g, ""));
+      if (Number.isFinite(parsed)) return parsed;
+    }
+  }
+  return undefined;
+}
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null;
+}
+
+function buildDirectoryLevelMap(directory: unknown) {
+  const levels = new Map<string, number>();
+  const visited = new WeakSet<object>();
+
+  function walk(value: unknown, fallbackName?: string) {
+    if (Array.isArray(value)) {
+      if (visited.has(value)) return;
+      visited.add(value);
+      value.forEach((entry) => walk(entry));
+      return;
+    }
+    if (!isRecord(value) || visited.has(value)) return;
+    visited.add(value);
+
+    const name = String(
+      value.name ??
+        value.nick ??
+        value.nickname ??
+        value.login ??
+        fallbackName ??
+        "",
+    )
+      .trim()
+      .toLocaleLowerCase("ru-RU");
+    const level = optionalNumberFrom(value.level, value.lvl, value.userLevel);
+    if (name && level != null) levels.set(name, level);
+
+    for (const [key, nested] of Object.entries(value)) {
+      walk(nested, key);
+    }
+  }
+
+  walk(directory);
+  return levels;
 }
 
 function playerValue(item: RatingItem, sort: PlayerSort) {
@@ -116,6 +180,7 @@ function formatValue(value: number | string | undefined) {
 
 export default function RatingsClient({
   data,
+  playerDirectory,
 }: {
   data: RatingsData;
   playerDirectory?: unknown;
@@ -129,13 +194,23 @@ export default function RatingsClient({
 
   const [active, setActive] = useState(firstAvailable);
   const [playerSort, setPlayerSort] = useState<PlayerSort>("experience");
+  const [communitySort, setCommunitySort] =
+    useState<CommunitySort>("victories");
+  const directoryLevels = useMemo(
+    () => buildDirectoryLevelMap(playerDirectory),
+    [playerDirectory],
+  );
 
   useEffect(() => {
     const key = window.location.hash.replace("#", "");
     if (key && data.ratings[key]) setActive(key);
   }, [data.ratings]);
 
-  const rating = data.ratings[active];
+  const ratingKey =
+    active === "communities" ? communityRatingKeys[communitySort] : active;
+  const rating =
+    data.ratings[ratingKey] ??
+    (active === "communities" ? data.ratings.communities : undefined);
   const displayedItems = useMemo(() => {
     if (!rating?.items) return [];
     if (active !== "players") return rating.items;
@@ -155,10 +230,13 @@ export default function RatingsClient({
   }
 
   function itemValue(item: RatingItem) {
-    return active === "players"
-      ? playerValue(item, playerSort)
-      : item.value;
+    return active === "players" ? playerValue(item, playerSort) : item.value;
   }
+
+  const boardTitle =
+    active === "shooter"
+      ? "Лучшие производители болтов"
+      : (rating?.title ?? "Рейтинг");
 
   return (
     <main className={styles.page}>
@@ -255,7 +333,7 @@ export default function RatingsClient({
           <div className={styles.boardHead}>
             <div>
               <span>Зал Славы</span>
-              <h2>{rating?.title ?? "Рейтинг"}</h2>
+              <h2>{boardTitle}</h2>
             </div>
 
             {active === "players" ? (
@@ -271,6 +349,21 @@ export default function RatingsClient({
                   </button>
                 ))}
               </div>
+            ) : active === "communities" ? (
+              <div className={styles.sorts}>
+                {(Object.keys(communitySortLabels) as CommunitySort[]).map(
+                  (key) => (
+                    <button
+                      key={key}
+                      type="button"
+                      className={communitySort === key ? styles.sortActive : ""}
+                      onClick={() => setCommunitySort(key)}
+                    >
+                      {communitySortLabels[key]}
+                    </button>
+                  ),
+                )}
+              </div>
             ) : null}
           </div>
 
@@ -285,34 +378,57 @@ export default function RatingsClient({
                       <span className={styles.desktopValueLabel}>
                         {active === "players"
                           ? playerColumnLabels[playerSort]
-                          : rating?.valueLabel ?? "Очки"}
+                          : (rating?.valueLabel ?? "Очки")}
                       </span>
-                      <span className={styles.mobileValueLabel}>Очки</span>
+                      <span className={styles.mobileValueLabel}>
+                        {active === "communities"
+                          ? (rating?.valueLabel ?? "Значение")
+                          : "Очки"}
+                      </span>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {displayedItems.map((item, index) => (
-                    <tr key={`${item.name}-${index}`}>
-                      <td>
-                        {active === "players" ? index + 1 : item.rank ?? index + 1}
-                      </td>
-                      <td>
-                        <a
-                          className={styles.player}
-                          href={`https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(item.name)}`}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          {item.name}
-                          {item.level != null ? (
-                            <span className={styles.level}>[{item.level}]</span>
-                          ) : null}
-                        </a>
-                      </td>
-                      <td>{formatValue(itemValue(item))}</td>
-                    </tr>
-                  ))}
+                  {displayedItems.map((item, index) => {
+                    const level =
+                      item.level ??
+                      directoryLevels.get(
+                        item.name.trim().toLocaleLowerCase("ru-RU"),
+                      );
+                    const name = (
+                      <>
+                        {item.name}
+                        {level != null ? (
+                          <span className={styles.level}>[{level}]</span>
+                        ) : null}
+                      </>
+                    );
+
+                    return (
+                      <tr key={`${item.name}-${index}`}>
+                        <td>
+                          {active === "players"
+                            ? index + 1
+                            : (item.rank ?? index + 1)}
+                        </td>
+                        <td>
+                          {active === "communities" ? (
+                            <span className={styles.player}>{name}</span>
+                          ) : (
+                            <a
+                              className={styles.player}
+                              href={`https://dm-game.com/index.php?file=infouser&login=${encodeURIComponent(item.name)}`}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              {name}
+                            </a>
+                          )}
+                        </td>
+                        <td>{formatValue(itemValue(item))}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
