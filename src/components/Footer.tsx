@@ -9,7 +9,13 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="mt-12 border-t border-[#6f4c22]/45 bg-[linear-gradient(180deg,rgba(10,11,10,.12),rgba(8,9,8,.34))] py-8">
+    <footer
+      className="mt-12 border-t border-[#684318]/70 py-8 shadow-[0_-14px_34px_rgba(0,0,0,.22)]"
+      style={{
+        background:
+          "linear-gradient(180deg,#121311 0%,#0b0c0b 52%,#080908 100%)",
+      }}
+    >
       <div className="max-w-[1180px] mx-auto px-6">
 
         {/* Разделитель */}
@@ -27,9 +33,8 @@ export default function Footer() {
               h-10
               rounded-xl
               border
-              border-[#9d917f]
-              bg-[#c9c2b8]
-              shadow-[0_4px_12px_rgba(0,0,0,.38),inset_0_1px_0_rgba(255,255,255,.6)]
+              border-[#8f8e88]
+              shadow-[0_4px_14px_rgba(0,0,0,.52),inset_0_1px_0_rgba(255,255,255,.82),inset_0_-1px_0_rgba(30,31,31,.38)]
               flex
               items-center
               justify-center
@@ -39,6 +44,10 @@ export default function Footer() {
               hover:-translate-y-0.5
               hover:border-[#d8a551]
             "
+            style={{
+              background:
+                "linear-gradient(145deg,#e1ded7 0%,#aaa8a2 38%,#6e7070 70%,#c8c4bb 100%)",
+            }}
           >
             <img
               src="/icons/clan-paw.gif"
@@ -63,10 +72,10 @@ export default function Footer() {
               key={item.href}
               href={item.href}
               className="
-                text-[#bdb4a8]
+                text-[#ecd4a6]
                 transition-colors
                 duration-300
-                hover:text-[#e2b56d]
+                hover:text-[#efc678]
               "
             >
               {item.label}
@@ -78,7 +87,7 @@ export default function Footer() {
         {/* Подпись */}
 
         <div className="mt-5 text-center">
-          <span className="text-[11px] tracking-wide text-[#776c5e]">
+          <span className="text-[11px] tracking-wide text-[#8c7658]">
             ♥ 2026 © A&amp;W ♥
           </span>
         </div>

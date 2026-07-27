@@ -21,17 +21,17 @@ export default function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 overflow-hidden border-b border-[#745022] shadow-[0_12px_35px_rgba(0,0,0,.42)]"
+      className="sticky top-0 z-50 overflow-hidden border-b border-[#684318] shadow-[0_12px_35px_rgba(0,0,0,.58)]"
       style={{
         background:
-          "linear-gradient(180deg,#3b3c3d 0%,#323330 22%,#292b29 58%,#222421 100%)",
+          "linear-gradient(180deg,#242522 0%,#1b1c1a 32%,#111210 100%)",
       }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(255,255,255,.105), rgba(255,255,255,.025) 30%, transparent 64%), radial-gradient(circle at center, rgba(156,105,39,.035), rgba(0,0,0,.22) 100%)",
+            "linear-gradient(to bottom, rgba(255,255,255,.06), rgba(255,255,255,.012) 32%, transparent 64%), radial-gradient(circle at center, rgba(156,105,39,.025), rgba(0,0,0,.34) 100%)",
         }}
       />
 
@@ -58,11 +58,12 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
         >
           <div
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#9d917f] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d8a551]"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#8f8e88] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d2a45b]"
             style={{
-              background: "linear-gradient(145deg,#d6d1c9,#beb6aa)",
+              background:
+                "linear-gradient(145deg,#e1ded7 0%,#aaa8a2 38%,#6e7070 70%,#c8c4bb 100%)",
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,.7), 0 4px 14px rgba(0,0,0,.38)",
+                "inset 0 1px 0 rgba(255,255,255,.82), inset 0 -1px 0 rgba(30,31,31,.38), 0 4px 14px rgba(0,0,0,.52)",
             }}
           >
             <Image
@@ -124,7 +125,7 @@ export default function Navbar() {
         <div
           className="lg:hidden border-t border-[#504a40]"
           style={{
-            background: "linear-gradient(180deg,#30312e,#232522)",
+            background: "linear-gradient(180deg,#191a18,#0f100f)",
           }}
         >
           {navLinks.map(({ href, label }) => (
