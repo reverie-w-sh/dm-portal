@@ -58,12 +58,12 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
         >
           <div
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#8f8e88] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d2a45b]"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#a5a6a1] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d2a45b]"
             style={{
               background:
-                "linear-gradient(145deg,#e1ded7 0%,#aaa8a2 38%,#6e7070 70%,#c8c4bb 100%)",
+                "radial-gradient(circle at 24% 22%,rgba(255,255,255,.72) 0 1px,transparent 1.8px),radial-gradient(circle at 76% 34%,rgba(29,31,32,.42) 0 1px,transparent 1.7px),radial-gradient(circle at 43% 78%,rgba(255,255,255,.34) 0 1px,transparent 1.8px),repeating-linear-gradient(165deg,rgba(255,255,255,.055) 0 1px,rgba(18,20,21,.035) 1px 3px),linear-gradient(145deg,#f0ece3 0%,#b8b5ad 20%,#747777 43%,#d9d5cc 65%,#7d8080 83%,#e1ddd4 100%)",
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,.82), inset 0 -1px 0 rgba(30,31,31,.38), 0 4px 14px rgba(0,0,0,.52)",
+                "inset 0 1px 0 rgba(255,255,255,.9), inset 0 0 0 1px rgba(245,242,234,.22), inset 0 -7px 11px rgba(24,26,27,.24), 0 4px 14px rgba(0,0,0,.52)",
             }}
           >
             <Image

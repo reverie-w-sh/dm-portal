@@ -10,7 +10,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer
-      className="mt-12 border-t border-[#684318]/70 py-8 shadow-[0_-14px_34px_rgba(0,0,0,.22)]"
+      className="border-t border-[#684318]/70 py-8 shadow-[0_-14px_34px_rgba(0,0,0,.22)]"
       style={{
         background:
           "linear-gradient(180deg,#121311 0%,#0b0c0b 52%,#080908 100%)",
@@ -33,8 +33,8 @@ export default function Footer() {
               h-10
               rounded-xl
               border
-              border-[#8f8e88]
-              shadow-[0_4px_14px_rgba(0,0,0,.52),inset_0_1px_0_rgba(255,255,255,.82),inset_0_-1px_0_rgba(30,31,31,.38)]
+              border-[#a5a6a1]
+              shadow-[0_4px_14px_rgba(0,0,0,.52),inset_0_1px_0_rgba(255,255,255,.9),inset_0_0_0_1px_rgba(245,242,234,.22),inset_0_-7px_11px_rgba(24,26,27,.24)]
               flex
               items-center
               justify-center
@@ -46,7 +46,7 @@ export default function Footer() {
             "
             style={{
               background:
-                "linear-gradient(145deg,#e1ded7 0%,#aaa8a2 38%,#6e7070 70%,#c8c4bb 100%)",
+                "radial-gradient(circle at 24% 22%,rgba(255,255,255,.72) 0 1px,transparent 1.8px),radial-gradient(circle at 76% 34%,rgba(29,31,32,.42) 0 1px,transparent 1.7px),radial-gradient(circle at 43% 78%,rgba(255,255,255,.34) 0 1px,transparent 1.8px),repeating-linear-gradient(165deg,rgba(255,255,255,.055) 0 1px,rgba(18,20,21,.035) 1px 3px),linear-gradient(145deg,#f0ece3 0%,#b8b5ad 20%,#747777 43%,#d9d5cc 65%,#7d8080 83%,#e1ddd4 100%)",
             }}
           >
             <img
