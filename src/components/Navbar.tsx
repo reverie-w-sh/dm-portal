@@ -72,8 +72,8 @@ export default function Navbar() {
             <Image
               src="/icons/clan-paw.gif"
               alt="Главная"
-              width={19}
-              height={19}
+              width={25}
+              height={25}
               unoptimized
               className="h-[19px] w-[19px] object-contain"
             />
