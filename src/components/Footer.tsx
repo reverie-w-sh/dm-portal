@@ -33,8 +33,8 @@ export default function Footer() {
               h-10
               rounded-xl
               border
-              border-[#a5a6a1]
-              shadow-[0_4px_14px_rgba(0,0,0,.52),inset_0_1px_0_rgba(255,255,255,.9),inset_0_0_0_1px_rgba(245,242,234,.22),inset_0_-7px_11px_rgba(24,26,27,.24)]
+              border-[#a8a8a2]
+              shadow-[0_4px_14px_rgba(0,0,0,.52),inset_0_1px_0_rgba(255,255,255,.88),inset_0_0_0_1px_rgba(35,36,36,.28),inset_0_-6px_9px_rgba(13,14,14,.34)]
               flex
               items-center
               justify-center
@@ -45,8 +45,11 @@ export default function Footer() {
               hover:border-[#d8a551]
             "
             style={{
-              background:
-                "radial-gradient(circle at 24% 22%,rgba(255,255,255,.72) 0 1px,transparent 1.8px),radial-gradient(circle at 76% 34%,rgba(29,31,32,.42) 0 1px,transparent 1.7px),radial-gradient(circle at 43% 78%,rgba(255,255,255,.34) 0 1px,transparent 1.8px),repeating-linear-gradient(165deg,rgba(255,255,255,.055) 0 1px,rgba(18,20,21,.035) 1px 3px),linear-gradient(145deg,#f0ece3 0%,#b8b5ad 20%,#747777 43%,#d9d5cc 65%,#7d8080 83%,#e1ddd4 100%)",
+              backgroundImage:
+                'linear-gradient(145deg,rgba(255,255,255,.18) 0%,rgba(40,42,42,.08) 42%,rgba(8,9,9,.40) 100%),url("/images/silver-letter-texture.webp")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundBlendMode: "multiply, normal",
             }}
           >
             <img
