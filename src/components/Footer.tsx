@@ -55,8 +55,8 @@ export default function Footer() {
             <img
               src="/icons/clan-paw.gif"
               alt="Главная"
-              width={19}
-              height={19}
+              width={25}
+              height={25}
               draggable={false}
               className="w-[19px] h-[19px] select-none"
             />
