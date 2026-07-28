@@ -1,7 +1,8 @@
-## Хранители — CLAN 7 — знайдено 2
+## Хранители — CLAN 7 — знайдено 3
 
 1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-2. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+2. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
+3. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -61,7 +62,7 @@
 14. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 15. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 24
+## Лесные Оборотни — CLAN 212 — знайдено 23
 
 1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
 2. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
@@ -83,12 +84,11 @@
 18. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
 19. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
 20. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
-21. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
-22. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
-23. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
-24. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
+21. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+22. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
+23. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
-## Ozune — CLAN 213 — знайдено 25
+## Ozune — CLAN 213 — знайдено 24
 
 1. Sharik[12] — cuid=2189 — https://dm-game.com/index.php?file=infouser&cuid=2189
 2. Topfer[12] — cuid=2010 — https://dm-game.com/index.php?file=infouser&cuid=2010
@@ -111,10 +111,9 @@
 19. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
 20. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
 21. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
-22. Тирион[8] — cuid=2353 — https://dm-game.com/index.php?file=infouser&cuid=2353
-23. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
-24. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
-25. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
+22. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
+23. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
+24. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
 
 ## Царство теней — CLAN 216 — знайдено 12
 
@@ -213,7 +212,7 @@
 41. Волк[4] — cuid=27239 — https://dm-game.com/index.php?file=infouser&cuid=27239
 42. Жорик с 90X[4] — cuid=24415 — https://dm-game.com/index.php?file=infouser&cuid=24415
 
-## Храм Мечей — CLAN 235 — знайдено 16
+## Храм Мечей — CLAN 235 — знайдено 14
 
 1. Викки[12] — cuid=1931 — https://dm-game.com/index.php?file=infouser&cuid=1931
 2. FaLLeN[11] — cuid=10023 — https://dm-game.com/index.php?file=infouser&cuid=10023
@@ -225,12 +224,10 @@
 8. АйринС[9] — cuid=1520 — https://dm-game.com/index.php?file=infouser&cuid=1520
 9. Янотик[9] — cuid=23733 — https://dm-game.com/index.php?file=infouser&cuid=23733
 10. DanGar[8] — cuid=7938 — https://dm-game.com/index.php?file=infouser&cuid=7938
-11. Onix[8] — cuid=6253 — https://dm-game.com/index.php?file=infouser&cuid=6253
-12. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
-13. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
-14. Mixser[7] — cuid=27221 — https://dm-game.com/index.php?file=infouser&cuid=27221
-15. БЛИК[7] — cuid=28407 — https://dm-game.com/index.php?file=infouser&cuid=28407
-16. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
+11. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
+12. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
+13. Mixser[7] — cuid=27221 — https://dm-game.com/index.php?file=infouser&cuid=27221
+14. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
 
 ## Каратели — CLAN 237 — знайдено 10
 

@@ -1,5 +1,55 @@
 [
   {
+    "id": "f4b33493-1607-44bb-836b-70657c7b7da9",
+    "syncId": "2026-07-28T20:15:56.950Z",
+    "createdAt": "2026-07-28T20:15:56.950Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "Дама черной масти",
+    "newPosition": "Глава спільноти"
+  },
+  {
+    "id": "de4d7a17-b8df-472a-81bc-3d668254de4c",
+    "syncId": "2026-07-28T20:15:56.950Z",
+    "createdAt": "2026-07-28T20:15:56.950Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "1966",
+    "characterName": "ХАРАКТЕРНИК",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1966",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни"
+  },
+  {
+    "id": "47f17f7c-4460-49a3-837b-e2578af93ca8",
+    "syncId": "2026-07-28T20:15:56.950Z",
+    "createdAt": "2026-07-28T20:15:56.950Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "6253",
+    "characterName": "Onix",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6253",
+    "clanId": "235",
+    "clanName": "Храм Мечей"
+  },
+  {
+    "id": "858ae19b-0a98-489c-a84d-207a82f92baf",
+    "syncId": "2026-07-28T20:15:56.950Z",
+    "createdAt": "2026-07-28T20:15:56.950Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "28407",
+    "characterName": "БЛИК",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28407",
+    "clanId": "235",
+    "clanName": "Храм Мечей"
+  },
+  {
     "id": "bd570885-15f2-4d3e-94b7-85ee606ef8b7",
     "syncId": "2026-07-28T16:49:59.367Z",
     "createdAt": "2026-07-28T16:49:59.367Z",
