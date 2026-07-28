@@ -61,7 +61,7 @@
 14. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 15. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 25
+## Лесные Оборотни — CLAN 212 — знайдено 24
 
 1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
 2. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
@@ -83,11 +83,10 @@
 18. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
 19. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
 20. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
-21. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
-22. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
-23. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
-24. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
-25. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
+21. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
+22. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+23. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
+24. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
 ## Ozune — CLAN 213 — знайдено 25
 
