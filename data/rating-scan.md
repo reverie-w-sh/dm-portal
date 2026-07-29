@@ -88,7 +88,7 @@
 22. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
 23. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
-## Ozune — CLAN 213 — знайдено 24
+## Ozune — CLAN 213 — знайдено 23
 
 1. Sharik[12] — cuid=2189 — https://dm-game.com/index.php?file=infouser&cuid=2189
 2. Topfer[12] — cuid=2010 — https://dm-game.com/index.php?file=infouser&cuid=2010
@@ -100,20 +100,19 @@
 8. BASS[9] — cuid=3765 — https://dm-game.com/index.php?file=infouser&cuid=3765
 9. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
 10. Cherry[9] — cuid=3632 — https://dm-game.com/index.php?file=infouser&cuid=3632
-11. gae4ka[9] — cuid=1318 — https://dm-game.com/index.php?file=infouser&cuid=1318
-12. S_A_U_R_O_N[9] — cuid=3231 — https://dm-game.com/index.php?file=infouser&cuid=3231
-13. Sally Whitemane[9] — cuid=10026 — https://dm-game.com/index.php?file=infouser&cuid=10026
-14. Schatten[9] — cuid=1795 — https://dm-game.com/index.php?file=infouser&cuid=1795
-15. ко4евник[9] — cuid=11603 — https://dm-game.com/index.php?file=infouser&cuid=11603
-16. Ленивец[9] — cuid=1697 — https://dm-game.com/index.php?file=infouser&cuid=1697
-17. Сайонара[9] — cuid=2011 — https://dm-game.com/index.php?file=infouser&cuid=2011
-18. Huskar[8] — cuid=22518 — https://dm-game.com/index.php?file=infouser&cuid=22518
-19. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
-20. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
-21. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
-22. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
-23. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
-24. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
+11. S_A_U_R_O_N[9] — cuid=3231 — https://dm-game.com/index.php?file=infouser&cuid=3231
+12. Sally Whitemane[9] — cuid=10026 — https://dm-game.com/index.php?file=infouser&cuid=10026
+13. Schatten[9] — cuid=1795 — https://dm-game.com/index.php?file=infouser&cuid=1795
+14. ко4евник[9] — cuid=11603 — https://dm-game.com/index.php?file=infouser&cuid=11603
+15. Ленивец[9] — cuid=1697 — https://dm-game.com/index.php?file=infouser&cuid=1697
+16. Сайонара[9] — cuid=2011 — https://dm-game.com/index.php?file=infouser&cuid=2011
+17. Huskar[8] — cuid=22518 — https://dm-game.com/index.php?file=infouser&cuid=22518
+18. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
+19. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
+20. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
+21. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
+22. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
+23. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
 
 ## Царство теней — CLAN 216 — знайдено 12
 
