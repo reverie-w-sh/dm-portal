@@ -43,6 +43,182 @@ function StatRow({ label, value }: { label: string; value: number | string }) {
   );
 }
 
+
+type AnalyticsPeriod = { views: number; visitors: number };
+type AnalyticsData = {
+  configured: boolean;
+  generatedAt?: string;
+  online?: {
+    visitors: number;
+    pages: { pathname: string; visitors: number }[];
+  };
+  periods?: {
+    today: AnalyticsPeriod;
+    week: AnalyticsPeriod;
+    month: AnalyticsPeriod;
+  };
+  topPages?: { pathname: string; views: number }[];
+  recent?: { pathname: string; title: string; at: string }[];
+  chart?: { day: string; views: number; visitors: number }[];
+};
+
+const PAGE_NAMES: Record<string, string> = {
+  "/": "Главная",
+  "/members": "Волчата",
+  "/clans": "Кланы",
+  "/alliances": "Альянсы",
+  "/ratings": "Рейтинги",
+  "/dungeons": "Карты подземелий",
+  "/hunter-board": "Планшет охотника",
+  "/personal-smiles": "Личные смайлики",
+  "/gifts": "Подарочки",
+  "/links": "Что-то полезное",
+  "/gallery": "Галерея",
+};
+
+function pageName(pathname: string): string {
+  return PAGE_NAMES[pathname] ?? pathname;
+}
+
+function AnalyticsPanel() {
+  const [data, setData] = useState<AnalyticsData | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  async function loadAnalytics() {
+    try {
+      const res = await fetch("/api/admin/analytics", { cache: "no-store" });
+      setData(await res.json());
+    } catch {
+      setData(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    void loadAnalytics();
+    const timer = window.setInterval(loadAnalytics, 30_000);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  if (loading) {
+    return <div className="glass rounded-2xl p-6 text-sm text-ink-muted">Загружаю статистику…</div>;
+  }
+
+  if (!data?.configured) {
+    return (
+      <div className="glass rounded-2xl p-6">
+        <h2 className="text-sm font-semibold text-ink uppercase tracking-wider mb-3">
+          Статистика сайта
+        </h2>
+        <p className="text-sm text-ink-muted">
+          Код уже установлен. Осталось подключить Upstash Redis в Vercel и сделать новый Deploy.
+        </p>
+      </div>
+    );
+  }
+
+  const periods = data.periods!;
+  const maxChart = Math.max(1, ...(data.chart ?? []).map((item) => item.views));
+
+  return (
+    <div className="glass rounded-2xl p-6">
+      <div className="flex items-center justify-between gap-4 mb-5">
+        <h2 className="text-sm font-semibold text-ink uppercase tracking-wider">
+          Статистика сайта
+        </h2>
+        <button onClick={loadAnalytics} className="text-xs text-[#3d9bff] underline">
+          Обновить
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+        {[
+          ["Сегодня", periods.today],
+          ["7 дней", periods.week],
+          ["30 дней", periods.month],
+        ].map(([label, value]) => {
+          const period = value as AnalyticsPeriod;
+          return (
+            <div key={label as string} className="rounded-xl border border-white/[0.06] bg-white/[0.025] p-4">
+              <p className="text-xs text-ink-muted mb-2">{label as string}</p>
+              <p className="text-xl font-black text-ink tabular-nums">{period.visitors}</p>
+              <p className="text-xs text-ink-muted">посещений</p>
+              <p className="text-sm font-semibold text-ink mt-2 tabular-nums">{period.views} просмотров</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="rounded-xl border border-white/[0.06] bg-white/[0.025] p-4 mb-6">
+        <div className="flex items-center justify-between mb-3">
+          <p className="text-sm font-semibold text-ink">Сейчас на сайте</p>
+          <span className="text-lg font-black text-[#4ade80] tabular-nums">
+            {data.online?.visitors ?? 0}
+          </span>
+        </div>
+        {(data.online?.pages.length ?? 0) > 0 ? (
+          <div className="divide-y divide-white/[0.05]">
+            {data.online!.pages.map((item) => (
+              <StatRow key={item.pathname} label={pageName(item.pathname)} value={item.visitors} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-ink-muted">Сейчас никого нет.</p>
+        )}
+      </div>
+
+      <div className="mb-6">
+        <p className="text-sm font-semibold text-ink mb-3">Посещения за 14 дней</p>
+        <div className="flex items-end gap-1.5 h-28">
+          {(data.chart ?? []).map((item) => (
+            <div key={item.day} className="flex-1 min-w-0 flex flex-col justify-end items-center gap-1 h-full" title={`${item.day}: ${item.views} просмотров`}>
+              <div
+                className="w-full rounded-t bg-[#3d9bff]/70 min-h-[2px]"
+                style={{ height: `${Math.max(2, (item.views / maxChart) * 88)}px` }}
+              />
+              <span className="text-[9px] text-ink-muted">{item.day.slice(8)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <p className="text-sm font-semibold text-ink mb-3">Популярные страницы за 30 дней</p>
+        {(data.topPages?.length ?? 0) > 0 ? (
+          <div className="divide-y divide-white/[0.05]">
+            {data.topPages!.map((item) => (
+              <StatRow key={item.pathname} label={pageName(item.pathname)} value={item.views} />
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-ink-muted">Данных пока нет.</p>
+        )}
+      </div>
+
+      <div>
+        <p className="text-sm font-semibold text-ink mb-3">Последние открытия страниц</p>
+        {(data.recent?.length ?? 0) > 0 ? (
+          <div className="space-y-2">
+            {data.recent!.slice(0, 12).map((item, index) => (
+              <div key={`${item.at}-${index}`} className="flex items-center justify-between gap-4 text-xs">
+                <span className="text-ink truncate">{pageName(item.pathname)}</span>
+                <span className="text-ink-muted shrink-0">{formatDate(item.at)}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-xs text-ink-muted">Данных пока нет.</p>
+        )}
+      </div>
+
+      <p className="text-[11px] text-ink-muted mt-5">
+        Посетители считаются без IP и без рекламных cookies. Одна открытая вкладка — одно посещение за день.
+      </p>
+    </div>
+  );
+}
+
 export default function AdminPage() {
   const [syncState,     setSyncState]     = useState<SyncState>("idle");
   const [message,       setMessage]       = useState<string>("");
@@ -132,6 +308,8 @@ export default function AdminPage() {
       <div className="divider-accent mb-10" />
 
       <div className="space-y-5 max-w-2xl">
+
+        <AnalyticsPanel />
 
         {/* ── Sync control ─────────────────────────────── */}
         <div className="glass rounded-2xl p-6">

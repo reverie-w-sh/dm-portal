@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SiteAnalytics from "@/components/SiteAnalytics";
 import { SITE_NAME, SITE_URL } from "@/lib/metadata";
 
 const inter = Inter({
@@ -85,6 +86,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <SiteAnalytics />
       </body>
     </html>
   );
