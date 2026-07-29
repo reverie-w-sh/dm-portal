@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { getExperienceProgress } from "@/lib/experience";
 import styles from "./RatingsClient.module.css";
 
 type RatingItem = {
@@ -23,7 +24,6 @@ type Rating = {
   valueLabel?: string;
   items: RatingItem[];
 };
-
 type RatingsData = {
   updatedAt?: string;
   ratings: Record<string, Rating>;
@@ -39,7 +39,6 @@ type Card = {
 
 type PlayerSort = "experience" | "monsterWins" | "playerWins";
 type CommunitySort = "victories" | "ratio" | "date";
-
 const professions: Card[] = [
   { key: "fishing", label: "Рыболов", icon: "fishing.png" },
   { key: "collector", label: "Собиратель", icon: "collector.png" },
@@ -52,7 +51,6 @@ const professions: Card[] = [
   { key: "seer", label: "Ведун", icon: "seer.png" },
   { key: "shooter", label: "Стрелок", icon: "shooter.png" },
 ];
-
 const general: Card[] = [
   {
     key: "players",
@@ -76,7 +74,6 @@ const general: Card[] = [
     tone: "green",
   },
 ];
-
 const playerSortLabels: Record<PlayerSort, string> = {
   experience: "По опыту",
   monsterWins: "По победам над монстрами",
@@ -94,7 +91,6 @@ const communitySortLabels: Record<CommunitySort, string> = {
   ratio: "По соотношению побед и поражений",
   date: "По дате создания",
 };
-
 const communityRatingKeys: Record<CommunitySort, string> = {
   victories: "communitiesVictories",
   ratio: "communitiesRatio",
@@ -111,7 +107,6 @@ function numberFrom(...values: unknown[]) {
   }
   return 0;
 }
-
 function optionalNumberFrom(...values: unknown[]) {
   for (const value of values) {
     if (typeof value === "number" && Number.isFinite(value)) return value;
@@ -126,7 +121,6 @@ function optionalNumberFrom(...values: unknown[]) {
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
-
 function buildDirectoryLevelMap(directory: unknown) {
   const levels = new Map<string, number>();
   const visited = new WeakSet<object>();
@@ -140,7 +134,6 @@ function buildDirectoryLevelMap(directory: unknown) {
     }
     if (!isRecord(value) || visited.has(value)) return;
     visited.add(value);
-
     const name = String(
       value.name ??
         value.nick ??
@@ -162,7 +155,6 @@ function buildDirectoryLevelMap(directory: unknown) {
   walk(directory);
   return levels;
 }
-
 function playerValue(item: RatingItem, sort: PlayerSort) {
   if (sort === "experience") {
     return numberFrom(item.experience, item.exp, item.value);
@@ -173,11 +165,14 @@ function playerValue(item: RatingItem, sort: PlayerSort) {
   return numberFrom(item.playerWins, item.winsPlayers, item.players);
 }
 
+function playerExperience(item: RatingItem) {
+  return optionalNumberFrom(item.experience, item.exp);
+}
+
 function formatValue(value: number | string | undefined) {
   if (typeof value === "number") return value.toLocaleString("ru-RU");
   return value ?? "—";
 }
-
 export default function RatingsClient({
   data,
   playerDirectory,
@@ -191,7 +186,6 @@ export default function RatingsClient({
   const firstAvailable = data.ratings.players?.items?.length
     ? "players"
     : firstProfession;
-
   const [active, setActive] = useState(firstAvailable);
   const [playerSort, setPlayerSort] = useState<PlayerSort>("experience");
   const [communitySort, setCommunitySort] =
@@ -205,7 +199,6 @@ export default function RatingsClient({
     const key = window.location.hash.replace("#", "");
     if (key && data.ratings[key]) setActive(key);
   }, [data.ratings]);
-
   const ratingKey =
     active === "communities" ? communityRatingKeys[communitySort] : active;
   const rating =
@@ -218,7 +211,6 @@ export default function RatingsClient({
       (a, b) => playerValue(b, playerSort) - playerValue(a, playerSort),
     );
   }, [active, playerSort, rating]);
-
   function choose(key: string) {
     setActive(key);
     window.history.replaceState(null, "", `#${key}`);
@@ -232,12 +224,10 @@ export default function RatingsClient({
   function itemValue(item: RatingItem) {
     return active === "players" ? playerValue(item, playerSort) : item.value;
   }
-
   const boardTitle =
     active === "shooter"
       ? "Лучшие производители болтов"
       : (rating?.title ?? "Рейтинг");
-
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
@@ -255,7 +245,6 @@ export default function RatingsClient({
         </picture>
         <h1 className={styles.mobileTitle}>Зал Славы. Рейтинги.</h1>
       </section>
-
       <div className={styles.content}>
         <p className={styles.curiosity}>
           Таааак.. что тут у нас интересненького...
@@ -266,7 +255,6 @@ export default function RatingsClient({
             <span className={styles.desktopHeading}>Мастера своего дела</span>
             <span className={styles.mobileHeading}>Лучшие в профессиях</span>
           </h2>
-
           <div className={styles.professionGrid}>
             {professions.map((card) => (
               <button
@@ -294,10 +282,8 @@ export default function RatingsClient({
             ))}
           </div>
         </section>
-
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Общие рейтинги</h2>
-
           <div className={styles.generalGrid}>
             {general.map((card) => (
               <button
@@ -328,14 +314,12 @@ export default function RatingsClient({
             ))}
           </div>
         </section>
-
         <section id="rating-table" className={styles.board}>
           <div className={styles.boardHead}>
             <div>
               <span>Зал Славы</span>
               <h2>{boardTitle}</h2>
             </div>
-
             {active === "players" ? (
               <div className={styles.sorts}>
                 {(Object.keys(playerSortLabels) as PlayerSort[]).map((key) => (
@@ -366,7 +350,6 @@ export default function RatingsClient({
               </div>
             ) : null}
           </div>
-
           {displayedItems.length ? (
             <div className={styles.tableWrap}>
               <table className={styles.table}>
@@ -390,7 +373,14 @@ export default function RatingsClient({
                 </thead>
                 <tbody>
                   {displayedItems.map((item, index) => {
+                    const experience =
+                      active === "players" ? playerExperience(item) : undefined;
+                    const calculated =
+                      experience != null
+                        ? getExperienceProgress(experience)
+                        : undefined;
                     const level =
+                      calculated?.level ??
                       item.level ??
                       directoryLevels.get(
                         item.name.trim().toLocaleLowerCase("ru-RU"),
@@ -399,11 +389,16 @@ export default function RatingsClient({
                       <>
                         {item.name}
                         {level != null ? (
-                          <span className={styles.level}>[{level}]</span>
+                          <span className={styles.level}>
+                            [
+                            {active === "players" && calculated
+                              ? `${calculated.level}, ${calculated.up} ап`
+                              : level}
+                            ]
+                          </span>
                         ) : null}
                       </>
                     );
-
                     return (
                       <tr key={`${item.name}-${index}`}>
                         <td>
@@ -438,7 +433,6 @@ export default function RatingsClient({
             </p>
           )}
         </section>
-
         {data.updatedAt ? (
           <p className={styles.updated}>
             Данные обновляются каждые 6 часов. Последнее обновление:{" "}
