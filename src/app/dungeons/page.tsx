@@ -26,7 +26,7 @@ export default function DungeonsPage() {
         <p className="text-xs font-bold uppercase tracking-[0.22em] text-ink-muted mb-3">
           Карты и маршруты
         </p>
-        <h1 className="text-3xl font-black text-ink tracking-tight">
+        <h1 className="inner-page-title text-3xl font-black tracking-tight">
           Карты подземелий
         </h1>
         <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">

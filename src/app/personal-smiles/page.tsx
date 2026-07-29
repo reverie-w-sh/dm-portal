@@ -120,7 +120,7 @@ export default function PersonalSmilesPage() {
           </div>
 
           <div className="min-w-0 flex-1">
-            <h1 className="text-3xl font-black text-ink tracking-tight">
+            <h1 className="inner-page-title text-3xl font-black tracking-tight">
               Особисті колекції смайликів
             </h1>
 

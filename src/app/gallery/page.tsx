@@ -127,7 +127,7 @@ export default function GalleryPage() {
   return (
     <div className="max-w-[1180px] mx-auto px-6 py-10">
       <div className="mb-2">
-        <h1 className="text-3xl font-black text-ink tracking-tight">
+        <h1 className="inner-page-title text-3xl font-black tracking-tight">
           Галерея
         </h1>
         <p className="text-ink-muted text-sm mt-1">

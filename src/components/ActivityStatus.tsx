@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ActivityStatusProps = {
   inactiveMinutes?: number | null;
   className?: string;
@@ -109,26 +111,34 @@ function LegendItem({
   );
 }
 
-export function ActivityLegend() {
+export function ActivityLegend({
+  showExperienceLink = false,
+}: {
+  showExperienceLink?: boolean;
+}) {
   return (
-    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-ink-muted">
-      <span>Вход:</span>
+    <div className="space-y-1.5 text-[11px] text-ink-muted">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <span>Вход:</span>
 
-      <LegendItem color="#39a96b">
-        менее 48 часов назад
-      </LegendItem>
+        <LegendItem color="#39a96b">менее 48 часов назад</LegendItem>
+        <LegendItem color="#d97706">2–7 дней</LegendItem>
+        <LegendItem color="#4d525a">7–30 дней</LegendItem>
+        <LegendItem color="#8c929b">больше месяца</LegendItem>
+      </div>
 
-      <LegendItem color="#d97706">
-        2–7 дней
-      </LegendItem>
-
-      <LegendItem color="#4d525a">
-        7–30 дней
-      </LegendItem>
-
-      <LegendItem color="#8c929b">
-        больше месяца
-      </LegendItem>
+      {showExperienceLink ? (
+        <p>
+          Ап персонажа можно посмотреть в{" "}
+          <Link
+            href="/ratings"
+            className="text-accent underline underline-offset-2 hover:opacity-75 transition-opacity"
+          >
+            рейтингах
+          </Link>
+          .
+        </p>
+      ) : null}
     </div>
   );
 }

@@ -233,7 +233,7 @@ export default function DimBoliPage() {
   return (
     <>
       <div className="max-w-[1180px] mx-auto px-6 py-10">
-        <h1 className="text-3xl font-black text-ink tracking-tight mb-2 text-center">
+        <h1 className="inner-page-title text-3xl font-black tracking-tight mb-2 text-center">
           Карты Дома Боли (Кровавого Подземелья)
         </h1>
 

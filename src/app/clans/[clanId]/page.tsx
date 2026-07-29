@@ -143,7 +143,7 @@ export default async function ClanDetailPage(
   </Link>
 
   <div className="mt-2">
-    <ActivityLegend />
+    <ActivityLegend showExperienceLink />
   </div>
 </div>
 

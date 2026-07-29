@@ -583,3 +583,21 @@ img.clan-icon {
   }
   .ratings-inner-board { width: min(100% - 12px, 1420px); }
 }
+
+/* ===== Единый стиль заголовков внутренних страниц ===== */
+.inner-page-title {
+  color: #5f554d;
+  transition:
+    color 220ms ease,
+    text-shadow 220ms ease;
+}
+
+.inner-page-title:hover {
+  color: #75685e;
+  text-shadow: 0 0 12px rgba(180, 119, 34, 0.08);
+}
+
+.inner-page-title::selection {
+  color: #968477;
+  background: rgba(180, 119, 34, 0.16);
+}
