@@ -1,5 +1,19 @@
 [
   {
+    "id": "7a8e3ddd-e4d1-497a-8f1c-c70b72c011ab",
+    "syncId": "2026-07-29T16:31:15.232Z",
+    "createdAt": "2026-07-29T16:31:15.232Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "24697",
+    "characterName": "Лялечка",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=24697",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "",
+    "newPosition": "Вертихвостка"
+  },
+  {
     "id": "6b133167-d681-4379-93db-f8056e89e4b8",
     "syncId": "2026-07-29T06:08:37.618Z",
     "createdAt": "2026-07-29T06:08:37.618Z",
