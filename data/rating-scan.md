@@ -62,7 +62,7 @@
 14. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 15. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 18
+## Лесные Оборотни — CLAN 212 — знайдено 16
 
 1. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
 2. Pretty[11] — cuid=2041 — https://dm-game.com/index.php?file=infouser&cuid=2041
@@ -73,15 +73,13 @@
 7. Apmagedon_ua[8] — cuid=10370 — https://dm-game.com/index.php?file=infouser&cuid=10370
 8. ARTICK[8] — cuid=17223 — https://dm-game.com/index.php?file=infouser&cuid=17223
 9. black metals[8] — cuid=19013 — https://dm-game.com/index.php?file=infouser&cuid=19013
-10. Black_knight[8] — cuid=6662 — https://dm-game.com/index.php?file=infouser&cuid=6662
-11. DooMavoD[8] — cuid=27046 — https://dm-game.com/index.php?file=infouser&cuid=27046
-12. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
-13. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
-14. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
-15. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
-16. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
-17. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
-18. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
+10. DooMavoD[8] — cuid=27046 — https://dm-game.com/index.php?file=infouser&cuid=27046
+11. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
+12. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
+13. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
+14. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
+15. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
+16. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
 ## Ozune — CLAN 213 — знайдено 22
 

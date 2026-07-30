@@ -1,5 +1,65 @@
 [
   {
+    "id": "5a4bf5a9-f012-450a-87c2-57994e9a3400",
+    "syncId": "2026-07-30T16:46:18.457Z",
+    "createdAt": "2026-07-30T16:46:18.457Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "22510",
+    "characterName": "Skullreaper",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22510",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "f617464d-8f9d-4aca-bb48-60680401c8d6",
+    "syncId": "2026-07-30T16:46:18.457Z",
+    "createdAt": "2026-07-30T16:46:18.457Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "28724",
+    "characterName": "Смотрящий",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28724",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "e04f60c8-3fc9-4c2c-bec9-b4e2c032ee7a",
+    "syncId": "2026-07-30T16:46:18.457Z",
+    "createdAt": "2026-07-30T16:46:18.457Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "6662",
+    "characterName": "Black_knight",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6662",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни"
+  },
+  {
+    "id": "74ad9a23-6deb-4d5d-acc9-b17ac3e220df",
+    "syncId": "2026-07-30T16:46:18.457Z",
+    "createdAt": "2026-07-30T16:46:18.457Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "9756",
+    "characterName": "Piranha",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=9756",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "53d2e9b2-3f45-4c91-bccf-9a5657736c2b",
+    "syncId": "2026-07-30T16:46:18.457Z",
+    "createdAt": "2026-07-30T16:46:18.457Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "26384",
+    "characterName": "GUCCI",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=26384",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни"
+  },
+  {
     "id": "7bdf62f2-9e3c-472d-8bc8-7dd45f5b1328",
     "syncId": "2026-07-30T05:54:26.828Z",
     "createdAt": "2026-07-30T05:54:26.828Z",
