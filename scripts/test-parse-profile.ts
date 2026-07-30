@@ -104,6 +104,8 @@ const EMPTY: ParsedProfile = {
   allianceName: null,
   position: "",
   inactiveMinutes: null,
+  marriagePartner: "",
+  marriageSince: "",
 };
 
 async function main(): Promise<void> {

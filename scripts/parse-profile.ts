@@ -10,6 +10,8 @@ export interface ParsedProfile {
   allianceName: string | null;
   position: string;
   inactiveMinutes: number | null;
+  marriagePartner: string;
+  marriageSince: string;
 }
 
 /**
@@ -422,6 +424,20 @@ export function parseProfileHtml(
     }
   }
 
+  // ── Marriage ────────────────────────────────
+
+  const plainText = htmlToPlainText(html);
+  const marriageMatch =
+    /Персонаж\s+находится\s+в\s+законном\s+браке\s+с\s+(.+?)\[\d+\]\s+[сc]\s+(\d{2}\.\d{2}\.\d{4})/i.exec(
+      plainText
+    );
+
+  const marriagePartner =
+    marriageMatch?.[1]?.trim() ?? "";
+
+  const marriageSince =
+    marriageMatch?.[2]?.trim() ?? "";
+
   // ── Last activity ───────────────────────────
 
   const inactiveMinutes =
@@ -439,5 +455,7 @@ export function parseProfileHtml(
     allianceName,
     position,
     inactiveMinutes,
+    marriagePartner,
+    marriageSince,
   };
 }

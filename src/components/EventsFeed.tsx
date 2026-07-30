@@ -67,6 +67,25 @@ type PlayerPositionChangedEvent =
     newPosition: string;
   };
 
+type PlayerMarriedEvent = BaseEvent & {
+  scope: "clans";
+  type: "player_married";
+  characterId: string;
+  characterName: string;
+  profileUrl: string;
+  partnerName: string;
+  marriageSince: string;
+};
+
+type PlayerDivorcedEvent = BaseEvent & {
+  scope: "clans";
+  type: "player_divorced";
+  characterId: string;
+  characterName: string;
+  profileUrl: string;
+  partnerName: string;
+};
+
 type ClanSmileAddedEvent = BaseEvent & {
   scope: "clans";
   type: "clan_smile_added";
@@ -95,6 +114,8 @@ type SiteEvent =
   | PlayerLeftClanEvent
   | PlayerChangedClanEvent
   | PlayerPositionChangedEvent
+  | PlayerMarriedEvent
+  | PlayerDivorcedEvent
   | ClanSmileAddedEvent
   | PersonalSmileAddedEvent;
 
@@ -582,6 +603,44 @@ export default function EventsFeed({
 
           <span>.</span>
         </div>
+      );
+    }
+
+    if (
+      event.type ===
+      "player_married"
+    ) {
+      return (
+        <p className={mainTextClass}>
+          <span className="mr-2">💍</span>
+          <span className="font-semibold">Свадьба:</span>{" "}
+          <CharacterLink
+            profileUrl={event.profileUrl}
+            name={event.characterName}
+          />
+          <span> и {event.partnerName}</span>
+          {event.marriageSince && (
+            <span> — с {event.marriageSince}</span>
+          )}
+          <span>.</span>
+        </p>
+      );
+    }
+
+    if (
+      event.type ===
+      "player_divorced"
+    ) {
+      return (
+        <p className={mainTextClass}>
+          <span className="mr-2">💔</span>
+          <span className="font-semibold">Развод:</span>{" "}
+          <CharacterLink
+            profileUrl={event.profileUrl}
+            name={event.characterName}
+          />
+          <span> и {event.partnerName}.</span>
+        </p>
       );
     }
 

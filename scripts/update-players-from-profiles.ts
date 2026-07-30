@@ -28,6 +28,8 @@ interface Player {
   allianceId?: string;
   allianceName?: string;
   inactiveMinutes?: number | null;
+  marriagePartner?: string;
+  marriageSince?: string;
   [key: string]: unknown;
 }
 
@@ -115,6 +117,8 @@ async function main(): Promise<void> {
 
       player.position = parsed.position;
       player.inactiveMinutes = parsed.inactiveMinutes;
+      player.marriagePartner = parsed.marriagePartner;
+      player.marriageSince = parsed.marriageSince;
       player.profileUrl = `${BASE_URL}${player.cuid}`;
 
       if (parsed.position) {
@@ -134,6 +138,7 @@ process.stdout.write(
     `reinc=${parsed.reincarnationLevel ?? "—"}  ` +
     `inactive=${parsed.inactiveMinutes ?? "—"} min  ` +
     `alliance="${parsed.allianceName || "—"}"  ` +
+    `marriage="${parsed.marriagePartner || "—"}"  ` +
     `pos="${parsed.position || "—"}"\n`,
 );
     } catch (error) {

@@ -36,6 +36,8 @@ interface Player {
   clanName?: string;
   position?: string;
   profileUrl?: string;
+  marriagePartner?: string;
+  marriageSince?: string;
   [key: string]: unknown;
 }
 
@@ -66,6 +68,9 @@ interface SnapshotPlayer {
   clanName: string;
   position: string;
   profileUrl: string;
+  marriageKnown: boolean;
+  marriagePartner: string;
+  marriageSince: string;
 }
 
 interface SnapshotClan {
@@ -127,6 +132,29 @@ type SiteEvent =
       clanName: string;
       oldPosition: string;
       newPosition: string;
+    }
+  | {
+      id: string;
+      syncId: string;
+      createdAt: string;
+      scope: "clans";
+      type: "player_married";
+      characterId: string;
+      characterName: string;
+      profileUrl: string;
+      partnerName: string;
+      marriageSince: string;
+    }
+  | {
+      id: string;
+      syncId: string;
+      createdAt: string;
+      scope: "clans";
+      type: "player_divorced";
+      characterId: string;
+      characterName: string;
+      profileUrl: string;
+      partnerName: string;
     }
   | {
       id: string;
@@ -206,6 +234,9 @@ function makeSnapshot(
         clanName: cleanString(player.clanName),
         position: cleanString(player.position),
         profileUrl: cleanString(player.profileUrl),
+        marriageKnown: true,
+        marriagePartner: cleanString(player.marriagePartner),
+        marriageSince: cleanString(player.marriageSince),
       })),
     clans: clans
       .filter((clan) => cleanString(clan.clanId) !== "")
@@ -247,6 +278,7 @@ function buildEvents(
   syncId: string,
 ): SiteEvent[] {
   const events: SiteEvent[] = [];
+  const marriageEventKeys = new Set<string>();
 
   const previousPlayers = new Map(
     previous.players.map((player) => [player.cuid, player]),
@@ -386,6 +418,60 @@ function buildEvents(
         oldPosition,
         newPosition,
       });
+    }
+
+    /*
+     * Старые снимки не содержат marriageKnown. На первом запуске после
+     * обновления только сохраняем семейный статус, не создавая ложные свадьбы.
+     */
+    if (previousPlayer.marriageKnown === true) {
+      const oldPartner = previousPlayer.marriagePartner;
+      const newPartner = currentPlayer.marriagePartner;
+
+      if (oldPartner !== newPartner) {
+        if (oldPartner) {
+          const divorceKey = `divorce:${[characterName, oldPartner]
+            .sort((a, b) => a.localeCompare(b, "ru"))
+            .join("|")}`;
+
+          if (!marriageEventKeys.has(divorceKey)) {
+            marriageEventKeys.add(divorceKey);
+            events.push({
+              id: randomUUID(),
+              syncId,
+              createdAt: syncId,
+              scope: "clans",
+              type: "player_divorced",
+              characterId: cuid,
+              characterName,
+              profileUrl,
+              partnerName: oldPartner,
+            });
+          }
+        }
+
+        if (newPartner) {
+          const weddingKey = `wedding:${[characterName, newPartner]
+            .sort((a, b) => a.localeCompare(b, "ru"))
+            .join("|")}`;
+
+          if (!marriageEventKeys.has(weddingKey)) {
+            marriageEventKeys.add(weddingKey);
+            events.push({
+              id: randomUUID(),
+              syncId,
+              createdAt: syncId,
+              scope: "clans",
+              type: "player_married",
+              characterId: cuid,
+              characterName,
+              profileUrl,
+              partnerName: newPartner,
+              marriageSince: currentPlayer.marriageSince,
+            });
+          }
+        }
+      }
     }
   }
 
