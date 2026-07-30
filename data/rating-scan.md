@@ -62,7 +62,7 @@
 14. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 15. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 19
+## Лесные Оборотни — CLAN 212 — знайдено 18
 
 1. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
 2. Pretty[11] — cuid=2041 — https://dm-game.com/index.php?file=infouser&cuid=2041
@@ -78,11 +78,10 @@
 12. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
 13. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
 14. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
-15. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
-16. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
-17. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
-18. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
-19. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
+15. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
+16. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
+17. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
+18. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
 ## Ozune — CLAN 213 — знайдено 22
 
@@ -240,7 +239,7 @@
 
 1. ЖЖод[6] — cuid=15405 — https://dm-game.com/index.php?file=infouser&cuid=15405
 
-## Guardians — CLAN 243 — знайдено 11
+## Guardians — CLAN 243 — знайдено 10
 
 1. Gudini[10] — cuid=15069 — https://dm-game.com/index.php?file=infouser&cuid=15069
 2. Nimona[10] — cuid=15457 — https://dm-game.com/index.php?file=infouser&cuid=15457
@@ -251,8 +250,7 @@
 7. swordsman[8] — cuid=2146 — https://dm-game.com/index.php?file=infouser&cuid=2146
 8. КаТыШеК[8] — cuid=17060 — https://dm-game.com/index.php?file=infouser&cuid=17060
 9. Старый Эфраим[8] — cuid=11660 — https://dm-game.com/index.php?file=infouser&cuid=11660
-10. MadDad[7] — cuid=22695 — https://dm-game.com/index.php?file=infouser&cuid=22695
-11. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
+10. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
 
 ## Гладиаторы — CLAN 247 — знайдено 10
 
