@@ -62,57 +62,52 @@
 14. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 15. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 23
+## Лесные Оборотни — CLAN 212 — знайдено 19
 
-1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
-2. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
-3. Pretty[11] — cuid=2041 — https://dm-game.com/index.php?file=infouser&cuid=2041
-4. Serg[11] — cuid=1985 — https://dm-game.com/index.php?file=infouser&cuid=1985
-5. Takezo[10] — cuid=7224 — https://dm-game.com/index.php?file=infouser&cuid=7224
-6. marlllboro[9] — cuid=10227 — https://dm-game.com/index.php?file=infouser&cuid=10227
-7. melnikov[9] — cuid=1401 — https://dm-game.com/index.php?file=infouser&cuid=1401
-8. Vazilin[9] — cuid=7167 — https://dm-game.com/index.php?file=infouser&cuid=7167
-9. Лялечка[9] — cuid=24697 — https://dm-game.com/index.php?file=infouser&cuid=24697
-10. Apmagedon_ua[8] — cuid=10370 — https://dm-game.com/index.php?file=infouser&cuid=10370
-11. ARTICK[8] — cuid=17223 — https://dm-game.com/index.php?file=infouser&cuid=17223
-12. black metals[8] — cuid=19013 — https://dm-game.com/index.php?file=infouser&cuid=19013
-13. Black_knight[8] — cuid=6662 — https://dm-game.com/index.php?file=infouser&cuid=6662
-14. DooMavoD[8] — cuid=27046 — https://dm-game.com/index.php?file=infouser&cuid=27046
-15. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
-16. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
-17. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
-18. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
-19. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-20. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
-21. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
-22. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
-23. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
+1. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
+2. Pretty[11] — cuid=2041 — https://dm-game.com/index.php?file=infouser&cuid=2041
+3. Serg[11] — cuid=1985 — https://dm-game.com/index.php?file=infouser&cuid=1985
+4. melnikov[9] — cuid=1401 — https://dm-game.com/index.php?file=infouser&cuid=1401
+5. Vazilin[9] — cuid=7167 — https://dm-game.com/index.php?file=infouser&cuid=7167
+6. Лялечка[9] — cuid=24697 — https://dm-game.com/index.php?file=infouser&cuid=24697
+7. Apmagedon_ua[8] — cuid=10370 — https://dm-game.com/index.php?file=infouser&cuid=10370
+8. ARTICK[8] — cuid=17223 — https://dm-game.com/index.php?file=infouser&cuid=17223
+9. black metals[8] — cuid=19013 — https://dm-game.com/index.php?file=infouser&cuid=19013
+10. Black_knight[8] — cuid=6662 — https://dm-game.com/index.php?file=infouser&cuid=6662
+11. DooMavoD[8] — cuid=27046 — https://dm-game.com/index.php?file=infouser&cuid=27046
+12. fisherman[8] — cuid=11119 — https://dm-game.com/index.php?file=infouser&cuid=11119
+13. GUCCI[8] — cuid=26384 — https://dm-game.com/index.php?file=infouser&cuid=26384
+14. Milady[8] — cuid=17756 — https://dm-game.com/index.php?file=infouser&cuid=17756
+15. Player[8] — cuid=3607 — https://dm-game.com/index.php?file=infouser&cuid=3607
+16. Ежик в разрезе[8] — cuid=1979 — https://dm-game.com/index.php?file=infouser&cuid=1979
+17. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
+18. __Jeka__[6] — cuid=28402 — https://dm-game.com/index.php?file=infouser&cuid=28402
+19. Zubr[6] — cuid=28354 — https://dm-game.com/index.php?file=infouser&cuid=28354
 
-## Ozune — CLAN 213 — знайдено 23
+## Ozune — CLAN 213 — знайдено 22
 
 1. Sharik[12] — cuid=2189 — https://dm-game.com/index.php?file=infouser&cuid=2189
 2. Topfer[12] — cuid=2010 — https://dm-game.com/index.php?file=infouser&cuid=2010
 3. Chuma20veka[11] — cuid=1911 — https://dm-game.com/index.php?file=infouser&cuid=1911
-4. Dillinger[10] — cuid=3054 — https://dm-game.com/index.php?file=infouser&cuid=3054
-5. Pilar[10] — cuid=2167 — https://dm-game.com/index.php?file=infouser&cuid=2167
-6. Сладкий Грех[10] — cuid=4037 — https://dm-game.com/index.php?file=infouser&cuid=4037
-7. Эйлин[10] — cuid=2163 — https://dm-game.com/index.php?file=infouser&cuid=2163
-8. BASS[9] — cuid=3765 — https://dm-game.com/index.php?file=infouser&cuid=3765
-9. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
-10. Cherry[9] — cuid=3632 — https://dm-game.com/index.php?file=infouser&cuid=3632
+4. Pilar[10] — cuid=2167 — https://dm-game.com/index.php?file=infouser&cuid=2167
+5. Сладкий Грех[10] — cuid=4037 — https://dm-game.com/index.php?file=infouser&cuid=4037
+6. Эйлин[10] — cuid=2163 — https://dm-game.com/index.php?file=infouser&cuid=2163
+7. BASS[9] — cuid=3765 — https://dm-game.com/index.php?file=infouser&cuid=3765
+8. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
+9. Cherry[9] — cuid=3632 — https://dm-game.com/index.php?file=infouser&cuid=3632
+10. marlllboro[9] — cuid=10227 — https://dm-game.com/index.php?file=infouser&cuid=10227
 11. S_A_U_R_O_N[9] — cuid=3231 — https://dm-game.com/index.php?file=infouser&cuid=3231
 12. Sally Whitemane[9] — cuid=10026 — https://dm-game.com/index.php?file=infouser&cuid=10026
 13. Schatten[9] — cuid=1795 — https://dm-game.com/index.php?file=infouser&cuid=1795
-14. ко4евник[9] — cuid=11603 — https://dm-game.com/index.php?file=infouser&cuid=11603
-15. Ленивец[9] — cuid=1697 — https://dm-game.com/index.php?file=infouser&cuid=1697
-16. Сайонара[9] — cuid=2011 — https://dm-game.com/index.php?file=infouser&cuid=2011
-17. Huskar[8] — cuid=22518 — https://dm-game.com/index.php?file=infouser&cuid=22518
-18. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
-19. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
-20. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
-21. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
-22. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
-23. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
+14. Ленивец[9] — cuid=1697 — https://dm-game.com/index.php?file=infouser&cuid=1697
+15. Сайонара[9] — cuid=2011 — https://dm-game.com/index.php?file=infouser&cuid=2011
+16. Huskar[8] — cuid=22518 — https://dm-game.com/index.php?file=infouser&cuid=22518
+17. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
+18. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
+19. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
+20. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
+21. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
+22. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
 
 ## Царство теней — CLAN 216 — знайдено 12
 
@@ -200,11 +195,11 @@
 30. Корвин[8] — cuid=4277 — https://dm-game.com/index.php?file=infouser&cuid=4277
 31. Мик31[8] — cuid=3182 — https://dm-game.com/index.php?file=infouser&cuid=3182
 32. Папай[8] — cuid=1981 — https://dm-game.com/index.php?file=infouser&cuid=1981
-33. URBAN[7] — cuid=13883 — https://dm-game.com/index.php?file=infouser&cuid=13883
-34. Добро[7] — cuid=15414 — https://dm-game.com/index.php?file=infouser&cuid=15414
-35. Роза[7] — cuid=27120 — https://dm-game.com/index.php?file=infouser&cuid=27120
-36. Чумик[7] — cuid=5934 — https://dm-game.com/index.php?file=infouser&cuid=5934
-37. Friiend[6] — cuid=28464 — https://dm-game.com/index.php?file=infouser&cuid=28464
+33. Friiend[7] — cuid=28464 — https://dm-game.com/index.php?file=infouser&cuid=28464
+34. URBAN[7] — cuid=13883 — https://dm-game.com/index.php?file=infouser&cuid=13883
+35. Добро[7] — cuid=15414 — https://dm-game.com/index.php?file=infouser&cuid=15414
+36. Роза[7] — cuid=27120 — https://dm-game.com/index.php?file=infouser&cuid=27120
+37. Чумик[7] — cuid=5934 — https://dm-game.com/index.php?file=infouser&cuid=5934
 38. Gillette[6] — cuid=2159 — https://dm-game.com/index.php?file=infouser&cuid=2159
 39. LastShade[6] — cuid=5904 — https://dm-game.com/index.php?file=infouser&cuid=5904
 40. Серега[5] — cuid=14688 — https://dm-game.com/index.php?file=infouser&cuid=14688
