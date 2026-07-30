@@ -1,5 +1,31 @@
 [
   {
+    "id": "d78c6dee-ea8c-48db-8e0d-751663df3a2f",
+    "syncId": "2026-07-30T17:42:27.518Z",
+    "createdAt": "2026-07-30T17:42:27.518Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "24697",
+    "characterName": "Лялечка",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=24697",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни"
+  },
+  {
+    "id": "6e22612e-890c-4e64-b843-f4a6d7f8bb4b",
+    "syncId": "2026-07-30T17:42:27.518Z",
+    "createdAt": "2026-07-30T17:42:27.518Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "22510",
+    "characterName": "Skullreaper",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22510",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Skullreaper"
+  },
+  {
     "id": "5a4bf5a9-f012-450a-87c2-57994e9a3400",
     "syncId": "2026-07-30T16:46:18.457Z",
     "createdAt": "2026-07-30T16:46:18.457Z",
