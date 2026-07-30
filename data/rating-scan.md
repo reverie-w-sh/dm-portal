@@ -236,7 +236,7 @@
 
 1. ЖЖод[6] — cuid=15405 — https://dm-game.com/index.php?file=infouser&cuid=15405
 
-## Guardians — CLAN 243 — знайдено 10
+## Guardians — CLAN 243 — знайдено 11
 
 1. Gudini[10] — cuid=15069 — https://dm-game.com/index.php?file=infouser&cuid=15069
 2. Nimona[10] — cuid=15457 — https://dm-game.com/index.php?file=infouser&cuid=15457
@@ -247,7 +247,13 @@
 7. swordsman[8] — cuid=2146 — https://dm-game.com/index.php?file=infouser&cuid=2146
 8. КаТыШеК[8] — cuid=17060 — https://dm-game.com/index.php?file=infouser&cuid=17060
 9. Старый Эфраим[8] — cuid=11660 — https://dm-game.com/index.php?file=infouser&cuid=11660
-10. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
+10. MadDad[7] — cuid=22695 — https://dm-game.com/index.php?file=infouser&cuid=22695
+11. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
+
+## Devils of Death — CLAN 244 — знайдено 2
+
+1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
+2. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 
 ## Гладиаторы — CLAN 247 — знайдено 10
 

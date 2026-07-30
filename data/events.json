@@ -1,5 +1,47 @@
 [
   {
+    "id": "c8ec490b-7456-43ba-abb8-402e957a9afc",
+    "syncId": "2026-07-30T18:17:37.512Z",
+    "createdAt": "2026-07-30T18:17:37.512Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "Глава спільноти",
+    "newPosition": "дама черной масти"
+  },
+  {
+    "id": "0cd7cd4d-730d-455f-ad5d-1de87e4120c2",
+    "syncId": "2026-07-30T18:17:37.512Z",
+    "createdAt": "2026-07-30T18:17:37.512Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "1966",
+    "characterName": "ХАРАКТЕРНИК",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1966",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Глава сообщества"
+  },
+  {
+    "id": "b931fd46-440b-4abd-84fc-3a92e4ec41e0",
+    "syncId": "2026-07-30T18:17:37.512Z",
+    "createdAt": "2026-07-30T18:17:37.512Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "1979",
+    "characterName": "Ежик в разрезе",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1979",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Ежик"
+  },
+  {
     "id": "d78c6dee-ea8c-48db-8e0d-751663df3a2f",
     "syncId": "2026-07-30T17:42:27.518Z",
     "createdAt": "2026-07-30T17:42:27.518Z",
