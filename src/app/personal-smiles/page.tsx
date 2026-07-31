@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import {
   useEffect,
   useMemo,
@@ -42,6 +43,8 @@ function formatLastSync(iso: string): string {
 }
 
 export default function PersonalSmilesPage() {
+  const router = useRouter();
+  const pathname = usePathname();
   const itemCounts = useMemo(() => {
     const counts = new Map<string, number>();
     for (const item of personalItemsData.items as PersonalItem[]) {
@@ -53,6 +56,7 @@ export default function PersonalSmilesPage() {
 
   const [sortType, setSortType] =
     useState<SortType>("count-desc");
+  const [query, setQuery] = useState("");
 
   const [openedPlayers, setOpenedPlayers] =
     useState<Set<string>>(new Set());
@@ -66,15 +70,22 @@ export default function PersonalSmilesPage() {
       ...(personalSmilesData as PlayerWithSmiles[]),
     ];
 
+    const q = query.trim().toLocaleLowerCase("uk");
+    const filtered = q
+      ? result.filter((player) =>
+          player.nick.toLocaleLowerCase("uk").includes(q),
+        )
+      : result;
+
     if (sortType === "nick") {
-      return result.sort((a, b) =>
+      return filtered.sort((a, b) =>
         a.nick.localeCompare(b.nick, "uk", {
           sensitivity: "base",
         })
       );
     }
 
-    return result.sort((a, b) => {
+    return filtered.sort((a, b) => {
       const countDifference =
         sortType === "count-desc"
           ? b.personalSmilesCount - a.personalSmilesCount
@@ -88,7 +99,7 @@ export default function PersonalSmilesPage() {
         sensitivity: "base",
       });
     });
-  }, [sortType]);
+  }, [query, sortType]);
 
   function togglePlayer(cuid: string) {
     setOpenedPlayers((current) => {
@@ -108,6 +119,11 @@ export default function PersonalSmilesPage() {
     const cuid = new URLSearchParams(window.location.search).get("player");
     if (!cuid) return;
 
+    const selectedPlayer = (personalSmilesData as PlayerWithSmiles[]).find(
+      (player) => player.cuid === cuid,
+    );
+    if (selectedPlayer) setQuery(selectedPlayer.nick);
+
     setOpenedPlayers((current) => {
       const next = new Set(current);
       next.add(cuid);
@@ -125,6 +141,11 @@ export default function PersonalSmilesPage() {
       });
     }, 250);
   }, []);
+
+  function clearQuery() {
+    setQuery("");
+    router.replace(pathname, { scroll: false });
+  }
 
   function openPlayerFromEvent(cuid: string) {
     setOpenedPlayers((current) => {
@@ -186,15 +207,16 @@ export default function PersonalSmilesPage() {
         <div className="divider-accent mt-7" />
       </div>
 
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-        <div className="text-sm text-ink-muted">
-          Знайдено колекцій:{" "}
-          <span className="font-bold text-ink">
-            {players.length}
-          </span>
-        </div>
+      <div className="flex flex-col gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="text-sm text-ink-muted">
+            Знайдено колекцій:{" "}
+            <span className="font-bold text-ink">
+              {players.length}
+            </span>
+          </div>
 
-        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
           <span className="text-sm text-ink-muted">
             Сортувати:
           </span>
@@ -230,6 +252,27 @@ export default function PersonalSmilesPage() {
               За ніком
             </button>
           </div>
+        </div>
+        </div>
+
+        <div className="relative w-full sm:max-w-[480px]">
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Знайти гравця…"
+            className="w-full rounded-xl border border-black/10 bg-white/55 px-4 py-3 pr-12 text-ink outline-none transition-all focus:border-[#c08a3a]/60 focus:ring-4 focus:ring-[#c08a3a]/10"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={clearQuery}
+              aria-label="Очистити пошук"
+              title="Очистити пошук"
+              className="absolute right-3 top-1/2 grid h-5 w-5 -translate-y-1/2 place-items-center rounded-full bg-black/25 text-xs font-black text-white cursor-pointer transition-colors hover:bg-[#c08a3a] hover:text-[#20160a]"
+            >
+              ×
+            </button>
+          )}
         </div>
       </div>
 

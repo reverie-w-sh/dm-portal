@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "../collection-pages.module.css";
 
 type Item = {
@@ -53,6 +54,8 @@ export default function PersonalItemsClient({
   data: { updatedAt?: string; items: Item[] };
   directory: Record<string, Player>;
 }) {
+  const router = useRouter();
+  const pathname = usePathname();
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<Sort>("count-desc");
 
@@ -60,6 +63,11 @@ export default function PersonalItemsClient({
     const owner = new URLSearchParams(window.location.search).get("owner");
     if (owner) setQuery(owner);
   }, []);
+
+  function clearQuery() {
+    setQuery("");
+    router.replace(pathname, { scroll: false });
+  }
 
   const groups = useMemo<OwnerGroup[]>(() => {
     const q = query.trim().toLocaleLowerCase("ru");
@@ -122,11 +130,24 @@ export default function PersonalItemsClient({
         </div>
 
         <div className={styles.controls}>
-          <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Найти персонажа или вещь…"
-          />
+          <div className={styles.searchWrap}>
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Найти персонажа или вещь…"
+            />
+            {query && (
+              <button
+                type="button"
+                className={styles.clearSearch}
+                onClick={clearQuery}
+                aria-label="Очистить поиск"
+                title="Очистить поиск"
+              >
+                ×
+              </button>
+            )}
+          </div>
           <div>
             <button
               className={sort !== "owner" ? styles.active : ""}
