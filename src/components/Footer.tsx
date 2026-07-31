@@ -58,7 +58,7 @@ export default function Footer() {
               width={25}
               height={25}
               draggable={false}
-              className="w-[19px] h-[19px] select-none"
+              className="w-[25px] h-[25px] select-none"
             />
           </Link>
 
