@@ -75,7 +75,7 @@ export default function Navbar() {
               width={25}
               height={25}
               unoptimized
-              className="h-[19px] w-[19px] object-contain"
+              className="h-[25px] w-[25px] object-contain"
             />
           </div>
         </Link>
