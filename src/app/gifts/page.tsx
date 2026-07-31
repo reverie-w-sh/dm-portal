@@ -40,6 +40,10 @@ export default function GiftsPage() {
     { title: "Глазастый котик 2 Подарок)", file: "/gifts/cat-2.gif" },
     { title: "Глазастый котик 3 Подарок)", file: "/gifts/cat-3.gif" },
     { title: "Глазастый котик 4 Подарок)", file: "/gifts/cat-4.gif" },    
+    { title: "Котик на ручках Подарок)", file: "/gifts/kot-4.gif" },
+    { title: "Любовь 1 Подарок)", file: "/gifts/love-1.gif" },
+    { title: "Любовь 2 Подарок)", file: "/gifts/love-2.gif" },
+    { title: "Волк 1 Подарок)", file: "/gifts/volk-1.gif" },    
   ];
 
   return (
