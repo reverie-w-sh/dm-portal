@@ -181,6 +181,17 @@ export default function CouplesClient({
           <div className={styles.empty}>Семейные пары пока не найдены.</div>
         )}
       </section>
+
+      <button
+        type="button"
+        className={styles.scrollTop}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Наверх"
+        title="Наверх"
+      >
+        <span aria-hidden="true">↑</span>
+        <span>Наверх</span>
+      </button>
     </main>
   );
 }
@@ -217,7 +228,16 @@ function Person({
         </h2>
         <p>{player.clanName || "Без клана"}</p>
         <div className={styles.badges}>
-          <span>😊 {smiles}</span>
+          {player.cuid ? (
+            <Link
+              href={`/personal-smiles?player=${encodeURIComponent(player.cuid)}`}
+              title={`Открыть личные смайлики ${player.nick}`}
+            >
+              😊 {smiles}
+            </Link>
+          ) : (
+            <span>😊 {smiles}</span>
+          )}
           <Link href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}>
             ⚔️ {items}
           </Link>

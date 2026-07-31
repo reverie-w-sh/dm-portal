@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {
+  useEffect,
   useMemo,
   useRef,
   useState,
@@ -102,6 +103,28 @@ export default function PersonalSmilesPage() {
       return next;
     });
   }
+
+  useEffect(() => {
+    const cuid = new URLSearchParams(window.location.search).get("player");
+    if (!cuid) return;
+
+    setOpenedPlayers((current) => {
+      const next = new Set(current);
+      next.add(cuid);
+      return next;
+    });
+
+    window.setTimeout(() => {
+      const element =
+        playerElements.current.get(cuid) ??
+        document.getElementById(`player-${cuid}`);
+
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 250);
+  }, []);
 
   function openPlayerFromEvent(cuid: string) {
     setOpenedPlayers((current) => {
