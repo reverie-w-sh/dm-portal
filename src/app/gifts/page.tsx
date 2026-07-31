@@ -35,11 +35,11 @@ export default function GiftsPage() {
     { title: "День Рождения 1 Подарок)", file: "/gifts/happy-birthday-1.gif" },
     { title: "День Рождения 2 Подарок)", file: "/gifts/happy-birthday-2.gif" },
     { title: "День Рождения 3 Подарок)", file: "/gifts/happy-birthday-3.gif" },
-    { title: "День Рождения 4 Подарок)", file: "/gifts/happy-birthday-3.gif" },
+    { title: "День Рождения 4 Подарок)", file: "/gifts/happy-birthday-4.gif" },
     { title: "Глазастый котик 1 Подарок)", file: "/gifts/cat-1.gif" },
     { title: "Глазастый котик 2 Подарок)", file: "/gifts/cat-2.gif" },
     { title: "Глазастый котик 3 Подарок)", file: "/gifts/cat-3.gif" },
-    { title: "Глазастый котик 4 Подарок)", file: "/gifts/cat-3.gif" },    
+    { title: "Глазастый котик 4 Подарок)", file: "/gifts/cat-4.gif" },    
   ];
 
   return (
