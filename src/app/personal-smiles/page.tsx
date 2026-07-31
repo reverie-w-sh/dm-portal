@@ -334,13 +334,6 @@ export default function PersonalSmilesPage() {
                         </div>
                       </div>
 
-                      <Link
-                        href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}
-                        className="px-4 py-3 rounded-xl bg-white/45 border border-black/10 text-sm font-bold text-ink shadow-sm transition-all hover:bg-white"
-                      >
-                        ⚔️ Именные вещи ({itemCounts.get(player.nick.toLocaleLowerCase("ru")) ?? 0})
-                      </Link>
-
                       <button
                         type="button"
                         onClick={() =>
@@ -353,6 +346,13 @@ export default function PersonalSmilesPage() {
                           ? "Сховати смайлики ↑"
                           : "Переглянути смайлики ↓"}
                       </button>
+
+                      <Link
+                        href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}
+                        className="px-4 py-3 rounded-xl bg-white/45 border border-black/10 text-sm font-bold text-ink shadow-sm transition-all hover:bg-white"
+                      >
+                        ⚔️ Іменні речі ({itemCounts.get(player.nick.toLocaleLowerCase("ru")) ?? 0})
+                      </Link>
                     </div>
                   </div>
                 </div>

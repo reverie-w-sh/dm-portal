@@ -13,6 +13,7 @@ type Item = {
 };
 
 type Player = {
+  cuid?: string;
   profileUrl?: string;
   clanId?: string;
   clanName?: string;
@@ -178,9 +179,19 @@ export default function PersonalItemsClient({
                       </h2>
                       <p>{player?.clanName || "Без клана"}</p>
                     </div>
-                    <strong>
-                      {totalCount} {totalCount === 1 ? "вещь" : "вещей"}
-                    </strong>
+                    <div className={styles.groupActions}>
+                      {player?.cuid && (
+                        <a
+                          className={styles.collectionLink}
+                          href={`/personal-smiles?player=${encodeURIComponent(player.cuid)}`}
+                        >
+                          🙂 Личные смайлики
+                        </a>
+                      )}
+                      <strong>
+                        {totalCount} {totalCount === 1 ? "вещь" : "вещей"}
+                      </strong>
+                    </div>
                   </div>
 
                   <div className={styles.itemGrid}>
