@@ -32,6 +32,10 @@ export default function GiftsPage() {
     { title: "Собака зубастый Подарок)", file: "/gifts/3.gif" },
     { title: "Котик милый Подарок)", file: "/gifts/4.gif" },
     { title: "Пёсель с пивом Подарок)", file: "/gifts/5.gif" },
+    { title: "День Рождения 1 Подарок)", file: "/gifts/happy-birthday-1.gif" },
+    { title: "День Рождения 2 Подарок)", file: "/gifts/happy-birthday-2.gif" },
+    { title: "День Рождения 3 Подарок)", file: "/gifts/happy-birthday-3.gif" },
+    { title: "День Рождения 4 Подарок)", file: "/gifts/happy-birthday-3.gif" },
   ];
 
   return (
