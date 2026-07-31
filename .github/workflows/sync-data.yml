@@ -49,13 +49,16 @@ jobs:
       - name: Step 7 — update personal smiles
         run: npx tsx scripts/update-personal-smiles.ts
 
-      - name: Step 8 — update ratings
+      - name: Step 8 — update personal items
+        run: npx tsx scripts/update-personal-items.ts
+
+      - name: Step 9 — update ratings
         run: npx tsx scripts/update-ratings.ts
 
-      - name: Step 9 — write sync timestamp
+      - name: Step 10 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
-      - name: Step 10 — build events history
+      - name: Step 11 — build events history
         run: npx tsx scripts/build-events.ts
 
       - name: Commit and push updated data
@@ -67,6 +70,7 @@ jobs:
             data/clans.json \
             data/players.json \
             data/personal-smiles.json \
+            data/personal-items.json \
             data/rating-scan.md \
             data/sync-status.json \
             data/last-sync.json \
