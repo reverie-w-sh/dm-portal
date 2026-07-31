@@ -1,12 +1,19 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: 'Панель администратора',
-  description: 'Служебная панель управления сайтом клана die Wölfchen.',
-  alternates: { canonical: '/admin' },
+export const metadata = {
+  ...createPageMetadata({
+    title: "Админка — die Wölfchen",
+    description:
+      "Закрытая страница со статистикой сайта и запуском синхронизации данных.",
+    path: "/admin",
+    image: "/og/admin.webp",
+    imageAlt: "Административная панель сайта die Wölfchen",
+  }),
   robots: { index: false, follow: false },
 };
 
-export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function Layout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return children;
 }
