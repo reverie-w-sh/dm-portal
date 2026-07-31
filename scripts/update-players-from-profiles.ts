@@ -66,7 +66,18 @@ async function main(): Promise<void> {
   let posFoundCount = 0;
   let emptyPosCount = 0;
   let alliancesFoundCount = 0;
+  let marriagesFoundCount = 0;
   let errorCount = 0;
+
+  const marriagesBefore = realPlayers.filter(
+    (player) => Boolean(player.marriagePartner && player.marriageSince),
+  ).length;
+
+  // Keep marriage values aside until the whole scan passes a sanity check.
+  const pendingMarriageUpdates = new Map<
+    string,
+    { partner: string; since: string }
+  >();
 
   for (let index = 0; index < realPlayers.length; index++) {
     const player = realPlayers[index];
@@ -117,8 +128,14 @@ async function main(): Promise<void> {
 
       player.position = parsed.position;
       player.inactiveMinutes = parsed.inactiveMinutes;
-      player.marriagePartner = parsed.marriagePartner;
-      player.marriageSince = parsed.marriageSince;
+      pendingMarriageUpdates.set(player.cuid, {
+        partner: parsed.marriagePartner,
+        since: parsed.marriageSince,
+      });
+
+      if (parsed.marriagePartner && parsed.marriageSince) {
+        marriagesFoundCount++;
+      }
       player.profileUrl = `${BASE_URL}${player.cuid}`;
 
       if (parsed.position) {
@@ -154,6 +171,27 @@ process.stdout.write(
     }
   }
 
+  /*
+   * A parser or game markup change must never erase every known marriage in
+   * one run. When marriages existed before but none were found now, stop the
+   * workflow before writing players.json. The log will show the real problem
+   * instead of silently publishing an empty couples page.
+   */
+  if (marriagesBefore >= 3 && marriagesFoundCount === 0) {
+    throw new Error(
+      `Marriage parser safety stop: ${marriagesBefore} marriages existed ` +
+        `before the scan, but 0 were recognized now. players.json was not written.`,
+    );
+  }
+
+  for (const player of realPlayers) {
+    const marriage = pendingMarriageUpdates.get(player.cuid);
+    if (!marriage) continue;
+
+    player.marriagePartner = marriage.partner;
+    player.marriageSince = marriage.since;
+  }
+
   fs.writeFileSync(
     PLAYERS_PATH,
     `${JSON.stringify(players, null, 2)}\n`,
@@ -168,6 +206,8 @@ process.stdout.write(
   console.log(`  Positions found:      ${posFoundCount}`);
   console.log(`  Empty positions:      ${emptyPosCount}`);
   console.log(`  Alliance profiles:    ${alliancesFoundCount}`);
+  console.log(`  Marriages before:     ${marriagesBefore}`);
+  console.log(`  Marriages recognized: ${marriagesFoundCount}`);
   console.log(`  Errors:               ${errorCount}`);
   console.log("──────────────────────────────────────────────────────────────");
 }

@@ -47,6 +47,10 @@ function htmlToPlainText(html: string): string {
     .replace(/&nbsp;|&#160;/gi, " ")
     .replace(/&quot;/gi, '"')
     .replace(/&amp;/gi, "&")
+    // Numeric entities are often used for the small info icon after [level].
+    // Remove any remaining entity so its digits cannot break profile parsing.
+    .replace(/&#(?:x[0-9a-f]+|\d+);/gi, " ")
+    .replace(/&[a-z][a-z0-9]+;/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -434,7 +438,7 @@ export function parseProfileHtml(
    * похожую фразу.
    */
   const marriageMatch =
-    /Персонаж\s+находится\s+в\s+законном\s+браке\s+с\s+([^\[\]\r\n]{1,80}?)\s*\[\d+\][^\d\r\n]{0,30}?[сc]\s+(\d{2}\.\d{2}\.\d{4})/i.exec(
+    /Персонаж\s+находится\s+в\s+законном\s+браке\s+с\s+([^\[\]\r\n]{1,80}?)\s*\[\d+\][\s\S]{0,160}?[сc]\s+(\d{2}\.\d{2}\.\d{4})/i.exec(
       plainText
     );
 
