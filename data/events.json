@@ -1,5 +1,33 @@
 [
   {
+    "id": "4eed5e93-dc68-4ff2-8f85-10cd69a7224d",
+    "syncId": "2026-07-31T16:58:30.945Z",
+    "createdAt": "2026-07-31T16:58:30.945Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "22510",
+    "characterName": "Skullreaper",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22510",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "a480d034-7e9b-408b-a240-9a9a596cb11a",
+    "syncId": "2026-07-31T16:58:30.945Z",
+    "createdAt": "2026-07-31T16:58:30.945Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "7939",
+    "characterName": "Артур",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7939",
+    "amount": 1,
+    "oldCount": 16,
+    "newCount": 17,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/111/prv_artur18.gif"
+    ]
+  },
+  {
     "id": "0613daa3-3e4f-46e0-b5f8-91219ef82c88",
     "syncId": "2026-07-31T06:28:11.483Z",
     "createdAt": "2026-07-31T06:28:11.483Z",

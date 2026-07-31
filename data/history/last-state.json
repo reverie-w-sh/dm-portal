@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-07-31T14:14:29.717Z",
+  "createdAt": "2026-07-31T16:58:30.945Z",
   "players": [
     {
       "cuid": "7939",
@@ -1929,7 +1929,7 @@
     {
       "cuid": "22510",
       "nick": "Skullreaper",
-      "clanId": "",
+      "clanId": "244",
       "clanName": "Devils of Death",
       "position": "Skullreaper",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22510",
@@ -9467,6 +9467,31 @@
       ]
     },
     {
+      "cuid": "7939",
+      "nick": "Артур",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7939",
+      "personalSmilesCount": 17,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/prv_artur1.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artur2.gif",
+        "https://dm-game.com/layout/all/smiles/111/lelele.gif",
+        "https://dm-game.com/layout/all/smiles/111/art.gif",
+        "https://dm-game.com/layout/all/smiles/111/art2.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artur6.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_ksks23.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artur8.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artur9.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artur11.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_artur12.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_artur13.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_artur14.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artur15.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_artur16.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_artur17.gif",
+        "https://dm-game.com/layout/all/smiles/111/prv_artur18.gif"
+      ]
+    },
+    {
       "cuid": "3539",
       "nick": "Bombita",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3539",
@@ -9489,30 +9514,6 @@
         "https://dm-game.com/layout/all/smiles/3539/bombita6.gif",
         "https://dm-game.com/layout/all/smiles/3539/bombita7.gif",
         "https://dm-game.com/layout/all/smiles/3539/bombita8.gif"
-      ]
-    },
-    {
-      "cuid": "7939",
-      "nick": "Артур",
-      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7939",
-      "personalSmilesCount": 16,
-      "personalSmiles": [
-        "https://dm-game.com/layout/all/smiles/prv_artur1.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artur2.gif",
-        "https://dm-game.com/layout/all/smiles/111/lelele.gif",
-        "https://dm-game.com/layout/all/smiles/111/art.gif",
-        "https://dm-game.com/layout/all/smiles/111/art2.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artur6.gif",
-        "https://dm-game.com/layout/all/smiles/111/prv_ksks23.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artur8.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artur9.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artur11.gif",
-        "https://dm-game.com/layout/all/smiles/111/prv_artur12.gif",
-        "https://dm-game.com/layout/all/smiles/111/prv_artur13.gif",
-        "https://dm-game.com/layout/all/smiles/111/prv_artur14.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artur15.gif",
-        "https://dm-game.com/layout/all/smiles/111/prv_artur16.gif",
-        "https://dm-game.com/layout/all/smiles/111/prv_artur17.gif"
       ]
     },
     {
