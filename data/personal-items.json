@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T21:28:32.889Z",
+  "updatedAt": "2026-07-31T21:51:43.845Z",
   "items": [
     {
       "id": "443164",
@@ -5987,6 +5987,13 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=143231"
     },
     {
+      "id": "464242",
+      "name": "Бронекорсет Шрёдингера",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/10-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=464242"
+    },
+    {
       "id": "483308",
       "name": "Броня Несвятого Духа",
       "owner": "Allania",
@@ -6008,6 +6015,27 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=474271"
     },
     {
+      "id": "444179",
+      "name": "Защита от здравого смысла, логики и критов(+3 брони)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/10-4394-00.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=444179"
+    },
+    {
+      "id": "444173",
+      "name": "Зеленые каблуки на твоих орешках(Зч)(+4 силы)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/06-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=444173"
+    },
+    {
+      "id": "245980",
+      "name": "Квітковий Оберіг(Мд)(+15)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/03-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=245980"
+    },
+    {
       "id": "96278",
       "name": "Крихтка річ(Зч)",
       "owner": "Allania",
@@ -6022,11 +6050,46 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=143930"
     },
     {
+      "id": "234435",
+      "name": "Кто наденет - тот эльфийка(Мд)(+15)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/20-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=234435"
+    },
+    {
+      "id": "444220",
+      "name": "Кусьзазад(+50 жизни)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/21-4394-00.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=444220"
+    },
+    {
+      "id": "444174",
+      "name": "Не верь глазам своим(Зч)(+3 брони)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/11-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=444174"
+    },
+    {
       "id": "118828",
       "name": "Печать Вампира(Зч)",
       "owner": "Allania",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/allania2/15-4394-00.gif",
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=118828"
+    },
+    {
+      "id": "448297",
+      "name": "Подарок пьяного леприкона(Зч)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/15-4394-00.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=448297"
+    },
+    {
+      "id": "444177",
+      "name": "Подарунок",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/016-4394-00.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=444177"
     },
     {
       "id": "206448",
@@ -6043,6 +6106,13 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=354420"
     },
     {
+      "id": "453338",
+      "name": "Полуночный подкат(Мд)(+15)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania2/02-4394-00-15.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=453338"
+    },
+    {
       "id": "561065",
       "name": "Прибор Ночного Видения(Зч)(+20 жизни)",
       "owner": "Allania",
@@ -6055,6 +6125,27 @@
       "owner": "Allania",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/allania2/02-4394-00-15.gif",
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=334709"
+    },
+    {
+      "id": "95676",
+      "name": "Размер имеет значение(Мд)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/04-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=95676"
+    },
+    {
+      "id": "446348",
+      "name": "Ручное счастье(Мд)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/07-4394-00.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=446348"
+    },
+    {
+      "id": "446984",
+      "name": "Хранитель непорочности(Мд)(+15)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/02-4394-00-15.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=446984"
     },
     {
       "id": "448790",
@@ -6099,6 +6190,20 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=451043"
     },
     {
+      "id": "224393",
+      "name": "Belt-a-la-cushak(Мд)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/13-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=224393"
+    },
+    {
+      "id": "481036",
+      "name": "Butterbowfly(Мд)",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/23-4394-00.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=481036"
+    },
+    {
       "id": "395807",
       "name": "Butterbowfly(Мд)(+12)",
       "owner": "Allania",
@@ -6111,6 +6216,13 @@
       "owner": "Allania",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/allania2/03-4394-00.png",
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=454620"
+    },
+    {
+      "id": "320541",
+      "name": "Flowerprint",
+      "owner": "Allania",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/allania/12-4394-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=320541"
     },
     {
       "id": "441000",
