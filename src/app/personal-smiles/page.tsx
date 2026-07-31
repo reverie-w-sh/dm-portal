@@ -26,6 +26,10 @@ type PlayerWithSmiles = {
 
 type SortType = "count" | "nick";
 
+type PersonalItem = {
+  owner: string;
+};
+
 function formatLastSync(iso: string): string {
   return new Date(iso).toLocaleString("uk-UA", {
     day: "2-digit",
@@ -39,7 +43,7 @@ function formatLastSync(iso: string): string {
 export default function PersonalSmilesPage() {
   const itemCounts = useMemo(() => {
     const counts = new Map<string, number>();
-    for (const item of personalItemsData.items) {
+    for (const item of personalItemsData.items as PersonalItem[]) {
       const key = item.owner.toLocaleLowerCase("ru");
       counts.set(key, (counts.get(key) ?? 0) + 1);
     }
