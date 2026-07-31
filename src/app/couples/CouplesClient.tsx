@@ -91,7 +91,7 @@ export default function CouplesClient({
             />
           </div>
           <div>
-            <p className={styles.eyebrow}>Страничка про любовь :) ♥</p>
+            <p className={styles.eyebrow}>♥ Страничка про любовь :) ♥</p>
             <h1>Семейные пары</h1>
             <p>
               Помните: счастье к свидетельству о браке не прилагается: всё
@@ -143,7 +143,7 @@ export default function CouplesClient({
                   }
                   items={itemCounts[couple.a.nick.toLocaleLowerCase("ru")] || 0}
                 />
-                <span className={styles.plus}>♥</span>
+                <span className={styles.plus}>+</span>
                 <Person
                   player={couple.b || { cuid: "", nick: couple.partnerName }}
                   smiles={

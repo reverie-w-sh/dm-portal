@@ -1,20 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
   <defs>
-    <linearGradient id="gold" x1="18" y1="18" x2="105" y2="112" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#FFF1A7"/>
-      <stop offset=".28" stop-color="#E7B842"/>
-      <stop offset=".58" stop-color="#8A4D08"/>
-      <stop offset=".8" stop-color="#F5D06A"/>
+    <linearGradient id="gold" x1="18" y1="18" x2="108" y2="112" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF4B8"/>
+      <stop offset=".24" stop-color="#E7B84C"/>
+      <stop offset=".52" stop-color="#8A4D08"/>
+      <stop offset=".76" stop-color="#F6D573"/>
       <stop offset="1" stop-color="#9A570B"/>
     </linearGradient>
+    <linearGradient id="shine" x1="26" y1="35" x2="95" y2="93" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8CF" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#FFF1A2" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#5E3204" stop-opacity=".2"/>
+    </linearGradient>
     <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
-      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".55"/>
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000" flood-opacity=".58"/>
     </filter>
   </defs>
-  <g filter="url(#shadow)" stroke="url(#gold)" stroke-width="11">
-    <ellipse cx="48" cy="68" rx="30" ry="24" transform="rotate(-24 48 68)"/>
-    <ellipse cx="81" cy="61" rx="30" ry="24" transform="rotate(24 81 61)"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="48" cy="70" rx="31" ry="23" transform="rotate(-25 48 70)" stroke="url(#gold)" stroke-width="12"/>
+    <ellipse cx="81" cy="59" rx="31" ry="23" transform="rotate(25 81 59)" stroke="url(#gold)" stroke-width="12"/>
+    <ellipse cx="48" cy="70" rx="31" ry="23" transform="rotate(-25 48 70)" stroke="url(#shine)" stroke-width="3"/>
+    <ellipse cx="81" cy="59" rx="31" ry="23" transform="rotate(25 81 59)" stroke="url(#shine)" stroke-width="3"/>
   </g>
-  <path d="M63 21 72 32 63 43 54 32 63 21Z" fill="#EAF8FF" stroke="#D8AD3E" stroke-width="4" filter="url(#shadow)"/>
-  <path d="M54 32H72" stroke="#FFF5B9" stroke-width="2"/>
 </svg>
