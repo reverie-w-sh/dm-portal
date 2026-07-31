@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import {
   useMemo,
   useRef,
   useState,
 } from "react";
 import personalSmilesData from "../../../data/personal-smiles.json";
+import personalItemsData from "../../../data/personal-items.json";
 import lastSync from "../../../data/last-sync.json";
 import EventsFeed from "@/components/EventsFeed";
 
@@ -35,6 +37,15 @@ function formatLastSync(iso: string): string {
 }
 
 export default function PersonalSmilesPage() {
+  const itemCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const item of personalItemsData.items) {
+      const key = item.owner.toLocaleLowerCase("ru");
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
+    return counts;
+  }, []);
+
   const [sortType, setSortType] =
     useState<SortType>("count");
 
@@ -288,6 +299,13 @@ export default function PersonalSmilesPage() {
                           </span>
                         </div>
                       </div>
+
+                      <Link
+                        href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}
+                        className="px-4 py-3 rounded-xl bg-white/45 border border-black/10 text-sm font-bold text-ink shadow-sm transition-all hover:bg-white"
+                      >
+                        ⚔️ Именные вещи ({itemCounts.get(player.nick.toLocaleLowerCase("ru")) ?? 0})
+                      </Link>
 
                       <button
                         type="button"

@@ -22,6 +22,7 @@ const DATA_DIR = path.resolve("data");
 const PLAYERS_PATH = path.join(DATA_DIR, "players.json");
 const CLANS_PATH = path.join(DATA_DIR, "clans.json");
 const PERSONAL_SMILES_PATH = path.join(DATA_DIR, "personal-smiles.json");
+const PERSONAL_ITEMS_PATH = path.join(DATA_DIR, "personal-items.json");
 const LAST_SYNC_PATH = path.join(DATA_DIR, "last-sync.json");
 const EVENTS_PATH = path.join(DATA_DIR, "events.json");
 const HISTORY_DIR = path.join(DATA_DIR, "history");
@@ -57,6 +58,17 @@ interface PersonalSmilesPlayer {
   [key: string]: unknown;
 }
 
+interface PersonalItem {
+  id: string;
+  name: string;
+  owner: string;
+  itemUrl?: string;
+}
+
+interface PersonalItemsData {
+  items?: PersonalItem[];
+}
+
 interface LastSync {
   updatedAt: string;
 }
@@ -87,11 +99,18 @@ interface SnapshotPersonalSmilesPlayer {
   personalSmiles: string[];
 }
 
+interface SnapshotPersonalItemsOwner {
+  owner: string;
+  itemIds: string[];
+  itemNames: string[];
+}
+
 interface Snapshot {
   createdAt: string;
   players: SnapshotPlayer[];
   clans: SnapshotClan[];
   personalSmiles: SnapshotPersonalSmilesPlayer[];
+  personalItems: SnapshotPersonalItemsOwner[];
 }
 
 type SiteEvent =
@@ -172,6 +191,19 @@ type SiteEvent =
       id: string;
       syncId: string;
       createdAt: string;
+      scope: "clans";
+      type: "personal_item_added";
+      characterId: string;
+      characterName: string;
+      profileUrl: string;
+      clanName: string;
+      amount: number;
+      itemNames: string[];
+    }
+  | {
+      id: string;
+      syncId: string;
+      createdAt: string;
       scope: "personal-smiles";
       type: "personal_smile_added";
       characterId: string;
@@ -222,6 +254,7 @@ function makeSnapshot(
   players: Player[],
   clans: Clan[],
   personalSmiles: PersonalSmilesPlayer[],
+  personalItems: PersonalItem[],
 ): Snapshot {
   return {
     createdAt,
@@ -245,6 +278,18 @@ function makeSnapshot(
         name: cleanString(clan.name),
         smilesCount: cleanNumber(clan.smilesCount),
       })),
+    personalItems: Array.from(
+      personalItems.reduce((map, item) => {
+        const owner = cleanString(item.owner);
+        const id = cleanString(item.id);
+        if (!owner || !id) return map;
+        const current = map.get(owner) ?? { owner, itemIds: [], itemNames: [] };
+        current.itemIds.push(id);
+        current.itemNames.push(cleanString(item.name));
+        map.set(owner, current);
+        return map;
+      }, new Map<string, SnapshotPersonalItemsOwner>()).values(),
+    ),
     personalSmiles: personalSmiles
       .filter((player) => cleanString(player.cuid) !== "")
       .map((player) => {
@@ -547,14 +592,47 @@ function buildEvents(
     });
   }
 
+  const previousItemsByOwner = new Map(
+    (previous.personalItems ?? []).map((owner) => [owner.owner.toLocaleLowerCase("ru"), owner]),
+  );
+  const playersByNick = new Map(
+    current.players.map((player) => [player.nick.toLocaleLowerCase("ru"), player]),
+  );
+
+  for (const owner of current.personalItems ?? []) {
+    const previousOwner = previousItemsByOwner.get(owner.owner.toLocaleLowerCase("ru"));
+    if (!previousOwner) continue;
+    const oldIds = new Set(previousOwner.itemIds);
+    const addedIndexes = owner.itemIds
+      .map((id, index) => ({ id, index }))
+      .filter(({ id }) => !oldIds.has(id))
+      .map(({ index }) => index);
+    if (!addedIndexes.length) continue;
+    const player = playersByNick.get(owner.owner.toLocaleLowerCase("ru"));
+    events.push({
+      id: randomUUID(),
+      syncId,
+      createdAt: syncId,
+      scope: "clans",
+      type: "personal_item_added",
+      characterId: player?.cuid || owner.owner,
+      characterName: player?.nick || owner.owner,
+      profileUrl: player?.profileUrl || "",
+      clanName: player?.clanName || "",
+      amount: addedIndexes.length,
+      itemNames: addedIndexes.map((index) => owner.itemNames[index]).filter(Boolean),
+    });
+  }
+
   return events;
 }
 
 async function main(): Promise<void> {
-  const [players, clans, personalSmiles, lastSync] = await Promise.all([
+  const [players, clans, personalSmiles, personalItemsData, lastSync] = await Promise.all([
     readJson<Player[]>(PLAYERS_PATH),
     readJson<Clan[]>(CLANS_PATH),
     readJsonOr<PersonalSmilesPlayer[]>(PERSONAL_SMILES_PATH, []),
+    readJsonOr<PersonalItemsData>(PERSONAL_ITEMS_PATH, { items: [] }),
     readJson<LastSync>(LAST_SYNC_PATH),
   ]);
 
@@ -585,6 +663,7 @@ async function main(): Promise<void> {
     players,
     clans,
     personalSmiles,
+    Array.isArray(personalItemsData.items) ? personalItemsData.items : [],
   );
 
   const previousSnapshot = await readJsonOr<Snapshot | null>(

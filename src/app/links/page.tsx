@@ -3,6 +3,8 @@ import {
   MapIcon,
   SmilesCollectionIcon,
   HunterBoardIcon,
+  GiftIcon,
+  PlayersIcon,
 } from "@/components/SiteIcons";
 
 const usefulLinks = [
@@ -21,6 +23,22 @@ const usefulLinks = [
     title: "Личные смайлики!",
     description:
       "Посмотреть личные смайликовые коллекции: у кого сколько и какие :)",
+  },
+  {
+    href: "/personal-items",
+    icon: GiftIcon,
+    category: "Уникальные коллекции",
+    title: "Именные вещи",
+    description:
+      "Все уникальные вещи Древнего Мира, аккуратно собранные по их владельцам.",
+  },
+  {
+    href: "/couples",
+    icon: PlayersIcon,
+    category: "Любовь в Древнем Мире",
+    title: "Семейные пары",
+    description:
+      "Кто с кем состоит в браке, с какой даты и какие коллекции есть у пары.",
   },
   {
     href: "/hunter-board",

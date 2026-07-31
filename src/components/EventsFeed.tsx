@@ -96,6 +96,17 @@ type ClanSmileAddedEvent = BaseEvent & {
   newCount: number;
 };
 
+type PersonalItemAddedEvent = BaseEvent & {
+  scope: "clans";
+  type: "personal_item_added";
+  characterId: string;
+  characterName: string;
+  profileUrl: string;
+  clanName: string;
+  amount: number;
+  itemNames: string[];
+};
+
 type PersonalSmileAddedEvent =
   BaseEvent & {
     scope: "personal-smiles";
@@ -117,6 +128,7 @@ type SiteEvent =
   | PlayerMarriedEvent
   | PlayerDivorcedEvent
   | ClanSmileAddedEvent
+  | PersonalItemAddedEvent
   | PersonalSmileAddedEvent;
 
 type ClanData = {
@@ -734,6 +746,18 @@ export default function EventsFeed({
 
           <span>.</span>
         </div>
+      );
+    }
+
+    if (event.type === "personal_item_added") {
+      const our = isOurClan(event.clanName);
+      return (
+        <p className={mainTextClass}>
+          {our && <span className="mr-2">🎁</span>}
+          <span>Поздравляем </span>
+          <CharacterLink profileUrl={event.profileUrl} name={event.characterName} />
+          <span> с {event.amount === 1 ? "новой именной вещью" : `${event.amount} новыми именными вещами`}{our ? "!" : "."}</span>
+        </p>
       );
     }
 

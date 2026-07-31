@@ -8,7 +8,8 @@
     "start": "next start",
     "update-clan-smiles": "tsx scripts/update-clan-smiles.ts",
     "lint": "eslint",
-    "update-ratings": "tsx scripts/update-ratings.ts"
+    "update-ratings": "tsx scripts/update-ratings.ts",
+    "update-personal-items": "tsx scripts/update-personal-items.ts"
   },
   "dependencies": {
     "@upstash/redis": "^1.38.0",
