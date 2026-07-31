@@ -24,7 +24,7 @@ type PlayerWithSmiles = {
   personalSmiles: string[];
 };
 
-type SortType = "count" | "nick";
+type SortType = "count-desc" | "count-asc" | "nick";
 
 type PersonalItem = {
   owner: string;
@@ -51,7 +51,7 @@ export default function PersonalSmilesPage() {
   }, []);
 
   const [sortType, setSortType] =
-    useState<SortType>("count");
+    useState<SortType>("count-desc");
 
   const [openedPlayers, setOpenedPlayers] =
     useState<Set<string>>(new Set());
@@ -75,8 +75,9 @@ export default function PersonalSmilesPage() {
 
     return result.sort((a, b) => {
       const countDifference =
-        b.personalSmilesCount -
-        a.personalSmilesCount;
+        sortType === "count-desc"
+          ? b.personalSmilesCount - a.personalSmilesCount
+          : a.personalSmilesCount - b.personalSmilesCount;
 
       if (countDifference !== 0) {
         return countDifference;
@@ -178,14 +179,20 @@ export default function PersonalSmilesPage() {
           <div className="flex rounded-xl bg-white/40 border border-black/10 p-1">
             <button
               type="button"
-              onClick={() => setSortType("count")}
+              onClick={() =>
+                setSortType((current) =>
+                  current === "count-desc" ? "count-asc" : "count-desc"
+                )
+              }
               className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                sortType === "count"
+                sortType !== "nick"
                   ? "bg-white text-ink shadow-sm"
                   : "text-ink-muted hover:text-ink"
               }`}
             >
-              За кількістю
+              {sortType === "count-asc"
+                ? "Менше смайликів ▲"
+                : "Більше смайликів ▼"}
             </button>
 
             <button

@@ -28,7 +28,7 @@ export default function CouplesClient({
   itemCounts: Record<string, number>;
 }) {
   const [query, setQuery] = useState("");
-  const [sort, setSort] = useState<"date" | "names">("date");
+  const [sort, setSort] = useState<"date-old" | "date-new" | "names">("date-old");
 
   const couples = useMemo(() => {
     const byName = new Map(
@@ -69,12 +69,22 @@ export default function CouplesClient({
           couple.a.nick.toLocaleLowerCase("ru").includes(normalizedQuery) ||
           couple.partnerName.toLocaleLowerCase("ru").includes(normalizedQuery),
       )
-      .sort((left, right) =>
-        sort === "names"
-          ? left.a.nick.localeCompare(right.a.nick, "ru")
-          : parseDate(left.since) - parseDate(right.since) ||
-            left.a.nick.localeCompare(right.a.nick, "ru"),
-      );
+      .sort((left, right) => {
+        if (sort === "names") {
+          return left.a.nick.localeCompare(right.a.nick, "ru");
+        }
+
+        const leftDate = parseDate(left.since);
+        const rightDate = parseDate(right.since);
+        const dateDifference =
+          sort === "date-old"
+            ? leftDate - rightDate
+            : rightDate - leftDate;
+
+        return (
+          dateDifference || left.a.nick.localeCompare(right.a.nick, "ru")
+        );
+      });
   }, [players, query, sort]);
 
   return (
@@ -114,10 +124,14 @@ export default function CouplesClient({
           />
           <div>
             <button
-              className={sort === "date" ? styles.active : ""}
-              onClick={() => setSort("date")}
+              className={sort !== "names" ? styles.active : ""}
+              onClick={() =>
+                setSort((current) =>
+                  current === "date-old" ? "date-new" : "date-old",
+                )
+              }
             >
-              Дольше вместе
+              {sort === "date-new" ? "Новые пары ▲" : "Дольше вместе ▼"}
             </button>
             <button
               className={sort === "names" ? styles.active : ""}
