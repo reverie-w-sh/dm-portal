@@ -28,6 +28,10 @@ export default function GiftsPage() {
     { title: "Лавочка с попкорном Подарок)", file: "/gifts/lavochka.gif" },
     { title: "Волчица Лени Подарок)", file: "/gifts/len-g.gif" },
     { title: "Волчонок-чеширский котик Подарок)", file: "/gifts/wolf-chechir-gift.gif" },
+    { title: "Котик пчелка Подарок)", file: "/gifts/2.gif" },
+    { title: "Собака зубастый Подарок)", file: "/gifts/3.gif" },
+    { title: "Котик милый Подарок)", file: "/gifts/4.gif" },
+    { title: "Пёсель с пивом Подарок)", file: "/gifts/5.gif" },
   ];
 
   return (
