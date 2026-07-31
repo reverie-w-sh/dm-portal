@@ -4,7 +4,7 @@ export const metadata = createPageMetadata({
   title: 'Альянсы игры «Древний Мир» (DM)',
   description: 'Список альянсов игры «Древний Мир» (DM) и их статистика.',
   path: "/alliances",
-  image: "/og/alliances.webp",
+  image: "/og/alliance.webp",
   imageAlt: 'Союз кланов и гербы альянсов',
 });
 

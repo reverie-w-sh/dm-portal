@@ -2,16 +2,12 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import personalSmilesData from "../../../data/personal-smiles.json";
 import personalItemsData from "../../../data/personal-items.json";
 import lastSync from "../../../data/last-sync.json";
 import EventsFeed from "@/components/EventsFeed";
+import styles from "../collection-pages.module.css";
 
 type PlayerWithSmiles = {
   cuid: string;
@@ -27,10 +23,7 @@ type PlayerWithSmiles = {
 };
 
 type SortType = "count-desc" | "count-asc" | "nick";
-
-type PersonalItem = {
-  owner: string;
-};
+type PersonalItem = { owner: string };
 
 function formatLastSync(iso: string): string {
   return new Date(iso).toLocaleString("uk-UA", {
@@ -45,6 +38,11 @@ function formatLastSync(iso: string): string {
 export default function PersonalSmilesPage() {
   const router = useRouter();
   const pathname = usePathname();
+  const [sortType, setSortType] = useState<SortType>("count-desc");
+  const [query, setQuery] = useState("");
+  const [openedPlayers, setOpenedPlayers] = useState<Set<string>>(new Set());
+  const playerElements = useRef<Map<string, HTMLElement>>(new Map());
+
   const itemCounts = useMemo(() => {
     const counts = new Map<string, number>();
     for (const item of personalItemsData.items as PersonalItem[]) {
@@ -54,63 +52,37 @@ export default function PersonalSmilesPage() {
     return counts;
   }, []);
 
-  const [sortType, setSortType] =
-    useState<SortType>("count-desc");
-  const [query, setQuery] = useState("");
-
-  const [openedPlayers, setOpenedPlayers] =
-    useState<Set<string>>(new Set());
-
-  const playerElements = useRef<
-    Map<string, HTMLElement>
-  >(new Map());
-
   const players = useMemo(() => {
-    const result = [
-      ...(personalSmilesData as PlayerWithSmiles[]),
-    ];
-
+    const result = [...(personalSmilesData as PlayerWithSmiles[])];
     const q = query.trim().toLocaleLowerCase("uk");
     const filtered = q
-      ? result.filter((player) =>
-          player.nick.toLocaleLowerCase("uk").includes(q),
-        )
+      ? result.filter((player) => player.nick.toLocaleLowerCase("uk").includes(q))
       : result;
 
     if (sortType === "nick") {
       return filtered.sort((a, b) =>
-        a.nick.localeCompare(b.nick, "uk", {
-          sensitivity: "base",
-        })
+        a.nick.localeCompare(b.nick, "uk", { sensitivity: "base" }),
       );
     }
 
     return filtered.sort((a, b) => {
-      const countDifference =
+      const difference =
         sortType === "count-desc"
           ? b.personalSmilesCount - a.personalSmilesCount
           : a.personalSmilesCount - b.personalSmilesCount;
 
-      if (countDifference !== 0) {
-        return countDifference;
-      }
-
-      return a.nick.localeCompare(b.nick, "uk", {
-        sensitivity: "base",
-      });
+      return (
+        difference ||
+        a.nick.localeCompare(b.nick, "uk", { sensitivity: "base" })
+      );
     });
   }, [query, sortType]);
 
   function togglePlayer(cuid: string) {
     setOpenedPlayers((current) => {
       const next = new Set(current);
-
-      if (next.has(cuid)) {
-        next.delete(cuid);
-      } else {
-        next.add(cuid);
-      }
-
+      if (next.has(cuid)) next.delete(cuid);
+      else next.add(cuid);
       return next;
     });
   }
@@ -124,21 +96,12 @@ export default function PersonalSmilesPage() {
     );
     if (selectedPlayer) setQuery(selectedPlayer.nick);
 
-    setOpenedPlayers((current) => {
-      const next = new Set(current);
-      next.add(cuid);
-      return next;
-    });
+    setOpenedPlayers((current) => new Set(current).add(cuid));
 
     window.setTimeout(() => {
       const element =
-        playerElements.current.get(cuid) ??
-        document.getElementById(`player-${cuid}`);
-
-      element?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+        playerElements.current.get(cuid) ?? document.getElementById(`player-${cuid}`);
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 250);
   }, []);
 
@@ -148,310 +111,200 @@ export default function PersonalSmilesPage() {
   }
 
   function openPlayerFromEvent(cuid: string) {
-    setOpenedPlayers((current) => {
-      const next = new Set(current);
-      next.add(cuid);
-
-      return next;
-    });
-
-    /*
-     * Даём React время развернуть коллекцию,
-     * после чего плавно прокручиваем страницу
-     * к нужному игроку.
-     */
+    setOpenedPlayers((current) => new Set(current).add(cuid));
     window.setTimeout(() => {
-      const element =
-        playerElements.current.get(cuid);
-
-      element?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      playerElements.current
+        .get(cuid)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
   }
 
   return (
-    <div className="max-w-[1180px] mx-auto px-6 py-10">
-      <div className="mb-8">
-        <div className="flex items-start gap-4">
-          <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/70 border border-black/10 flex items-center justify-center text-3xl shadow-sm">
-            🙂
-          </div>
-
-          <div className="min-w-0 flex-1">
-            <h1 className="inner-page-title text-3xl font-black tracking-tight">
-              Особисті колекції смайликів
-            </h1>
-
-            <p className="text-ink-muted mt-2 max-w-2xl">
-              Тут зібрані особисті смайлики гравців
-              ДМ. Колекцію кожного гравця можна
-              розгорнути та переглянути прямо на
-              сторінці.
+    <main className={styles.page}>
+      <section className={styles.shell}>
+        <header className={styles.hero}>
+          <div className={styles.heroIcon}>🙂</div>
+          <div>
+            <h1>Особисті колекції смайликів</h1>
+            <p className={styles.heroDescription}>
+              Тут зібрані особисті смайлики гравців ДМ. Колекцію кожного гравця можна
+              розгорнути та переглянути прямо на сторінці.
               <br />
               А кнопочка «Іменні речі» відкриє колекцію персональних зображень на речах. Обов'язково зазирніть - там є на що подивитися ;)
             </p>
-
-            <p className="text-ink-muted/70 text-xs mt-2">
-              Оновлення даних:{" "}
-              {formatLastSync(lastSync.updatedAt)}
+            <p className={styles.updatedInline}>
+              Оновлення даних: {formatLastSync(lastSync.updatedAt)}
             </p>
-
-            <EventsFeed
-              scope="personal-smiles"
-              variant="light"
-              onOpenPlayer={openPlayerFromEvent}
-            />
           </div>
+        </header>
+
+        <div className={styles.eventsBlock}>
+          <EventsFeed
+            scope="personal-smiles"
+            variant="dark"
+            onOpenPlayer={openPlayerFromEvent}
+          />
         </div>
 
-        <div className="divider-accent mt-7" />
-      </div>
-
-      <div className="flex flex-col gap-4 mb-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div className="text-sm text-ink-muted">
-            Знайдено колекцій:{" "}
-            <span className="font-bold text-ink">
-              {players.length}
+        <div className={styles.smileToolbar}>
+          <div className={styles.stats}>
+            <span>
+              Знайдено колекцій: <b>{players.length}</b>
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-          <span className="text-sm text-ink-muted">
-            Сортувати:
-          </span>
+          <div className={styles.controls}>
+            <div className={styles.searchWrap}>
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Знайти гравця…"
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={clearQuery}
+                  aria-label="Очистити пошук"
+                  title="Очистити пошук"
+                  className={styles.clearSearch}
+                >
+                  ×
+                </button>
+              )}
+            </div>
 
-          <div className="flex rounded-xl bg-white/40 border border-black/10 p-1">
-            <button
-              type="button"
-              onClick={() =>
-                setSortType((current) =>
-                  current === "count-desc" ? "count-asc" : "count-desc"
-                )
-              }
-              className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                sortType !== "nick"
-                  ? "bg-white text-ink shadow-sm"
-                  : "text-ink-muted hover:text-ink"
-              }`}
-            >
-              {sortType === "count-asc"
-                ? "Менше смайликів ▲"
-                : "Більше смайликів ▼"}
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setSortType("nick")}
-              className={`px-4 py-2 rounded-lg text-sm font-bold transition-all ${
-                sortType === "nick"
-                  ? "bg-white text-ink shadow-sm"
-                  : "text-ink-muted hover:text-ink"
-              }`}
-            >
-              За ніком
-            </button>
+            <div>
+              <button
+                type="button"
+                onClick={() =>
+                  setSortType((current) =>
+                    current === "count-desc" ? "count-asc" : "count-desc",
+                  )
+                }
+                className={sortType !== "nick" ? styles.active : ""}
+              >
+                {sortType === "count-asc"
+                  ? "Менше смайликів ▲"
+                  : "Більше смайликів ▼"}
+              </button>
+              <button
+                type="button"
+                onClick={() => setSortType("nick")}
+                className={sortType === "nick" ? styles.active : ""}
+              >
+                За ніком
+              </button>
+            </div>
           </div>
         </div>
-        </div>
 
-        <div className="relative w-full sm:max-w-[480px]">
-          <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Знайти гравця…"
-            className="w-full rounded-xl border border-black/10 bg-white/55 px-4 py-3 pr-12 text-ink outline-none transition-all focus:border-[#c08a3a]/60 focus:ring-4 focus:ring-[#c08a3a]/10"
-          />
-          {query && (
-            <button
-              type="button"
-              onClick={clearQuery}
-              aria-label="Очистити пошук"
-              title="Очистити пошук"
-              className="absolute right-3 top-1/2 grid h-5 w-5 -translate-y-1/2 place-items-center rounded-full bg-black/25 text-xs font-black text-white cursor-pointer transition-colors hover:bg-[#c08a3a] hover:text-[#20160a]"
-            >
-              ×
-            </button>
-          )}
-        </div>
-      </div>
+        {players.length === 0 ? (
+          <div className={styles.empty}>
+            <div className={styles.emptyIcon}>🙂</div>
+            <p>Особисті смайлики поки не знайдені</p>
+          </div>
+        ) : (
+          <div className={styles.groups}>
+            {players.map((player) => {
+              const isOpened = openedPlayers.has(player.cuid);
+              const clanCrestUrl = player.clanId
+                ? `https://dm-game.com/pics/clanpic/clan_${player.clanId}.gif`
+                : "";
 
-      {players.length === 0 ? (
-        <div className="glass rounded-2xl p-10 text-center">
-          <div className="text-4xl mb-4">🙂</div>
-
-          <p className="font-bold text-ink">
-            Особисті смайлики поки не знайдені
-          </p>
-        </div>
-      ) : (
-        <div className="space-y-4">
-          {players.map((player) => {
-            const isOpened =
-              openedPlayers.has(player.cuid);
-
-            const clanCrestUrl = player.clanId
-              ? `https://dm-game.com/pics/clanpic/clan_${player.clanId}.gif`
-              : "";
-
-            return (
-              <article
-                key={player.cuid}
-                id={`player-${player.cuid}`}
-                ref={(element) => {
-                  if (element) {
-                    playerElements.current.set(
-                      player.cuid,
-                      element
-                    );
-                  } else {
-                    playerElements.current.delete(
-                      player.cuid
-                    );
-                  }
-                }}
-                className="glass scroll-mt-6 rounded-2xl overflow-hidden border border-white/30 transition-shadow hover:shadow-[0_12px_35px_rgba(0,0,0,.08)]"
-              >
-                <div className="p-5 md:p-6">
-                  <div className="flex flex-col md:flex-row md:items-center gap-5">
-                    <div className="flex items-center gap-4 min-w-0 flex-1">
-                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-white/60 border border-black/10 flex items-center justify-center text-xl font-black text-ink">
-                        {player.nick
-                          .trim()
-                          .charAt(0)
-                          .toUpperCase()}
+              return (
+                <article
+                  key={player.cuid}
+                  id={`player-${player.cuid}`}
+                  ref={(element) => {
+                    if (element) playerElements.current.set(player.cuid, element);
+                    else playerElements.current.delete(player.cuid);
+                  }}
+                  className={`${styles.group} ${styles.smileGroup}`}
+                >
+                  <div className={styles.groupHead}>
+                    <div className={styles.smileOwner}>
+                      <div className={styles.avatar}>
+                        {player.nick.trim().charAt(0).toUpperCase()}
                       </div>
-
-                      <div className="min-w-0">
-                        <a
-                          href={player.profileUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-2 text-xl font-black text-ink hover:opacity-65 transition-opacity break-words"
-                        >
-                          {player.nick}
-
-                          <span className="text-xs font-normal">
-                            ↗
-                          </span>
-                        </a>
-
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-2 text-sm text-ink-muted">
-                          <span>
-                            {player.level} рівень
-                          </span>
-
+                      <div>
+                        <h2>
+                          <a href={player.profileUrl} target="_blank" rel="noreferrer">
+                            {player.nick} <small>↗</small>
+                          </a>
+                        </h2>
+                        <p className={styles.ownerMeta}>
+                          <span>{player.level} рівень</span>
                           {player.clanName && (
-                            <span className="flex items-center gap-2">
+                            <span className={styles.clanMeta}>
                               {clanCrestUrl && (
                                 // eslint-disable-next-line @next/next/no-img-element
-                                <img
-                                  src={clanCrestUrl}
-                                  alt=""
-                                  width={19}
-                                  height={19}
-                                  className="object-contain"
-                                />
+                                <img src={clanCrestUrl} alt="" width={19} height={19} />
                               )}
-
-                              <span>
-                                {player.clanName}
-                              </span>
+                              {player.clanName}
                             </span>
                           )}
-                        </div>
+                        </p>
                       </div>
                     </div>
 
-                    <div className="flex items-center justify-between md:justify-end gap-4">
-                      <div className="shrink-0">
-                        <div className="text-xs uppercase tracking-[0.15em] text-ink-muted mb-1">
-                          У колекції
-                        </div>
-
-                        <div className="text-xl font-black text-ink">
-                          {player.personalSmilesCount}{" "}
-                          <span className="text-sm font-bold text-ink-muted">
-                            смайликів
-                          </span>
-                        </div>
-                      </div>
-
+                    <div className={styles.groupActions}>
+                      <strong>
+                        {player.personalSmilesCount} смайликів
+                      </strong>
                       <button
                         type="button"
-                        onClick={() =>
-                          togglePlayer(player.cuid)
-                        }
+                        onClick={() => togglePlayer(player.cuid)}
                         aria-expanded={isOpened}
-                        className="min-w-[175px] px-4 py-3 rounded-xl bg-white/65 border border-black/10 text-sm font-bold text-ink shadow-sm transition-all hover:bg-white hover:-translate-y-0.5"
+                        className={styles.collectionLink}
                       >
                         {isOpened
                           ? "Сховати смайлики ↑"
                           : "Переглянути смайлики ↓"}
                       </button>
-
                       <Link
                         href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}
-                        className="px-4 py-3 rounded-xl bg-white/45 border border-black/10 text-sm font-bold text-ink shadow-sm transition-all hover:bg-white"
+                        className={styles.collectionLink}
                       >
                         ⚔️ Іменні речі ({itemCounts.get(player.nick.toLocaleLowerCase("ru")) ?? 0})
                       </Link>
                     </div>
                   </div>
-                </div>
 
-                {isOpened && (
-                  <div className="border-t border-black/10 bg-white/20 px-5 py-6 md:px-6">
-                    <div className="flex flex-wrap items-center justify-center gap-3">
-                      {player.personalSmiles.map(
-                        (
-                          smileUrl,
-                          smileIndex
-                        ) => (
+                  {isOpened && (
+                    <div className={styles.smilePanel}>
+                      <div className={styles.smileGrid}>
+                        {player.personalSmiles.map((smileUrl, smileIndex) => (
                           <a
                             key={`${player.cuid}-${smileUrl}`}
                             href={smileUrl}
                             target="_blank"
                             rel="noreferrer"
-                            title={`Смайлик ${
-                              smileIndex + 1
-                            }`}
-                            className="flex items-center justify-center min-w-[72px] min-h-[72px] p-2 rounded-xl bg-white/65 border border-black/10 shadow-sm transition-all hover:bg-white hover:scale-105"
+                            title={`Смайлик ${smileIndex + 1}`}
+                            className={styles.smileCard}
                           >
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                               src={smileUrl}
-                              alt={`Смайлик ${
-                                player.nick
-                              } ${smileIndex + 1}`}
+                              alt={`Смайлик ${player.nick} ${smileIndex + 1}`}
                               loading="lazy"
-                              className="max-w-[100px] max-h-[100px] object-contain"
                             />
                           </a>
-                        )
-                      )}
-                    </div>
+                        ))}
+                      </div>
 
-                    <div className="mt-6 text-center">
-                      <a
-                        href={player.smilesPageUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-bold text-ink-muted hover:text-ink transition-colors"
-                      >
-                        Відкрити колекцію на сайті гри
-                        <span>↗</span>
-                      </a>
+                      <div className={styles.smileExternal}>
+                        <a href={player.smilesPageUrl} target="_blank" rel="noreferrer">
+                          Відкрити колекцію на сайті гри ↗
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                )}
-              </article>
-            );
-          })}
-        </div>
-      )}
-    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        )}
+      </section>
+    </main>
   );
 }

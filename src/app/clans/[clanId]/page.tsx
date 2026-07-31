@@ -63,7 +63,27 @@ export async function generateMetadata(
     title,
     description,
     alternates: { canonical },
-    openGraph: { title, description, url: canonical },
+    openGraph: {
+      type: "website",
+      title,
+      description,
+      url: canonical,
+      images: [
+        {
+          url: "/og/clans.webp",
+          width: 1200,
+          height: 630,
+          alt: `Клан ${clan.name} в игре «Древний Мир»`,
+          type: "image/webp",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og/clans.webp"],
+    },
   };
 }
 
