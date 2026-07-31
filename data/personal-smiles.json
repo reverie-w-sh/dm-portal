@@ -780,9 +780,9 @@
     "cuid": "1979",
     "nick": "Ежик в разрезе",
     "level": 10,
-    "clanId": "212",
-    "clanName": "Лесные Оборотни",
-    "clanIcon": "clan_212.gif",
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1979",
     "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=1979",
     "personalSmilesCount": 12,
@@ -870,6 +870,29 @@
       "https://dm-game.com/layout/all/smiles/prv_milli5.gif",
       "https://dm-game.com/layout/all/smiles/prv_milli6.gif",
       "https://dm-game.com/layout/all/smiles/prv_milli7.gif"
+    ]
+  },
+  {
+    "cuid": "1389",
+    "nick": "ZaraZa",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1389",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=1389",
+    "personalSmilesCount": 10,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_trotil2.gif",
+      "https://dm-game.com/layout/all/smiles/prv_trotil3.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf1.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf2.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf3.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf4.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf5.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf6.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf7.gif",
+      "https://dm-game.com/layout/all/smiles/prv_murf8.gif"
     ]
   },
   {
@@ -1105,9 +1128,9 @@
     "cuid": "1401",
     "nick": "melnikov",
     "level": 11,
-    "clanId": "212",
-    "clanName": "Лесные Оборотни",
-    "clanIcon": "clan_212.gif",
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
     "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1401",
     "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=1401",
     "personalSmilesCount": 7,
@@ -1448,6 +1471,36 @@
     ]
   },
   {
+    "cuid": "1650",
+    "nick": "Жрец",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1650",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=1650",
+    "personalSmilesCount": 2,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_zlv.gif",
+      "https://dm-game.com/layout/all/smiles/prv_zlv2.gif"
+    ]
+  },
+  {
+    "cuid": "1170",
+    "nick": "Зло_",
+    "level": 10,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1170",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=1170",
+    "personalSmilesCount": 2,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_battle.gif",
+      "https://dm-game.com/layout/all/smiles/amazon.gif"
+    ]
+  },
+  {
     "cuid": "1921",
     "nick": "МАСКА",
     "level": 12,
@@ -1475,6 +1528,21 @@
     "personalSmiles": [
       "https://dm-game.com/layout/all/smiles/prv_shar_fly.gif",
       "https://dm-game.com/layout/all/smiles/prv_shrf3.gif"
+    ]
+  },
+  {
+    "cuid": "6788",
+    "nick": "Тави",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6788",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=6788",
+    "personalSmilesCount": 2,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_tvedm.gif",
+      "https://dm-game.com/layout/all/smiles/prv_tvedm2.gif"
     ]
   },
   {
@@ -1553,6 +1621,21 @@
     ]
   },
   {
+    "cuid": "2243",
+    "nick": "Esey",
+    "level": 11,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2243",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=2243",
+    "personalSmilesCount": 2,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/gav-gav.gif",
+      "https://dm-game.com/layout/all/smiles/kissms.gif"
+    ]
+  },
+  {
     "cuid": "12202",
     "nick": "Exava",
     "level": 9,
@@ -1595,6 +1678,21 @@
     "personalSmiles": [
       "https://dm-game.com/layout/all/smiles/prv_jeweler1.gif",
       "https://dm-game.com/layout/all/smiles/prv_jeweler2.gif"
+    ]
+  },
+  {
+    "cuid": "2307",
+    "nick": "MeXaHuK",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2307",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=2307",
+    "personalSmilesCount": 2,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_jump.gif",
+      "https://dm-game.com/layout/all/smiles/prv_topgo.gif"
     ]
   },
   {
@@ -1671,6 +1769,48 @@
     ]
   },
   {
+    "cuid": "6756",
+    "nick": "Красавица",
+    "level": 8,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6756",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=6756",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_beauty.gif"
+    ]
+  },
+  {
+    "cuid": "2069",
+    "nick": "Мася",
+    "level": 6,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2069",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=2069",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/masya.gif"
+    ]
+  },
+  {
+    "cuid": "3452",
+    "nick": "Маша Жара",
+    "level": 5,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3452",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=3452",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/privetstvie.gif"
+    ]
+  },
+  {
     "cuid": "4043",
     "nick": "МаJIиНа",
     "level": 11,
@@ -1727,6 +1867,20 @@
     ]
   },
   {
+    "cuid": "8455",
+    "nick": "Рейнеке Лис",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8455",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=8455",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_liskiss3.gif"
+    ]
+  },
+  {
     "cuid": "2011",
     "nick": "Сайонара",
     "level": 10,
@@ -1738,6 +1892,20 @@
     "personalSmilesCount": 1,
     "personalSmiles": [
       "https://dm-game.com/layout/all/smiles/prv_catlove.gif"
+    ]
+  },
+  {
+    "cuid": "10474",
+    "nick": "Тинаму",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10474",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=10474",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_tinamu.gif"
     ]
   },
   {
@@ -1808,6 +1976,20 @@
     "personalSmilesCount": 1,
     "personalSmiles": [
       "https://dm-game.com/layout/all/smiles/prv_pomidor.gif"
+    ]
+  },
+  {
+    "cuid": "2150",
+    "nick": "Anna1111",
+    "level": 9,
+    "clanId": "",
+    "clanName": "",
+    "clanIcon": "",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2150",
+    "smilesPageUrl": "https://dm-game.com/xmir/b/smiles_old.php?u=2150",
+    "personalSmilesCount": 1,
+    "personalSmiles": [
+      "https://dm-game.com/layout/all/smiles/hllwng.gif"
     ]
   },
   {
