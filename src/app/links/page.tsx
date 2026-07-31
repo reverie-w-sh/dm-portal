@@ -1,45 +1,11 @@
 import Link from "next/link";
-import type { SVGProps } from "react";
 import {
   MapIcon,
   SmilesCollectionIcon,
   HunterBoardIcon,
+  GiftIcon,
+  PlayersIcon,
 } from "@/components/SiteIcons";
-
-function EquipmentIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M34 8 48 14v13c0 11-5.8 20.2-14 25-8.2-4.8-14-14-14-25V14L34 8Z"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinejoin="round"
-      />
-      <path
-        d="m16 50 5-5m-2-28 28 28m-23 4-9-9 5-5 9 9-5 5Zm22-28-6 1-20 20 5 5 20-20 1-6Z"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function CouplesIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M32 18c-3.7-6.6-14-5.4-14 3.9 0 7.5 8.7 12.3 14 17.2 5.3-4.9 14-9.7 14-17.2 0-9.3-10.3-10.5-14-3.9Z"
-        stroke="currentColor"
-        strokeWidth="3"
-        strokeLinejoin="round"
-      />
-      <circle cx="24" cy="45" r="9" stroke="currentColor" strokeWidth="3" />
-      <circle cx="40" cy="45" r="9" stroke="currentColor" strokeWidth="3" />
-    </svg>
-  );
-}
 
 const usefulLinks = [
   {
@@ -92,7 +58,7 @@ const usefulLinks = [
   },
   {
     href: "/personal-items",
-    icon: EquipmentIcon,
+    icon: GiftIcon,
     category: "Уникальные картинки",
     title: "Именные вещи",
     description:
@@ -100,7 +66,7 @@ const usefulLinks = [
   },
   {
     href: "/couples",
-    icon: CouplesIcon,
+    icon: PlayersIcon,
     category: "Страничка про любовь :)",
     title: "Семейные пары",
     description:
