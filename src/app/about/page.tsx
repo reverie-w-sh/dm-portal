@@ -7,6 +7,18 @@ const NEMETS_PROFILE =
 const LEN_PROFILE =
   "https://dm-game.com/index.php?file=infouser&cuid=4441";
 
+function GoldenPaw() {
+  return (
+    <span className={styles.paw} aria-hidden="true">
+      <i className={styles.toe1} />
+      <i className={styles.toe2} />
+      <i className={styles.toe3} />
+      <i className={styles.toe4} />
+      <i className={styles.pad} />
+    </span>
+  );
+}
+
 export default function AboutPage() {
   return (
     <main className={styles.page}>
@@ -19,17 +31,12 @@ export default function AboutPage() {
           </div>
           <div className={styles.titleOrnament} aria-hidden="true">
             <span />
-            <b>🐾</b>
+            <GoldenPaw />
             <span />
           </div>
         </header>
 
         <section className={styles.panel}>
-          <span className={styles.cornerTL} aria-hidden="true" />
-          <span className={styles.cornerTR} aria-hidden="true" />
-          <span className={styles.cornerBL} aria-hidden="true" />
-          <span className={styles.cornerBR} aria-hidden="true" />
-
           <div className={styles.visual}>
             <Image
               src="/images/about/history-emblem.webp"
@@ -48,11 +55,6 @@ export default function AboutPage() {
         </section>
 
         <section className={`${styles.panel} ${styles.recruitmentPanel}`}>
-          <span className={styles.cornerTL} aria-hidden="true" />
-          <span className={styles.cornerTR} aria-hidden="true" />
-          <span className={styles.cornerBL} aria-hidden="true" />
-          <span className={styles.cornerBR} aria-hidden="true" />
-
           <div className={styles.visual}>
             <Image
               src="/images/about/recruitment-book.webp"
@@ -66,7 +68,7 @@ export default function AboutPage() {
             <h2>Приём в клан</h2>
             <div className={styles.subOrnament} aria-hidden="true">
               <span />
-              <b>🐾</b>
+              <GoldenPaw />
               <span />
             </div>
 
@@ -82,7 +84,7 @@ export default function AboutPage() {
               <p>Тебе необходимо сделать следующее:</p>
               <ul>
                 <li>
-                  занести в отдел <Link href="/alliances">«Свои»</Link> медкнижку
+                  занести в отдел <Link href="/clans/278">«Свои»</Link> медкнижку
                   об отсутствии блох, глистов и наличии всех прививок, в т.ч.
                   прививка от бешенства.
                 </li>
