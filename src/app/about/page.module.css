@@ -1,0 +1,163 @@
+.page {
+  min-height: calc(100vh - 74px);
+  padding: 40px 24px 64px;
+  color: #ead7b4;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(112, 67, 20, 0.18), transparent 34%),
+    linear-gradient(180deg, #0d100f 0%, #070a09 100%);
+}
+
+.shell {
+  width: min(1060px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.header,
+.card {
+  border: 1px solid rgba(154, 99, 27, 0.68);
+  background:
+    linear-gradient(135deg, rgba(52, 34, 15, 0.3), transparent 42%),
+    rgba(9, 12, 11, 0.94);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 229, 176, 0.04),
+    0 18px 45px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  min-height: 150px;
+  border-radius: 26px;
+  padding: 28px 34px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.headerIcon {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(174, 112, 25, 0.75);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.32);
+  color: #e3a843;
+  font-size: 34px;
+  box-shadow: inset 0 0 28px rgba(182, 111, 24, 0.08);
+}
+
+.header h1,
+.card h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f0d69f;
+  text-shadow: 0 1px 16px rgba(221, 157, 54, 0.1);
+}
+
+.header h1 {
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.card {
+  border-radius: 24px;
+  padding: clamp(26px, 5vw, 46px);
+}
+
+.card h2 {
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(139, 88, 23, 0.5);
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.12;
+}
+
+.story,
+.text {
+  margin: 0;
+  font-size: clamp(18px, 2.1vw, 22px);
+  line-height: 1.75;
+  color: #dfcaa3;
+}
+
+.text {
+  display: grid;
+  gap: 16px;
+}
+
+.text p {
+  margin: 0;
+}
+
+.emphasis {
+  color: #f1c56e;
+  font-weight: 800;
+}
+
+.text a {
+  color: #e2a43a;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(226, 164, 58, 0.42);
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.text a:hover {
+  color: #ffd78a;
+  border-color: #ffd78a;
+}
+
+.text ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 15px;
+}
+
+.text li {
+  position: relative;
+  padding-left: 31px;
+}
+
+.text li::before {
+  content: "🐾";
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  color: #d99a31;
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 24px 16px 48px;
+  }
+
+  .header {
+    min-height: auto;
+    padding: 24px;
+    gap: 17px;
+  }
+
+  .headerIcon {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    font-size: 26px;
+  }
+
+  .card {
+    border-radius: 20px;
+    padding: 24px 20px;
+  }
+
+  .story,
+  .text {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+}

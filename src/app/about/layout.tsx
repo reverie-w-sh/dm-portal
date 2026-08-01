@@ -2,9 +2,10 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "О клане die Wölfchen",
-  description: "История клана die Wölfchen, наши ценности, союзники и немного о нас.",
+  description:
+    "Клан создан 15.06.2026. Началось все с триумфального возвращения Шпиля за несколько дней до этой даты...",
   path: "/about",
-  image: "/og/home.webp",
+  image: "/og/about.webp",
   imageAlt: "О клане die Wölfchen",
 });
 
