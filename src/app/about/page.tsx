@@ -12,27 +12,30 @@ export default function AboutPage() {
     <main className={styles.page}>
       <div className={styles.shell}>
         <header className={styles.heading}>
-          <span className={styles.headingLine} aria-hidden="true" />
-          <div className={styles.headingCenter}>
+          <div className={styles.titleRow}>
+            <span className={styles.titleLine} aria-hidden="true" />
             <h1>О клане</h1>
-            <div className={styles.headingMark} aria-hidden="true">
-              <span />
-              <b>🐾</b>
-              <span />
-            </div>
+            <span className={styles.titleLine} aria-hidden="true" />
           </div>
-          <span className={styles.headingLine} aria-hidden="true" />
+          <div className={styles.titleOrnament} aria-hidden="true">
+            <span />
+            <b>🐾</b>
+            <span />
+          </div>
         </header>
 
         <section className={styles.panel}>
-          <span className={styles.cornerBottom} aria-hidden="true" />
+          <span className={styles.cornerTL} aria-hidden="true" />
+          <span className={styles.cornerTR} aria-hidden="true" />
+          <span className={styles.cornerBL} aria-hidden="true" />
+          <span className={styles.cornerBR} aria-hidden="true" />
 
           <div className={styles.visual}>
             <Image
               src="/images/about/history-emblem.webp"
               alt=""
-              width={182}
-              height={187}
+              width={170}
+              height={170}
               priority
             />
           </div>
@@ -45,20 +48,27 @@ export default function AboutPage() {
         </section>
 
         <section className={`${styles.panel} ${styles.recruitmentPanel}`}>
-          <span className={styles.cornerBottom} aria-hidden="true" />
+          <span className={styles.cornerTL} aria-hidden="true" />
+          <span className={styles.cornerTR} aria-hidden="true" />
+          <span className={styles.cornerBL} aria-hidden="true" />
+          <span className={styles.cornerBR} aria-hidden="true" />
 
           <div className={styles.visual}>
             <Image
               src="/images/about/recruitment-book.webp"
               alt=""
-              width={180}
+              width={185}
               height={210}
             />
           </div>
 
           <div className={styles.content}>
             <h2>Приём в клан</h2>
-            <div className={styles.titleRule} aria-hidden="true" />
+            <div className={styles.subOrnament} aria-hidden="true">
+              <span />
+              <b>🐾</b>
+              <span />
+            </div>
 
             <div className={styles.text}>
               <p>
@@ -68,11 +78,8 @@ export default function AboutPage() {
                 </a>
                 .
               </p>
-
               <p>До постели!</p>
-
               <p>Тебе необходимо сделать следующее:</p>
-
               <ul>
                 <li>
                   занести в отдел <Link href="/alliances">«Свои»</Link> медкнижку
