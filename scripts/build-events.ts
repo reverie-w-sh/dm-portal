@@ -29,6 +29,29 @@ const HISTORY_DIR = path.join(DATA_DIR, "history");
 const LAST_STATE_PATH = path.join(HISTORY_DIR, "last-state.json");
 
 const NINETY_DAYS_MS = 90 * 24 * 60 * 60 * 1000;
+const WEDDING_EVENTS_FROM = Date.UTC(2026, 7, 1);
+const MAX_MARRIAGE_EVENTS_PER_SYNC = 20;
+
+function parseGameDate(value: string): number | null {
+  const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value.trim());
+  if (!match) return null;
+
+  const day = Number(match[1]);
+  const month = Number(match[2]);
+  const year = Number(match[3]);
+  const time = Date.UTC(year, month - 1, day);
+  const date = new Date(time);
+
+  if (
+    date.getUTCFullYear() !== year ||
+    date.getUTCMonth() !== month - 1 ||
+    date.getUTCDate() !== day
+  ) {
+    return null;
+  }
+
+  return time;
+}
 
 interface Player {
   cuid: string;
@@ -191,19 +214,6 @@ type SiteEvent =
       id: string;
       syncId: string;
       createdAt: string;
-      scope: "clans";
-      type: "personal_item_added";
-      characterId: string;
-      characterName: string;
-      profileUrl: string;
-      clanName: string;
-      amount: number;
-      itemNames: string[];
-    }
-  | {
-      id: string;
-      syncId: string;
-      createdAt: string;
       scope: "personal-smiles";
       type: "personal_smile_added";
       characterId: string;
@@ -323,6 +333,7 @@ function buildEvents(
   syncId: string,
 ): SiteEvent[] {
   const events: SiteEvent[] = [];
+  const marriageEvents: SiteEvent[] = [];
   const marriageEventKeys = new Set<string>();
 
   const previousPlayers = new Map(
@@ -481,7 +492,7 @@ function buildEvents(
 
           if (!marriageEventKeys.has(divorceKey)) {
             marriageEventKeys.add(divorceKey);
-            events.push({
+            marriageEvents.push({
               id: randomUUID(),
               syncId,
               createdAt: syncId,
@@ -496,24 +507,33 @@ function buildEvents(
         }
 
         if (newPartner) {
-          const weddingKey = `wedding:${[characterName, newPartner]
-            .sort((a, b) => a.localeCompare(b, "ru"))
-            .join("|")}`;
+          const marriageDate = parseGameDate(currentPlayer.marriageSince);
 
-          if (!marriageEventKeys.has(weddingKey)) {
-            marriageEventKeys.add(weddingKey);
-            events.push({
-              id: randomUUID(),
-              syncId,
-              createdAt: syncId,
-              scope: "clans",
-              type: "player_married",
-              characterId: cuid,
-              characterName,
-              profileUrl,
-              partnerName: newPartner,
-              marriageSince: currentPlayer.marriageSince,
-            });
+          /*
+           * В ленту кланов попадают только свадьбы, состоявшиеся
+           * 01.08.2026 или позже. Более старые браки являются базовыми
+           * данными страницы «Семейные пары», а не новыми событиями.
+           */
+          if (marriageDate !== null && marriageDate >= WEDDING_EVENTS_FROM) {
+            const weddingKey = `wedding:${[characterName, newPartner]
+              .sort((a, b) => a.localeCompare(b, "ru"))
+              .join("|")}`;
+
+            if (!marriageEventKeys.has(weddingKey)) {
+              marriageEventKeys.add(weddingKey);
+              marriageEvents.push({
+                id: randomUUID(),
+                syncId,
+                createdAt: syncId,
+                scope: "clans",
+                type: "player_married",
+                characterId: cuid,
+                characterName,
+                profileUrl,
+                partnerName: newPartner,
+                marriageSince: currentPlayer.marriageSince,
+              });
+            }
           }
         }
       }
@@ -592,36 +612,19 @@ function buildEvents(
     });
   }
 
-  const previousItemsByOwner = new Map(
-    (previous.personalItems ?? []).map((owner) => [owner.owner.toLocaleLowerCase("ru"), owner]),
-  );
-  const playersByNick = new Map(
-    current.players.map((player) => [player.nick.toLocaleLowerCase("ru"), player]),
-  );
+  /*
+   * Именные вещи не являются редким событием: персонажи могут
+   * заколдовывать много старых вещей за день. Поэтому изменения
+   * personal-items.json намеренно не попадают в ленту кланов.
+   */
 
-  for (const owner of current.personalItems ?? []) {
-    const previousOwner = previousItemsByOwner.get(owner.owner.toLocaleLowerCase("ru"));
-    if (!previousOwner) continue;
-    const oldIds = new Set(previousOwner.itemIds);
-    const addedIndexes = owner.itemIds
-      .map((id, index) => ({ id, index }))
-      .filter(({ id }) => !oldIds.has(id))
-      .map(({ index }) => index);
-    if (!addedIndexes.length) continue;
-    const player = playersByNick.get(owner.owner.toLocaleLowerCase("ru"));
-    events.push({
-      id: randomUUID(),
-      syncId,
-      createdAt: syncId,
-      scope: "clans",
-      type: "personal_item_added",
-      characterId: player?.cuid || owner.owner,
-      characterName: player?.nick || owner.owner,
-      profileUrl: player?.profileUrl || "",
-      clanName: player?.clanName || "",
-      amount: addedIndexes.length,
-      itemNames: addedIndexes.map((index) => owner.itemNames[index]).filter(Boolean),
-    });
+  if (marriageEvents.length > MAX_MARRIAGE_EVENTS_PER_SYNC) {
+    console.warn(
+      `⚠️ За одну синхронизацию найдено ${marriageEvents.length} свадеб/разводов. ` +
+        "Семейные события пропущены как подозрительные.",
+    );
+  } else {
+    events.push(...marriageEvents);
   }
 
   return events;
@@ -678,9 +681,15 @@ async function main(): Promise<void> {
 
   const cutoff = Date.now() - NINETY_DAYS_MS;
 
+  /*
+   * Именные вещи никогда не сохраняем в ленте событий. Старые ложные
+   * свадьбы и разводы уже удалены из data/events.json в этом исправлении;
+   * новые корректные семейные события после 01.08.2026 должны сохраняться.
+   */
   const recentStoredEvents = storedEvents.filter((event) => {
-    const time = new Date(event.createdAt).getTime();
+    if ((event as { type: string }).type === "personal_item_added") return false;
 
+    const time = new Date(event.createdAt).getTime();
     return Number.isFinite(time) && time >= cutoff;
   });
 
