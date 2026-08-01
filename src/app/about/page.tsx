@@ -13,7 +13,7 @@ export default function AboutPage() {
       <div className={styles.shell}>
         <header className={styles.heading}>
           <span className={styles.headingLine} aria-hidden="true" />
-          <div>
+          <div className={styles.headingCenter}>
             <h1>О клане</h1>
             <div className={styles.headingMark} aria-hidden="true">
               <span />
@@ -25,31 +25,34 @@ export default function AboutPage() {
         </header>
 
         <section className={styles.panel}>
-          <div className={styles.ornament} aria-hidden="true" />
-          <div className={styles.illustration}>
+          <span className={styles.cornerBottom} aria-hidden="true" />
+
+          <div className={styles.visual}>
             <Image
               src="/images/about/history-emblem.webp"
               alt=""
-              width={200}
-              height={210}
+              width={182}
+              height={187}
               priority
             />
           </div>
-          <div className={styles.story}>
-            Клан создан 15.06.2026. Началось все с триумфального возвращения
-            Шпиля за несколько дней до этой даты... Это длинная история.
-            Когда-нибудь я тебе её расскажу, если захочешь ;)
-          </div>
+
+          <p className={styles.story}>
+            Клан создан <strong>15.06.2026.</strong> Началось все с триумфального
+            возвращения Шпиля за несколько дней до этой даты... Это длинная
+            история. Когда-нибудь я тебе её расскажу, если захочешь ;)
+          </p>
         </section>
 
         <section className={`${styles.panel} ${styles.recruitmentPanel}`}>
-          <div className={styles.ornament} aria-hidden="true" />
-          <div className={styles.illustration}>
+          <span className={styles.cornerBottom} aria-hidden="true" />
+
+          <div className={styles.visual}>
             <Image
               src="/images/about/recruitment-book.webp"
               alt=""
-              width={210}
-              height={245}
+              width={180}
+              height={210}
             />
           </div>
 
