@@ -128,7 +128,7 @@ export default function GalleryPage() {
     <div
       className="min-h-screen"
       style={{
-        backgroundImage: "url('/images/backgrounds/main-bg.webp')",
+        backgroundImage: "url('/images/home-pattern.webp')",
         backgroundRepeat: "repeat",
         backgroundPosition: "top center",
       }}
@@ -180,7 +180,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="rounded-xl overflow-hidden cursor-zoom-in text-left border border-black/10 hover:border-[#b86a16]/50 transition-colors"
+                      className="rounded-xl overflow-hidden cursor-zoom-in text-left border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
                       style={{ background: "#d3d3d3" }}
                     >
                       <div className="aspect-square flex items-center justify-center p-3">
@@ -203,7 +203,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="glass-hover glass rounded-2xl overflow-hidden cursor-zoom-in shrink-0"
+                      className="glass-hover glass rounded-2xl overflow-hidden cursor-zoom-in shrink-0 border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
                     >
                       <Image
                         src={item.src}
@@ -222,7 +222,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="glass-hover glass rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left"
+                      className="glass-hover glass rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
                     >
                       <Image
                         src={item.src}
