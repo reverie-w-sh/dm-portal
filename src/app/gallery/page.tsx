@@ -125,7 +125,15 @@ export default function GalleryPage() {
   const active = activeItems ? activeItems[activeIndex] : null;
 
   return (
-    <div className="max-w-[1180px] mx-auto px-6 py-10">
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/backgrounds/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
+      <div className="max-w-[1180px] mx-auto px-6 py-10">
       <div className="mb-2">
         <h1 className="inner-page-title text-3xl font-black tracking-tight">
           Галерея
@@ -295,5 +303,6 @@ export default function GalleryPage() {
         </div>
       )}
     </div>
+  </div>
   );
 }
