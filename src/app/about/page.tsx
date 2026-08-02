@@ -10,7 +10,7 @@ const LEN_PROFILE =
 function GoldenPaw({ size = 18 }: { size?: number }) {
   return (
     <Image
-      src="/icons/paw-gold.svg"
+      src="/icons/wolf-paw-gold.png"
       alt=""
       width={size}
       height={size}
@@ -81,8 +81,8 @@ export default function AboutPage() {
                 </a>
                 .
               </p>
-              <p>До постели!</p>
-              <p>Тебе необходимо сделать следующее:</p>
+              <p>До постели (!) </p>
+              <p>тебе необходимо сделать следующее:</p>
               <ul>
                 <li>
                   занести в отдел <Link href="/clans/278">«Свои»</Link> медкнижку
