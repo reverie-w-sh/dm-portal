@@ -61,6 +61,8 @@ const GALLERY: GalleryItem[] = [
 
   { src: "/gallery/allania1.webp", title: "Allania и волчонок",  category: "morePictures" },
   { src: "/gallery/mentalistlutik2.webp",  title: "У бассейна. Mentalist",      category: "morePictures" },
+  { src: "/gallery/mentalist2.gif",  title: "На мосту под дождем. Менталист Лютик",      category: "pictures" },
+  { src: "/gallery/mentalistlutik3.webp",  title: "Mentalist & Lutik",      category: "morePictures" },  
 
   { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
 
