@@ -34,11 +34,11 @@ const GALLERY: GalleryItem[] = [
  { src: "/gallery/popcorn.png",       title: "Наша Лавочка :)",         category: "pictures" }, 
  { src: "/gallery/ak.gif",       title: "Образ Катерины и Артура",       category: "pictures" },
  { src: "/gallery/allania.gif",       title: "Образ Аланьки",         category: "pictures" },
- { src: "/gallery/aw-0-1.gif",       title: "Образ W&A",         category: "pictures" },  
+ { src: "/gallery/aw-0-1.gif",       title: "Образ W&A",         category: "pictures" },   
+ { src: "/gallery/mentalist1.gif",  title: "На мосту под дождем. Менталист",      category: "pictures" },
  { src: "/gallery/aw-1-1.gif",       title: "Образ W&A",         category: "pictures" },  
  { src: "/gallery/aw-2-1.gif",       title: "Образ W&A",         category: "pictures" },  
  { src: "/gallery/aw-4-1.gif",       title: "Образ W&A",         category: "pictures" }, 
- { src: "/gallery/mentalist1.gif",  title: "На мосту под дождем. Менталист",      category: "pictures" },
  { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
  { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
   
