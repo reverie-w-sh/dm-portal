@@ -7,15 +7,16 @@ const NEMETS_PROFILE =
 const LEN_PROFILE =
   "https://dm-game.com/index.php?file=infouser&cuid=4441";
 
-function GoldenPaw() {
+function GoldenPaw({ size = 18 }: { size?: number }) {
   return (
-    <span className={styles.paw} aria-hidden="true">
-      <i className={styles.toe1} />
-      <i className={styles.toe2} />
-      <i className={styles.toe3} />
-      <i className={styles.toe4} />
-      <i className={styles.pad} />
-    </span>
+    <Image
+      src="/icons/paw-gold.svg"
+      alt=""
+      width={size}
+      height={size}
+      className={styles.pawIcon}
+      aria-hidden="true"
+    />
   );
 }
 

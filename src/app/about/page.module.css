@@ -71,40 +71,15 @@
   transform: scaleX(-1);
 }
 
-.paw {
-  position: relative;
-  display: inline-block;
+.pawIcon {
+  display: block;
   width: 18px;
   height: 18px;
-  flex: 0 0 18px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px rgba(205, 139, 39, 0.22));
 }
 
-.paw i {
-  position: absolute;
-  display: block;
-  background: linear-gradient(180deg, #f0c267, #b97922);
-  box-shadow: 0 0 8px rgba(213, 147, 45, 0.18);
-}
-
-.pad {
-  left: 5px;
-  bottom: 1px;
-  width: 9px;
-  height: 8px;
-  border-radius: 50% 50% 44% 44%;
-  transform: rotate(45deg);
-}
-
-.toe1, .toe2, .toe3, .toe4 {
-  width: 4px;
-  height: 5px;
-  border-radius: 50%;
-}
-
-.toe1 { left: 1px; top: 6px; transform: rotate(-28deg); }
-.toe2 { left: 5px; top: 1px; transform: rotate(-8deg); }
-.toe3 { right: 4px; top: 1px; transform: rotate(8deg); }
-.toe4 { right: 0; top: 6px; transform: rotate(28deg); }
 
 .panel {
   position: relative;
@@ -240,12 +215,14 @@
 }
 
 .text li::before {
-  content: "🐾";
+  content: "";
   position: absolute;
-  top: 1px;
+  top: 3px;
   left: 0;
-  color: #cf841f;
-  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  background: url("/icons/paw-gold.svg") center / contain no-repeat;
+  filter: drop-shadow(0 0 4px rgba(205, 139, 39, 0.18));
 }
 
 @media (max-width: 760px) {
