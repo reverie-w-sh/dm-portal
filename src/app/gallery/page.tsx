@@ -58,7 +58,7 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/wolf-blood-forest.jpg", title: "Волчица",  category: "voplots" },
   { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "voplots" },
 
-
+  { src: "/gallery/allania1.webp", title: "Allania и волчонок",  category: "morePictures" },
 
   { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
 
