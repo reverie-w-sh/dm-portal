@@ -129,7 +129,7 @@ export default function GalleryPage() {
     <div
       className="min-h-screen"
       style={{
-        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundImage: "url('/images/backgrounds/main-bg.webp')",
         backgroundRepeat: "repeat",
         backgroundPosition: "top center",
       }}
@@ -181,7 +181,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="rounded-xl overflow-hidden cursor-zoom-in text-left border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
+                      className="rounded-xl overflow-hidden cursor-zoom-in text-left border border-black/10 hover:border-[#b86a16]/50 transition-colors"
                       style={{ background: "#d3d3d3" }}
                     >
                       <div className="aspect-square flex items-center justify-center p-3">
@@ -204,7 +204,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="rounded-2xl overflow-hidden cursor-zoom-in shrink-0 border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
+                      className="glass-hover glass rounded-2xl overflow-hidden cursor-zoom-in shrink-0"
                     >
                       <Image
                         src={item.src}
@@ -223,7 +223,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
+                      className="glass-hover glass rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left"
                     >
                       <Image
                         src={item.src}
