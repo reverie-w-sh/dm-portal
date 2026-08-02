@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 const footerLinks = [
+  { href: "/about", label: "О клане die Wölfchen" },  
   { href: "/members", label: "Состав" },
   { href: "/clans", label: "Кланы" },
   { href: "/gifts", label: "Подарочки" },
