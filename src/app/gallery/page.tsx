@@ -38,7 +38,7 @@ const GALLERY: GalleryItem[] = [
  { src: "/gallery/aw-1-1.gif",       title: "Образ W&A",         category: "pictures" },  
  { src: "/gallery/aw-2-1.gif",       title: "Образ W&A",         category: "pictures" },  
  { src: "/gallery/aw-4-1.gif",       title: "Образ W&A",         category: "pictures" }, 
- { src: "/gallery/pack-family-fire.jpg",  title: "У костра",      category: "pictures" },
+ { src: "/gallery/mentalist1.gif",  title: "На мосту под дождем. Менталист",      category: "pictures" },
  { src: "/gallery/lapa-1.png",       title: "Лапка клана",         category: "pictures" },
  { src: "/gallery/lapa-2.png",       title: "Лапка клана",         category: "pictures" },
   
@@ -59,6 +59,7 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "voplots" },
 
   { src: "/gallery/allania1.webp", title: "Allania и волчонок",  category: "morePictures" },
+  { src: "/gallery/pack-family-fire.jpg",  title: "У костра",      category: "morePictures" },
 
   { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
 
