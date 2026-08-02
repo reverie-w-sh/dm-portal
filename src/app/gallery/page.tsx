@@ -35,6 +35,7 @@ const GALLERY: GalleryItem[] = [
  { src: "/gallery/ak.gif",       title: "Образ Катерины и Артура",       category: "pictures" },
  { src: "/gallery/allania.gif",       title: "Образ Аланьки",         category: "pictures" },
  { src: "/gallery/aw-0-1.gif",       title: "Образ W&A",         category: "pictures" },   
+ { src: "/gallery/pack-family-fire.jpg",  title: "У костра",      category: "pictures" },
  { src: "/gallery/mentalist1.gif",  title: "На мосту под дождем. Менталист",      category: "pictures" },
  { src: "/gallery/aw-1-1.gif",       title: "Образ W&A",         category: "pictures" },  
  { src: "/gallery/aw-2-1.gif",       title: "Образ W&A",         category: "pictures" },  
@@ -59,7 +60,7 @@ const GALLERY: GalleryItem[] = [
   { src: "/gallery/wolf-blood-white.jpg", title: "Волчица",  category: "voplots" },
 
   { src: "/gallery/allania1.webp", title: "Allania и волчонок",  category: "morePictures" },
-  { src: "/gallery/pack-family-fire.jpg",  title: "У костра",      category: "morePictures" },
+  { src: "/gallery/mentalistlutik2.webp",  title: "У бассейна. Mentalist",      category: "morePictures" },
 
   { src: "/gallery/smileys/auf.gif",     title: "Ауфь!",             category: "smileys" },
 
