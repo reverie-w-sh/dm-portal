@@ -1,3 +1,6 @@
+import collectionStyles from "../collection-pages.module.css";
+import styles from "./page.module.css";
+
 export default function GiftsPage() {
   const gifts = [
     { title: "Ауф! Подарок", file: "/gifts/auf.gif" },
@@ -21,8 +24,8 @@ export default function GiftsPage() {
     { title: "Волчица Подарок", file: "/gifts/Volchisa.gif" },
     { title: "Magic Wolf Подарок", file: "/gifts/MagicWolf.gif" },
     { title: "Кофе Волчонок 1 Подарок", file: "/gifts/coffee.gif" },
-    { title: "Кофе Волчонок 2 Подарок", file: "/gifts/coffee1.gif", personal: true  },
-    { title: "Кофе Волчонок 3 Подарок", file: "/gifts/coffee2.gif", personal: true  },
+    { title: "Кофе Волчонок 2 Подарок", file: "/gifts/coffee1.gif", personal: true },
+    { title: "Кофе Волчонок 3 Подарок", file: "/gifts/coffee2.gif", personal: true },
     { title: "Кофе Томми 4 Подарок", file: "/gifts/coffee-tommy.gif", personal: true },
     { title: "Обнимашки Подарок)", file: "/gifts/hug.gif" },
     { title: "Лавочка с попкорном Подарок)", file: "/gifts/lavochka.gif" },
@@ -39,96 +42,78 @@ export default function GiftsPage() {
     { title: "Глазастый котик 1 Подарок)", file: "/gifts/cat-1.gif" },
     { title: "Глазастый котик 2 Подарок)", file: "/gifts/cat-2.gif" },
     { title: "Глазастый котик 3 Подарок)", file: "/gifts/cat-3.gif" },
-    { title: "Глазастый котик 4 Подарок)", file: "/gifts/cat-4.gif" },    
+    { title: "Глазастый котик 4 Подарок)", file: "/gifts/cat-4.gif" },
     { title: "Котик на ручках Подарок)", file: "/gifts/kot-4.gif" },
     { title: "Любовь 1 Подарок)", file: "/gifts/love-1.gif" },
     { title: "Любовь 2 Подарок)", file: "/gifts/love-2.gif" },
-    { title: "Волк 1 Подарок)", file: "/gifts/volk-1.gif" },    
+    { title: "Волк 1 Подарок)", file: "/gifts/volk-1.gif" },
   ];
 
   return (
-    <div className="max-w-[1180px] mx-auto px-6 py-10">
-      <h1 className="text-3xl font-black text-[#e6e6e6] tracking-tight">
-        Подарки
-      </h1>
-
-      <p className="text-[#b9bec6] text-sm mt-1 mb-8">
-        Сначала тут были только клановые подарочки с волчатами для Волчат🐺. Но по многочисленной просьбе добавлены разные картинки из интернета, приведенные к нужному подарочковому размеру, которыми может воспользоваться каждый желающий) Дарите на здоровье)) кроме личных, их нельзя дарить, вы там поймете, о чем я) 
-      </p>
-
-      <div className="glass rounded-2xl p-6 mb-10">
-        <h2 className="text-xl font-bold text-ink mb-4">
-          Как заказать подарок
-        </h2>
-
-        <ol className="list-decimal ml-5 space-y-3 text-sm text-ink-dim">
-          <li>Скачайте понравившийся подарок на этой странице.</li>
-
-          <li>
-            Загрузите его в игре:
-            <ul className="list-disc ml-6 mt-2 space-y-2">
-              <li>
-                Перейдите в раздел{" "}
-                
-                  <a href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:underline font-semibold"
-                >
-                  Услуги комотдела → Личные подарки
-                </a>
-              </li>
-
-              <li>
-                На вашем счету должно быть не менее <strong>3 ТГ</strong>.
-              </li>
-
-              <li>
-                Размер изображения должен быть <strong>60×60 px</strong>.
-              </li>
-
-              <li>
-                Загрузите подарок, впишите название, сохраните. Нажмите «Выдать 35 шт.»
-              </li>
-            </ul>
-          </li>
-        </ol>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-        {gifts.map((gift) => (
-          <div
-            key={gift.file}
-            className="glass rounded-2xl p-5 flex flex-col items-center transition hover:-translate-y-1 hover:shadow-xl"
-          >
-            <div className="w-full h-36 rounded-xl bg-[#cec8bf] border border-[#a99e91] flex items-center justify-center mb-4">
-              <img
-                src={gift.file}
-                alt={gift.title}
-                className="max-w-[110px] max-h-[110px] object-contain"
-              />
-            </div>
-
-            {gift.personal ? (
-              <button
-                type="button"
-                disabled
-                className="w-full text-center rounded-xl px-4 py-2.5 text-sm font-semibold text-ink-muted border border-white/10 cursor-not-allowed opacity-70"
-              >
-                Приватный, не надо его скачивать :)
-              </button>
-            ) : (
-              
-              <a href={gift.file}
-                download
-                className="btn-primary w-full text-center"
-              >
-                ⬇ Скачать
-              </a>
-            )}
+    <main className={collectionStyles.page}>
+      <section className={collectionStyles.shell}>
+        <header className={collectionStyles.hero}>
+          <div className={collectionStyles.heroIcon}>🎁</div>
+          <div>
+            <h1>Подарки</h1>
+            <p className={collectionStyles.heroDescription}>
+              Сначала тут были только клановые подарочки с волчатами для Волчат🐺. Но по многочисленной просьбе добавлены разные картинки из интернета, приведенные к нужному подарочковому размеру, которыми может воспользоваться каждый желающий) Дарите на здоровье)) кроме личных, их нельзя дарить, вы там поймете, о чем я)
+            </p>
           </div>
-        ))}
-      </div>
-    </div>
+        </header>
+
+        <section className={styles.instructions}>
+          <h2>Как заказать подарок</h2>
+          <ol>
+            <li>Скачайте понравившийся подарок на этой странице.</li>
+            <li>
+              Загрузите его в игре:
+              <ul>
+                <li>
+                  Перейдите в раздел{" "}
+                  <a
+                    href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Услуги комотдела → Личные подарки
+                  </a>
+                </li>
+                <li>
+                  На вашем счету должно быть не менее <strong>3 ТГ</strong>.
+                </li>
+                <li>
+                  Размер изображения должен быть <strong>60×60 px</strong>.
+                </li>
+                <li>
+                  Загрузите подарок, впишите название, сохраните. Нажмите «Выдать 35 шт.»
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </section>
+
+        <div className={styles.grid}>
+          {gifts.map((gift) => (
+            <article key={gift.file} className={styles.card}>
+              <div className={styles.visual}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={gift.file} alt={gift.title} loading="lazy" />
+              </div>
+
+              {gift.personal ? (
+                <button type="button" disabled className={styles.privateButton}>
+                  Приватный, не надо его скачивать :)
+                </button>
+              ) : (
+                <a href={gift.file} download className={styles.downloadButton}>
+                  ⬇ Скачать
+                </a>
+              )}
+            </article>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }

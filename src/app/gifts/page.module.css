@@ -1,0 +1,158 @@
+.instructions {
+  margin: 18px 0 22px;
+  padding: 22px 24px;
+  border: 1px solid rgba(173, 113, 34, 0.4);
+  border-radius: 13px;
+  color: #d9c7a8;
+  background:
+    linear-gradient(180deg, rgba(75, 44, 18, 0.18), transparent),
+    #080b0a;
+}
+
+.instructions h2 {
+  margin: 0 0 16px;
+  color: #ecd4a6;
+  font: 400 1.7rem Georgia, serif;
+}
+
+.instructions ol,
+.instructions ul {
+  margin: 0;
+  padding-left: 1.35rem;
+}
+
+.instructions ol {
+  display: grid;
+  gap: 12px;
+}
+
+.instructions ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.instructions li {
+  line-height: 1.5;
+}
+
+.instructions strong,
+.instructions a {
+  color: #e5b85f;
+  font-weight: 700;
+}
+
+.instructions a {
+  text-underline-offset: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  min-width: 0;
+  padding: 14px;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid rgba(173, 113, 34, 0.34);
+  border-radius: 13px;
+  background: linear-gradient(145deg, #111310, #070908);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover {
+  border-color: #d4993b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
+.visual {
+  display: grid;
+  min-height: 152px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(173, 113, 34, 0.3);
+  border-radius: 10px;
+  background: #f5f9ff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.visual img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 110px;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+.downloadButton,
+.privateButton {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid rgba(173, 113, 34, 0.45);
+  border-radius: 999px;
+  font: 700 0.84rem/1.25 inherit;
+  text-align: center;
+}
+
+.downloadButton {
+  color: #efd09a;
+  background: rgba(106, 61, 18, 0.28);
+  text-decoration: none;
+}
+
+.downloadButton:hover {
+  border-color: #d69938;
+  background: rgba(132, 76, 20, 0.42);
+}
+
+.privateButton {
+  color: #8f8069;
+  background: #0b0d0c;
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .instructions {
+    margin-top: 12px;
+    padding: 18px 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .card {
+    padding: 9px;
+  }
+
+  .visual {
+    min-height: 126px;
+  }
+
+  .visual img {
+    max-width: 96px;
+    max-height: 96px;
+  }
+
+  .downloadButton,
+  .privateButton {
+    min-height: 40px;
+    padding: 8px 9px;
+    font-size: 0.72rem;
+  }
+}

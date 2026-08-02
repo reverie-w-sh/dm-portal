@@ -23,7 +23,7 @@ type PlayerWithSmiles = {
 };
 
 type SortType = "count-desc" | "count-asc" | "nick";
-type PersonalItem = { owner: string };
+type PersonalItem = { owner: string; name: string; imageUrl: string };
 
 function formatLastSync(iso: string): string {
   return new Date(iso).toLocaleString("uk-UA", {
@@ -44,12 +44,18 @@ export default function PersonalSmilesPage() {
   const playerElements = useRef<Map<string, HTMLElement>>(new Map());
 
   const itemCounts = useMemo(() => {
-    const counts = new Map<string, number>();
+    const uniqueByOwner = new Map<string, Set<string>>();
     for (const item of personalItemsData.items as PersonalItem[]) {
-      const key = item.owner.toLocaleLowerCase("ru");
-      counts.set(key, (counts.get(key) ?? 0) + 1);
+      const ownerKey = item.owner.toLocaleLowerCase("ru");
+      const itemKey = `${item.name.trim().toLocaleLowerCase("ru")}\u0000${item.imageUrl}`;
+      const items = uniqueByOwner.get(ownerKey) ?? new Set<string>();
+      items.add(itemKey);
+      uniqueByOwner.set(ownerKey, items);
     }
-    return counts;
+
+    return new Map(
+      [...uniqueByOwner.entries()].map(([owner, items]) => [owner, items.size]),
+    );
   }, []);
 
   const players = useMemo(() => {

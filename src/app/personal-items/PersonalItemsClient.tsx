@@ -88,11 +88,14 @@ export default function PersonalItemsClient({
     }
 
     return [...byOwner.entries()]
-      .map(([owner, items]) => ({
-        owner,
-        totalCount: items.length,
-        items: mergeIdenticalItems(items),
-      }))
+      .map(([owner, items]) => {
+        const mergedItems = mergeIdenticalItems(items);
+        return {
+          owner,
+          totalCount: mergedItems.length,
+          items: mergedItems,
+        };
+      })
       .sort((a, b) => {
         if (sort === "owner") return a.owner.localeCompare(b.owner, "ru");
 
@@ -104,6 +107,17 @@ export default function PersonalItemsClient({
         return difference || a.owner.localeCompare(b.owner, "ru");
       });
   }, [data.items, query, sort]);
+
+  const totalUniqueCount = useMemo(
+    () =>
+      [...new Map(
+        data.items.map((item) => [
+          `${item.owner.trim().toLocaleLowerCase("ru")}\u0000${item.name.trim().toLocaleLowerCase("ru")}\u0000${item.imageUrl}`,
+          item,
+        ]),
+      ).values()].length,
+    [data.items],
+  );
 
   return (
     <main className={styles.page}>
@@ -124,7 +138,7 @@ export default function PersonalItemsClient({
 
         <div className={styles.stats}>
           <span>
-            <b>{data.items.length}</b> вещей
+            <b>{totalUniqueCount}</b> вещей
           </span>
           <span>
             <b>{groups.length}</b> владельцев
