@@ -128,7 +128,7 @@ export default function GalleryPage() {
     <div
       className="min-h-screen"
       style={{
-        backgroundImage: "url('/images/backgrounds/home-pattern.webp')",
+        backgroundImage: "url('/images/home-pattern.webp')",
         backgroundRepeat: "repeat",
         backgroundPosition: "top center",
       }}
