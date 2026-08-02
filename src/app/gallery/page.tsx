@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 
-type Category = "pictures" | "smileys" | "voplots" | "portraits";
+type Category = "pictures" | "smileys" | "morePictures" | "voplots" | "portraits";
 
 interface GalleryItem {
   src: string;
@@ -14,11 +14,12 @@ interface GalleryItem {
 const CATEGORY_LABELS: Record<Category, string> = {
   pictures:  "Картинки",
   smileys:   "Смайлы",
+  morePictures: "Еще картинки",
   voplots:   "Воплоты",
   portraits: "Образы персонажей",
 };
 
-const CATEGORY_ORDER: Category[] = ["pictures", "smileys", "voplots", "portraits"];
+const CATEGORY_ORDER: Category[] = ["pictures", "smileys", "morePictures", "voplots", "portraits"];
 
 // Чтобы добавить новую картинку: залей файл в public/gallery/ на GitHub,
 // затем добавь сюда новую строку с именем файла, подписью и категорией.
@@ -203,7 +204,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="glass-hover glass rounded-2xl overflow-hidden cursor-zoom-in shrink-0 border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
+                      className="rounded-2xl overflow-hidden cursor-zoom-in shrink-0 border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
                     >
                       <Image
                         src={item.src}
@@ -222,7 +223,7 @@ export default function GalleryPage() {
                     <button
                       key={item.src}
                       onClick={() => { setActiveItems(items); setActiveIndex(i); }}
-                      className="glass-hover glass rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
+                      className="rounded-2xl overflow-hidden mb-4 w-full block break-inside-avoid cursor-zoom-in text-left border border-[#b8832b] hover:border-[#d8a24a] transition-colors"
                     >
                       <Image
                         src={item.src}
