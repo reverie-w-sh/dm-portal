@@ -8,7 +8,7 @@
     url("/images/members/members-floral-bg.webp");
   background-position: top center;
   background-repeat: repeat-y;
-  background-size: min(1536px, 100vw) auto;
+  background-size: 100% auto;
 }
 
 .pageInner {
@@ -37,33 +37,16 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background:
-    linear-gradient(90deg, rgba(3, 4, 4, 0.68) 0%, rgba(3, 4, 4, 0.16) 45%, transparent 73%),
-    linear-gradient(0deg, rgba(3, 4, 4, 0.58) 0%, transparent 42%);
+  background: linear-gradient(0deg, rgba(3, 4, 4, 0.62) 0%, transparent 35%);
   pointer-events: none;
 }
 
 .heroContent {
   position: absolute;
   left: clamp(28px, 4.2vw, 58px);
-  bottom: clamp(38px, 7vw, 82px);
+  bottom: clamp(24px, 3.2vw, 42px);
   max-width: min(540px, 68%);
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.95);
-}
-
-.heroContent h1 {
-  margin: 0;
-  line-height: 0;
-}
-
-.titleImage {
-  display: block;
-  width: clamp(260px, 28vw, 390px);
-  height: auto;
-  filter:
-    brightness(0.8)
-    saturate(0.72)
-    drop-shadow(0 2px 5px rgba(0, 0, 0, 0.96));
 }
 
 .srOnly {
@@ -79,7 +62,7 @@
 }
 
 .heroContent p {
-  margin: 14px 0 0;
+  margin: 0;
   color: #f0dfbf;
   font: 400 clamp(1.05rem, 2vw, 1.65rem) / 1.2 Georgia, "Times New Roman", serif;
 }
@@ -216,7 +199,7 @@
   display: grid;
   min-height: 160px;
   aspect-ratio: 3.16 / 1;
-  grid-template-columns: 20px minmax(0, 1fr) 82px 118px;
+  grid-template-columns: 20px minmax(0, 1fr) 70px 118px;
   align-items: center;
   gap: 14px;
   overflow: hidden;
@@ -251,10 +234,15 @@
 .memberIdentity h3 {
   overflow: hidden;
   margin: 0;
-  color: #edd397;
-  font: 400 clamp(1.3rem, 2.2vw, 1.68rem) / 1.1 Georgia, "Times New Roman", serif;
+  color: #eacb86;
+  background: linear-gradient(180deg, #fff0c0 0%, #e4bd70 48%, #9a602b 100%);
+  background-clip: text;
+  font: 500 clamp(1.3rem, 2.2vw, 1.68rem) / 1.1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  letter-spacing: 0.012em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-overflow: ellipsis;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.92));
   white-space: nowrap;
 }
 
@@ -271,8 +259,8 @@
 .levelShield {
   position: relative;
   display: grid;
-  width: 76px;
-  height: 98px;
+  width: 65px;
+  height: 83px;
   place-items: center;
   justify-self: center;
   color: #f2d393;
@@ -287,7 +275,7 @@
   position: relative;
   z-index: 1;
   margin-top: -5px;
-  font: 400 1.78rem / 1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font: 400 1.55rem / 1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   text-shadow: 0 1px 8px rgba(235, 166, 60, 0.34);
 }
 
@@ -310,16 +298,16 @@
 .profileLink {
   width: max-content;
   margin-top: 13px;
-  border-bottom: 1px solid rgba(183, 118, 33, 0.68);
-  color: #c99a52;
-  font: 400 0.84rem / 1.4 Georgia, "Times New Roman", serif;
+  border-bottom: 1px solid rgba(126, 77, 30, 0.74);
+  color: #9d6b35;
+  font: 400 0.82rem / 1.4 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   text-decoration: none;
   transition: color 160ms ease, border-color 160ms ease;
 }
 
 .profileLink:hover {
-  color: #f0c776;
-  border-color: #e0a84e;
+  color: #bd8848;
+  border-color: #a97032;
 }
 
 @media (max-width: 960px) {
@@ -338,14 +326,14 @@
   }
 
   .memberCard {
-    grid-template-columns: 20px minmax(0, 1fr) 82px 132px;
+    grid-template-columns: 20px minmax(0, 1fr) 70px 132px;
   }
 }
 
 @media (max-width: 700px) {
   .page {
     padding: 0 0 46px;
-    background-size: 1120px auto;
+    background-size: 100% auto;
   }
 
   .hero {
@@ -356,13 +344,12 @@
   }
 
   .heroImage {
-    object-position: 50% center;
+    object-fit: contain;
+    object-position: center top;
   }
 
   .heroShade {
-    background:
-      linear-gradient(0deg, rgba(3, 4, 4, 0.9) 0%, rgba(3, 4, 4, 0.3) 58%, transparent 86%),
-      linear-gradient(90deg, rgba(3, 4, 4, 0.38), transparent 72%);
+    background: linear-gradient(0deg, rgba(3, 4, 4, 0.94) 0%, rgba(3, 4, 4, 0.3) 38%, transparent 68%);
   }
 
   .heroContent {
@@ -372,16 +359,8 @@
     max-width: none;
   }
 
-  .heroContent h1 {
-    line-height: 0;
-  }
-
-  .titleImage {
-    width: min(310px, 88vw);
-  }
-
   .heroContent p {
-    margin-top: 10px;
+    margin-top: 0;
     font-size: 1.08rem;
   }
 
@@ -421,7 +400,7 @@
   .memberCard {
     min-height: 126px;
     aspect-ratio: auto;
-    grid-template-columns: 17px minmax(0, 1fr) 64px 92px;
+    grid-template-columns: 17px minmax(0, 1fr) 55px 92px;
     gap: 9px;
     padding: 18px 17px;
   }
@@ -442,12 +421,12 @@
   }
 
   .levelShield {
-    width: 60px;
-    height: 78px;
+    width: 51px;
+    height: 66px;
   }
 
   .levelShield span {
-    font-size: 1.42rem;
+    font-size: 1.25rem;
   }
 
   .memberMeta {
@@ -470,7 +449,7 @@
   }
 
   .memberCard {
-    grid-template-columns: 15px minmax(0, 1fr) 60px;
+    grid-template-columns: 15px minmax(0, 1fr) 55px;
     padding: 14px 12px;
   }
 

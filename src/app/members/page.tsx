@@ -147,16 +147,7 @@ export default function MembersPage() {
           <div className={styles.heroShade} />
 
           <div className={styles.heroContent}>
-            <h1 id="members-title">
-              <Image
-                src="/images/members/members-title.png"
-                alt=""
-                width={760}
-                height={95}
-                className={styles.titleImage}
-              />
-              <span className={styles.srOnly}>Наша стая</span>
-            </h1>
+            <h1 id="members-title" className={styles.srOnly}>Наша стая</h1>
             <p>
               {clan.name} <span aria-hidden="true">·</span> {wolvesLabel}
             </p>
