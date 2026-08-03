@@ -22,11 +22,9 @@
   width: 100%;
   aspect-ratio: 1200 / 630;
   overflow: hidden;
-  border: 1px solid rgba(197, 129, 32, 0.75);
+  border: 0;
   background: #070908;
-  box-shadow:
-    0 24px 55px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(66, 38, 12, 0.9);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
 }
 
 .heroImage {
@@ -55,10 +53,29 @@
 
 .heroContent h1 {
   margin: 0;
-  color: #e8c47c;
-  font: 400 clamp(2.5rem, 5vw, 4.55rem) / 0.96 Georgia, "Times New Roman", serif;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
+  line-height: 0;
+}
+
+.titleImage {
+  display: block;
+  width: clamp(260px, 28vw, 390px);
+  height: auto;
+  filter:
+    brightness(0.8)
+    saturate(0.72)
+    drop-shadow(0 2px 5px rgba(0, 0, 0, 0.96));
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .heroContent p {
@@ -197,21 +214,21 @@
 .memberCard {
   position: relative;
   display: grid;
-  min-height: 122px;
-  grid-template-columns: 20px minmax(0, 1fr) 72px 118px;
+  min-height: 160px;
+  aspect-ratio: 3.16 / 1;
+  grid-template-columns: 20px minmax(0, 1fr) 82px 118px;
   align-items: center;
   gap: 14px;
   overflow: hidden;
-  padding: 18px 22px;
-  border: 1px solid rgba(160, 98, 24, 0.92);
-  border-radius: 5px;
-  background:
-    radial-gradient(circle at 62% 44%, rgba(82, 20, 23, 0.18), transparent 47%),
-    linear-gradient(145deg, rgba(20, 22, 20, 0.97), rgba(7, 9, 8, 0.99));
-  box-shadow:
-    inset 0 0 0 3px #080a09,
-    inset 0 0 0 4px rgba(188, 119, 32, 0.45),
-    0 12px 26px rgba(0, 0, 0, 0.32);
+  padding: 24px 28px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #090b0a;
+  background-image: url("/images/members/member-card-frame.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.32);
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease,
@@ -219,39 +236,10 @@
     filter 180ms ease;
 }
 
-.memberCard::before,
-.memberCard::after {
-  position: absolute;
-  width: 13px;
-  height: 13px;
-  border-color: rgba(220, 160, 72, 0.78);
-  content: "";
-  pointer-events: none;
-}
-
-.memberCard::before {
-  top: 6px;
-  left: 6px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  transform: rotate(-2deg);
-}
-
-.memberCard::after {
-  right: 6px;
-  bottom: 6px;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
-  transform: rotate(-2deg);
-}
-
 .memberCard:hover {
-  border-color: #d59a3b;
-  filter: brightness(1.08);
+  filter: brightness(1.12) saturate(1.04);
   box-shadow:
-    inset 0 0 0 3px #080a09,
-    inset 0 0 0 4px rgba(223, 157, 62, 0.68),
-    0 0 24px rgba(175, 102, 22, 0.12),
+    0 0 26px rgba(175, 102, 22, 0.16),
     0 18px 32px rgba(0, 0, 0, 0.44);
   transform: translateY(-2px);
 }
@@ -283,38 +271,23 @@
 .levelShield {
   position: relative;
   display: grid;
-  width: 64px;
-  height: 78px;
+  width: 76px;
+  height: 98px;
   place-items: center;
   justify-self: center;
   color: #f2d393;
+  background-image: url("/images/members/level-shield.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   filter: drop-shadow(0 6px 7px rgba(0, 0, 0, 0.8));
-}
-
-.levelShield::before,
-.levelShield::after {
-  position: absolute;
-  inset: 0;
-  clip-path: polygon(50% 0, 91% 15%, 88% 65%, 50% 100%, 12% 65%, 9% 15%);
-  content: "";
-}
-
-.levelShield::before {
-  background: linear-gradient(145deg, #f3cf81 0%, #b57321 42%, #5e320d 100%);
-}
-
-.levelShield::after {
-  inset: 3px;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(116, 66, 19, 0.38), transparent 48%),
-    linear-gradient(145deg, #171813, #050706 72%);
-  box-shadow: inset 0 0 0 1px rgba(248, 210, 137, 0.28);
 }
 
 .levelShield span {
   position: relative;
   z-index: 1;
-  font: 400 1.8rem / 1 Georgia, "Times New Roman", serif;
+  margin-top: -5px;
+  font: 400 1.78rem / 1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   text-shadow: 0 1px 8px rgba(235, 166, 60, 0.34);
 }
 
@@ -365,7 +338,7 @@
   }
 
   .memberCard {
-    grid-template-columns: 20px minmax(0, 1fr) 72px 132px;
+    grid-template-columns: 20px minmax(0, 1fr) 82px 132px;
   }
 }
 
@@ -400,7 +373,11 @@
   }
 
   .heroContent h1 {
-    font-size: clamp(2.15rem, 11vw, 3.25rem);
+    line-height: 0;
+  }
+
+  .titleImage {
+    width: min(310px, 88vw);
   }
 
   .heroContent p {
@@ -442,10 +419,11 @@
   }
 
   .memberCard {
-    min-height: 110px;
-    grid-template-columns: 17px minmax(0, 1fr) 58px 92px;
+    min-height: 126px;
+    aspect-ratio: auto;
+    grid-template-columns: 17px minmax(0, 1fr) 64px 92px;
     gap: 9px;
-    padding: 14px 13px;
+    padding: 18px 17px;
   }
 
   .activityDot {
@@ -464,8 +442,8 @@
   }
 
   .levelShield {
-    width: 52px;
-    height: 64px;
+    width: 60px;
+    height: 78px;
   }
 
   .levelShield span {
@@ -492,7 +470,7 @@
   }
 
   .memberCard {
-    grid-template-columns: 15px minmax(0, 1fr) 54px;
+    grid-template-columns: 15px minmax(0, 1fr) 60px;
     padding: 14px 12px;
   }
 
