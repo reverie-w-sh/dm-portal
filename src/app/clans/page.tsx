@@ -189,7 +189,7 @@ export default function ClansPage() {
         </h1>
 
         <p className="text-[#d3c5ae] text-sm mt-1">
-          Всего в мире {clansData.length} кланов
+          Всего в мире кланов: {clansData.length}
         </p>
 
         <p className="text-[#a9987d] text-xs mt-1">
