@@ -231,7 +231,14 @@ export default function DimBoliPage() {
   }, [selected]);
 
   return (
-    <>
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
       <div className="max-w-[1180px] mx-auto px-6 py-10">
         <h1 className="inner-page-title text-3xl font-black tracking-tight mb-2 text-center">
           Карты Дома Боли (Кровавого Подземелья)
@@ -546,6 +553,6 @@ export default function DimBoliPage() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
