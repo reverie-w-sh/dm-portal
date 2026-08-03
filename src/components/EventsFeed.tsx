@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import eventsData from "../../data/events.json";
 import clansData from "../../data/clans.json";
 import lastSync from "../../data/last-sync.json";
+import collectionStyles from "@/app/collection-pages.module.css";
 
 type EventsScope = "clans" | "personal-smiles";
 
@@ -476,16 +477,17 @@ export default function EventsFeed({
         href={`/clans/${clanId}`}
         className="inline-flex items-center gap-1.5 font-bold text-accent hover:underline"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={getClanCrest(
-            clanId
-          )}
-          alt=""
-          width={19}
-          height={19}
-          className="w-[19px] h-[19px] object-contain shrink-0"
-        />
+        <span className={collectionStyles.clanCrestBox}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={getClanCrest(
+              clanId
+            )}
+            alt=""
+            width={19}
+            height={19}
+          />
+        </span>
 
         <span>{clanName}</span>
       </Link>
