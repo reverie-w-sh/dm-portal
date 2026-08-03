@@ -6,9 +6,9 @@
   background-image:
     linear-gradient(180deg, rgba(5, 7, 6, 0.1), rgba(5, 7, 6, 0.34)),
     url("/images/members/members-floral-bg.webp");
-  background-position: top center;
-  background-repeat: repeat-y;
-  background-size: 100% auto;
+  background-position: top center, top center;
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 100%, 1536px 1024px;
 }
 
 .pageInner {
@@ -333,7 +333,6 @@
 @media (max-width: 700px) {
   .page {
     padding: 0 0 46px;
-    background-size: 100% auto;
   }
 
   .hero {
