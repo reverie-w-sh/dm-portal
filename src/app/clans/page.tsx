@@ -184,7 +184,7 @@ export default function ClansPage() {
     >
     <div className="max-w-[1180px] mx-auto px-6 py-10 pb-32">
       <div className="mb-2">
-        <h1 className="text-3xl font-black tracking-tight text-[#e7ca91] drop-shadow-[0_2px_10px_rgba(0,0,0,.9)]">
+        <h1 className="text-3xl font-black tracking-tight text-[#e7ca91] opacity-70 drop-shadow-[0_2px_10px_rgba(0,0,0,.9)]">
           Все кланы ДМ. Составы. Альянсы. Смайлики
         </h1>
 
