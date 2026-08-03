@@ -240,7 +240,7 @@ export default function DimBoliPage() {
       }}
     >
       <div className="max-w-[1180px] mx-auto px-6 py-10">
-        <h1 className="inner-page-title text-3xl font-black tracking-tight mb-2 text-center">
+        <h1 className="mb-3 text-3xl font-black tracking-tight text-[#e7ca91] opacity-60 drop-shadow-[0_2px_10px_rgba(0,0,0,.9)] sm:text-4xl">
           Карты Дома Боли (Кровавого Подземелья)
         </h1>
 
