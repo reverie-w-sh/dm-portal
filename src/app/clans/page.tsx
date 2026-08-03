@@ -184,22 +184,22 @@ export default function ClansPage() {
     >
     <div className="max-w-[1180px] mx-auto px-6 py-10 pb-32">
       <div className="mb-2">
-        <h1 className="inner-page-title text-3xl font-black tracking-tight">
+        <h1 className="text-3xl font-black tracking-tight text-[#e7ca91] drop-shadow-[0_2px_10px_rgba(0,0,0,.9)]">
           Все кланы ДМ. Составы. Альянсы. Смайлики
         </h1>
 
-        <p className="text-ink-muted text-sm mt-1">
+        <p className="text-[#d3c5ae] text-sm mt-1">
           Всего в мире {clansData.length} кланов
         </p>
 
-        <p className="text-ink-muted/70 text-xs mt-1">
+        <p className="text-[#a9987d] text-xs mt-1">
           Обновление данных:{" "}
           {formatLastSync(lastSync.updatedAt)}
         </p>
 
         <EventsFeed
           scope="clans"
-          variant="light"
+          variant="dark"
         />
       </div>
 
@@ -223,7 +223,7 @@ export default function ClansPage() {
                 comparisonButtonClass,
                 comparisonMode
                   ? "border-accent/45 text-accent bg-accent/10"
-                  : "border-white/10 text-ink-muted bg-white/[0.04] hover:text-ink hover:bg-white/[0.08]",
+                  : "border-white/15 text-[#d3c5ae] bg-black/20 hover:text-[#f0d09a] hover:border-accent/40 hover:bg-black/30",
               ].join(" ")}
             >
               {comparisonMode
@@ -235,7 +235,7 @@ export default function ClansPage() {
               href="/alliances"
               className={[
                 comparisonButtonClass,
-                "border-white/10 text-ink-muted bg-white/[0.04] hover:text-ink hover:bg-white/[0.08]",
+                "border-white/15 text-[#d3c5ae] bg-black/20 hover:text-[#f0d09a] hover:border-accent/40 hover:bg-black/30",
               ].join(" ")}
             >
               Сравнить альянсы
@@ -244,7 +244,7 @@ export default function ClansPage() {
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-ink-muted text-xs uppercase tracking-wider whitespace-nowrap">
+          <span className="text-[#b9aa91] text-xs uppercase tracking-wider whitespace-nowrap">
             Сорт.
           </span>
 
@@ -259,7 +259,7 @@ export default function ClansPage() {
                 "text-xs px-3 py-2 rounded-lg border transition-colors",
                 sortBy === key
                   ? "border-accent/40 text-accent bg-accent/10"
-                  : "border-white/10 text-ink-muted hover:text-ink hover:border-white/20",
+                  : "border-white/15 text-[#c8baa2] bg-black/15 hover:text-[#f0d09a] hover:border-accent/35",
               ].join(" ")}
             >
               {SORT_LABELS[key]}
@@ -268,7 +268,7 @@ export default function ClansPage() {
         </div>
 
         {comparisonMode && (
-          <p className="text-xs text-ink-muted/75">
+          <p className="text-xs text-[#b9aa91]">
             Выберите от двух до трёх кланов.
           </p>
         )}
