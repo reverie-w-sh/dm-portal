@@ -169,29 +169,37 @@ export default function ClansPage() {
     "flex-1 sm:flex-none",
     "inline-flex items-center justify-center",
     "whitespace-nowrap",
-    "px-4 py-2.5 rounded-xl border",
-    "text-sm font-bold transition-all",
+    "px-4 py-2.5 rounded-lg border",
+    "text-xs font-medium transition-colors",
   ].join(" ");
 
   return (
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
     <div className="max-w-[1180px] mx-auto px-6 py-10 pb-32">
       <div className="mb-2">
-        <h1 className="text-3xl font-black text-[#e6e6e6] tracking-tight">
+        <h1 className="inner-page-title text-3xl font-black tracking-tight">
           Все кланы ДМ. Составы. Альянсы. Смайлики
         </h1>
 
-        <p className="text-[#b9bec6] text-sm mt-1">
+        <p className="text-ink-muted text-sm mt-1">
           Всего в мире {clansData.length} кланов
         </p>
 
-        <p className="text-[#b9bec6]/70 text-xs mt-1">
+        <p className="text-ink-muted/70 text-xs mt-1">
           Обновление данных:{" "}
           {formatLastSync(lastSync.updatedAt)}
         </p>
 
         <EventsFeed
           scope="clans"
-          variant="dark"
+          variant="light"
         />
       </div>
 
@@ -215,7 +223,7 @@ export default function ClansPage() {
                 comparisonButtonClass,
                 comparisonMode
                   ? "border-accent/45 text-accent bg-accent/10"
-                  : "border-white/10 text-[#d9dde3] bg-white/[0.04] hover:bg-white/[0.08]",
+                  : "border-white/10 text-ink-muted bg-white/[0.04] hover:text-ink hover:bg-white/[0.08]",
               ].join(" ")}
             >
               {comparisonMode
@@ -227,7 +235,7 @@ export default function ClansPage() {
               href="/alliances"
               className={[
                 comparisonButtonClass,
-                "border-white/10 text-[#d9dde3] bg-white/[0.04] hover:bg-white/[0.08]",
+                "border-white/10 text-ink-muted bg-white/[0.04] hover:text-ink hover:bg-white/[0.08]",
               ].join(" ")}
             >
               Сравнить альянсы
@@ -236,7 +244,7 @@ export default function ClansPage() {
         </div>
 
         <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-[#b9bec6] text-xs uppercase tracking-wider whitespace-nowrap">
+          <span className="text-ink-muted text-xs uppercase tracking-wider whitespace-nowrap">
             Сорт.
           </span>
 
@@ -251,7 +259,7 @@ export default function ClansPage() {
                 "text-xs px-3 py-2 rounded-lg border transition-colors",
                 sortBy === key
                   ? "border-accent/40 text-accent bg-accent/10"
-                  : "border-white/10 text-[#b9bec6] hover:text-[#e6e6e6] hover:border-white/20",
+                  : "border-white/10 text-ink-muted hover:text-ink hover:border-white/20",
               ].join(" ")}
             >
               {SORT_LABELS[key]}
@@ -260,7 +268,7 @@ export default function ClansPage() {
         </div>
 
         {comparisonMode && (
-          <p className="text-xs text-[#b9bec6]/75">
+          <p className="text-xs text-ink-muted/75">
             Выберите от двух до трёх кланов.
           </p>
         )}
@@ -357,6 +365,7 @@ export default function ClansPage() {
             </div>
           </div>
         )}
+    </div>
     </div>
   );
 }

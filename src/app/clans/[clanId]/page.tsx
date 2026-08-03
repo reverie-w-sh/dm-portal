@@ -153,6 +153,13 @@ export default async function ClanDetailPage(
     : "";
 
   return (
+    <div
+      className="min-h-screen"
+      style={{
+        background:
+          "radial-gradient(circle at 50% 0, rgba(116, 67, 22, .17), transparent 42rem), linear-gradient(180deg, #050707, #090b0b 50%, #050707)",
+      }}
+    >
     <div className="max-w-[1180px] mx-auto px-6 py-10">
 <div className="mb-8">
   <Link
@@ -411,6 +418,7 @@ export default async function ClanDetailPage(
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }
