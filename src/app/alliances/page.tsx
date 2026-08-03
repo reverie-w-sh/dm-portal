@@ -80,22 +80,32 @@ export default function AlliancesPage() {
       : "#";
 
   return (
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
     <div className="max-w-[1180px] mx-auto px-6 py-10 pb-32">
       <Link
         href="/clans"
-        className="inline-flex items-center gap-1.5 text-ink-muted text-xs font-medium hover:text-accent transition-colors mb-8"
+        className="inline-flex items-center gap-1.5 text-[#b9aa91] text-xs font-medium hover:text-[#f0d09a] transition-colors mb-8"
       >
         ← К списку кланов
       </Link>
 
-      <div className="mb-8">
-        <h1 className="text-3xl font-black text-ink tracking-tight">
+      <div className="mb-2">
+        <h1 className="text-3xl font-black tracking-tight text-[#e7ca91] opacity-60 drop-shadow-[0_2px_10px_rgba(0,0,0,.9)]">
           Сравнение альянсов
         </h1>
-        <p className="text-ink-muted text-sm mt-2">
+        <p className="text-[#d3c5ae] text-sm mt-1">
           Выбери для сравнения два-три альянса
         </p>
       </div>
+
+      <div className="divider-accent mb-8 mt-7" />
 
       <div className="space-y-3">
         {alliances.map((alliance) => {
@@ -195,6 +205,7 @@ export default function AlliancesPage() {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 }
