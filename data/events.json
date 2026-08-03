@@ -1,5 +1,88 @@
 [
   {
+    "id": "0941916e-22b2-4ffd-81cd-c43d6b78ff6b",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "1980",
+    "characterName": "kamazik",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1980",
+    "clanId": "278",
+    "clanName": "die Wölfchen"
+  },
+  {
+    "id": "112a1623-a370-41e6-ad4c-907aee5a068c",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "1996",
+    "characterName": "songre",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1996",
+    "clanId": "278",
+    "clanName": "die Wölfchen"
+  },
+  {
+    "id": "eaf139bd-1559-467d-8149-da2aafaf5e26",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "21916",
+    "characterName": "Stealer",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=21916",
+    "clanId": "278",
+    "clanName": "die Wölfchen"
+  },
+  {
+    "id": "ef8ca7fe-ff39-40d4-96f5-8da35d5c8dfa",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "22522",
+    "characterName": "мастер",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22522",
+    "clanId": "278",
+    "clanName": "die Wölfchen"
+  },
+  {
+    "id": "4724dcf4-712c-4bda-8629-9bfd0dec66d2",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "a8fe75bc-312a-492e-8a36-36df9fb78b50",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "2302",
+    "characterName": "белый вепрь",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2302",
+    "clanId": "206",
+    "clanName": "Бомжи Кровожадного Мира"
+  },
+  {
+    "id": "e00274f6-8a18-426c-8cd5-3564872dd798",
+    "syncId": "2026-08-03T06:40:39.322Z",
+    "createdAt": "2026-08-03T06:40:39.322Z",
+    "scope": "clans",
+    "type": "player_divorced",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "partnerName": "Смотрящий"
+  },
+  {
     "id": "b3b37edd-02ab-4d5f-8426-2e0f65e54f4b",
     "syncId": "2026-08-02T06:19:09.839Z",
     "createdAt": "2026-08-02T06:19:09.839Z",

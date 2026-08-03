@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-08-02T16:18:19.607Z",
+  "createdAt": "2026-08-03T06:40:39.322Z",
   "players": [
     {
       "cuid": "7939",
@@ -92,9 +92,9 @@
     {
       "cuid": "1980",
       "nick": "kamazik",
-      "clanId": "278",
-      "clanName": "die Wölfchen",
-      "position": "Золотая Гвардия",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1980",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -114,9 +114,9 @@
     {
       "cuid": "1996",
       "nick": "songre",
-      "clanId": "278",
-      "clanName": "die Wölfchen",
-      "position": "songre",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1996",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -169,9 +169,9 @@
     {
       "cuid": "21916",
       "nick": "Stealer",
-      "clanId": "278",
-      "clanName": "die Wölfchen",
-      "position": "Stealer",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=21916",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -180,9 +180,9 @@
     {
       "cuid": "22522",
       "nick": "мастер",
-      "clanId": "278",
-      "clanName": "die Wölfchen",
-      "position": "Ответственный за всё",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22522",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -1863,13 +1863,13 @@
     {
       "cuid": "8717",
       "nick": "Fistashka",
-      "clanId": "244",
-      "clanName": "Devils of Death",
+      "clanId": "",
+      "clanName": "",
       "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
       "marriageKnown": true,
-      "marriagePartner": "Смотрящий",
-      "marriageSince": "24.07.2026"
+      "marriagePartner": "",
+      "marriageSince": ""
     },
     {
       "cuid": "1966",
@@ -1978,8 +1978,8 @@
       "position": "Смотрящий за происходящим",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28724",
       "marriageKnown": true,
-      "marriagePartner": "Fistashka",
-      "marriageSince": "24.07.2026"
+      "marriagePartner": "",
+      "marriageSince": ""
     },
     {
       "cuid": "3539",
@@ -3942,9 +3942,9 @@
     {
       "cuid": "2302",
       "nick": "белый вепрь",
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "206",
+      "clanName": "Бомжи Кровожадного Мира",
+      "position": "Блудный сын клана)",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2302",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -11581,12 +11581,12 @@
     {
       "owner": "FaLLeN",
       "itemIds": [
-        "549420",
         "203431",
+        "203432",
         "258826"
       ],
       "itemNames": [
-        "Меч Рыцаря(Мд)(+12)",
+        "Меч Рыцаря(Мд)(+15)",
         "Меч Рыцаря(Мд)(+15)",
         "Jumbo Wagner(Мд)(+15)"
       ]
@@ -12362,7 +12362,7 @@
         "575303",
         "575304",
         "392941",
-        "541160",
+        "541431",
         "405927",
         "444225",
         "444223",
