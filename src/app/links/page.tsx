@@ -65,6 +65,13 @@ export default function LinksPage() {
             />
             <span />
           </div>
+          <div className={styles.intro}>
+            <p>
+              Карты, коллекции и другие материалы, которые могут пригодиться в
+              игре.
+            </p>
+            <p>А могут и не пригодиться :)</p>
+          </div>
         </header>
 
         <nav className={styles.grid} aria-label="Полезные разделы сайта">
