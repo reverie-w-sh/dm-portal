@@ -1,133 +1,94 @@
+import Image from "next/image";
 import Link from "next/link";
-import {
-  MapIcon,
-  SmilesCollectionIcon,
-  HunterBoardIcon,
-  GiftIcon,
-  PlayersIcon,
-} from "@/components/SiteIcons";
+import styles from "./page.module.css";
 
 const usefulLinks = [
   {
     href: "/dom-boli",
-    icon: MapIcon,
-    category: "Карты и маршруты",
-    title: "Карты Дома Боли (КП)",
-    description:
-      "Все 6 карт Кровавого Подземелья. Поиск карты по координатам.",
+    image: "/images/links/dom-boli.webp",
+    alt: "Карты Дома Боли",
   },
   {
     href: "/personal-smiles",
-    icon: SmilesCollectionIcon,
-    category: "Наше любимое :)",
-    title: "Личные смайлики!",
-    description:
-      "Посмотреть личные смайликовые коллекции: у кого сколько и какие :)",
+    image: "/images/links/personal-smiles.webp",
+    alt: "Личные смайлики",
   },
   {
     href: "/hunter-board",
-    icon: HunterBoardIcon,
-    category: "Ни у кого такого не было! :)",
-    title: "Планшет охотника",
-    description:
-      "Удобный (я проверяла! :)) планшет для охоты: карта 4×4, выбираем зверя, записываем результаты поиска в трёх направлениях, очки считаются автоматически. Больше не нужно искать блокнотик и карандаш!",
+    image: "/images/links/hunter-board.webp",
+    alt: "Планшет охотника",
   },
   {
     href: "/dungeons",
-    icon: MapIcon,
-    category: "Карты и маршруты",
-    title: "Карты подземелий",
-    description:
-      "Сад Кошмаров, Малахитовый Рудник и Лес Теней — три карты в одном разделе.",
+    image: "/images/links/dungeons.webp",
+    alt: "Карты подземелий",
   },
   {
     href: "/ratings",
-    icon: SmilesCollectionIcon,
-    category: "Зал Славы",
-    title: "Рейтинги Древнего Мира",
-    description:
-      "Игроки, кланы, профессии и достижения — всё самое интересное в одном месте.",
+    image: "/images/links/ratings.webp",
+    alt: "Рейтинги",
   },
   {
     href: "/experience",
-    icon: HunterBoardIcon,
-    category: "Считаем опыт",
-    title: "Калькулятор и таблица опыта",
-    description:
-      "Узнай свой ап и посчитай, сколько осталось до следующего апа и нового уровня.",
+    image: "/images/links/experience.webp",
+    alt: "Калькулятор опыта",
   },
   {
     href: "/personal-items",
-    icon: GiftIcon,
-    category: "Уникальные картинки",
-    title: "Именные вещи",
-    description:
-      "Все персональные изображения на оружие и амуницию, собранные по владельцам.",
+    image: "/images/links/personal-items.webp",
+    alt: "Именные вещи",
   },
   {
     href: "/couples",
-    icon: PlayersIcon,
-    category: "Страничка про любовь :)",
-    title: "Семейные пары",
-    description:
-      "Кто с кем вместе, с какой даты и какие коллекции смайликов и картинок есть у пары.",
+    image: "/images/links/couples.webp",
+    alt: "Семейные пары",
   },
 ];
 
 export default function LinksPage() {
   return (
-    <div className="max-w-[1180px] mx-auto px-6 py-10">
-      <div className="mb-10">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-ink-muted mb-3">
-          Полезное и не очень
-        </p>
+    <main className={styles.page}>
+      <div className={styles.shell}>
+        <header className={styles.heading}>
+          <div className={styles.titleRow}>
+            <span aria-hidden="true" />
+            <h1>Полезное и не очень :)</h1>
+            <span aria-hidden="true" />
+          </div>
+          <div className={styles.ornament} aria-hidden="true">
+            <span />
+            <Image
+              src="/icons/wolf-paw-gold.png"
+              alt=""
+              width={22}
+              height={22}
+            />
+            <span />
+          </div>
+        </header>
 
-        <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
-          Карты, коллекции и другие материалы, которые могут пригодиться в игре.
-        </p>
-
-        <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
-          А могут и не пригодиться :)
-        </p>
-
-        <div className="divider-accent mt-7" />
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6">
-        {usefulLinks.map((item) => {
-          const Icon = item.icon;
-
-          return (
+        <nav className={styles.grid} aria-label="Полезные разделы сайта">
+          {usefulLinks.map((item, index) => (
             <Link
               key={item.href}
               href={item.href}
-              className="group relative glass rounded-[26px] p-7 md:p-8 overflow-hidden border border-white/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(0,0,0,.12)]"
+              className={styles.card}
+              aria-label={item.alt}
             >
-              <div className="absolute -right-12 -top-12 w-44 h-44 rounded-full bg-white/20 blur-2xl pointer-events-none" />
-
-              <div className="relative">
-                <div className="flex items-start">
-                  <Icon className="w-16 h-16 text-ink transition-transform duration-300 group-hover:scale-[1.04]" />
-                </div>
-
-                <div className="mt-7">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-ink-muted mb-3">
-                    {item.category}
-                  </p>
-
-                  <h2 className="text-[24px] leading-tight font-black text-ink tracking-tight">
-                    {item.title}
-                  </h2>
-
-                  <p className="text-ink-muted text-sm leading-relaxed mt-3 max-w-md">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
+              <span className={styles.imageWrap}>
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  priority={index < 2}
+                  sizes="(max-width: 780px) 100vw, 50vw"
+                  className={styles.image}
+                />
+              </span>
             </Link>
-          );
-        })}
+          ))}
+        </nav>
       </div>
-    </div>
+    </main>
   );
 }
