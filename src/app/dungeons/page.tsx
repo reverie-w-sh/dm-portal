@@ -27,8 +27,16 @@ const dungeons = [
 
 export default function DungeonsPage() {
   return (
-    <main className="mx-auto max-w-[1180px] px-4 py-10 sm:px-6">
-      <header className="mb-10">
+    <main
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
+      <div className="mx-auto max-w-[1180px] px-4 py-10 sm:px-6">
+        <header className="mb-10">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-ink-muted">
           Карты и маршруты
         </p>
@@ -44,28 +52,29 @@ export default function DungeonsPage() {
         </p>
 
         <div className="divider-accent mt-7" />
-      </header>
+        </header>
 
-      <nav className="grid gap-5" aria-label="Карты подземелий">
-        {dungeons.map((dungeon, index) => (
-          <Link
-            key={dungeon.href}
-            href={dungeon.href}
-            aria-label={dungeon.alt}
-            className="group block overflow-hidden bg-[#030404] shadow-[0_14px_30px_rgba(0,0,0,.45)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,0,0,.58),0_0_22px_rgba(194,128,31,.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d9a44a]"
-          >
-            <Image
-              src={dungeon.image}
-              alt={dungeon.alt}
-              width={dungeon.width}
-              height={dungeon.height}
-              priority={index === 0}
-              sizes="(max-width: 1180px) 100vw, 1180px"
-              className="block h-auto w-full transition duration-200 group-hover:brightness-105 group-hover:saturate-105"
-            />
-          </Link>
-        ))}
-      </nav>
+        <nav className="grid gap-5" aria-label="Карты подземелий">
+          {dungeons.map((dungeon, index) => (
+            <Link
+              key={dungeon.href}
+              href={dungeon.href}
+              aria-label={dungeon.alt}
+              className="group block overflow-hidden bg-[#030404] shadow-[0_14px_30px_rgba(0,0,0,.45)] transition duration-200 hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,0,0,.58),0_0_22px_rgba(194,128,31,.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d9a44a]"
+            >
+              <Image
+                src={dungeon.image}
+                alt={dungeon.alt}
+                width={dungeon.width}
+                height={dungeon.height}
+                priority={index === 0}
+                sizes="(max-width: 1180px) 100vw, 1180px"
+                className="block h-auto w-full transition duration-200 group-hover:brightness-105 group-hover:saturate-105"
+              />
+            </Link>
+          ))}
+        </nav>
+      </div>
     </main>
   );
 }
