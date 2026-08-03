@@ -210,6 +210,14 @@ export default async function CompareClansPage({
 
   if (comparedClans.length < 2) {
     return (
+      <div
+        className="min-h-screen"
+        style={{
+          backgroundImage: "url('/images/home-pattern.webp')",
+          backgroundRepeat: "repeat",
+          backgroundPosition: "top center",
+        }}
+      >
       <div className="max-w-[1180px] mx-auto px-6 py-10">
         <Link
           href="/clans"
@@ -227,6 +235,7 @@ export default async function CompareClansPage({
             Выберите на странице кланов минимум два клана.
           </p>
         </div>
+      </div>
       </div>
     );
   }
@@ -346,6 +355,14 @@ export default async function CompareClansPage({
   ];
 
   return (
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
     <div className="max-w-[1380px] mx-auto px-6 py-10">
       <Link
         href="/clans"
@@ -580,6 +597,7 @@ export default async function CompareClansPage({
     <br />
     Да, мы тоже не знаем, зачем это считать))
       </p>
+    </div>
     </div>
   );
 }

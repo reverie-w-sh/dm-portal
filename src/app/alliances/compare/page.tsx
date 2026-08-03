@@ -116,6 +116,14 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
 
   if (comparedAlliances.length < 2) {
     return (
+      <div
+        className="min-h-screen"
+        style={{
+          backgroundImage: "url('/images/home-pattern.webp')",
+          backgroundRepeat: "repeat",
+          backgroundPosition: "top center",
+        }}
+      >
       <div className="max-w-[1180px] mx-auto px-6 py-10">
         <Link href="/alliances" className="inline-flex items-center gap-1.5 text-ink-muted text-xs font-medium hover:text-accent transition-colors mb-8">
           ← Вернуться к альянсам
@@ -124,6 +132,7 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
           <h1 className="text-2xl font-black text-ink">Недостаточно альянсов для сравнения</h1>
           <p className="text-ink-muted text-sm mt-2">Выберите минимум два альянса.</p>
         </div>
+      </div>
       </div>
     );
   }
@@ -161,6 +170,14 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
   const clansById = new Map(clansData.map((clan) => [clan.clanId, clan]));
 
   return (
+    <div
+      className="min-h-screen"
+      style={{
+        backgroundImage: "url('/images/home-pattern.webp')",
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top center",
+      }}
+    >
     <div className="max-w-[1380px] mx-auto px-6 py-10">
       <Link href="/alliances" className="inline-flex items-center gap-1.5 text-ink-muted text-xs font-medium hover:text-accent transition-colors mb-8">
         ← Выбрать другие альянсы
@@ -262,6 +279,7 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
           );
         })}
       </div>
+    </div>
     </div>
   );
 }
