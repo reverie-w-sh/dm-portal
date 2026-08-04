@@ -1,5 +1,33 @@
 [
   {
+    "id": "eb365229-4fb3-4891-9d27-56a968a5aad3",
+    "syncId": "2026-08-04T20:19:29.161Z",
+    "createdAt": "2026-08-04T20:19:29.161Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "1780",
+    "characterName": "bolt1k",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1780",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "507b4196-2a25-4905-a43c-7bcc24145281",
+    "syncId": "2026-08-04T20:19:29.161Z",
+    "createdAt": "2026-08-04T20:19:29.161Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "2171",
+    "characterName": "WanTeck",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2171",
+    "amount": 1,
+    "oldCount": 32,
+    "newCount": 33,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/19182/prv_wanteck30.gif"
+    ]
+  },
+  {
     "id": "184ae25e-2785-4daf-bf73-6a4989e20ba0",
     "syncId": "2026-08-04T13:17:54.651Z",
     "createdAt": "2026-08-04T13:17:54.651Z",
