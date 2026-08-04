@@ -561,6 +561,7 @@ const hasAnimal =
 )}
 
                       {cell.animal !== "unknown" &&
+                        cell.animal !== "empty" &&
                         missCount === 2 &&
                         positiveSearchIndex === -1 && (
                           <span
@@ -588,6 +589,7 @@ const hasAnimal =
 
                           const isCertainDirection =
                             cell.animal !== "unknown" &&
+                            cell.animal !== "empty" &&
                             missCount === 2 &&
                             result === "none" &&
                             positiveSearchIndex === -1;
