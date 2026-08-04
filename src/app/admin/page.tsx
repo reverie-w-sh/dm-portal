@@ -2,6 +2,11 @@
 
 import { useState, useEffect, useRef } from "react";
 import type { SyncStatus } from "../api/admin/sync/route";
+import {
+  NAV_LINKS,
+  NAV_NEW_UPDATED_EVENT,
+  type NavHref,
+} from "@/lib/navigation-links";
 
 type SyncState = "idle" | "running" | "success" | "error";
 
@@ -61,6 +66,187 @@ type AnalyticsData = {
   recent?: { pathname: string; title: string; at: string }[];
   chart?: { day: string; views: number; visitors: number }[];
 };
+
+type NavigationNewData = {
+  configured: boolean;
+  items?: Partial<Record<NavHref, string>>;
+  message?: string;
+};
+
+function NavigationNewPanel() {
+  const [selected, setSelected] = useState<NavHref[]>([]);
+  const [saved, setSaved] = useState<NavHref[]>([]);
+  const [configured, setConfigured] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/admin/navigation-new", { cache: "no-store" })
+      .then(async (response) => {
+        const data = (await response.json()) as NavigationNewData;
+
+        if (!response.ok) {
+          throw new Error(data.message ?? "Не удалось загрузить настройки");
+        }
+
+        const active = NAV_LINKS.flatMap((item) =>
+          data.items?.[item.href] ? [item.href] : [],
+        );
+
+        setConfigured(data.configured);
+        setSelected(active);
+        setSaved(active);
+      })
+      .catch((error) => {
+        setIsError(true);
+        setMessage(String(error));
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  function toggleLink(href: NavHref) {
+    setSelected((current) => {
+      const next = new Set(current);
+
+      if (next.has(href)) {
+        next.delete(href);
+      } else {
+        next.add(href);
+      }
+
+      return NAV_LINKS.flatMap((item) =>
+        next.has(item.href) ? [item.href] : [],
+      );
+    });
+    setMessage("");
+  }
+
+  async function saveSettings() {
+    setSaving(true);
+    setMessage("");
+    setIsError(false);
+
+    try {
+      const response = await fetch("/api/admin/navigation-new", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ hrefs: selected }),
+      });
+      const data = (await response.json()) as NavigationNewData;
+
+      if (!response.ok) {
+        throw new Error(data.message ?? "Не удалось сохранить настройки");
+      }
+
+      const active = NAV_LINKS.flatMap((item) =>
+        data.items?.[item.href] ? [item.href] : [],
+      );
+
+      setSelected(active);
+      setSaved(active);
+      window.dispatchEvent(
+        new CustomEvent(NAV_NEW_UPDATED_EVENT, {
+          detail: data.items ?? {},
+        }),
+      );
+      setMessage("Сохранено. Метки New уже появились в навигаторе.");
+    } catch (error) {
+      setIsError(true);
+      setMessage(String(error));
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  const hasChanges = selected.join("|") !== saved.join("|");
+
+  return (
+    <div className="glass rounded-2xl p-6">
+      <h2 className="text-sm font-semibold text-ink uppercase tracking-wider mb-2">
+        Метки New в навигаторе
+      </h2>
+
+      <p className="text-xs leading-relaxed text-ink-muted mb-5">
+        Выбери ссылки, над которыми нужно показать New. У каждого посетителя
+        метка исчезнет после открытия этой страницы.
+      </p>
+
+      {loading ? (
+        <p className="text-sm text-ink-muted">Загружаю настройки…</p>
+      ) : !configured ? (
+        <p className="text-sm text-[#b42318]">
+          Upstash Redis не подключён в Vercel, поэтому настройки пока нельзя сохранить.
+        </p>
+      ) : (
+        <>
+          <div className="space-y-2">
+            {NAV_LINKS.map((item) => {
+              const checked = selected.includes(item.href);
+
+              return (
+                <label
+                  key={item.href}
+                  className="flex cursor-pointer items-center gap-3 rounded-xl border border-[#aaa095] bg-white/25 px-4 py-3 transition hover:border-[#b47722]"
+                >
+                  <input
+                    type="checkbox"
+                    checked={checked}
+                    onChange={() => toggleLink(item.href)}
+                    className="h-4 w-4 accent-[#a96b1d]"
+                  />
+
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-sm font-semibold text-ink">
+                      {item.label}
+                    </span>
+                    <span className="block text-[11px] text-ink-muted">
+                      {item.href}
+                    </span>
+                  </span>
+
+                  {checked && (
+                    <span className="text-[10px] font-black text-[#a96b1d]">
+                      New
+                    </span>
+                  )}
+                </label>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={saveSettings}
+            disabled={!hasChanges || saving}
+            className="btn-primary mt-5"
+            style={{
+              opacity: !hasChanges || saving ? 0.55 : 1,
+              cursor: !hasChanges || saving ? "not-allowed" : "pointer",
+            }}
+          >
+            {saving ? "Сохраняю…" : "Сохранить метки New"}
+          </button>
+
+          <p className="mt-3 text-[11px] leading-relaxed text-ink-muted">
+            Если выключить метку, сохранить, а потом включить снова — она снова
+            появится у всех посетителей.
+          </p>
+        </>
+      )}
+
+      {message && (
+        <p
+          className="mt-4 text-xs font-medium"
+          style={{ color: isError ? "#b42318" : "#2f7a46" }}
+        >
+          {message}
+        </p>
+      )}
+    </div>
+  );
+}
 
 const PAGE_NAMES: Record<string, string> = {
   "/": "Главная",
@@ -308,6 +494,8 @@ export default function AdminPage() {
       <div className="divider-accent mb-10" />
 
       <div className="space-y-5 max-w-2xl">
+
+        <NavigationNewPanel />
 
         <AnalyticsPanel />
 

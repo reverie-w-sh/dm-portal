@@ -3,21 +3,126 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import {
+  NAV_LINKS,
+  NAV_NEW_UPDATED_EVENT,
+  isNavHref,
+  type NavHref,
+} from "@/lib/navigation-links";
 
-const navLinks = [
-  { href: "/members", label: 'Состав клана "Волчата"' },
-  { href: "/clans", label: "Другие кланы ДМ" },
-  { href: "/gallery", label: "Галерея" },
-  { href: "/gifts", label: "Подарочки" },
-  { href: "/links", label: "Тут тоже что-то есть :)" },
-];
+const STORAGE_KEY = "wolfchen-navigation-new-seen-v1";
+
+type VersionMap = Partial<Record<NavHref, string>>;
+
+function normalizeVersions(value: unknown): VersionMap {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return {};
+  }
+
+  const versions: VersionMap = {};
+
+  for (const [href, version] of Object.entries(value)) {
+    if (isNavHref(href) && typeof version === "string" && version) {
+      versions[href] = version;
+    }
+  }
+
+  return versions;
+}
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [activeItems, setActiveItems] = useState<VersionMap>({});
+  const [seenItems, setSeenItems] = useState<VersionMap>(() => {
+    if (typeof window === "undefined") return {};
+
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? normalizeVersions(JSON.parse(stored)) : {};
+    } catch {
+      return {};
+    }
+  });
 
   const isActive = (href: string) => pathname.startsWith(href);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetch("/api/navigation-new", { cache: "no-store" })
+      .then((response) => {
+        if (!response.ok) throw new Error("Не удалось загрузить New");
+        return response.json();
+      })
+      .then((data: { items?: unknown }) => {
+        if (!cancelled) {
+          setActiveItems(normalizeVersions(data.items));
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setActiveItems({});
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    function handleUpdate(event: Event) {
+      const updatedEvent = event as CustomEvent<unknown>;
+      setActiveItems(normalizeVersions(updatedEvent.detail));
+    }
+
+    window.addEventListener(NAV_NEW_UPDATED_EVENT, handleUpdate);
+
+    return () => {
+      window.removeEventListener(NAV_NEW_UPDATED_EVENT, handleUpdate);
+    };
+  }, []);
+
+  useEffect(() => {
+    const currentHref = NAV_LINKS.find(({ href }) =>
+      pathname === href || pathname.startsWith(`${href}/`),
+    )?.href;
+
+    if (!currentHref) return;
+
+    const activeVersion = activeItems[currentHref];
+
+    if (!activeVersion) return;
+
+    const timer = window.setTimeout(() => {
+      setSeenItems((current) => {
+        if (current[currentHref] === activeVersion) return current;
+
+        const nextSeenItems = {
+          ...current,
+          [currentHref]: activeVersion,
+        };
+
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(nextSeenItems));
+        } catch {
+          // В приватном режиме браузер может запретить сохранение.
+        }
+
+        return nextSeenItems;
+      });
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [activeItems, pathname]);
+
+  function isNew(href: NavHref): boolean {
+    const activeVersion = activeItems[href];
+
+    return Boolean(
+      activeVersion && seenItems[href] !== activeVersion && !isActive(href),
+    );
+  }
 
   return (
     <header
@@ -81,8 +186,9 @@ export default function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-10 lg:flex">
-          {navLinks.map(({ href, label }) => {
+          {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
+            const showNew = isNew(href);
 
             return (
               <Link
@@ -95,6 +201,17 @@ export default function Navbar() {
                     : "text-[#ecd4a6] hover:text-[#efc678]",
                 ].join(" ")}
               >
+                <span
+                  aria-hidden="true"
+                  className={[
+                    "absolute left-1/2 -top-1 -translate-x-1/2 text-[9px] font-black leading-none tracking-[0.08em] text-[#e7a64a] drop-shadow-[0_0_5px_rgba(231,166,74,.55)] transition-opacity",
+                    showNew ? "opacity-100" : "opacity-0",
+                  ].join(" ")}
+                >
+                  New
+                </span>
+
+                {showNew && <span className="sr-only">Новое: </span>}
                 {label}
 
                 <span
@@ -131,21 +248,36 @@ export default function Navbar() {
             background: "linear-gradient(180deg,#191a18,#0f100f)",
           }}
         >
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={() => setOpen(false)}
-              className={[
-                "block border-b border-[#47453f] px-6 py-4 font-semibold transition-colors",
-                isActive(href)
-                  ? "text-[#efc678]"
-                  : "text-[#ecd4a6] hover:text-[#efc678]",
-              ].join(" ")}
-            >
-              {label}
-            </Link>
-          ))}
+          {NAV_LINKS.map(({ href, label }) => {
+            const showNew = isNew(href);
+
+            return (
+              <Link
+                key={href}
+                href={href}
+                onClick={() => setOpen(false)}
+                className={[
+                  "block border-b border-[#47453f] px-6 py-3 font-semibold transition-colors",
+                  isActive(href)
+                    ? "text-[#efc678]"
+                    : "text-[#ecd4a6] hover:text-[#efc678]",
+                ].join(" ")}
+              >
+                <span
+                  aria-hidden="true"
+                  className={[
+                    "block h-3 text-[9px] font-black leading-3 tracking-[0.08em] text-[#e7a64a] transition-opacity",
+                    showNew ? "opacity-100" : "opacity-0",
+                  ].join(" ")}
+                >
+                  New
+                </span>
+
+                {showNew && <span className="sr-only">Новое: </span>}
+                {label}
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>
