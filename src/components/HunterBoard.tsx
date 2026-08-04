@@ -544,7 +544,7 @@ const hasAnimal =
                       aria-label={`Клетка ${
                         cellIndex + 1
                       }: ${animal.name}`}
-                      className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-black/20 transition hover:brightness-105 active:scale-[0.98] sm:aspect-[1.3/1]"
+                      className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-[#ad712252] transition hover:brightness-105 active:scale-[0.98] sm:aspect-[1.3/1]"
                     >
 {cell.animal === "unknown" ? (
   <span className="text-2xl font-light text-white/25 sm:text-3xl">
