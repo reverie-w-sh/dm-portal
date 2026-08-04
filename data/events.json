@@ -1,5 +1,29 @@
 [
   {
+    "id": "184ae25e-2785-4daf-bf73-6a4989e20ba0",
+    "syncId": "2026-08-04T13:17:54.651Z",
+    "createdAt": "2026-08-04T13:17:54.651Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "1780",
+    "characterName": "bolt1k",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1780",
+    "clanId": "213",
+    "clanName": "Ozune"
+  },
+  {
+    "id": "2dc23f69-7eca-40a5-a665-4c112b340f13",
+    "syncId": "2026-08-04T13:17:54.651Z",
+    "createdAt": "2026-08-04T13:17:54.651Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "ecdb323c-a07d-4b34-b3ec-dafbae8086d5",
     "syncId": "2026-08-04T06:05:07.436Z",
     "createdAt": "2026-08-04T06:05:07.436Z",

@@ -11,14 +11,14 @@
 9. Партизан[12] — cuid=2768 — https://dm-game.com/index.php?file=infouser&cuid=2768
 10. Храброе сердце[12] — cuid=9554 — https://dm-game.com/index.php?file=infouser&cuid=9554
 11. BlackGeneral[11] — cuid=6250 — https://dm-game.com/index.php?file=infouser&cuid=6250
-12. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
-13. Ice[11] — cuid=1001 — https://dm-game.com/index.php?file=infouser&cuid=1001
-14. Свободный монстр_11[11] — cuid=9016 — https://dm-game.com/index.php?file=infouser&cuid=9016
-15. Dillinger[10] — cuid=3054 — https://dm-game.com/index.php?file=infouser&cuid=3054
-16. Takezo[10] — cuid=7224 — https://dm-game.com/index.php?file=infouser&cuid=7224
-17. WhiTe[10] — cuid=3309 — https://dm-game.com/index.php?file=infouser&cuid=3309
-18. _GRACIA_[9] — cuid=10032 — https://dm-game.com/index.php?file=infouser&cuid=10032
-19. Apicmokpam[9] — cuid=11818 — https://dm-game.com/index.php?file=infouser&cuid=11818
+12. Ice[11] — cuid=1001 — https://dm-game.com/index.php?file=infouser&cuid=1001
+13. Свободный монстр_11[11] — cuid=9016 — https://dm-game.com/index.php?file=infouser&cuid=9016
+14. Dillinger[10] — cuid=3054 — https://dm-game.com/index.php?file=infouser&cuid=3054
+15. Takezo[10] — cuid=7224 — https://dm-game.com/index.php?file=infouser&cuid=7224
+16. WhiTe[10] — cuid=3309 — https://dm-game.com/index.php?file=infouser&cuid=3309
+17. _GRACIA_[9] — cuid=10032 — https://dm-game.com/index.php?file=infouser&cuid=10032
+18. Apicmokpam[9] — cuid=11818 — https://dm-game.com/index.php?file=infouser&cuid=11818
+19. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
 20. DurmaN87[9] — cuid=5975 — https://dm-game.com/index.php?file=infouser&cuid=5975
 21. Esey[9] — cuid=2243 — https://dm-game.com/index.php?file=infouser&cuid=2243
 22. gae4ka[9] — cuid=1318 — https://dm-game.com/index.php?file=infouser&cuid=1318
@@ -636,7 +636,7 @@
 2. Serg[11] — cuid=1985 — https://dm-game.com/index.php?file=infouser&cuid=1985
 3. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
 
-## Ozune — CLAN 213 — знайдено 21
+## Ozune — CLAN 213 — знайдено 20
 
 1. Sharik[12] — cuid=2189 — https://dm-game.com/index.php?file=infouser&cuid=2189
 2. Topfer[12] — cuid=2010 — https://dm-game.com/index.php?file=infouser&cuid=2010
@@ -645,20 +645,19 @@
 5. Сладкий Грех[10] — cuid=4037 — https://dm-game.com/index.php?file=infouser&cuid=4037
 6. Эйлин[10] — cuid=2163 — https://dm-game.com/index.php?file=infouser&cuid=2163
 7. BASS[9] — cuid=3765 — https://dm-game.com/index.php?file=infouser&cuid=3765
-8. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
-9. Cherry[9] — cuid=3632 — https://dm-game.com/index.php?file=infouser&cuid=3632
-10. marlllboro[9] — cuid=10227 — https://dm-game.com/index.php?file=infouser&cuid=10227
-11. S_A_U_R_O_N[9] — cuid=3231 — https://dm-game.com/index.php?file=infouser&cuid=3231
-12. Sally Whitemane[9] — cuid=10026 — https://dm-game.com/index.php?file=infouser&cuid=10026
-13. Ленивец[9] — cuid=1697 — https://dm-game.com/index.php?file=infouser&cuid=1697
-14. Сайонара[9] — cuid=2011 — https://dm-game.com/index.php?file=infouser&cuid=2011
-15. Huskar[8] — cuid=22518 — https://dm-game.com/index.php?file=infouser&cuid=22518
-16. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
-17. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
-18. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
-19. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
-20. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
-21. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
+8. Cherry[9] — cuid=3632 — https://dm-game.com/index.php?file=infouser&cuid=3632
+9. marlllboro[9] — cuid=10227 — https://dm-game.com/index.php?file=infouser&cuid=10227
+10. S_A_U_R_O_N[9] — cuid=3231 — https://dm-game.com/index.php?file=infouser&cuid=3231
+11. Sally Whitemane[9] — cuid=10026 — https://dm-game.com/index.php?file=infouser&cuid=10026
+12. Ленивец[9] — cuid=1697 — https://dm-game.com/index.php?file=infouser&cuid=1697
+13. Сайонара[9] — cuid=2011 — https://dm-game.com/index.php?file=infouser&cuid=2011
+14. Huskar[8] — cuid=22518 — https://dm-game.com/index.php?file=infouser&cuid=22518
+15. SheWolf[8] — cuid=12814 — https://dm-game.com/index.php?file=infouser&cuid=12814
+16. Tashyly[8] — cuid=3734 — https://dm-game.com/index.php?file=infouser&cuid=3734
+17. Светуля[8] — cuid=2316 — https://dm-game.com/index.php?file=infouser&cuid=2316
+18. Prince[7] — cuid=19187 — https://dm-game.com/index.php?file=infouser&cuid=19187
+19. Мамонт[6] — cuid=21932 — https://dm-game.com/index.php?file=infouser&cuid=21932
+20. Сенатор[6] — cuid=28199 — https://dm-game.com/index.php?file=infouser&cuid=28199
 
 ## Царство теней — CLAN 216 — знайдено 12
 
@@ -805,12 +804,13 @@
 10. MadDad[7] — cuid=22695 — https://dm-game.com/index.php?file=infouser&cuid=22695
 11. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
 
-## Devils of Death — CLAN 244 — знайдено 4
+## Devils of Death — CLAN 244 — знайдено 5
 
 1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
-2. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
-3. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-4. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+2. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
+3. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
+4. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
+5. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 
 ## Гладиаторы — CLAN 247 — знайдено 10
 
