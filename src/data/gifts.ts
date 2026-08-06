@@ -53,4 +53,12 @@ export const GIFTS: Gift[] = [
   { title: "Подарок с сердечками)", file: "/gifts/gift-hearts.gif" },
   { title: "Лав Из)", file: "/gifts/love-is.gif" },
   { title: "Спокойной ночи)", file: "/gifts/good-night.gif" },
+  
+  { title: "Сердечко белый контур)", file: "/gifts/serdechko3.gif" },
+  { title: "Сердечко красное)", file: "/gifts/serdechko2.gif" },
+  { title: "Сердечко черный контур)", file: "/gifts/heart6.png" },
+  { title: "Сердечки черные)", file: "/gifts/heart3.gif" },
+  { title: "Сердечко черное)", file: "/gifts/black-heart.gif" },
+  { title: "Сердечко красное моё)", file: "/gifts/allania47.gif" },
+  
 ];
