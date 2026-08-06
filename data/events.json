@@ -1,5 +1,41 @@
 [
   {
+    "id": "d37fdbd9-4e7c-4208-a2f6-6d50f6b4842e",
+    "syncId": "2026-08-06T06:07:17.197Z",
+    "createdAt": "2026-08-06T06:07:17.197Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "4807",
+    "characterName": "как не крути",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4807",
+    "clanId": "206",
+    "clanName": "Бомжи Кровожадного Мира"
+  },
+  {
+    "id": "36c33a7e-d841-44ba-a70f-7ed296da14a6",
+    "syncId": "2026-08-06T06:07:17.197Z",
+    "createdAt": "2026-08-06T06:07:17.197Z",
+    "scope": "clans",
+    "type": "player_married",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "partnerName": "Смотрящий",
+    "marriageSince": "05.08.2026"
+  },
+  {
+    "id": "883889cd-71fe-4a6d-a220-39a8d3919af1",
+    "syncId": "2026-08-06T06:07:17.197Z",
+    "createdAt": "2026-08-06T06:07:17.197Z",
+    "scope": "clans",
+    "type": "player_married",
+    "characterId": "4603",
+    "characterName": "АреоН",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4603",
+    "partnerName": "Marishka",
+    "marriageSince": "05.08.2026"
+  },
+  {
     "id": "eb365229-4fb3-4891-9d27-56a968a5aad3",
     "syncId": "2026-08-04T20:19:29.161Z",
     "createdAt": "2026-08-04T20:19:29.161Z",
