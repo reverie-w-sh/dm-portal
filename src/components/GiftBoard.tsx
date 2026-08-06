@@ -6,6 +6,8 @@ import { GIFTS } from "@/data/gifts";
 import styles from "./GiftBoard.module.css";
 
 const STORAGE_KEY = "wolfchen-gift-board-v1";
+const NICK_STORAGE_KEY = "wolfchen-gift-board-nick-v1";
+const LIKES_STORAGE_KEY = "wolfchen-gift-board-liked-v1";
 const DEFAULT_COLUMNS = 11;
 const DEFAULT_ROWS = 10;
 const MIN_COLUMNS = 8;
@@ -15,6 +17,7 @@ const MAX_ROWS = 20;
 
 type Cell = string | null;
 type Tool = "paint" | "erase";
+type SchemeSort = "new" | "popular";
 
 type SavedBoard = {
   columns: number;
@@ -22,19 +25,15 @@ type SavedBoard = {
   cells: Cell[];
 };
 
-const HEART_MASK = [
-  ".XXX...XXX.",
-  "XXXXX.XXXXX",
-  "XXXXXXXXXXX",
-  "XXXXXXXXXXX",
-  ".XXXXXXXXX.",
-  "..XXXXXXX..",
-  "...XXXXX...",
-  "....XXX....",
-  ".....X.....",
-];
+type PublicScheme = SavedBoard & {
+  id: string;
+  nick: string;
+  title: string;
+  createdAt: string;
+  likes: number;
+};
 
-const SMALL_HEART_MASK = [
+const HEART_MASK = [
   ".XX...XX.",
   "XXXX.XXXX",
   "XXXXXXXXX",
@@ -42,19 +41,6 @@ const SMALL_HEART_MASK = [
   "..XXXXX..",
   "...XXX...",
   "....X....",
-];
-
-const PAW_MASK = [
-  ".XX.....XX.",
-  ".XX.....XX.",
-  "...XX.XX...",
-  "...XX.XX...",
-  "...........",
-  "...XXXXX...",
-  "..XXXXXXX..",
-  "..XXXXXXX..",
-  "...XXXXX...",
-  "....XXX....",
 ];
 
 const LOVE_MASK = [
@@ -113,6 +99,16 @@ export default function GiftBoard() {
   const [search, setSearch] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   const [copyState, setCopyState] = useState("Скопировать схему");
+  const [nick, setNick] = useState("");
+  const [schemeTitle, setSchemeTitle] = useState("");
+  const [schemeSort, setSchemeSort] = useState<SchemeSort>("new");
+  const [publicSchemes, setPublicSchemes] = useState<PublicScheme[]>([]);
+  const [schemesLoading, setSchemesLoading] = useState(true);
+  const [schemesConfigured, setSchemesConfigured] = useState(true);
+  const [schemesRefresh, setSchemesRefresh] = useState(0);
+  const [isPublishing, setIsPublishing] = useState(false);
+  const [publishMessage, setPublishMessage] = useState("");
+  const [likedSchemes, setLikedSchemes] = useState<Set<string>>(() => new Set());
   const paintingRef = useRef(false);
 
   const giftByFile = useMemo(
@@ -123,6 +119,16 @@ export default function GiftBoard() {
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
       try {
+        setNick(localStorage.getItem(NICK_STORAGE_KEY) ?? "");
+        try {
+          const savedLikes = JSON.parse(localStorage.getItem(LIKES_STORAGE_KEY) ?? "[]") as unknown;
+          if (Array.isArray(savedLikes)) {
+            setLikedSchemes(new Set(savedLikes.filter((id): id is string => typeof id === "string")));
+          }
+        } catch {
+          setLikedSchemes(new Set());
+        }
+
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return;
 
@@ -177,6 +183,39 @@ export default function GiftBoard() {
       window.removeEventListener("pointercancel", stopPainting);
     };
   }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadSchemes() {
+      setSchemesLoading(true);
+      try {
+        const response = await fetch(`/api/gift-board/schemes?sort=${schemeSort}`, {
+          cache: "no-store",
+        });
+        const data = (await response.json()) as {
+          configured?: boolean;
+          schemes?: PublicScheme[];
+        };
+
+        if (cancelled) return;
+        setSchemesConfigured(data.configured !== false);
+        setPublicSchemes(Array.isArray(data.schemes) ? data.schemes : []);
+      } catch (error) {
+        if (!cancelled) {
+          console.error("Не удалось загрузить сохранённые схемы:", error);
+          setPublicSchemes([]);
+        }
+      } finally {
+        if (!cancelled) setSchemesLoading(false);
+      }
+    }
+
+    void loadSchemes();
+    return () => {
+      cancelled = true;
+    };
+  }, [schemeSort, schemesRefresh]);
 
   const selected = giftByFile.get(selectedGift) ?? GIFTS[0];
 
@@ -258,6 +297,15 @@ export default function GiftBoard() {
     setRows(nextRows);
   }
 
+  function addRow(position: "top" | "bottom") {
+    if (rows >= MAX_ROWS) return;
+    const emptyRow = emptyBoard(columns, 1);
+    setCells((current) =>
+      position === "top" ? [...emptyRow, ...current] : [...current, ...emptyRow],
+    );
+    setRows(rows + 1);
+  }
+
   function fillBoard() {
     setCells((current) =>
       current.map((cell) => cell ?? selectedGift),
@@ -312,9 +360,11 @@ export default function GiftBoard() {
 
   async function copyScheme() {
     const giftNames = new Map(GIFTS.map((gift) => [gift.file, gift.title]));
-    const lines = Array.from({ length: rows }, (_, row) => {
+    const lines = Array.from({ length: rows }, (_, step) => {
+      const row = rows - 1 - step;
       const start = row * columns;
-      return `${row + 1}. ${compressRow(cells.slice(start, start + columns), giftNames)}`;
+      const giftsInGivingOrder = cells.slice(start, start + columns).reverse();
+      return `${step + 1}. ${compressRow(giftsInGivingOrder, giftNames)}`;
     });
     const summary = counts.map((item) => `${item.gift?.title}: ${item.count}`).join("\n");
     const text = [
@@ -324,7 +374,7 @@ export default function GiftBoard() {
       "Сколько нужно:",
       summary || "Пока ничего :) ",
       "",
-      "Схема по строкам:",
+      "Порядок дарения — снизу вверх, справа налево:",
       ...lines,
     ].join("\n");
 
@@ -334,6 +384,104 @@ export default function GiftBoard() {
       window.setTimeout(() => setCopyState("Скопировать схему"), 1800);
     } catch {
       setCopyState("Не получилось скопировать");
+    }
+  }
+
+  async function publishScheme() {
+    const cleanNick = nick.trim();
+    const cleanTitle = schemeTitle.trim();
+
+    if (cleanNick.length < 2 || !cleanTitle) {
+      setPublishMessage("Напиши ник и название схемы.");
+      return;
+    }
+    if (!totalPlaced) {
+      setPublishMessage("Сначала нарисуй что-нибудь :) ");
+      return;
+    }
+
+    setIsPublishing(true);
+    setPublishMessage("");
+    try {
+      const response = await fetch("/api/gift-board/schemes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nick: cleanNick,
+          title: cleanTitle,
+          columns,
+          rows,
+          cells,
+        }),
+      });
+      const data = (await response.json()) as {
+        ok?: boolean;
+        configured?: boolean;
+        error?: string;
+      };
+
+      if (data.configured === false) {
+        setSchemesConfigured(false);
+        throw new Error("Хранилище пока не подключено");
+      }
+      if (!response.ok || !data.ok) {
+        throw new Error(data.error || "Не получилось сохранить схему");
+      }
+
+      localStorage.setItem(NICK_STORAGE_KEY, cleanNick);
+      setSchemeTitle("");
+      setSchemeSort("new");
+      setSchemesRefresh((value) => value + 1);
+      setPublishMessage("Опубликовано ✓");
+    } catch (error) {
+      setPublishMessage(error instanceof Error ? error.message : "Не получилось сохранить схему");
+    } finally {
+      setIsPublishing(false);
+    }
+  }
+
+  function openPublicScheme(scheme: PublicScheme) {
+    if (totalPlaced && !window.confirm("Загрузить эту схему? Текущий рисунок заменится.")) {
+      return;
+    }
+    setColumns(scheme.columns);
+    setRows(scheme.rows);
+    setCells(scheme.cells);
+    setTool("paint");
+    document.getElementById("gift-board-canvas")?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  }
+
+  async function likeScheme(id: string) {
+    if (likedSchemes.has(id)) return;
+
+    try {
+      const response = await fetch("/api/gift-board/schemes", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      const data = (await response.json()) as { ok?: boolean; likes?: number };
+      if (!response.ok || !data.ok || typeof data.likes !== "number") return;
+
+      const nextLiked = new Set(likedSchemes);
+      nextLiked.add(id);
+      setLikedSchemes(nextLiked);
+      localStorage.setItem(LIKES_STORAGE_KEY, JSON.stringify(Array.from(nextLiked)));
+      setPublicSchemes((current) => {
+        const updated = current.map((scheme) =>
+          scheme.id === id ? { ...scheme, likes: data.likes as number } : scheme,
+        );
+        return schemeSort === "popular"
+          ? updated.sort(
+              (a, b) => b.likes - a.likes || Date.parse(b.createdAt) - Date.parse(a.createdAt),
+            )
+          : updated;
+      });
+    } catch (error) {
+      console.error("Не удалось поставить сердечко схеме:", error);
     }
   }
 
@@ -379,6 +527,9 @@ export default function GiftBoard() {
                 >
                   Ластик
                 </button>
+                <button type="button" className={styles.clearTool} onClick={clearBoard}>
+                  Очистить
+                </button>
               </div>
 
               <div className={styles.sizeControls}>
@@ -389,11 +540,12 @@ export default function GiftBoard() {
                 <span>Строки</span>
                 <button type="button" onClick={() => resizeRows(rows - 1)} disabled={rows <= MIN_ROWS}>−</button>
                 <b>{rows}</b>
-                <button type="button" onClick={() => resizeRows(rows + 1)} disabled={rows >= MAX_ROWS}>+</button>
+                <button type="button" onClick={() => addRow("top")} disabled={rows >= MAX_ROWS}>+ сверху</button>
+                <button type="button" onClick={() => addRow("bottom")} disabled={rows >= MAX_ROWS}>+ снизу</button>
               </div>
             </div>
 
-            <div className={styles.boardScroller}>
+            <div className={styles.boardScroller} id="gift-board-canvas">
               <div
                 className={styles.board}
                 style={{ "--gift-columns": columns } as React.CSSProperties}
@@ -434,12 +586,9 @@ export default function GiftBoard() {
 
             <div className={styles.patternActions}>
               <button type="button" onClick={fillBoard}>Заполнить фон</button>
-              <button type="button" onClick={() => drawPattern(HEART_MASK)}>♥ Сердце большое</button>
-              <button type="button" onClick={() => drawPattern(SMALL_HEART_MASK)}>♥ Сердце поменьше</button>
-              <button type="button" onClick={() => drawPattern(PAW_MASK)}>🐾 Лапка</button>
+              <button type="button" onClick={() => drawPattern(HEART_MASK)}>♥ Сердце</button>
               <button type="button" onClick={() => drawPattern(LOVE_MASK)}>LOVE</button>
               <button type="button" onClick={drawFrame}>Рамка</button>
-              <button type="button" onClick={clearBoard} className={styles.dangerButton}>Очистить</button>
             </div>
           </div>
 
@@ -460,6 +609,99 @@ export default function GiftBoard() {
             <button type="button" className={styles.copyButton} onClick={copyScheme}>
               {copyState}
             </button>
+
+            <div className={styles.publishArea}>
+              <p className={styles.miniLabel}>Опубликовать схему</p>
+              <input
+                type="text"
+                value={nick}
+                maxLength={30}
+                onChange={(event) => setNick(event.target.value)}
+                placeholder="Твой ник"
+                aria-label="Твой ник"
+              />
+              <input
+                type="text"
+                value={schemeTitle}
+                maxLength={60}
+                onChange={(event) => setSchemeTitle(event.target.value)}
+                placeholder="Название схемы"
+                aria-label="Название схемы"
+              />
+              <button
+                type="button"
+                className={styles.publishButton}
+                onClick={publishScheme}
+                disabled={isPublishing || !schemesConfigured}
+              >
+                {isPublishing ? "Сохраняю…" : "Опубликовать"}
+              </button>
+              {publishMessage ? <p className={styles.publishMessage}>{publishMessage}</p> : null}
+              {!schemesConfigured ? (
+                <p className={styles.publishMessage}>Публичное хранилище пока недоступно.</p>
+              ) : null}
+
+              <div className={styles.savedSchemesHead}>
+                <span>Сохранённые</span>
+                <div>
+                  <button
+                    type="button"
+                    className={schemeSort === "new" ? styles.activeSort : ""}
+                    onClick={() => setSchemeSort("new")}
+                  >
+                    Новые
+                  </button>
+                  <button
+                    type="button"
+                    className={schemeSort === "popular" ? styles.activeSort : ""}
+                    onClick={() => setSchemeSort("popular")}
+                  >
+                    Популярные
+                  </button>
+                </div>
+              </div>
+
+              <div className={styles.savedSchemes}>
+                {schemesLoading ? <p className={styles.schemeHint}>Загружаю…</p> : null}
+                {!schemesLoading && !publicSchemes.length ? (
+                  <p className={styles.schemeHint}>Пока ни одной :)</p>
+                ) : null}
+                {publicSchemes.map((scheme) => (
+                  <article key={scheme.id} className={styles.schemeCard}>
+                    <div
+                      className={styles.schemePreview}
+                      style={{ "--preview-columns": scheme.columns } as React.CSSProperties}
+                      aria-hidden="true"
+                    >
+                      {scheme.cells.map((file, index) => (
+                        <span key={index}>
+                          {file ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={file} alt="" loading="lazy" />
+                          ) : null}
+                        </span>
+                      ))}
+                    </div>
+                    <div className={styles.schemeInfo}>
+                      <strong>{scheme.title}</strong>
+                      <span>{scheme.nick} · {scheme.columns}×{scheme.rows}</span>
+                      <div className={styles.schemeActions}>
+                        <button type="button" onClick={() => openPublicScheme(scheme)}>Открыть</button>
+                        <button
+                          type="button"
+                          className={likedSchemes.has(scheme.id) ? styles.liked : ""}
+                          onClick={() => likeScheme(scheme.id)}
+                          disabled={likedSchemes.has(scheme.id)}
+                          aria-label={`Нравится: ${scheme.likes}`}
+                        >
+                          ♥ {scheme.likes}
+                        </button>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
           </aside>
         </section>
 

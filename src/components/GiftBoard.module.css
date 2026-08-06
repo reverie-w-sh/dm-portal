@@ -158,7 +158,10 @@
 .toolbar button:hover,
 .toolbar button.activeTool,
 .patternActions button:hover,
-.copyButton:hover {
+.copyButton:hover,
+.publishButton:hover,
+.savedSchemesHead button:hover,
+.schemeActions button:hover {
   border-color: #d69938;
   color: #f0d09a;
   background: rgba(106, 61, 18, 0.28);
@@ -167,6 +170,11 @@
 .toolbar button:disabled {
   opacity: 0.35;
   cursor: default;
+}
+
+.toolbar button.clearTool {
+  color: #a88778;
+  border-color: rgba(140, 70, 55, 0.38);
 }
 
 .sizeControls span {
@@ -247,12 +255,6 @@
   font-size: 0.76rem;
 }
 
-.patternActions .dangerButton {
-  margin-left: auto;
-  color: #a88778;
-  border-color: rgba(140, 70, 55, 0.38);
-}
-
 .summary {
   position: sticky;
   top: 82px;
@@ -325,6 +327,166 @@
   padding: 8px 11px;
   border-radius: 999px;
   font-size: 0.76rem;
+}
+
+.publishArea {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(173, 113, 34, 0.26);
+}
+
+.publishArea input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 10px;
+  border: 1px solid rgba(173, 113, 34, 0.34);
+  border-radius: 8px;
+  outline: 0;
+  color: #e7c991;
+  background: #0b0d0c;
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.publishArea input:focus {
+  border-color: #d69938;
+  box-shadow: 0 0 0 2px rgba(173, 113, 34, 0.12);
+}
+
+.publishButton,
+.savedSchemesHead button,
+.schemeActions button {
+  border: 1px solid rgba(173, 113, 34, 0.4);
+  color: #bda888;
+  background: #0b0d0c;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+}
+
+.publishButton {
+  min-height: 37px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.publishButton:disabled,
+.schemeActions button:disabled {
+  cursor: default;
+  opacity: 0.48;
+}
+
+.publishMessage,
+.schemeHint {
+  margin: 0;
+  color: #8f7c60;
+  font-size: 0.69rem;
+  line-height: 1.4;
+}
+
+.savedSchemesHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  color: #cdb07d;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.savedSchemesHead > div {
+  display: flex;
+  gap: 4px;
+}
+
+.savedSchemesHead button,
+.schemeActions button {
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+}
+
+.savedSchemesHead button.activeSort,
+.schemeActions button.liked {
+  color: #f0d09a;
+  border-color: #d69938;
+  background: rgba(106, 61, 18, 0.28);
+}
+
+.savedSchemes {
+  display: grid;
+  gap: 7px;
+  max-height: 430px;
+  padding-right: 2px;
+  overflow-y: auto;
+}
+
+.schemeCard {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  align-items: start;
+  gap: 8px;
+  padding: 7px;
+  border: 1px solid rgba(173, 113, 34, 0.22);
+  border-radius: 9px;
+  background: #0b0d0c;
+}
+
+.schemePreview {
+  display: grid;
+  grid-template-columns: repeat(var(--preview-columns), minmax(0, 1fr));
+  width: 88px;
+  overflow: hidden;
+  border: 1px solid rgba(173, 113, 34, 0.34);
+  border-radius: 3px;
+  background: #d3d3d3;
+}
+
+.schemePreview > span {
+  min-width: 0;
+  aspect-ratio: 1;
+  border-right: 1px solid rgba(70, 70, 70, 0.08);
+  border-bottom: 1px solid rgba(70, 70, 70, 0.08);
+}
+
+.schemePreview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.schemeInfo {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.schemeInfo strong {
+  overflow: hidden;
+  color: #dec18b;
+  font: 400 0.78rem Georgia, serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schemeInfo > span {
+  overflow: hidden;
+  color: #84745d;
+  font-size: 0.62rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.schemeActions {
+  display: flex;
+  gap: 5px;
+  margin-top: 3px;
 }
 
 .paletteSection {
@@ -495,10 +657,6 @@
     margin: 0;
   }
 
-  .patternActions .dangerButton {
-    margin-left: 0;
-  }
-
   .paletteHead {
     align-items: flex-start;
     flex-direction: column;
@@ -532,6 +690,9 @@
   .toolbar button,
   .patternActions button,
   .copyButton,
+  .publishButton,
+  .savedSchemesHead button,
+  .schemeActions button,
   .palette > button {
     transition: none;
   }
