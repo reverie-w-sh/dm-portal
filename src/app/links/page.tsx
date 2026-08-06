@@ -19,6 +19,11 @@ const usefulLinks = [
     alt: "Планшет охотника",
   },
   {
+    href: "/gift-board",
+    image: "/images/links/gift-board.webp",
+    alt: "Планшет подарков",
+  },
+  {
     href: "/dungeons",
     image: "/images/links/dungeons.webp",
     alt: "Карты подземелий",
