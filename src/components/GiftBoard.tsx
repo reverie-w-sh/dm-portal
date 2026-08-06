@@ -34,6 +34,16 @@ const HEART_MASK = [
   ".....X.....",
 ];
 
+const SMALL_HEART_MASK = [
+  ".XX...XX.",
+  "XXXX.XXXX",
+  "XXXXXXXXX",
+  ".XXXXXXX.",
+  "..XXXXX..",
+  "...XXX...",
+  "....X....",
+];
+
 const PAW_MASK = [
   ".XX.....XX.",
   ".XX.....XX.",
@@ -59,27 +69,6 @@ const LOVE_MASK = [
   "X...X.XXXX.",
   ".X.X..X....",
   "..X...XXXXX",
-];
-
-const MIDDLE_FINGER_MASK = [
-  "....XXX....",
-  "....XXX....",
-  "....XXX....",
-  "....XXX....",
-  "....XXX....",
-  ".XX.XXX.XX.",
-  ".XXXXXXXXX.",
-  ".XXXXXXXXX.",
-  "..XXXXXXX..",
-  "...XXXXX...",
-];
-
-const AW_MASK = [
-  ".X......X.X",
-  "X.X..X..X.X",
-  "XXX.XXX.X.X",
-  "X.X..X..XXX",
-  "X.X......X.",
 ];
 
 function emptyBoard(columns = DEFAULT_COLUMNS, rows = DEFAULT_ROWS): Cell[] {
@@ -215,10 +204,13 @@ export default function GiftBoard() {
     [counts],
   );
 
-  function paintCell(index: number) {
+  function paintCell(index: number, toggle = false) {
     setCells((current) => {
       const next = [...current];
-      next[index] = tool === "erase" ? null : selectedGift;
+      next[index] =
+        tool === "erase" || (toggle && current[index] === selectedGift)
+          ? null
+          : selectedGift;
       return next;
     });
   }
@@ -267,7 +259,9 @@ export default function GiftBoard() {
   }
 
   function fillBoard() {
-    setCells(Array.from({ length: columns * rows }, () => selectedGift));
+    setCells((current) =>
+      current.map((cell) => cell ?? selectedGift),
+    );
     setTool("paint");
   }
 
@@ -420,7 +414,7 @@ export default function GiftBoard() {
                         if (event.button !== 0) return;
                         event.preventDefault();
                         paintingRef.current = true;
-                        paintCell(index);
+                        paintCell(index, true);
                       }}
                       onPointerEnter={() => {
                         if (paintingRef.current) paintCell(index);
@@ -440,11 +434,10 @@ export default function GiftBoard() {
 
             <div className={styles.patternActions}>
               <button type="button" onClick={fillBoard}>Заполнить фон</button>
-              <button type="button" onClick={() => drawPattern(HEART_MASK)}>♥ Сердце</button>
+              <button type="button" onClick={() => drawPattern(HEART_MASK)}>♥ Сердце большое</button>
+              <button type="button" onClick={() => drawPattern(SMALL_HEART_MASK)}>♥ Сердце поменьше</button>
               <button type="button" onClick={() => drawPattern(PAW_MASK)}>🐾 Лапка</button>
               <button type="button" onClick={() => drawPattern(LOVE_MASK)}>LOVE</button>
-              <button type="button" onClick={() => drawPattern(MIDDLE_FINGER_MASK)}>Средний палец</button>
-              <button type="button" onClick={() => drawPattern(AW_MASK)}>A+W</button>
               <button type="button" onClick={drawFrame}>Рамка</button>
               <button type="button" onClick={clearBoard} className={styles.dangerButton}>Очистить</button>
             </div>
