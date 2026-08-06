@@ -4,9 +4,19 @@ import styles from "./page.module.css";
 
 const usefulLinks = [
   {
-    href: "/dom-boli",
-    image: "/images/links/dom-boli.webp",
-    alt: "Карты Дома Боли",
+    href: "/couples",
+    image: "/images/links/couples.webp",
+    alt: "Семейные пары",
+  },
+  {
+    href: "/ratings",
+    image: "/images/links/ratings.webp",
+    alt: "Рейтинги",
+  },
+  {
+    href: "/personal-items",
+    image: "/images/links/personal-items.webp",
+    alt: "Именные вещи",
   },
   {
     href: "/personal-smiles",
@@ -24,29 +34,19 @@ const usefulLinks = [
     alt: "Планшет подарков",
   },
   {
+    href: "/dom-boli",
+    image: "/images/links/dom-boli.webp",
+    alt: "Карты Дома Боли",
+  },
+  {
     href: "/dungeons",
     image: "/images/links/dungeons.webp",
     alt: "Карты подземелий",
   },
   {
-    href: "/ratings",
-    image: "/images/links/ratings.webp",
-    alt: "Рейтинги",
-  },
-  {
     href: "/experience",
     image: "/images/links/experience.webp",
     alt: "Калькулятор опыта",
-  },
-  {
-    href: "/personal-items",
-    image: "/images/links/personal-items.webp",
-    alt: "Именные вещи",
-  },
-  {
-    href: "/couples",
-    image: "/images/links/couples.webp",
-    alt: "Семейные пары",
   },
 ];
 

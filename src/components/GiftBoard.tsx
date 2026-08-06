@@ -6,7 +6,7 @@ import { GIFTS } from "@/data/gifts";
 import styles from "./GiftBoard.module.css";
 
 const STORAGE_KEY = "wolfchen-gift-board-v1";
-const DEFAULT_COLUMNS = 12;
+const DEFAULT_COLUMNS = 11;
 const DEFAULT_ROWS = 10;
 const MIN_COLUMNS = 8;
 const MAX_COLUMNS = 16;
@@ -23,15 +23,63 @@ type SavedBoard = {
 };
 
 const HEART_MASK = [
-  "..XXX..XXX..",
-  ".XXXXXXXXXX.",
-  "XXXXXXXXXXXX",
-  "XXXXXXXXXXXX",
-  ".XXXXXXXXXX.",
-  "..XXXXXXXX..",
-  "...XXXXXX...",
-  "....XXXX....",
-  ".....XX.....",
+  ".XXX...XXX.",
+  "XXXXX.XXXXX",
+  "XXXXXXXXXXX",
+  "XXXXXXXXXXX",
+  ".XXXXXXXXX.",
+  "..XXXXXXX..",
+  "...XXXXX...",
+  "....XXX....",
+  ".....X.....",
+];
+
+const PAW_MASK = [
+  ".XX.....XX.",
+  ".XX.....XX.",
+  "...XX.XX...",
+  "...XX.XX...",
+  "...........",
+  "...XXXXX...",
+  "..XXXXXXX..",
+  "..XXXXXXX..",
+  "...XXXXX...",
+  "....XXX....",
+];
+
+const LOVE_MASK = [
+  "X......XXX.",
+  "X.....X...X",
+  "X.....X...X",
+  "X.....X...X",
+  "XXXXX..XXX.",
+  "...........",
+  "X...X.XXXXX",
+  "X...X.X....",
+  "X...X.XXXX.",
+  ".X.X..X....",
+  "..X...XXXXX",
+];
+
+const MIDDLE_FINGER_MASK = [
+  "....XXX....",
+  "....XXX....",
+  "....XXX....",
+  "....XXX....",
+  "....XXX....",
+  ".XX.XXX.XX.",
+  ".XXXXXXXXX.",
+  ".XXXXXXXXX.",
+  "..XXXXXXX..",
+  "...XXXXX...",
+];
+
+const AW_MASK = [
+  ".X......X.X",
+  "X.X..X..X.X",
+  "XXX.XXX.X.X",
+  "X.X..X..XXX",
+  "X.X......X.",
 ];
 
 function emptyBoard(columns = DEFAULT_COLUMNS, rows = DEFAULT_ROWS): Cell[] {
@@ -223,10 +271,11 @@ export default function GiftBoard() {
     setTool("paint");
   }
 
-  function drawHeart() {
-    const targetRows = Math.max(rows, HEART_MASK.length);
-    const rowOffset = Math.max(0, Math.floor((targetRows - HEART_MASK.length) / 2));
-    const columnOffset = Math.floor((columns - HEART_MASK[0].length) / 2);
+  function drawPattern(pattern: string[]) {
+    const patternWidth = Math.max(...pattern.map((row) => row.length));
+    const targetRows = Math.max(rows, pattern.length);
+    const rowOffset = Math.max(0, Math.floor((targetRows - pattern.length) / 2));
+    const columnOffset = Math.floor((columns - patternWidth) / 2);
 
     setRows(targetRows);
     setCells((current) => {
@@ -235,7 +284,7 @@ export default function GiftBoard() {
         next[index] = cell;
       });
 
-      HEART_MASK.forEach((maskRow, maskRowIndex) => {
+      pattern.forEach((maskRow, maskRowIndex) => {
         Array.from(maskRow).forEach((mark, maskColumnIndex) => {
           if (mark !== "X") return;
           const column = maskColumnIndex + columnOffset;
@@ -391,7 +440,11 @@ export default function GiftBoard() {
 
             <div className={styles.patternActions}>
               <button type="button" onClick={fillBoard}>Заполнить фон</button>
-              <button type="button" onClick={drawHeart}>♥ Сердце</button>
+              <button type="button" onClick={() => drawPattern(HEART_MASK)}>♥ Сердце</button>
+              <button type="button" onClick={() => drawPattern(PAW_MASK)}>🐾 Лапка</button>
+              <button type="button" onClick={() => drawPattern(LOVE_MASK)}>LOVE</button>
+              <button type="button" onClick={() => drawPattern(MIDDLE_FINGER_MASK)}>Средний палец</button>
+              <button type="button" onClick={() => drawPattern(AW_MASK)}>A+W</button>
               <button type="button" onClick={drawFrame}>Рамка</button>
               <button type="button" onClick={clearBoard} className={styles.dangerButton}>Очистить</button>
             </div>
