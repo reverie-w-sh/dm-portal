@@ -153,6 +153,7 @@
   min-height: 32px;
   padding: 6px 10px;
   border-radius: 999px;
+  font-size: 0.76rem;
 }
 
 .toolbar button:hover,
@@ -179,15 +180,19 @@
 
 .sizeControls span {
   margin-left: 5px;
-  color: #8f7c60;
-  font-size: 0.7rem;
+  color: #bda888;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
 }
 
 .sizeControls b {
   min-width: 16px;
-  color: #e2c28d;
+  color: #bda888;
   text-align: center;
-  font-size: 0.82rem;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
 }
 
 .boardScroller {
