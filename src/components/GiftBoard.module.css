@@ -655,11 +655,21 @@
 
   .boardScroller {
     padding: 10px;
+    overflow-x: hidden;
   }
 
   .board {
-    --gift-cell: 48px;
-    margin: 0;
+    grid-template-columns: repeat(var(--gift-columns), minmax(0, 1fr));
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .cell {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    aspect-ratio: 1;
   }
 
   .paletteHead {
