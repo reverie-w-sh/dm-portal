@@ -562,11 +562,10 @@
 560. ЦАРЮКА[4] — cuid=4668 — https://dm-game.com/index.php?file=infouser&cuid=4668
 561. Эрагон[4] — cuid=7800 — https://dm-game.com/index.php?file=infouser&cuid=7800
 
-## Хранители — CLAN 7 — знайдено 3
+## Хранители — CLAN 7 — знайдено 2
 
 1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-2. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
-3. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+2. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -809,7 +808,7 @@
 3. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
 4. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
 5. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-6. Смотрящий[7] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+6. Смотрящий[8] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 
 ## Гладиаторы — CLAN 247 — знайдено 10
 
