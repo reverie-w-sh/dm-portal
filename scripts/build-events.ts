@@ -28,7 +28,6 @@ const EVENTS_PATH = path.join(DATA_DIR, "events.json");
 const HISTORY_DIR = path.join(DATA_DIR, "history");
 const LAST_STATE_PATH = path.join(HISTORY_DIR, "last-state.json");
 
-const NINETY_DAYS_MS = 90 * 24 * 60 * 60 * 1000;
 const WEDDING_EVENTS_FROM = Date.UTC(2026, 7, 1);
 const MAX_MARRIAGE_EVENTS_PER_SYNC = 20;
 
@@ -99,6 +98,8 @@ interface LastSync {
 interface SnapshotPlayer {
   cuid: string;
   nick: string;
+  level?: number | null;
+  reincarnationLevel?: number | null;
   clanId: string;
   clanName: string;
   position: string;
@@ -137,6 +138,34 @@ interface Snapshot {
 }
 
 type SiteEvent =
+  | {
+      id: string;
+      syncId: string;
+      createdAt: string;
+      scope: "clans";
+      type: "player_level_up";
+      characterId: string;
+      characterName: string;
+      profileUrl: string;
+      clanId: string;
+      clanName: string;
+      oldLevel: number;
+      newLevel: number;
+    }
+  | {
+      id: string;
+      syncId: string;
+      createdAt: string;
+      scope: "clans";
+      type: "player_reincarnation_level_up";
+      characterId: string;
+      characterName: string;
+      profileUrl: string;
+      clanId: string;
+      clanName: string;
+      oldLevel: number | null;
+      newLevel: number;
+    }
   | {
       id: string;
       syncId: string;
@@ -246,6 +275,10 @@ function cleanNumber(value: unknown): number {
   return typeof value === "number" && Number.isFinite(value) ? value : 0;
 }
 
+function cleanOptionalNumber(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
 function uniqueStrings(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
 
@@ -273,6 +306,8 @@ function makeSnapshot(
       .map((player) => ({
         cuid: cleanString(player.cuid),
         nick: cleanString(player.nick),
+        level: cleanOptionalNumber(player.level),
+        reincarnationLevel: cleanOptionalNumber(player.reincarnationLevel),
         clanId: cleanString(player.clanId),
         clanName: cleanString(player.clanName),
         position: cleanString(player.position),
@@ -367,6 +402,63 @@ function buildEvents(
 
     const profileUrl =
       currentPlayer.profileUrl || previousPlayer.profileUrl;
+
+    const oldLevel = previousPlayer.level;
+    const newLevel = currentPlayer.level;
+
+    /*
+     * В старых снимках level/reincarnationLevel отсутствуют. Поэтому
+     * первое обновление после внедрения летописи только запоминает уровни,
+     * а события начинаются со следующего реального изменения.
+     */
+    if (
+      typeof oldLevel === "number" &&
+      typeof newLevel === "number" &&
+      newLevel > oldLevel
+    ) {
+      events.push({
+        id: randomUUID(),
+        syncId,
+        createdAt: syncId,
+        scope: "clans",
+        type: "player_level_up",
+        characterId: cuid,
+        characterName,
+        profileUrl,
+        clanId: newClanId,
+        clanName: newClanId
+          ? clanNameFrom(newClanId, currentPlayer.clanName, currentClans)
+          : currentPlayer.clanName,
+        oldLevel,
+        newLevel,
+      });
+    }
+
+    const oldReincarnationLevel = previousPlayer.reincarnationLevel;
+    const newReincarnationLevel = currentPlayer.reincarnationLevel;
+
+    if (
+      oldReincarnationLevel !== undefined &&
+      typeof newReincarnationLevel === "number" &&
+      newReincarnationLevel > (oldReincarnationLevel ?? 0)
+    ) {
+      events.push({
+        id: randomUUID(),
+        syncId,
+        createdAt: syncId,
+        scope: "clans",
+        type: "player_reincarnation_level_up",
+        characterId: cuid,
+        characterName,
+        profileUrl,
+        clanId: newClanId,
+        clanName: newClanId
+          ? clanNameFrom(newClanId, currentPlayer.clanName, currentClans)
+          : currentPlayer.clanName,
+        oldLevel: oldReincarnationLevel ?? null,
+        newLevel: newReincarnationLevel,
+      });
+    }
 
     if (!oldClanId && newClanId) {
       events.push({
@@ -679,18 +771,16 @@ async function main(): Promise<void> {
     [],
   );
 
-  const cutoff = Date.now() - NINETY_DAYS_MS;
-
   /*
-   * Именные вещи никогда не сохраняем в ленте событий. Старые ложные
-   * свадьбы и разводы уже удалены из data/events.json в этом исправлении;
-   * новые корректные семейные события после 01.08.2026 должны сохраняться.
+   * Именные вещи никогда не сохраняем в ленте событий. Летопись хранит
+   * корректные события без временного ограничения; конкретные страницы
+   * сами выбирают нужный им период (например, кланы показывают до 90 дней).
    */
   const recentStoredEvents = storedEvents.filter((event) => {
     if ((event as { type: string }).type === "personal_item_added") return false;
 
     const time = new Date(event.createdAt).getTime();
-    return Number.isFinite(time) && time >= cutoff;
+    return Number.isFinite(time);
   });
 
   if (!previousSnapshot) {
@@ -733,7 +823,7 @@ async function main(): Promise<void> {
     .filter((event) => {
       const time = new Date(event.createdAt).getTime();
 
-      return Number.isFinite(time) && time >= cutoff;
+      return Number.isFinite(time);
     })
     .sort(
       (a, b) =>
@@ -756,7 +846,7 @@ async function main(): Promise<void> {
 
   console.log(`Синхронизация: ${syncId}`);
   console.log(`Новых событий: ${newEvents.length}`);
-  console.log(`Событий за последние 90 дней: ${allEvents.length}`);
+  console.log(`Событий в летописи: ${allEvents.length}`);
   console.log(`Обновлён файл: ${EVENTS_PATH}`);
   console.log(`Обновлён снимок: ${LAST_STATE_PATH}`);
 }

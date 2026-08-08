@@ -5,9 +5,9 @@ const baseUrl = "https://wolfchen-clan.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
-    "", "/about", "/alliances", "/alliances/compare", "/clans",
+    "", "/about", "/alliances", "/alliances/compare", "/chronicle", "/clans",
     "/clans/compare", "/dom-boli", "/dungeons", "/gallery", "/gifts",
-    "/gift-board", "/hunter-board", "/les-teney", "/links", "/malahitovye-rudniki",
+    "/hunter-board", "/les-teney", "/links", "/malahitovye-rudniki",
     "/members", "/personal-smiles", "/personal-items", "/couples", "/ratings", "/sad-koshmarov",
   ];
 
