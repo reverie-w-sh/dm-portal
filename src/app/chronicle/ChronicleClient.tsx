@@ -448,6 +448,10 @@ export default function ChronicleClient() {
           />
           <span>Показывать изменения должностей</span>
         </label>
+
+        <p className={styles.trackingNote}>
+          Уровни отслеживаются с 08.08.2026
+        </p>
       </section>
 
       <div className={styles.resultMeta}>

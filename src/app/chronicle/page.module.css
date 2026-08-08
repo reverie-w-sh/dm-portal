@@ -143,6 +143,13 @@
   accent-color: #a86f28;
 }
 
+.trackingNote {
+  margin: 10px 0 0 88px;
+  color: #726857;
+  font-size: 0.68rem;
+  font-style: italic;
+}
+
 .resultMeta {
   margin: 15px 3px 8px;
   color: #776c5b;
@@ -426,6 +433,10 @@
   }
 
   .positionToggle {
+    margin-left: 0;
+  }
+
+  .trackingNote {
     margin-left: 0;
   }
 
