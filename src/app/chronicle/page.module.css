@@ -323,6 +323,20 @@
   font-size: 0.66rem;
 }
 
+.crestBox {
+  display: inline-flex;
+  width: 29px;
+  height: 29px;
+  flex: 0 0 29px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(205, 144, 55, 0.72);
+  border-radius: 4px;
+  background: #f5f9ff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
 .crest {
   width: 25px;
   height: 25px;
@@ -439,7 +453,7 @@
     font-size: 0.95rem;
   }
 
-  .crest {
+  .crestBox {
     display: none;
   }
 

@@ -167,7 +167,7 @@ function eventIcon(event: ChronicleEvent): string {
     case "player_married":
       return "♥";
     case "player_divorced":
-      return "◇";
+      return "💔";
     case "personal_smile_added":
       return "☺";
     case "clan_smile_added":
@@ -505,9 +505,11 @@ export default function ChronicleClient() {
                       </div>
 
                       {crest && (
-                        // Эмблемы кланов ДМ — внешние GIF, поэтому не оптимизируем их Next/Image.
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img className={styles.crest} src={crest} alt="" aria-hidden="true" />
+                        <span className={styles.crestBox} aria-hidden="true">
+                          {/* Эмблемы кланов ДМ — внешние GIF, поэтому не оптимизируем их Next/Image. */}
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img className={styles.crest} src={crest} alt="" />
+                        </span>
                       )}
                     </article>
                   );
