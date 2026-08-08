@@ -66,6 +66,7 @@ type FestivalType =
   | "fighters"
   | "labyrinth"
   | "familiar"
+  | "easter"
   | "other";
 
 type GameNewsItem = {
@@ -80,6 +81,9 @@ type GameNewsItem = {
   festivalType?: Exclude<FestivalType, "all">;
   commentCount: number;
   comments: GameNewsComment[];
+  synthetic?: boolean;
+  periodLabel?: string;
+  resultText?: string;
 };
 
 type Category =
@@ -122,6 +126,7 @@ const FESTIVAL_LABELS: Array<{ key: FestivalType; label: string }> = [
   { key: "fighters", label: "Бойцов" },
   { key: "labyrinth", label: "Лабиринта" },
   { key: "familiar", label: "Фамильяра" },
+  { key: "easter", label: "Пасхальный" },
   { key: "other", label: "Другие" },
 ];
 
@@ -265,7 +270,22 @@ function itemIcon(item: TimelineItem): string {
   if (!isGameNews(item)) return eventIcon(item);
   if (item.category === "festival") return "✦";
   if (item.category === "boss") return "⚔";
-  return "✎";
+  return "";
+}
+
+function ScrollIcon() {
+  return (
+    <svg
+      className={styles.scrollIcon}
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M8 4h9.2a2.3 2.3 0 0 1 0 4.6H9.5v7.7a3.5 3.5 0 0 1-3.5 3.5" />
+      <path d="M8 4a2.3 2.3 0 0 0-2.3 2.3v.4A1.9 1.9 0 0 0 7.6 8.6h1.9" />
+      <path d="M6 15.5h10.3v1a3.3 3.3 0 0 0 3.3 3.3H6a2.15 2.15 0 1 1 0-4.3Z" />
+      <path d="M13 11h4M13 14h3" />
+    </svg>
+  );
 }
 
 function iconClass(category: ReturnType<typeof categoryFor>): string {
@@ -407,8 +427,31 @@ function EventText({
 
 function NewsText({ news }: { news: GameNewsItem }) {
   const results = winnerComments(news);
-  const isLong = news.body.length > 320;
-  const preview = isLong ? `${news.body.slice(0, 317).trimEnd()}…` : news.body;
+  const hasResults = Boolean(news.resultText) || results.length > 0;
+  const body = news.body.trim();
+  const paragraphs = body.split(/\n\s*\n/).filter(Boolean);
+  const firstParagraph = paragraphs[0]?.trim() ?? "";
+  const isEasterBoss = /бой с пасхальн[^\n]*за/i.test(news.title);
+  const easterMarker = isEasterBoss
+    ? /(?:c|с)\s*\d{2}\.\d{2}\.\d{4}\s+крашенки\s*:/i.exec(body)
+    : null;
+  const introParagraphs = paragraphs
+    .slice(0, 2)
+    .map((paragraph) => paragraph.trim())
+    .join("\n\n");
+  const preferredPreview =
+    easterMarker?.index != null
+      ? body.slice(0, easterMarker.index + easterMarker[0].length).trim()
+      : introParagraphs && introParagraphs.length <= 320
+      ? introParagraphs
+      : firstParagraph && firstParagraph.length <= 280
+        ? firstParagraph
+        : body;
+  const preview =
+    preferredPreview.length > 280
+      ? `${preferredPreview.slice(0, 277).trimEnd()}…`
+      : preferredPreview;
+  const isLong = body.length > preview.length;
 
   return (
     <div className={styles.newsBlock}>
@@ -430,19 +473,26 @@ function NewsText({ news }: { news: GameNewsItem }) {
         </span>
       </div>
 
+      {news.periodLabel && (
+        <div className={styles.newsPeriod}>{news.periodLabel}</div>
+      )}
+
       {preview && <p className={styles.newsPreview}>{preview}</p>}
 
       {isLong && (
         <details className={styles.newsDetails}>
           <summary>Читать полностью</summary>
-          <div className={styles.newsFullText}>{news.body}</div>
+          <div className={styles.newsFullText}>{body}</div>
         </details>
       )}
 
-      {results.length > 0 && (
+      {hasResults && (
         <details className={`${styles.newsDetails} ${styles.winnersDetails}`}>
           <summary>Победители и призы</summary>
           <div className={styles.winnersList}>
+            {news.resultText && (
+              <div className={styles.winnerResult}>{news.resultText}</div>
+            )}
             {results.map((comment, index) => (
               <div
                 key={`${news.id}-result-${index}`}
@@ -672,7 +722,11 @@ export default function ChronicleClient() {
                           className={`${styles.icon} ${iconClass(categoryName)}`}
                           aria-hidden="true"
                         >
-                          {itemIcon(item)}
+                          {item.category === "other" ? (
+                            <ScrollIcon />
+                          ) : (
+                            itemIcon(item)
+                          )}
                         </div>
 
                         <div className={styles.eventBody}>

@@ -287,6 +287,16 @@
   border-color: rgba(167, 135, 94, 0.45);
 }
 
+.scrollIcon {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.45;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .icon_positions {
   color: #8f826f;
   border-color: rgba(142, 126, 104, 0.4);
@@ -341,6 +351,13 @@
   font-weight: 800;
   letter-spacing: 0.055em;
   text-transform: uppercase;
+}
+
+.newsPeriod {
+  margin-top: 5px;
+  color: #8f744f;
+  font-size: 0.68rem;
+  font-weight: 700;
 }
 
 .newsPreview,

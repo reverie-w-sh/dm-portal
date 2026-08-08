@@ -5,6 +5,7 @@ const DM_BASE_URL = "https://dm-game.com";
 const NEWS_LIST_URL = `${DM_BASE_URL}/guide/news.php?rid=48&index=1`;
 const OUTPUT_PATH = path.resolve("data", "game-news.json");
 const CONCURRENCY = 4;
+const ARCHIVE_PAGE_COUNT = 19;
 
 type NewsCategory = "festival" | "boss" | "other";
 type FestivalType =
@@ -16,6 +17,7 @@ type FestivalType =
   | "fighters"
   | "labyrinth"
   | "familiar"
+  | "easter"
   | "other";
 
 type GameNewsComment = {
@@ -38,11 +40,16 @@ type GameNewsItem = {
   festivalType?: FestivalType;
   commentCount: number;
   comments: GameNewsComment[];
+  synthetic?: boolean;
+  periodLabel?: string;
+  resultText?: string;
 };
 
 type GameNewsData = {
   updatedAt: string;
   sourceUrl: string;
+  archiveComplete: boolean;
+  archivePages: number;
   items: GameNewsItem[];
 };
 
@@ -129,22 +136,37 @@ function classifyNews(title: string, body: string): {
 }
 
 async function fetchHtml(url: string): Promise<string> {
-  const response = await fetch(url, {
-    cache: "no-store",
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
-        "AppleWebKit/537.36 Chrome/150 Safari/537.36",
-      Accept: "text/html,application/xhtml+xml",
-    },
-    signal: AbortSignal.timeout(20_000),
-  });
+  let lastError: unknown;
 
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}: ${url}`);
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        cache: "no-store",
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) " +
+            "AppleWebKit/537.36 Chrome/150 Safari/537.36",
+          Accept: "text/html,application/xhtml+xml",
+        },
+        signal: AbortSignal.timeout(20_000),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${url}`);
+      }
+
+      return response.text();
+    } catch (error) {
+      lastError = error;
+      if (attempt < 3) {
+        await new Promise((resolve) => setTimeout(resolve, attempt * 450));
+      }
+    }
   }
 
-  return response.text();
+  throw lastError instanceof Error
+    ? lastError
+    : new Error(`Не удалось загрузить ${url}`);
 }
 
 function parseListing(html: string): ListedNews[] {
@@ -225,12 +247,133 @@ function parseComments(html: string): GameNewsComment[] {
 }
 
 function isResultComment(comment: GameNewsComment): boolean {
+  if (comment.isSystemResult) return true;
+
+  const body = comment.body;
+
   return (
-    comment.isSystemResult ||
-    /победител|получил|награ|медал|приз|рейтинг\s+топ|топ\s*\d/i.test(
-      comment.body,
-    )
+    /рейтинг\s+топ\s*\d+\s*:/i.test(body) ||
+    /фестивал[\s\S]{0,100}окончен/i.test(body) ||
+    /получили[\s\S]{0,160}(?:медал|орден|свиток|манускрипт|награ|приз|тг|тера)/i.test(
+      body,
+    ) ||
+    /топ\s+\d+\s*-\s*\d+/i.test(body) ||
+    /(?:^|\n)\s*(?:I|II|III|IV)\s+место\s*[-—:]/im.test(body)
   );
+}
+
+function gameDateFromIso(value: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+  return match ? `${match[3]}.${match[2]}.${match[1]}` : value;
+}
+
+function isoFromGameDate(value: string): string | null {
+  const match = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value.trim());
+  return match ? `${match[3]}-${match[2]}-${match[1]}` : null;
+}
+
+function easterSourceDate(item: GameNewsItem): string {
+  const explicitStart = item.body.match(
+    /(?:c|с)\s*(\d{2}\.\d{2}\.\d{4})\s+крашенки/i,
+  )?.[1];
+  if (explicitStart) return isoFromGameDate(explicitStart) ?? item.publishedAt;
+
+  const embeddedNewsDate = item.body.match(
+    /бой с пасхальн[^\n]*\n(\d{4}-\d{2}-\d{2})/i,
+  )?.[1];
+  return embeddedNewsDate ?? item.publishedAt;
+}
+
+function easterEndDate(item: GameNewsItem, year: string): string | null {
+  const fullDate = item.body.match(
+    /(?:даты окончания|финал)[^\d]{0,12}(\d{2}\.\d{2}\.\d{4})/i,
+  )?.[1];
+  if (fullDate) return isoFromGameDate(fullDate);
+
+  const shortFinal = item.body.match(
+    /(\d{2}\.\d{2})(?:\.\d{4})?\s*[—-]\s*финал/i,
+  )?.[1];
+  return shortFinal ? isoFromGameDate(`${shortFinal}.${year}`) : null;
+}
+
+function easterFestivalBody(item: GameNewsItem): string {
+  if (/шкарлуп/i.test(item.title)) return item.body;
+
+  const markers = [
+    /(?:c|с)\s*\d{2}\.\d{2}\.\d{4}\s+крашенки\s*:/i,
+    /в таверне/i,
+    /в трактире/i,
+    /в пустыне/i,
+  ];
+
+  for (const marker of markers) {
+    const match = marker.exec(item.body);
+    if (match?.index != null) {
+      const body = item.body.slice(match.index).trim();
+      const finalIndex = body.search(/\d{2}\.\d{2}\s*[—-]\s*финал/i);
+      return finalIndex >= 0 ? body.slice(0, finalIndex).trim() : body;
+    }
+  }
+
+  return item.body;
+}
+
+function easterResultText(item: GameNewsItem): string | undefined {
+  const finalIndex = item.body.search(/\d{2}\.\d{2}\s*[—-]\s*финал/i);
+  return finalIndex >= 0 ? item.body.slice(finalIndex).trim() : undefined;
+}
+
+function buildEasterFestivals(items: GameNewsItem[]): GameNewsItem[] {
+  const candidates = items.filter((item) => {
+    const text = `${item.title}\n${item.body}`;
+    return /пасхальн[^\n]*за|собиратор\s+шкарлуп/i.test(text);
+  });
+
+  const bestByYear = new Map<string, GameNewsItem>();
+
+  for (const item of candidates) {
+    const startDate = easterSourceDate(item);
+    const year = startDate.slice(0, 4);
+    if (!/^\d{4}$/.test(year)) continue;
+
+    const current = bestByYear.get(year);
+    const score =
+      (/шкарлуп/i.test(item.title) ? 4 : 0) +
+      (/крашенки/i.test(item.body) ? 2 : 0) +
+      (/финал|даты окончания/i.test(item.body) ? 2 : 0) +
+      (item.comments.length > 0 ? 1 : 0);
+    const currentScore = current
+      ? (/шкарлуп/i.test(current.title) ? 4 : 0) +
+        (/крашенки/i.test(current.body) ? 2 : 0) +
+        (/финал|даты окончания/i.test(current.body) ? 2 : 0) +
+        (current.comments.length > 0 ? 1 : 0)
+      : -1;
+
+    if (!current || score > currentScore) bestByYear.set(year, item);
+  }
+
+  return Array.from(bestByYear.entries()).map(([year, source]) => {
+    const startDate = easterSourceDate(source);
+    const endDate = easterEndDate(source, year);
+    const periodLabel = endDate
+      ? `${gameDateFromIso(startDate)} — ${gameDateFromIso(endDate)}`
+      : `с ${gameDateFromIso(startDate)}`;
+
+    return {
+      ...source,
+      id: `dm-easter-${year}`,
+      tid: `${source.tid}-easter`,
+      title: "Пасхальный фестиваль — Крашенки",
+      publishedAt: startDate,
+      createdAt: `${startDate}T12:00:00.000Z`,
+      body: easterFestivalBody(source),
+      category: "festival",
+      festivalType: "easter",
+      synthetic: true,
+      periodLabel,
+      resultText: easterResultText(source),
+    };
+  });
 }
 
 async function readExisting(): Promise<GameNewsData> {
@@ -240,10 +383,19 @@ async function readExisting(): Promise<GameNewsData> {
     return {
       updatedAt: parsed.updatedAt ?? "",
       sourceUrl: parsed.sourceUrl ?? NEWS_LIST_URL,
+      archiveComplete: parsed.archiveComplete === true,
+      archivePages:
+        typeof parsed.archivePages === "number" ? parsed.archivePages : 0,
       items: Array.isArray(parsed.items) ? parsed.items : [],
     };
   } catch {
-    return { updatedAt: "", sourceUrl: NEWS_LIST_URL, items: [] };
+    return {
+      updatedAt: "",
+      sourceUrl: NEWS_LIST_URL,
+      archiveComplete: false,
+      archivePages: 0,
+      items: [],
+    };
   }
 }
 
@@ -270,11 +422,38 @@ async function mapWithConcurrency<T, R>(
 }
 
 async function main(): Promise<void> {
-  const [listHtml, existing] = await Promise.all([
-    fetchHtml(NEWS_LIST_URL),
-    readExisting(),
-  ]);
-  const listed = parseListing(listHtml);
+  const existing = await readExisting();
+  const isArchiveBackfill = !existing.archiveComplete;
+  const pageNumbers = isArchiveBackfill
+    ? Array.from({ length: ARCHIVE_PAGE_COUNT }, (_, index) => index + 1)
+    : [1];
+
+  console.log(
+    isArchiveBackfill
+      ? `Первичный архив: загружаю ${ARCHIVE_PAGE_COUNT} страниц новостей.`
+      : "Архив уже собран: обновляю только первую страницу новостей.",
+  );
+
+  const listPages = await mapWithConcurrency(
+    pageNumbers,
+    CONCURRENCY,
+    async (pageNumber) => {
+      const url = `${DM_BASE_URL}/guide/news.php?rid=48&index=${pageNumber}`;
+      const html = await fetchHtml(url);
+      const items = parseListing(html);
+
+      if (items.length === 0) {
+        throw new Error(`Не удалось распознать новости на странице ${pageNumber}`);
+      }
+
+      console.log(`Страница ${pageNumber}: ${items.length} новостей`);
+      return items;
+    },
+  );
+
+  const listed = Array.from(
+    new Map(listPages.flat().map((item) => [item.id, item])).values(),
+  );
 
   if (listed.length === 0) {
     throw new Error("Не удалось распознать ни одной новости DM");
@@ -287,21 +466,38 @@ async function main(): Promise<void> {
       const detailHtml = await fetchHtml(item.sourceUrl);
       const comments = parseComments(detailHtml).filter(isResultComment);
       const classification = classifyNews(item.title, item.body);
-      console.log(
-        `[${index + 1}/${listed.length}] ${item.title}: ${comments.length} итогов`,
-      );
+      if (comments.length > 0 || (index + 1) % 20 === 0) {
+        console.log(
+          `[${index + 1}/${listed.length}] ${item.title}: ${comments.length} итогов`,
+        );
+      }
 
       return { ...item, ...classification, comments };
     },
   );
 
-  const merged = new Map(existing.items.map((item) => [item.id, item]));
+  const merged = new Map(
+    existing.items.filter((item) => !item.synthetic).map((item) => [
+      item.id,
+      {
+        ...item,
+        comments: Array.isArray(item.comments)
+          ? item.comments.filter(isResultComment)
+          : [],
+      },
+    ]),
+  );
   for (const item of current) merged.set(item.id, item);
+
+  const sourceItems = Array.from(merged.values());
+  const easterFestivals = buildEasterFestivals(sourceItems);
 
   const data: GameNewsData = {
     updatedAt: new Date().toISOString(),
     sourceUrl: NEWS_LIST_URL,
-    items: Array.from(merged.values()).sort((a, b) => {
+    archiveComplete: existing.archiveComplete || isArchiveBackfill,
+    archivePages: Math.max(existing.archivePages, pageNumbers.length),
+    items: [...sourceItems, ...easterFestivals].sort((a, b) => {
       const byDate = b.createdAt.localeCompare(a.createdAt);
       if (byDate !== 0) return byDate;
       return Number(b.tid) - Number(a.tid);
@@ -311,8 +507,9 @@ async function main(): Promise<void> {
   await mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
   await writeFile(OUTPUT_PATH, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 
-  console.log(`Новостей на текущей странице: ${current.length}`);
-  console.log(`Новостей сохранено всего: ${data.items.length}`);
+  console.log(`Новостей проверено сейчас: ${current.length}`);
+  console.log(`Новостей сохранено: ${sourceItems.length}`);
+  console.log(`Пасхальных фестивалей: ${easterFestivals.length}`);
   console.log(`Обновлён файл: ${OUTPUT_PATH}`);
 }
 
