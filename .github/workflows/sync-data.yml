@@ -55,10 +55,13 @@ jobs:
       - name: Step 9 — update ratings
         run: npx tsx scripts/update-ratings.ts
 
-      - name: Step 10 — write sync timestamp
+      - name: Step 10 — update game news
+        run: npx tsx scripts/update-game-news.ts
+
+      - name: Step 11 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
-      - name: Step 11 — build events history
+      - name: Step 12 — build events history
         run: npx tsx scripts/build-events.ts
 
       - name: Commit and push updated data
@@ -75,6 +78,7 @@ jobs:
             data/sync-status.json \
             data/last-sync.json \
             data/events.json \
+            data/game-news.json \
             data/ratings.json \
             data/history/last-state.json
 
