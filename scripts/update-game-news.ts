@@ -536,10 +536,17 @@ async function main(): Promise<void> {
   );
   for (const item of current) merged.set(item.id, item);
 
-  const sourceItems = Array.from(merged.values()).map((item) => ({
-    ...item,
-    ...classifyNews(item.title, item.body),
-  }));
+  const sourceItems = Array.from(merged.values()).map((item) => {
+    const classification = classifyNews(item.title, item.body);
+    const isFestivalResult =
+      classification.category === "festival" && /^(?:итог|результат)/i.test(item.title);
+
+    return {
+      ...item,
+      ...classification,
+      ...(isFestivalResult ? { resultText: item.body } : {}),
+    };
+  });
   const easterFestivals = buildEasterFestivals(sourceItems);
 
   const data: GameNewsData = {

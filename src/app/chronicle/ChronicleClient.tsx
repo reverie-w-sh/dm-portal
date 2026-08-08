@@ -464,6 +464,8 @@ function EventText({
 function NewsText({ news }: { news: GameNewsItem }) {
   const results = winnerComments(news);
   const hasResults = Boolean(news.resultText) || results.length > 0;
+  const isResultOnlyNews =
+    Boolean(news.resultText) && /^(?:итог|результат)/i.test(news.title);
   const body = news.body.trim();
   const paragraphs = body.split(/\n\s*\n/).filter(Boolean);
   const firstParagraph = paragraphs[0]?.trim() ?? "";
@@ -513,9 +515,11 @@ function NewsText({ news }: { news: GameNewsItem }) {
         <div className={styles.newsPeriod}>{news.periodLabel}</div>
       )}
 
-      {preview && <p className={styles.newsPreview}>{preview}</p>}
+      {!isResultOnlyNews && preview && (
+        <p className={styles.newsPreview}>{preview}</p>
+      )}
 
-      {isLong && (
+      {!isResultOnlyNews && isLong && (
         <details className={styles.newsDetails}>
           <summary>Читать полностью</summary>
           <div className={styles.newsFullText}>{body}</div>
