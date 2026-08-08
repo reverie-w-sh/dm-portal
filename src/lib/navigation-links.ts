@@ -1,6 +1,7 @@
 export const NAV_LINKS = [
   { href: "/members", label: 'Состав клана "Волчата"' },
   { href: "/clans", label: "Другие кланы ДМ" },
+  { href: "/chronicle", label: "Летопись" },
   { href: "/gallery", label: "Галерея" },
   { href: "/gifts", label: "Подарочки" },
   { href: "/links", label: "Тут тоже что-то есть :)" },

@@ -5,7 +5,7 @@ export const metadata = createPageMetadata({
   description:
     "Хроника событий игры Древний Мир: новые уровни, переходы между кланами, свадьбы, разводы и новые смайлики.",
   path: "/chronicle",
-  image: "/og/home.webp",
+  image: "/og/chronicle.webp",
   imageAlt: "Летопись Древнего Мира",
 });
 
