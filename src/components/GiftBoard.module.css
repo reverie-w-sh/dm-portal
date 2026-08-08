@@ -195,6 +195,57 @@
   font-weight: 700;
 }
 
+.transformBar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(173, 113, 34, 0.24);
+  background: rgba(9, 10, 9, 0.82);
+}
+
+.transformLabel {
+  color: #8f7c60;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.transformButtons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.transformButtons button {
+  min-height: 30px;
+  padding: 5px 9px;
+  border: 1px solid rgba(173, 113, 34, 0.4);
+  border-radius: 999px;
+  color: #bda888;
+  background: #0b0d0c;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+}
+
+.transformButtons button:hover {
+  border-color: #d69938;
+  color: #f0d09a;
+  background: rgba(106, 61, 18, 0.28);
+}
+
+.transformMessage {
+  flex: 1 1 100%;
+  color: #8f7c60;
+  font-size: 0.68rem;
+}
+
 .boardScroller {
   padding: 16px;
   overflow-x: auto;
@@ -258,6 +309,98 @@
   padding: 8px 12px;
   border-radius: 999px;
   font-size: 0.76rem;
+}
+
+.patternActions button.clearPattern {
+  color: #a88778;
+  border-color: rgba(140, 70, 55, 0.42);
+}
+
+.previewOverlay {
+  position: fixed;
+  z-index: 120;
+  inset: 0;
+  display: grid;
+  padding: 22px;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.76);
+  backdrop-filter: blur(4px);
+}
+
+.infoPreview {
+  width: min(760px, 100%);
+  max-height: min(86vh, 820px);
+  padding: 20px;
+  overflow-y: auto;
+  border: 1px solid rgba(188, 130, 52, 0.58);
+  border-radius: 12px;
+  color: #d7c5a8;
+  background: #0a0b0a;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.66);
+}
+
+.previewHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.previewHead h2 {
+  margin: 5px 0 0;
+  color: #e3c58f;
+  font: 400 1.35rem Georgia, "Times New Roman", serif;
+}
+
+.previewHead > button {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  padding: 0;
+  border: 1px solid rgba(173, 113, 34, 0.35);
+  border-radius: 50%;
+  color: #bda888;
+  background: #101210;
+  cursor: pointer;
+  font: 400 1.25rem/1 Georgia, serif;
+}
+
+.previewNote {
+  margin: 12px 0 15px;
+  color: #8f806b;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.infoMock {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid #a6a6a6;
+  background: #d3d3d3;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.08);
+}
+
+.infoMock > p {
+  margin: 34px 0;
+  color: #777;
+  text-align: center;
+}
+
+.infoGiftGrid {
+  display: grid;
+  grid-template-columns: repeat(var(--info-columns), minmax(0, 1fr));
+  width: min(620px, 100%);
+  margin: 0 auto;
+}
+
+.infoGiftGrid img {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .summary {
@@ -649,6 +792,24 @@
     flex-direction: column;
   }
 
+  .transformBar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 9px 10px;
+  }
+
+  .transformButtons {
+    width: 100%;
+  }
+
+  .previewOverlay {
+    padding: 8px;
+  }
+
+  .infoPreview {
+    padding: 14px;
+  }
+
   .sizeControls {
     width: 100%;
   }
@@ -703,6 +864,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .toolbar button,
+  .transformButtons button,
   .patternActions button,
   .copyButton,
   .publishButton,

@@ -9,6 +9,7 @@ const SCHEMES_INDEX = "wolfchen:gift-board:schemes";
 const SCHEME_PREFIX = "wolfchen:gift-board:scheme";
 const LIKES_PREFIX = "wolfchen:gift-board:likes";
 const MAX_VISIBLE_SCHEMES = 40;
+const MAX_OWN_SCHEMES = 200;
 
 type Cell = string | null;
 
@@ -54,7 +55,9 @@ export async function GET(request: NextRequest) {
 
   try {
     const sort = request.nextUrl.searchParams.get("sort") === "popular" ? "popular" : "new";
-    const ids = await redis.zrange<string[]>(SCHEMES_INDEX, 0, MAX_VISIBLE_SCHEMES - 1, { rev: true });
+    const nickFilter = cleanText(request.nextUrl.searchParams.get("nick"), 30).toLocaleLowerCase("ru-RU");
+    const limit = nickFilter ? MAX_OWN_SCHEMES : MAX_VISIBLE_SCHEMES;
+    const ids = await redis.zrange<string[]>(SCHEMES_INDEX, 0, limit - 1, { rev: true });
 
     if (!ids.length) {
       return NextResponse.json(
@@ -74,7 +77,11 @@ export async function GET(request: NextRequest) {
         if (!scheme) return null;
         return { ...scheme, likes: Number(likes[index] ?? 0) };
       })
-      .filter((scheme): scheme is StoredScheme & { likes: number } => Boolean(scheme));
+      .filter((scheme): scheme is StoredScheme & { likes: number } => Boolean(scheme))
+      .filter(
+        (scheme) =>
+          !nickFilter || scheme.nick.trim().toLocaleLowerCase("ru-RU") === nickFilter,
+      );
 
     if (sort === "popular") {
       schemes.sort(

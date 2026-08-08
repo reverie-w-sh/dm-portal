@@ -17,7 +17,7 @@ const MAX_ROWS = 20;
 
 type Cell = string | null;
 type Tool = "paint" | "erase";
-type SchemeSort = "new" | "popular";
+type SchemeSort = "new" | "popular" | "mine";
 
 type SavedBoard = {
   columns: number;
@@ -108,6 +108,8 @@ export default function GiftBoard() {
   const [schemesRefresh, setSchemesRefresh] = useState(0);
   const [isPublishing, setIsPublishing] = useState(false);
   const [publishMessage, setPublishMessage] = useState("");
+  const [transformMessage, setTransformMessage] = useState("");
+  const [previewOpen, setPreviewOpen] = useState(false);
   const [likedSchemes, setLikedSchemes] = useState<Set<string>>(() => new Set());
   const paintingRef = useRef(false);
 
@@ -190,7 +192,19 @@ export default function GiftBoard() {
     async function loadSchemes() {
       setSchemesLoading(true);
       try {
-        const response = await fetch(`/api/gift-board/schemes?sort=${schemeSort}`, {
+        const cleanNick = nick.trim();
+        if (schemeSort === "mine" && cleanNick.length < 2) {
+          setPublicSchemes([]);
+          setSchemesLoading(false);
+          return;
+        }
+
+        const params = new URLSearchParams({
+          sort: schemeSort === "popular" ? "popular" : "new",
+        });
+        if (schemeSort === "mine") params.set("nick", cleanNick);
+
+        const response = await fetch(`/api/gift-board/schemes?${params.toString()}`, {
           cache: "no-store",
         });
         const data = (await response.json()) as {
@@ -215,7 +229,7 @@ export default function GiftBoard() {
     return () => {
       cancelled = true;
     };
-  }, [schemeSort, schemesRefresh]);
+  }, [nick, schemeSort, schemesRefresh]);
 
   const selected = giftByFile.get(selectedGift) ?? GIFTS[0];
 
@@ -241,6 +255,11 @@ export default function GiftBoard() {
   const totalPlaced = useMemo(
     () => counts.reduce((sum, item) => sum + item.count, 0),
     [counts],
+  );
+
+  const previewCells = useMemo(
+    () => cells.filter((cell): cell is string => Boolean(cell)),
+    [cells],
   );
 
   function paintCell(index: number, toggle = false) {
@@ -311,6 +330,87 @@ export default function GiftBoard() {
       current.map((cell) => cell ?? selectedGift),
     );
     setTool("paint");
+  }
+
+  function mirrorBoard() {
+    setCells((current) => {
+      const next: Cell[] = [];
+      for (let row = 0; row < rows; row += 1) {
+        const start = row * columns;
+        next.push(...current.slice(start, start + columns).reverse());
+      }
+      return next;
+    });
+    setTransformMessage("Отразила зеркально ✓");
+  }
+
+  function rotateBoard() {
+    const nextColumns = rows;
+    const nextRows = columns;
+    if (
+      nextColumns < MIN_COLUMNS ||
+      nextColumns > MAX_COLUMNS ||
+      nextRows < MIN_ROWS ||
+      nextRows > MAX_ROWS
+    ) {
+      setTransformMessage(`Для поворота нужно от ${MIN_COLUMNS} до ${MAX_COLUMNS} строк.`);
+      return;
+    }
+
+    setCells((current) => {
+      const next = emptyBoard(nextColumns, nextRows);
+      for (let row = 0; row < rows; row += 1) {
+        for (let column = 0; column < columns; column += 1) {
+          const nextRow = column;
+          const nextColumn = rows - 1 - row;
+          next[nextRow * nextColumns + nextColumn] = current[row * columns + column];
+        }
+      }
+      return next;
+    });
+    setColumns(nextColumns);
+    setRows(nextRows);
+    setTransformMessage("Повернула на 90° ✓");
+  }
+
+  function shiftBoard(deltaColumn: number, deltaRow: number) {
+    const wouldLoseGift = cells.some((cell, index) => {
+      if (!cell) return false;
+      const row = Math.floor(index / columns);
+      const column = index % columns;
+      const nextRow = row + deltaRow;
+      const nextColumn = column + deltaColumn;
+      return nextRow < 0 || nextRow >= rows || nextColumn < 0 || nextColumn >= columns;
+    });
+
+    if (
+      wouldLoseGift &&
+      !window.confirm("На краю есть подарки — при сдвиге они выйдут за планшет. Продолжить?")
+    ) {
+      return;
+    }
+
+    setCells((current) => {
+      const next = emptyBoard(columns, rows);
+      current.forEach((cell, index) => {
+        if (!cell) return;
+        const row = Math.floor(index / columns) + deltaRow;
+        const column = (index % columns) + deltaColumn;
+        if (row >= 0 && row < rows && column >= 0 && column < columns) {
+          next[row * columns + column] = cell;
+        }
+      });
+      return next;
+    });
+    setTransformMessage("Сдвинула ✓");
+  }
+
+  function pickRandomBackground() {
+    const candidates = GIFTS.filter((gift) => !gift.personal && gift.file !== selectedGift);
+    const gift = candidates[Math.floor(Math.random() * candidates.length)] ?? GIFTS[0];
+    setSelectedGift(gift.file);
+    setTool("paint");
+    setTransformMessage(`Фон: ${gift.title}. Нажми «Заполнить фон», если подходит.`);
   }
 
   function drawPattern(pattern: string[]) {
@@ -545,6 +645,21 @@ export default function GiftBoard() {
               </div>
             </div>
 
+            <div className={styles.transformBar}>
+              <span className={styles.transformLabel}>Рисунок</span>
+              <div className={styles.transformButtons}>
+                <button type="button" onClick={mirrorBoard}>⇆ Зеркально</button>
+                <button type="button" onClick={rotateBoard}>↻ 90°</button>
+                <button type="button" title="Сдвинуть вверх" aria-label="Сдвинуть вверх" onClick={() => shiftBoard(0, -1)}>↑</button>
+                <button type="button" title="Сдвинуть вниз" aria-label="Сдвинуть вниз" onClick={() => shiftBoard(0, 1)}>↓</button>
+                <button type="button" title="Сдвинуть влево" aria-label="Сдвинуть влево" onClick={() => shiftBoard(-1, 0)}>←</button>
+                <button type="button" title="Сдвинуть вправо" aria-label="Сдвинуть вправо" onClick={() => shiftBoard(1, 0)}>→</button>
+                <button type="button" onClick={pickRandomBackground}>🎲 Подобрать фон</button>
+                <button type="button" onClick={() => setPreviewOpen(true)}>Предпросмотр в инфе</button>
+              </div>
+              {transformMessage ? <span className={styles.transformMessage}>{transformMessage}</span> : null}
+            </div>
+
             <div className={styles.boardScroller} id="gift-board-canvas">
               <div
                 className={styles.board}
@@ -589,6 +704,7 @@ export default function GiftBoard() {
               <button type="button" onClick={() => drawPattern(HEART_MASK)}>♥ Сердце</button>
               <button type="button" onClick={() => drawPattern(LOVE_MASK)}>LOVE</button>
               <button type="button" onClick={drawFrame}>Рамка</button>
+              <button type="button" className={styles.clearPattern} onClick={clearBoard}>Очистить</button>
             </div>
           </div>
 
@@ -658,13 +774,25 @@ export default function GiftBoard() {
                   >
                     Популярные
                   </button>
+                  <button
+                    type="button"
+                    className={schemeSort === "mine" ? styles.activeSort : ""}
+                    onClick={() => setSchemeSort("mine")}
+                  >
+                    Мои
+                  </button>
                 </div>
               </div>
 
               <div className={styles.savedSchemes}>
                 {schemesLoading ? <p className={styles.schemeHint}>Загружаю…</p> : null}
+                {!schemesLoading && schemeSort === "mine" && nick.trim().length < 2 ? (
+                  <p className={styles.schemeHint}>Напиши свой ник выше — покажу твои схемы.</p>
+                ) : null}
                 {!schemesLoading && !publicSchemes.length ? (
-                  <p className={styles.schemeHint}>Пока ни одной :)</p>
+                  schemeSort !== "mine" || nick.trim().length >= 2 ? (
+                    <p className={styles.schemeHint}>Пока ни одной :)</p>
+                  ) : null
                 ) : null}
                 {publicSchemes.map((scheme) => (
                   <article key={scheme.id} className={styles.schemeCard}>
@@ -749,6 +877,44 @@ export default function GiftBoard() {
             ))}
           </div>
         </section>
+
+        {previewOpen ? (
+          <div
+            className={styles.previewOverlay}
+            role="presentation"
+            onMouseDown={(event) => {
+              if (event.target === event.currentTarget) setPreviewOpen(false);
+            }}
+          >
+            <section className={styles.infoPreview} role="dialog" aria-modal="true" aria-label="Предпросмотр рисунка в инфе">
+              <div className={styles.previewHead}>
+                <div>
+                  <p className={styles.miniLabel}>Предпросмотр</p>
+                  <h2>Так рисунок будет выглядеть в инфе</h2>
+                </div>
+                <button type="button" onClick={() => setPreviewOpen(false)} aria-label="Закрыть предпросмотр">×</button>
+              </div>
+              <p className={styles.previewNote}>
+                Здесь нет сетки планшета. Пустые клетки схлопнуты — именно поэтому фон лучше заполнить подарком.
+              </p>
+              <div className={styles.infoMock}>
+                {previewCells.length ? (
+                  <div
+                    className={styles.infoGiftGrid}
+                    style={{ "--info-columns": columns } as React.CSSProperties}
+                  >
+                    {previewCells.map((file, index) => (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img key={`${file}-${index}`} src={file} alt="" />
+                    ))}
+                  </div>
+                ) : (
+                  <p>Пока пусто :)</p>
+                )}
+              </div>
+            </section>
+          </div>
+        ) : null}
       </div>
     </main>
   );

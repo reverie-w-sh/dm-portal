@@ -35,7 +35,6 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   line-height: 1.5;
-  text-wrap: balance;
 }
 
 .ornament {
