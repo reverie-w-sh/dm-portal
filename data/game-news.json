@@ -313,7 +313,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5640",
       "commentCount": 2,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -535,7 +535,14 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5535",
       "commentCount": 1,
       "category": "festival",
-      "comments": [],
+      "comments": [
+        {
+          "author": "Rüdiger[12]",
+          "date": "2025-11-03 10:02:50",
+          "body": "gelikova[8] [666]\nmarlllboro[13] [549]\nСтьюи[12] [507]\nBlackGeneral[11] [415]\nsinful[10] [357]\nSiyanie[9] [296]\nАртур[16] [242]\nTeufel[9] [152]\nGUCCI[8] [126]\nGudini[11] [104]",
+          "isSystemResult": false
+        }
+      ],
       "festivalType": "pumpkin"
     },
     {
@@ -894,7 +901,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5312",
       "commentCount": 2,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -1348,7 +1355,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5001",
       "commentCount": 3,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -1825,7 +1832,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4601",
       "commentCount": 3,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -2360,7 +2367,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4201",
       "commentCount": 6,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -2407,7 +2414,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4174",
       "commentCount": 4,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "blacksmith",
       "comments": [
         {
           "author": "",
@@ -2636,7 +2643,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3852",
       "commentCount": 4,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "blood",
       "comments": []
     },
     {
@@ -2682,7 +2689,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3829",
       "commentCount": 2,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "blood",
       "comments": [
         {
           "author": "",
@@ -3106,7 +3113,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3504",
       "commentCount": 19,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -3186,8 +3193,9 @@
       "body": "Игроки начиная с 7го уровня могут быть атакованы свитком тёмный жрец.\n\nПри поражении - Вы будете заражены.\n\nПри победе - получаете лекарство.\n\nМирные локации:Дом, Лабиринт,Ферма, Лес, Охота, Рыбалка (старая - у озера)\n\nPS: во время кровавых нападений, вещи ломаться БУДУТ (редко)\n\nПоломки вещи на 3 единицы, не забываем чинить.\n\nПризы будут рассчитываться топ лекарств,топ вируса.\n\nТемный жрец - покупка в магической лавке\n\nPS: (лекарств) - (вирус) = очки бонуса. Ограничение в 100.\n\nЗЫ1: призы начально в тера-золоте (максимум 100)\n\nЗЫ2:(возможны уточнения и изменения условий)\n\nВ связи с сорами, договрными боями - фестиваль крови закрывается.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3428",
       "commentCount": 15,
-      "category": "other",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "festivalType": "blood"
     },
     {
       "id": "dm-news-3423",
@@ -3970,7 +3978,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2823",
       "commentCount": 4,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "blood",
       "comments": []
     },
     {
@@ -4055,7 +4063,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2763",
       "commentCount": 2,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -4665,7 +4673,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2235",
       "commentCount": 8,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "blacksmith",
       "comments": [
         {
           "author": "VIPShima[9]",
@@ -4919,7 +4927,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1874",
       "commentCount": 1,
       "category": "festival",
-      "festivalType": "other",
+      "festivalType": "bouquets",
       "comments": []
     },
     {
@@ -4944,8 +4952,9 @@
       "body": "Уважаемые игроки!\n\nВ канун Международного Женского Дня молодым людям будут попадаться особые квестовые ресурсы, которые при помощи открыток из Лавки ( открытки ) превратятся в волшебные праздничные букеты.\n\nх1 х1 х1 =\n\nОткрытки появятся на прилавках магазина в разделе Открытки, а ресурсы для их крафта можно встретить на подземной рыбалке/логове панды, и у монстров уже сегодня.\n\nКаждый подаренный букет будет сопровождаться комплиментом от избранницы – поцелуем.\n\nКроме того, девушкам, в зависимости от количества полученных букетов, будет начисляться дополнительный опыт:\n\n1 - 1%\n\n5 - 2%\n\n10 - 3%\n\n25 - 4%\n\n50 - 5%\n\n100 - 6%\n\n200 - 7%\n\n300 - 8%\n\n400 - 9%\n\n500 - 10%\n\nP.S.: Букетный фестиваль продлен до 09.03.2019 до 15:00 по времени Древнего Мира.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1860",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "festivalType": "bouquets"
     },
     {
       "id": "dm-news-1852",

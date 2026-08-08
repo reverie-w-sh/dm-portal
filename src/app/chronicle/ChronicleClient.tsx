@@ -66,6 +66,8 @@ type FestivalType =
   | "fighters"
   | "labyrinth"
   | "familiar"
+  | "bouquets"
+  | "blood"
   | "easter"
   | "pumpkin"
   | "other";
@@ -140,9 +142,10 @@ const FESTIVAL_LABELS: Array<{ key: FestivalType; label: string }> = [
   { key: "fighters", label: "Бойцов" },
   { key: "labyrinth", label: "Лабиринта" },
   { key: "familiar", label: "Фамильяра" },
+  { key: "bouquets", label: "Букетов" },
+  { key: "blood", label: "Крови" },
   { key: "easter", label: "Пасхальный" },
   { key: "pumpkin", label: "Безумная тыква" },
-  { key: "other", label: "Другие" },
 ];
 
 const BOSS_LABELS: Array<{ key: BossType; label: string }> = [
@@ -209,11 +212,16 @@ function categoryForItem(item: TimelineItem): Category | "positions" | "other" {
 
 function winnerComments(news: GameNewsItem): GameNewsComment[] {
   return news.comments.filter(
-    (comment) =>
-      comment.isSystemResult ||
-      /победител|получил|награ|медал|приз|рейтинг\s+топ|топ\s*\d/i.test(
-        comment.body,
-      ),
+    (comment) => {
+      const scoreRows = comment.body.match(/\[[0-9]+\]\s+\[[0-9]+\]/g)?.length ?? 0;
+      return (
+        comment.isSystemResult ||
+        scoreRows >= 3 ||
+        /победител|получил|награ|медал|приз|рейтинг\s+топ|топ\s*\d/i.test(
+          comment.body,
+        )
+      );
+    },
   );
 }
 

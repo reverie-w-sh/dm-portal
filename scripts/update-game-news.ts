@@ -17,6 +17,8 @@ type FestivalType =
   | "fighters"
   | "labyrinth"
   | "familiar"
+  | "bouquets"
+  | "blood"
   | "easter"
   | "pumpkin"
   | "other";
@@ -112,11 +114,13 @@ function htmlToText(value: string): string {
 function festivalTypeFor(text: string): FestivalType {
   const value = text.toLocaleLowerCase("ru-RU");
 
+  if (/букет|фестивал.*цвет|для наших любим/.test(value)) return "bouquets";
+  if (/фестивал.*кров|фестиваля крови/.test(value)) return "blood";
   if (/рыбак/.test(value)) return "fisher";
   if (/собират/.test(value)) return "gatherer";
   if (/охотник/.test(value)) return "hunter";
   if (/андвар|адвар/.test(value)) return "andvari";
-  if (/кузнец/.test(value)) return "blacksmith";
+  if (/кузнец|кузниц/.test(value)) return "blacksmith";
   if (/бойц/.test(value)) return "fighters";
   if (/лабиринт/.test(value)) return "labyrinth";
   if (/фамильяр/.test(value)) return "familiar";
@@ -154,12 +158,17 @@ function classifyNews(title: string, body: string): {
   bossType?: BossType;
 } {
   const titleLower = title.toLocaleLowerCase("ru-RU");
+  const fullText = `${title}\n${body}`.toLocaleLowerCase("ru-RU");
   const bossType = bossTypeFor(title, body);
 
-  if (titleLower.includes("фестивал") || /безумн.*тыкв/.test(titleLower)) {
+  if (
+    titleLower.includes("фестивал") ||
+    /безумн.*тыкв/.test(titleLower) ||
+    /букетн.*фестивал/.test(fullText)
+  ) {
     return {
       category: "festival",
-      festivalType: festivalTypeFor(title),
+      festivalType: festivalTypeFor(fullText),
       bossType,
     };
   }
@@ -286,8 +295,10 @@ function isResultComment(comment: GameNewsComment): boolean {
   if (comment.isSystemResult) return true;
 
   const body = comment.body;
+  const scoreRows = body.match(/\[[0-9]+\]\s+\[[0-9]+\]/g)?.length ?? 0;
 
   return (
+    scoreRows >= 3 ||
     /рейтинг\s+топ\s*\d+\s*:/i.test(body) ||
     /фестивал[\s\S]{0,100}окончен/i.test(body) ||
     /получили[\s\S]{0,160}(?:медал|орден|свиток|манускрипт|награ|приз|тг|тера)/i.test(
