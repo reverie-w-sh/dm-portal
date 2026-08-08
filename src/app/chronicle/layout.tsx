@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Летопись Древнего Мира",
   description:
-    "Хроника событий игры Древний Мир: новые уровни, переходы между кланами, свадьбы, разводы и новые смайлики.",
+    "Хроника Древнего Мира: уровни, кланы, свадьбы, смайлики, фестивали, бои с боссами, победители, призы и новости игры.",
   path: "/chronicle",
   image: "/og/chronicle.webp",
   imageAlt: "Летопись Древнего Мира",

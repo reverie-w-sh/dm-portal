@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import eventsJson from "../../../data/events.json";
+import gameNewsJson from "../../../data/game-news.json";
 import clansJson from "../../../data/clans.json";
 import playersJson from "../../../data/players.json";
 import lastSyncJson from "../../../data/last-sync.json";
@@ -47,10 +48,54 @@ type Player = {
   clanName?: string;
 };
 
-type Category = "all" | "levels" | "clans" | "love" | "smiles";
+type GameNewsComment = {
+  author: string;
+  date: string;
+  body: string;
+  profileUrl?: string;
+  isSystemResult: boolean;
+};
+
+type FestivalType =
+  | "all"
+  | "fisher"
+  | "gatherer"
+  | "hunter"
+  | "andvari"
+  | "blacksmith"
+  | "fighters"
+  | "labyrinth"
+  | "familiar"
+  | "other";
+
+type GameNewsItem = {
+  id: string;
+  tid: string;
+  title: string;
+  publishedAt: string;
+  createdAt: string;
+  body: string;
+  sourceUrl: string;
+  category: "festival" | "boss" | "other";
+  festivalType?: Exclude<FestivalType, "all">;
+  commentCount: number;
+  comments: GameNewsComment[];
+};
+
+type Category =
+  | "all"
+  | "levels"
+  | "clans"
+  | "love"
+  | "smiles"
+  | "festivals"
+  | "bosses"
+  | "game-news";
 type Period = "7" | "30" | "90" | "all";
+type TimelineItem = ChronicleEvent | GameNewsItem;
 
 const events = eventsJson as ChronicleEvent[];
+const gameNews = gameNewsJson.items as GameNewsItem[];
 const clans = clansJson as Clan[];
 const players = playersJson as Player[];
 const dataNow = new Date(lastSyncJson.updatedAt);
@@ -62,6 +107,22 @@ const CATEGORY_LABELS: Array<{ key: Category; label: string }> = [
   { key: "clans", label: "Кланы" },
   { key: "love", label: "Любовь" },
   { key: "smiles", label: "Смайлики" },
+  { key: "festivals", label: "Фестивали" },
+  { key: "bosses", label: "Бои с боссами" },
+  { key: "game-news", label: "Другие новости" },
+];
+
+const FESTIVAL_LABELS: Array<{ key: FestivalType; label: string }> = [
+  { key: "all", label: "Все фестивали" },
+  { key: "fisher", label: "Рыбака" },
+  { key: "gatherer", label: "Собирателя" },
+  { key: "hunter", label: "Охотника" },
+  { key: "andvari", label: "Андвари" },
+  { key: "blacksmith", label: "Кузнеца" },
+  { key: "fighters", label: "Бойцов" },
+  { key: "labyrinth", label: "Лабиринта" },
+  { key: "familiar", label: "Фамильяра" },
+  { key: "other", label: "Другие" },
 ];
 
 const PERIOD_LABELS: Array<{ key: Period; label: string }> = [
@@ -72,6 +133,10 @@ const PERIOD_LABELS: Array<{ key: Period; label: string }> = [
 ];
 
 const POSITION_EVENT = "player_position_changed";
+
+function isGameNews(item: TimelineItem): item is GameNewsItem {
+  return "sourceUrl" in item && "publishedAt" in item;
+}
 
 function categoryFor(event: ChronicleEvent): Category | "positions" | "other" {
   if (
@@ -100,6 +165,23 @@ function categoryFor(event: ChronicleEvent): Category | "positions" | "other" {
   }
 
   return "other";
+}
+
+function categoryForItem(item: TimelineItem): Category | "positions" | "other" {
+  if (!isGameNews(item)) return categoryFor(item);
+  if (item.category === "festival") return "festivals";
+  if (item.category === "boss") return "bosses";
+  return "game-news";
+}
+
+function winnerComments(news: GameNewsItem): GameNewsComment[] {
+  return news.comments.filter(
+    (comment) =>
+      comment.isSystemResult ||
+      /победител|получил|награ|медал|приз|рейтинг\s+топ|топ\s*\d/i.test(
+        comment.body,
+      ),
+  );
 }
 
 function isOurClan(name?: string): boolean {
@@ -179,6 +261,13 @@ function eventIcon(event: ChronicleEvent): string {
   }
 }
 
+function itemIcon(item: TimelineItem): string {
+  if (!isGameNews(item)) return eventIcon(item);
+  if (item.category === "festival") return "✦";
+  if (item.category === "boss") return "⚔";
+  return "✎";
+}
+
 function iconClass(category: ReturnType<typeof categoryFor>): string {
   switch (category) {
     case "levels":
@@ -189,6 +278,12 @@ function iconClass(category: ReturnType<typeof categoryFor>): string {
       return styles.icon_love;
     case "smiles":
       return styles.icon_smiles;
+    case "festivals":
+      return styles.icon_festivals;
+    case "bosses":
+      return styles.icon_bosses;
+    case "game-news":
+      return styles.icon_news;
     case "positions":
       return styles.icon_positions;
     default:
@@ -310,6 +405,62 @@ function EventText({
   }
 }
 
+function NewsText({ news }: { news: GameNewsItem }) {
+  const results = winnerComments(news);
+  const isLong = news.body.length > 320;
+  const preview = isLong ? `${news.body.slice(0, 317).trimEnd()}…` : news.body;
+
+  return (
+    <div className={styles.newsBlock}>
+      <div className={styles.newsHeading}>
+        <a
+          href={news.sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className={styles.newsTitle}
+        >
+          {news.title}
+        </a>
+        <span className={styles.newsTag}>
+          {news.category === "festival"
+            ? "Фестиваль"
+            : news.category === "boss"
+              ? "Бой с боссом"
+              : "Новости ДМ"}
+        </span>
+      </div>
+
+      {preview && <p className={styles.newsPreview}>{preview}</p>}
+
+      {isLong && (
+        <details className={styles.newsDetails}>
+          <summary>Читать полностью</summary>
+          <div className={styles.newsFullText}>{news.body}</div>
+        </details>
+      )}
+
+      {results.length > 0 && (
+        <details className={`${styles.newsDetails} ${styles.winnersDetails}`}>
+          <summary>Победители и призы</summary>
+          <div className={styles.winnersList}>
+            {results.map((comment, index) => (
+              <div
+                key={`${news.id}-result-${index}`}
+                className={styles.winnerResult}
+              >
+                {comment.date && (
+                  <span className={styles.resultDate}>{comment.date}</span>
+                )}
+                <div>{comment.body}</div>
+              </div>
+            ))}
+          </div>
+        </details>
+      )}
+    </div>
+  );
+}
+
 function formatTime(value: string): string {
   return new Date(value).toLocaleTimeString("ru-RU", {
     hour: "2-digit",
@@ -346,6 +497,7 @@ function dayLabel(value: string): string {
 
 export default function ChronicleClient() {
   const [category, setCategory] = useState<Category>("all");
+  const [festivalType, setFestivalType] = useState<FestivalType>("all");
   const [period, setPeriod] = useState<Period>("30");
   const [showPositions, setShowPositions] = useState(false);
   const [visibleCount, setVisibleCount] = useState(36);
@@ -364,27 +516,40 @@ export default function ChronicleClient() {
     const periodStart =
       period === "all" ? 0 : dataNowTime - Number(period) * 86_400_000;
 
-    return [...events]
-      .filter((event) => event.type !== "personal_item_added")
-      .filter((event) => showPositions || event.type !== POSITION_EVENT)
-      .filter((event) => category === "all" || categoryFor(event) === category)
-      .filter((event) => new Date(event.createdAt).getTime() >= periodStart)
+    return ([...events, ...gameNews] as TimelineItem[])
+      .filter(
+        (item) => isGameNews(item) || item.type !== "personal_item_added",
+      )
+      .filter(
+        (item) =>
+          isGameNews(item) || showPositions || item.type !== POSITION_EVENT,
+      )
+      .filter(
+        (item) => category === "all" || categoryForItem(item) === category,
+      )
+      .filter(
+        (item) =>
+          category !== "festivals" ||
+          festivalType === "all" ||
+          (isGameNews(item) && item.festivalType === festivalType),
+      )
+      .filter((item) => new Date(item.createdAt).getTime() >= periodStart)
       .sort(
         (a, b) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       );
-  }, [category, period, showPositions]);
+  }, [category, festivalType, period, showPositions]);
 
   const visibleEvents = filtered.slice(0, visibleCount);
-  const groups = visibleEvents.reduce<Array<{ key: string; date: string; events: ChronicleEvent[] }>>(
-    (result, event) => {
-      const key = dayKey(event.createdAt);
+  const groups = visibleEvents.reduce<Array<{ key: string; date: string; events: TimelineItem[] }>>(
+    (result, item) => {
+      const key = dayKey(item.createdAt);
       const last = result[result.length - 1];
 
       if (last?.key === key) {
-        last.events.push(event);
+        last.events.push(item);
       } else {
-        result.push({ key, date: event.createdAt, events: [event] });
+        result.push({ key, date: item.createdAt, events: [item] });
       }
 
       return result;
@@ -394,6 +559,7 @@ export default function ChronicleClient() {
 
   function chooseCategory(next: Category) {
     setCategory(next);
+    if (next !== "festivals") setFestivalType("all");
     setVisibleCount(36);
   }
 
@@ -420,6 +586,27 @@ export default function ChronicleClient() {
             ))}
           </div>
         </div>
+
+        {category === "festivals" && (
+          <div className={`${styles.filterRow} ${styles.festivalRow}`}>
+            <span className={styles.filterLabel}>Фестиваль</span>
+            <div className={styles.pills}>
+              {FESTIVAL_LABELS.map(({ key, label }) => (
+                <button
+                  key={key}
+                  type="button"
+                  className={festivalType === key ? styles.activePill : styles.pill}
+                  onClick={() => {
+                    setFestivalType(key);
+                    setVisibleCount(36);
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className={styles.filterRow}>
           <span className={styles.filterLabel}>Период</span>
@@ -472,7 +659,33 @@ export default function ChronicleClient() {
               </div>
 
               <div className={styles.dayEvents}>
-                {group.events.map((event) => {
+                {group.events.map((item) => {
+                  if (isGameNews(item)) {
+                    const categoryName = categoryForItem(item);
+
+                    return (
+                      <article
+                        key={item.id}
+                        className={`${styles.eventCard} ${styles.newsCard}`}
+                      >
+                        <div
+                          className={`${styles.icon} ${iconClass(categoryName)}`}
+                          aria-hidden="true"
+                        >
+                          {itemIcon(item)}
+                        </div>
+
+                        <div className={styles.eventBody}>
+                          <div className={styles.eventText}>
+                            <NewsText news={item} />
+                          </div>
+                          <span className={styles.time}>Новости dm-game.com</span>
+                        </div>
+                      </article>
+                    );
+                  }
+
+                  const event = item;
                   const clanId = event.clanId || event.newClanId;
                   const crest = clanId ? clansById.get(clanId)?.crestSmall : undefined;
                   const categoryName = categoryFor(event);

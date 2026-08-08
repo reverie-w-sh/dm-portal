@@ -84,6 +84,11 @@
   margin-top: 12px;
 }
 
+.festivalRow {
+  padding-top: 10px;
+  border-top: 1px solid rgba(166, 115, 47, 0.18);
+}
+
 .filterLabel {
   color: #887860;
   font-size: 0.7rem;
@@ -267,6 +272,21 @@
   color: #d5ac61;
 }
 
+.icon_festivals {
+  color: #e1b45e;
+  border-color: rgba(211, 156, 68, 0.58);
+}
+
+.icon_bosses {
+  color: #c76f61;
+  border-color: rgba(173, 72, 58, 0.58);
+}
+
+.icon_news {
+  color: #b69b76;
+  border-color: rgba(167, 135, 94, 0.45);
+}
+
 .icon_positions {
   color: #8f826f;
   border-color: rgba(142, 126, 104, 0.4);
@@ -276,10 +296,116 @@
   min-width: 0;
 }
 
+.newsCard {
+  align-items: start;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
 .eventText {
   color: #c9c0b2;
   font-size: 0.86rem;
   line-height: 1.55;
+}
+
+.newsBlock {
+  min-width: 0;
+}
+
+.newsHeading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 7px 10px;
+}
+
+.newsTitle {
+  color: #d1a65f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.newsTitle:hover {
+  color: #e5c185;
+}
+
+.newsTag {
+  padding: 2px 7px;
+  border: 1px solid rgba(170, 119, 49, 0.35);
+  border-radius: 999px;
+  color: #8e7759;
+  font-size: 0.61rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.newsPreview,
+.newsFullText,
+.winnerResult {
+  white-space: pre-line;
+}
+
+.newsPreview {
+  margin: 6px 0 0;
+  color: #aaa093;
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+.newsDetails {
+  margin-top: 8px;
+  border-top: 1px solid rgba(162, 111, 44, 0.18);
+  padding-top: 6px;
+}
+
+.newsDetails summary {
+  width: fit-content;
+  color: #a97a3f;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+}
+
+.newsDetails[open] summary {
+  color: #d0a362;
+}
+
+.newsFullText {
+  margin-top: 8px;
+  color: #a79d8f;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.winnersDetails summary {
+  color: #c2924c;
+}
+
+.winnersList {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.winnerResult {
+  padding: 9px 10px;
+  border-left: 2px solid rgba(186, 126, 48, 0.6);
+  color: #bfb19d;
+  background: rgba(116, 72, 22, 0.1);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.resultDate {
+  display: block;
+  margin-bottom: 4px;
+  color: #766a5a;
+  font-size: 0.63rem;
 }
 
 .character,
