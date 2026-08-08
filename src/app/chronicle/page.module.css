@@ -288,11 +288,11 @@
 }
 
 .scrollIcon {
-  width: 19px;
-  height: 19px;
+  width: 21px;
+  height: 21px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.45;
+  stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
