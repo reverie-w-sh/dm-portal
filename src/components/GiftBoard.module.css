@@ -328,7 +328,7 @@
 }
 
 .infoPreview {
-  width: min(760px, 100%);
+  width: min(980px, 100%);
   max-height: min(86vh, 820px);
   padding: 20px;
   overflow-y: auto;
@@ -373,17 +373,33 @@
 }
 
 .infoMock {
+  position: relative;
   width: 100%;
-  min-height: 120px;
-  padding: 12px;
   overflow: hidden;
   border: 1px solid #a6a6a6;
   background: #d3d3d3;
   box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.08);
 }
 
-.infoMock > p {
-  margin: 34px 0;
+.infoScreenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.infoDrawingArea {
+  position: absolute;
+  top: 9.4%;
+  left: 6%;
+  width: 51.3%;
+  height: 64.4%;
+  overflow: hidden;
+  background: #d3d3d3;
+}
+
+.infoDrawingArea > p {
+  margin: 28px 0;
   color: #777;
   text-align: center;
 }
@@ -391,8 +407,8 @@
 .infoGiftGrid {
   display: grid;
   grid-template-columns: repeat(var(--info-columns), minmax(0, 1fr));
-  width: min(620px, 100%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
 }
 
 .infoGiftGrid img {

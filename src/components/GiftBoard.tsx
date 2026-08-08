@@ -257,10 +257,20 @@ export default function GiftBoard() {
     [counts],
   );
 
-  const previewCells = useMemo(
-    () => cells.filter((cell): cell is string => Boolean(cell)),
-    [cells],
-  );
+  const previewCells = useMemo(() => {
+    // В DM подарки дарятся от правого нижнего к левому верхнему.
+    // В инфе более поздние подарки оказываются раньше, поэтому для
+    // предпросмотра сначала собираем реальную очередь дарения, убирая
+    // пустые клетки, а затем разворачиваем её в порядок отображения.
+    const givingOrder: string[] = [];
+    for (let row = rows - 1; row >= 0; row -= 1) {
+      for (let column = columns - 1; column >= 0; column -= 1) {
+        const cell = cells[row * columns + column];
+        if (cell) givingOrder.push(cell);
+      }
+    }
+    return givingOrder.reverse();
+  }, [cells, columns, rows]);
 
   function paintCell(index: number, toggle = false) {
     setCells((current) => {
@@ -895,22 +905,30 @@ export default function GiftBoard() {
                 <button type="button" onClick={() => setPreviewOpen(false)} aria-label="Закрыть предпросмотр">×</button>
               </div>
               <p className={styles.previewNote}>
-                Здесь нет сетки планшета. Пустые клетки схлопнуты — именно поэтому фон лучше заполнить подарком.
+                Пример прямо на скрине из инфы. Пустые клетки схлопнуты — как и при настоящей выкладке подарков.
               </p>
               <div className={styles.infoMock}>
-                {previewCells.length ? (
-                  <div
-                    className={styles.infoGiftGrid}
-                    style={{ "--info-columns": columns } as React.CSSProperties}
-                  >
-                    {previewCells.map((file, index) => (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img key={`${file}-${index}`} src={file} alt="" />
-                    ))}
-                  </div>
-                ) : (
-                  <p>Пока пусто :)</p>
-                )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className={styles.infoScreenshot}
+                  src="/images/gift-board-info-preview.png"
+                  alt="Пример раздела подарков в инфе Древнего Мира"
+                />
+                <div className={styles.infoDrawingArea}>
+                  {previewCells.length ? (
+                    <div
+                      className={styles.infoGiftGrid}
+                      style={{ "--info-columns": columns } as React.CSSProperties}
+                    >
+                      {previewCells.map((file, index) => (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img key={`${file}-${index}`} src={file} alt="" />
+                      ))}
+                    </div>
+                  ) : (
+                    <p>Пока пусто :)</p>
+                  )}
+                </div>
               </div>
             </section>
           </div>
