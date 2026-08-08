@@ -18,6 +18,18 @@ type FestivalType =
   | "labyrinth"
   | "familiar"
   | "easter"
+  | "pumpkin"
+  | "other";
+
+type BossType =
+  | "cupid"
+  | "gorgon"
+  | "clown"
+  | "zaya"
+  | "neuch"
+  | "rudi"
+  | "pumpkin"
+  | "snowman"
   | "other";
 
 type GameNewsComment = {
@@ -38,6 +50,7 @@ type GameNewsItem = {
   sourceUrl: string;
   category: NewsCategory;
   festivalType?: FestivalType;
+  bossType?: BossType;
   commentCount: number;
   comments: GameNewsComment[];
   synthetic?: boolean;
@@ -55,7 +68,7 @@ type GameNewsData = {
 
 type ListedNews = Omit<
   GameNewsItem,
-  "category" | "festivalType" | "comments"
+  "category" | "festivalType" | "bossType" | "comments"
 >;
 
 const ENTITY_MAP: Record<string, string> = {
@@ -107,29 +120,52 @@ function festivalTypeFor(text: string): FestivalType {
   if (/бойц/.test(value)) return "fighters";
   if (/лабиринт/.test(value)) return "labyrinth";
   if (/фамильяр/.test(value)) return "familiar";
+  if (/безумн.*тыкв/.test(value)) return "pumpkin";
   return "other";
+}
+
+function bossTypeFor(title: string, body: string): BossType | undefined {
+  const titleLower = title.toLocaleLowerCase("ru-RU");
+  const bodyLower = body.toLocaleLowerCase("ru-RU");
+  const fullText = `${titleLower}\n${bodyLower}`;
+
+  if (/купидон/.test(fullText)) return "cupid";
+  if (/похитительниц.*женск.*красот/.test(fullText)) return "gorgon";
+  if (/^1 апреля/.test(titleLower)) return "clown";
+  if (/пасхальн.*за|бой с за[её]й/.test(fullText)) return "zaya";
+  if (/неуч/.test(fullText) || /день знаний/.test(titleLower)) return "neuch";
+  if (/rüdiger|руд(?:и|иг)|рюд(?:и|иг)/.test(fullText)) return "rudi";
+  if (
+    /бой с тыкв|разбить лицо тыкв/.test(fullText) ||
+    (/мега[- ]?бой/.test(titleLower) && /тыкв/.test(fullText))
+  ) return "pumpkin";
+  if (/снеговик/.test(fullText)) return "snowman";
+
+  if (/бой с|мега[- ]?бой|состоится бой|праздничн(?:ым|ого) моб/.test(titleLower)) {
+    return "other";
+  }
+
+  return undefined;
 }
 
 function classifyNews(title: string, body: string): {
   category: NewsCategory;
   festivalType?: FestivalType;
+  bossType?: BossType;
 } {
   const titleLower = title.toLocaleLowerCase("ru-RU");
-  const fullText = `${title}\n${body}`.toLocaleLowerCase("ru-RU");
+  const bossType = bossTypeFor(title, body);
 
-  if (titleLower.includes("фестивал")) {
+  if (titleLower.includes("фестивал") || /безумн.*тыкв/.test(titleLower)) {
     return {
       category: "festival",
       festivalType: festivalTypeFor(title),
+      bossType,
     };
   }
 
-  if (
-    /бой с|мега[- ]?бой|состоится бой|праздничн(?:ым|ого) моб/.test(
-      fullText,
-    )
-  ) {
-    return { category: "boss" };
+  if (bossType) {
+    return { category: "boss", bossType };
   }
 
   return { category: "other" };
@@ -489,7 +525,10 @@ async function main(): Promise<void> {
   );
   for (const item of current) merged.set(item.id, item);
 
-  const sourceItems = Array.from(merged.values());
+  const sourceItems = Array.from(merged.values()).map((item) => ({
+    ...item,
+    ...classifyNews(item.title, item.body),
+  }));
   const easterFestivals = buildEasterFestivals(sourceItems);
 
   const data: GameNewsData = {

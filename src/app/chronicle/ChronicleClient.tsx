@@ -67,6 +67,19 @@ type FestivalType =
   | "labyrinth"
   | "familiar"
   | "easter"
+  | "pumpkin"
+  | "other";
+
+type BossType =
+  | "all"
+  | "cupid"
+  | "gorgon"
+  | "clown"
+  | "zaya"
+  | "neuch"
+  | "rudi"
+  | "pumpkin"
+  | "snowman"
   | "other";
 
 type GameNewsItem = {
@@ -79,6 +92,7 @@ type GameNewsItem = {
   sourceUrl: string;
   category: "festival" | "boss" | "other";
   festivalType?: Exclude<FestivalType, "all">;
+  bossType?: Exclude<BossType, "all">;
   commentCount: number;
   comments: GameNewsComment[];
   synthetic?: boolean;
@@ -127,6 +141,20 @@ const FESTIVAL_LABELS: Array<{ key: FestivalType; label: string }> = [
   { key: "labyrinth", label: "Лабиринта" },
   { key: "familiar", label: "Фамильяра" },
   { key: "easter", label: "Пасхальный" },
+  { key: "pumpkin", label: "Безумная тыква" },
+  { key: "other", label: "Другие" },
+];
+
+const BOSS_LABELS: Array<{ key: BossType; label: string }> = [
+  { key: "all", label: "Все боссы" },
+  { key: "cupid", label: "Купидон" },
+  { key: "gorgon", label: "Горгона" },
+  { key: "clown", label: "Клоун" },
+  { key: "zaya", label: "Зая" },
+  { key: "neuch", label: "Неуч" },
+  { key: "rudi", label: "Тень Руди" },
+  { key: "pumpkin", label: "Тыква" },
+  { key: "snowman", label: "Снеговик" },
   { key: "other", label: "Другие" },
 ];
 
@@ -548,6 +576,7 @@ function dayLabel(value: string): string {
 export default function ChronicleClient() {
   const [category, setCategory] = useState<Category>("all");
   const [festivalType, setFestivalType] = useState<FestivalType>("all");
+  const [bossType, setBossType] = useState<BossType>("all");
   const [period, setPeriod] = useState<Period>("30");
   const [showPositions, setShowPositions] = useState(false);
   const [visibleCount, setVisibleCount] = useState(36);
@@ -575,7 +604,13 @@ export default function ChronicleClient() {
           isGameNews(item) || showPositions || item.type !== POSITION_EVENT,
       )
       .filter(
-        (item) => category === "all" || categoryForItem(item) === category,
+        (item) => {
+          if (category === "all") return true;
+          if (category === "bosses" && isGameNews(item)) {
+            return item.category === "boss" || Boolean(item.bossType);
+          }
+          return categoryForItem(item) === category;
+        },
       )
       .filter(
         (item) =>
@@ -583,12 +618,18 @@ export default function ChronicleClient() {
           festivalType === "all" ||
           (isGameNews(item) && item.festivalType === festivalType),
       )
+      .filter(
+        (item) =>
+          category !== "bosses" ||
+          bossType === "all" ||
+          (isGameNews(item) && item.bossType === bossType),
+      )
       .filter((item) => new Date(item.createdAt).getTime() >= periodStart)
       .sort(
         (a, b) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       );
-  }, [category, festivalType, period, showPositions]);
+  }, [bossType, category, festivalType, period, showPositions]);
 
   const visibleEvents = filtered.slice(0, visibleCount);
   const groups = visibleEvents.reduce<Array<{ key: string; date: string; events: TimelineItem[] }>>(
@@ -610,6 +651,7 @@ export default function ChronicleClient() {
   function chooseCategory(next: Category) {
     setCategory(next);
     if (next !== "festivals") setFestivalType("all");
+    if (next !== "bosses") setBossType("all");
     setVisibleCount(36);
   }
 
@@ -648,6 +690,27 @@ export default function ChronicleClient() {
                   className={festivalType === key ? styles.activePill : styles.pill}
                   onClick={() => {
                     setFestivalType(key);
+                    setVisibleCount(36);
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {category === "bosses" && (
+          <div className={`${styles.filterRow} ${styles.festivalRow}`}>
+            <span className={styles.filterLabel}>Босс</span>
+            <div className={styles.pills}>
+              {BOSS_LABELS.map(({ key, label }) => (
+                <button
+                  key={key}
+                  type="button"
+                  className={bossType === key ? styles.activePill : styles.pill}
+                  onClick={() => {
+                    setBossType(key);
                     setVisibleCount(36);
                   }}
                 >

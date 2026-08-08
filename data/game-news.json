@@ -229,7 +229,8 @@
           "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19",
           "isSystemResult": false
         }
-      ]
+      ],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2026",
@@ -265,7 +266,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5655",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-5650",
@@ -298,7 +300,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5643",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-5640",
@@ -344,7 +347,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5620",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-5603",
@@ -418,8 +422,9 @@
       "body": "28.12.2025 в 19:00 он вторгнется в наш мир и заморозит всех кто станет на его пути.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5577",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-5573",
@@ -529,8 +534,9 @@
       "body": "1. Покупаем подарок безумная тыква (Лавка-Подарки).\n\n2. Дарим друг-другу (онлайн игрокам)\n\n3. Заходим в инфу и жмем по тыкве.\n\n4. С вероятностью, Ваша или тыква друга превратится в конфеты.\n\nЗЫ: тыквы должны подарены быть у обоих!\n\nХорошего настроения!\n\nПриз топ 10:\n\nМедалька.\n\n200тг топ1\n\n180тг топ2\n\n160тг топ3\n\n140тг топ4\n\n120тг топ5\n\n100тг топ6\n\n80тг топ7\n\n60тг топ8\n\n50тг топ9\n\n40тг топ10",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5535",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "festivalType": "pumpkin"
     },
     {
       "id": "dm-news-5534",
@@ -554,7 +560,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5529",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "pumpkin"
     },
     {
       "id": "dm-news-5527",
@@ -607,8 +614,9 @@
       "body": "Тень Rüdiger воскресит и восстанет против жителей Древнего Мира 20/09/2022 в 19:00 и только общими усилиями нам удастся его одолеть.\n\nОн очень опасен и силён.\n\nУвеличение опыта на 5 дней:\n\n21.09 - 100%\n\n22.09 - 100%\n\n23.09 - 80%\n\n24.09 - 50%\n\n25.09 - 25%",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5484",
       "commentCount": 5,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-5455",
@@ -632,7 +640,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5454",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-5452",
@@ -790,7 +799,8 @@
           "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19",
           "isSystemResult": false
         }
-      ]
+      ],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2025",
@@ -825,7 +835,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5354",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-5334",
@@ -858,7 +869,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5321",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-5314",
@@ -919,7 +931,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5263",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-5252",
@@ -1020,8 +1033,9 @@
       "body": "28.12.2024 в 19:00 он вторгнется в наш мир и заморозит всех кто станет на его пути.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5216",
       "commentCount": 2,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-5210",
@@ -1115,7 +1129,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5177",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "pumpkin"
     },
     {
       "id": "dm-news-5167",
@@ -1151,8 +1166,9 @@
       "body": "Тень Rüdiger воскресит и восстанет против жителей Древнего Мира 20/09/2024 в 19:00 и только общими усилиями нам удастся его одолеть.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5150",
       "commentCount": 3,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-5143",
@@ -1164,7 +1180,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5143",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-5142",
@@ -1264,7 +1281,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5051",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2024",
@@ -1304,7 +1322,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5030",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-5002",
@@ -1316,7 +1335,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5002",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-5001",
@@ -1362,7 +1382,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4978",
       "commentCount": 4,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-4959",
@@ -1407,8 +1428,9 @@
       "body": "28.12.2023 в 19:00 он вторгнется в наш мир и заморозит всех кто станет на его пути.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4909",
       "commentCount": 2,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-4901",
@@ -1478,7 +1500,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4853",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "pumpkin"
     },
     {
       "id": "dm-news-4852",
@@ -1559,8 +1582,9 @@
       "body": "Тень Rüdiger воскресит и восстанет против жителей Древнего Мира 20/09/2023 в 19:00 и только общими усилиями нам удастся его одолеть.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4805",
       "commentCount": 2,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-4792",
@@ -1584,7 +1608,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4788",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-4776",
@@ -1725,7 +1750,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4645",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2023",
@@ -1752,7 +1778,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4623",
       "commentCount": 5,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-4612",
@@ -1785,7 +1812,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4602",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-4601",
@@ -1822,7 +1850,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4582",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-4576",
@@ -1887,8 +1916,9 @@
       "body": "27.12.2022 в 19:00 он вторгнется в наш мир и заморозит всех кто станет на его пути.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4542",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-4536",
@@ -1963,7 +1993,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4503",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "pumpkin"
     },
     {
       "id": "dm-news-4488",
@@ -2008,8 +2039,9 @@
       "body": "Вот и прошел еще один год. :)\n\nи +1 медалька\n\n21.09 +100% опыта\n\n22.09 +100% опыта\n\n23.09 +80% опыта\n\n24.09 +50% опыта\n\n25.09 +25% опыта\n\nкомментариев:\n\nБой в честь годовщины проекта 20.09.22 в 19:00\n2022-09-18\n\nТень Rüdiger воскресит и восстанет против жителей Древнего Мира 20/09/2022 в 19:00 и только общими усилиями нам удастся его одолеть.\n\nОн очень опасен и силён.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4455",
       "commentCount": 2,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-4439",
@@ -2033,7 +2065,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4437",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-4434",
@@ -2169,7 +2202,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4317",
       "commentCount": 4,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "other"
     },
     {
       "id": "dm-news-4299",
@@ -2209,7 +2243,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4277",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2022",
@@ -2270,7 +2305,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4248",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-4240",
@@ -2358,7 +2394,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4185",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "other"
     },
     {
       "id": "dm-news-4174",
@@ -2436,7 +2473,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4133",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-4132",
@@ -2505,8 +2543,9 @@
       "body": "27.12.2022 в 19:00 он вторгнется в наш мир и заморозит всех кто станет на его пути.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=4024",
       "commentCount": 13,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-3989",
@@ -2675,8 +2714,9 @@
       "body": "Тень Rüdiger воскресит и восстанет против проекта 20/09/2021 в 19:00 и только общими усилиями нам удастся его одолеть.\n\nПоговаривают, что он станет ещё сильнее, ещё страшнее и готов уничтожить всех кто встанет у него на пути.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3804",
       "commentCount": 2,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-3796",
@@ -2729,7 +2769,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3792",
       "commentCount": 4,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-3784",
@@ -2931,7 +2972,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3587",
       "commentCount": 6,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2021",
@@ -2996,7 +3038,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3539",
       "commentCount": 5,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-3536",
@@ -3050,7 +3093,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3512",
       "commentCount": 2,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-3504",
@@ -3117,7 +3161,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3486",
       "commentCount": 1,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "other"
     },
     {
       "id": "dm-news-3461",
@@ -3129,7 +3174,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3461",
       "commentCount": 7,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-3428",
@@ -3240,7 +3286,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3305",
       "commentCount": 6,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-3304",
@@ -3362,8 +3409,9 @@
       "body": "Итоги:\n\nМужские слезы[11] - [17220]\n\nLady[11] - [14000]\n\nТави[9] - [13430]\n\nEorin[11] - [11333]\n\nIzbranniy[9] - [9005]\n\nСтьюи[9] - [8417]\n\nЭйлин[11] - [8262]\n\nSpartac[9] - [6708]\n\nBlackGeneral[10] - [4970]\n\nArt of War[9] - [4319]",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3232",
       "commentCount": 7,
-      "category": "other",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "festivalType": "pumpkin"
     },
     {
       "id": "dm-news-3229",
@@ -3394,8 +3442,10 @@
       "body": "1. Покупаем подарок безумная тыква (Лавка-Подарки).\n\n2. Дарим друг-другу.\n\n3. Заходим в инфу и жмем по тыкве.\n\n4. С вероятностью, Ваша или тыква друга превратится в конфеты.\n\nЗЫ: тыквы должны подарены быть у обоих!\n\nХорошего настроения!\n\nИтоги 31 после боя.\nПриз топ 10:\n\nМедалька.\n\n200тг топ1\n\n180тг топ2\n\n160тг топ3\n\n140тг топ4\n\n120тг топ5\n\n100тг топ6\n\n80тг топ7\n\n60тг топ8\n\n50тг топ9\n\n40тг топ10\n\nНадо разбить лицо тыкве и выбить конфеты.\nБой с тыквой состоится 31 октября 2020 года в 19 00 по cервера времени.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3219",
       "commentCount": 6,
-      "category": "boss",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "bossType": "pumpkin",
+      "festivalType": "pumpkin"
     },
     {
       "id": "dm-news-3211",
@@ -3497,8 +3547,9 @@
       "body": "Затмение солнца пробудило демонов и Тень Rüdiger восстанет против проекта\n\nRüdiger\n\nУвеличение опыта на 5 дней:\n\n21.09 - 100%\n\n22.09 - 100%\n\n23.09 - 80%\n\n24.09 - 50%\n\n25.09 - 25%\n\n26.09 - Бой",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3150",
       "commentCount": 4,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-3142",
@@ -3546,7 +3597,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3125",
       "commentCount": 3,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-3117",
@@ -3808,7 +3860,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2914",
       "commentCount": 13,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2020",
@@ -3904,7 +3957,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2845",
       "commentCount": 10,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-2823",
@@ -3988,7 +4042,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2764",
       "commentCount": 12,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-2763",
@@ -4045,8 +4100,9 @@
       "body": "Ура!",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2723",
       "commentCount": 7,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "cupid"
     },
     {
       "id": "dm-news-2686",
@@ -4189,7 +4245,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2594",
       "commentCount": 11,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "snowman"
     },
     {
       "id": "dm-news-2578",
@@ -4236,7 +4293,7 @@
       "body": "Темный жрец\n\nКровавый бой сообществ\n\nЗавезены в лавку, после будет забраны с рук.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2556",
       "commentCount": 8,
-      "category": "boss",
+      "category": "other",
       "comments": []
     },
     {
@@ -4315,8 +4372,10 @@
       "body": "1. Покупаем подарок безумная тыква.\n\n2. Дарим друг-другу.\n\n3. Заходим в инфу и жмем по тыкве.\n\n4. С вероятностью, Ваша или тыква друга превратится в конфеты.\n\nЗЫ: тыквы должны подарены быть у обоих!\n\nХорошего настроения!\n\nНадо разбить лицо тыкве и выбить конфеты.\nБой с тыквой состоится 31 октября 2019 года в 19 00 по cервера времени.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2485",
       "commentCount": 3,
-      "category": "boss",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "bossType": "pumpkin",
+      "festivalType": "pumpkin"
     },
     {
       "id": "dm-news-2475",
@@ -4450,7 +4509,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2369",
       "commentCount": 5,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "neuch"
     },
     {
       "id": "dm-news-2375",
@@ -4733,7 +4793,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=2074",
       "commentCount": 7,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "zaya"
     },
     {
       "id": "dm-easter-2019",
@@ -4798,7 +4859,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1973",
       "commentCount": 11,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "clown"
     },
     {
       "id": "dm-news-1967",
@@ -4894,8 +4956,9 @@
       "body": "Уважаемые жители древнего мира! В связи с тем, что кузнец древнего мира не справляется с изготовлением стрел и болтов, вводится новая профессия - Стрелок! Игроки могут сами изготовить необходимые болты и стрелы для своих орудий!\n\nП.с. Для мастеров профессии будут доступны нововведения...\n\nП.П.С.: С шансами на крафт стрел/болтов можно ознакомиться тут: Стрелок",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1852",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-1851",
@@ -4920,7 +4983,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1847",
       "commentCount": 7,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "gorgon"
     },
     {
       "id": "dm-news-1792",
@@ -4944,7 +5008,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1791",
       "commentCount": 4,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "other"
     },
     {
       "id": "dm-news-1778",
@@ -5087,8 +5152,9 @@
       "body": "Добрый вечер, Древний Мир!\n\nНа подходе первые десятки, а значит, самое время для раздачи слонов. Причем нашим героям еще только предстоит взять неприступный рубеж десятого уровня, а вот плюшки для них уже подоспели.\n\nСегодня коммунальные службы Древнего Мира, как обычно боролись с надоедливыми грызунами, сбежавшими из бестиария. Отрабатывая жалобы населения и свою зарплату, была очищена гробница вампиров. И что бы вы думали? Пещерные демоны таки успели попортить стены памятника архитектуры - древней усыпальницы! Теперь в правом углу гробницы вампиров красуется здоровенная дырень!\n\nНо не думаю, что кто-то станет жаловаться на порчу достопримечательности. В проломе обнаружен вход в древнее подземелье – Логово.\n\nВ подземелье Вас ожидают:\n\n- Стрельба по воробьям из осадного орудия! (патроны за ваш счет)\n\n- Захватывающие шахматы на выживание! (запаситесь зельями здоровья и маны)\n\n- Увлекательные НЕравные бои 1 на 2 и 1 на 4! (запаситесь терпением и удачей)\n\n- Основы походно-рандомной Алхимии!(запаситесь БОЛЬШИМ количеством терпения и удачи)\n\n- Кузнец Отшельник. За 3 шт 3шт 3шт - выкует 2 шт осадный арбалетный болт для баллисты, что на подъемном мосту. Болты кривые, как и руки\n\nКузнеца, попасть ими сложно – запасайте впрок!\n\n- Грибница. За и 2шт снимет магический замок с баллисты, что на\n\nподъемном мосту. Гриб и зверобой, можно добыть истребляя землероек перед подъемным мостом. А можно и купить в королевской лавке.\n\n- Древний Алхимик. За можно сварить одну из Больших рун, доступных с 10-го уровня: . ВНИМАНИЕ! Алхимик – Древний, рецептов не помнит, постоянно ворчит, и вообще не рад вам!\n\nБои с Землеройками. Ингредиенты для варки Больших рун и снятия магического замка с баллисты, выбиваются именно из них – мерзких, склизких, бесконечных…\n\n- Чугунный ключ открывающий вход, заныкал скряга Мудрец, но готов с ним расстаться за редкий ингредиент – крыло нетопыря . Зверюшку можно найти и распотрошить на втором этаже лабиринта. Или забить проблему голдой – выкупить\n\nключик в королевской лавке по 10 золотых кругляков за штуку.\n\nИз достоверных источников, близких к правящим кругам Древнего Мира, нам удалось узнать подробности успешных прохождений Кристального зала!\n\nДля тех, у кого уже есть достаточное количество ресурсов для варки рун – стоит\n\nвыбить из землероек только зверобой и волшебный гриб (или основательно затариться\n\nими в королевской лавке), после чего угодить Грибнице, и она снимет магический замок с баллисты.\n\nДля тех же, кто еще не набрал нужной травы – лучше всего устроить тотальный геноцид землероек перед подъемным мостом (можно, и даже нужно, вводить неправильный код замка баллисты. Бесконечный спаун землероек только там). И уже набрав пучков редкой зелени, отправляться на другую сторону.\n\nИ помните – время аттракциона ограничено! 60 минут, и магия пропитавшая зал вышвырнет Вас пинком под филей на свежий воздух!\n\nА с Вами был корреспондент с места событий.\n\nДалее в нашей программе: Котики: ми-ми-мишный заговор или новый моб бестиария?\n\nОставайтесь с нами!",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1277",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "boss",
+      "comments": [],
+      "bossType": "rudi"
     },
     {
       "id": "dm-news-1246",
@@ -5124,7 +5190,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1090",
       "commentCount": 9,
       "category": "boss",
-      "comments": []
+      "comments": [],
+      "bossType": "pumpkin"
     },
     {
       "id": "dm-news-1114",
@@ -5135,8 +5202,9 @@
       "body": "Победители получают уникальный смайл.\n\nСвиток лабиринта\n\nпобедителю 15 шт,\n\n2-5 место по 10\n\nс 6-10 по 5 шт\n\nРейтинг топ 10:\n\nPantera[8] [1800]\n\nАлександр Николаевич[8] [954]\n\nmihkill[7] [894]\n\n_орк_777_[7] [469]\n\nCJIECAPb[8] [426]\n\nВЕНОМ[8] [323]\n\nГанеша[6] [263]\n\nУсмания[6] [241]\n\nGRIZZLY[6] [199]\n\nOrka[8] [180]",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1114",
       "commentCount": 1,
-      "category": "other",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "festivalType": "pumpkin"
     },
     {
       "id": "dm-news-1102",
@@ -5159,8 +5227,9 @@
       "body": "1. Покупаем подарок безумная тыква.\n\n2. Дарим друг-другу.\n\n3. Заходим в инфу и жмем по тыкве.\n\n4. С вероятностью, Ваша или тыква друга превратится в конфеты.\n\nЗЫ: тыквы должны подарены быть у обоих!\n\nХорошего настроения! комментариев:\n\nДни свобода слова.\n2018-10-12\n\nс 13.10-15.10 Наказания работать не будут.\n\nPS: пользуйтесь личным игнором.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1079",
       "commentCount": 9,
-      "category": "other",
-      "comments": []
+      "category": "festival",
+      "comments": [],
+      "festivalType": "pumpkin"
     },
     {
       "id": "dm-news-1067",
