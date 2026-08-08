@@ -155,6 +155,14 @@ const PERIOD_LABELS: Record<
   "90days": "За 90 дней",
 };
 
+const CLAN_FEED_EVENT_TYPES = new Set([
+  "player_joined_clan",
+  "player_left_clan",
+  "player_changed_clan",
+  "player_position_changed",
+  "clan_smile_added",
+]);
+
 function getPeriodStart(
   period: EventsPeriod,
   lastSyncAt: string
@@ -325,7 +333,11 @@ export default function EventsFeed({
       [...events]
         .filter(
           (event) =>
-            event.scope === scope
+            event.scope === scope &&
+            (scope !== "clans" ||
+              CLAN_FEED_EVENT_TYPES.has(
+                event.type
+              ))
         )
         .sort(
           (a, b) =>
