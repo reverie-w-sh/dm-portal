@@ -174,6 +174,23 @@ function isGameNews(item: TimelineItem): item is GameNewsItem {
   return "sourceUrl" in item && "publishedAt" in item;
 }
 
+function matchesNickSearch(item: TimelineItem, query: string): boolean {
+  if (!query) return true;
+
+  if (!isGameNews(item)) {
+    return [item.characterName, item.partnerName].some((value) =>
+      value?.toLocaleLowerCase("ru-RU").includes(query),
+    );
+  }
+
+  return [
+    item.title,
+    item.body,
+    item.resultText,
+    ...item.comments.flatMap((comment) => [comment.author, comment.body]),
+  ].some((value) => value?.toLocaleLowerCase("ru-RU").includes(query));
+}
+
 function categoryFor(event: ChronicleEvent): Category | "positions" | "other" {
   if (
     event.type === "player_level_up" ||
@@ -588,6 +605,7 @@ export default function ChronicleClient() {
   const [category, setCategory] = useState<Category>("all");
   const [festivalType, setFestivalType] = useState<FestivalType>("all");
   const [bossType, setBossType] = useState<BossType>("all");
+  const [query, setQuery] = useState("");
   const [period, setPeriod] = useState<Period>("30");
   const [showPositions, setShowPositions] = useState(false);
   const [visibleCount, setVisibleCount] = useState(36);
@@ -605,6 +623,7 @@ export default function ChronicleClient() {
   const filtered = useMemo(() => {
     const periodStart =
       period === "all" ? 0 : dataNowTime - Number(period) * 86_400_000;
+    const normalizedQuery = query.trim().toLocaleLowerCase("ru-RU");
 
     return ([...events, ...gameNews] as TimelineItem[])
       .filter(
@@ -635,12 +654,13 @@ export default function ChronicleClient() {
           bossType === "all" ||
           (isGameNews(item) && item.bossType === bossType),
       )
+      .filter((item) => matchesNickSearch(item, normalizedQuery))
       .filter((item) => new Date(item.createdAt).getTime() >= periodStart)
       .sort(
         (a, b) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       );
-  }, [bossType, category, festivalType, period, showPositions]);
+  }, [bossType, category, festivalType, period, query, showPositions]);
 
   const visibleEvents = filtered.slice(0, visibleCount);
   const groups = visibleEvents.reduce<Array<{ key: string; date: string; events: TimelineItem[] }>>(
@@ -674,6 +694,39 @@ export default function ChronicleClient() {
   return (
     <div className={styles.content}>
       <section className={styles.filters} aria-label="Фильтры летописи">
+        <div className={`${styles.filterRow} ${styles.searchRow}`}>
+          <label className={styles.filterLabel} htmlFor="chronicle-nick-search">
+            Поиск
+          </label>
+          <div className={styles.searchWrap}>
+            <input
+              id="chronicle-nick-search"
+              type="search"
+              value={query}
+              className={styles.searchInput}
+              placeholder="Поиск по нику..."
+              autoComplete="off"
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setVisibleCount(36);
+              }}
+            />
+            {query && (
+              <button
+                type="button"
+                className={styles.clearSearch}
+                aria-label="Очистить поиск"
+                onClick={() => {
+                  setQuery("");
+                  setVisibleCount(36);
+                }}
+              >
+                ×
+              </button>
+            )}
+          </div>
+        </div>
+
         <div className={styles.filterRow}>
           <span className={styles.filterLabel}>События</span>
           <div className={styles.pills}>
