@@ -1,5 +1,19 @@
 [
   {
+    "id": "4ed90418-bc37-44fd-b42b-8445ac9c3de2",
+    "syncId": "2026-08-08T21:39:37.155Z",
+    "createdAt": "2026-08-08T21:39:37.155Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "19568",
+    "characterName": "Альф",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19568",
+    "clanId": "200",
+    "clanName": "Грезы Единорога",
+    "oldLevel": 10,
+    "newLevel": 11
+  },
+  {
     "id": "7ee2568a-f68b-4030-8d6b-d9f2a942ea3c",
     "syncId": "2026-08-06T11:44:40.765Z",
     "createdAt": "2026-08-06T11:44:40.765Z",

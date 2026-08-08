@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T20:19:16.313Z",
+  "updatedAt": "2026-08-08T21:39:36.507Z",
   "sourceUrl": "https://dm-game.com/guide/news.php?rid=48&index=1",
   "archiveComplete": true,
   "archivePages": 19,
@@ -221,6 +221,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5659",
       "commentCount": 3,
       "category": "boss",
+      "bossType": "zaya",
       "comments": [
         {
           "author": "Rüdiger[16]",
@@ -229,8 +230,7 @@
           "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19",
           "isSystemResult": false
         }
-      ],
-      "bossType": "zaya"
+      ]
     },
     {
       "id": "dm-easter-2026",
@@ -242,6 +242,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5659",
       "commentCount": 3,
       "category": "festival",
+      "bossType": "zaya",
       "comments": [
         {
           "author": "Rüdiger[16]",
@@ -266,8 +267,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5655",
       "commentCount": 1,
       "category": "boss",
-      "comments": [],
-      "bossType": "clown"
+      "bossType": "clown",
+      "comments": []
     },
     {
       "id": "dm-news-5650",
@@ -300,8 +301,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5643",
       "commentCount": 1,
       "category": "boss",
-      "comments": [],
-      "bossType": "gorgon"
+      "bossType": "gorgon",
+      "comments": []
     },
     {
       "id": "dm-news-5640",
@@ -316,9 +317,10 @@
       "festivalType": "bouquets",
       "comments": [
         {
-          "author": "Rüdiger[12]",
+          "author": "",
           "date": "2026-03-10 20:38:55",
           "body": "С 8 марта!\nРейтинг топ 10 девушек:\n\nCherry[11] [1010] +15\nАйринС[11] [840] +15\nTequila[12] [786] +15\n\nКатерина[16] [603] +12\nFistashka[9] [271] +12\nAllania[11] [267]+12\n\nМужские слезы[15] [236] -50тг\ngae4ka[9] [160] -50тг\nМилли[14] [155] -50тг\nСайонара[10] [151] -50тг\n\nРейтинг топ 10 парней:\nСмех из Палаты[14] [283]\nWanTeck[11] [267]\nМишаня[12] [244]\nBlackGeneral[11] [236]\nFaLLeN[12] [222]\nАртур[16] [201]\nHanibal[10] [193]\nbolt1k[9] [184]\nЧудик[10] [165]\nAtemRUS[13] [163]",
+          "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19",
           "isSystemResult": false
         }
       ]
@@ -354,8 +356,8 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=5620",
       "commentCount": 3,
       "category": "boss",
-      "comments": [],
-      "bossType": "cupid"
+      "bossType": "cupid",
+      "comments": []
     },
     {
       "id": "dm-news-5603",
@@ -1316,6 +1318,7 @@
       "commentCount": 2,
       "category": "festival",
       "comments": [],
+      "bossType": "zaya",
       "festivalType": "easter",
       "synthetic": true,
       "periodLabel": "с 28.04.2024"
@@ -1792,6 +1795,7 @@
       "commentCount": 2,
       "category": "festival",
       "comments": [],
+      "bossType": "zaya",
       "festivalType": "easter",
       "synthetic": true,
       "periodLabel": "с 10.04.2023"
@@ -2292,6 +2296,7 @@
       "commentCount": 3,
       "category": "festival",
       "comments": [],
+      "bossType": "zaya",
       "festivalType": "easter",
       "synthetic": true,
       "periodLabel": "с 17.04.2022"
@@ -3022,6 +3027,7 @@
       "commentCount": 6,
       "category": "festival",
       "comments": [],
+      "bossType": "zaya",
       "festivalType": "easter",
       "synthetic": true,
       "periodLabel": "с 01.05.2021"
@@ -3229,7 +3235,7 @@
       "body": "Игроки начиная с 7го уровня могут быть атакованы свитком тёмный жрец.\n\nПри поражении - Вы будете заражены.\n\nПри победе - получаете лекарство.\n\nМирные локации:Дом, Лабиринт,Ферма, Лес, Охота, Рыбалка (старая - у озера)\n\nPS: во время кровавых нападений, вещи ломаться БУДУТ (редко)\n\nПоломки вещи на 3 единицы, не забываем чинить.\n\nПризы будут рассчитываться топ лекарств,топ вируса.\n\nТемный жрец - покупка в магической лавке\n\nPS: (лекарств) - (вирус) = очки бонуса. Ограничение в 100.\n\nЗЫ1: призы начально в тера-золоте (максимум 100)\n\nЗЫ2:(возможны уточнения и изменения условий)\n\nВ связи с сорами, договрными боями - фестиваль крови закрывается.",
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=3428",
       "commentCount": 15,
-      "category": "festival",
+      "category": "other",
       "comments": [],
       "festivalType": "blood"
     },
@@ -3918,6 +3924,7 @@
       "commentCount": 13,
       "category": "festival",
       "comments": [],
+      "bossType": "zaya",
       "festivalType": "easter",
       "synthetic": true,
       "periodLabel": "с 17.04.2020"
@@ -4853,6 +4860,7 @@
       "commentCount": 7,
       "category": "festival",
       "comments": [],
+      "bossType": "zaya",
       "festivalType": "easter",
       "synthetic": true,
       "periodLabel": "с 27.04.2019"
@@ -4931,7 +4939,7 @@
       "sourceUrl": "https://dm-game.com/guide/news.php?tid=1943",
       "commentCount": 3,
       "category": "festival",
-      "festivalType": "fighters",
+      "festivalType": "andvari",
       "comments": []
     },
     {
@@ -5253,7 +5261,7 @@
       "commentCount": 1,
       "category": "festival",
       "comments": [],
-      "festivalType": "pumpkin"
+      "festivalType": "labyrinth"
     },
     {
       "id": "dm-news-1102",
