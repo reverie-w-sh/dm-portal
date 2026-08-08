@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T02:45:16.240Z",
+  "updatedAt": "2026-08-08T04:25:27.688Z",
   "ratings": {
     "fishing": {
       "title": "Лучшие рыболовы",
@@ -27,7 +27,7 @@
           "rank": 4,
           "name": "Tequila",
           "level": 15,
-          "value": 38031
+          "value": 38035
         },
         {
           "rank": 5,
@@ -69,7 +69,7 @@
           "rank": 11,
           "name": "Александр Николаевич",
           "level": 15,
-          "value": 26239
+          "value": 26245
         },
         {
           "rank": 12,
@@ -93,7 +93,7 @@
           "rank": 15,
           "name": "ЭХО",
           "level": 13,
-          "value": 22892
+          "value": 22895
         },
         {
           "rank": 16,
@@ -105,7 +105,7 @@
           "rank": 17,
           "name": "FaLLeN",
           "level": 12,
-          "value": 17530
+          "value": 17536
         },
         {
           "rank": 18,
@@ -123,7 +123,7 @@
           "rank": 20,
           "name": "Hanibal",
           "level": 10,
-          "value": 16879
+          "value": 16881
         }
       ]
     },
@@ -135,19 +135,19 @@
           "rank": 1,
           "name": "Катерина",
           "level": 16,
-          "value": 78517
+          "value": 78532
         },
         {
           "rank": 2,
           "name": "Takezo",
           "level": 12,
-          "value": 74385
+          "value": 74388
         },
         {
           "rank": 3,
           "name": "InDigo",
           "level": 12,
-          "value": 73276
+          "value": 73286
         },
         {
           "rank": 4,
@@ -159,13 +159,13 @@
           "rank": 5,
           "name": "Александр Николаевич",
           "level": 15,
-          "value": 69009
+          "value": 69018
         },
         {
           "rank": 6,
           "name": "ЭХО",
           "level": 13,
-          "value": 58121
+          "value": 58146
         },
         {
           "rank": 7,
@@ -177,7 +177,7 @@
           "rank": 8,
           "name": "Артур",
           "level": 16,
-          "value": 54183
+          "value": 54189
         },
         {
           "rank": 9,
@@ -207,13 +207,13 @@
           "rank": 13,
           "name": "Юпитер",
           "level": 15,
-          "value": 47488
+          "value": 47502
         },
         {
           "rank": 14,
           "name": "Партизан",
           "level": 14,
-          "value": 47288
+          "value": 47295
         },
         {
           "rank": 15,
@@ -231,25 +231,25 @@
           "rank": 17,
           "name": "Горлум",
           "level": 9,
-          "value": 45981
+          "value": 45988
         },
         {
           "rank": 18,
           "name": "Fistashka",
           "level": 14,
-          "value": 44255
+          "value": 44263
         },
         {
           "rank": 19,
           "name": "Hanibal",
           "level": 10,
-          "value": 43463
+          "value": 43470
         },
         {
           "rank": 20,
           "name": "Tequila",
           "level": 15,
-          "value": 42893
+          "value": 42898
         }
       ]
     },
@@ -771,7 +771,7 @@
           "rank": 1,
           "name": "InDigo",
           "level": 12,
-          "value": 22426
+          "value": 22485
         },
         {
           "rank": 2,
@@ -1412,7 +1412,7 @@
           "rank": 1,
           "name": "InDigo",
           "level": 12,
-          "value": 247181
+          "value": 247217
         },
         {
           "rank": 2,
@@ -1424,7 +1424,7 @@
           "rank": 3,
           "name": "Hanibal",
           "level": 10,
-          "value": 147848
+          "value": 147890
         },
         {
           "rank": 4,
@@ -1436,7 +1436,7 @@
           "rank": 5,
           "name": "Юпитер",
           "level": 15,
-          "value": 127278
+          "value": 127320
         },
         {
           "rank": 6,
@@ -1460,7 +1460,7 @@
           "rank": 9,
           "name": "МАСКА",
           "level": 12,
-          "value": 99013
+          "value": 99040
         },
         {
           "rank": 10,
@@ -1472,7 +1472,7 @@
           "rank": 11,
           "name": "Горлум",
           "level": 9,
-          "value": 86772
+          "value": 86786
         },
         {
           "rank": 12,
@@ -1484,7 +1484,7 @@
           "rank": 13,
           "name": "Tequila",
           "level": 15,
-          "value": 78434
+          "value": 78473
         },
         {
           "rank": 14,
@@ -1514,7 +1514,7 @@
           "rank": 18,
           "name": "Катерина",
           "level": 16,
-          "value": 54545
+          "value": 54571
         },
         {
           "rank": 19,
@@ -1887,9 +1887,9 @@
           "rank": 5,
           "name": "Артур",
           "level": 16,
-          "value": 2557069792,
-          "experience": 2557069792,
-          "monsterWins": 330864,
+          "value": 2557337477,
+          "experience": 2557337477,
+          "monsterWins": 330883,
           "playerWins": 1966
         },
         {
@@ -2679,8 +2679,8 @@
           "rank": 93,
           "name": "Чудик",
           "level": 11,
-          "value": 46576831,
-          "experience": 46576831,
+          "value": 46586145,
+          "experience": 46586145,
           "monsterWins": 80928,
           "playerWins": 964
         },
@@ -2760,9 +2760,9 @@
           "rank": 102,
           "name": "Hanibal",
           "level": 10,
-          "value": 41527031,
-          "experience": 41527031,
-          "monsterWins": 79282,
+          "value": 41549913,
+          "experience": 41549913,
+          "monsterWins": 79288,
           "playerWins": 1402
         },
         {
