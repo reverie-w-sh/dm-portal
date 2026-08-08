@@ -1,9 +1,11 @@
 {
-  "createdAt": "2026-08-08T15:46:23.478Z",
+  "createdAt": "2026-08-08T19:07:55.631Z",
   "players": [
     {
       "cuid": "7939",
       "nick": "Артур",
+      "level": 16,
+      "reincarnationLevel": 14,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Лидер альянса",
@@ -15,6 +17,8 @@
     {
       "cuid": "111",
       "nick": "Катерина",
+      "level": 16,
+      "reincarnationLevel": 14,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Продюсер",
@@ -26,6 +30,8 @@
     {
       "cuid": "4441",
       "nick": "Лень",
+      "level": 16,
+      "reincarnationLevel": 13,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Самый красивый",
@@ -37,6 +43,8 @@
     {
       "cuid": "3925",
       "nick": "sinful",
+      "level": 15,
+      "reincarnationLevel": 11,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Комильфо",
@@ -48,6 +56,8 @@
     {
       "cuid": "2171",
       "nick": "WanTeck",
+      "level": 15,
+      "reincarnationLevel": 11,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Magician",
@@ -59,6 +69,8 @@
     {
       "cuid": "3712",
       "nick": "Тьма",
+      "level": 15,
+      "reincarnationLevel": 10,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Суетолог",
@@ -70,6 +82,8 @@
     {
       "cuid": "3804",
       "nick": "Латыш",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "ZimZum",
@@ -81,6 +95,8 @@
     {
       "cuid": "4394",
       "nick": "Allania",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Красота на карантине",
@@ -92,6 +108,8 @@
     {
       "cuid": "1980",
       "nick": "kamazik",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -103,6 +121,8 @@
     {
       "cuid": "2122",
       "nick": "oFFWhite",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Мовето́н",
@@ -114,6 +134,8 @@
     {
       "cuid": "1996",
       "nick": "songre",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -125,6 +147,8 @@
     {
       "cuid": "17507",
       "nick": "немец",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Молчун",
@@ -136,6 +160,8 @@
     {
       "cuid": "19182",
       "nick": "Чудик",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Чудной",
@@ -147,6 +173,8 @@
     {
       "cuid": "3780",
       "nick": "kristi",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Член сообщества",
@@ -158,6 +186,8 @@
     {
       "cuid": "16989",
       "nick": "Асталависта",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Ворчун",
@@ -169,6 +199,8 @@
     {
       "cuid": "21916",
       "nick": "Stealer",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -180,6 +212,8 @@
     {
       "cuid": "22522",
       "nick": "мастер",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -191,6 +225,8 @@
     {
       "cuid": "1927",
       "nick": "Милли",
+      "level": 14,
+      "reincarnationLevel": 12,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -202,6 +238,8 @@
     {
       "cuid": "4155",
       "nick": "на удаление08_07_26",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -213,6 +251,8 @@
     {
       "cuid": "10227",
       "nick": "marlllboro",
+      "level": 13,
+      "reincarnationLevel": 9,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Член... сообщества",
@@ -224,6 +264,8 @@
     {
       "cuid": "10106",
       "nick": "Schneider11",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -235,6 +277,8 @@
     {
       "cuid": "10021",
       "nick": "вилда",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -246,6 +290,8 @@
     {
       "cuid": "15069",
       "nick": "Gudini",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "Глава сообщества",
@@ -257,6 +303,8 @@
     {
       "cuid": "15457",
       "nick": "Nimona",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "её муж капец какой ревнивый))",
@@ -268,6 +316,8 @@
     {
       "cuid": "17040",
       "nick": "LOG_DOG",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "",
@@ -279,6 +329,8 @@
     {
       "cuid": "5986",
       "nick": "Dark_Queen",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "Я сама не воровка, не пьяница....",
@@ -290,6 +342,8 @@
     {
       "cuid": "17060",
       "nick": "КаТыШеК",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "",
@@ -301,6 +355,8 @@
     {
       "cuid": "11660",
       "nick": "Старый Эфраим",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "Небесный Страж (Герольд)",
@@ -312,6 +368,8 @@
     {
       "cuid": "11837",
       "nick": "failed",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "Страж Зам. Главы",
@@ -323,6 +381,8 @@
     {
       "cuid": "16672",
       "nick": "guard_95",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "",
@@ -334,6 +394,8 @@
     {
       "cuid": "2146",
       "nick": "swordsman",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "Член сообщества",
@@ -345,6 +407,8 @@
     {
       "cuid": "22695",
       "nick": "MadDad",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "Холодный",
@@ -356,6 +420,8 @@
     {
       "cuid": "16698",
       "nick": "Old_Emperor",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "243",
       "clanName": "Guardians",
       "position": "",
@@ -367,6 +433,8 @@
     {
       "cuid": "2189",
       "nick": "Sharik",
+      "level": 16,
+      "reincarnationLevel": 12,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Круглый",
@@ -378,6 +446,8 @@
     {
       "cuid": "2010",
       "nick": "Topfer",
+      "level": 14,
+      "reincarnationLevel": 12,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Царезаменитель",
@@ -389,6 +459,8 @@
     {
       "cuid": "3054",
       "nick": "Dillinger",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -400,6 +472,8 @@
     {
       "cuid": "2163",
       "nick": "Эйлин",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Ночная Ведьма",
@@ -411,6 +485,8 @@
     {
       "cuid": "3632",
       "nick": "Cherry",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Cамая Сочная",
@@ -422,6 +498,8 @@
     {
       "cuid": "1911",
       "nick": "Chuma20veka",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "оЧумєнний Стоматолог",
@@ -433,6 +511,8 @@
     {
       "cuid": "2167",
       "nick": "Pilar",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Залізна Леді",
@@ -444,6 +524,8 @@
     {
       "cuid": "12814",
       "nick": "SheWolf",
+      "level": 11,
+      "reincarnationLevel": 8,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Бегущая с волками",
@@ -455,6 +537,8 @@
     {
       "cuid": "4037",
       "nick": "Сладкий Грех",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Сладкий Яд",
@@ -466,6 +550,8 @@
     {
       "cuid": "3231",
       "nick": "S_A_U_R_O_N",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Всевидящий",
@@ -477,6 +563,8 @@
     {
       "cuid": "11603",
       "nick": "ко4евник",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -488,6 +576,8 @@
     {
       "cuid": "2011",
       "nick": "Сайонара",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Чарівна квіточка",
@@ -499,6 +589,8 @@
     {
       "cuid": "2316",
       "nick": "Светуля",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Сообщество Светуля",
@@ -510,6 +602,8 @@
     {
       "cuid": "10370",
       "nick": "Apmagedon_ua",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -521,6 +615,8 @@
     {
       "cuid": "3765",
       "nick": "BASS",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "",
@@ -532,6 +628,8 @@
     {
       "cuid": "1780",
       "nick": "bolt1k",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "244",
       "clanName": "Devils of Death",
       "position": "bolt1k",
@@ -543,6 +641,8 @@
     {
       "cuid": "1318",
       "nick": "gae4ka",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -554,6 +654,8 @@
     {
       "cuid": "10026",
       "nick": "Sally Whitemane",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Лідер альянсу",
@@ -565,6 +667,8 @@
     {
       "cuid": "1795",
       "nick": "Schatten",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -576,6 +680,8 @@
     {
       "cuid": "3734",
       "nick": "Tashyly",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "КреветкО",
@@ -587,6 +693,8 @@
     {
       "cuid": "1697",
       "nick": "Ленивец",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Ленивая задница",
@@ -598,6 +706,8 @@
     {
       "cuid": "19013",
       "nick": "black metals",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -609,6 +719,8 @@
     {
       "cuid": "22518",
       "nick": "Huskar",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Член сообщества",
@@ -620,6 +732,8 @@
     {
       "cuid": "26588",
       "nick": "Отец Алисы Дмитриевны",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -631,6 +745,8 @@
     {
       "cuid": "2353",
       "nick": "Тирион",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Свой среди чужих",
@@ -642,6 +758,8 @@
     {
       "cuid": "19187",
       "nick": "Prince",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Член сообщества",
@@ -653,6 +771,8 @@
     {
       "cuid": "28402",
       "nick": "__Jeka__",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -664,6 +784,8 @@
     {
       "cuid": "21932",
       "nick": "Мамонт",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Наглый Хобот",
@@ -675,6 +797,8 @@
     {
       "cuid": "1958",
       "nick": "Noelvena",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "249",
       "clanName": "Phoenix (клан мультов) набор",
       "position": "",
@@ -686,6 +810,8 @@
     {
       "cuid": "22796",
       "nick": "skytango",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "249",
       "clanName": "Phoenix (клан мультов) набор",
       "position": "Глава сообщества",
@@ -697,6 +823,8 @@
     {
       "cuid": "23017",
       "nick": "Rastix",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "249",
       "clanName": "Phoenix (клан мультов) набор",
       "position": "",
@@ -708,6 +836,8 @@
     {
       "cuid": "5573",
       "nick": "Xanuga",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "249",
       "clanName": "Phoenix (клан мультов) набор",
       "position": "",
@@ -719,6 +849,8 @@
     {
       "cuid": "1939",
       "nick": "Александр Николаевич",
+      "level": 15,
+      "reincarnationLevel": 11,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Глава сообщества",
@@ -730,6 +862,8 @@
     {
       "cuid": "4782",
       "nick": "filka",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Глава сообщества",
@@ -741,6 +875,8 @@
     {
       "cuid": "6924",
       "nick": "1mpulse",
+      "level": 10,
+      "reincarnationLevel": null,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Лидер альянса & Барыга",
@@ -752,6 +888,8 @@
     {
       "cuid": "3255",
       "nick": "Ren4ik",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Главный нуб сообщества",
@@ -763,6 +901,8 @@
     {
       "cuid": "6138",
       "nick": "Siyanie",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Свет очей моих",
@@ -774,6 +914,8 @@
     {
       "cuid": "19475",
       "nick": "Веканс",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Член сообщества",
@@ -785,6 +927,8 @@
     {
       "cuid": "2128",
       "nick": "Умницa",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Любимая",
@@ -796,6 +940,8 @@
     {
       "cuid": "2209",
       "nick": "St Petersburg",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Культурный житель",
@@ -807,6 +953,8 @@
     {
       "cuid": "8116",
       "nick": "Zhulik",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Член сообщества",
@@ -818,6 +966,8 @@
     {
       "cuid": "12334",
       "nick": "Красивая",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Сладкая Пипочка",
@@ -829,6 +979,8 @@
     {
       "cuid": "1279",
       "nick": "Подколодная",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Гадюка Габонская",
@@ -840,6 +992,8 @@
     {
       "cuid": "17223",
       "nick": "ARTICK",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -851,6 +1005,8 @@
     {
       "cuid": "25085",
       "nick": "dirty free",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "250",
       "clanName": "Shadows of the Dusk",
       "position": "Глава сообщества",
@@ -862,6 +1018,8 @@
     {
       "cuid": "24926",
       "nick": "Teufel",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "250",
       "clanName": "Shadows of the Dusk",
       "position": "Der Teufel",
@@ -873,6 +1031,8 @@
     {
       "cuid": "24947",
       "nick": "gelikova",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "250",
       "clanName": "Shadows of the Dusk",
       "position": "gelikova",
@@ -884,6 +1044,8 @@
     {
       "cuid": "28595",
       "nick": "египтянин",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "250",
       "clanName": "Shadows of the Dusk",
       "position": "Цезарь",
@@ -895,6 +1057,8 @@
     {
       "cuid": "1946",
       "nick": "EMYNATOR",
+      "level": 13,
+      "reincarnationLevel": 11,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Лопоухая  Блад Рейнa)",
@@ -906,6 +1070,8 @@
     {
       "cuid": "1303",
       "nick": "CJIECAPb",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Уже не глава сообщества)",
@@ -917,6 +1083,8 @@
     {
       "cuid": "5956",
       "nick": "K9000",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Cамый главный.",
@@ -928,6 +1096,8 @@
     {
       "cuid": "2071",
       "nick": "Бабай",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Глава сообщества",
@@ -939,6 +1109,8 @@
     {
       "cuid": "3290",
       "nick": "Empress",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Профессор:)",
@@ -950,6 +1122,8 @@
     {
       "cuid": "3419",
       "nick": "Prophet",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Prophet",
@@ -961,6 +1135,8 @@
     {
       "cuid": "6071",
       "nick": "Spartak",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "",
@@ -972,6 +1148,8 @@
     {
       "cuid": "2763",
       "nick": "Библиотекарь",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Библиотекарь",
@@ -983,6 +1161,8 @@
     {
       "cuid": "7450",
       "nick": "13Strannik",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "",
@@ -994,6 +1174,8 @@
     {
       "cuid": "6799",
       "nick": "Divinity",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "",
@@ -1005,6 +1187,8 @@
     {
       "cuid": "8590",
       "nick": "Unlque",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Unlque",
@@ -1016,6 +1200,8 @@
     {
       "cuid": "1439",
       "nick": "агапит",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "А просто хороший человек)))",
@@ -1027,6 +1213,8 @@
     {
       "cuid": "3462",
       "nick": "оля",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "",
@@ -1038,6 +1226,8 @@
     {
       "cuid": "1963",
       "nick": "Сарацын",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Сарацын",
@@ -1049,6 +1239,8 @@
     {
       "cuid": "3631",
       "nick": "халик",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Xelapeno_Tirranito",
@@ -1060,6 +1252,8 @@
     {
       "cuid": "6093",
       "nick": "Двоешник",
+      "level": 13,
+      "reincarnationLevel": 10,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Двоешник",
@@ -1071,6 +1265,8 @@
     {
       "cuid": "15102",
       "nick": "Death",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Член сообщества",
@@ -1082,6 +1278,8 @@
     {
       "cuid": "1972",
       "nick": "Lesik",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Lesik",
@@ -1093,6 +1291,8 @@
     {
       "cuid": "2208",
       "nick": "russ7707",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Глава сообщества",
@@ -1104,6 +1304,8 @@
     {
       "cuid": "13079",
       "nick": "Юнона",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "жена Юпитера",
@@ -1115,6 +1317,8 @@
     {
       "cuid": "7273",
       "nick": "Антип",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Старый",
@@ -1126,6 +1330,8 @@
     {
       "cuid": "19347",
       "nick": "Nikolay8692",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "викинг",
@@ -1137,6 +1343,8 @@
     {
       "cuid": "2310",
       "nick": "Kitty",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Kitty",
@@ -1148,6 +1356,8 @@
     {
       "cuid": "4425",
       "nick": "Риддик",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Риддик",
@@ -1159,6 +1369,8 @@
     {
       "cuid": "4271",
       "nick": "Огненный_Феникс",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "Фея",
@@ -1170,6 +1382,8 @@
     {
       "cuid": "19353",
       "nick": "Anatoly8695",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "викинг",
@@ -1181,6 +1395,8 @@
     {
       "cuid": "21766",
       "nick": "ПрИмАрХ",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "221",
       "clanName": "Викинги",
       "position": "ПрИмАрХ",
@@ -1192,6 +1408,8 @@
     {
       "cuid": "2094",
       "nick": "Мишаня",
+      "level": 16,
+      "reincarnationLevel": 12,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Наш слоняра",
@@ -1203,6 +1421,8 @@
     {
       "cuid": "4183",
       "nick": "Zorro",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Лидер альянса",
@@ -1214,6 +1434,8 @@
     {
       "cuid": "1365",
       "nick": "Луч света",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Лучик",
@@ -1225,6 +1447,8 @@
     {
       "cuid": "1244",
       "nick": "Юпитер",
+      "level": 15,
+      "reincarnationLevel": 13,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Юпитер",
@@ -1236,6 +1460,8 @@
     {
       "cuid": "22733",
       "nick": "Bukashka",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Букашечка",
@@ -1247,6 +1473,8 @@
     {
       "cuid": "5605",
       "nick": "Крикс",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Крикс",
@@ -1258,6 +1486,8 @@
     {
       "cuid": "12846",
       "nick": "Гарпий",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Гарпий",
@@ -1269,6 +1499,8 @@
     {
       "cuid": "27039",
       "nick": "Nik",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Nik",
@@ -1280,6 +1512,8 @@
     {
       "cuid": "24289",
       "nick": "Ангел из преисподней",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Ангел",
@@ -1291,6 +1525,8 @@
     {
       "cuid": "1629",
       "nick": "Зло",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1302,6 +1538,8 @@
     {
       "cuid": "22619",
       "nick": "911",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "911",
@@ -1313,6 +1551,8 @@
     {
       "cuid": "24167",
       "nick": "Невия",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "247",
       "clanName": "Гладиаторы",
       "position": "Невия",
@@ -1324,6 +1564,8 @@
     {
       "cuid": "1960",
       "nick": "Таракашка",
+      "level": 17,
+      "reincarnationLevel": 11,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Насекомое",
@@ -1335,6 +1577,8 @@
     {
       "cuid": "8591",
       "nick": "Euphoria",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Мрия",
@@ -1346,6 +1590,8 @@
     {
       "cuid": "2107",
       "nick": "KiraYan",
+      "level": 15,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Глава сообщества",
@@ -1357,6 +1603,8 @@
     {
       "cuid": "1521",
       "nick": "MAX PAYNE",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "MAX PAYNE",
@@ -1368,6 +1616,8 @@
     {
       "cuid": "2063",
       "nick": "Ведьмак",
+      "level": 15,
+      "reincarnationLevel": 10,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "ВЕДьмак)",
@@ -1379,6 +1629,8 @@
     {
       "cuid": "10420",
       "nick": "InDigo",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "InDigo",
@@ -1390,6 +1642,8 @@
     {
       "cuid": "4116",
       "nick": "Tequila",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Tequila",
@@ -1401,6 +1655,8 @@
     {
       "cuid": "3642",
       "nick": "Дон Алессандро",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Дед сообщества",
@@ -1412,6 +1668,8 @@
     {
       "cuid": "1959",
       "nick": "ФКСПАРТАK",
+      "level": 12,
+      "reincarnationLevel": 11,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Краснобелый",
@@ -1423,6 +1681,8 @@
     {
       "cuid": "8056",
       "nick": "аномалька",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "аномалька",
@@ -1434,6 +1694,8 @@
     {
       "cuid": "8049",
       "nick": "ЛиН Орк",
+      "level": 11,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Ласковый и нежный Глава сообщества",
@@ -1445,6 +1707,8 @@
     {
       "cuid": "9248",
       "nick": "Мора",
+      "level": 13,
+      "reincarnationLevel": 11,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "W(B)itch",
@@ -1456,6 +1720,8 @@
     {
       "cuid": "11841",
       "nick": "Coby",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Злой Помидор",
@@ -1467,6 +1733,8 @@
     {
       "cuid": "10560",
       "nick": "Dark Lord",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Dark Lord",
@@ -1478,6 +1746,8 @@
     {
       "cuid": "2299",
       "nick": "DeFoRmeD",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "ДКС",
@@ -1489,6 +1759,8 @@
     {
       "cuid": "1609",
       "nick": "XALK",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "XALK",
@@ -1500,6 +1772,8 @@
     {
       "cuid": "19568",
       "nick": "Альф",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Альф",
@@ -1511,6 +1785,8 @@
     {
       "cuid": "2143",
       "nick": "Амазоночка",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Сисочка",
@@ -1522,6 +1798,8 @@
     {
       "cuid": "12287",
       "nick": "НЕПТУН",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Первый после бога мелкий паршивец",
@@ -1533,6 +1811,8 @@
     {
       "cuid": "9086",
       "nick": "Ajax",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Ajax",
@@ -1544,6 +1824,8 @@
     {
       "cuid": "15917",
       "nick": "Ezhik",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Колючий",
@@ -1555,6 +1837,8 @@
     {
       "cuid": "3358",
       "nick": "Mentalist",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "278",
       "clanName": "die Wölfchen",
       "position": "Mentalist",
@@ -1566,6 +1850,8 @@
     {
       "cuid": "10338",
       "nick": "Kamikadze",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Kamikadze",
@@ -1577,6 +1863,8 @@
     {
       "cuid": "15301",
       "nick": "Underdog",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Underdog",
@@ -1588,6 +1876,8 @@
     {
       "cuid": "1915",
       "nick": "Безликий",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Безликий",
@@ -1599,6 +1889,8 @@
     {
       "cuid": "12161",
       "nick": "Бродяга",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Бродяга",
@@ -1610,6 +1902,8 @@
     {
       "cuid": "1080",
       "nick": "Дормидонт",
+      "level": 15,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "WSteb",
@@ -1621,6 +1915,8 @@
     {
       "cuid": "10029",
       "nick": "масенький",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "масенький",
@@ -1632,6 +1928,8 @@
     {
       "cuid": "16303",
       "nick": "Деревянный Как Стекло",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "ДКС",
@@ -1643,6 +1941,8 @@
     {
       "cuid": "1285",
       "nick": "Слета",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Слета. всё сложно",
@@ -1654,6 +1954,8 @@
     {
       "cuid": "28487",
       "nick": "манюня",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Маненькая",
@@ -1665,6 +1967,8 @@
     {
       "cuid": "27172",
       "nick": "Таргрим Несокрушимый",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "200",
       "clanName": "Грезы Единорога",
       "position": "Таргрим Несокрушимый",
@@ -1676,6 +1980,8 @@
     {
       "cuid": "2878",
       "nick": "KITANA",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Mrs_X",
@@ -1687,6 +1993,8 @@
     {
       "cuid": "2155",
       "nick": "Mr_X",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Лидер альянса",
@@ -1698,6 +2006,8 @@
     {
       "cuid": "8641",
       "nick": "MaNSoN",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Man",
@@ -1709,6 +2019,8 @@
     {
       "cuid": "1846",
       "nick": "Tutti_Frutti",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "КРЕЙЗИ",
@@ -1720,6 +2032,8 @@
     {
       "cuid": "3189",
       "nick": "Клеопатра",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Змея Нила",
@@ -1731,6 +2045,8 @@
     {
       "cuid": "2317",
       "nick": "тедо 1",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "",
@@ -1742,6 +2058,8 @@
     {
       "cuid": "11898",
       "nick": "Mary Kate",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "",
@@ -1753,6 +2071,8 @@
     {
       "cuid": "18354",
       "nick": "Majesty",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Страж азкабана",
@@ -1764,6 +2084,8 @@
     {
       "cuid": "15405",
       "nick": "ЖЖод",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "Боївник",
@@ -1775,6 +2097,8 @@
     {
       "cuid": "2329",
       "nick": "Orka",
+      "level": 13,
+      "reincarnationLevel": 10,
       "clanId": "223",
       "clanName": "Клинки Великого Рэндома",
       "position": "Член сообщества",
@@ -1786,6 +2110,8 @@
     {
       "cuid": "2013",
       "nick": "eugen_pos",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "223",
       "clanName": "Клинки Великого Рэндома",
       "position": "Любимый муж",
@@ -1797,6 +2123,8 @@
     {
       "cuid": "4834",
       "nick": "МРАЗОТА",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "223",
       "clanName": "Клинки Великого Рэндома",
       "position": "Член сообщества",
@@ -1808,6 +2136,8 @@
     {
       "cuid": "4745",
       "nick": "Гаденыш",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "223",
       "clanName": "Клинки Великого Рэндома",
       "position": "Лидер альянса",
@@ -1819,6 +2149,8 @@
     {
       "cuid": "10032",
       "nick": "_GRACIA_",
+      "level": 12,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1830,6 +2162,8 @@
     {
       "cuid": "6123",
       "nick": "Горлум",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "223",
       "clanName": "Клинки Великого Рэндома",
       "position": "Смéагол",
@@ -1841,6 +2175,8 @@
     {
       "cuid": "3191",
       "nick": "Careless",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "223",
       "clanName": "Клинки Великого Рэндома",
       "position": "Careless",
@@ -1852,6 +2188,8 @@
     {
       "cuid": "6250",
       "nick": "BlackGeneral",
+      "level": 15,
+      "reincarnationLevel": 11,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1863,6 +2201,8 @@
     {
       "cuid": "8717",
       "nick": "Fistashka",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "244",
       "clanName": "Devils of Death",
       "position": "",
@@ -1874,6 +2214,8 @@
     {
       "cuid": "1966",
       "nick": "ХАРАКТЕРНИК",
+      "level": 12,
+      "reincarnationLevel": 8,
       "clanId": "212",
       "clanName": "Лесные Оборотни",
       "position": "Глава спільноти",
@@ -1885,6 +2227,8 @@
     {
       "cuid": "7224",
       "nick": "Takezo",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1896,6 +2240,8 @@
     {
       "cuid": "7167",
       "nick": "Vazilin",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1907,6 +2253,8 @@
     {
       "cuid": "1979",
       "nick": "Ежик в разрезе",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1918,6 +2266,8 @@
     {
       "cuid": "24697",
       "nick": "Лялечка",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1929,6 +2279,8 @@
     {
       "cuid": "22510",
       "nick": "Skullreaper",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "244",
       "clanName": "Devils of Death",
       "position": "Skullreaper",
@@ -1940,6 +2292,8 @@
     {
       "cuid": "11230",
       "nick": "ЗлобныйСуслик",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1951,6 +2305,8 @@
     {
       "cuid": "27046",
       "nick": "DooMavoD",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1962,6 +2318,8 @@
     {
       "cuid": "28354",
       "nick": "Zubr",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -1973,6 +2331,8 @@
     {
       "cuid": "28724",
       "nick": "Смотрящий",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "244",
       "clanName": "Devils of Death",
       "position": "Смотрящий за происходящим",
@@ -1984,6 +2344,8 @@
     {
       "cuid": "3539",
       "nick": "Bombita",
+      "level": 16,
+      "reincarnationLevel": 8,
       "clanId": "193",
       "clanName": "Механики",
       "position": "Администрация",
@@ -1995,6 +2357,8 @@
     {
       "cuid": "7343",
       "nick": "Jkee_Jkee",
+      "level": 12,
+      "reincarnationLevel": null,
       "clanId": "193",
       "clanName": "Механики",
       "position": "dev op @1",
@@ -2006,6 +2370,8 @@
     {
       "cuid": "19",
       "nick": "Rüdiger",
+      "level": 16,
+      "reincarnationLevel": 12,
       "clanId": "193",
       "clanName": "Механики",
       "position": "Глава сообщества",
@@ -2017,6 +2383,8 @@
     {
       "cuid": "6286",
       "nick": "ЭХО",
+      "level": 13,
+      "reincarnationLevel": 12,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Отражение. Советник",
@@ -2028,6 +2396,8 @@
     {
       "cuid": "16488",
       "nick": "IhorU",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Зам.Главы",
@@ -2039,6 +2409,8 @@
     {
       "cuid": "2948",
       "nick": "ХОМ",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Лидер альянса",
@@ -2050,6 +2422,8 @@
     {
       "cuid": "2000",
       "nick": "CoMeBaCk",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "ДБшник",
@@ -2061,6 +2435,8 @@
     {
       "cuid": "11577",
       "nick": "SubZero",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Наблюдатель",
@@ -2072,6 +2448,8 @@
     {
       "cuid": "1983",
       "nick": "Enjoyfen",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Фен",
@@ -2083,6 +2461,8 @@
     {
       "cuid": "8772",
       "nick": "Hanibal",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Hanibal. Советник",
@@ -2094,6 +2474,8 @@
     {
       "cuid": "3182",
       "nick": "Мик31",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Мик",
@@ -2105,6 +2487,8 @@
     {
       "cuid": "9891",
       "nick": "Brondeshmih",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Шмых",
@@ -2116,6 +2500,8 @@
     {
       "cuid": "12202",
       "nick": "Exava",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Фехтовальщик(Герольд)",
@@ -2127,6 +2513,8 @@
     {
       "cuid": "11061",
       "nick": "GOT",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "GOT",
@@ -2138,6 +2526,8 @@
     {
       "cuid": "16808",
       "nick": "Medved76",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Добрый Миша",
@@ -2149,6 +2539,8 @@
     {
       "cuid": "13078",
       "nick": "OliverKahn",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2160,6 +2552,8 @@
     {
       "cuid": "21860",
       "nick": "rasamaha",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Молдаван",
@@ -2171,6 +2565,8 @@
     {
       "cuid": "8546",
       "nick": "Tsarskiy",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Ловец Снов",
@@ -2182,6 +2578,8 @@
     {
       "cuid": "1583",
       "nick": "Герцог_Бургундский",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Принц Крови",
@@ -2193,6 +2591,8 @@
     {
       "cuid": "2309",
       "nick": "Добрый дядя Орк",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Добрый Дед.Глава Р.О.",
@@ -2204,6 +2604,8 @@
     {
       "cuid": "3448",
       "nick": "Древний Мир",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Sovintel",
@@ -2215,6 +2617,8 @@
     {
       "cuid": "11589",
       "nick": "Зеля",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Штатный художник",
@@ -2226,6 +2630,8 @@
     {
       "cuid": "15084",
       "nick": "Иваныч",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2237,6 +2643,8 @@
     {
       "cuid": "8585",
       "nick": "Рогнар",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2248,6 +2656,8 @@
     {
       "cuid": "1987",
       "nick": "Bars",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Сушимастер",
@@ -2259,6 +2669,8 @@
     {
       "cuid": "26586",
       "nick": "BlackCube",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2270,6 +2682,8 @@
     {
       "cuid": "1962",
       "nick": "bloody elf",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2281,6 +2695,8 @@
     {
       "cuid": "15095",
       "nick": "Jester_Queen",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Мечтательница",
@@ -2292,6 +2708,8 @@
     {
       "cuid": "6178",
       "nick": "PHANTOMO",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Квиринал",
@@ -2303,6 +2721,8 @@
     {
       "cuid": "1370",
       "nick": "Tеletsss",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Старожила",
@@ -2314,6 +2734,8 @@
     {
       "cuid": "3243",
       "nick": "Вампир",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2325,6 +2747,8 @@
     {
       "cuid": "21993",
       "nick": "Кись",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Кись",
@@ -2336,6 +2760,8 @@
     {
       "cuid": "4277",
       "nick": "Корвин",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2347,6 +2773,8 @@
     {
       "cuid": "1981",
       "nick": "Папай",
+      "level": 11,
+      "reincarnationLevel": 8,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Флибустьер",
@@ -2358,6 +2786,8 @@
     {
       "cuid": "26495",
       "nick": "Bao",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2369,6 +2799,8 @@
     {
       "cuid": "13883",
       "nick": "URBAN",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2380,6 +2812,8 @@
     {
       "cuid": "15414",
       "nick": "Добро",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2391,6 +2825,8 @@
     {
       "cuid": "5934",
       "nick": "Чумик",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "",
@@ -2402,6 +2838,8 @@
     {
       "cuid": "26263",
       "nick": "на удаление24_07_2026",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "Баранка",
@@ -2413,6 +2851,8 @@
     {
       "cuid": "28464",
       "nick": "Friiend",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Боевой гном",
@@ -2424,6 +2864,8 @@
     {
       "cuid": "2159",
       "nick": "Gillette",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Главный по разгильдяйству",
@@ -2435,6 +2877,8 @@
     {
       "cuid": "5904",
       "nick": "LastShade",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Баламут",
@@ -2446,6 +2890,8 @@
     {
       "cuid": "27120",
       "nick": "Роза",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Роза",
@@ -2457,6 +2903,8 @@
     {
       "cuid": "14688",
       "nick": "Серега",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Прокуратор",
@@ -2468,6 +2916,8 @@
     {
       "cuid": "24415",
       "nick": "Жорик с 90X",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Жорик",
@@ -2479,6 +2929,8 @@
     {
       "cuid": "2768",
       "nick": "Партизан",
+      "level": 14,
+      "reincarnationLevel": 12,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2490,6 +2942,8 @@
     {
       "cuid": "1931",
       "nick": "Викки",
+      "level": 13,
+      "reincarnationLevel": 12,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Ведьма",
@@ -2501,6 +2955,8 @@
     {
       "cuid": "5285",
       "nick": "Стьюи",
+      "level": 13,
+      "reincarnationLevel": 11,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Кипер",
@@ -2512,6 +2968,8 @@
     {
       "cuid": "10023",
       "nick": "FaLLeN",
+      "level": 12,
+      "reincarnationLevel": 11,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Глава сообщества",
@@ -2523,6 +2981,8 @@
     {
       "cuid": "4603",
       "nick": "АреоН",
+      "level": 12,
+      "reincarnationLevel": 10,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Властелин колец",
@@ -2534,6 +2994,8 @@
     {
       "cuid": "9554",
       "nick": "Храброе сердце",
+      "level": 14,
+      "reincarnationLevel": 12,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2545,6 +3007,8 @@
     {
       "cuid": "1401",
       "nick": "melnikov",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2556,6 +3020,8 @@
     {
       "cuid": "1520",
       "nick": "АйринС",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Королева Алмазных Скал",
@@ -2567,6 +3033,8 @@
     {
       "cuid": "1921",
       "nick": "МАСКА",
+      "level": 12,
+      "reincarnationLevel": 11,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Кипер",
@@ -2578,6 +3046,8 @@
     {
       "cuid": "11119",
       "nick": "fisherman",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2589,6 +3059,8 @@
     {
       "cuid": "9727",
       "nick": "Marishka",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Сказка",
@@ -2600,6 +3072,8 @@
     {
       "cuid": "9262",
       "nick": "Диметрия",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Banditka",
@@ -2611,6 +3085,8 @@
     {
       "cuid": "2247",
       "nick": "Философ",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2622,6 +3098,8 @@
     {
       "cuid": "14066",
       "nick": "Цибуля",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Кипер",
@@ -2633,6 +3111,8 @@
     {
       "cuid": "23733",
       "nick": "Янотик",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Чертенок",
@@ -2644,6 +3124,8 @@
     {
       "cuid": "6662",
       "nick": "Black_knight",
+      "level": 12,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2655,6 +3137,8 @@
     {
       "cuid": "7302",
       "nick": "на удаление26_06_26",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2666,6 +3150,8 @@
     {
       "cuid": "7938",
       "nick": "DanGar",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Хранитель Равновесия",
@@ -2677,6 +3163,8 @@
     {
       "cuid": "17756",
       "nick": "Milady",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2688,6 +3176,8 @@
     {
       "cuid": "6253",
       "nick": "Onix",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2699,6 +3189,8 @@
     {
       "cuid": "27221",
       "nick": "Mixser",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Сын полка",
@@ -2710,6 +3202,8 @@
     {
       "cuid": "24036",
       "nick": "Shturmovik",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "Афганец",
@@ -2721,6 +3215,8 @@
     {
       "cuid": "28407",
       "nick": "БЛИК",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2732,6 +3228,8 @@
     {
       "cuid": "24576",
       "nick": "Худший из Лучших",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2743,6 +3241,8 @@
     {
       "cuid": "1953",
       "nick": "serg13",
+      "level": 13,
+      "reincarnationLevel": 12,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Глава сообщества",
@@ -2754,6 +3254,8 @@
     {
       "cuid": "3976",
       "nick": "Мужские слезы",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Моя любовь на пятом этаже",
@@ -2765,6 +3267,8 @@
     {
       "cuid": "2871",
       "nick": "терминатор73",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Калужский ботовод)",
@@ -2776,6 +3280,8 @@
     {
       "cuid": "12284",
       "nick": "Bloodthirsty warrior",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Лайтовый:)",
@@ -2787,6 +3293,8 @@
     {
       "cuid": "2391",
       "nick": "faria",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "аббат похотливый алкоголик",
@@ -2798,6 +3306,8 @@
     {
       "cuid": "1506",
       "nick": "Мандариночка",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Большая цитрусинка",
@@ -2809,6 +3319,8 @@
     {
       "cuid": "2257",
       "nick": "шах ru",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Шахруля",
@@ -2820,6 +3332,8 @@
     {
       "cuid": "9724",
       "nick": "Jassminka",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Любимка:)",
@@ -2831,6 +3345,8 @@
     {
       "cuid": "1464",
       "nick": "RealMaster",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Мастер",
@@ -2842,6 +3358,8 @@
     {
       "cuid": "4043",
       "nick": "МаJIиНа",
+      "level": 11,
+      "reincarnationLevel": 8,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Скандалистка - вынос мозга словно выстрел...:)",
@@ -2853,6 +3371,8 @@
     {
       "cuid": "1974",
       "nick": "сантила",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "младший брат",
@@ -2864,6 +3384,8 @@
     {
       "cuid": "23023",
       "nick": "maria2004",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "216",
       "clanName": "Царство теней",
       "position": "Малая:)",
@@ -2875,6 +3397,8 @@
     {
       "cuid": "1298",
       "nick": "Pantera",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "7",
       "clanName": "Хранители",
       "position": "закон",
@@ -2886,6 +3410,8 @@
     {
       "cuid": "27214",
       "nick": "NoirCat",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "7",
       "clanName": "Хранители",
       "position": "Послушник",
@@ -2897,6 +3423,8 @@
     {
       "cuid": "21786",
       "nick": "Хранитель Тайн",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "7",
       "clanName": "Хранители",
       "position": "Закон",
@@ -2908,6 +3436,8 @@
     {
       "cuid": "9756",
       "nick": "Piranha",
+      "level": 15,
+      "reincarnationLevel": 12,
       "clanId": "244",
       "clanName": "Devils of Death",
       "position": "Глава спільноти",
@@ -2919,6 +3449,8 @@
     {
       "cuid": "2041",
       "nick": "Pretty",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "212",
       "clanName": "Лесные Оборотни",
       "position": "Венерочка",
@@ -2930,6 +3462,8 @@
     {
       "cuid": "1985",
       "nick": "Serg",
+      "level": 14,
+      "reincarnationLevel": 11,
       "clanId": "212",
       "clanName": "Лесные Оборотни",
       "position": "Serg",
@@ -2941,6 +3475,8 @@
     {
       "cuid": "26384",
       "nick": "GUCCI",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2952,6 +3488,8 @@
     {
       "cuid": "3607",
       "nick": "Player",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -2963,6 +3501,8 @@
     {
       "cuid": "28199",
       "nick": "Сенатор",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
       "position": "Член сообщества",
@@ -2974,6 +3514,8 @@
     {
       "cuid": "27239",
       "nick": "Волк",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Волчара",
@@ -2985,6 +3527,8 @@
     {
       "cuid": "28463",
       "nick": "Чиловый парень",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "249",
       "clanName": "Phoenix (клан мультов) набор",
       "position": "",
@@ -2996,6 +3540,8 @@
     {
       "cuid": "3943",
       "nick": "тупик101",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "250",
       "clanName": "Shadows of the Dusk",
       "position": "Офицер штаба",
@@ -3007,6 +3553,8 @@
     {
       "cuid": "17624",
       "nick": "Sambuka",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "237",
       "clanName": "Каратели",
       "position": "Член сообщества",
@@ -3018,6 +3566,8 @@
     {
       "cuid": "27105",
       "nick": "на удаление11_07_26",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3029,6 +3579,8 @@
     {
       "cuid": "4807",
       "nick": "как не крути",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Крутилка)",
@@ -3040,6 +3592,8 @@
     {
       "cuid": "10711",
       "nick": "bossmaze16",
+      "level": 16,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3051,6 +3605,8 @@
     {
       "cuid": "10013",
       "nick": "Дэмбель",
+      "level": 16,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3062,6 +3618,8 @@
     {
       "cuid": "10709",
       "nick": "bossmaze15",
+      "level": 15,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3073,6 +3631,8 @@
     {
       "cuid": "8746",
       "nick": "mob_15k",
+      "level": 15,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3084,6 +3644,8 @@
     {
       "cuid": "10700",
       "nick": "bossmaze14",
+      "level": 14,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3095,6 +3657,8 @@
     {
       "cuid": "7361",
       "nick": "Пылающий феникс",
+      "level": 14,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3106,6 +3670,8 @@
     {
       "cuid": "10699",
       "nick": "bossmaze13",
+      "level": 13,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3117,6 +3683,8 @@
     {
       "cuid": "1001",
       "nick": "Ice",
+      "level": 13,
+      "reincarnationLevel": 11,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3128,6 +3696,8 @@
     {
       "cuid": "9016",
       "nick": "Свободный монстр_11",
+      "level": 11,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3139,6 +3709,8 @@
     {
       "cuid": "3309",
       "nick": "WhiTe",
+      "level": 11,
+      "reincarnationLevel": 10,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3150,6 +3722,8 @@
     {
       "cuid": "11818",
       "nick": "Apicmokpam",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3161,6 +3735,8 @@
     {
       "cuid": "5975",
       "nick": "DurmaN87",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3172,6 +3748,8 @@
     {
       "cuid": "2243",
       "nick": "Esey",
+      "level": 11,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3183,6 +3761,8 @@
     {
       "cuid": "3174",
       "nick": "milval",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3194,6 +3774,8 @@
     {
       "cuid": "3456",
       "nick": "pr0gress1ve",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3205,6 +3787,8 @@
     {
       "cuid": "3653",
       "nick": "БосСахары",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3216,6 +3800,8 @@
     {
       "cuid": "5957",
       "nick": "Броня",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3227,6 +3813,8 @@
     {
       "cuid": "3916",
       "nick": "Камелия",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3238,6 +3826,8 @@
     {
       "cuid": "2869",
       "nick": "князь",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3249,6 +3839,8 @@
     {
       "cuid": "2326",
       "nick": "Люцифер",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3260,6 +3852,8 @@
     {
       "cuid": "1955",
       "nick": "Серж",
+      "level": 10,
+      "reincarnationLevel": 9,
       "clanId": "244",
       "clanName": "Devils of Death",
       "position": "Інвалід",
@@ -3271,6 +3865,8 @@
     {
       "cuid": "10474",
       "nick": "Тинаму",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3282,6 +3878,8 @@
     {
       "cuid": "19097",
       "nick": "Чер",
+      "level": 9,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3293,6 +3891,8 @@
     {
       "cuid": "11875",
       "nick": "_Realist_",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3304,6 +3904,8 @@
     {
       "cuid": "2070",
       "nick": "_растаманка_",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3315,6 +3917,8 @@
     {
       "cuid": "14922",
       "nick": "110ud",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3326,6 +3930,8 @@
     {
       "cuid": "11829",
       "nick": "adapter",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3337,6 +3943,8 @@
     {
       "cuid": "2314",
       "nick": "Andarien",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3348,6 +3956,8 @@
     {
       "cuid": "2150",
       "nick": "Anna1111",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3359,6 +3969,8 @@
     {
       "cuid": "6075",
       "nick": "Argentum111",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3370,6 +3982,8 @@
     {
       "cuid": "6973",
       "nick": "Bad Boy",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3381,6 +3995,8 @@
     {
       "cuid": "4049",
       "nick": "BadOctopus",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3392,6 +4008,8 @@
     {
       "cuid": "16371",
       "nick": "Bardas",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3403,6 +4021,8 @@
     {
       "cuid": "22421",
       "nick": "Bif",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3414,6 +4034,8 @@
     {
       "cuid": "1228",
       "nick": "BlackSPOT",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3425,6 +4047,8 @@
     {
       "cuid": "3016",
       "nick": "Bronxxxx",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3436,6 +4060,8 @@
     {
       "cuid": "3105",
       "nick": "Bruno",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3447,6 +4073,8 @@
     {
       "cuid": "9794",
       "nick": "c00l",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3458,6 +4086,8 @@
     {
       "cuid": "2936",
       "nick": "cadilacmd",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3469,6 +4099,8 @@
     {
       "cuid": "19153",
       "nick": "Chill",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3480,6 +4112,8 @@
     {
       "cuid": "3489",
       "nick": "Chisinau",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3491,6 +4125,8 @@
     {
       "cuid": "8788",
       "nick": "COP",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3502,6 +4138,8 @@
     {
       "cuid": "6672",
       "nick": "demon41k",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3513,6 +4151,8 @@
     {
       "cuid": "16383",
       "nick": "DoogeCoin",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3524,6 +4164,8 @@
     {
       "cuid": "5706",
       "nick": "Eddga",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3535,6 +4177,8 @@
     {
       "cuid": "18937",
       "nick": "FaberGe",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3546,6 +4190,8 @@
     {
       "cuid": "12246",
       "nick": "francuz13",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3557,6 +4203,8 @@
     {
       "cuid": "9667",
       "nick": "Gaminat0r",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3568,6 +4216,8 @@
     {
       "cuid": "4141",
       "nick": "GaNNicuS",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3579,6 +4229,8 @@
     {
       "cuid": "3717",
       "nick": "Goryc",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3590,6 +4242,8 @@
     {
       "cuid": "3964",
       "nick": "GrayBas",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3601,6 +4255,8 @@
     {
       "cuid": "2147",
       "nick": "Hid",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3612,6 +4268,8 @@
     {
       "cuid": "3965",
       "nick": "Jackson",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3623,6 +4281,8 @@
     {
       "cuid": "3960",
       "nick": "KAHuKYJlbl",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3634,6 +4294,8 @@
     {
       "cuid": "11226",
       "nick": "KiPeX",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3645,6 +4307,8 @@
     {
       "cuid": "1417",
       "nick": "LayraRicci",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3656,6 +4320,8 @@
     {
       "cuid": "10518",
       "nick": "Leonidovich",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3667,6 +4333,8 @@
     {
       "cuid": "22178",
       "nick": "LORA",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3678,6 +4346,8 @@
     {
       "cuid": "6028",
       "nick": "MadDison",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3689,6 +4359,8 @@
     {
       "cuid": "3901",
       "nick": "masrok",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3700,6 +4372,8 @@
     {
       "cuid": "1073",
       "nick": "Melinda",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3711,6 +4385,8 @@
     {
       "cuid": "2307",
       "nick": "MeXaHuK",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3722,6 +4398,8 @@
     {
       "cuid": "3811",
       "nick": "Mina Stirit",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3733,6 +4411,8 @@
     {
       "cuid": "2288",
       "nick": "NIGGGA",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3744,6 +4424,8 @@
     {
       "cuid": "4120",
       "nick": "Nightmare",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3755,6 +4437,8 @@
     {
       "cuid": "1986",
       "nick": "Nostromo",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3766,6 +4450,8 @@
     {
       "cuid": "4069",
       "nick": "Psycho",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3777,6 +4463,8 @@
     {
       "cuid": "1555",
       "nick": "Psykitty",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3788,6 +4476,8 @@
     {
       "cuid": "11845",
       "nick": "Real Madrid",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3799,6 +4489,8 @@
     {
       "cuid": "24091",
       "nick": "Ren",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3810,6 +4502,8 @@
     {
       "cuid": "10655",
       "nick": "Revenge of queen Ann",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3821,6 +4515,8 @@
     {
       "cuid": "6299",
       "nick": "Santa Muerte",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3832,6 +4528,8 @@
     {
       "cuid": "13188",
       "nick": "Serzh_pvl",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3843,6 +4541,8 @@
     {
       "cuid": "3193",
       "nick": "Stilet",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3854,6 +4554,8 @@
     {
       "cuid": "4421",
       "nick": "Undead of Pain",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3865,6 +4567,8 @@
     {
       "cuid": "9944",
       "nick": "VirTuoZ",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3876,6 +4580,8 @@
     {
       "cuid": "6257",
       "nick": "Whitewario",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3887,6 +4593,8 @@
     {
       "cuid": "1389",
       "nick": "ZaraZa",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3898,6 +4606,8 @@
     {
       "cuid": "2134",
       "nick": "ZLOBUJAN",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3909,6 +4619,8 @@
     {
       "cuid": "2187",
       "nick": "Андвари",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3920,6 +4632,8 @@
     {
       "cuid": "1229",
       "nick": "Армагедон13",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3931,6 +4645,8 @@
     {
       "cuid": "4653",
       "nick": "Бамблби",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3942,6 +4658,8 @@
     {
       "cuid": "2302",
       "nick": "белый вепрь",
+      "level": 11,
+      "reincarnationLevel": 8,
       "clanId": "206",
       "clanName": "Бомжи Кровожадного Мира",
       "position": "Блудный сын клана)",
@@ -3953,6 +4671,8 @@
     {
       "cuid": "7151",
       "nick": "Винни Пух",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3964,6 +4684,8 @@
     {
       "cuid": "2014",
       "nick": "Воевода",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3975,6 +4697,8 @@
     {
       "cuid": "2338",
       "nick": "Волчонок",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3986,6 +4710,8 @@
     {
       "cuid": "3846",
       "nick": "ВОРОН",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -3997,6 +4723,8 @@
     {
       "cuid": "2682",
       "nick": "Герой",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4008,6 +4736,8 @@
     {
       "cuid": "3647",
       "nick": "Гренка",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4019,6 +4749,8 @@
     {
       "cuid": "14046",
       "nick": "ДИАЛЬ",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4030,6 +4762,8 @@
     {
       "cuid": "2249",
       "nick": "Диявол",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4041,6 +4775,8 @@
     {
       "cuid": "1650",
       "nick": "Жрец",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4052,6 +4788,8 @@
     {
       "cuid": "1170",
       "nick": "Зло_",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4063,6 +4801,8 @@
     {
       "cuid": "1247",
       "nick": "Инквизитор",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4074,6 +4814,8 @@
     {
       "cuid": "2283",
       "nick": "КАРАНТиН",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4085,6 +4827,8 @@
     {
       "cuid": "2092",
       "nick": "Картоха",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4096,6 +4840,8 @@
     {
       "cuid": "4946",
       "nick": "Котенок",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4107,6 +4853,8 @@
     {
       "cuid": "6756",
       "nick": "Красавица",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4118,6 +4866,8 @@
     {
       "cuid": "3036",
       "nick": "Лагерта",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4129,6 +4879,8 @@
     {
       "cuid": "2015",
       "nick": "ланграф",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4140,6 +4892,8 @@
     {
       "cuid": "11148",
       "nick": "Лесной_Сторож",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4151,6 +4905,8 @@
     {
       "cuid": "9084",
       "nick": "Локи",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4162,6 +4918,8 @@
     {
       "cuid": "14029",
       "nick": "Маленькая Лень",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4173,6 +4931,8 @@
     {
       "cuid": "17612",
       "nick": "МитричЪ",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4184,6 +4944,8 @@
     {
       "cuid": "1201",
       "nick": "Мука",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4195,6 +4957,8 @@
     {
       "cuid": "6778",
       "nick": "Насвай",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4206,6 +4970,8 @@
     {
       "cuid": "9858",
       "nick": "Никита",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4217,6 +4983,8 @@
     {
       "cuid": "8455",
       "nick": "Рейнеке Лис",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4228,6 +4996,8 @@
     {
       "cuid": "17755",
       "nick": "Снакп_1",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4239,6 +5009,8 @@
     {
       "cuid": "2116",
       "nick": "Стайни",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4250,6 +5022,8 @@
     {
       "cuid": "4192",
       "nick": "Старый хмырь",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4261,6 +5035,8 @@
     {
       "cuid": "3229",
       "nick": "СТреЛоК",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4272,6 +5048,8 @@
     {
       "cuid": "6788",
       "nick": "Тави",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4283,6 +5061,8 @@
     {
       "cuid": "1951",
       "nick": "умный",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4294,6 +5074,8 @@
     {
       "cuid": "5556",
       "nick": "франт",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4305,6 +5087,8 @@
     {
       "cuid": "2199",
       "nick": "христоносець",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4316,6 +5100,8 @@
     {
       "cuid": "12804",
       "nick": "Шкурнадзор",
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4327,6 +5113,8 @@
     {
       "cuid": "12636",
       "nick": "Эпидемия",
+      "level": 8,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4338,6 +5126,8 @@
     {
       "cuid": "3699",
       "nick": "яверт",
+      "level": 10,
+      "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4349,6 +5139,8 @@
     {
       "cuid": "1628",
       "nick": "_gosa_",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4360,6 +5152,8 @@
     {
       "cuid": "3128",
       "nick": "_noname_",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4371,6 +5165,8 @@
     {
       "cuid": "6499",
       "nick": "_Викинг_",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4382,6 +5178,8 @@
     {
       "cuid": "5609",
       "nick": "Aaz",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4393,6 +5191,8 @@
     {
       "cuid": "6145",
       "nick": "Abdustciius",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4404,6 +5204,8 @@
     {
       "cuid": "1180",
       "nick": "alex_taxi",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4415,6 +5217,8 @@
     {
       "cuid": "2026",
       "nick": "ap_res",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4426,6 +5230,8 @@
     {
       "cuid": "4589",
       "nick": "Argentum",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4437,6 +5243,8 @@
     {
       "cuid": "2234",
       "nick": "Avalan",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4448,6 +5256,8 @@
     {
       "cuid": "5056",
       "nick": "Cagucm",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4459,6 +5269,8 @@
     {
       "cuid": "19543",
       "nick": "CUBA",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4470,6 +5282,8 @@
     {
       "cuid": "1046",
       "nick": "DANIK",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4481,6 +5295,8 @@
     {
       "cuid": "8500",
       "nick": "Deus",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4492,6 +5308,8 @@
     {
       "cuid": "2371",
       "nick": "DJ SINYAK",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4503,6 +5321,8 @@
     {
       "cuid": "3319",
       "nick": "eWs",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4514,6 +5334,8 @@
     {
       "cuid": "6829",
       "nick": "HerFlugger",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4525,6 +5347,8 @@
     {
       "cuid": "3049",
       "nick": "Hollow",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4536,6 +5360,8 @@
     {
       "cuid": "2319",
       "nick": "IGN",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4547,6 +5373,8 @@
     {
       "cuid": "9533",
       "nick": "Kirsankafat",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4558,6 +5386,8 @@
     {
       "cuid": "19173",
       "nick": "Kolotilovka",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4569,6 +5399,8 @@
     {
       "cuid": "19062",
       "nick": "Kot",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4580,6 +5412,8 @@
     {
       "cuid": "19178",
       "nick": "Ler",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4591,6 +5425,8 @@
     {
       "cuid": "6618",
       "nick": "Nameko",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4602,6 +5438,8 @@
     {
       "cuid": "6019",
       "nick": "Nordik",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4613,6 +5451,8 @@
     {
       "cuid": "5525",
       "nick": "rapgepo6",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4624,6 +5464,8 @@
     {
       "cuid": "19381",
       "nick": "TALLINN",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4635,6 +5477,8 @@
     {
       "cuid": "2212",
       "nick": "xtremerok",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4646,6 +5490,8 @@
     {
       "cuid": "14536",
       "nick": "Арт",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4657,6 +5503,8 @@
     {
       "cuid": "1727",
       "nick": "Боецц",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4668,6 +5516,8 @@
     {
       "cuid": "2158",
       "nick": "Виктория",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4679,6 +5529,8 @@
     {
       "cuid": "4908",
       "nick": "гера",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4690,6 +5542,8 @@
     {
       "cuid": "1745",
       "nick": "Гладиатор",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4701,6 +5555,8 @@
     {
       "cuid": "10566",
       "nick": "Динаму",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4712,6 +5568,8 @@
     {
       "cuid": "1728",
       "nick": "Зеленый",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4723,6 +5581,8 @@
     {
       "cuid": "1744",
       "nick": "Легионер",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4734,6 +5594,8 @@
     {
       "cuid": "1726",
       "nick": "Молодая графиня",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4745,6 +5607,8 @@
     {
       "cuid": "7324",
       "nick": "НеМоЙ",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4756,6 +5620,8 @@
     {
       "cuid": "3324",
       "nick": "Переcвет",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4767,6 +5633,8 @@
     {
       "cuid": "17648",
       "nick": "саня",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4778,6 +5646,8 @@
     {
       "cuid": "1724",
       "nick": "Седой граф",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4789,6 +5659,8 @@
     {
       "cuid": "1750",
       "nick": "Таранис",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4800,6 +5672,8 @@
     {
       "cuid": "4565",
       "nick": "Турист",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4811,6 +5685,8 @@
     {
       "cuid": "6831",
       "nick": "Фаныч",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4822,6 +5698,8 @@
     {
       "cuid": "1746",
       "nick": "Швея мотористка",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4833,6 +5711,8 @@
     {
       "cuid": "9880",
       "nick": "Эвменида",
+      "level": 7,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4844,6 +5724,8 @@
     {
       "cuid": "17658",
       "nick": "__Flesh__",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4855,6 +5737,8 @@
     {
       "cuid": "2030",
       "nick": "_S_L_A_V_A_",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4866,6 +5750,8 @@
     {
       "cuid": "3803",
       "nick": "_TUBORG_",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4877,6 +5763,8 @@
     {
       "cuid": "2040",
       "nick": "4ejl9l6ae6a",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4888,6 +5776,8 @@
     {
       "cuid": "9061",
       "nick": "7777",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4899,6 +5789,8 @@
     {
       "cuid": "7421",
       "nick": "abrazz",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4910,6 +5802,8 @@
     {
       "cuid": "20824",
       "nick": "Ahil",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4921,6 +5815,8 @@
     {
       "cuid": "3512",
       "nick": "AlCapone1234",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4932,6 +5828,8 @@
     {
       "cuid": "24765",
       "nick": "Alex_81a",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4943,6 +5841,8 @@
     {
       "cuid": "6196",
       "nick": "Anarki",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4954,6 +5854,8 @@
     {
       "cuid": "7220",
       "nick": "And",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4965,6 +5867,8 @@
     {
       "cuid": "3501",
       "nick": "Andrea_moon",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4976,6 +5880,8 @@
     {
       "cuid": "11954",
       "nick": "Andrew",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4987,6 +5893,8 @@
     {
       "cuid": "26557",
       "nick": "Anspiract",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -4998,6 +5906,8 @@
     {
       "cuid": "2857",
       "nick": "aqbar",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5009,6 +5919,8 @@
     {
       "cuid": "12303",
       "nick": "Aria",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5020,6 +5932,8 @@
     {
       "cuid": "5543",
       "nick": "Arisbaw",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5031,6 +5945,8 @@
     {
       "cuid": "22769",
       "nick": "Arlikinno",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5042,6 +5958,8 @@
     {
       "cuid": "4437",
       "nick": "ArTigerMan",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5053,6 +5971,8 @@
     {
       "cuid": "4161",
       "nick": "Azzinot",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5064,6 +5984,8 @@
     {
       "cuid": "10091",
       "nick": "BadvinFray",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5075,6 +5997,8 @@
     {
       "cuid": "19541",
       "nick": "Be3yN4uk",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5086,6 +6010,8 @@
     {
       "cuid": "22941",
       "nick": "Benny",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5097,6 +6023,8 @@
     {
       "cuid": "6573",
       "nick": "Blackwanderer",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5108,6 +6036,8 @@
     {
       "cuid": "2368",
       "nick": "bloodycat",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5119,6 +6049,8 @@
     {
       "cuid": "2138",
       "nick": "Bluzdayushiu",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5130,6 +6062,8 @@
     {
       "cuid": "7282",
       "nick": "bmv",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5141,6 +6075,8 @@
     {
       "cuid": "3762",
       "nick": "BOSS TANK",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5152,6 +6088,8 @@
     {
       "cuid": "22484",
       "nick": "Brogun",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5163,6 +6101,8 @@
     {
       "cuid": "5105",
       "nick": "Brooklyn",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5174,6 +6114,8 @@
     {
       "cuid": "6732",
       "nick": "cooper",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5185,6 +6127,8 @@
     {
       "cuid": "7392",
       "nick": "Coup de grace",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5196,6 +6140,8 @@
     {
       "cuid": "22879",
       "nick": "Craftik",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5207,6 +6153,8 @@
     {
       "cuid": "6543",
       "nick": "cuck_king",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5218,6 +6166,8 @@
     {
       "cuid": "3503",
       "nick": "Dante_Lexa",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5229,6 +6179,8 @@
     {
       "cuid": "17159",
       "nick": "Dark Griffin",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5240,6 +6192,8 @@
     {
       "cuid": "2099",
       "nick": "dSan",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5251,6 +6205,8 @@
     {
       "cuid": "6711",
       "nick": "eldorado",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5262,6 +6218,8 @@
     {
       "cuid": "2020",
       "nick": "Excalibur",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5273,6 +6231,8 @@
     {
       "cuid": "1913",
       "nick": "export",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5284,6 +6244,8 @@
     {
       "cuid": "3492",
       "nick": "Extended",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5295,6 +6257,8 @@
     {
       "cuid": "3167",
       "nick": "FakeLondon",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5306,6 +6270,8 @@
     {
       "cuid": "19196",
       "nick": "Fantastish",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5317,6 +6283,8 @@
     {
       "cuid": "2957",
       "nick": "FCVL",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5328,6 +6296,8 @@
     {
       "cuid": "11171",
       "nick": "foks422",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5339,6 +6309,8 @@
     {
       "cuid": "5112",
       "nick": "G_E_L_E_O_N",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5350,6 +6322,8 @@
     {
       "cuid": "3384",
       "nick": "Garret",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5361,6 +6335,8 @@
     {
       "cuid": "9278",
       "nick": "GenGe",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5372,6 +6348,8 @@
     {
       "cuid": "1961",
       "nick": "Ghastly",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5383,6 +6361,8 @@
     {
       "cuid": "1925",
       "nick": "Godlike",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5394,6 +6374,8 @@
     {
       "cuid": "4808",
       "nick": "Gracefulleo",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5405,6 +6387,8 @@
     {
       "cuid": "2093",
       "nick": "Graf Orloff",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5416,6 +6400,8 @@
     {
       "cuid": "10321",
       "nick": "grand",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5427,6 +6413,8 @@
     {
       "cuid": "22007",
       "nick": "Grandis",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5438,6 +6426,8 @@
     {
       "cuid": "16879",
       "nick": "gve1ph",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5449,6 +6439,8 @@
     {
       "cuid": "7321",
       "nick": "Gz159",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5460,6 +6452,8 @@
     {
       "cuid": "2313",
       "nick": "Harvest",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5471,6 +6465,8 @@
     {
       "cuid": "2233",
       "nick": "Hennesy",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5482,6 +6478,8 @@
     {
       "cuid": "11295",
       "nick": "Heymdalr",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5493,6 +6491,8 @@
     {
       "cuid": "1586",
       "nick": "ironfoot",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5504,6 +6504,8 @@
     {
       "cuid": "6648",
       "nick": "IronMaiden",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5515,6 +6517,8 @@
     {
       "cuid": "1218",
       "nick": "jurikson",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5526,6 +6530,8 @@
     {
       "cuid": "19192",
       "nick": "k0l0b0k111",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5537,6 +6543,8 @@
     {
       "cuid": "8010",
       "nick": "KansonaLira",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5548,6 +6556,8 @@
     {
       "cuid": "1531",
       "nick": "Keepo",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5559,6 +6569,8 @@
     {
       "cuid": "2748",
       "nick": "Khalim",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5570,6 +6582,8 @@
     {
       "cuid": "3023",
       "nick": "Kores",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5581,6 +6595,8 @@
     {
       "cuid": "8755",
       "nick": "Kotenok",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5592,6 +6608,8 @@
     {
       "cuid": "1402",
       "nick": "Lancelot",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5603,6 +6621,8 @@
     {
       "cuid": "25026",
       "nick": "LegioneR_83",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5614,6 +6634,8 @@
     {
       "cuid": "12343",
       "nick": "Lemure",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5625,6 +6647,8 @@
     {
       "cuid": "11052",
       "nick": "Liberal",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5636,6 +6660,8 @@
     {
       "cuid": "3371",
       "nick": "Lily Mily",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5647,6 +6673,8 @@
     {
       "cuid": "12766",
       "nick": "Lion",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5658,6 +6686,8 @@
     {
       "cuid": "2367",
       "nick": "LLIyJIep",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5669,6 +6699,8 @@
     {
       "cuid": "16815",
       "nick": "Major",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5680,6 +6712,8 @@
     {
       "cuid": "5804",
       "nick": "makkena",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5691,6 +6725,8 @@
     {
       "cuid": "2282",
       "nick": "Mekss",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5702,6 +6738,8 @@
     {
       "cuid": "22189",
       "nick": "Melkor",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5713,6 +6751,8 @@
     {
       "cuid": "9553",
       "nick": "Mienor",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5724,6 +6764,8 @@
     {
       "cuid": "19572",
       "nick": "Miklos_Sangre",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5735,6 +6777,8 @@
     {
       "cuid": "5399",
       "nick": "Miniburst",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5746,6 +6790,8 @@
     {
       "cuid": "23043",
       "nick": "Monax",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5757,6 +6803,8 @@
     {
       "cuid": "4794",
       "nick": "MorraLiss",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5768,6 +6816,8 @@
     {
       "cuid": "17316",
       "nick": "MsDemon",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5779,6 +6829,8 @@
     {
       "cuid": "3844",
       "nick": "Nastya13",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5790,6 +6842,8 @@
     {
       "cuid": "24364",
       "nick": "Nean",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5801,6 +6855,8 @@
     {
       "cuid": "11557",
       "nick": "Nel Arod",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5812,6 +6868,8 @@
     {
       "cuid": "5110",
       "nick": "notapuyc",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5823,6 +6881,8 @@
     {
       "cuid": "22811",
       "nick": "orekx82",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5834,6 +6894,8 @@
     {
       "cuid": "9281",
       "nick": "Person",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5845,6 +6907,8 @@
     {
       "cuid": "2043",
       "nick": "Peter Jason Quill",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5856,6 +6920,8 @@
     {
       "cuid": "15424",
       "nick": "profineo",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5867,6 +6933,8 @@
     {
       "cuid": "1636",
       "nick": "project",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5878,6 +6946,8 @@
     {
       "cuid": "16884",
       "nick": "RF",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5889,6 +6959,8 @@
     {
       "cuid": "8748",
       "nick": "Rion",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5900,6 +6972,8 @@
     {
       "cuid": "3169",
       "nick": "Ronskiy",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5911,6 +6985,8 @@
     {
       "cuid": "18988",
       "nick": "Rontorl",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5922,6 +6998,8 @@
     {
       "cuid": "10522",
       "nick": "safik04",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5933,6 +7011,8 @@
     {
       "cuid": "26634",
       "nick": "Saint_Bear",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5944,6 +7024,8 @@
     {
       "cuid": "3849",
       "nick": "Samira",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5955,6 +7037,8 @@
     {
       "cuid": "17338",
       "nick": "SamoWarrr",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5966,6 +7050,8 @@
     {
       "cuid": "2121",
       "nick": "SanVenGanzo",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5977,6 +7063,8 @@
     {
       "cuid": "19121",
       "nick": "Shychyk",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5988,6 +7076,8 @@
     {
       "cuid": "22159",
       "nick": "siriysblek",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -5999,6 +7089,8 @@
     {
       "cuid": "2274",
       "nick": "Sofa",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6010,6 +7102,8 @@
     {
       "cuid": "5932",
       "nick": "Sonches",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6021,6 +7115,8 @@
     {
       "cuid": "3348",
       "nick": "srachmaker",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6032,6 +7128,8 @@
     {
       "cuid": "3410",
       "nick": "Surikat",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6043,6 +7141,8 @@
     {
       "cuid": "3190",
       "nick": "TheHunter",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6054,6 +7154,8 @@
     {
       "cuid": "3339",
       "nick": "Timetivity",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6065,6 +7167,8 @@
     {
       "cuid": "2284",
       "nick": "Tommyk",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6076,6 +7180,8 @@
     {
       "cuid": "3298",
       "nick": "Totenkompf",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6087,6 +7193,8 @@
     {
       "cuid": "19609",
       "nick": "Trigger",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6098,6 +7206,8 @@
     {
       "cuid": "1289",
       "nick": "user777",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6109,6 +7219,8 @@
     {
       "cuid": "3050",
       "nick": "vetki",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6120,6 +7232,8 @@
     {
       "cuid": "3164",
       "nick": "Vorting",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6131,6 +7245,8 @@
     {
       "cuid": "5710",
       "nick": "winner11",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6142,6 +7258,8 @@
     {
       "cuid": "2222",
       "nick": "YUriy_Zaytsev",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6153,6 +7271,8 @@
     {
       "cuid": "3051",
       "nick": "Zernoport",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6164,6 +7284,8 @@
     {
       "cuid": "15465",
       "nick": "Азог",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6175,6 +7297,8 @@
     {
       "cuid": "8762",
       "nick": "Азура",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6186,6 +7310,8 @@
     {
       "cuid": "2905",
       "nick": "Арчибальт",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6197,6 +7323,8 @@
     {
       "cuid": "1245",
       "nick": "Берлиоз",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6208,6 +7336,8 @@
     {
       "cuid": "2971",
       "nick": "Билли Бонс",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6219,6 +7349,8 @@
     {
       "cuid": "4423",
       "nick": "Бумбей",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6230,6 +7362,8 @@
     {
       "cuid": "5774",
       "nick": "ваниш",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6241,6 +7375,8 @@
     {
       "cuid": "4309",
       "nick": "Вежливый SAMбист",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6252,6 +7388,8 @@
     {
       "cuid": "2311",
       "nick": "ВНИМАШКА",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6263,6 +7401,8 @@
     {
       "cuid": "10442",
       "nick": "Говинда",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6274,6 +7414,8 @@
     {
       "cuid": "8113",
       "nick": "Грозный Кролик",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6285,6 +7427,8 @@
     {
       "cuid": "3939",
       "nick": "Димитрий",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6296,6 +7440,8 @@
     {
       "cuid": "6740",
       "nick": "Жена воеводы",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6307,6 +7453,8 @@
     {
       "cuid": "3040",
       "nick": "Загадка",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6318,6 +7466,8 @@
     {
       "cuid": "1257",
       "nick": "ЗООТЕХНИК",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6329,6 +7479,8 @@
     {
       "cuid": "1258",
       "nick": "Игорь",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6340,6 +7492,8 @@
     {
       "cuid": "3360",
       "nick": "Йоркширец",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6351,6 +7505,8 @@
     {
       "cuid": "1202",
       "nick": "Княгиня",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6362,6 +7518,8 @@
     {
       "cuid": "15347",
       "nick": "Князь Дмитрий",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6373,6 +7531,8 @@
     {
       "cuid": "4763",
       "nick": "Комар",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6384,6 +7544,8 @@
     {
       "cuid": "2961",
       "nick": "Костоправ",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6395,6 +7557,8 @@
     {
       "cuid": "15009",
       "nick": "Кристоф",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6406,6 +7570,8 @@
     {
       "cuid": "5493",
       "nick": "Крытый Медным Тазом",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6417,6 +7583,8 @@
     {
       "cuid": "3896",
       "nick": "Кукла Вуду",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6428,6 +7596,8 @@
     {
       "cuid": "17618",
       "nick": "Лютый",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6439,6 +7609,8 @@
     {
       "cuid": "2221",
       "nick": "Македонец",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6450,6 +7622,8 @@
     {
       "cuid": "1206",
       "nick": "Маркиза",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6461,6 +7635,8 @@
     {
       "cuid": "2069",
       "nick": "Мася",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6472,6 +7648,8 @@
     {
       "cuid": "3253",
       "nick": "мафаня",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6483,6 +7661,8 @@
     {
       "cuid": "2019",
       "nick": "Мелл",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6494,6 +7674,8 @@
     {
       "cuid": "4629",
       "nick": "МилитарисТ",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6505,6 +7687,8 @@
     {
       "cuid": "1236",
       "nick": "мутирожка",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6516,6 +7700,8 @@
     {
       "cuid": "2327",
       "nick": "Мяу",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6527,6 +7713,8 @@
     {
       "cuid": "26785",
       "nick": "Не беспокоить",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6538,6 +7726,8 @@
     {
       "cuid": "18940",
       "nick": "Немчик",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6549,6 +7739,8 @@
     {
       "cuid": "3177",
       "nick": "ОверЛорд",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6560,6 +7752,8 @@
     {
       "cuid": "2417",
       "nick": "Одинокий Лев",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6571,6 +7765,8 @@
     {
       "cuid": "3331",
       "nick": "Парниша",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6582,6 +7778,8 @@
     {
       "cuid": "12825",
       "nick": "Пепеся",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6593,6 +7791,8 @@
     {
       "cuid": "22152",
       "nick": "Петя Смозгливый",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6604,6 +7804,8 @@
     {
       "cuid": "5516",
       "nick": "ПрестолТени",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6615,6 +7817,8 @@
     {
       "cuid": "2744",
       "nick": "Проповедник",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6626,6 +7830,8 @@
     {
       "cuid": "1603",
       "nick": "САНТЕХНАРЬ",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6637,6 +7843,8 @@
     {
       "cuid": "5972",
       "nick": "соловей",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6648,6 +7856,8 @@
     {
       "cuid": "2704",
       "nick": "Станнис Баратеон",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6659,6 +7869,8 @@
     {
       "cuid": "8823",
       "nick": "Старый воин",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6670,6 +7882,8 @@
     {
       "cuid": "2716",
       "nick": "Стеклопластиk",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6681,6 +7895,8 @@
     {
       "cuid": "11132",
       "nick": "Тарья",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6692,6 +7908,8 @@
     {
       "cuid": "7968",
       "nick": "Тафтун",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6703,6 +7921,8 @@
     {
       "cuid": "6175",
       "nick": "Твоя Боль",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6714,6 +7934,8 @@
     {
       "cuid": "3525",
       "nick": "ТотСамыйТворожок",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6725,6 +7947,8 @@
     {
       "cuid": "2341",
       "nick": "Хитрый лис",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6736,6 +7960,8 @@
     {
       "cuid": "17602",
       "nick": "Хороший человек",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6747,6 +7973,8 @@
     {
       "cuid": "20594",
       "nick": "ЦаревичМитрий",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6758,6 +7986,8 @@
     {
       "cuid": "17053",
       "nick": "ЧЕШИРка",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6769,6 +7999,8 @@
     {
       "cuid": "3220",
       "nick": "Шайтана",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6780,6 +8012,8 @@
     {
       "cuid": "11847",
       "nick": "Широкое бедро",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6791,6 +8025,8 @@
     {
       "cuid": "3398",
       "nick": "Эрк",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6802,6 +8038,8 @@
     {
       "cuid": "28584",
       "nick": "Я человек",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6813,6 +8051,8 @@
     {
       "cuid": "1450",
       "nick": "Aleksey84",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6824,6 +8064,8 @@
     {
       "cuid": "11851",
       "nick": "Aries777",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6835,6 +8077,8 @@
     {
       "cuid": "1676",
       "nick": "bix",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6846,6 +8090,8 @@
     {
       "cuid": "2986",
       "nick": "Bjornson",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6857,6 +8103,8 @@
     {
       "cuid": "26291",
       "nick": "Blthzr",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6868,6 +8116,8 @@
     {
       "cuid": "9983",
       "nick": "darkmaster",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6879,6 +8129,8 @@
     {
       "cuid": "6224",
       "nick": "Dero",
+      "level": 6,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6890,6 +8142,8 @@
     {
       "cuid": "3173",
       "nick": "ElweeZ",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6901,6 +8155,8 @@
     {
       "cuid": "26789",
       "nick": "Fish",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6912,6 +8168,8 @@
     {
       "cuid": "5705",
       "nick": "Fruit Ninja",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6923,6 +8181,8 @@
     {
       "cuid": "13469",
       "nick": "Ghol",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6934,6 +8194,8 @@
     {
       "cuid": "1320",
       "nick": "Ilaza",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6945,6 +8207,8 @@
     {
       "cuid": "8843",
       "nick": "InkviZitor89",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6956,6 +8220,8 @@
     {
       "cuid": "7348",
       "nick": "Karkalden",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6967,6 +8233,8 @@
     {
       "cuid": "10511",
       "nick": "KiberBob",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6978,6 +8246,8 @@
     {
       "cuid": "1466",
       "nick": "Kirsan kafat",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -6989,6 +8259,8 @@
     {
       "cuid": "3755",
       "nick": "Kondor",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7000,6 +8272,8 @@
     {
       "cuid": "1590",
       "nick": "LetherVS",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7011,6 +8285,8 @@
     {
       "cuid": "12863",
       "nick": "mackarovgar1ck",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7022,6 +8298,8 @@
     {
       "cuid": "1358",
       "nick": "marser",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7033,6 +8311,8 @@
     {
       "cuid": "8012",
       "nick": "MGANG",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7044,6 +8324,8 @@
     {
       "cuid": "26259",
       "nick": "Mr Hyde",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7055,6 +8337,8 @@
     {
       "cuid": "7267",
       "nick": "Natka",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7066,6 +8350,8 @@
     {
       "cuid": "3001",
       "nick": "Night Fairy",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7077,6 +8363,8 @@
     {
       "cuid": "9709",
       "nick": "Oggy",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7088,6 +8376,8 @@
     {
       "cuid": "8759",
       "nick": "Okesh",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7099,6 +8389,8 @@
     {
       "cuid": "6569",
       "nick": "Orela",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7110,6 +8402,8 @@
     {
       "cuid": "4570",
       "nick": "Prince Jarls",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7121,6 +8415,8 @@
     {
       "cuid": "10479",
       "nick": "PuJIleJluE",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7132,6 +8428,8 @@
     {
       "cuid": "2002",
       "nick": "Randomsmile",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7143,6 +8441,8 @@
     {
       "cuid": "5922",
       "nick": "risonbo",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7154,6 +8454,8 @@
     {
       "cuid": "3130",
       "nick": "roksing",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7165,6 +8467,8 @@
     {
       "cuid": "10155",
       "nick": "SERJ_MADRID",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7176,6 +8480,8 @@
     {
       "cuid": "4180",
       "nick": "SKAZKA",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7187,6 +8493,8 @@
     {
       "cuid": "10482",
       "nick": "Skullbreaker",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7198,6 +8506,8 @@
     {
       "cuid": "25096",
       "nick": "Snegax",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "Shadows of the Dusk",
       "position": "SнEЖинkA",
@@ -7209,6 +8519,8 @@
     {
       "cuid": "24340",
       "nick": "srgbgmk",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7220,6 +8532,8 @@
     {
       "cuid": "2161",
       "nick": "Superbobrik",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7231,6 +8545,8 @@
     {
       "cuid": "9549",
       "nick": "Tirielle",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7242,6 +8558,8 @@
     {
       "cuid": "11293",
       "nick": "Tokc",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7253,6 +8571,8 @@
     {
       "cuid": "26561",
       "nick": "Toot",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7264,6 +8584,8 @@
     {
       "cuid": "16542",
       "nick": "TORNADO",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7275,6 +8597,8 @@
     {
       "cuid": "11089",
       "nick": "Tuztref",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7286,6 +8610,8 @@
     {
       "cuid": "1665",
       "nick": "Windoz",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7297,6 +8623,8 @@
     {
       "cuid": "4375",
       "nick": "Woteks",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7308,6 +8636,8 @@
     {
       "cuid": "19195",
       "nick": "Андрей 270501",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7319,6 +8649,8 @@
     {
       "cuid": "4074",
       "nick": "Антошка",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7330,6 +8662,8 @@
     {
       "cuid": "19504",
       "nick": "Артем",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7341,6 +8675,8 @@
     {
       "cuid": "18698",
       "nick": "ВанДерДекер",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7352,6 +8688,8 @@
     {
       "cuid": "17676",
       "nick": "ВечныЙ",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7363,6 +8701,8 @@
     {
       "cuid": "2866",
       "nick": "Возмутительная",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7374,6 +8714,8 @@
     {
       "cuid": "15354",
       "nick": "Герман",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7385,6 +8727,8 @@
     {
       "cuid": "21959",
       "nick": "ДруганБратанДжекиЧан",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7396,6 +8740,8 @@
     {
       "cuid": "23040",
       "nick": "Дуглас",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7407,6 +8753,8 @@
     {
       "cuid": "10017",
       "nick": "Злой наемник",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7418,6 +8766,8 @@
     {
       "cuid": "27056",
       "nick": "Йезжиг",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7429,6 +8779,8 @@
     {
       "cuid": "5492",
       "nick": "Кровавый Убивец",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7440,6 +8792,8 @@
     {
       "cuid": "7340",
       "nick": "Маргинал",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7451,6 +8805,8 @@
     {
       "cuid": "3452",
       "nick": "Маша Жара",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7462,6 +8818,8 @@
     {
       "cuid": "1940",
       "nick": "Одичалый",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7473,6 +8831,8 @@
     {
       "cuid": "11056",
       "nick": "Павел Берд",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7484,6 +8844,8 @@
     {
       "cuid": "7279",
       "nick": "Ронин",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7495,6 +8857,8 @@
     {
       "cuid": "1003",
       "nick": "Свадебная фея",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7506,6 +8870,8 @@
     {
       "cuid": "11774",
       "nick": "Сверхновая",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7517,6 +8883,8 @@
     {
       "cuid": "12969",
       "nick": "Сергей 060904",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7528,6 +8896,8 @@
     {
       "cuid": "4123",
       "nick": "Серж1",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7539,6 +8909,8 @@
     {
       "cuid": "2227",
       "nick": "Стивен Старший",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7550,6 +8922,8 @@
     {
       "cuid": "13181",
       "nick": "Сторож_1",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7561,6 +8935,8 @@
     {
       "cuid": "24517",
       "nick": "Трайн",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7572,6 +8948,8 @@
     {
       "cuid": "3900",
       "nick": "Фарион333",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7583,6 +8961,8 @@
     {
       "cuid": "9707",
       "nick": "Химик",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7594,6 +8974,8 @@
     {
       "cuid": "13503",
       "nick": "Яд",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7605,6 +8987,8 @@
     {
       "cuid": "5515",
       "nick": "ЯПсиХ_",
+      "level": 5,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7616,6 +9000,8 @@
     {
       "cuid": "11871",
       "nick": "_Shantaram_",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7627,6 +9013,8 @@
     {
       "cuid": "9426",
       "nick": "3BEPb",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7638,6 +9026,8 @@
     {
       "cuid": "8470",
       "nick": "alexz",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7649,6 +9039,8 @@
     {
       "cuid": "17616",
       "nick": "Alita",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7660,6 +9052,8 @@
     {
       "cuid": "7280",
       "nick": "AndyGron",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7671,6 +9065,8 @@
     {
       "cuid": "5660",
       "nick": "Angelo4ekk",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7682,6 +9078,8 @@
     {
       "cuid": "4578",
       "nick": "arkoint",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7693,6 +9091,8 @@
     {
       "cuid": "22582",
       "nick": "AwasterIMO",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7704,6 +9104,8 @@
     {
       "cuid": "15596",
       "nick": "Ballen",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7715,6 +9117,8 @@
     {
       "cuid": "13787",
       "nick": "bamper2110",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7726,6 +9130,8 @@
     {
       "cuid": "10044",
       "nick": "bind",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7737,6 +9143,8 @@
     {
       "cuid": "3625",
       "nick": "Buster Casey",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7748,6 +9156,8 @@
     {
       "cuid": "17447",
       "nick": "CerberusSkay",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7759,6 +9169,8 @@
     {
       "cuid": "2719",
       "nick": "CitizEN",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7770,6 +9182,8 @@
     {
       "cuid": "21920",
       "nick": "cKaHgaJI",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7781,6 +9195,8 @@
     {
       "cuid": "6718",
       "nick": "Cubinez",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7792,6 +9208,8 @@
     {
       "cuid": "2393",
       "nick": "Danone",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7803,6 +9221,8 @@
     {
       "cuid": "9057",
       "nick": "Dares",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7814,6 +9234,8 @@
     {
       "cuid": "2145",
       "nick": "Domi",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7825,6 +9247,8 @@
     {
       "cuid": "3132",
       "nick": "Dragon_",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7836,6 +9260,8 @@
     {
       "cuid": "26599",
       "nick": "DuKAPb",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7847,6 +9273,8 @@
     {
       "cuid": "11439",
       "nick": "Fadebolt",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7858,6 +9286,8 @@
     {
       "cuid": "2998",
       "nick": "Forest",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7869,6 +9299,8 @@
     {
       "cuid": "4671",
       "nick": "Gannibal",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7880,6 +9312,8 @@
     {
       "cuid": "26447",
       "nick": "Gecko",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7891,6 +9325,8 @@
     {
       "cuid": "28267",
       "nick": "Gomozig0t",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7902,6 +9338,8 @@
     {
       "cuid": "9654",
       "nick": "Grutt",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7913,6 +9351,8 @@
     {
       "cuid": "2130",
       "nick": "Harley Quinn",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7924,6 +9364,8 @@
     {
       "cuid": "12878",
       "nick": "HoggerOssa",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7935,6 +9377,8 @@
     {
       "cuid": "25084",
       "nick": "jagua972",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7946,6 +9390,8 @@
     {
       "cuid": "27204",
       "nick": "jkdpro",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7957,6 +9403,8 @@
     {
       "cuid": "9739",
       "nick": "JohnCoker",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7968,6 +9416,8 @@
     {
       "cuid": "9620",
       "nick": "Joo",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7979,6 +9429,8 @@
     {
       "cuid": "17448",
       "nick": "kill4you",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -7990,6 +9442,8 @@
     {
       "cuid": "11144",
       "nick": "Kitrih",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8001,6 +9455,8 @@
     {
       "cuid": "13031",
       "nick": "KoH4uTa",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8012,6 +9468,8 @@
     {
       "cuid": "22891",
       "nick": "KROMUS",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8023,6 +9481,8 @@
     {
       "cuid": "4673",
       "nick": "Ksancor",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8034,6 +9494,8 @@
     {
       "cuid": "24787",
       "nick": "Kwas",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8045,6 +9507,8 @@
     {
       "cuid": "3072",
       "nick": "Kот",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8056,6 +9520,8 @@
     {
       "cuid": "28285",
       "nick": "Lilith",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8067,6 +9533,8 @@
     {
       "cuid": "19146",
       "nick": "Lira",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8078,6 +9546,8 @@
     {
       "cuid": "29026",
       "nick": "Lutik",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8089,6 +9559,8 @@
     {
       "cuid": "10444",
       "nick": "Lux",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8100,6 +9572,8 @@
     {
       "cuid": "2079",
       "nick": "mato",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8111,6 +9585,8 @@
     {
       "cuid": "16823",
       "nick": "MazaXakep",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8122,6 +9598,8 @@
     {
       "cuid": "22964",
       "nick": "MetalGon",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8133,6 +9611,8 @@
     {
       "cuid": "12253",
       "nick": "Neu",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8144,6 +9624,8 @@
     {
       "cuid": "27180",
       "nick": "nighthunter",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8155,6 +9637,8 @@
     {
       "cuid": "2357",
       "nick": "Note",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8166,6 +9650,8 @@
     {
       "cuid": "9060",
       "nick": "OLLIN",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8177,6 +9663,8 @@
     {
       "cuid": "24194",
       "nick": "Patrick Bateman",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8188,6 +9676,8 @@
     {
       "cuid": "11051",
       "nick": "PepsiX",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8199,6 +9689,8 @@
     {
       "cuid": "7418",
       "nick": "Reginald",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8210,6 +9702,8 @@
     {
       "cuid": "13531",
       "nick": "Rom_boom",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8221,6 +9715,8 @@
     {
       "cuid": "2057",
       "nick": "RonZ",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8232,6 +9728,8 @@
     {
       "cuid": "16984",
       "nick": "RTZ",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8243,6 +9741,8 @@
     {
       "cuid": "13684",
       "nick": "SarumanDr",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8254,6 +9754,8 @@
     {
       "cuid": "15464",
       "nick": "ScLion",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8265,6 +9767,8 @@
     {
       "cuid": "26823",
       "nick": "Sexon",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8276,6 +9780,8 @@
     {
       "cuid": "3052",
       "nick": "solomon",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8287,6 +9793,8 @@
     {
       "cuid": "24066",
       "nick": "soon",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8298,6 +9806,8 @@
     {
       "cuid": "11023",
       "nick": "Stas1488",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8309,6 +9819,8 @@
     {
       "cuid": "28673",
       "nick": "superman128",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8320,6 +9832,8 @@
     {
       "cuid": "12805",
       "nick": "TANKOGRAD",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8331,6 +9845,8 @@
     {
       "cuid": "13479",
       "nick": "tattoo",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8342,6 +9858,8 @@
     {
       "cuid": "9784",
       "nick": "Tiamath",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8353,6 +9871,8 @@
     {
       "cuid": "13175",
       "nick": "Tiger",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8364,6 +9884,8 @@
     {
       "cuid": "16908",
       "nick": "Valu",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8375,6 +9897,8 @@
     {
       "cuid": "24278",
       "nick": "VanDerDeker",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8386,6 +9910,8 @@
     {
       "cuid": "3763",
       "nick": "Vavadik",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8397,6 +9923,8 @@
     {
       "cuid": "17865",
       "nick": "Vova",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8408,6 +9936,8 @@
     {
       "cuid": "8852",
       "nick": "wallker",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8419,6 +9949,8 @@
     {
       "cuid": "3272",
       "nick": "wcra",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8430,6 +9962,8 @@
     {
       "cuid": "26674",
       "nick": "Whiskarik",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8441,6 +9975,8 @@
     {
       "cuid": "7199",
       "nick": "WW2044",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8452,6 +9988,8 @@
     {
       "cuid": "24350",
       "nick": "Zaber",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8463,6 +10001,8 @@
     {
       "cuid": "2972",
       "nick": "Zakat",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8474,6 +10014,8 @@
     {
       "cuid": "8856",
       "nick": "Zigret",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8485,6 +10027,8 @@
     {
       "cuid": "8209",
       "nick": "Zivert",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8496,6 +10040,8 @@
     {
       "cuid": "1011",
       "nick": "Агнес Грю",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8507,6 +10053,8 @@
     {
       "cuid": "19603",
       "nick": "Алакей",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8518,6 +10066,8 @@
     {
       "cuid": "26723",
       "nick": "Алкоголик",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8529,6 +10079,8 @@
     {
       "cuid": "28952",
       "nick": "Ангел предохранитель",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8540,6 +10092,8 @@
     {
       "cuid": "13277",
       "nick": "Андрей 011108",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8551,6 +10105,8 @@
     {
       "cuid": "24099",
       "nick": "Апофиз",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8562,6 +10118,8 @@
     {
       "cuid": "9256",
       "nick": "Баян",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8573,6 +10131,8 @@
     {
       "cuid": "22056",
       "nick": "Буратино",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8584,6 +10144,8 @@
     {
       "cuid": "19413",
       "nick": "Влад 080710",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8595,6 +10157,8 @@
     {
       "cuid": "3665",
       "nick": "Вожич",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8606,6 +10170,8 @@
     {
       "cuid": "22920",
       "nick": "Вондор",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8617,6 +10183,8 @@
     {
       "cuid": "11370",
       "nick": "Дарол Обидчивый",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8628,6 +10196,8 @@
     {
       "cuid": "2722",
       "nick": "зига",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8639,6 +10209,8 @@
     {
       "cuid": "19453",
       "nick": "Илья 190703",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8650,6 +10222,8 @@
     {
       "cuid": "9708",
       "nick": "кипеж",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8661,6 +10235,8 @@
     {
       "cuid": "24063",
       "nick": "Кокошник",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8672,6 +10248,8 @@
     {
       "cuid": "2950",
       "nick": "Лёшкаraw",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8683,6 +10261,8 @@
     {
       "cuid": "4051",
       "nick": "ликан",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8694,6 +10274,8 @@
     {
       "cuid": "19301",
       "nick": "любитель САЛА",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8705,6 +10287,8 @@
     {
       "cuid": "24060",
       "nick": "Мисс Мэй",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8716,6 +10300,8 @@
     {
       "cuid": "3086",
       "nick": "Поночка",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8727,6 +10313,8 @@
     {
       "cuid": "22389",
       "nick": "Примариус",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8738,6 +10326,8 @@
     {
       "cuid": "14648",
       "nick": "Рулон Обоев",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8749,6 +10339,8 @@
     {
       "cuid": "3545",
       "nick": "Сефирот",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8760,6 +10352,8 @@
     {
       "cuid": "13466",
       "nick": "скромный",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8771,6 +10365,8 @@
     {
       "cuid": "2725",
       "nick": "Титановая Лоза",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8782,6 +10378,8 @@
     {
       "cuid": "8767",
       "nick": "Укрон",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8793,6 +10391,8 @@
     {
       "cuid": "13054",
       "nick": "хлебушек19",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8804,6 +10404,8 @@
     {
       "cuid": "4668",
       "nick": "ЦАРЮКА",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -8815,6 +10417,8 @@
     {
       "cuid": "7800",
       "nick": "Эрагон",
+      "level": 4,
+      "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
       "position": "",
@@ -11246,33 +12850,6 @@
         "Рождественские туфли",
         "Тень Ветра",
         "Шапка Снегурочки(Зч)"
-      ]
-    },
-    {
-      "owner": "Bukashka",
-      "itemIds": [
-        "487686",
-        "368238",
-        "275152",
-        "509072",
-        "227698",
-        "295902",
-        "537893",
-        "204384",
-        "268831",
-        "548267"
-      ],
-      "itemNames": [
-        "Бабочка для Жучка(Зч)",
-        "Босоножки сороконожки(Зч)(+6 силы)",
-        "Генератор иллюзий(Зч)",
-        "Лапка Возмездия(Мд)(+12)",
-        "Лапка Возмездия(Мд)(+15)",
-        "Лапка Возмездия(Мд)(+15)",
-        "Лапка Возмездия(Мд)(+15)",
-        "Сердце Куахога",
-        "Сердце Куахога",
-        "Сердце Куахога"
       ]
     },
     {
