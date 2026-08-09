@@ -905,7 +905,7 @@ export default function GiftBoard() {
                 <button type="button" onClick={() => setPreviewOpen(false)} aria-label="Закрыть предпросмотр">×</button>
               </div>
               <p className={styles.previewNote}>
-                Пример прямо в инфе. В одном ряду 11 подарков по 60×60 px; пустые клетки схлопываются в реальном порядке дарения.
+                Пример прямо на скрине из инфы. Пустые клетки схлопнуты — как и при настоящей выкладке подарков.
               </p>
               <div className={styles.infoMock}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -915,16 +915,18 @@ export default function GiftBoard() {
                   alt=""
                 />
                 <div className={styles.infoDrawingArea}>
-                  {previewCells.length ? (
-                    <div className={styles.infoGiftGrid}>
-                      {previewCells.map((file, index) => (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img key={`${file}-${index}`} src={file} alt="" />
-                      ))}
-                    </div>
-                  ) : (
-                    <p>Пока пусто :)</p>
-                  )}
+                  <div className={styles.infoDrawingSheet}>
+                    {previewCells.length ? (
+                      <div className={styles.infoGiftGrid}>
+                        {previewCells.map((file, index) => (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img key={`${file}-${index}`} src={file} alt="" />
+                        ))}
+                      </div>
+                    ) : (
+                      <p>Пока пусто :)</p>
+                    )}
+                  </div>
                 </div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
