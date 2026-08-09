@@ -400,14 +400,9 @@
   margin-left: 10.43%;
   padding: 12px 0;
   border-right: 1px solid #7d1111;
+  border-bottom: 1px solid #7d1111;
   border-left: 1px solid #7d1111;
   background: #d3d3d3;
-}
-
-.infoDrawingSheet > p {
-  margin: 28px 0;
-  color: #777;
-  text-align: center;
 }
 
 .infoGiftGrid {

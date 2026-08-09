@@ -14,6 +14,7 @@ const MIN_COLUMNS = 8;
 const MAX_COLUMNS = 16;
 const MIN_ROWS = 5;
 const MAX_ROWS = 20;
+const INFO_PREVIEW_EXISTING_GIFTS = GIFTS.slice(8, 41).map((gift) => gift.file);
 
 type Cell = string | null;
 type Tool = "paint" | "erase";
@@ -916,24 +917,18 @@ export default function GiftBoard() {
                 />
                 <div className={styles.infoDrawingArea}>
                   <div className={styles.infoDrawingSheet}>
-                    {previewCells.length ? (
-                      <div className={styles.infoGiftGrid}>
-                        {previewCells.map((file, index) => (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img key={`${file}-${index}`} src={file} alt="" />
-                        ))}
-                      </div>
-                    ) : (
-                      <p>Пока пусто :)</p>
-                    )}
+                    <div className={styles.infoGiftGrid}>
+                      {previewCells.map((file, index) => (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img key={`new-${file}-${index}`} src={file} alt="" />
+                      ))}
+                      {INFO_PREVIEW_EXISTING_GIFTS.map((file, index) => (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img key={`existing-${file}-${index}`} src={file} alt="" />
+                      ))}
+                    </div>
                   </div>
                 </div>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  className={styles.infoScreenshot}
-                  src="/images/gift-board-info-bottom.png"
-                  alt=""
-                />
               </div>
             </section>
           </div>
