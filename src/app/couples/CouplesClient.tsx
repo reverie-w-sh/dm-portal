@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styles from "../collection-pages.module.css";
+
+const DAY_IN_MS = 24 * 60 * 60 * 1000;
 
 type Player = {
   cuid: string;
@@ -29,6 +31,12 @@ export default function CouplesClient({
 }) {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<"date-old" | "date-new" | "names">("date-old");
+  const [today, setToday] = useState<number | null>(null);
+
+  useEffect(() => {
+    const now = new Date();
+    setToday(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()));
+  }, []);
 
   const couples = useMemo(() => {
     const byName = new Map(
@@ -168,11 +176,7 @@ export default function CouplesClient({
                   }
                 />
               </div>
-              <p className={styles.since}>
-                {couple.since
-                  ? `Вместе с ${couple.since}`
-                  : "Дата свадьбы пока не найдена"}
-              </p>
+              <CoupleSince since={couple.since} today={today} />
             </article>
           ))}
         </div>
@@ -201,6 +205,81 @@ function parseDate(value: string) {
   return match
     ? new Date(+match[3], +match[2] - 1, +match[1]).getTime()
     : Number.MAX_SAFE_INTEGER;
+}
+
+function CoupleSince({
+  since,
+  today,
+}: {
+  since: string;
+  today: number | null;
+}) {
+  const duration = today === null ? null : getCoupleDuration(since, today);
+
+  if (!since) {
+    return <p className={styles.since}>Дата свадьбы пока не найдена</p>;
+  }
+
+  if (!duration) {
+    return <p className={styles.since}>Вместе с {since}</p>;
+  }
+
+  return (
+    <p className={styles.since}>
+      <span>
+        Вместе {formatDays(duration.daysTogether)} с {since}
+      </span>
+      <span>
+        До {duration.anniversaryNumber}-й годовщины - {formatDays(duration.daysUntil)}
+      </span>
+    </p>
+  );
+}
+
+function getCoupleDuration(since: string, today: number) {
+  const match = since.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+  if (!match) return null;
+
+  const day = Number(match[1]);
+  const month = Number(match[2]) - 1;
+  const year = Number(match[3]);
+  const startedAt = Date.UTC(year, month, day);
+  if (startedAt > today) return null;
+
+  const currentYear = new Date(today).getUTCFullYear();
+  let anniversaryYear = currentYear;
+  let anniversaryAt = makeAnniversary(anniversaryYear, month, day);
+
+  if (anniversaryAt < today || anniversaryYear === year) {
+    anniversaryYear += 1;
+    anniversaryAt = makeAnniversary(anniversaryYear, month, day);
+  }
+
+  return {
+    daysTogether: Math.floor((today - startedAt) / DAY_IN_MS),
+    anniversaryNumber: anniversaryYear - year,
+    daysUntil: Math.ceil((anniversaryAt - today) / DAY_IN_MS),
+  };
+}
+
+function makeAnniversary(year: number, month: number, day: number) {
+  const lastDayOfMonth = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+  return Date.UTC(year, month, Math.min(day, lastDayOfMonth));
+}
+
+function formatDays(value: number) {
+  const lastTwo = value % 100;
+  const last = value % 10;
+  const word =
+    lastTwo >= 11 && lastTwo <= 14
+      ? "дней"
+      : last === 1
+        ? "день"
+        : last >= 2 && last <= 4
+          ? "дня"
+          : "дней";
+
+  return `${value} ${word}`;
 }
 
 function Person({
