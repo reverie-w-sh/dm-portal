@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T07:31:19.751Z",
+  "updatedAt": "2026-08-09T12:47:30.600Z",
   "ratings": {
     "fishing": {
       "title": "Лучшие рыболовы",
@@ -9,7 +9,7 @@
           "rank": 1,
           "name": "Takezo",
           "level": 12,
-          "value": 43299
+          "value": 43302
         },
         {
           "rank": 2,
@@ -27,7 +27,7 @@
           "rank": 4,
           "name": "Tequila",
           "level": 15,
-          "value": 38040
+          "value": 38041
         },
         {
           "rank": 5,
@@ -57,7 +57,7 @@
           "rank": 9,
           "name": "Black_knight",
           "level": 8,
-          "value": 26235
+          "value": 26239
         },
         {
           "rank": 10,
@@ -81,7 +81,7 @@
           "rank": 13,
           "name": "Горлум",
           "level": 9,
-          "value": 23585
+          "value": 23587
         },
         {
           "rank": 14,
@@ -93,13 +93,13 @@
           "rank": 15,
           "name": "ЭХО",
           "level": 13,
-          "value": 22910
+          "value": 22912
         },
         {
           "rank": 16,
           "name": "Fistashka",
           "level": 14,
-          "value": 17763
+          "value": 17765
         },
         {
           "rank": 17,
@@ -117,13 +117,13 @@
           "rank": 19,
           "name": "MAX PAYNE",
           "level": 15,
-          "value": 17511
+          "value": 17512
         },
         {
           "rank": 20,
           "name": "Hanibal",
-          "level": 12,
-          "value": 16903
+          "level": 10,
+          "value": 16911
         }
       ]
     },
@@ -242,7 +242,7 @@
         {
           "rank": 19,
           "name": "Hanibal",
-          "level": 12,
+          "level": 10,
           "value": 43523
         },
         {
@@ -1107,7 +1107,7 @@
           "rank": 15,
           "name": "ЭХО",
           "level": 13,
-          "value": 13105
+          "value": 13115
         },
         {
           "rank": 16,
@@ -1412,7 +1412,7 @@
           "rank": 1,
           "name": "InDigo",
           "level": 12,
-          "value": 247270
+          "value": 247312
         },
         {
           "rank": 2,
@@ -1423,14 +1423,14 @@
         {
           "rank": 3,
           "name": "Hanibal",
-          "level": 12,
-          "value": 148168
+          "level": 10,
+          "value": 148210
         },
         {
           "rank": 4,
           "name": "Takezo",
           "level": 12,
-          "value": 142020
+          "value": 142039
         },
         {
           "rank": 5,
@@ -1466,13 +1466,13 @@
           "rank": 10,
           "name": "Александр Николаевич",
           "level": 11,
-          "value": 92697
+          "value": 92730
         },
         {
           "rank": 11,
           "name": "Горлум",
           "level": 9,
-          "value": 86831
+          "value": 86847
         },
         {
           "rank": 12,
@@ -1514,7 +1514,7 @@
           "rank": 18,
           "name": "Катерина",
           "level": 16,
-          "value": 54700
+          "value": 54765
         },
         {
           "rank": 19,
@@ -1860,9 +1860,9 @@
           "rank": 2,
           "name": "Катерина",
           "level": 16,
-          "value": 2736102410,
-          "experience": 2736102410,
-          "monsterWins": 250252,
+          "value": 2736556352,
+          "experience": 2736556352,
+          "monsterWins": 250379,
           "playerWins": 738
         },
         {
@@ -1887,9 +1887,9 @@
           "rank": 5,
           "name": "Артур",
           "level": 16,
-          "value": 2557978528,
-          "experience": 2557978528,
-          "monsterWins": 330995,
+          "value": 2558497482,
+          "experience": 2558497482,
+          "monsterWins": 331137,
           "playerWins": 1966
         },
         {
@@ -1914,9 +1914,9 @@
           "rank": 8,
           "name": "Мишаня",
           "level": 16,
-          "value": 1557887720,
-          "experience": 1557887720,
-          "monsterWins": 243165,
+          "value": 1558340742,
+          "experience": 1558340742,
+          "monsterWins": 243304,
           "playerWins": 1856
         },
         {
@@ -1995,8 +1995,8 @@
           "rank": 17,
           "name": "Tequila",
           "level": 15,
-          "value": 1077520492,
-          "experience": 1077520492,
+          "value": 1077552743,
+          "experience": 1077552743,
           "monsterWins": 280890,
           "playerWins": 2121
         },
@@ -2004,9 +2004,9 @@
           "rank": 18,
           "name": "MAX PAYNE",
           "level": 15,
-          "value": 956091958,
-          "experience": 956091958,
-          "monsterWins": 216524,
+          "value": 956106121,
+          "experience": 956106121,
+          "monsterWins": 216530,
           "playerWins": 860
         },
         {
@@ -2031,9 +2031,9 @@
           "rank": 21,
           "name": "sinful",
           "level": 15,
-          "value": 840075493,
-          "experience": 840075493,
-          "monsterWins": 183451,
+          "value": 840126530,
+          "experience": 840126530,
+          "monsterWins": 183484,
           "playerWins": 4213
         },
         {
@@ -2049,9 +2049,9 @@
           "rank": 23,
           "name": "KITANA",
           "level": 14,
-          "value": 734143666,
-          "experience": 734143666,
-          "monsterWins": 188342,
+          "value": 734369132,
+          "experience": 734369132,
+          "monsterWins": 188387,
           "playerWins": 1398
         },
         {
@@ -2094,9 +2094,9 @@
           "rank": 28,
           "name": "Serg",
           "level": 14,
-          "value": 581577247,
-          "experience": 581577247,
-          "monsterWins": 223149,
+          "value": 581782929,
+          "experience": 581782929,
+          "monsterWins": 223152,
           "playerWins": 2071
         },
         {
@@ -2112,9 +2112,9 @@
           "rank": 30,
           "name": "Fistashka",
           "level": 14,
-          "value": 505267639,
-          "experience": 505267639,
-          "monsterWins": 182726,
+          "value": 505286165,
+          "experience": 505286165,
+          "monsterWins": 182728,
           "playerWins": 746
         },
         {
@@ -2157,9 +2157,9 @@
           "rank": 35,
           "name": "ЭХО",
           "level": 13,
-          "value": 357332112,
-          "experience": 357332112,
-          "monsterWins": 139463,
+          "value": 357402532,
+          "experience": 357402532,
+          "monsterWins": 139476,
           "playerWins": 1532
         },
         {
@@ -2236,15 +2236,6 @@
         },
         {
           "rank": 44,
-          "name": "Hanibal",
-          "level": 12,
-          "value": 170541512,
-          "experience": 170541512,
-          "monsterWins": 79294,
-          "playerWins": 1402
-        },
-        {
-          "rank": 45,
           "name": "FaLLeN",
           "level": 12,
           "value": 150451015,
@@ -2253,7 +2244,7 @@
           "playerWins": 230
         },
         {
-          "rank": 46,
+          "rank": 45,
           "name": "Латыш",
           "level": 12,
           "value": 148395770,
@@ -2262,7 +2253,7 @@
           "playerWins": 2158
         },
         {
-          "rank": 47,
+          "rank": 46,
           "name": "ХОМ",
           "level": 12,
           "value": 147829368,
@@ -2271,16 +2262,16 @@
           "playerWins": 1244
         },
         {
-          "rank": 48,
+          "rank": 47,
           "name": "ФКСПАРТАK",
           "level": 12,
-          "value": 145943917,
-          "experience": 145943917,
-          "monsterWins": 101075,
+          "value": 145950353,
+          "experience": 145950353,
+          "monsterWins": 101080,
           "playerWins": 1670
         },
         {
-          "rank": 49,
+          "rank": 48,
           "name": "Mr_X",
           "level": 12,
           "value": 145119465,
@@ -2289,16 +2280,16 @@
           "playerWins": 1863
         },
         {
-          "rank": 50,
+          "rank": 49,
           "name": "oFFWhite",
           "level": 12,
-          "value": 143950948,
-          "experience": 143950948,
+          "value": 143950993,
+          "experience": 143950993,
           "monsterWins": 96144,
           "playerWins": 3604
         },
         {
-          "rank": 51,
+          "rank": 50,
           "name": "ХАРАКТЕРНИК",
           "level": 12,
           "value": 140812674,
@@ -2307,16 +2298,16 @@
           "playerWins": 735
         },
         {
-          "rank": 52,
+          "rank": 51,
           "name": "Takezo",
           "level": 12,
-          "value": 132262485,
-          "experience": 132262485,
-          "monsterWins": 89577,
+          "value": 132278946,
+          "experience": 132278946,
+          "monsterWins": 89578,
           "playerWins": 2847
         },
         {
-          "rank": 53,
+          "rank": 52,
           "name": "InDigo",
           "level": 12,
           "value": 126224843,
@@ -2325,7 +2316,7 @@
           "playerWins": 1223
         },
         {
-          "rank": 54,
+          "rank": 53,
           "name": "eugen_pos",
           "level": 12,
           "value": 120095576,
@@ -2334,7 +2325,7 @@
           "playerWins": 3128
         },
         {
-          "rank": 55,
+          "rank": 54,
           "name": "IhorU",
           "level": 12,
           "value": 119909381,
@@ -2343,7 +2334,7 @@
           "playerWins": 723
         },
         {
-          "rank": 56,
+          "rank": 55,
           "name": "Эйлин",
           "level": 12,
           "value": 118764759,
@@ -2352,7 +2343,7 @@
           "playerWins": 2090
         },
         {
-          "rank": 57,
+          "rank": 56,
           "name": "Euphoria",
           "level": 12,
           "value": 112091840,
@@ -2361,16 +2352,16 @@
           "playerWins": 2055
         },
         {
-          "rank": 58,
+          "rank": 57,
           "name": "АреоН",
           "level": 12,
-          "value": 111178126,
-          "experience": 111178126,
-          "monsterWins": 47010,
+          "value": 111209590,
+          "experience": 111209590,
+          "monsterWins": 47021,
           "playerWins": 1015
         },
         {
-          "rank": 59,
+          "rank": 58,
           "name": "Dillinger",
           "level": 12,
           "value": 109634293,
@@ -2379,7 +2370,7 @@
           "playerWins": 2406
         },
         {
-          "rank": 60,
+          "rank": 59,
           "name": "Piranha",
           "level": 12,
           "value": 100959199,
@@ -2388,7 +2379,7 @@
           "playerWins": 302
         },
         {
-          "rank": 61,
+          "rank": 60,
           "name": "Дон Алессандро",
           "level": 12,
           "value": 99441092,
@@ -2397,7 +2388,7 @@
           "playerWins": 429
         },
         {
-          "rank": 62,
+          "rank": 61,
           "name": "МАСКА",
           "level": 12,
           "value": 97145315,
@@ -2406,7 +2397,7 @@
           "playerWins": 1606
         },
         {
-          "rank": 63,
+          "rank": 62,
           "name": "Антип",
           "level": 12,
           "value": 95388333,
@@ -2415,7 +2406,7 @@
           "playerWins": 2254
         },
         {
-          "rank": 64,
+          "rank": 63,
           "name": "CJIECAPb",
           "level": 12,
           "value": 94152689,
@@ -2424,7 +2415,7 @@
           "playerWins": 3383
         },
         {
-          "rank": 65,
+          "rank": 64,
           "name": "Rüdiger",
           "level": 12,
           "value": 92317288,
@@ -2433,7 +2424,7 @@
           "playerWins": 274
         },
         {
-          "rank": 66,
+          "rank": 65,
           "name": "Безликий",
           "level": 12,
           "value": 91991581,
@@ -2442,7 +2433,7 @@
           "playerWins": 662
         },
         {
-          "rank": 67,
+          "rank": 66,
           "name": "Jkee_Jkee",
           "level": 12,
           "value": 91381167,
@@ -2451,7 +2442,7 @@
           "playerWins": 0
         },
         {
-          "rank": 68,
+          "rank": 67,
           "name": "WhiTe",
           "level": 11,
           "value": 89518250,
@@ -2460,16 +2451,16 @@
           "playerWins": 1329
         },
         {
-          "rank": 69,
+          "rank": 68,
           "name": "SubZero",
           "level": 11,
-          "value": 87354576,
-          "experience": 87354576,
-          "monsterWins": 55858,
+          "value": 87357592,
+          "experience": 87357592,
+          "monsterWins": 55862,
           "playerWins": 1219
         },
         {
-          "rank": 70,
+          "rank": 69,
           "name": "Свободный монстр_11",
           "level": 11,
           "value": 81360000,
@@ -2478,7 +2469,7 @@
           "playerWins": 0
         },
         {
-          "rank": 71,
+          "rank": 70,
           "name": "Бабай",
           "level": 11,
           "value": 81232442,
@@ -2487,7 +2478,7 @@
           "playerWins": 1664
         },
         {
-          "rank": 72,
+          "rank": 71,
           "name": "белый вепрь",
           "level": 11,
           "value": 78778892,
@@ -2496,7 +2487,7 @@
           "playerWins": 15
         },
         {
-          "rank": 73,
+          "rank": 72,
           "name": "BlackGeneral",
           "level": 11,
           "value": 77111660,
@@ -2505,7 +2496,7 @@
           "playerWins": 1007
         },
         {
-          "rank": 74,
+          "rank": 73,
           "name": "Александр Николаевич",
           "level": 11,
           "value": 76501049,
@@ -2514,7 +2505,7 @@
           "playerWins": 152
         },
         {
-          "rank": 75,
+          "rank": 74,
           "name": "melnikov",
           "level": 11,
           "value": 76341123,
@@ -2523,25 +2514,25 @@
           "playerWins": 783
         },
         {
-          "rank": 76,
+          "rank": 75,
           "name": "ЛиН Орк",
           "level": 11,
-          "value": 72895664,
-          "experience": 72895664,
+          "value": 72904980,
+          "experience": 72904980,
           "monsterWins": 80746,
           "playerWins": 535
         },
         {
-          "rank": 77,
+          "rank": 76,
           "name": "Allania",
           "level": 11,
-          "value": 71940483,
-          "experience": 71940483,
-          "monsterWins": 86775,
+          "value": 71958367,
+          "experience": 71958367,
+          "monsterWins": 86780,
           "playerWins": 735
         },
         {
-          "rank": 78,
+          "rank": 77,
           "name": "как не крути",
           "level": 11,
           "value": 69093687,
@@ -2550,16 +2541,16 @@
           "playerWins": 1365
         },
         {
-          "rank": 79,
+          "rank": 78,
           "name": "CoMeBaCk",
           "level": 11,
-          "value": 68190964,
-          "experience": 68190964,
-          "monsterWins": 48965,
+          "value": 68194740,
+          "experience": 68194740,
+          "monsterWins": 48973,
           "playerWins": 549
         },
         {
-          "rank": 80,
+          "rank": 79,
           "name": "терминатор73",
           "level": 11,
           "value": 67373204,
@@ -2568,7 +2559,7 @@
           "playerWins": 1146
         },
         {
-          "rank": 81,
+          "rank": 80,
           "name": "АйринС",
           "level": 11,
           "value": 65217173,
@@ -2577,7 +2568,7 @@
           "playerWins": 576
         },
         {
-          "rank": 82,
+          "rank": 81,
           "name": "K9000",
           "level": 11,
           "value": 62702542,
@@ -2586,7 +2577,7 @@
           "playerWins": 455
         },
         {
-          "rank": 83,
+          "rank": 82,
           "name": "Ice",
           "level": 11,
           "value": 59164351,
@@ -2595,7 +2586,7 @@
           "playerWins": 3033
         },
         {
-          "rank": 84,
+          "rank": 83,
           "name": "Nimona",
           "level": 11,
           "value": 54804518,
@@ -2604,16 +2595,16 @@
           "playerWins": 160
         },
         {
-          "rank": 85,
+          "rank": 84,
           "name": "Bukashka",
           "level": 11,
-          "value": 54230009,
-          "experience": 54230009,
-          "monsterWins": 25197,
+          "value": 54234441,
+          "experience": 54234441,
+          "monsterWins": 25213,
           "playerWins": 1723
         },
         {
-          "rank": 86,
+          "rank": 85,
           "name": "SheWolf",
           "level": 11,
           "value": 52283700,
@@ -2622,7 +2613,7 @@
           "playerWins": 73
         },
         {
-          "rank": 87,
+          "rank": 86,
           "name": "Cherry",
           "level": 11,
           "value": 52117506,
@@ -2631,7 +2622,7 @@
           "playerWins": 1177
         },
         {
-          "rank": 88,
+          "rank": 87,
           "name": "аномалька",
           "level": 11,
           "value": 52036116,
@@ -2640,7 +2631,7 @@
           "playerWins": 2261
         },
         {
-          "rank": 89,
+          "rank": 88,
           "name": "Death",
           "level": 11,
           "value": 50977808,
@@ -2649,7 +2640,7 @@
           "playerWins": 1419
         },
         {
-          "rank": 90,
+          "rank": 89,
           "name": "Vazilin",
           "level": 11,
           "value": 49780446,
@@ -2658,7 +2649,7 @@
           "playerWins": 2706
         },
         {
-          "rank": 91,
+          "rank": 90,
           "name": "МРАЗОТА",
           "level": 11,
           "value": 49461746,
@@ -2667,7 +2658,7 @@
           "playerWins": 190
         },
         {
-          "rank": 92,
+          "rank": 91,
           "name": "Pilar",
           "level": 11,
           "value": 47690520,
@@ -2676,7 +2667,7 @@
           "playerWins": 227
         },
         {
-          "rank": 93,
+          "rank": 92,
           "name": "Мора",
           "level": 11,
           "value": 46891505,
@@ -2685,7 +2676,7 @@
           "playerWins": 540
         },
         {
-          "rank": 94,
+          "rank": 93,
           "name": "Чудик",
           "level": 11,
           "value": 46606442,
@@ -2694,7 +2685,7 @@
           "playerWins": 964
         },
         {
-          "rank": 95,
+          "rank": 94,
           "name": "Сладкий Грех",
           "level": 11,
           "value": 46508769,
@@ -2703,7 +2694,7 @@
           "playerWins": 986
         },
         {
-          "rank": 96,
+          "rank": 95,
           "name": "filka",
           "level": 11,
           "value": 46304141,
@@ -2712,7 +2703,7 @@
           "playerWins": 721
         },
         {
-          "rank": 97,
+          "rank": 96,
           "name": "немец",
           "level": 10,
           "value": 45237339,
@@ -2721,7 +2712,7 @@
           "playerWins": 1358
         },
         {
-          "rank": 98,
+          "rank": 97,
           "name": "Люцифер",
           "level": 10,
           "value": 44801563,
@@ -2730,7 +2721,7 @@
           "playerWins": 4776
         },
         {
-          "rank": 99,
+          "rank": 98,
           "name": "Броня",
           "level": 10,
           "value": 44447330,
@@ -2739,7 +2730,7 @@
           "playerWins": 990
         },
         {
-          "rank": 100,
+          "rank": 99,
           "name": "Библиотекарь",
           "level": 10,
           "value": 44048999,
@@ -2748,13 +2739,22 @@
           "playerWins": 98
         },
         {
-          "rank": 101,
+          "rank": 100,
           "name": "Гаденыш",
           "level": 10,
-          "value": 41836013,
-          "experience": 41836013,
-          "monsterWins": 61648,
+          "value": 41847672,
+          "experience": 41847672,
+          "monsterWins": 61654,
           "playerWins": 66
+        },
+        {
+          "rank": 101,
+          "name": "Hanibal",
+          "level": 10,
+          "value": 41579495,
+          "experience": 41579495,
+          "monsterWins": 79294,
+          "playerWins": 1402
         },
         {
           "rank": 102,
@@ -3012,9 +3012,9 @@
           "rank": 130,
           "name": "ко4евник",
           "level": 10,
-          "value": 26441561,
-          "experience": 26441561,
-          "monsterWins": 13379,
+          "value": 26525754,
+          "experience": 26525754,
+          "monsterWins": 13393,
           "playerWins": 873
         },
         {
@@ -3030,9 +3030,9 @@
           "rank": 132,
           "name": "Gudini",
           "level": 10,
-          "value": 26082084,
-          "experience": 26082084,
-          "monsterWins": 106133,
+          "value": 26179794,
+          "experience": 26179794,
+          "monsterWins": 106209,
           "playerWins": 739
         },
         {
@@ -3120,8 +3120,8 @@
           "rank": 142,
           "name": "gae4ka",
           "level": 9,
-          "value": 21537607,
-          "experience": 21537607,
+          "value": 21545776,
+          "experience": 21545776,
           "monsterWins": 122236,
           "playerWins": 2325
         },
@@ -3138,8 +3138,8 @@
           "rank": 144,
           "name": "bolt1k",
           "level": 9,
-          "value": 21162311,
-          "experience": 21162311,
+          "value": 21162364,
+          "experience": 21162364,
           "monsterWins": 83920,
           "playerWins": 3559
         },
@@ -3165,9 +3165,9 @@
           "rank": 147,
           "name": "Apmagedon_ua",
           "level": 9,
-          "value": 19978299,
-          "experience": 19978299,
-          "monsterWins": 13306,
+          "value": 19998665,
+          "experience": 19998665,
+          "monsterWins": 13308,
           "playerWins": 287
         },
         {
@@ -3381,9 +3381,9 @@
           "rank": 171,
           "name": "skytango",
           "level": 9,
-          "value": 14685834,
-          "experience": 14685834,
-          "monsterWins": 11992,
+          "value": 14686037,
+          "experience": 14686037,
+          "monsterWins": 11993,
           "playerWins": 745
         },
         {
@@ -3408,8 +3408,8 @@
           "rank": 174,
           "name": "Marishka",
           "level": 9,
-          "value": 14488152,
-          "experience": 14488152,
+          "value": 14493387,
+          "experience": 14493387,
           "monsterWins": 927,
           "playerWins": 0
         },
