@@ -401,7 +401,7 @@ export default function GiftBoard() {
 
     if (
       wouldLoseGift &&
-      !window.confirm("На краю есть подарки — при сдвиге они выйдут за планшет. Продолжить?")
+      !window.confirm("На краю есть подарки - при сдвиге они выйдут за планшет. Продолжить?")
     ) {
       return;
     }
@@ -608,7 +608,7 @@ export default function GiftBoard() {
           <p className={styles.eyebrow}>Полезное и очень даже нужное :)</p>
           <h1>Планшет подарков</h1>
           <p>
-            Собери рисунок так, как он должен выглядеть в инфе. Выбери подарок —
+            Собери рисунок так, как он должен выглядеть в инфе. Выбери подарок -
             и рисуй им по клеткам. Планшет сам посчитает, сколько каких подарков понадобится.
           </p>
           <div className={styles.heroLinks}>
@@ -803,7 +803,7 @@ export default function GiftBoard() {
               <div className={styles.savedSchemes}>
                 {schemesLoading ? <p className={styles.schemeHint}>Загружаю…</p> : null}
                 {!schemesLoading && schemeSort === "mine" && nick.trim().length < 2 ? (
-                  <p className={styles.schemeHint}>Напиши свой ник выше — покажу твои схемы.</p>
+                  <p className={styles.schemeHint}>Напиши свой ник выше - покажу твои схемы.</p>
                 ) : null}
                 {!schemesLoading && !publicSchemes.length ? (
                   schemeSort !== "mine" || nick.trim().length >= 2 ? (
@@ -911,7 +911,7 @@ export default function GiftBoard() {
                 <button type="button" onClick={() => setPreviewOpen(false)} aria-label="Закрыть предпросмотр">×</button>
               </div>
               <p className={styles.previewNote}>
-                Пример прямо на скрине из инфы. Пустые клетки схлопнуты — как и при настоящей выкладке подарков.
+                Пример прямо на скрине из инфы. Пустые клетки схлопнуты - как и при настоящей выкладке подарков. Добавь фон, чтобы сохранить форму рисунка.
               </p>
               <div
                 className={styles.infoMock}
