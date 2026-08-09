@@ -13,8 +13,8 @@ export default function ChroniclePage() {
               className={styles.ornamentPaw}
               src="/icons/wolf-paw-gold.png"
               alt=""
-              width={34}
-              height={34}
+              width={25}
+              height={25}
             />
             <span />
           </div>
