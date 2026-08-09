@@ -905,21 +905,18 @@ export default function GiftBoard() {
                 <button type="button" onClick={() => setPreviewOpen(false)} aria-label="Закрыть предпросмотр">×</button>
               </div>
               <p className={styles.previewNote}>
-                Пример прямо на скрине из инфы. Пустые клетки схлопнуты — как и при настоящей выкладке подарков.
+                Пример прямо в инфе. В одном ряду 11 подарков по 60×60 px; пустые клетки схлопываются в реальном порядке дарения.
               </p>
               <div className={styles.infoMock}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className={styles.infoScreenshot}
-                  src="/images/gift-board-info-preview.png"
-                  alt="Пример раздела подарков в инфе Древнего Мира"
+                  src="/images/gift-board-info-top.png"
+                  alt=""
                 />
                 <div className={styles.infoDrawingArea}>
                   {previewCells.length ? (
-                    <div
-                      className={styles.infoGiftGrid}
-                      style={{ "--info-columns": columns } as React.CSSProperties}
-                    >
+                    <div className={styles.infoGiftGrid}>
                       {previewCells.map((file, index) => (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img key={`${file}-${index}`} src={file} alt="" />
@@ -929,6 +926,12 @@ export default function GiftBoard() {
                     <p>Пока пусто :)</p>
                   )}
                 </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  className={styles.infoScreenshot}
+                  src="/images/gift-board-info-bottom.png"
+                  alt=""
+                />
               </div>
             </section>
           </div>

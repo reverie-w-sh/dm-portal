@@ -373,8 +373,8 @@
 }
 
 .infoMock {
-  position: relative;
-  width: 100%;
+  width: min(834px, 100%);
+  margin: 0 auto;
   overflow: hidden;
   border: 1px solid #a6a6a6;
   background: #d3d3d3;
@@ -389,11 +389,9 @@
 }
 
 .infoDrawingArea {
-  position: absolute;
-  top: 9.4%;
-  left: 6%;
-  width: 51.3%;
-  height: 64.4%;
+  width: 100%;
+  min-height: 92px;
+  padding: 12px 0;
   overflow: hidden;
   background: #d3d3d3;
 }
@@ -406,9 +404,9 @@
 
 .infoGiftGrid {
   display: grid;
-  grid-template-columns: repeat(var(--info-columns), minmax(0, 1fr));
-  width: 100%;
-  margin: 0;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+  width: 79.136%;
+  margin: 0 0 0 10.91%;
 }
 
 .infoGiftGrid img {
