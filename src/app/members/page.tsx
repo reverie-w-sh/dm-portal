@@ -189,7 +189,9 @@ export default function MembersPage() {
                 <ActivityDot inactiveMinutes={player.inactiveMinutes} />
 
                 <div className={styles.memberIdentity}>
-                  <h3>{player.nick}</h3>
+                  <h3>
+                    <Link href={`/players/${player.cuid}`}>{player.nick}</Link>
+                  </h3>
                   <p>{player.position || "Без должности"}</p>
                 </div>
 

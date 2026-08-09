@@ -1,21 +1,18 @@
-import Image from "next/image";
 import ChronicleClient from "./ChronicleClient";
 import styles from "./page.module.css";
 
-export default function ChroniclePage() {
+export default async function ChroniclePage(props: PageProps<"/chronicle">) {
+  const searchParams = await props.searchParams;
+  const playerParam = searchParams.player;
+  const initialQuery = Array.isArray(playerParam) ? playerParam[0] : playerParam;
+
   return (
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.hero}>
           <div className={styles.ornament} aria-hidden="true">
             <span />
-            <Image
-              className={styles.ornamentPaw}
-              src="/icons/wolf-paw-gold.png"
-              alt=""
-              width={25}
-              height={25}
-            />
+            <b>🐾</b>
             <span />
           </div>
 
@@ -26,7 +23,7 @@ export default function ChroniclePage() {
           </p>
         </header>
 
-        <ChronicleClient />
+        <ChronicleClient initialQuery={initialQuery ?? ""} />
       </section>
     </main>
   );

@@ -259,8 +259,16 @@ function smileWord(amount: number): string {
 function CharacterLink({ event }: { event: ChronicleEvent }) {
   if (!event.characterName) return null;
 
-  if (!event.profileUrl) {
+  if (!event.characterId && !event.profileUrl) {
     return <strong className={styles.character}>{event.characterName}</strong>;
+  }
+
+  if (event.characterId) {
+    return (
+      <Link href={`/players/${event.characterId}`} className={styles.character}>
+        {event.characterName}
+      </Link>
+    );
   }
 
   return (
@@ -601,11 +609,11 @@ function dayLabel(value: string): string {
   });
 }
 
-export default function ChronicleClient() {
+export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: string }) {
   const [category, setCategory] = useState<Category>("all");
   const [festivalType, setFestivalType] = useState<FestivalType>("all");
   const [bossType, setBossType] = useState<BossType>("all");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
   const [period, setPeriod] = useState<Period>("30");
   const [showPositions, setShowPositions] = useState(false);
   const [visibleCount, setVisibleCount] = useState(36);
