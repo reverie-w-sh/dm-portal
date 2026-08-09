@@ -259,16 +259,8 @@ function smileWord(amount: number): string {
 function CharacterLink({ event }: { event: ChronicleEvent }) {
   if (!event.characterName) return null;
 
-  if (!event.characterId && !event.profileUrl) {
+  if (!event.profileUrl) {
     return <strong className={styles.character}>{event.characterName}</strong>;
-  }
-
-  if (event.characterId) {
-    return (
-      <Link href={`/players/${event.characterId}`} className={styles.character}>
-        {event.characterName}
-      </Link>
-    );
   }
 
   return (

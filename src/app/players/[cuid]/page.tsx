@@ -226,6 +226,7 @@ export async function generateMetadata(
     title,
     description,
     alternates: { canonical },
+    robots: { index: false, follow: false },
     openGraph: {
       type: "profile",
       title,
@@ -250,9 +251,6 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   const clan = clans.find((item) => item.clanId === player.clanId);
   const smiles = personalSmiles.find((item) => item.cuid === player.cuid);
   const items = uniqueItemsForPlayer(player.nick);
-  const partner = player.marriagePartner
-    ? players.find((item) => sameText(item.nick, player.marriagePartner))
-    : undefined;
   const timeline = playerTimeline(player);
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
   const displayedItems = items.slice(0, 8);
@@ -371,11 +369,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 <div className={styles.partnerNames}>
                   {player.nick}
                   <span>♥</span>
-                  {partner ? (
-                    <Link href={`/players/${partner.cuid}`}>{partner.nick}</Link>
-                  ) : (
-                    player.marriagePartner
-                  )}
+                  {player.marriagePartner}
                 </div>
                 {player.marriageSince ? (
                   <p>Вместе с {player.marriageSince}</p>

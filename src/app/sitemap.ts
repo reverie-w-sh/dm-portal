@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import clansJson from "../../data/clans.json";
-import playersJson from "../../data/players.json";
 
 const baseUrl = "https://wolfchen-clan.com";
 
@@ -26,12 +25,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const playerPages = (playersJson as Array<{ cuid: string }>).map((player) => ({
-    url: `${baseUrl}/players/${player.cuid}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.5,
-  }));
-
-  return [...staticPages, ...clanPages, ...playerPages];
+  return [...staticPages, ...clanPages];
 }
