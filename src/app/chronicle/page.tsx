@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ChronicleClient from "./ChronicleClient";
 import styles from "./page.module.css";
 
@@ -8,15 +9,20 @@ export default function ChroniclePage() {
         <header className={styles.hero}>
           <div className={styles.ornament} aria-hidden="true">
             <span />
-            <b>🐾</b>
+            <Image
+              className={styles.ornamentPaw}
+              src="/icons/wolf-paw-gold.png"
+              alt=""
+              width={34}
+              height={34}
+            />
             <span />
           </div>
 
           <h1>Летопись Древнего Мира</h1>
           <p>
-            Здесь остаётся след всего важного: новые уровни, перемены в кланах, свадьбы,
-            <br />
-            новые смайлики и новости самого Древнего Мира.
+            Здесь остаётся след всего важного: новые уровни, перемены в кланах,
+            свадьбы, новые смайлики и новости самого Древнего Мира.
           </p>
         </header>
 
