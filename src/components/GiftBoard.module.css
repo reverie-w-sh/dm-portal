@@ -374,15 +374,28 @@
 
 .infoMock {
   position: relative;
-  width: min(834px, 100%);
+  width: min(835px, 100%);
+  aspect-ratio: 835 / var(--info-preview-height);
   margin: 0 auto;
   overflow: hidden;
   border: 1px solid #a6a6a6;
-  background: #d3d3d3;
+  container-type: inline-size;
+  background: linear-gradient(
+    to right,
+    #9d9d9d 0 10.42%,
+    #7d1111 10.42% 10.56%,
+    #d3d3d3 10.56% 92.62%,
+    #7d1111 92.62% 92.76%,
+    #9d9d9d 92.76% 100%
+  );
   box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.08);
 }
 
 .infoScreenshot {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
   display: block;
   width: 100%;
   height: auto;
@@ -391,11 +404,12 @@
 
 .infoGiftGrid {
   position: absolute;
-  top: 10.8%;
+  z-index: 2;
+  top: 8.62cqw;
   left: 10.91%;
   display: grid;
   grid-template-columns: repeat(11, minmax(0, 1fr));
-  width: 79.136%;
+  width: 79.0419%;
 }
 
 .infoGiftGrid img {

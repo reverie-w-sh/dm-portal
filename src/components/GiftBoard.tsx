@@ -273,6 +273,11 @@ export default function GiftBoard() {
     return givingOrder.reverse();
   }, [cells, columns, rows]);
 
+  const infoPreviewRows = Math.ceil(
+    (previewCells.length + INFO_PREVIEW_EXISTING_GIFTS.length) / 11,
+  );
+  const infoPreviewHeight = 72 + infoPreviewRows * 60 + 18;
+
   function paintCell(index: number, toggle = false) {
     setCells((current) => {
       const next = [...current];
@@ -908,7 +913,10 @@ export default function GiftBoard() {
               <p className={styles.previewNote}>
                 Пример прямо на скрине из инфы. Пустые клетки схлопнуты — как и при настоящей выкладке подарков.
               </p>
-              <div className={styles.infoMock}>
+              <div
+                className={styles.infoMock}
+                style={{ "--info-preview-height": infoPreviewHeight } as React.CSSProperties}
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className={styles.infoScreenshot}
