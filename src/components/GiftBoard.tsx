@@ -912,22 +912,18 @@ export default function GiftBoard() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className={styles.infoScreenshot}
-                  src="/images/gift-board-info-top.png"
+                  src="/images/gift-board-info-blank.png"
                   alt=""
                 />
-                <div className={styles.infoDrawingArea}>
-                  <div className={styles.infoDrawingSheet}>
-                    <div className={styles.infoGiftGrid}>
-                      {previewCells.map((file, index) => (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img key={`new-${file}-${index}`} src={file} alt="" />
-                      ))}
-                      {INFO_PREVIEW_EXISTING_GIFTS.map((file, index) => (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img key={`existing-${file}-${index}`} src={file} alt="" />
-                      ))}
-                    </div>
-                  </div>
+                <div className={styles.infoGiftGrid}>
+                  {previewCells.map((file, index) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img key={`new-${file}-${index}`} src={file} alt="" />
+                  ))}
+                  {INFO_PREVIEW_EXISTING_GIFTS.map((file, index) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img key={`existing-${file}-${index}`} src={file} alt="" />
+                  ))}
                 </div>
               </div>
             </section>

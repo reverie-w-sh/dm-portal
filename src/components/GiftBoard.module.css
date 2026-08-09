@@ -373,6 +373,7 @@
 }
 
 .infoMock {
+  position: relative;
   width: min(834px, 100%);
   margin: 0 auto;
   overflow: hidden;
@@ -388,28 +389,13 @@
   user-select: none;
 }
 
-.infoDrawingArea {
-  width: 100%;
-  overflow: hidden;
-  background: #9d9d9d;
-}
-
-.infoDrawingSheet {
-  width: 82.37%;
-  min-height: 92px;
-  margin-left: 10.43%;
-  padding: 12px 0;
-  border-right: 1px solid #7d1111;
-  border-bottom: 1px solid #7d1111;
-  border-left: 1px solid #7d1111;
-  background: #d3d3d3;
-}
-
 .infoGiftGrid {
+  position: absolute;
+  top: 10.8%;
+  left: 10.91%;
   display: grid;
   grid-template-columns: repeat(11, minmax(0, 1fr));
-  width: 96.09%;
-  margin: 0 auto;
+  width: 79.136%;
 }
 
 .infoGiftGrid img {
