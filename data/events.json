@@ -1,5 +1,19 @@
 [
   {
+    "id": "2856b57c-5dd3-40e9-9b2b-8376461ca848",
+    "syncId": "2026-08-10T13:10:07.584Z",
+    "createdAt": "2026-08-10T13:10:07.584Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "2878",
+    "characterName": "KITANA",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2878",
+    "clanId": "237",
+    "clanName": "Каратели",
+    "oldLevel": 14,
+    "newLevel": 15
+  },
+  {
     "id": "4ed90418-bc37-44fd-b42b-8445ac9c3de2",
     "syncId": "2026-08-08T21:39:37.155Z",
     "createdAt": "2026-08-08T21:39:37.155Z",
