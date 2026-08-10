@@ -1,12 +1,42 @@
 .page {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
+  overflow-x: clip;
   background:
     linear-gradient(rgba(4, 5, 5, 0.12), rgba(4, 5, 5, 0.3)),
     url("/images/home-pattern.webp") top center / auto repeat;
   color: #c6b89e;
 }
 
+.page::before,
+.page::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  pointer-events: none;
+  background-image: url("/images/players/player-card-vine.png");
+  background-position: center top;
+  background-size: 150px 460px;
+  background-repeat: repeat-y;
+}
+
+/* Полосы примыкают к рабочей области шириной 1080px, а не к краям экрана. */
+.page::before {
+  left: calc(50% - 690px);
+}
+
+.page::after {
+  right: calc(50% - 690px);
+  transform: scaleX(-1);
+}
+
 .shell {
+  position: relative;
+  z-index: 1;
   width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
   padding: 30px 0 90px;
@@ -273,6 +303,9 @@
 .emptyText { margin: 22px 0 4px; color: #746957; font-size: .78rem; font-style: italic; }
 
 @media (max-width: 760px) {
+  .page::before,
+  .page::after { display: none; }
+
   .profileCard { grid-template-columns: 138px minmax(0,1fr); gap: 22px; padding: 28px; }
   .levelPanel { grid-column: 1 / -1; grid-template-columns: 72px auto auto 1fr auto; justify-items: start; align-items: center; gap: 11px; padding: 17px 0 0; border-top: 1px solid rgba(168,111,40,.22); border-left: 0; }
   .levelShield { width: 66px; height: 76px; }
