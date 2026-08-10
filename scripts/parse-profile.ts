@@ -12,6 +12,7 @@ export interface ParsedProfile {
   inactiveMinutes: number | null;
   marriagePartner: string;
   marriageSince: string;
+  characterImage: string | null;
 }
 
 /**
@@ -207,6 +208,14 @@ function parseInactiveMinutes(
 export function parseProfileHtml(
   html: string
 ): ParsedProfile {
+  const characterImageMatch =
+    /ClothSh\(\s*["']\{[\s\S]*?["']pic["']\s*:\s*["']([^"']+)["']/i.exec(
+      html
+    );
+
+  const characterImage = characterImageMatch?.[1]
+    ? new URL(characterImageMatch[1], "https://dm-game.com").toString()
+    : null;
   const snbRaw =
     /showNameBlock\(([^)]+)\)/.exec(
       html
@@ -467,5 +476,6 @@ export function parseProfileHtml(
     inactiveMinutes,
     marriagePartner,
     marriageSince,
+    characterImage,
   };
 }

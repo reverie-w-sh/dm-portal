@@ -30,6 +30,7 @@ interface Player {
   inactiveMinutes?: number | null;
   marriagePartner?: string;
   marriageSince?: string;
+  characterImage?: string;
   [key: string]: unknown;
 }
 
@@ -137,6 +138,9 @@ async function main(): Promise<void> {
         marriagesFoundCount++;
       }
       player.profileUrl = `${BASE_URL}${player.cuid}`;
+      if (parsed.characterImage) {
+        player.characterImage = parsed.characterImage;
+      }
 
       if (parsed.position) {
         posFoundCount++;

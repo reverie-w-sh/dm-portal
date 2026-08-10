@@ -106,6 +106,7 @@ const EMPTY: ParsedProfile = {
   inactiveMinutes: null,
   marriagePartner: "",
   marriageSince: "",
+  characterImage: null,
 };
 
 async function main(): Promise<void> {

@@ -30,6 +30,7 @@ type Player = {
   inactiveMinutes?: number | null;
   marriagePartner?: string;
   marriageSince?: string;
+  characterImage?: string;
 };
 
 type Clan = {
@@ -254,6 +255,8 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   const timeline = playerTimeline(player);
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
   const displayedItems = items.slice(0, 8);
+  const characterImage =
+    player.characterImage || `https://dm-game.com/client/${player.cuid}v1-0.gif`;
 
   return (
     <main className={styles.page}>
@@ -263,37 +266,21 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
         </Link>
 
         <section className={styles.profileCard} aria-labelledby="player-title">
-          <div className={styles.profileGlow} aria-hidden="true" />
-
-          <div className={styles.crestColumn}>
-            <div className={styles.crestFrame}>
-              {clan?.crestLarge?.startsWith("http") ? (
-                <Image
-                  src={clan.crestLarge}
-                  alt={`Герб клана ${clan.name}`}
-                  width={150}
-                  height={150}
-                  unoptimized
-                  className={styles.crestImage}
-                />
-              ) : (
-                <Image
-                  src="/icons/wolf-paw-gold.png"
-                  alt="Золотая волчья лапа"
-                  width={116}
-                  height={116}
-                  className={styles.pawImage}
-                />
-              )}
-            </div>
-            <span className={styles.cuid}>ID {player.cuid}</span>
+          <div className={styles.portraitFrame}>
+            {/* Образ в инфе ДМ имеет собственный размер 104 × 184. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={characterImage}
+              alt={`Образ персонажа ${player.nick}`}
+              width="104"
+              height="184"
+              className={styles.portrait}
+            />
           </div>
 
           <div className={styles.identity}>
             <p className={styles.eyebrow}>Карточка игрока</p>
             <h1 id="player-title">{player.nick}</h1>
-            <p className={styles.position}>{player.position || "Без должности"}</p>
-
             <div className={styles.activity}>
               <ActivityDot inactiveMinutes={player.inactiveMinutes} className="w-4 h-4" />
               <span>{activityLabel(player.inactiveMinutes)}</span>
@@ -303,101 +290,59 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
               {clan ? (
                 <Link href={`/clans/${clan.clanId}`} className={styles.affiliation}>
                   {clan.crestSmall ? (
-                    <Image
-                      src={clan.crestSmall}
-                      alt=""
-                      width={28}
-                      height={28}
-                      unoptimized
-                    />
+                    <Image src={clan.crestSmall} alt="" width={28} height={28} unoptimized />
                   ) : null}
-                  <span>
-                    <small>Клан</small>
-                    {clan.name}
-                  </span>
+                  <span><small>Клан</small>{clan.name}</span>
                 </Link>
               ) : (
-                <span className={styles.affiliation}>
-                  <span><small>Клан</small>Без клана</span>
-                </span>
+                <span className={styles.affiliation}><span><small>Клан</small>Без клана</span></span>
               )}
-
               {player.allianceName ? (
                 <Link href="/alliances" className={styles.affiliation}>
                   <span className={styles.allianceMark}>✦</span>
-                  <span>
-                    <small>Альянс</small>
-                    {player.allianceName}
-                  </span>
+                  <span><small>Альянс</small>{player.allianceName}</span>
                 </Link>
               ) : null}
             </div>
+
+            <div className={styles.familyLine}>
+              <span className={styles.familyHeart}>♥</span>
+              <div>
+                <small>Личная жизнь</small>
+                {player.marriagePartner ? (
+                  <strong>{player.marriagePartner}</strong>
+                ) : (
+                  <strong>Одиночка</strong>
+                )}
+                {player.marriagePartner && player.marriageSince ? (
+                  <em>Вместе с {player.marriageSince}</em>
+                ) : null}
+              </div>
+            </div>
           </div>
 
-          <div className={styles.levelPanel}>
+          <aside className={styles.levelPanel}>
             <div className={styles.levelShield} aria-label={`Уровень ${player.level}`}>
               <span>{player.level}</span>
             </div>
             <strong>Уровень</strong>
             <p>Реинкарнация: {player.reincarnationLevel ?? "—"}</p>
-
+            <span className={styles.cuid}>ID {player.cuid}</span>
             {player.profileUrl ? (
-              <a
-                href={player.profileUrl}
-                target="_blank"
-                rel="noreferrer"
-                className={styles.dmLink}
-              >
+              <a href={player.profileUrl} target="_blank" rel="noreferrer" className={styles.dmLink}>
                 Профиль в ДМ ↗
               </a>
             ) : null}
-          </div>
+          </aside>
         </section>
 
-        <div className={styles.twoColumns}>
-          <section className={styles.panel}>
-            <header className={styles.sectionHeading}>
-              <span>♥</span>
-              <div>
-                <p>Семья</p>
-                <h2>Семейная пара</h2>
-              </div>
-            </header>
+        <dl className={styles.summaryStrip}>
+          <div><dt>Личных смайликов</dt><dd>{smiles?.personalSmilesCount ?? 0}</dd></div>
+          <div><dt>Именных вещей</dt><dd>{items.length}</dd></div>
+          <div><dt>Событий в летописи</dt><dd>{timeline.length}</dd></div>
+        </dl>
 
-            {player.marriagePartner ? (
-              <div className={styles.partnerCard}>
-                <div className={styles.partnerNames}>
-                  {player.nick}
-                  <span>♥</span>
-                  {player.marriagePartner}
-                </div>
-                {player.marriageSince ? (
-                  <p>Вместе с {player.marriageSince}</p>
-                ) : null}
-              </div>
-            ) : (
-              <p className={styles.emptyText}>Семейная пара не указана.</p>
-            )}
-          </section>
-
-          <section className={styles.panel}>
-            <header className={styles.sectionHeading}>
-              <span>✦</span>
-              <div>
-                <p>Коллекция</p>
-                <h2>Коротко о персонаже</h2>
-              </div>
-            </header>
-
-            <dl className={styles.statsGrid}>
-              <div><dt>Личных смайликов</dt><dd>{smiles?.personalSmilesCount ?? 0}</dd></div>
-              <div><dt>Именных вещей</dt><dd>{items.length}</dd></div>
-              <div><dt>Событий в летописи</dt><dd>{timeline.length}</dd></div>
-            </dl>
-          </section>
-        </div>
-
-        <section className={styles.collectionPanel}>
+        {displayedSmiles.length ? <section className={styles.collectionPanel}>
           <header className={styles.collectionHeader}>
             <div>
               <p className={styles.eyebrow}>Личные смайлики</p>
@@ -408,21 +353,17 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
             ) : null}
           </header>
 
-          {displayedSmiles.length ? (
-            <div className={styles.smileGrid}>
+          <div className={styles.smileGrid}>
               {displayedSmiles.map((src, index) => (
                 <span className={styles.smileCard} key={`${src}-${index}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={src} alt={`Личный смайлик ${player.nick}`} loading="lazy" />
                 </span>
               ))}
-            </div>
-          ) : (
-            <p className={styles.emptyText}>Личные смайлики пока не найдены.</p>
-          )}
-        </section>
+          </div>
+        </section> : null}
 
-        <section className={styles.collectionPanel}>
+        {displayedItems.length ? <section className={styles.collectionPanel}>
           <header className={styles.collectionHeader}>
             <div>
               <p className={styles.eyebrow}>Именные вещи</p>
@@ -435,8 +376,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
             ) : null}
           </header>
 
-          {displayedItems.length ? (
-            <div className={styles.itemGrid}>
+          <div className={styles.itemGrid}>
               {displayedItems.map((item) => (
                 <a
                   href={item.itemUrl}
@@ -450,11 +390,8 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                   <span>{item.name}</span>
                 </a>
               ))}
-            </div>
-          ) : (
-            <p className={styles.emptyText}>Именные вещи пока не найдены.</p>
-          )}
-        </section>
+          </div>
+        </section> : null}
 
         <section className={styles.chroniclePanel}>
           <header className={styles.collectionHeader}>
