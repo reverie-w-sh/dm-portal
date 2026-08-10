@@ -1,5 +1,19 @@
 [
   {
+    "id": "df8af6e5-0cb2-483a-9770-4d8c696041fb",
+    "syncId": "2026-08-10T18:45:27.742Z",
+    "createdAt": "2026-08-10T18:45:27.742Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "17507",
+    "characterName": "немец",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17507",
+    "clanId": "278",
+    "clanName": "die Wölfchen",
+    "oldLevel": 10,
+    "newLevel": 11
+  },
+  {
     "id": "2856b57c-5dd3-40e9-9b2b-8376461ca848",
     "syncId": "2026-08-10T13:10:07.584Z",
     "createdAt": "2026-08-10T13:10:07.584Z",
