@@ -93,6 +93,7 @@ type RatingsData = {
 type ProfessionPosition = {
   key: string;
   label: string;
+  icon: string;
   rank: number;
   value?: number | string;
 };
@@ -111,16 +112,16 @@ const news = gameNewsJson.items as NewsItem[];
 const ratings = (ratingsJson as RatingsData).ratings;
 const PREVIEW_EVENTS = 5;
 const PROFESSIONS = [
-  { key: "fishing", label: "Рыболов" },
-  { key: "collector", label: "Собиратель" },
-  { key: "hunting", label: "Охотник" },
-  { key: "blacksmith", label: "Кузнец" },
-  { key: "leatherworker", label: "Кожевник" },
-  { key: "doctor", label: "Лекарь" },
-  { key: "alchemy", label: "Алхимик" },
-  { key: "enchanter", label: "Заклинатель" },
-  { key: "seer", label: "Ведун" },
-  { key: "shooter", label: "Стрелок" },
+  { key: "fishing", label: "Рыболов", icon: "fishing.png" },
+  { key: "collector", label: "Собиратель", icon: "collector.png" },
+  { key: "hunting", label: "Охотник", icon: "hunting.png" },
+  { key: "blacksmith", label: "Кузнец", icon: "blacksmith.png" },
+  { key: "leatherworker", label: "Кожевник", icon: "leatherworker.png" },
+  { key: "doctor", label: "Лекарь", icon: "doctor.png" },
+  { key: "alchemy", label: "Алхимик", icon: "alchemy.png" },
+  { key: "enchanter", label: "Заклинатель", icon: "enchanter.png" },
+  { key: "seer", label: "Ведун", icon: "seer.png" },
+  { key: "shooter", label: "Стрелок", icon: "shooter.png" },
 ] as const;
 const LOCAL_CHARACTER_IMAGES: Record<string, string> = {
   "2171": "/images/players/characters/2171.gif",
@@ -225,7 +226,7 @@ function festivalText(result: PlayerFestivalResult): string {
 function professionPositions(nick: string): ProfessionPosition[] {
   const normalizedNick = nick.trim().toLocaleLowerCase("ru-RU");
 
-  return PROFESSIONS.flatMap(({ key, label }) => {
+  return PROFESSIONS.flatMap(({ key, label, icon }) => {
     const items = ratings[key]?.items ?? [];
     const index = items.findIndex(
       (item) => item.name.trim().toLocaleLowerCase("ru-RU") === normalizedNick,
@@ -237,6 +238,7 @@ function professionPositions(nick: string): ProfessionPosition[] {
     return [{
       key,
       label,
+      icon,
       rank: item.rank ?? index + 1,
       value: item.value,
     }];
@@ -300,7 +302,16 @@ function ScrollIcon() {
 
 function TimelineIcon({ entry }: { entry: TimelineEntry }) {
   if (entry.kind === "festival") {
-    return <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>🏅</span>;
+    const isPrizePlace =
+      entry.festival.place != null &&
+      entry.festival.place >= 1 &&
+      entry.festival.place <= 3;
+
+    return (
+      <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>
+        {isPrizePlace ? "🏆" : "🏅"}
+      </span>
+    );
   }
 
   if (entry.event.type === "player_level_up") {
@@ -596,7 +607,13 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                   href={`/ratings#${position.key}`}
                   key={position.key}
                 >
-                  <span className={styles.ratingTrophy} aria-hidden="true">🏆</span>
+                  <Image
+                    className={styles.ratingIcon}
+                    src={`/images/ratings/icons/${position.icon}`}
+                    alt=""
+                    width={118}
+                    height={104}
+                  />
                   <span className={styles.ratingCopy}>
                     <strong>{position.label}</strong>
                     <small>
