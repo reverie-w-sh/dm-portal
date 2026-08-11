@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ChronicleClient from "./ChronicleClient";
 import styles from "./page.module.css";
 
@@ -12,7 +13,13 @@ export default async function ChroniclePage(props: PageProps<"/chronicle">) {
         <header className={styles.hero}>
           <div className={styles.ornament} aria-hidden="true">
             <span />
-            <b>🐾</b>
+            <Image
+              src="/icons/wolf-paw-gold.png"
+              alt=""
+              width={22}
+              height={22}
+              className={styles.ornamentPaw}
+            />
             <span />
           </div>
 

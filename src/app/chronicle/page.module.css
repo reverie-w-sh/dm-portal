@@ -57,10 +57,11 @@
 }
 
 .ornamentPaw {
-  width: 25px;
-  height: 25px;
+  display: block;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(0 0 6px rgba(205, 139, 39, 0.22));
 }
 
 .content {
