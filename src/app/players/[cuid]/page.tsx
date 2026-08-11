@@ -437,7 +437,6 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                     <div>
                       <time>{formatDate(entry.date)}</time>
                       <h3>{formatFestivalPlace(entry.festival)} за фестиваль</h3>
-                      <p>{entry.festival.title}</p>
                       {entry.festival.prizes.map((prize) => (
                         <strong className={styles.prize} key={prize}>
                           Приз: {prize}
