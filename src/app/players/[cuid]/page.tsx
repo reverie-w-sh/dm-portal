@@ -530,7 +530,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 </span>
                 <strong>
                   Реинкарнация: {player.reincarnationLevel != null
-                    ? `${player.reincarnationLevel} уровень${
+                    ? `${player.reincarnationLevel}${
                         displayedReincarnationUp != null
                           ? `, ${displayedReincarnationUp} ап`
                           : ""
