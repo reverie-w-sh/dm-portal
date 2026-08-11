@@ -284,7 +284,10 @@ export function parseProfileHtml(
     );
 
   const characterImage = characterImageMatch?.[1]
-    ? new URL(characterImageMatch[1], "https://dm-game.com").toString()
+    ? new URL(
+        characterImageMatch[1].replace(/^\/+/, ""),
+        "https://dm-game.com/layout/all/Hero_obraz/",
+      ).toString()
     : null;
   const snbRaw =
     /showNameBlock\(([^)]+)\)/.exec(

@@ -4,7 +4,7 @@
  *
  * Fields updated:
  * nick, level, reincarnationLevel, clanId, clanName, clanIcon,
- * allianceId, allianceName, position, profileUrl
+ * allianceId, allianceName, position, profileUrl, characterImageSource
  */
 
 import * as fs from "node:fs";
@@ -31,6 +31,9 @@ interface Player {
   marriagePartner?: string;
   marriageSince?: string;
   characterImage?: string;
+  characterImageSource?: string;
+  characterImageCacheSource?: string;
+  characterImages?: string[];
   achievements?: ParsedAchievement[];
   [key: string]: unknown;
 }
@@ -142,7 +145,13 @@ async function main(): Promise<void> {
       }
       player.profileUrl = `${BASE_URL}${player.cuid}`;
       if (parsed.characterImage) {
-        player.characterImage = parsed.characterImage;
+        player.characterImageSource = parsed.characterImage;
+
+        // Until the first successful local mirror exists, keep the live URL as
+        // a temporary fallback. Existing local portraits are never discarded.
+        if (!player.characterImage?.startsWith("/images/players/characters/")) {
+          player.characterImage = parsed.characterImage;
+        }
       }
 
       if (parsed.achievementsKnown) {

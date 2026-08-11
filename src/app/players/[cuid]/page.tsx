@@ -16,6 +16,7 @@ import {
   getPlayerFestivalResults,
   type PlayerFestivalResult,
 } from "@/lib/player-profile";
+import { PortraitGallery } from "./PortraitGallery";
 import { PortraitImage } from "./PortraitImage";
 import styles from "./page.module.css";
 
@@ -32,6 +33,7 @@ type Player = {
   marriagePartner?: string;
   marriageSince?: string;
   characterImage?: string;
+  characterImages?: string[];
 };
 
 type Clan = { clanId: string; name: string };
@@ -159,7 +161,17 @@ function activityLabel(inactiveMinutes?: number | null): string {
 
 function characterImage(player?: Player): string | undefined {
   if (!player) return undefined;
+  if (player.characterImage?.startsWith("/")) return player.characterImage;
   return LOCAL_CHARACTER_IMAGES[player.cuid] ?? player.characterImage;
+}
+
+function characterImages(player: Player): string[] {
+  return Array.from(
+    new Set([
+      characterImage(player),
+      ...(player.characterImages ?? []),
+    ].filter((image): image is string => Boolean(image))),
+  );
 }
 
 function eventText(event: ChronicleEvent): string {
@@ -463,14 +475,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
       <div className={styles.shell}>
         <section className={styles.profileCard} aria-labelledby="player-title">
           <div className={styles.portraitStage}>
-            <div className={styles.portraitFrame}>
-              <PortraitImage
-                src={characterImage(player)}
-                alt={`Образ персонажа ${player.nick}`}
-                className={styles.portrait}
-                fallbackClassName={styles.portraitFallback}
-              />
-            </div>
+            <PortraitGallery images={characterImages(player)} playerName={player.nick} />
           </div>
 
           <div className={styles.identity}>
