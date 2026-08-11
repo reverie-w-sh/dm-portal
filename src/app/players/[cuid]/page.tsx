@@ -482,7 +482,13 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   const timeline = playerTimeline(player);
   const positions = professionPositions(player.nick);
   const experienceProgress = playerExperienceProgress(player.nick);
-  const displayedLevel = experienceProgress?.level ?? player.level;
+  const displayedUp =
+    experienceProgress?.level === player.level ? experienceProgress.up : undefined;
+  const displayedReincarnationUp =
+    displayedUp == null &&
+    experienceProgress?.level === player.reincarnationLevel
+      ? experienceProgress?.up
+      : undefined;
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
   const displayedItems = items.slice(0, 8);
   const partner = player.marriagePartner
@@ -506,17 +512,25 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
 
             <div className={styles.details}>
               <div className={styles.detailRow}>
-                <span className={styles.levelShield}><b>{displayedLevel}</b></span>
+                <span className={styles.levelShield}><b>{player.level}</b></span>
                 <strong>
-                  Уровень {displayedLevel}
-                  {experienceProgress ? `, ${experienceProgress.up} ап` : ""}
+                  Уровень {player.level}
+                  {displayedUp != null ? `, ${displayedUp} ап` : ""}
                 </strong>
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
                   <Image src="/images/players/reincarnation-wheel.png" alt="" width={240} height={238} unoptimized />
                 </span>
-                <strong>Реинкарнация: {player.reincarnationLevel ?? "—"}</strong>
+                <strong>
+                  Реинкарнация: {player.reincarnationLevel != null
+                    ? `${player.reincarnationLevel} уровень${
+                        displayedReincarnationUp != null
+                          ? `, ${displayedReincarnationUp} ап`
+                          : ""
+                      }`
+                    : "—"}
+                </strong>
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
