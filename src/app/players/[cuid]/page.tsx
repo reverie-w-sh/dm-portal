@@ -134,6 +134,7 @@ const PROFESSIONS = [
 ] as const;
 const LOCAL_CHARACTER_IMAGES: Record<string, string> = {
   "2171": "/images/players/characters/2171.gif",
+  "3358": "/images/players/characters/3358v6-0.gif",
   "4394": "/images/players/characters/4394.gif",
 };
 

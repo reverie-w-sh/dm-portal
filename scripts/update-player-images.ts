@@ -16,7 +16,8 @@ const IMAGE_DIR = path.resolve("public/images/players/characters");
 const PUBLIC_PREFIX = "/images/players/characters/";
 const DELAY_MS = 100;
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
-const HERO_CLIENT_URL = "https://dm-game.com/layout/all/Hero_obraz/client/";
+const HERO_IMAGE_URL = "https://dm-game.com/layout/all/Hero_obraz/";
+const HERO_CLIENT_URL = `${HERO_IMAGE_URL}client/`;
 const SEEDED_GALLERIES: Record<string, string[]> = {
   "4394": [
     `${HERO_CLIENT_URL}4394-0.jpg`,
@@ -29,6 +30,11 @@ const SEEDED_GALLERIES: Record<string, string[]> = {
     { length: 3 },
     (_, index) => `${HERO_CLIENT_URL}2171v${index + 1}-0.gif`,
   ),
+  "3358": [
+    `${HERO_CLIENT_URL}3358v6-0.gif`,
+    `${HERO_CLIENT_URL}3358v5-0.gif`,
+    `${HERO_CLIENT_URL}3358v7-0.gif`,
+  ],
 };
 
 let hasRequestedImage = false;
@@ -49,14 +55,23 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function isRemoteImage(value?: string): value is string {
-  if (!value) return false;
+function normalizeRemoteImage(value?: string): string | undefined {
+  if (!value) return undefined;
 
   try {
     const url = new URL(value);
-    return url.protocol === "https:" && url.hostname === "dm-game.com";
+    if (url.protocol !== "https:" || url.hostname !== "dm-game.com") {
+      return undefined;
+    }
+
+    const heroPath = "/layout/all/Hero_obraz/";
+    if (url.pathname.startsWith(heroPath)) return url.toString();
+
+    // Старые players.json содержали сокращённые адреса /client/... и
+    // /ork-0-0.gif. На сайте игры эти файлы лежат внутри Hero_obraz/.
+    return new URL(url.pathname.replace(/^\/+/, ""), HERO_IMAGE_URL).toString();
   } catch {
-    return false;
+    return undefined;
   }
 }
 
@@ -196,11 +211,9 @@ async function mirrorPlayerImage(
   galleryDownloaded: number;
   galleryReused: number;
 }> {
-  const sourceUrl = isRemoteImage(player.characterImageSource)
-    ? player.characterImageSource
-    : isRemoteImage(player.characterImage)
-      ? player.characterImage
-      : undefined;
+  const sourceUrl =
+    normalizeRemoteImage(player.characterImageSource) ??
+    normalizeRemoteImage(player.characterImage);
 
   if (!sourceUrl) {
     return { state: "skipped", galleryDownloaded: 0, galleryReused: 0 };
