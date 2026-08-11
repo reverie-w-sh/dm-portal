@@ -5,10 +5,8 @@
   isolation: isolate;
   min-height: 74px;
   color: #dcc08a;
-  background:
-    radial-gradient(ellipse at 47% -120%, rgba(122, 82, 33, 0.18), transparent 54%),
-    linear-gradient(180deg, #11120f 0%, #0b0c0a 52%, #080907 100%);
-  border-bottom: 1px solid #3a240d;
+  background: #090907;
+  border-bottom: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.62);
 }
 
@@ -24,13 +22,12 @@
 }
 
 .header::before {
-  background: linear-gradient(90deg, #71420e, #d0932d 20%, #895115 50%, #d0932d 80%, #71420e);
-  box-shadow: 0 0 8px rgba(201, 129, 30, 0.28);
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(177, 111, 24, 0.62) 12%, rgba(202, 137, 40, 0.58) 50%, rgba(177, 111, 24, 0.62) 88%, transparent);
 }
 
 .header::after {
-  bottom: 0;
-  background: linear-gradient(90deg, #2e1a07, #a76b1b 28%, #5b350e 50%, #a76b1b 72%, #2e1a07);
+  display: none;
 }
 
 .texture {
@@ -39,20 +36,19 @@
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  opacity: 0.68;
+  opacity: 1;
   background-image:
-    linear-gradient(90deg, rgba(5, 5, 4, 0.18), rgba(6, 6, 5, 0.58) 28%, rgba(6, 6, 5, 0.72) 72%, rgba(5, 5, 4, 0.22)),
-    linear-gradient(180deg, rgba(7, 7, 6, 0.12), rgba(6, 6, 5, 0.62)),
-    url("/images/home-pattern.webp");
-  background-position: center, center, center 28%;
-  background-size: cover, cover, 900px auto;
-  filter: saturate(1.18) contrast(1.05);
-  mask-image: linear-gradient(90deg, black, rgba(0, 0, 0, 0.48) 52%, black);
+    linear-gradient(90deg, rgba(5, 5, 4, 0.08), rgba(6, 6, 5, 0.34) 38%, rgba(6, 6, 5, 0.4) 62%, rgba(5, 5, 4, 0.08)),
+    linear-gradient(180deg, rgba(4, 4, 3, 0.08), rgba(4, 4, 3, 0.34)),
+    url("/images/navbar/burgundy-pattern.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .inner {
   position: relative;
-  width: min(100% - 48px, 1370px);
+  width: min(100% - 48px, 1500px);
   min-height: 71px;
   margin: 0 auto;
   display: flex;
@@ -63,7 +59,7 @@
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   margin-right: clamp(28px, 3.3vw, 50px);
   color: #e2c184;
   text-decoration: none;
@@ -71,26 +67,21 @@
 }
 
 .brandPaw {
-  width: 57px;
-  height: 57px;
+  width: 43px;
+  height: 54px;
   object-fit: contain;
-  transform: rotate(-4deg);
+  transform: none;
   transition: transform 220ms ease, filter 220ms ease;
 }
 
-.brandName {
-  white-space: nowrap;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(20px, 1.65vw, 27px);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.025em;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 #5d390f, 0 0 12px rgba(211, 151, 55, 0.13);
+.brandWordmark {
+  width: clamp(205px, 16vw, 244px);
+  height: auto;
+  object-fit: contain;
 }
 
 .brand:hover .brandPaw {
-  transform: rotate(-4deg) translateY(-1px) scale(1.04);
+  transform: translateY(-1px) scale(1.035);
   filter: brightness(1.12) drop-shadow(0 0 7px rgba(199, 137, 39, 0.28));
 }
 
@@ -113,7 +104,7 @@
   place-items: center;
   color: #d6a852;
   border: 0;
-  border-left: 1px solid rgba(155, 99, 28, 0.24);
+  border-left: 1px solid rgba(155, 99, 28, 0.13);
   background: transparent;
   cursor: pointer;
   transition: color 180ms ease, filter 180ms ease;
@@ -135,7 +126,7 @@
   font-size: clamp(11px, 0.9vw, 13px);
   white-space: nowrap;
   border: 0;
-  border-left: 1px solid rgba(155, 99, 28, 0.24);
+  border-left: 1px solid rgba(155, 99, 28, 0.13);
   background: transparent;
   cursor: pointer;
   transition: color 180ms ease, filter 180ms ease;
@@ -305,7 +296,7 @@
 .searchPanel {
   position: absolute;
   top: 100%;
-  right: max(24px, calc((100% - 1370px) / 2));
+  right: max(24px, calc((100% - 1500px) / 2));
   width: min(430px, calc(100% - 32px));
   visibility: hidden;
   padding: 0 18px;
@@ -332,7 +323,7 @@
 .suggestionPanel {
   position: absolute;
   top: 100%;
-  right: max(24px, calc((100% - 1370px) / 2));
+  right: max(24px, calc((100% - 1500px) / 2));
   width: min(450px, calc(100% - 32px));
   visibility: hidden;
   padding: 0 20px;
@@ -518,12 +509,12 @@
   }
 
   .brandPaw {
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 50px;
   }
 
-  .brandName {
-    font-size: clamp(19px, 3vw, 24px);
+  .brandWordmark {
+    width: clamp(190px, 25vw, 225px);
   }
 
   .desktopNav {
@@ -620,13 +611,12 @@
   }
 
   .brandPaw {
-    width: 46px;
+    width: 36px;
     height: 46px;
   }
 
-  .brandName {
-    font-size: 18px;
-    letter-spacing: 0.015em;
+  .brandWordmark {
+    width: 181px;
   }
 
   .mobileLink {

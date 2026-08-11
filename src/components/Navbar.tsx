@@ -170,14 +170,21 @@ export default function Navbar() {
           aria-label="Wölfchen Clan — главная"
         >
           <Image
-            src="/icons/wolf-paw-gold.png"
+            src="/images/navbar/wolf-paw.png"
             alt=""
-            width={58}
-            height={58}
+            width={111}
+            height={140}
             priority
             className={styles.brandPaw}
           />
-          <span className={styles.brandName}>Wölfchen Clan</span>
+          <Image
+            src="/images/navbar/wolfchen-clan-wordmark.png"
+            alt="Wölfchen Clan"
+            width={620}
+            height={87}
+            priority
+            className={styles.brandWordmark}
+          />
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Основная навигация">
