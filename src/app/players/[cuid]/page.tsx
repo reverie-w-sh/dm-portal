@@ -10,6 +10,7 @@ import personalSmilesJson from "../../../../data/personal-smiles.json";
 import playersJson from "../../../../data/players.json";
 import ratingsJson from "../../../../data/ratings.json";
 import { ActivityDot } from "@/components/ActivityStatus";
+import { getExperienceProgress } from "@/lib/experience";
 import { shortFestivalName } from "@/lib/festival-names";
 import {
   formatFestivalPlace,
@@ -80,7 +81,10 @@ type Achievement = {
 type RatingItem = {
   rank?: number;
   name: string;
+  level?: number;
   value?: number | string;
+  experience?: number;
+  exp?: number;
 };
 
 type Rating = {
@@ -259,6 +263,19 @@ function professionPositions(nick: string): ProfessionPosition[] {
       value: item.value,
     }];
   });
+}
+
+function playerExperienceProgress(nick: string) {
+  const normalizedNick = nick.trim().toLocaleLowerCase("ru-RU");
+  const item = (ratings.players?.items ?? []).find(
+    (candidate) =>
+      candidate.name.trim().toLocaleLowerCase("ru-RU") === normalizedNick,
+  );
+  const experience = item?.experience ?? item?.exp;
+
+  return typeof experience === "number" && Number.isFinite(experience)
+    ? getExperienceProgress(experience)
+    : undefined;
 }
 
 function formatRatingValue(value?: number | string): string {
@@ -464,6 +481,8 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   const items = uniqueItemsForPlayer(player.nick);
   const timeline = playerTimeline(player);
   const positions = professionPositions(player.nick);
+  const experienceProgress = playerExperienceProgress(player.nick);
+  const displayedLevel = experienceProgress?.level ?? player.level;
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
   const displayedItems = items.slice(0, 8);
   const partner = player.marriagePartner
@@ -487,8 +506,11 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
 
             <div className={styles.details}>
               <div className={styles.detailRow}>
-                <span className={styles.levelShield}><b>{player.level}</b></span>
-                <strong>Уровень {player.level}</strong>
+                <span className={styles.levelShield}><b>{displayedLevel}</b></span>
+                <strong>
+                  Уровень {displayedLevel}
+                  {experienceProgress ? `, ${experienceProgress.up} ап` : ""}
+                </strong>
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
