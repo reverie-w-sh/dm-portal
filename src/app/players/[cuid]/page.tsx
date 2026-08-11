@@ -163,6 +163,7 @@ function festivalName(result: PlayerFestivalResult): string {
   if (/лабиринт/iu.test(title)) return "Лабиринта";
   if (/любимых|цветов/i.test(title)) return "Букетов";
   if (/крашен|пасхал/i.test(title)) return "Пасхальном";
+  if (/охотник/iu.test(title)) return "Охотника";
 
   return title
     .replace(/^Итоги\s+(?:Фестиваля|Фестиваль)\s+/iu, "")
