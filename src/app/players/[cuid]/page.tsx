@@ -464,13 +464,31 @@ export async function generateMetadata(
 
   const title = `${player.nick} — карточка игрока`;
   const description = `${player.nick}: уровень, клан, личные смайлики, именные вещи и события в летописи Древнего Мира.`;
+  const preview = `/players/${player.cuid}/opengraph-image`;
   return {
     title,
     description,
     alternates: { canonical: `/players/${player.cuid}` },
     robots: { index: true, follow: true },
-    openGraph: { type: "profile", title, description, url: `/players/${player.cuid}`, images: ["/og/players.webp"] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og/players.webp"] },
+    openGraph: {
+      type: "profile",
+      title,
+      description,
+      url: `/players/${player.cuid}`,
+      images: [{
+        url: preview,
+        width: 1200,
+        height: 630,
+        alt: `${player.nick} — карточка игрока Древнего Мира`,
+        type: "image/png",
+      }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [preview],
+    },
   };
 }
 
