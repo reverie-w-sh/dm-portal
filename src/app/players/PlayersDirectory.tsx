@@ -26,7 +26,7 @@ const HERO_IMAGE_ROOT = "https://dm-game.com/layout/all/Hero_obraz/";
 const LOCAL_PORTRAITS: Record<string, string> = {
   "2171": "/images/players/characters/2171.gif",
   "3358": "/images/players/characters/3358v6-0.gif",
-  "4394": "/images/players/characters/4394.gif",
+  "4394": "/images/players/characters/a0b2cf22b87d60839420.gif",
 };
 
 function normalizedImage(player: DirectoryPlayer): string {

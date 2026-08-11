@@ -135,7 +135,7 @@ const PROFESSIONS = [
 const LOCAL_CHARACTER_IMAGES: Record<string, string> = {
   "2171": "/images/players/characters/2171.gif",
   "3358": "/images/players/characters/3358v6-0.gif",
-  "4394": "/images/players/characters/4394.gif",
+  "4394": "/images/players/characters/a0b2cf22b87d60839420.gif",
 };
 
 function findPlayer(cuid: string): Player | undefined {
@@ -168,8 +168,9 @@ function activityLabel(inactiveMinutes?: number | null): string {
 
 function characterImage(player?: Player): string | undefined {
   if (!player) return undefined;
+  if (LOCAL_CHARACTER_IMAGES[player.cuid]) return LOCAL_CHARACTER_IMAGES[player.cuid];
   if (player.characterImage?.startsWith("/")) return player.characterImage;
-  return LOCAL_CHARACTER_IMAGES[player.cuid] ?? player.characterImage;
+  return player.characterImage;
 }
 
 function characterImages(player: Player): string[] {
