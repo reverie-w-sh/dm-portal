@@ -16,21 +16,6 @@
   margin: 0 auto;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1731 / 909;
-  overflow: hidden;
-  background: #050606;
-  box-shadow:
-    0 20px 48px rgba(0, 0, 0, 0.48),
-    0 0 0 1px rgba(192, 126, 33, 0.18);
-}
-
-.heroImage {
-  object-fit: cover;
-}
-
 .srOnly {
   position: absolute;
   width: 1px;
@@ -44,7 +29,6 @@
 }
 
 .directory {
-  margin-top: 24px;
   padding: clamp(25px, 4vw, 44px);
   border: 1px solid rgba(164, 102, 26, 0.58);
   background:
@@ -73,7 +57,7 @@
   transform: scaleX(-1);
 }
 
-.directoryHeader h2 {
+.directoryHeader h1 {
   margin: 0;
   color: #e6ba69;
   font: 400 clamp(1.7rem, 3vw, 2.35rem) / 1.05 Georgia, "Times New Roman", serif;
@@ -375,12 +359,7 @@
     padding: 0 0 48px;
   }
 
-  .hero {
-    aspect-ratio: 1731 / 909;
-  }
-
   .directory {
-    margin-top: 12px;
     padding: 28px 10px;
     border-right: 0;
     border-left: 0;

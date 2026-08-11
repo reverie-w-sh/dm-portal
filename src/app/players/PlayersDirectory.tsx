@@ -122,26 +122,15 @@ export function PlayersDirectory({ players }: { players: DirectoryPlayer[] }) {
 
   return (
     <div className={styles.shell}>
-      <section className={styles.hero} aria-labelledby="players-title">
-        <Image
-          src="/images/links/players.webp"
-          alt="Галерея героев Древнего Мира"
-          fill
-          priority
-          sizes="(max-width: 1200px) 100vw, 1160px"
-          className={styles.heroImage}
-        />
-        <h1 id="players-title" className={styles.srOnly}>
-          Игроки Древнего Мира
-        </h1>
-      </section>
-
-      <section className={styles.directory} aria-labelledby="directory-title">
+      <section
+        className={styles.directory}
+        aria-labelledby="players-title"
+      >
         <header className={styles.directoryHeader}>
           <span aria-hidden="true" />
           <div>
-            <h2 id="directory-title">Книга имён</h2>
-            <p>Найди игрока по нику или ID — даже если он сейчас без клана.</p>
+            <h1 id="players-title">Игроки Древнего Мира</h1>
+            <p>Найди игрока по нику или ID.</p>
           </div>
           <span aria-hidden="true" />
         </header>
