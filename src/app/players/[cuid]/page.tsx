@@ -14,6 +14,7 @@ import {
   getPlayerFestivalResults,
   type PlayerFestivalResult,
 } from "@/lib/player-profile";
+import { PortraitImage } from "./PortraitImage";
 import styles from "./page.module.css";
 
 type Player = {
@@ -23,6 +24,7 @@ type Player = {
   clanId?: string;
   clanName?: string;
   profileUrl?: string;
+  position?: string;
   reincarnationLevel?: number | null;
   allianceId?: string;
   allianceName?: string;
@@ -32,7 +34,13 @@ type Player = {
   characterImage?: string;
 };
 
-type Clan = { clanId: string; name: string };
+type Clan = {
+  clanId: string;
+  name: string;
+  icon?: string;
+  crestSmall?: string;
+  crestLarge?: string;
+};
 
 type PersonalSmiles = {
   cuid: string;
@@ -55,13 +63,19 @@ type ChronicleEvent = {
   type: string;
   characterId?: string;
   characterName?: string;
+  clanId?: string;
   clanName?: string;
+  oldClanId?: string;
   oldClanName?: string;
+  newClanId?: string;
   newClanName?: string;
+  oldPosition?: string;
+  newPosition?: string;
   partnerName?: string;
+  marriageSince?: string;
   amount?: number;
+  oldLevel?: number | null;
   newLevel?: number;
-  addedSmiles?: string[];
 };
 
 type NewsItem = Parameters<typeof getPlayerFestivalResults>[0][number];
@@ -76,11 +90,6 @@ const personalSmiles = personalSmilesJson as PersonalSmiles[];
 const personalItems = personalItemsJson.items as PersonalItem[];
 const news = gameNewsJson.items as NewsItem[];
 
-const LOCAL_PORTRAITS: Record<string, string> = {
-  "4394": "/images/players/characters/4394.gif",
-  "2171": "/images/players/characters/2171.gif",
-};
-
 function findPlayer(cuid: string): Player | undefined {
   return players.find((player) => player.cuid === cuid);
 }
@@ -92,11 +101,6 @@ function sameText(a?: string, b?: string): boolean {
       a.trim().toLocaleLowerCase("ru-RU") ===
         b.trim().toLocaleLowerCase("ru-RU"),
   );
-}
-
-function portraitSource(player?: Player): string | undefined {
-  if (!player) return undefined;
-  return player.characterImage || LOCAL_PORTRAITS[player.cuid];
 }
 
 function formatDate(value: string): string {
@@ -111,33 +115,33 @@ function formatDate(value: string): string {
 }
 
 function activityLabel(inactiveMinutes?: number | null): string {
-  if (inactiveMinutes == null) return "Нет данных о последнем входе";
-  if (inactiveMinutes < 2 * 24 * 60) return "Менее 48 часов";
-  if (inactiveMinutes < 7 * 24 * 60) return "От 2 до 7 дней";
-  if (inactiveMinutes < 30 * 24 * 60) return "От 7 до 30 дней";
-  return "Больше месяца";
+  if (inactiveMinutes == null) return "Последний вход неизвестен";
+  if (inactiveMinutes < 2 * 24 * 60) return "Был(а) недавно";
+  if (inactiveMinutes < 7 * 24 * 60) return "Был(а) 2–7 дней назад";
+  if (inactiveMinutes < 30 * 24 * 60) return "Был(а) 7–30 дней назад";
+  return "Был(а) больше месяца назад";
 }
 
 function eventText(event: ChronicleEvent): string {
   switch (event.type) {
     case "player_level_up":
-      return `Новый уровень ${event.newLevel ?? ""}`.trim();
+      return `Новый уровень: ${event.newLevel ?? "?"}`;
     case "player_reincarnation_level_up":
-      return `Новый уровень реинкарнации ${event.newLevel ?? ""}`.trim();
+      return `Новый уровень реинкарнации: ${event.newLevel ?? "?"}`;
     case "player_joined_clan":
-      return `Вступление в клан ${event.clanName ?? ""}`.trim();
+      return `Вступил(а) в клан ${event.clanName ?? ""}`.trim();
     case "player_left_clan":
-      return `Выход из клана ${event.clanName ?? ""}`.trim();
+      return `Покинул(а) клан ${event.clanName ?? ""}`.trim();
     case "player_changed_clan":
-      return `Переход из клана ${event.oldClanName ?? "?"} в ${event.newClanName ?? "?"}`;
+      return `Перешёл(ла) из клана ${event.oldClanName ?? "?"} в ${event.newClanName ?? "?"}`;
+    case "player_position_changed":
+      return `Новая должность: ${event.newPosition || "без должности"}`;
     case "player_married":
       return `Свадьба с ${event.partnerName ?? "любимым человеком"}`;
     case "player_divorced":
-      return `Развод с ${event.partnerName ?? "партнёром"}`;
+      return `Расставание с ${event.partnerName ?? "партнёром"}`;
     case "personal_smile_added":
-      return event.amount && event.amount > 1
-        ? `${event.amount} новых личных смайлика`
-        : "Новый личный смайлик";
+      return `Новые личные смайлики: +${event.amount ?? 1}`;
     default:
       return "Новое событие";
   }
@@ -146,18 +150,17 @@ function eventText(event: ChronicleEvent): string {
 function eventIcon(event: ChronicleEvent): string {
   switch (event.type) {
     case "player_level_up":
-      return String(event.newLevel ?? "★");
     case "player_reincarnation_level_up":
-      return "✦";
+      return "★";
     case "player_married":
-      return "◎";
+      return "♥";
     case "player_divorced":
       return "💔";
     case "personal_smile_added":
       return "☺";
     case "player_joined_clan":
     case "player_changed_clan":
-      return "⚑";
+      return "→";
     case "player_left_clan":
       return "←";
     default:
@@ -182,7 +185,6 @@ function playerTimeline(player: Player): TimelineEntry[] {
     .filter(
       (event) =>
         event.characterId === player.cuid ||
-        sameText(event.characterName, player.nick) ||
         (sameText(event.partnerName, player.nick) &&
           (event.type === "player_married" || event.type === "player_divorced")),
     )
@@ -193,74 +195,15 @@ function playerTimeline(player: Player): TimelineEntry[] {
     }));
 
   const festivalEvents = getPlayerFestivalResults(news, player.nick).map<TimelineEntry>(
-    (festival) => ({ kind: "festival", date: festival.date, festival }),
+    (festival) => ({
+      kind: "festival",
+      date: festival.date,
+      festival,
+    }),
   );
 
   return [...personalEvents, ...festivalEvents].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
-  );
-}
-
-function festivalTitle(festival: PlayerFestivalResult): string {
-  return `${formatFestivalPlace(festival)} в фестивале ${festival.festivalName}`;
-}
-
-function Portrait({ player, compact = false }: { player?: Player; compact?: boolean }) {
-  const source = portraitSource(player);
-  const className = compact ? styles.familyPortrait : styles.portrait;
-
-  if (!source) {
-    return (
-      <span className={`${className} ${styles.portraitFallback}`} aria-hidden="true">
-        {player?.nick.slice(0, 1).toLocaleUpperCase("ru-RU") || "?"}
-      </span>
-    );
-  }
-
-  return (
-    // Образы ДМ имеют собственные пропорции около 104 × 184.
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={source}
-      alt={player ? `Образ персонажа ${player.nick}` : "Образ персонажа"}
-      width="104"
-      height="184"
-      className={className}
-    />
-  );
-}
-
-function ClanIcon() {
-  return (
-    <span className={`${styles.infoIcon} ${styles.bannerIcon}`} aria-hidden="true">
-      <svg viewBox="0 0 32 38"><path d="M7 3h18v25l-9-5-9 5V3Z"/><path d="M4 3h24M16 3v20"/></svg>
-    </span>
-  );
-}
-
-function AllianceIcon() {
-  return (
-    <span className={`${styles.infoIcon} ${styles.allianceIcon}`} aria-hidden="true">
-      <svg viewBox="0 0 40 40"><path d="M7 23c5 7 11 10 18 9M33 23c-5 7-11 10-18 9M10 17l7-5 5 3 4-2 5 5-8 7-4-2-3 2-8-7 2-1Z"/><path d="M8 11c3-3 6-5 10-6M32 11c-3-3-6-5-10-6"/></svg>
-    </span>
-  );
-}
-
-function RecentEntry({ entry }: { entry: TimelineEntry }) {
-  if (entry.kind === "festival") {
-    return (
-      <li>
-        <span className={styles.recentIcon}>✦</span>
-        <div><strong>{festivalTitle(entry.festival)}</strong><time>{formatDate(entry.date)}</time></div>
-      </li>
-    );
-  }
-
-  return (
-    <li>
-      <span className={styles.recentIcon}>{eventIcon(entry.event)}</span>
-      <div><strong>{eventText(entry.event)}</strong><time>{formatDate(entry.date)}</time></div>
-    </li>
   );
 }
 
@@ -271,18 +214,34 @@ export async function generateMetadata(
   const player = findPlayer(cuid);
 
   if (!player) {
-    return { title: "Игрок не найден", robots: { index: false, follow: false } };
+    return {
+      title: "Игрок не найден",
+      robots: { index: false, follow: false },
+    };
   }
 
   const title = `${player.nick} — карточка игрока`;
   const description = `${player.nick}: уровень, клан, личные смайлики, именные вещи и события в летописи Древнего Мира.`;
+  const canonical = `/players/${player.cuid}`;
 
   return {
     title,
     description,
+    alternates: { canonical },
     robots: { index: false, follow: false },
-    openGraph: { type: "profile", title, description, images: ["/og/chronicle.webp"] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og/chronicle.webp"] },
+    openGraph: {
+      type: "profile",
+      title,
+      description,
+      url: canonical,
+      images: ["/og/chronicle.webp"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/og/chronicle.webp"],
+    },
   };
 }
 
@@ -292,188 +251,210 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   if (!player) notFound();
 
   const clan = clans.find((item) => item.clanId === player.clanId);
-  const partner = players.find((item) => sameText(item.nick, player.marriagePartner));
   const smiles = personalSmiles.find((item) => item.cuid === player.cuid);
   const items = uniqueItemsForPlayer(player.nick);
   const timeline = playerTimeline(player);
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
-  const displayedItems = items.slice(0, 8);
+  const displayedItems = items.slice(0, 4);
+  const partner = player.marriagePartner
+    ? players.find((item) => sameText(item.nick, player.marriagePartner))
+    : undefined;
+  const characterImage = player.characterImage;
 
   return (
     <main className={styles.page}>
       <div className={styles.shell}>
+        <Link href="/members" className={styles.backLink}>
+          ← Составы кланов
+        </Link>
+
         <section className={styles.profileCard} aria-labelledby="player-title">
-          <div className={styles.mainPortraitFrame}><Portrait player={player} /></div>
+          <div className={styles.portraitStage}>
+            <div className={styles.portraitFrame}>
+              <PortraitImage
+                src={characterImage}
+                alt={`Образ персонажа ${player.nick}`}
+                className={styles.portrait}
+                fallbackClassName={styles.portraitFallback}
+              />
+            </div>
+            <span className={styles.portraitCaption}>Образ из ДМ</span>
+          </div>
 
           <div className={styles.identity}>
+            <p className={styles.eyebrow}>Карточка игрока</p>
             <h1 id="player-title">{player.nick}</h1>
             <div className={styles.activity}>
-              <ActivityDot inactiveMinutes={player.inactiveMinutes} className="w-3 h-3" />
+              <ActivityDot inactiveMinutes={player.inactiveMinutes} className="w-4 h-4" />
               <span>{activityLabel(player.inactiveMinutes)}</span>
             </div>
 
-            <dl className={styles.playerFacts}>
-              <div>
-                <dt><span className={styles.levelShield}>{player.level}</span></dt>
-                <dd>Уровень {player.level}</dd>
-              </div>
-              <div>
-                <dt><span className={`${styles.infoIcon} ${styles.reincarnationIcon}`}>✦</span></dt>
-                <dd>Реинкарнация: {player.reincarnationLevel ?? "—"}</dd>
-              </div>
-              <div>
-                <dt><ClanIcon /></dt>
-                <dd>{clan?.name ?? "Без клана"}</dd>
-              </div>
-              {player.allianceName ? (
-                <div>
-                  <dt><AllianceIcon /></dt>
-                  <dd>Альянс «{player.allianceName}»</dd>
+            <div className={styles.details}>
+              <div className={styles.detailRow}>
+                <div className={styles.levelShield} aria-label={`Уровень ${player.level}`}>
+                  <span>{player.level}</span>
                 </div>
-              ) : null}
-            </dl>
+                <div><small>Уровень</small><strong>{player.level}</strong></div>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.assetMark}>
+                  <Image src="/images/players/reincarnation-wheel.png" alt="" width={240} height={238} unoptimized />
+                </span>
+                <div><small>Реинкарнация</small><strong>{player.reincarnationLevel ?? "—"}</strong></div>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.assetMark}>
+                  <Image src="/images/players/clan-paw.png" alt="" width={194} height={240} unoptimized />
+                </span>
+                <div>
+                  <small>Клан</small>
+                  {clan ? <Link href={`/clans/${clan.clanId}`}>{clan.name}</Link> : <strong>Без клана</strong>}
+                </div>
+              </div>
+              <div className={styles.detailRow}>
+                <span className={styles.assetMark}>
+                  <Image src="/images/players/alliance-banner.png" alt="" width={180} height={228} unoptimized />
+                </span>
+                <div>
+                  <small>Альянс</small>
+                  {player.allianceName ? <Link href="/alliances">{player.allianceName}</Link> : <strong>Без альянса</strong>}
+                </div>
+              </div>
+            </div>
 
             {player.profileUrl ? (
-              <a href={player.profileUrl} target="_blank" rel="noreferrer" className={styles.dmButton}>
-                Профиль в ДМ <span aria-hidden="true">↗</span>
+              <a href={player.profileUrl} target="_blank" rel="noreferrer" className={styles.dmLink}>
+                <Image src="/images/players/profile-button.png" alt="Профиль в ДМ" width={760} height={169} unoptimized />
               </a>
             ) : null}
           </div>
 
-          {player.marriagePartner ? (
-            <aside className={styles.familyPanel} aria-label="Семья">
-              <h2>Семья</h2>
-              <div className={styles.familyPeople}>
+          <aside className={styles.familyCard}>
+            <p className={styles.familyTitle}>Личная жизнь</p>
+            {player.marriagePartner ? (
+              <div className={styles.couple}>
                 <div className={styles.familyPerson}>
-                  <div className={styles.familyPortraitFrame}><Portrait player={player} compact /></div>
+                  <span className={styles.familyPortraitFrame}>
+                    <PortraitImage
+                      src={characterImage}
+                      alt={`Образ ${player.nick}`}
+                      className={styles.familyPortrait}
+                      fallbackClassName={styles.portraitFallback}
+                    />
+                  </span>
                   <strong>{player.nick}</strong>
                 </div>
-                <Image
-                  src="/images/players/bridal-rings.png"
-                  alt="Обручальные кольца"
-                  width={74}
-                  height={48}
-                  className={styles.rings}
-                />
+                <div className={styles.ringsWrap}>
+                  <Image src="/images/players/wedding-rings.png" alt="Обручальные кольца" width={220} height={132} unoptimized />
+                  {player.marriageSince ? <small>с {player.marriageSince}</small> : null}
+                </div>
                 <div className={styles.familyPerson}>
-                  <div className={styles.familyPortraitFrame}><Portrait player={partner} compact /></div>
+                  <span className={styles.familyPortraitFrame}>
+                    <PortraitImage
+                      src={partner?.characterImage}
+                      alt={`Образ ${player.marriagePartner}`}
+                      className={styles.familyPortrait}
+                      fallbackClassName={styles.portraitFallback}
+                    />
+                  </span>
                   <strong>{player.marriagePartner}</strong>
                 </div>
               </div>
-              {player.marriageSince ? <p>Вместе с {player.marriageSince}</p> : null}
-            </aside>
-          ) : (
-            <aside className={`${styles.familyPanel} ${styles.singlePanel}`}>
-              <h2>Личная жизнь</h2>
-              <strong>Одиночка</strong>
-            </aside>
-          )}
+            ) : (
+              <div className={styles.singleState}>
+                <span>♡</span>
+                <strong>Одиночка</strong>
+              </div>
+            )}
+          </aside>
         </section>
 
-        <section className={styles.overviewPanel} aria-label="Коллекции и последние события">
-          <div className={styles.overviewColumn}>
-            <header className={styles.overviewHeader}>
-              <h2>Личные смайлики</h2>
-              <p>{displayedSmiles.length} из {smiles?.personalSmilesCount ?? 0}</p>
+        <div className={styles.showcaseGrid}>
+          <section className={styles.collectionPanel}>
+            <header className={styles.collectionHeader}>
+              <div>
+                <h2>Личные смайлики</h2>
+                <p>{displayedSmiles.length} / {smiles?.personalSmilesCount ?? 0}</p>
+              </div>
             </header>
             {displayedSmiles.length ? (
-              <div className={styles.assetGrid}>
+              <div className={styles.smileGrid}>
                 {displayedSmiles.map((src, index) => (
-                  <span className={styles.assetTile} key={`${src}-${index}`}>
+                  <span className={styles.smileCard} key={`${src}-${index}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={src} alt={`Личный смайлик ${player.nick}`} loading="lazy" />
                   </span>
                 ))}
               </div>
             ) : <p className={styles.emptyText}>Личных смайликов пока нет.</p>}
-            {smiles ? <Link className={styles.showAll} href={`/personal-smiles?player=${player.cuid}`}>Показать все →</Link> : null}
-          </div>
+            {smiles ? <Link className={styles.panelLink} href={`/personal-smiles?player=${player.cuid}`}>Показать все →</Link> : null}
+          </section>
 
-          <div className={styles.overviewColumn}>
-            <header className={styles.overviewHeader}>
-              <h2>Именные вещи</h2>
-              <p>{displayedItems.length} из {items.length}</p>
+          <section className={styles.collectionPanel}>
+            <header className={styles.collectionHeader}>
+              <div>
+                <h2>Именные вещи</h2>
+                <p>{displayedItems.length} / {items.length}</p>
+              </div>
             </header>
             {displayedItems.length ? (
-              <div className={styles.assetGrid}>
+              <div className={styles.itemGrid}>
                 {displayedItems.map((item) => (
-                  <a
-                    href={item.itemUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.assetTile}
-                    title={item.name}
-                    key={`${item.id}-${item.imageUrl}`}
-                  >
+                  <a href={item.itemUrl} target="_blank" rel="noreferrer" className={styles.itemCard} key={`${item.id}-${item.imageUrl}`}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={item.imageUrl} alt={item.name} loading="lazy" />
                   </a>
                 ))}
               </div>
             ) : <p className={styles.emptyText}>Именных вещей пока нет.</p>}
-            {items.length ? <Link className={styles.showAll} href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}>Показать все →</Link> : null}
-          </div>
+            {items.length ? <Link className={styles.panelLink} href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}>Показать все →</Link> : null}
+          </section>
 
-          <div className={`${styles.overviewColumn} ${styles.recentColumn}`}>
-            <header className={styles.overviewHeader}><h2>Последние события</h2></header>
+          <section className={styles.chroniclePanel}>
+            <header className={styles.collectionHeader}>
+              <div>
+                <h2>Личная летопись</h2>
+                <p>{Math.min(timeline.length, 4)} / {timeline.length}</p>
+              </div>
+            </header>
             {timeline.length ? (
-              <ol className={styles.recentList}>
-                {timeline.slice(0, 6).map((entry) => (
-                  <RecentEntry
-                    entry={entry}
-                    key={entry.kind === "event" ? entry.event.id : entry.festival.id}
-                  />
-                ))}
-              </ol>
-            ) : <p className={styles.emptyText}>В личной летописи пока тихо.</p>}
-          </div>
-        </section>
-
-        <section className={styles.chroniclePanel} aria-labelledby="chronicle-title">
-          <header className={styles.chronicleHeader}>
-            <span aria-hidden="true" />
-            <h2 id="chronicle-title">Личная летопись</h2>
-            <span aria-hidden="true" />
-          </header>
-
-          {timeline.length ? (
-            <div className={styles.timeline}>
-              {timeline.map((entry) =>
+              <div className={styles.timeline}>
+              {timeline.slice(0, 4).map((entry) =>
                 entry.kind === "event" ? (
                   <article className={styles.timelineEntry} key={entry.event.id}>
-                    <span className={styles.timelineDot}>✦</span>
-                    <time>{formatDate(entry.date)}</time>
                     <span className={styles.timelineIcon}>{eventIcon(entry.event)}</span>
-                    <div className={styles.timelineContent}>
+                    <div>
+                      <time>{formatDate(entry.date)}</time>
                       <h3>{eventText(entry.event)}</h3>
-                      {entry.event.type === "personal_smile_added" && entry.event.addedSmiles?.[0] ? (
-                        <span className={styles.timelineSmile}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={entry.event.addedSmiles[0]} alt="Новый личный смайлик" loading="lazy" />
-                        </span>
-                      ) : null}
                     </div>
                   </article>
                 ) : (
-                  <article className={`${styles.timelineEntry} ${styles.festivalEntry}`} key={entry.festival.id}>
-                    <span className={styles.timelineDot}>✦</span>
-                    <time>{formatDate(entry.date)}</time>
+                  <article
+                    className={`${styles.timelineEntry} ${styles.festivalEntry}`}
+                    key={entry.festival.id}
+                  >
                     <span className={styles.timelineIcon}>✦</span>
-                    <div className={styles.timelineContent}>
-                      <h3>{festivalTitle(entry.festival)}</h3>
+                    <div>
+                      <time>{formatDate(entry.date)}</time>
+                      <h3>{formatFestivalPlace(entry.festival)} за фестиваль</h3>
+                      <p>{entry.festival.title}</p>
                       {entry.festival.prizes.map((prize) => (
-                        <strong className={styles.prize} key={prize}>Приз: {prize}</strong>
+                        <strong className={styles.prize} key={prize}>
+                          Приз: {prize}
+                        </strong>
                       ))}
                       <a href={entry.festival.sourceUrl} target="_blank" rel="noreferrer">
-                        Новость на сайте игры ↗
+                        Новость и результаты ↗
                       </a>
                     </div>
                   </article>
                 ),
               )}
-            </div>
-          ) : <p className={styles.emptyText}>В личной летописи пока тихо.</p>}
-        </section>
+              </div>
+            ) : <p className={styles.emptyText}>В личной летописи пока тихо.</p>}
+            <Link className={styles.panelLink} href={`/chronicle?player=${encodeURIComponent(player.nick)}`}>Показать все →</Link>
+          </section>
+        </div>
       </div>
     </main>
   );
