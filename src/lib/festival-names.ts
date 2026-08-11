@@ -44,6 +44,11 @@ const FESTIVAL_NAMES: Array<{
     name: { short: "Кузнеца", chronicle: "Фестиваль Кузнеца" },
   },
   {
+    types: ["pumpkin"],
+    titlePattern: /безумн(?:ая|ой)\s+тыкв/iu,
+    name: { short: "Безумной Тыквы", chronicle: "Фестиваль Безумной Тыквы" },
+  },
+  {
     types: ["bouquets"],
     titlePattern: /любимых|цветов|букет/iu,
     name: { short: "Букетов", chronicle: "Фестиваль Букетов" },
