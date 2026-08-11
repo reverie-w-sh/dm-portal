@@ -55,6 +55,7 @@ type ChronicleEvent = {
   createdAt: string;
   type: string;
   characterId?: string;
+  characterName?: string;
   clanName?: string;
   oldClanName?: string;
   newClanName?: string;
@@ -265,7 +266,18 @@ function playerTimeline(player: Player): TimelineEntry[] {
         (sameText(event.partnerName, player.nick) &&
           (event.type === "player_married" || event.type === "player_divorced")),
     )
-    .map<TimelineEntry>((event) => ({ kind: "event", date: event.createdAt, event }));
+    .map<TimelineEntry>((event) => {
+      const isPartnerEvent =
+        event.characterId !== player.cuid &&
+        sameText(event.partnerName, player.nick) &&
+        (event.type === "player_married" || event.type === "player_divorced");
+
+      const personalEvent = isPartnerEvent
+        ? { ...event, partnerName: event.characterName }
+        : event;
+
+      return { kind: "event", date: event.createdAt, event: personalEvent };
+    });
 
   const festivalEvents = getPlayerFestivalResults(news, player.nick).map<TimelineEntry>(
     (festival) => ({ kind: "festival", date: festival.date, festival }),
