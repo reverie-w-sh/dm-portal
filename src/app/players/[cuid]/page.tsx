@@ -65,6 +65,7 @@ type ChronicleEvent = {
   newLevel?: number;
   addedSmiles?: string[];
   addedAchievements?: Achievement[];
+  isInitialImport?: boolean;
 };
 
 type Achievement = {
@@ -184,6 +185,9 @@ function eventText(event: ChronicleEvent): string {
         ? `Новые личные смайлики: +${event.amount}`
         : "Новый личный смайлик";
     case "player_achievement_added":
+      if (event.isInitialImport !== false) {
+        return `Достижения: ${event.addedAchievements?.length ?? event.amount ?? 0}`;
+      }
       return event.addedAchievements?.length === 1
         ? `Новое достижение: ${event.addedAchievements[0].name}`
         : `Новые достижения: ${event.addedAchievements?.length ?? event.amount ?? 0}`;
@@ -363,16 +367,10 @@ function TimelineIcon({ entry }: { entry: TimelineEntry }) {
   }
 
   if (entry.event.type === "player_achievement_added") {
-    const achievement = entry.event.addedAchievements?.[0];
-
-    return achievement ? (
+    return (
       <span className={`${styles.timelineIcon} ${styles.achievementEventIcon}`}>
-        {/* Иконки достижений ДМ загружаются с внешнего домена. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={achievement.imageUrl} alt="" />
+        ★
       </span>
-    ) : (
-      <span className={styles.timelineIcon}>◆</span>
     );
   }
 

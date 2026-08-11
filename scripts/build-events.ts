@@ -273,6 +273,7 @@ type SiteEvent =
       profileUrl: string;
       amount: number;
       addedAchievements: Achievement[];
+      isInitialImport?: boolean;
     };
 
 async function readJson<T>(filePath: string): Promise<T> {
@@ -538,6 +539,7 @@ function buildEvents(
         profileUrl,
         amount: addedAchievements.length,
         addedAchievements,
+        isInitialImport: previousAchievements === undefined,
       });
     }
 
@@ -822,6 +824,7 @@ function buildInitialAchievementEvents(
       profileUrl: player.profileUrl,
       amount: addedAchievements.length,
       addedAchievements,
+      isInitialImport: true,
     }];
   });
 }
