@@ -1,0 +1,439 @@
+.page {
+  min-height: calc(100vh - 64px);
+  padding: 22px 16px 72px;
+  color: #e9d5aa;
+  background-color: #050706;
+  background-image:
+    radial-gradient(circle at 50% -8%, rgba(145, 87, 24, 0.14), transparent 38rem),
+    linear-gradient(rgba(2, 3, 3, 0.16), rgba(2, 3, 3, 0.3)),
+    url("/images/home-pattern.webp");
+  background-position: top center;
+  background-repeat: no-repeat, no-repeat, repeat;
+}
+
+.shell {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1731 / 909;
+  overflow: hidden;
+  background: #050606;
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.48),
+    0 0 0 1px rgba(192, 126, 33, 0.18);
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.directory {
+  margin-top: 24px;
+  padding: clamp(25px, 4vw, 44px);
+  border: 1px solid rgba(164, 102, 26, 0.58);
+  background:
+    linear-gradient(180deg, rgba(13, 14, 12, 0.96), rgba(5, 7, 6, 0.98)),
+    url("/images/home-pattern.webp");
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 205, 112, 0.035),
+    0 18px 48px rgba(0, 0, 0, 0.42);
+}
+
+.directoryHeader {
+  display: grid;
+  grid-template-columns: minmax(30px, 1fr) auto minmax(30px, 1fr);
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.directoryHeader > span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(194, 132, 42, 0.7));
+}
+
+.directoryHeader > span:last-child {
+  transform: scaleX(-1);
+}
+
+.directoryHeader h2 {
+  margin: 0;
+  color: #e6ba69;
+  font: 400 clamp(1.7rem, 3vw, 2.35rem) / 1.05 Georgia, "Times New Roman", serif;
+  text-shadow: 0 2px 4px #000, 0 0 20px rgba(199, 129, 34, 0.12);
+}
+
+.directoryHeader p {
+  margin: 8px 0 0;
+  color: #ad9a7c;
+  font: 400 0.86rem / 1.4 Georgia, "Times New Roman", serif;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.searchBox {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  border: 1px solid rgba(166, 105, 28, 0.72);
+  background: rgba(2, 4, 3, 0.84);
+  box-shadow: inset 0 0 16px rgba(0, 0, 0, 0.55);
+}
+
+.searchIcon {
+  width: 44px;
+  flex: 0 0 44px;
+  color: #b27b31;
+  font-size: 1.45rem;
+  text-align: center;
+}
+
+.searchBox input {
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  color: #efd6a5;
+  background: transparent;
+  font: 400 0.98rem / 1.2 Georgia, "Times New Roman", serif;
+}
+
+.searchBox input::placeholder {
+  color: #756952;
+}
+
+.searchBox button {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  border: 0;
+  color: #8c7c62;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.searchBox button:hover {
+  color: #e4b660;
+}
+
+.resultCount {
+  flex: 0 0 auto;
+  color: #8f8068;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.resultCount strong {
+  color: #dcb169;
+  font-weight: 500;
+}
+
+.alphabets {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 30px;
+  overflow: hidden;
+}
+
+.alphabetRow {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 1px 1px 5px;
+  scrollbar-color: rgba(176, 111, 29, 0.55) transparent;
+  scrollbar-width: thin;
+}
+
+.alphabetRow button {
+  min-width: 30px;
+  height: 31px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(116, 78, 32, 0.55);
+  color: #aa997d;
+  background: rgba(4, 6, 5, 0.7);
+  font: 400 0.78rem / 1 Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition: color 150ms ease, border-color 150ms ease, background 150ms ease;
+}
+
+.alphabetRow button:first-child {
+  min-width: 45px;
+}
+
+.alphabetRow button:hover,
+.alphabetRow .activeLetter {
+  border-color: #b97b2e;
+  color: #f0cc89;
+  background: rgba(116, 67, 18, 0.32);
+}
+
+.playersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.playerCard {
+  position: relative;
+  display: grid;
+  min-height: 142px;
+  grid-template-columns: 74px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 14px;
+  overflow: hidden;
+  padding: 12px 13px;
+  border: 1px solid rgba(133, 84, 25, 0.58);
+  color: inherit;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(126, 78, 25, 0.1), transparent 45%),
+    linear-gradient(145deg, rgba(13, 15, 13, 0.98), rgba(5, 7, 6, 0.98));
+  box-shadow: inset 0 0 0 1px rgba(255, 214, 139, 0.025);
+  text-decoration: none;
+  transition: transform 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+}
+
+.playerCard::before,
+.playerCard::after {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: rgba(202, 137, 42, 0.72);
+  content: "";
+  pointer-events: none;
+}
+
+.playerCard::before {
+  top: 4px;
+  left: 4px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.playerCard::after {
+  right: 4px;
+  bottom: 4px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.playerCard:hover {
+  z-index: 1;
+  border-color: rgba(208, 142, 48, 0.88);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.46), 0 0 18px rgba(173, 103, 23, 0.12);
+  transform: translateY(-2px);
+}
+
+.playerCard:focus-visible,
+.showMore:focus-visible,
+.alphabetRow button:focus-visible,
+.searchBox button:focus-visible {
+  outline: 2px solid #d39a46;
+  outline-offset: 3px;
+}
+
+.portrait {
+  position: relative;
+  display: block;
+  width: 74px;
+  height: 118px;
+  overflow: hidden;
+  border: 1px solid #a76d29;
+  background: #030403;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.62);
+}
+
+.portraitImage {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.cardContent {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.nickRow {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.nickRow strong {
+  overflow: hidden;
+  color: #e8c67e;
+  background: linear-gradient(180deg, #fff0c0 0%, #e4bd70 48%, #9a602b 100%);
+  background-clip: text;
+  font: 500 1.08rem / 1.15 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px #000);
+}
+
+.playerId {
+  margin-top: 4px;
+  color: #756b5b;
+  font-size: 0.68rem;
+}
+
+.levelLine {
+  margin-top: 10px;
+  color: #d3b77e;
+  font: 400 0.8rem / 1.25 Georgia, "Times New Roman", serif;
+}
+
+.reincarnationLine {
+  margin-top: 3px;
+  color: #a99a82;
+  font-size: 0.72rem;
+}
+
+.clanLine {
+  overflow: hidden;
+  margin-top: 9px;
+  color: #9a7543;
+  font-size: 0.73rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardArrow {
+  color: #a66b28;
+  font-size: 1rem;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.playerCard:hover .cardArrow {
+  color: #e0ab57;
+  transform: translateX(2px);
+}
+
+.showMore {
+  display: block;
+  min-width: 180px;
+  margin: 28px auto 0;
+  padding: 11px 24px;
+  border: 1px solid #a66a25;
+  color: #e1b86e;
+  background: rgba(8, 8, 7, 0.92);
+  font: 400 0.92rem / 1.2 Georgia, "Times New Roman", serif;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.showMore:hover {
+  border-color: #d49a42;
+  color: #f1d090;
+  background: rgba(70, 40, 13, 0.34);
+}
+
+.emptyState {
+  padding: 62px 20px;
+  border: 1px solid rgba(116, 78, 32, 0.45);
+  color: #988970;
+  background: rgba(3, 5, 4, 0.6);
+  font: italic 0.95rem / 1.5 Georgia, "Times New Roman", serif;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .playersGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .page {
+    padding: 0 0 48px;
+  }
+
+  .hero {
+    aspect-ratio: 1731 / 909;
+  }
+
+  .directory {
+    margin-top: 12px;
+    padding: 28px 10px;
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .directoryHeader {
+    gap: 10px;
+  }
+
+  .directoryHeader p {
+    max-width: 270px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .searchRow {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .resultCount {
+    align-self: flex-end;
+  }
+
+  .playersGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .playerCard {
+    min-height: 132px;
+  }
+}
+
+@media (max-width: 390px) {
+  .playerCard {
+    grid-template-columns: 66px minmax(0, 1fr) 16px;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .portrait {
+    width: 66px;
+    height: 110px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playerCard,
+  .cardArrow,
+  .showMore,
+  .alphabetRow button {
+    transition: none;
+  }
+}

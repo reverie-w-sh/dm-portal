@@ -355,9 +355,12 @@ export default async function ClanDetailPage(
       inactiveMinutes={player.inactiveMinutes}
     />
 
-    <span className="font-medium text-ink text-sm">
+    <Link
+      href={`/players/${player.cuid}`}
+      className="font-medium text-ink text-sm hover:text-accent hover:underline underline-offset-2 transition-colors"
+    >
       {player.nick}
-    </span>
+    </Link>
   </div>
 
                   <div className="text-ink-muted text-xs sm:hidden mt-0.5">

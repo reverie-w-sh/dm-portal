@@ -189,7 +189,14 @@ export default function MembersPage() {
                 <ActivityDot inactiveMinutes={player.inactiveMinutes} />
 
                 <div className={styles.memberIdentity}>
-                  <h3>{player.nick}</h3>
+                  <h3>
+                    <Link
+                      href={`/players/${player.cuid}`}
+                      className={styles.memberNickLink}
+                    >
+                      {player.nick}
+                    </Link>
+                  </h3>
                   <p>{player.position || "Без должности"}</p>
                 </div>
 
@@ -202,7 +209,7 @@ export default function MembersPage() {
                 </div>
 
                 <div className={styles.memberMeta}>
-                  <span className={styles.reincarnationLabel}>Реинкарнация:</span>
+                  <span className={styles.reincarnationLabel}>Реинкарнация</span>
                   <strong>{player.reincarnationLevel ?? "—"}</strong>
 
                   {player.profileUrl ? (

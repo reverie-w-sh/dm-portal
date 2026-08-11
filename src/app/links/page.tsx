@@ -9,9 +9,9 @@ const usefulLinks = [
     alt: "Семейные пары",
   },
   {
-    href: "/ratings",
-    image: "/images/links/ratings.webp",
-    alt: "Рейтинги",
+    href: "/players",
+    image: "/images/links/players.webp",
+    alt: "Игроки Древнего Мира",
   },
   {
     href: "/personal-items",
@@ -47,6 +47,11 @@ const usefulLinks = [
     href: "/experience",
     image: "/images/links/experience.webp",
     alt: "Калькулятор опыта",
+  },
+  {
+    href: "/ratings",
+    image: "/images/links/ratings.webp",
+    alt: "Рейтинги",
   },
 ];
 

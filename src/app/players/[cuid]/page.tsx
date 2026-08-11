@@ -468,9 +468,9 @@ export async function generateMetadata(
     title,
     description,
     alternates: { canonical: `/players/${player.cuid}` },
-    robots: { index: false, follow: false },
-    openGraph: { type: "profile", title, description, url: `/players/${player.cuid}`, images: ["/og/chronicle.webp"] },
-    twitter: { card: "summary_large_image", title, description, images: ["/og/chronicle.webp"] },
+    robots: { index: true, follow: true },
+    openGraph: { type: "profile", title, description, url: `/players/${player.cuid}`, images: ["/og/players.webp"] },
+    twitter: { card: "summary_large_image", title, description, images: ["/og/players.webp"] },
   };
 }
 

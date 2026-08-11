@@ -46,6 +46,7 @@ type Clan = {
 
 type Player = {
   cuid: string;
+  nick: string;
   clanId?: string;
   clanName?: string;
 };
@@ -120,6 +121,10 @@ const events = eventsJson as ChronicleEvent[];
 const gameNews = gameNewsJson.items as GameNewsItem[];
 const clans = clansJson as Clan[];
 const players = playersJson as Player[];
+const playerLinksById = new Map(players.map((player) => [player.cuid, player]));
+const playerLinksByNick = new Map(
+  players.map((player) => [player.nick.trim().toLocaleLowerCase("ru-RU"), player]),
+);
 const dataNow = new Date(lastSyncJson.updatedAt);
 const dataNowTime = dataNow.getTime();
 
@@ -261,6 +266,18 @@ function smileWord(amount: number): string {
 function CharacterLink({ event }: { event: ChronicleEvent }) {
   if (!event.characterName) return null;
 
+  const player =
+    (event.characterId ? playerLinksById.get(event.characterId) : undefined) ??
+    playerLinksByNick.get(event.characterName.trim().toLocaleLowerCase("ru-RU"));
+
+  if (player) {
+    return (
+      <Link href={`/players/${player.cuid}`} className={styles.character}>
+        {event.characterName}
+      </Link>
+    );
+  }
+
   if (!event.profileUrl) {
     return <strong className={styles.character}>{event.characterName}</strong>;
   }
@@ -274,6 +291,23 @@ function CharacterLink({ event }: { event: ChronicleEvent }) {
     >
       {event.characterName}
     </a>
+  );
+}
+
+function PartnerLink({ name }: { name?: string }) {
+  if (!name) return null;
+
+  const player = playerLinksByNick.get(name.trim().toLocaleLowerCase("ru-RU"));
+
+  return player ? (
+    <Link
+      href={`/players/${player.cuid}`}
+      className={`${styles.character} ${styles.partner}`}
+    >
+      {name}
+    </Link>
+  ) : (
+    <strong className={styles.partner}>{name}</strong>
   );
 }
 
@@ -428,7 +462,7 @@ function EventText({
         <>
           {our && <span className={styles.celebration}>💍 </span>}
           Поздравляем <CharacterLink event={event} /> и{" "}
-          <strong className={styles.partner}>{event.partnerName}</strong> со свадьбой.
+          <PartnerLink name={event.partnerName} /> со свадьбой.
         </>
       );
 
@@ -436,7 +470,7 @@ function EventText({
       return (
         <>
           Развод: <CharacterLink event={event} /> и{" "}
-          <strong className={styles.partner}>{event.partnerName}</strong>.
+          <PartnerLink name={event.partnerName} />.
         </>
       );
 
