@@ -296,10 +296,10 @@ function Person({
       <div className={styles.avatar}>{player.nick.charAt(0).toUpperCase()}</div>
       <div className={styles.personBody}>
         <h2>
-          {player.profileUrl ? (
-            <a href={player.profileUrl} target="_blank" rel="noreferrer">
+          {player.cuid ? (
+            <Link href={`/players/${player.cuid}`}>
               {player.nick}
-            </a>
+            </Link>
           ) : (
             player.nick
           )}{" "}
