@@ -800,13 +800,14 @@
 10. MadDad[7] — cuid=22695 — https://dm-game.com/index.php?file=infouser&cuid=22695
 11. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
 
-## Devils of Death — CLAN 244 — знайдено 5
+## Devils of Death — CLAN 244 — знайдено 6
 
-1. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
-2. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
-3. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
-4. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-5. Смотрящий[8] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
+2. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
+3. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
+4. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
+5. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
+6. Смотрящий[8] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 
 ## Гладиаторы — CLAN 247 — знайдено 10
 
