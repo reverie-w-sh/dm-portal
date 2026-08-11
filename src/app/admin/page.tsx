@@ -405,6 +405,159 @@ function AnalyticsPanel() {
   );
 }
 
+const IMAGE_STATE_LABEL: Record<SyncState, string> = {
+  idle: "Готово к сбору образов",
+  running: "Сбор образов на GitHub Actions...",
+  success: "Образы успешно обновлены",
+  error: "Ошибка обновления образов",
+};
+
+function PlayerImagesSyncPanel() {
+  const [state, setState] = useState<SyncState>("idle");
+  const [message, setMessage] = useState("");
+  const [runUrl, setRunUrl] = useState<string | null>(null);
+  const [lastUpdatedAt, setLastUpdatedAt] = useState<string | null>(null);
+  const [durationMs, setDurationMs] = useState<number | null>(null);
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  function applyStatus(data: SyncStatus) {
+    if (data.lastUpdatedAt) setLastUpdatedAt(data.lastUpdatedAt);
+    if (data.lastResult) setState(data.lastResult);
+    setDurationMs(data.durationMs);
+    if (data.runUrl) setRunUrl(data.runUrl);
+    return data.lastResult;
+  }
+
+  function stopPolling() {
+    if (!pollRef.current) return;
+    clearInterval(pollRef.current);
+    pollRef.current = null;
+  }
+
+  function startPolling() {
+    stopPolling();
+    pollRef.current = setInterval(async () => {
+      try {
+        const response = await fetch("/api/admin/sync?workflow=images", {
+          cache: "no-store",
+        });
+        const data = (await response.json()) as SyncStatus;
+        const result = applyStatus(data);
+        if (result === "success" || result === "error") stopPolling();
+      } catch {
+        /* пробуем ещё раз на следующем тике */
+      }
+    }, 8000);
+  }
+
+  useEffect(() => {
+    fetch("/api/admin/sync?workflow=images", { cache: "no-store" })
+      .then((response) => response.json())
+      .then((data: SyncStatus) => {
+        const result = applyStatus(data);
+        if (result === "running") startPolling();
+      })
+      .catch(() => {});
+
+    return stopPolling;
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  async function handleImagesSync() {
+    setState("running");
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/admin/sync?workflow=images", {
+        method: "POST",
+      });
+      const data = await response.json();
+
+      if (!response.ok || !data.ok) {
+        setState("error");
+        setMessage(data.message ?? "Неизвестная ошибка");
+        return;
+      }
+
+      setMessage(data.message ?? "");
+      startPolling();
+    } catch (error) {
+      setState("error");
+      setMessage(String(error));
+    }
+  }
+
+  const isRunning = state === "running";
+
+  return (
+    <div className="glass rounded-2xl p-6">
+      <h2 className="text-sm font-semibold text-ink uppercase tracking-wider mb-2">
+        Образы игроков
+      </h2>
+
+      <p className="text-xs leading-relaxed text-ink-muted mb-5">
+        Отдельный сбор текущих образов. При смене прежний образ останется в галерее игрока.
+      </p>
+
+      <button
+        type="button"
+        onClick={handleImagesSync}
+        disabled={isRunning}
+        className="btn-primary"
+        style={{
+          opacity: isRunning ? 0.55 : 1,
+          cursor: isRunning ? "not-allowed" : "pointer",
+        }}
+      >
+        🖼️ Собрать образы игроков
+      </button>
+
+      <div className="flex items-center gap-2 mt-5">
+        <span
+          className="inline-block w-2 h-2 rounded-full shrink-0"
+          style={{
+            background: STATE_COLOR[state],
+            boxShadow: isRunning ? `0 0 6px ${STATE_COLOR.running}` : "none",
+            animation: isRunning ? "pulse 1.2s ease-in-out infinite" : "none",
+          }}
+        />
+        <span className="text-sm font-medium" style={{ color: STATE_COLOR[state] }}>
+          {IMAGE_STATE_LABEL[state]}
+        </span>
+      </div>
+
+      {isRunning && (
+        <p className="text-xs text-ink-muted mt-2">
+          Можно закрыть страницу — сбор продолжится на GitHub Actions. Первый запуск
+          может быть долгим, потому что нужно сохранить стартовые галереи.
+        </p>
+      )}
+
+      {message && !isRunning && (
+        <p className="text-xs text-ink-muted mt-2">{message}</p>
+      )}
+
+      {lastUpdatedAt && (
+        <p className="text-xs text-ink-muted mt-3">
+          Последний запуск: {formatDate(lastUpdatedAt)}
+          {durationMs !== null ? ` · ${formatDuration(durationMs)}` : ""}
+        </p>
+      )}
+
+      {runUrl && (
+        <a
+          href={runUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs text-[#3d9bff] underline mt-2 inline-block"
+        >
+          Открыть запуск на GitHub →
+        </a>
+      )}
+    </div>
+  );
+}
+
 export default function AdminPage() {
   const [syncState,     setSyncState]     = useState<SyncState>("idle");
   const [message,       setMessage]       = useState<string>("");
@@ -550,6 +703,8 @@ export default function AdminPage() {
             </a>
           )}
         </div>
+
+        <PlayerImagesSyncPanel />
 
         {/* ── Summary ──────────────────────────────────── */}
         {hasSummary && (

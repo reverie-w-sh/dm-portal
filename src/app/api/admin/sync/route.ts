@@ -11,7 +11,20 @@ export const dynamic = "force-dynamic";
 
 const OWNER = "reverie-w-sh";
 const REPO = "dm-portal";
-const WORKFLOW_FILE = "sync-data.yml";
+const WORKFLOWS = {
+  data: {
+    file: "sync-data.yml",
+    successMessage:
+      "Синхронизация запущена на GitHub Actions. Обычно занимает 3–4 минуты.",
+  },
+  images: {
+    file: "sync-player-images.yml",
+    successMessage:
+      "Сбор образов запущен на GitHub Actions. Первый запуск может занять дольше обычного.",
+  },
+} as const;
+
+type WorkflowKey = keyof typeof WORKFLOWS;
 
 const CLANS_PATH   = path.join(process.cwd(), "data", "clans.json");
 const PLAYERS_PATH = path.join(process.cwd(), "data", "players.json");
@@ -56,12 +69,18 @@ function readDataStats() {
   return { clansCount, playersCount, positionsFound, emptyPositions };
 }
 
-async function fetchLatestRun(token?: string) {
+function workflowFromRequest(request: Request) {
+  const key = new URL(request.url).searchParams.get("workflow") ?? "data";
+  if (!(key in WORKFLOWS)) return null;
+  return WORKFLOWS[key as WorkflowKey];
+}
+
+async function fetchLatestRun(workflowFile: string, token?: string) {
   const headers: Record<string, string> = { Accept: "application/vnd.github+json" };
   if (token) headers.Authorization = `Bearer ${token}`;
 
   const res = await fetch(
-    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW_FILE}/runs?per_page=1`,
+    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${workflowFile}/runs?per_page=1`,
     { headers, cache: "no-store" },
   );
   if (!res.ok) return null;
@@ -69,10 +88,18 @@ async function fetchLatestRun(token?: string) {
   return data.workflow_runs?.[0] ?? null;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const workflow = workflowFromRequest(request);
+  if (!workflow) {
+    return NextResponse.json(
+      { ok: false, message: "Неизвестный workflow" },
+      { status: 400 },
+    );
+  }
+
   const token = process.env.GH_DISPATCH_TOKEN;
   const stats = readDataStats();
-  const run = await fetchLatestRun(token);
+  const run = await fetchLatestRun(workflow.file, token);
 
   if (!run) {
     return NextResponse.json({
@@ -102,7 +129,15 @@ export async function GET() {
   } satisfies SyncStatus);
 }
 
-export async function POST() {
+export async function POST(request: Request) {
+  const workflow = workflowFromRequest(request);
+  if (!workflow) {
+    return NextResponse.json(
+      { ok: false, message: "Неизвестный workflow" },
+      { status: 400 },
+    );
+  }
+
   const token = process.env.GH_DISPATCH_TOKEN;
   if (!token) {
     return NextResponse.json(
@@ -112,7 +147,7 @@ export async function POST() {
   }
 
   const res = await fetch(
-    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${WORKFLOW_FILE}/dispatches`,
+    `https://api.github.com/repos/${OWNER}/${REPO}/actions/workflows/${workflow.file}/dispatches`,
     {
       method: "POST",
       headers: {
@@ -134,6 +169,6 @@ export async function POST() {
 
   return NextResponse.json({
     ok: true,
-    message: "Синхронизация запущена на GitHub Actions. Обычно занимает 3–4 минуты.",
+    message: workflow.successMessage,
   });
 }
