@@ -304,7 +304,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 <span className={styles.assetMark}>
                   <Image src="/images/players/reincarnation-wheel.png" alt="" width={240} height={238} unoptimized />
                 </span>
-                <strong>Реинкарнация: {player.reincarnationLevel ?? "—"}</strong>
+                <strong>Реинкарнация {player.reincarnationLevel ?? "—"}</strong>
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
