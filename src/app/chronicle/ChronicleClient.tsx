@@ -7,6 +7,7 @@ import gameNewsJson from "../../../data/game-news.json";
 import clansJson from "../../../data/clans.json";
 import playersJson from "../../../data/players.json";
 import lastSyncJson from "../../../data/last-sync.json";
+import collectionStyles from "../collection-pages.module.css";
 import styles from "./page.module.css";
 
 type ChronicleEvent = {
@@ -903,10 +904,10 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
                       </div>
 
                       {crest && (
-                        <span className={styles.crestBox} aria-hidden="true">
+                        <span className={collectionStyles.clanCrestBox} aria-hidden="true">
                           {/* Эмблемы кланов ДМ — внешние GIF, поэтому не оптимизируем их Next/Image. */}
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img className={styles.crest} src={crest} alt="" />
+                          <img src={crest} alt="" width={19} height={19} />
                         </span>
                       )}
                     </article>

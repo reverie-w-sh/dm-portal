@@ -202,7 +202,7 @@ function playerTimeline(player: Player): TimelineEntry[] {
 
 function TimelineIcon({ entry }: { entry: TimelineEntry }) {
   if (entry.kind === "festival") {
-    return <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>♛</span>;
+    return <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>🏆</span>;
   }
 
   if (entry.event.type === "player_level_up") {
@@ -239,6 +239,10 @@ function TimelineIcon({ entry }: { entry: TimelineEntry }) {
         <Image src="/images/players/clan-paw.png" alt="" width={375} height={487} unoptimized />
       </span>
     );
+  }
+
+  if (entry.event.type === "personal_smile_added") {
+    return <span className={`${styles.timelineIcon} ${styles.smileEventIcon}`}>☺</span>;
   }
 
   return <span className={styles.timelineIcon}>{eventIcon(entry.event)}</span>;

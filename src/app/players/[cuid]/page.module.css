@@ -88,10 +88,6 @@
   min-height: 315px;
   padding: 22px 34px;
   align-items: center;
-  background:
-    url("/images/players/frame-landscape.png") center / 100% 100% no-repeat,
-    linear-gradient(90deg, rgba(3, 4, 4, .97), rgba(10, 10, 8, .94) 50%, rgba(3, 4, 4, .97)),
-    url("/images/about/dark-marble-seamless.webp") center / 420px repeat;
 }
 
 .portraitStage {
@@ -143,10 +139,15 @@
 
 .identity h1 {
   margin: 0 0 2px;
-  color: #e4c17d;
-  font: 500 clamp(2.35rem, 3.25vw, 3.15rem)/.96 Georgia, "Times New Roman", serif;
+  color: #eacb86;
+  background: linear-gradient(180deg, #fff0c0 0%, #e4bd70 48%, #9a602b 100%);
+  background-clip: text;
+  font: 500 clamp(2.6rem, 4.4vw, 3.36rem)/1.1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  letter-spacing: .012em;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .92));
   overflow-wrap: anywhere;
-  text-shadow: 0 3px 16px #000;
 }
 
 .activity {
@@ -237,18 +238,29 @@
   min-width: 0;
   min-height: 252px;
   padding: 22px 24px 18px;
-  background: rgba(2, 3, 3, .76);
-  box-shadow: inset 0 0 34px #000;
+  border: 1px solid rgba(169, 112, 42, .66);
+  background:
+    linear-gradient(115deg, rgba(5, 5, 4, .96), rgba(17, 14, 10, .88), rgba(3, 4, 3, .97)),
+    url("/images/about/dark-marble-seamless.webp") center / 420px repeat;
+  box-shadow:
+    inset 0 0 0 4px rgba(0, 0, 0, .72),
+    inset 0 0 0 5px rgba(177, 119, 46, .13),
+    inset 0 0 34px #000;
 }
 
-.familyCard::before {
+.familyCard::before,
+.familyCard::after {
   content: "";
   position: absolute;
-  z-index: 0;
-  inset: -3px;
-  background: url("/images/players/frame-square.png") center / 100% 100% no-repeat;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  background: url("/images/players/corner-ornament.png") top left / contain no-repeat;
   pointer-events: none;
 }
+
+.familyCard::before { top: 5px; left: 5px; }
+.familyCard::after { right: 5px; bottom: 5px; transform: rotate(180deg); }
 
 .familyCard > * {
   position: relative;
@@ -257,35 +269,42 @@
 
 .familyCard h2 {
   margin: 0 0 12px;
-  color: #d8b979;
-  font: 500 1.02rem Georgia, serif;
-  letter-spacing: .08em;
+  color: #eacb86;
+  background: linear-gradient(180deg, #fff0c0 0%, #e4bd70 48%, #9a602b 100%);
+  background-clip: text;
+  font: 500 1.3rem/1.1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  letter-spacing: .025em;
   text-align: center;
-  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .92));
 }
 
 .couple {
-  display: grid;
-  grid-template-columns: minmax(72px, 1fr) 54px minmax(72px, 1fr);
-  gap: 4px;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
 }
 
 .familyPerson {
   display: grid;
+  z-index: 1;
+  width: 126px;
+  flex: 0 0 126px;
   min-width: 0;
   justify-items: center;
 }
 
 .familyPortraitFrame {
-  width: 86px;
-  height: 153px;
+  width: 126px;
+  height: 188px;
 }
 
 .familyPortrait {
   display: block;
-  width: 61px;
-  height: 108px;
+  width: 78px;
+  height: 138px;
   object-fit: contain;
   background: #060605;
 }
@@ -305,8 +324,12 @@
 .familyPerson > a:hover { color: #f0ca82; }
 
 .weddingRings {
-  width: 54px;
+  position: relative;
+  z-index: 3;
+  width: 78px;
   height: auto;
+  flex: 0 0 78px;
+  margin: 68px -28px 0;
   filter: drop-shadow(0 5px 8px #000);
 }
 
@@ -334,10 +357,6 @@
   display: grid;
   grid-template-columns: 1fr 1.12fr .9fr;
   margin-top: 13px;
-  background:
-    url("/images/players/frame-landscape.png") center / 100% 100% no-repeat,
-    linear-gradient(90deg, rgba(3, 4, 4, .97), rgba(10, 10, 8, .94) 50%, rgba(3, 4, 4, .97)),
-    url("/images/about/dark-marble-seamless.webp") center / 420px repeat;
 }
 
 .collectionPanel,
@@ -355,22 +374,53 @@
 }
 
 .collectionHeader {
-  min-height: 56px;
-  padding-bottom: 14px;
+  position: relative;
+  min-height: 64px;
+  padding-bottom: 10px;
   text-align: center;
-  background: url("/images/players/ornament-divider.png") center bottom / 82% auto no-repeat;
 }
 
 .collectionHeader h2 {
   margin: 0;
-  color: #d9ba79;
-  font: 500 1.14rem Georgia, serif;
+  color: #eacb86;
+  background: linear-gradient(180deg, #fff0c0 0%, #e4bd70 48%, #9a602b 100%);
+  background-clip: text;
+  font: 500 1.14rem/1.1 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .9));
 }
 
 .collectionHeader p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin: 4px 0 0;
   color: #ad8c58;
   font: .75rem Georgia, serif;
+}
+
+.collectionHeader p::before,
+.collectionHeader p::after {
+  content: "";
+  width: 52px;
+  height: 1px;
+  flex: 0 1 52px;
+  background: linear-gradient(90deg, transparent, #9e6c32);
+}
+
+.collectionHeader p::after {
+  background: linear-gradient(90deg, #9e6c32, transparent);
+}
+
+.recentPanel .collectionHeader::after {
+  content: "";
+  display: block;
+  width: 82%;
+  height: 1px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, transparent, #9e6c32 18%, #9e6c32 82%, transparent);
 }
 
 .smileGrid,
@@ -480,6 +530,7 @@
 }
 
 .festivalIcon { font-size: 1rem; }
+.smileEventIcon { font-size: 1.3rem; }
 
 .recentEntry time,
 .fullEntry time {
@@ -525,17 +576,18 @@
   position: relative;
   display: grid;
   gap: 11px;
-  padding-left: 27px;
+  padding: 10px 0 0 42px;
 }
 
 .fullTimeline::before {
   content: "";
   position: absolute;
-  top: 6px;
-  bottom: 7px;
-  left: 12px;
+  top: 25px;
+  bottom: 10px;
+  left: 17px;
   width: 1px;
-  background: #9c6d31;
+  background: linear-gradient(#ad762d, rgba(173, 118, 45, .32) 92%, transparent);
+  box-shadow: 0 0 7px rgba(184, 123, 44, .2);
 }
 
 .fullEntry {
@@ -552,21 +604,17 @@
 }
 
 .fullEntry::before {
-  content: "✦";
+  content: "";
   position: absolute;
   z-index: 2;
-  top: -10px;
-  left: -37px;
-  display: grid;
-  width: 20px;
-  height: 20px;
-  place-items: center;
-  color: #d1a052;
-  font-size: .62rem;
-  border: 1px solid rgba(177, 119, 46, .72);
+  top: 8px;
+  left: -31px;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #c18a3e;
   border-radius: 50%;
-  background: #0a0a08;
-  box-shadow: 0 0 0 3px #070807;
+  background: #161512;
+  box-shadow: 0 0 0 4px rgba(165, 105, 33, .12), 0 0 10px rgba(192, 130, 49, .24);
 }
 
 .fullEntry > time {
@@ -638,7 +686,7 @@
 
 @media (max-width: 1150px) {
   .profileCard {
-    grid-template-columns: 190px minmax(195px, 1fr) 250px;
+    grid-template-columns: 190px minmax(195px, 1fr) 304px;
     gap: 16px;
     padding-inline: 22px;
   }
@@ -654,17 +702,18 @@
 
 @media (max-width: 900px) {
   .profileCard {
-    grid-template-columns: 172px minmax(180px, 1fr) 214px;
+    grid-template-columns: 172px minmax(0, 1fr);
     gap: 12px;
     padding-inline: 18px;
   }
 
-  .identity h1 { font-size: 2.25rem; }
-  .familyCard { padding-inline: 10px; }
-  .familyPortraitFrame { width: 78px; height: 139px; }
-  .familyPortrait { width: 54px; height: 96px; }
-  .couple { grid-template-columns: minmax(66px, 1fr) 46px minmax(66px, 1fr); }
-  .weddingRings { width: 46px; }
+  .identity h1 { font-size: 2.6rem; }
+  .familyCard {
+    grid-column: 1 / -1;
+    width: min(100%, 340px);
+    justify-self: center;
+    padding-inline: 10px;
+  }
   .collectionHeader h2 { font-size: 1rem; }
   .collectionPanel,
   .recentPanel { padding-inline: 11px; }
@@ -681,15 +730,7 @@
   .page::before,
   .page::after { display: none; }
   .shell { width: calc(100% - 20px); }
-  .profileCard {
-    grid-template-columns: 190px minmax(0, 1fr);
-    gap: 20px;
-  }
-  .familyCard {
-    grid-column: 1 / -1;
-    width: min(100%, 380px);
-    justify-self: center;
-  }
+  .profileCard { gap: 20px; }
 }
 
 @media (max-width: 700px) {
@@ -748,10 +789,6 @@
 }
 
 @media (max-width: 390px) {
-  .couple { grid-template-columns: minmax(62px, 1fr) 42px minmax(62px, 1fr); }
-  .familyPortraitFrame { width: 74px; height: 132px; }
-  .familyPortrait { width: 51px; height: 90px; }
-  .weddingRings { width: 42px; }
   .smileGrid,
   .itemGrid { gap: 5px; }
   .smileCard,
