@@ -75,6 +75,10 @@ const personalSmiles = personalSmilesJson as PersonalSmiles[];
 const personalItems = personalItemsJson.items as PersonalItem[];
 const news = gameNewsJson.items as NewsItem[];
 const PREVIEW_EVENTS = 6;
+const LOCAL_CHARACTER_IMAGES: Record<string, string> = {
+  "2171": "/images/players/characters/2171.gif",
+  "4394": "/images/players/characters/4394.gif",
+};
 
 function findPlayer(cuid: string): Player | undefined {
   return players.find((player) => player.cuid === cuid);
@@ -102,6 +106,11 @@ function activityLabel(inactiveMinutes?: number | null): string {
   if (inactiveMinutes < 7 * 24 * 60) return "2–7 дней";
   if (inactiveMinutes < 30 * 24 * 60) return "7–30 дней";
   return "Больше месяца";
+}
+
+function characterImage(player?: Player): string | undefined {
+  if (!player) return undefined;
+  return LOCAL_CHARACTER_IMAGES[player.cuid] ?? player.characterImage;
 }
 
 function eventText(event: ChronicleEvent): string {
@@ -193,8 +202,25 @@ function playerTimeline(player: Player): TimelineEntry[] {
 
 function TimelineIcon({ entry }: { entry: TimelineEntry }) {
   if (entry.kind === "festival") {
-    return <span className={styles.timelineIcon}>♛</span>;
+    return <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>♛</span>;
   }
+
+  if (entry.event.type === "player_level_up") {
+    return (
+      <span className={`${styles.timelineIcon} ${styles.levelEventIcon}`}>
+        <b>{entry.event.newLevel ?? "★"}</b>
+      </span>
+    );
+  }
+
+  if (entry.event.type === "player_reincarnation_level_up") {
+    return (
+      <span className={`${styles.timelineIcon} ${styles.imageEventIcon}`}>
+        <Image src="/images/players/reincarnation-wheel.png" alt="" width={239} height={240} unoptimized />
+      </span>
+    );
+  }
+
   if (entry.event.type === "player_married") {
     return (
       <span className={`${styles.timelineIcon} ${styles.ringsIcon}`}>
@@ -202,6 +228,19 @@ function TimelineIcon({ entry }: { entry: TimelineEntry }) {
       </span>
     );
   }
+
+  if (
+    entry.event.type === "player_joined_clan" ||
+    entry.event.type === "player_changed_clan" ||
+    entry.event.type === "player_left_clan"
+  ) {
+    return (
+      <span className={`${styles.timelineIcon} ${styles.bannerEventIcon}`}>
+        <Image src="/images/players/clan-paw.png" alt="" width={375} height={487} unoptimized />
+      </span>
+    );
+  }
+
   return <span className={styles.timelineIcon}>{eventIcon(entry.event)}</span>;
 }
 
@@ -280,7 +319,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
           <div className={styles.portraitStage}>
             <div className={styles.portraitFrame}>
               <PortraitImage
-                src={player.characterImage}
+                src={characterImage(player)}
                 alt={`Образ персонажа ${player.nick}`}
                 className={styles.portrait}
                 fallbackClassName={styles.portraitFallback}
@@ -304,7 +343,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 <span className={styles.assetMark}>
                   <Image src="/images/players/reincarnation-wheel.png" alt="" width={240} height={238} unoptimized />
                 </span>
-                <strong>Реинкарнация {player.reincarnationLevel ?? "—"}</strong>
+                <strong>Реинкарнация: {player.reincarnationLevel ?? "—"}</strong>
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
@@ -334,16 +373,16 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 <div className={styles.couple}>
                   <div className={styles.familyPerson}>
                     <span className={styles.familyPortraitFrame}>
-                      <PortraitImage src={player.characterImage} alt={`Образ ${player.nick}`} className={styles.familyPortrait} fallbackClassName={styles.portraitFallback} />
+                      <PortraitImage src={characterImage(player)} alt={`Образ ${player.nick}`} className={styles.familyPortrait} fallbackClassName={styles.portraitFallback} />
                     </span>
-                    <strong>{player.nick}</strong>
+                    <Link href={`/players/${player.cuid}`}>{player.nick}</Link>
                   </div>
                   <Image className={styles.weddingRings} src="/images/players/wedding-rings.png" alt="Обручальные кольца" width={220} height={132} unoptimized />
                   <div className={styles.familyPerson}>
                     <span className={styles.familyPortraitFrame}>
-                      <PortraitImage src={partner?.characterImage} alt={`Образ ${player.marriagePartner}`} className={styles.familyPortrait} fallbackClassName={styles.portraitFallback} />
+                      <PortraitImage src={characterImage(partner)} alt={`Образ ${player.marriagePartner}`} className={styles.familyPortrait} fallbackClassName={styles.portraitFallback} />
                     </span>
-                    <strong>{player.marriagePartner}</strong>
+                    {partner ? <Link href={`/players/${partner.cuid}`}>{partner.nick}</Link> : <strong>{player.marriagePartner}</strong>}
                   </div>
                 </div>
                 {player.marriageSince ? <p className={styles.together}>Вместе с {player.marriageSince}</p> : null}

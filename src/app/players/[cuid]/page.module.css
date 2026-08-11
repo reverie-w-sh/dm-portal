@@ -3,8 +3,9 @@
   min-height: 100vh;
   overflow: hidden;
   color: #cdbb98;
+  font-family: Georgia, "Times New Roman", serif;
   background:
-    linear-gradient(rgba(2, 3, 3, .22), rgba(2, 3, 3, .38)),
+    linear-gradient(rgba(2, 3, 3, .2), rgba(2, 3, 3, .34)),
     url("/images/home-pattern.webp") top center / auto repeat;
 }
 
@@ -17,33 +18,37 @@
   bottom: 0;
   width: 125px;
   background: url("/images/players/side-ornament-seamless.png") top center / 125px 1600px repeat-y;
-  opacity: .9;
+  opacity: .92;
   pointer-events: none;
 }
-.page::before { left: max(0px, calc(50% - 745px)); }
-.page::after { right: max(0px, calc(50% - 745px)); transform: scaleX(-1); }
+
+.page::before { left: max(0px, calc(50% - 680px)); }
+.page::after {
+  right: max(0px, calc(50% - 680px));
+  transform: scaleX(-1);
+}
 
 .shell {
   position: relative;
   z-index: 1;
-  width: min(1240px, calc(100% - 230px));
+  width: min(1080px, calc(100% - 170px));
   margin: 0 auto;
-  padding: 22px 0 90px;
+  padding: 10px 0 72px;
 }
 
 .profileCard,
 .showcaseGrid,
 .fullChronicle {
   position: relative;
-  border: 1px solid rgba(163, 107, 38, .66);
+  border: 1px solid rgba(163, 107, 38, .72);
   background:
-    linear-gradient(90deg, rgba(3, 4, 4, .97), rgba(8, 8, 7, .94) 50%, rgba(3, 4, 4, .97)),
+    linear-gradient(90deg, rgba(3, 4, 4, .97), rgba(10, 10, 8, .94) 50%, rgba(3, 4, 4, .97)),
     url("/images/about/dark-marble-seamless.webp") center / 420px repeat;
   box-shadow:
     inset 0 0 0 4px rgba(0, 0, 0, .82),
-    inset 0 0 0 5px rgba(177, 119, 46, .14),
+    inset 0 0 0 5px rgba(177, 119, 46, .16),
     inset 0 0 52px rgba(0, 0, 0, .9),
-    0 16px 35px rgba(0, 0, 0, .36);
+    0 16px 35px rgba(0, 0, 0, .38);
 }
 
 .profileCard::before,
@@ -54,29 +59,45 @@
 .fullChronicle::after {
   content: "";
   position: absolute;
-  z-index: 3;
-  width: 46px;
-  height: 46px;
+  z-index: 4;
+  width: 42px;
+  height: 42px;
   background: url("/images/players/corner-ornament.png") top left / contain no-repeat;
   pointer-events: none;
 }
+
 .profileCard::before,
 .showcaseGrid::before,
-.fullChronicle::before { top: 5px; left: 5px; }
+.fullChronicle::before {
+  top: 5px;
+  left: 5px;
+}
+
 .profileCard::after,
 .showcaseGrid::after,
-.fullChronicle::after { right: 5px; bottom: 5px; transform: rotate(180deg); }
+.fullChronicle::after {
+  right: 5px;
+  bottom: 5px;
+  transform: rotate(180deg);
+}
 
 .profileCard {
   display: grid;
-  grid-template-columns: 250px minmax(260px, 1fr) 360px;
-  gap: 38px;
-  min-height: 370px;
-  padding: 27px 54px 28px;
+  grid-template-columns: 250px minmax(235px, 1fr) 320px;
+  gap: 28px;
+  min-height: 315px;
+  padding: 22px 34px;
   align-items: center;
+  background:
+    url("/images/players/frame-landscape.png") center / 100% 100% no-repeat,
+    linear-gradient(90deg, rgba(3, 4, 4, .97), rgba(10, 10, 8, .94) 50%, rgba(3, 4, 4, .97)),
+    url("/images/about/dark-marble-seamless.webp") center / 420px repeat;
 }
 
-.portraitStage { display: grid; place-items: center; }
+.portraitStage {
+  display: grid;
+  place-items: center;
+}
 
 .portraitFrame,
 .familyPortraitFrame {
@@ -85,10 +106,12 @@
   place-items: center;
   isolation: isolate;
 }
+
 .portraitFrame {
   width: 168px;
   height: 250px;
 }
+
 .portraitFrame::after,
 .familyPortraitFrame::after {
   content: "";
@@ -110,13 +133,18 @@
   object-fit: contain;
   background: #060605;
 }
+
 .portraitFallback { object-fit: cover; }
 
-.identity { min-width: 0; align-self: center; }
+.identity {
+  min-width: 0;
+  align-self: center;
+}
+
 .identity h1 {
-  margin: 0 0 3px;
-  color: #e1bd7a;
-  font: 500 clamp(2.6rem, 4.4vw, 4.3rem)/.95 Georgia, "Times New Roman", serif;
+  margin: 0 0 2px;
+  color: #e4c17d;
+  font: 500 clamp(2.35rem, 3.25vw, 3.15rem)/.96 Georgia, "Times New Roman", serif;
   overflow-wrap: anywhere;
   text-shadow: 0 3px 16px #000;
 }
@@ -124,89 +152,136 @@
 .activity {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 12px 0 13px;
-  color: #54a97c;
-  font: .84rem Georgia, "Times New Roman", serif;
+  gap: 7px;
+  margin: 9px 0 8px;
+  color: #4daa73;
+  font: .78rem Georgia, "Times New Roman", serif;
 }
 
-.details { display: grid; max-width: 300px; }
+.details {
+  display: grid;
+  width: min(100%, 310px);
+}
+
 .detailRow {
   display: grid;
-  grid-template-columns: 54px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 10px;
   align-items: center;
-  min-height: 55px;
-  border-bottom: 1px solid rgba(170, 111, 40, .22);
+  min-height: 45px;
+  border-bottom: 1px solid rgba(170, 111, 40, .24);
 }
+
 .detailRow strong,
 .detailRow a {
-  color: #d7b77b;
-  font: 500 1rem Georgia, "Times New Roman", serif;
+  color: #d8b97b;
+  font: 500 .9rem Georgia, "Times New Roman", serif;
 }
+
 .detailRow a:hover { color: #f0cf8c; }
 
 .levelShield {
   display: grid;
-  width: 48px;
-  height: 56px;
+  width: 42px;
+  height: 48px;
   place-items: center;
   background: url("/images/players/level-shield-ornate.png") center / contain no-repeat;
   filter: drop-shadow(0 5px 7px #000);
 }
+
 .levelShield b {
   margin-top: -2px;
   color: #e8ca89;
-  font: 500 1.25rem Georgia, serif;
+  font: 500 1.05rem Georgia, serif;
   text-shadow: 0 2px 4px #000;
 }
 
-.assetMark { display: grid; width: 48px; height: 48px; place-items: center; }
-.assetMark img { width: 42px; height: 42px; object-fit: contain; }
+.assetMark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+}
 
-.dmLink { display: block; width: 205px; margin-top: 16px; }
+.assetMark img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.detailRow:nth-child(3) .assetMark img { width: 29px; height: 38px; }
+.detailRow:nth-child(4) .assetMark img { width: 38px; height: 38px; }
+
+.dmLink {
+  display: block;
+  width: 190px;
+  margin-top: 11px;
+}
+
 .profileButton {
   display: block;
-  width: 205px;
+  width: 190px;
   aspect-ratio: 760 / 182;
   background: url("/images/players/profile-button.png") center / contain no-repeat;
   transition: filter .18s ease;
 }
-.dmLink:hover .profileButton { background-image: url("/images/players/profile-button-hover.png"); filter: drop-shadow(0 0 7px rgba(210, 153, 69, .35)); }
+
+.dmLink:hover .profileButton {
+  background-image: url("/images/players/profile-button-hover.png");
+  filter: drop-shadow(0 0 7px rgba(210, 153, 69, .35));
+}
 
 .familyCard {
   position: relative;
+  isolation: isolate;
   min-width: 0;
-  padding: 16px 21px 13px;
-  border: 1px solid rgba(169, 112, 42, .6);
-  background: rgba(2, 3, 3, .72);
-  box-shadow: inset 0 0 30px #000, inset 0 0 0 4px rgba(0,0,0,.65), inset 0 0 0 5px rgba(177,119,46,.14);
+  min-height: 252px;
+  padding: 22px 24px 18px;
+  background: rgba(2, 3, 3, .76);
+  box-shadow: inset 0 0 34px #000;
 }
-.familyCard::before,
-.familyCard::after {
-  content: "✦";
+
+.familyCard::before {
+  content: "";
   position: absolute;
-  color: #a87332;
-  font-size: .72rem;
+  z-index: 0;
+  inset: -3px;
+  background: url("/images/players/frame-square.png") center / 100% 100% no-repeat;
+  pointer-events: none;
 }
-.familyCard::before { top: 5px; left: 8px; }
-.familyCard::after { right: 8px; bottom: 5px; }
+
+.familyCard > * {
+  position: relative;
+  z-index: 1;
+}
+
 .familyCard h2 {
-  margin: 0 0 13px;
-  color: #d7b778;
-  font: 500 1.12rem Georgia, serif;
+  margin: 0 0 12px;
+  color: #d8b979;
+  font: 500 1.02rem Georgia, serif;
   letter-spacing: .08em;
   text-align: center;
   text-transform: uppercase;
 }
+
 .couple {
   display: grid;
-  grid-template-columns: minmax(78px, 1fr) 62px minmax(78px, 1fr);
+  grid-template-columns: minmax(72px, 1fr) 54px minmax(72px, 1fr);
   gap: 4px;
   align-items: center;
 }
-.familyPerson { display: grid; min-width: 0; justify-items: center; }
-.familyPortraitFrame { width: 92px; height: 163px; }
+
+.familyPerson {
+  display: grid;
+  min-width: 0;
+  justify-items: center;
+}
+
+.familyPortraitFrame {
+  width: 86px;
+  height: 153px;
+}
+
 .familyPortrait {
   display: block;
   width: 61px;
@@ -214,75 +289,117 @@
   object-fit: contain;
   background: #060605;
 }
-.familyPerson strong {
+
+.familyPerson > a,
+.familyPerson > strong {
   max-width: 100%;
-  margin-top: 5px;
+  margin-top: 4px;
   overflow: hidden;
-  color: #d6b16e;
-  font: 500 .87rem Georgia, serif;
+  color: #d9b46f;
+  font: 500 .83rem Georgia, serif;
   text-decoration: underline;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.weddingRings { width: 62px; height: auto; filter: drop-shadow(0 5px 8px #000); }
+
+.familyPerson > a:hover { color: #f0ca82; }
+
+.weddingRings {
+  width: 54px;
+  height: auto;
+  filter: drop-shadow(0 5px 8px #000);
+}
+
 .together {
   margin: 7px 0 0;
   padding-top: 7px;
-  color: #8e7958;
-  font: .73rem Georgia, serif;
+  color: #9b825c;
+  font: .71rem Georgia, serif;
   text-align: center;
-  border-top: 1px solid rgba(177, 119, 46, .22);
+  border-top: 1px solid rgba(177, 119, 46, .25);
 }
-.singleState { display: grid; min-height: 185px; place-content: center; justify-items: center; color: #a97736; }
+
+.singleState {
+  display: grid;
+  min-height: 175px;
+  place-content: center;
+  justify-items: center;
+  color: #a97736;
+}
+
 .singleState span { font: 3rem Georgia, serif; }
 .singleState strong { color: #d6b475; font: 500 1.1rem Georgia, serif; }
 
 .showcaseGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.1fr;
-  margin-top: 18px;
+  grid-template-columns: 1fr 1.12fr .9fr;
+  margin-top: 13px;
+  background:
+    url("/images/players/frame-landscape.png") center / 100% 100% no-repeat,
+    linear-gradient(90deg, rgba(3, 4, 4, .97), rgba(10, 10, 8, .94) 50%, rgba(3, 4, 4, .97)),
+    url("/images/about/dark-marble-seamless.webp") center / 420px repeat;
 }
+
 .collectionPanel,
 .recentPanel {
   display: flex;
   min-width: 0;
-  min-height: 390px;
+  min-height: 405px;
   flex-direction: column;
-  padding: 22px 30px 23px;
+  padding: 17px 20px 20px;
 }
+
 .collectionPanel + .collectionPanel,
-.recentPanel { border-left: 1px solid rgba(168, 111, 41, .43); }
+.recentPanel {
+  border-left: 1px solid rgba(168, 111, 41, .46);
+}
 
 .collectionHeader {
-  min-height: 58px;
-  padding-bottom: 15px;
+  min-height: 56px;
+  padding-bottom: 14px;
   text-align: center;
-  background: url("/images/players/ornament-divider.png") center bottom / 78% auto no-repeat;
+  background: url("/images/players/ornament-divider.png") center bottom / 82% auto no-repeat;
 }
-.collectionHeader h2 { margin: 0; color: #d8b879; font: 500 1.28rem Georgia, serif; }
-.collectionHeader p { margin: 4px 0 0; color: #aa8956; font: .8rem Georgia, serif; }
+
+.collectionHeader h2 {
+  margin: 0;
+  color: #d9ba79;
+  font: 500 1.14rem Georgia, serif;
+}
+
+.collectionHeader p {
+  margin: 4px 0 0;
+  color: #ad8c58;
+  font: .75rem Georgia, serif;
+}
 
 .smileGrid,
 .itemGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 9px;
-  margin-top: 22px;
+  gap: 8px;
+  margin-top: 18px;
 }
+
 .smileCard,
 .itemCard {
   display: grid;
   min-width: 0;
   height: 92px;
   place-items: center;
-  padding: 7px;
+  padding: 6px;
   border: 1px solid #9a7b48;
   background: #efede5;
-  box-shadow: inset 0 0 0 3px rgba(255,255,255,.5), 0 4px 11px rgba(0,0,0,.42);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .5), 0 4px 11px rgba(0, 0, 0, .42);
   transition: transform .16s ease, border-color .16s ease;
 }
+
 .smileCard:hover,
-.itemCard:hover { transform: translateY(-2px); border-color: #d0a75e; }
+.itemCard:hover {
+  transform: translateY(-2px);
+  border-color: #d0a75e;
+}
+
 .smileCard img,
 .itemCard img {
   display: block;
@@ -292,98 +409,197 @@
   max-height: 100%;
   object-fit: contain;
 }
+
 .itemCard img { max-width: 54px; max-height: 69px; }
 
 .panelLink {
   align-self: center;
   margin-top: auto;
-  padding-top: 19px;
-  color: #bc8844;
-  font: .9rem Georgia, serif;
+  padding-top: 18px;
+  color: #c18b43;
+  font: .84rem Georgia, serif;
 }
+
 .panelLink:hover { color: #edc77f; }
 
-.recentTimeline { display: grid; gap: 2px; margin-top: 13px; }
+.recentTimeline {
+  display: grid;
+  gap: 1px;
+  margin-top: 9px;
+}
+
 .recentEntry {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr);
-  gap: 10px;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 8px;
   align-items: start;
-  min-height: 49px;
+  min-height: 51px;
   padding: 5px 0;
 }
-.recentEntry + .recentEntry { border-top: 1px solid rgba(172, 113, 42, .12); }
+
+.recentEntry + .recentEntry { border-top: 1px solid rgba(172, 113, 42, .14); }
+
 .timelineIcon {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   place-items: center;
   color: #d0a45f;
-  font: 500 .85rem Georgia, serif;
+  font: 500 .82rem Georgia, serif;
   border: 1px solid rgba(187, 126, 48, .68);
   border-radius: 50%;
   background: #0b0b09;
   box-shadow: inset 0 0 8px #000;
 }
-.ringsIcon img { width: 30px; height: auto; }
-.recentEntry time,
-.fullEntry time { color: #806f55; font-size: .66rem; }
-.recentEntry h3 {
-  margin: 2px 0 0;
-  color: #d1b27b;
-  font: 500 .78rem/1.25 Georgia, serif;
+
+.ringsIcon,
+.imageEventIcon,
+.bannerEventIcon,
+.levelEventIcon {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
 }
 
-.fullChronicle { margin-top: 18px; padding: 19px 48px 36px; }
+.ringsIcon img { width: 36px; height: auto; }
+.imageEventIcon img { width: 34px; height: 34px; object-fit: contain; }
+.bannerEventIcon img { width: 27px; height: 35px; object-fit: contain; }
+
+.levelEventIcon {
+  width: 39px;
+  height: 45px;
+  background: url("/images/players/level-shield-ornate.png") center / contain no-repeat;
+}
+
+.levelEventIcon b {
+  color: #e4c27f;
+  font-size: .86rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px #000;
+}
+
+.festivalIcon { font-size: 1rem; }
+
+.recentEntry time,
+.fullEntry time {
+  color: #8a7758;
+  font-size: .63rem;
+}
+
+.recentEntry h3 {
+  margin: 3px 0 0;
+  color: #d2b37b;
+  font: 500 .75rem/1.28 Georgia, serif;
+}
+
+.fullChronicle {
+  margin-top: 13px;
+  padding: 13px 30px 27px;
+}
+
 .chronicleTitle {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  gap: 17px;
+  gap: 15px;
   align-items: center;
-  margin: 0 auto 15px;
-  color: #d8b879;
+  margin: 0 auto 14px;
+  color: #d9ba79;
 }
-.chronicleTitle h2 { margin: 0; font: 500 1.55rem Georgia, serif; }
-.chronicleTitle span { height: 1px; background: linear-gradient(90deg, transparent, #8f642f); }
-.chronicleTitle span:last-child { background: linear-gradient(90deg, #8f642f, transparent); }
+
+.chronicleTitle h2 {
+  margin: 0;
+  font: 500 1.5rem Georgia, serif;
+}
+
+.chronicleTitle span {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8f642f);
+}
+
+.chronicleTitle span:last-child {
+  background: linear-gradient(90deg, #8f642f, transparent);
+}
 
 .fullTimeline {
   position: relative;
   display: grid;
-  gap: 10px;
-  padding-left: 18px;
+  gap: 11px;
+  padding-left: 27px;
 }
+
 .fullTimeline::before {
   content: "";
   position: absolute;
-  top: 8px;
-  bottom: 8px;
-  left: 17px;
+  top: 6px;
+  bottom: 7px;
+  left: 12px;
   width: 1px;
   background: #9c6d31;
 }
+
 .fullEntry {
   position: relative;
   display: grid;
-  grid-template-columns: 150px 52px minmax(0, 1fr);
+  grid-template-columns: 122px 58px minmax(0, 1fr);
   align-items: stretch;
-  min-height: 112px;
-  border: 1px solid rgba(161, 105, 38, .48);
-  background: linear-gradient(105deg, rgba(18,18,15,.9), rgba(5,6,5,.82));
-  box-shadow: inset 0 0 24px rgba(0,0,0,.72);
+  min-height: 118px;
+  border: 1px solid rgba(161, 105, 38, .56);
+  background:
+    linear-gradient(105deg, rgba(18, 18, 15, .92), rgba(5, 6, 5, .84)),
+    url("/images/about/dark-marble-tile.webp") center / 360px repeat;
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, .74), 0 4px 12px rgba(0, 0, 0, .25);
 }
+
+.fullEntry::before {
+  content: "✦";
+  position: absolute;
+  z-index: 2;
+  top: -10px;
+  left: -37px;
+  display: grid;
+  width: 20px;
+  height: 20px;
+  place-items: center;
+  color: #d1a052;
+  font-size: .62rem;
+  border: 1px solid rgba(177, 119, 46, .72);
+  border-radius: 50%;
+  background: #0a0a08;
+  box-shadow: 0 0 0 3px #070807;
+}
+
 .fullEntry > time {
   display: grid;
   align-items: center;
-  padding: 18px 19px;
-  border-right: 1px solid rgba(163, 106, 39, .38);
+  padding: 16px 14px;
+  border-right: 1px solid rgba(163, 106, 39, .42);
 }
-.fullEntry > .timelineIcon { align-self: start; margin: 22px 0 0 17px; }
-.fullEntryBody { padding: 20px 23px 18px; }
+
+.fullEntry > .timelineIcon {
+  align-self: start;
+  margin: 24px 0 0 14px;
+}
+
+.fullEntryBody { padding: 21px 20px 18px; }
 .fullEntryBody > time { display: none; }
-.fullEntryBody h3 { margin: 0; color: #dab979; font: 500 1.03rem/1.35 Georgia, serif; }
-.fullEntryBody a { display: inline-block; margin-top: 8px; color: #ac7b40; font-size: .73rem; font-weight: 700; }
+
+.fullEntryBody h3 {
+  margin: 0;
+  color: #dcbb79;
+  font: 500 1rem/1.35 Georgia, serif;
+}
+
+.fullEntryBody a {
+  display: inline-block;
+  margin-top: 9px;
+  color: #b07e40;
+  font-size: .71rem;
+  font-weight: 700;
+}
+
 .fullEntryBody a:hover { color: #edc77e; }
+
 .prize {
   display: block;
   width: fit-content;
@@ -391,11 +607,18 @@
   margin-top: 10px;
   padding: 8px 14px;
   color: #e0a955;
-  font-size: .78rem;
+  font-size: .76rem;
   border-left: 2px solid #c78a35;
-  background: linear-gradient(90deg, rgba(139,77,24,.28), rgba(139,77,24,.05));
+  background: linear-gradient(90deg, rgba(139, 77, 24, .3), rgba(139, 77, 24, .05));
 }
-.eventSmiles { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+
+.eventSmiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 12px;
+}
+
 .eventSmiles img {
   display: block;
   width: auto;
@@ -406,60 +629,131 @@
   border: 1px solid rgba(178, 120, 47, .54);
   background: #f5f9ff;
 }
-.emptyText { margin: 24px 0; color: #84745b; font-style: italic; }
+
+.emptyText {
+  margin: 24px 0;
+  color: #8a795e;
+  font-style: italic;
+}
 
 @media (max-width: 1150px) {
-  .page::before,
-  .page::after { display: none; }
-  .shell { width: min(1040px, calc(100% - 28px)); }
-  .profileCard { grid-template-columns: 190px minmax(240px, 1fr) 320px; gap: 24px; padding-inline: 34px; }
+  .profileCard {
+    grid-template-columns: 190px minmax(195px, 1fr) 250px;
+    gap: 16px;
+    padding-inline: 22px;
+  }
+
+  .familyCard { padding-inline: 16px; }
+  .collectionPanel,
+  .recentPanel { padding-inline: 14px; }
+  .smileGrid,
+  .itemGrid { gap: 6px; }
   .smileCard,
-  .itemCard { height: 78px; }
+  .itemCard { height: 82px; }
 }
 
 @media (max-width: 900px) {
-  .profileCard { grid-template-columns: 190px minmax(0, 1fr); }
-  .familyCard { grid-column: 1 / -1; width: min(100%, 410px); justify-self: center; }
+  .profileCard {
+    grid-template-columns: 172px minmax(180px, 1fr) 214px;
+    gap: 12px;
+    padding-inline: 18px;
+  }
+
+  .identity h1 { font-size: 2.25rem; }
+  .familyCard { padding-inline: 10px; }
+  .familyPortraitFrame { width: 78px; height: 139px; }
+  .familyPortrait { width: 54px; height: 96px; }
+  .couple { grid-template-columns: minmax(66px, 1fr) 46px minmax(66px, 1fr); }
+  .weddingRings { width: 46px; }
+  .collectionHeader h2 { font-size: 1rem; }
+  .collectionPanel,
+  .recentPanel { padding-inline: 11px; }
+  .smileCard,
+  .itemCard { height: 76px; padding: 5px; }
+  .recentEntry { grid-template-columns: 38px minmax(0, 1fr); gap: 5px; }
+  .timelineIcon { width: 33px; height: 33px; }
+  .levelEventIcon { width: 36px; height: 41px; }
+  .fullChronicle { padding-inline: 20px; }
+  .fullEntry { grid-template-columns: 104px 52px minmax(0, 1fr); }
+}
+
+@media (max-width: 820px) {
+  .page::before,
+  .page::after { display: none; }
+  .shell { width: calc(100% - 20px); }
+  .profileCard {
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 20px;
+  }
+  .familyCard {
+    grid-column: 1 / -1;
+    width: min(100%, 380px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 700px) {
   .showcaseGrid { grid-template-columns: 1fr; }
   .collectionPanel + .collectionPanel,
-  .recentPanel { border-left: 0; border-top: 1px solid rgba(168,111,41,.43); }
+  .recentPanel {
+    border-top: 1px solid rgba(168, 111, 41, .46);
+    border-left: 0;
+  }
   .collectionPanel,
   .recentPanel { min-height: 0; }
   .smileGrid,
   .itemGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
-@media (max-width: 600px) {
-  .shell { width: calc(100% - 18px); padding-top: 10px; }
-  .profileCard { grid-template-columns: 1fr; justify-items: center; padding: 22px 16px; }
+@media (max-width: 560px) {
+  .shell {
+    width: calc(100% - 14px);
+    padding-top: 7px;
+  }
+  .profileCard {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 20px 14px;
+  }
   .identity { width: min(100%, 330px); }
   .identity h1 { text-align: center; }
   .activity { justify-content: center; }
   .details { margin-inline: auto; }
   .dmLink { margin-inline: auto; }
-  .familyCard { padding-inline: 10px; }
-  .couple { grid-template-columns: minmax(72px,1fr) 52px minmax(72px,1fr); }
-  .familyPortraitFrame { width: 82px; height: 145px; }
-  .familyPortrait { width: 55px; height: 97px; }
-  .weddingRings { width: 50px; }
+  .familyCard { grid-column: auto; width: min(100%, 360px); }
   .collectionPanel,
-  .recentPanel { padding: 20px 18px; }
-  .smileCard,
-  .itemCard { height: 72px; }
-  .fullChronicle { padding: 17px 12px 25px; }
+  .recentPanel { padding: 18px 14px; }
+  .fullChronicle { padding: 14px 10px 24px; }
   .fullTimeline { padding-left: 0; }
-  .fullTimeline::before { display: none; }
+  .fullTimeline::before,
+  .fullEntry::before { display: none; }
   .fullEntry { grid-template-columns: 46px minmax(0, 1fr); min-height: 0; }
-  .fullEntry > time { grid-column: 2; grid-row: 1; padding: 12px 12px 0; border: 0; }
-  .fullEntry > .timelineIcon { grid-column: 1; grid-row: 1 / 3; margin: 15px 0 0 8px; }
-  .fullEntryBody { grid-column: 2; padding: 4px 12px 15px; }
+  .fullEntry > time {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 12px 12px 0;
+    border: 0;
+  }
+  .fullEntry > .timelineIcon {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin: 15px 0 0 8px;
+  }
+  .fullEntryBody {
+    grid-column: 2;
+    padding: 5px 12px 15px;
+  }
   .chronicleTitle { gap: 8px; }
-  .chronicleTitle h2 { font-size: 1.28rem; }
+  .chronicleTitle h2 { font-size: 1.25rem; }
 }
 
 @media (max-width: 390px) {
+  .couple { grid-template-columns: minmax(62px, 1fr) 42px minmax(62px, 1fr); }
+  .familyPortraitFrame { width: 74px; height: 132px; }
+  .familyPortrait { width: 51px; height: 90px; }
+  .weddingRings { width: 42px; }
   .smileGrid,
-  .itemGrid { gap: 6px; }
+  .itemGrid { gap: 5px; }
   .smileCard,
-  .itemCard { height: 64px; padding: 5px; }
+  .itemCard { height: 65px; padding: 4px; }
 }
