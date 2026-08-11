@@ -1,24 +1,23 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import {
   NAV_LINKS,
   NAV_NEW_UPDATED_EVENT,
   isNavHref,
   type NavHref,
 } from "@/lib/navigation-links";
+import styles from "./Navbar.module.css";
 
 const STORAGE_KEY = "wolfchen-navigation-new-seen-v1";
 
 type VersionMap = Partial<Record<NavHref, string>>;
 
 function normalizeVersions(value: unknown): VersionMap {
-  if (!value || typeof value !== "object" || Array.isArray(value)) {
-    return {};
-  }
+  if (!value || typeof value !== "object" || Array.isArray(value)) return {};
 
   const versions: VersionMap = {};
 
@@ -34,6 +33,13 @@ function normalizeVersions(value: unknown): VersionMap {
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [suggestionOpen, setSuggestionOpen] = useState(false);
+  const [suggestion, setSuggestion] = useState("");
+  const [suggestionStatus, setSuggestionStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+  const [suggestionMessage, setSuggestionMessage] = useState("");
   const [activeItems, setActiveItems] = useState<VersionMap>({});
   const [seenItems, setSeenItems] = useState<VersionMap>(() => {
     if (typeof window === "undefined") return {};
@@ -46,7 +52,8 @@ export default function Navbar() {
     }
   });
 
-  const isActive = (href: string) => pathname.startsWith(href);
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`);
 
   useEffect(() => {
     let cancelled = false;
@@ -57,9 +64,7 @@ export default function Navbar() {
         return response.json();
       })
       .then((data: { items?: unknown }) => {
-        if (!cancelled) {
-          setActiveItems(normalizeVersions(data.items));
-        }
+        if (!cancelled) setActiveItems(normalizeVersions(data.items));
       })
       .catch(() => {
         if (!cancelled) setActiveItems({});
@@ -77,31 +82,21 @@ export default function Navbar() {
     }
 
     window.addEventListener(NAV_NEW_UPDATED_EVENT, handleUpdate);
-
-    return () => {
-      window.removeEventListener(NAV_NEW_UPDATED_EVENT, handleUpdate);
-    };
+    return () => window.removeEventListener(NAV_NEW_UPDATED_EVENT, handleUpdate);
   }, []);
 
   useEffect(() => {
-    const currentHref = NAV_LINKS.find(({ href }) =>
-      pathname === href || pathname.startsWith(`${href}/`),
-    )?.href;
-
+    const currentHref = NAV_LINKS.find(({ href }) => isActive(href))?.href;
     if (!currentHref) return;
 
     const activeVersion = activeItems[currentHref];
-
     if (!activeVersion) return;
 
     const timer = window.setTimeout(() => {
       setSeenItems((current) => {
         if (current[currentHref] === activeVersion) return current;
 
-        const nextSeenItems = {
-          ...current,
-          [currentHref]: activeVersion,
-        };
+        const nextSeenItems = { ...current, [currentHref]: activeVersion };
 
         try {
           localStorage.setItem(STORAGE_KEY, JSON.stringify(nextSeenItems));
@@ -118,74 +113,74 @@ export default function Navbar() {
 
   function isNew(href: NavHref): boolean {
     const activeVersion = activeItems[href];
-
     return Boolean(
       activeVersion && seenItems[href] !== activeVersion && !isActive(href),
     );
   }
 
+  async function sendSuggestion(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const text = suggestion.trim();
+    if (text.length < 3 || suggestionStatus === "sending") return;
+
+    setSuggestionStatus("sending");
+    setSuggestionMessage("");
+
+    try {
+      const form = new FormData(event.currentTarget);
+      const response = await fetch("/api/suggestions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text,
+          page: pathname,
+          website: form.get("website"),
+        }),
+      });
+      const data = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(data.message ?? "Не удалось отправить предложение");
+      }
+
+      setSuggestion("");
+      setSuggestionStatus("success");
+      setSuggestionMessage("Спасибо! Предложение отправлено.");
+    } catch (error) {
+      setSuggestionStatus("error");
+      setSuggestionMessage(
+        error instanceof Error ? error.message : "Не удалось отправить предложение",
+      );
+    }
+  }
+
   return (
-    <header
-      className="sticky top-0 z-50 overflow-hidden border-b border-[#684318] shadow-[0_12px_35px_rgba(0,0,0,.58)]"
-      style={{
-        background:
-          "linear-gradient(180deg,#242522 0%,#1b1c1a 32%,#111210 100%)",
-      }}
-    >
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(255,255,255,.06), rgba(255,255,255,.012) 32%, transparent 64%), radial-gradient(circle at center, rgba(156,105,39,.025), rgba(0,0,0,.34) 100%)",
-        }}
-      />
+    <header className={styles.header}>
+      <div className={styles.texture} aria-hidden="true" />
 
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(222,190,137,.42), transparent)",
-        }}
-      />
-
-      <div
-        className="absolute bottom-0 left-0 right-0 h-px"
-        style={{
-          background:
-            "linear-gradient(to right, transparent, rgba(180,119,34,.78), transparent)",
-        }}
-      />
-
-      <div className="relative mx-auto flex h-16 max-w-[1180px] items-center px-6">
+      <div className={styles.inner}>
         <Link
           href="/"
-          className="group mr-10 shrink-0"
-          onClick={() => setOpen(false)}
+          className={styles.brand}
+          onClick={() => {
+            setOpen(false);
+            setSearchOpen(false);
+            setSuggestionOpen(false);
+          }}
+          aria-label="Wölfchen Clan — главная"
         >
-          <div
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#a8a8a2] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:border-[#d2a45b]"
-            style={{
-              backgroundImage:
-                'linear-gradient(145deg,rgba(255,255,255,.18) 0%,rgba(40,42,42,.08) 42%,rgba(8,9,9,.40) 100%),url("/images/silver-letter-texture.webp")',
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundBlendMode: "multiply, normal",
-              boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,.88), inset 0 0 0 1px rgba(35,36,36,.28), inset 0 -6px 9px rgba(13,14,14,.34), 0 4px 14px rgba(0,0,0,.52)",
-            }}
-          >
-            <Image
-              src="/icons/clan-paw.gif"
-              alt="Главная"
-              width={25}
-              height={25}
-              unoptimized
-              className="h-[25px] w-[25px] object-contain"
-            />
-          </div>
+          <Image
+            src="/icons/wolf-paw-gold.png"
+            alt=""
+            width={58}
+            height={58}
+            priority
+            className={styles.brandPaw}
+          />
+          <span className={styles.brandName}>Wölfchen Clan</span>
         </Link>
 
-        <nav className="hidden items-center gap-10 lg:flex">
+        <nav className={styles.desktopNav} aria-label="Основная навигация">
           {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
             const showNew = isNew(href);
@@ -194,61 +189,162 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
-                className={[
-                  "group relative py-2 text-[15px] font-semibold tracking-wide transition-all duration-300",
-                  active
-                    ? "text-[#efc678] drop-shadow-[0_0_8px_rgba(239,198,120,.2)]"
-                    : "text-[#ecd4a6] hover:text-[#efc678]",
-                ].join(" ")}
+                aria-current={active ? "page" : undefined}
+                className={`${styles.navLink} ${active ? styles.active : ""}`}
               >
                 <span
                   aria-hidden="true"
-                  className={[
-                    "absolute left-1/2 -top-1 -translate-x-1/2 text-[9px] font-black leading-none tracking-[0.08em] text-[#e7a64a] drop-shadow-[0_0_5px_rgba(231,166,74,.55)] transition-opacity",
-                    showNew ? "opacity-100" : "opacity-0",
-                  ].join(" ")}
+                  className={`${styles.newBadge} ${showNew ? styles.newBadgeVisible : ""}`}
                 >
                   New
                 </span>
-
                 {showNew && <span className="sr-only">Новое: </span>}
-                {label}
-
-                <span
-                  className={[
-                    "absolute left-0 -bottom-[11px] h-[2px] rounded-full transition-all duration-300",
-                    active
-                      ? "w-full opacity-100"
-                      : "w-0 opacity-0 group-hover:w-full group-hover:opacity-100",
-                  ].join(" ")}
-                  style={{
-                    background:
-                      "linear-gradient(90deg,#75501f,#d39a45,#75501f)",
-                    boxShadow: "0 0 10px rgba(211,154,69,.35)",
-                  }}
-                />
+                <span>{label}</span>
               </Link>
             );
           })}
         </nav>
 
         <button
-          className="ml-auto rounded-lg border border-[#625e55] bg-black/10 px-3 py-2 text-[#ecd4a6] transition hover:border-[#d8a551] hover:text-[#efc678] lg:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Меню"
+          type="button"
+          className={`${styles.searchButton} ${searchOpen ? styles.searchButtonOpen : ""}`}
+          onClick={() => {
+            setSearchOpen((current) => !current);
+            setOpen(false);
+            setSuggestionOpen(false);
+          }}
+          aria-label={searchOpen ? "Закрыть поиск" : "Найти игрока"}
+          aria-expanded={searchOpen}
+          aria-controls="navbar-player-search"
         >
-          {open ? "✕" : "☰"}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8" />
+            <path d="m16 16 4.7 4.7" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          className={`${styles.suggestionButton} ${suggestionOpen ? styles.suggestionButtonOpen : ""}`}
+          onClick={() => {
+            setSuggestionOpen((current) => !current);
+            setSearchOpen(false);
+            setOpen(false);
+            setSuggestionStatus("idle");
+            setSuggestionMessage("");
+          }}
+          aria-label="Оставить сообщение"
+          aria-expanded={suggestionOpen}
+          aria-controls="navbar-suggestion"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.5 5.5h17v13h-17z" />
+            <path d="m4 6 8 7 8-7" />
+          </svg>
+          <span className="sr-only">Оставить сообщение</span>
+        </button>
+
+        <button
+          type="button"
+          className={`${styles.menuButton} ${open ? styles.menuButtonOpen : ""}`}
+          onClick={() => {
+            setOpen((current) => !current);
+            setSearchOpen(false);
+            setSuggestionOpen(false);
+          }}
+          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+        >
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
-      {open && (
-        <div
-          className="lg:hidden border-t border-[#504a40]"
-          style={{
-            background: "linear-gradient(180deg,#191a18,#0f100f)",
-          }}
-        >
+      <div
+        id="navbar-suggestion"
+        className={`${styles.suggestionPanel} ${suggestionOpen ? styles.suggestionPanelOpen : ""}`}
+      >
+        <form onSubmit={sendSuggestion} className={styles.suggestionForm}>
+          <label htmlFor="navbar-suggestion-text">Оставить сообщение</label>
+          <p>Напиши, что хотелось бы добавить или изменить на сайте.</p>
+          <textarea
+            id="navbar-suggestion-text"
+            value={suggestion}
+            onChange={(event) => {
+              setSuggestion(event.target.value);
+              if (suggestionStatus !== "idle") {
+                setSuggestionStatus("idle");
+                setSuggestionMessage("");
+              }
+            }}
+            placeholder="Твоё предложение..."
+            minLength={3}
+            maxLength={1000}
+            required
+          />
+          <input
+            type="text"
+            name="website"
+            className={styles.honeypot}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+          />
+          <div className={styles.suggestionFooter}>
+            <span className={styles.suggestionCount}>{suggestion.length}/1000</span>
+            <button
+              type="submit"
+              disabled={suggestion.trim().length < 3 || suggestionStatus === "sending"}
+            >
+              {suggestionStatus === "sending" ? "Отправляю…" : "Отправить"}
+            </button>
+          </div>
+          {suggestionMessage && (
+            <div
+              className={`${styles.suggestionMessage} ${
+                suggestionStatus === "error" ? styles.suggestionError : ""
+              }`}
+              role="status"
+            >
+              {suggestionMessage}
+            </div>
+          )}
+        </form>
+      </div>
+
+      <div
+        id="navbar-player-search"
+        className={`${styles.searchPanel} ${searchOpen ? styles.searchPanelOpen : ""}`}
+      >
+        <form action="/players" method="get" className={styles.searchForm}>
+          <label htmlFor="navbar-search-input">Найти игрока</label>
+          <div className={styles.searchField}>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.8" />
+              <path d="m16 16 4.7 4.7" />
+            </svg>
+            <input
+              id="navbar-search-input"
+              type="search"
+              name="q"
+              placeholder="Ник или ID игрока..."
+              autoComplete="off"
+              required
+            />
+            <button type="submit">Найти</button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        id="mobile-navigation"
+        className={`${styles.mobileNav} ${open ? styles.mobileNavOpen : ""}`}
+      >
+        <nav aria-label="Мобильная навигация">
           {NAV_LINKS.map(({ href, label }) => {
+            const active = isActive(href);
             const showNew = isNew(href);
 
             return (
@@ -256,30 +352,16 @@ export default function Navbar() {
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className={[
-                  "block border-b border-[#47453f] px-6 py-3 font-semibold transition-colors",
-                  isActive(href)
-                    ? "text-[#efc678]"
-                    : "text-[#ecd4a6] hover:text-[#efc678]",
-                ].join(" ")}
+                aria-current={active ? "page" : undefined}
+                className={`${styles.mobileLink} ${active ? styles.mobileLinkActive : ""}`}
               >
-                <span
-                  aria-hidden="true"
-                  className={[
-                    "block h-3 text-[9px] font-black leading-3 tracking-[0.08em] text-[#e7a64a] transition-opacity",
-                    showNew ? "opacity-100" : "opacity-0",
-                  ].join(" ")}
-                >
-                  New
-                </span>
-
-                {showNew && <span className="sr-only">Новое: </span>}
-                {label}
+                <span>{label}</span>
+                {showNew && <span className={styles.mobileNew}>New</span>}
               </Link>
             );
           })}
-        </div>
-      )}
+        </nav>
+      </div>
     </header>
   );
 }

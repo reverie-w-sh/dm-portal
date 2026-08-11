@@ -32,10 +32,17 @@ const players = (playersJson as PlayerSource[]).map(
   }),
 );
 
-export default function PlayersPage() {
+export default async function PlayersPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ q?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const query = Array.isArray(params?.q) ? params.q[0] : params?.q;
+
   return (
     <main className={styles.page}>
-      <PlayersDirectory players={players} />
+      <PlayersDirectory players={players} initialQuery={query?.trim() ?? ""} />
     </main>
   );
 }

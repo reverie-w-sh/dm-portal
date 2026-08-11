@@ -79,8 +79,14 @@ function PlayerPortrait({ player }: { player: DirectoryPlayer }) {
   );
 }
 
-export function PlayersDirectory({ players }: { players: DirectoryPlayer[] }) {
-  const [query, setQuery] = useState("");
+export function PlayersDirectory({
+  players,
+  initialQuery = "",
+}: {
+  players: DirectoryPlayer[];
+  initialQuery?: string;
+}) {
+  const [query, setQuery] = useState(initialQuery);
   const [letter, setLetter] = useState<string | null>(null);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 

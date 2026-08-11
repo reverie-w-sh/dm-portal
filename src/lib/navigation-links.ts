@@ -1,10 +1,10 @@
 export const NAV_LINKS = [
-  { href: "/members", label: 'Состав клана "Волчата"' },
-  { href: "/clans", label: "Другие кланы ДМ" },
-  { href: "/chronicle", label: "Летопись" },
-  { href: "/gallery", label: "Галерея" },
-  { href: "/gifts", label: "Подарочки" },
-  { href: "/links", label: "Тут тоже что-то есть :)" },
+  { href: "/members", label: "ВОЛЧАТА" },
+  { href: "/clans", label: "ВСЕ КЛАНЫ" },
+  { href: "/chronicle", label: "ЛЕТОПИСЬ" },
+  { href: "/gallery", label: "ГАЛЕРЕЯ" },
+  { href: "/gifts", label: "ПОДАРОЧКИ" },
+  { href: "/links", label: "БИБЛИОТЕКА" },
 ] as const;
 
 export type NavHref = (typeof NAV_LINKS)[number]["href"];

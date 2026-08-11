@@ -248,6 +248,135 @@ function NavigationNewPanel() {
   );
 }
 
+type Suggestion = {
+  id: string;
+  text: string;
+  page: string;
+  createdAt: string;
+};
+
+type SuggestionsData = {
+  configured: boolean;
+  suggestions: Suggestion[];
+};
+
+function SuggestionsPanel() {
+  const [data, setData] = useState<SuggestionsData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [deleting, setDeleting] = useState<string | null>(null);
+  const [message, setMessage] = useState("");
+
+  async function loadSuggestions() {
+    setMessage("");
+    try {
+      const response = await fetch("/api/admin/suggestions", { cache: "no-store" });
+      const next = (await response.json()) as SuggestionsData;
+      setData(next);
+    } catch {
+      setMessage("Не удалось загрузить предложения.");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    void loadSuggestions();
+  }, []);
+
+  async function removeSuggestion(id: string) {
+    setDeleting(id);
+    setMessage("");
+
+    try {
+      const response = await fetch("/api/admin/suggestions", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      const result = (await response.json()) as { message?: string };
+
+      if (!response.ok) {
+        throw new Error(result.message ?? "Не удалось удалить предложение");
+      }
+
+      setData((current) =>
+        current
+          ? {
+              ...current,
+              suggestions: current.suggestions.filter((item) => item.id !== id),
+            }
+          : current,
+      );
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Не удалось удалить предложение");
+    } finally {
+      setDeleting(null);
+    }
+  }
+
+  return (
+    <div className="glass rounded-2xl p-6">
+      <div className="flex items-center justify-between gap-4 mb-2">
+        <h2 className="text-sm font-semibold text-ink uppercase tracking-wider">
+          Предложения с сайта
+        </h2>
+        <button
+          type="button"
+          onClick={loadSuggestions}
+          className="text-xs text-[#3d72a8] underline"
+        >
+          Обновить
+        </button>
+      </div>
+
+      <p className="text-xs leading-relaxed text-ink-muted mb-5">
+        Сообщения, которые посетители оставили через навигатор.
+      </p>
+
+      {loading ? (
+        <p className="text-sm text-ink-muted">Загружаю предложения…</p>
+      ) : !data?.configured ? (
+        <p className="text-sm text-[#b42318]">
+          Upstash Redis не подключён, поэтому предложения пока не сохраняются.
+        </p>
+      ) : data.suggestions.length === 0 ? (
+        <p className="text-sm text-ink-muted">Новых предложений пока нет.</p>
+      ) : (
+        <div className="space-y-3">
+          {data.suggestions.map((item) => (
+            <article
+              key={item.id}
+              className="rounded-xl border border-[#aaa095] bg-white/25 p-4"
+            >
+              <p className="whitespace-pre-wrap break-words text-sm leading-relaxed text-ink">
+                {item.text}
+              </p>
+              <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] text-ink-muted">
+                  <span>{formatDate(item.createdAt)}</span>
+                  <a href={item.page} className="underline hover:text-[#8b5a18]">
+                    Страница: {item.page}
+                  </a>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => removeSuggestion(item.id)}
+                  disabled={deleting === item.id}
+                  className="text-xs font-semibold text-[#9f2d24] underline disabled:opacity-50"
+                >
+                  {deleting === item.id ? "Удаляю…" : "Удалить"}
+                </button>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+
+      {message && <p className="mt-4 text-xs font-medium text-[#b42318]">{message}</p>}
+    </div>
+  );
+}
+
 const PAGE_NAMES: Record<string, string> = {
   "/": "Главная",
   "/members": "Волчата",
@@ -647,6 +776,8 @@ export default function AdminPage() {
       <div className="divider-accent mb-10" />
 
       <div className="space-y-5 max-w-2xl">
+
+        <SuggestionsPanel />
 
         <NavigationNewPanel />
 

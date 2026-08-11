@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getExperienceProgress } from "@/lib/experience";
 import styles from "./RatingsClient.module.css";
@@ -155,6 +156,40 @@ function buildDirectoryLevelMap(directory: unknown) {
   walk(directory);
   return levels;
 }
+
+function buildDirectoryCuidMap(directory: unknown) {
+  const cuids = new Map<string, string>();
+  const visited = new WeakSet<object>();
+
+  function walk(value: unknown, fallbackName?: string) {
+    if (Array.isArray(value)) {
+      if (visited.has(value)) return;
+      visited.add(value);
+      value.forEach((entry) => walk(entry));
+      return;
+    }
+    if (!isRecord(value) || visited.has(value)) return;
+    visited.add(value);
+
+    const name = String(
+      value.name ??
+        value.nick ??
+        value.nickname ??
+        value.login ??
+        fallbackName ??
+        "",
+    )
+      .trim()
+      .toLocaleLowerCase("ru-RU");
+    const cuid = String(value.cuid ?? value.playerId ?? "").trim();
+    if (name && /^\d+$/.test(cuid)) cuids.set(name, cuid);
+
+    for (const [key, nested] of Object.entries(value)) walk(nested, key);
+  }
+
+  walk(directory);
+  return cuids;
+}
 function playerValue(item: RatingItem, sort: PlayerSort) {
   if (sort === "experience") {
     return numberFrom(item.experience, item.exp, item.value);
@@ -192,6 +227,10 @@ export default function RatingsClient({
     useState<CommunitySort>("victories");
   const directoryLevels = useMemo(
     () => buildDirectoryLevelMap(playerDirectory),
+    [playerDirectory],
+  );
+  const directoryCuids = useMemo(
+    () => buildDirectoryCuidMap(playerDirectory),
     [playerDirectory],
   );
 
@@ -385,6 +424,9 @@ export default function RatingsClient({
                       directoryLevels.get(
                         item.name.trim().toLocaleLowerCase("ru-RU"),
                       );
+                    const playerCuid = directoryCuids.get(
+                      item.name.trim().toLocaleLowerCase("ru-RU"),
+                    );
                     const name = (
                       <>
                         {item.name}
@@ -409,6 +451,13 @@ export default function RatingsClient({
                         <td>
                           {active === "communities" ? (
                             <span className={styles.player}>{name}</span>
+                          ) : playerCuid ? (
+                            <Link
+                              className={styles.player}
+                              href={`/players/${playerCuid}`}
+                            >
+                              {name}
+                            </Link>
                           ) : (
                             <a
                               className={styles.player}
