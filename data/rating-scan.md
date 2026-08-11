@@ -565,10 +565,11 @@
 563. ЦАРЮКА[4] — cuid=4668 — https://dm-game.com/index.php?file=infouser&cuid=4668
 564. Эрагон[4] — cuid=7800 — https://dm-game.com/index.php?file=infouser&cuid=7800
 
-## Хранители — CLAN 7 — знайдено 2
+## Хранители — CLAN 7 — знайдено 3
 
 1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-2. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+2. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
+3. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -630,11 +631,10 @@
 16. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 17. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
 
-## Лесные Оборотни — CLAN 212 — знайдено 3
+## Лесные Оборотни — CLAN 212 — знайдено 2
 
 1. Pretty[11] — cuid=2041 — https://dm-game.com/index.php?file=infouser&cuid=2041
 2. Serg[11] — cuid=1985 — https://dm-game.com/index.php?file=infouser&cuid=1985
-3. ХАРАКТЕРНИК[8] — cuid=1966 — https://dm-game.com/index.php?file=infouser&cuid=1966
 
 ## Ozune — CLAN 213 — знайдено 20
 
@@ -756,19 +756,18 @@
 41. Волк[4] — cuid=27239 — https://dm-game.com/index.php?file=infouser&cuid=27239
 42. Жорик с 90X[4] — cuid=24415 — https://dm-game.com/index.php?file=infouser&cuid=24415
 
-## Храм Мечей — CLAN 235 — знайдено 11
+## Храм Мечей — CLAN 235 — знайдено 10
 
-1. FaLLeN[11] — cuid=10023 — https://dm-game.com/index.php?file=infouser&cuid=10023
-2. МАСКА[11] — cuid=1921 — https://dm-game.com/index.php?file=infouser&cuid=1921
-3. Стьюи[11] — cuid=5285 — https://dm-game.com/index.php?file=infouser&cuid=5285
-4. АреоН[10] — cuid=4603 — https://dm-game.com/index.php?file=infouser&cuid=4603
-5. Marishka[9] — cuid=9727 — https://dm-game.com/index.php?file=infouser&cuid=9727
-6. АйринС[9] — cuid=1520 — https://dm-game.com/index.php?file=infouser&cuid=1520
-7. Янотик[9] — cuid=23733 — https://dm-game.com/index.php?file=infouser&cuid=23733
-8. DanGar[8] — cuid=7938 — https://dm-game.com/index.php?file=infouser&cuid=7938
-9. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
-10. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
-11. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
+1. МАСКА[11] — cuid=1921 — https://dm-game.com/index.php?file=infouser&cuid=1921
+2. Стьюи[11] — cuid=5285 — https://dm-game.com/index.php?file=infouser&cuid=5285
+3. АреоН[10] — cuid=4603 — https://dm-game.com/index.php?file=infouser&cuid=4603
+4. Marishka[9] — cuid=9727 — https://dm-game.com/index.php?file=infouser&cuid=9727
+5. АйринС[9] — cuid=1520 — https://dm-game.com/index.php?file=infouser&cuid=1520
+6. Янотик[9] — cuid=23733 — https://dm-game.com/index.php?file=infouser&cuid=23733
+7. DanGar[8] — cuid=7938 — https://dm-game.com/index.php?file=infouser&cuid=7938
+8. Диметрия[8] — cuid=9262 — https://dm-game.com/index.php?file=infouser&cuid=9262
+9. Цибуля[8] — cuid=14066 — https://dm-game.com/index.php?file=infouser&cuid=14066
+10. Shturmovik[6] — cuid=24036 — https://dm-game.com/index.php?file=infouser&cuid=24036
 
 ## Каратели — CLAN 237 — знайдено 10
 
@@ -801,14 +800,13 @@
 10. MadDad[7] — cuid=22695 — https://dm-game.com/index.php?file=infouser&cuid=22695
 11. Old_Emperor[7] — cuid=16698 — https://dm-game.com/index.php?file=infouser&cuid=16698
 
-## Devils of Death — CLAN 244 — знайдено 6
+## Devils of Death — CLAN 244 — знайдено 5
 
-1. Piranha[12] — cuid=9756 — https://dm-game.com/index.php?file=infouser&cuid=9756
-2. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
-3. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
-4. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
-5. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
-6. Смотрящий[8] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
+1. Fistashka[11] — cuid=8717 — https://dm-game.com/index.php?file=infouser&cuid=8717
+2. bolt1k[9] — cuid=1780 — https://dm-game.com/index.php?file=infouser&cuid=1780
+3. Серж[9] — cuid=1955 — https://dm-game.com/index.php?file=infouser&cuid=1955
+4. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
+5. Смотрящий[8] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 
 ## Гладиаторы — CLAN 247 — знайдено 10
 
@@ -839,7 +837,7 @@
 4. тупик101[8] — cuid=3943 — https://dm-game.com/index.php?file=infouser&cuid=3943
 5. египтянин[6] — cuid=28595 — https://dm-game.com/index.php?file=infouser&cuid=28595
 
-## die Wölfchen — CLAN 278 — знайдено 14
+## die Wölfchen — CLAN 278 — знайдено 13
 
 1. Артур[14] — cuid=7939 — https://dm-game.com/index.php?file=infouser&cuid=7939
 2. Катерина[14] — cuid=111 — https://dm-game.com/index.php?file=infouser&cuid=111
@@ -851,8 +849,7 @@
 8. Тьма[10] — cuid=3712 — https://dm-game.com/index.php?file=infouser&cuid=3712
 9. Allania[9] — cuid=4394 — https://dm-game.com/index.php?file=infouser&cuid=4394
 10. Mentalist[9] — cuid=3358 — https://dm-game.com/index.php?file=infouser&cuid=3358
-11. немец[9] — cuid=17507 — https://dm-game.com/index.php?file=infouser&cuid=17507
-12. Чудик[9] — cuid=19182 — https://dm-game.com/index.php?file=infouser&cuid=19182
-13. kristi[8] — cuid=3780 — https://dm-game.com/index.php?file=infouser&cuid=3780
-14. Асталависта[8] — cuid=16989 — https://dm-game.com/index.php?file=infouser&cuid=16989
+11. Чудик[9] — cuid=19182 — https://dm-game.com/index.php?file=infouser&cuid=19182
+12. kristi[8] — cuid=3780 — https://dm-game.com/index.php?file=infouser&cuid=3780
+13. Асталависта[8] — cuid=16989 — https://dm-game.com/index.php?file=infouser&cuid=16989
 
