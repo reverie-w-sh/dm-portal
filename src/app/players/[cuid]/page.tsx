@@ -308,13 +308,13 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
-                  <Image src="/images/players/alliance-banner.png" alt="" width={180} height={228} unoptimized />
+                  <Image src="/images/players/clan-paw.png" alt="" width={180} height={228} unoptimized />
                 </span>
                 {clan ? <Link href={`/clans/${clan.clanId}`}>{clan.name}</Link> : <strong>Без клана</strong>}
               </div>
               <div className={styles.detailRow}>
                 <span className={styles.assetMark}>
-                  <Image src="/images/players/clan-paw.png" alt="" width={194} height={240} unoptimized />
+                  <Image src="/images/players/alliance-banner.png" alt="" width={194} height={240} unoptimized />
                 </span>
                 {player.allianceName ? <Link href="/alliances">Альянс «{player.allianceName}»</Link> : <strong>Без альянса</strong>}
               </div>
