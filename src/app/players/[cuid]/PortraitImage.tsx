@@ -19,30 +19,19 @@ export function PortraitImage({
   width = 104,
   height = 184,
 }: PortraitImageProps) {
-  const [failed, setFailed] = useState(!src);
-
-  if (failed || !src) {
-    return (
-      <span
-        className={`${className} ${fallbackClassName}`}
-        role="img"
-        aria-label={alt}
-      >
-        🐾
-      </span>
-    );
-  }
+  const fallbackSrc = "/images/players/no-character.png";
+  const [imageSrc, setImageSrc] = useState(src || fallbackSrc);
 
   return (
     // Изображения персонажей приходят с dm-game.com и сохраняют родной размер.
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src={src}
+      src={imageSrc}
       alt={alt}
       width={width}
       height={height}
-      className={className}
-      onError={() => setFailed(true)}
+      className={`${className} ${imageSrc === fallbackSrc ? fallbackClassName : ""}`}
+      onError={() => setImageSrc(fallbackSrc)}
     />
   );
 }
