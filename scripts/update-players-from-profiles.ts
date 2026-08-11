@@ -9,7 +9,7 @@
 
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { parseProfileHtml } from "./parse-profile";
+import { parseProfileHtml, type ParsedAchievement } from "./parse-profile";
 
 const PLAYERS_PATH = path.resolve("data/players.json");
 const BASE_URL = "https://dm-game.com/index.php?file=infouser&cuid=";
@@ -31,6 +31,7 @@ interface Player {
   marriagePartner?: string;
   marriageSince?: string;
   characterImage?: string;
+  achievements?: ParsedAchievement[];
   [key: string]: unknown;
 }
 
@@ -68,6 +69,8 @@ async function main(): Promise<void> {
   let emptyPosCount = 0;
   let alliancesFoundCount = 0;
   let marriagesFoundCount = 0;
+  let achievementProfilesCount = 0;
+  let achievementsFoundCount = 0;
   let errorCount = 0;
 
   const marriagesBefore = realPlayers.filter(
@@ -142,6 +145,12 @@ async function main(): Promise<void> {
         player.characterImage = parsed.characterImage;
       }
 
+      if (parsed.achievementsKnown) {
+        player.achievements = parsed.achievements;
+        achievementProfilesCount++;
+        achievementsFoundCount += parsed.achievements.length;
+      }
+
       if (parsed.position) {
         posFoundCount++;
       } else {
@@ -160,6 +169,7 @@ process.stdout.write(
     `inactive=${parsed.inactiveMinutes ?? "—"} min  ` +
     `alliance="${parsed.allianceName || "—"}"  ` +
     `marriage="${parsed.marriagePartner || "—"}"  ` +
+    `achievements=${parsed.achievementsKnown ? parsed.achievements.length : "?"}  ` +
     `pos="${parsed.position || "—"}"\n`,
 );
     } catch (error) {
@@ -212,6 +222,8 @@ process.stdout.write(
   console.log(`  Alliance profiles:    ${alliancesFoundCount}`);
   console.log(`  Marriages before:     ${marriagesBefore}`);
   console.log(`  Marriages recognized: ${marriagesFoundCount}`);
+  console.log(`  Achievement profiles: ${achievementProfilesCount}`);
+  console.log(`  Achievements found:    ${achievementsFoundCount}`);
   console.log(`  Errors:               ${errorCount}`);
   console.log("──────────────────────────────────────────────────────────────");
 }

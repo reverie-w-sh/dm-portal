@@ -8,7 +8,9 @@ import gameNewsJson from "../../../../data/game-news.json";
 import personalItemsJson from "../../../../data/personal-items.json";
 import personalSmilesJson from "../../../../data/personal-smiles.json";
 import playersJson from "../../../../data/players.json";
+import ratingsJson from "../../../../data/ratings.json";
 import { ActivityDot } from "@/components/ActivityStatus";
+import { shortFestivalName } from "@/lib/festival-names";
 import {
   formatFestivalPlace,
   getPlayerFestivalResults,
@@ -61,6 +63,37 @@ type ChronicleEvent = {
   amount?: number;
   newLevel?: number;
   addedSmiles?: string[];
+  addedAchievements?: Achievement[];
+};
+
+type Achievement = {
+  id: string;
+  name: string;
+  imageUrl: string;
+  category: "battle" | "profession" | "research" | "underground" | "other";
+};
+
+type RatingItem = {
+  rank?: number;
+  name: string;
+  value?: number | string;
+};
+
+type Rating = {
+  title: string;
+  valueLabel?: string;
+  items: RatingItem[];
+};
+
+type RatingsData = {
+  ratings: Record<string, Rating>;
+};
+
+type ProfessionPosition = {
+  key: string;
+  label: string;
+  rank: number;
+  value?: number | string;
 };
 
 type NewsItem = Parameters<typeof getPlayerFestivalResults>[0][number];
@@ -74,7 +107,20 @@ const events = eventsJson as ChronicleEvent[];
 const personalSmiles = personalSmilesJson as PersonalSmiles[];
 const personalItems = personalItemsJson.items as PersonalItem[];
 const news = gameNewsJson.items as NewsItem[];
-const PREVIEW_EVENTS = 6;
+const ratings = (ratingsJson as RatingsData).ratings;
+const PREVIEW_EVENTS = 5;
+const PROFESSIONS = [
+  { key: "fishing", label: "Рыболов" },
+  { key: "collector", label: "Собиратель" },
+  { key: "hunting", label: "Охотник" },
+  { key: "blacksmith", label: "Кузнец" },
+  { key: "leatherworker", label: "Кожевник" },
+  { key: "doctor", label: "Лекарь" },
+  { key: "alchemy", label: "Алхимик" },
+  { key: "enchanter", label: "Заклинатель" },
+  { key: "seer", label: "Ведун" },
+  { key: "shooter", label: "Стрелок" },
+] as const;
 const LOCAL_CHARACTER_IMAGES: Record<string, string> = {
   "2171": "/images/players/characters/2171.gif",
   "4394": "/images/players/characters/4394.gif",
@@ -135,6 +181,10 @@ function eventText(event: ChronicleEvent): string {
       return event.amount && event.amount > 1
         ? `Новые личные смайлики: +${event.amount}`
         : "Новый личный смайлик";
+    case "player_achievement_added":
+      return event.addedAchievements?.length === 1
+        ? `Новое достижение: ${event.addedAchievements[0].name}`
+        : `Новые достижения: ${event.addedAchievements?.length ?? event.amount ?? 0}`;
     default:
       return "Новое событие";
   }
@@ -156,14 +206,8 @@ function eventIcon(event: ChronicleEvent): string {
 
 function festivalName(result: PlayerFestivalResult): string {
   const title = result.title.trim();
-  if (/бойц/iu.test(title)) return "Бойцов";
-  if (/андвари/iu.test(title)) return "Андвари";
-  if (/собирател/iu.test(title)) return "Собирателя";
-  if (/рыбак/iu.test(title)) return "Рыбака";
-  if (/лабиринт/iu.test(title)) return "Лабиринта";
-  if (/любимых|цветов/i.test(title)) return "Букетов";
-  if (/крашен|пасхал/i.test(title)) return "Пасхальном";
-  if (/охотник/iu.test(title)) return "Охотника";
+  const shortName = shortFestivalName(title);
+  if (shortName) return shortName;
 
   return title
     .replace(/^Итоги\s+(?:Фестиваля|Фестиваль)\s+/iu, "")
@@ -175,6 +219,32 @@ function festivalName(result: PlayerFestivalResult): string {
 
 function festivalText(result: PlayerFestivalResult): string {
   return `${formatFestivalPlace(result)} в фестивале ${festivalName(result)}`;
+}
+
+function professionPositions(nick: string): ProfessionPosition[] {
+  const normalizedNick = nick.trim().toLocaleLowerCase("ru-RU");
+
+  return PROFESSIONS.flatMap(({ key, label }) => {
+    const items = ratings[key]?.items ?? [];
+    const index = items.findIndex(
+      (item) => item.name.trim().toLocaleLowerCase("ru-RU") === normalizedNick,
+    );
+
+    if (index === -1) return [];
+    const item = items[index];
+
+    return [{
+      key,
+      label,
+      rank: item.rank ?? index + 1,
+      value: item.value,
+    }];
+  });
+}
+
+function formatRatingValue(value?: number | string): string {
+  if (typeof value === "number") return value.toLocaleString("ru-RU");
+  return value?.trim() ?? "—";
 }
 
 function uniqueItemsForPlayer(nick: string): PersonalItem[] {
@@ -206,9 +276,19 @@ function playerTimeline(player: Player): TimelineEntry[] {
   );
 }
 
+function ScrollIcon() {
+  return (
+    <svg className={styles.scrollIcon} viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M19 17V5a2 2 0 0 0-2-2H4" />
+      <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
+      <path d="M10 8h5M10 12h5" />
+    </svg>
+  );
+}
+
 function TimelineIcon({ entry }: { entry: TimelineEntry }) {
   if (entry.kind === "festival") {
-    return <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>🏆</span>;
+    return <span className={`${styles.timelineIcon} ${styles.festivalIcon}`}>🏅</span>;
   }
 
   if (entry.event.type === "player_level_up") {
@@ -251,6 +331,28 @@ function TimelineIcon({ entry }: { entry: TimelineEntry }) {
     return <span className={`${styles.timelineIcon} ${styles.smileEventIcon}`}>☺</span>;
   }
 
+  if (entry.event.type === "player_position_changed") {
+    return (
+      <span className={`${styles.timelineIcon} ${styles.scrollEventIcon}`}>
+        <ScrollIcon />
+      </span>
+    );
+  }
+
+  if (entry.event.type === "player_achievement_added") {
+    const achievement = entry.event.addedAchievements?.[0];
+
+    return achievement ? (
+      <span className={`${styles.timelineIcon} ${styles.achievementEventIcon}`}>
+        {/* Иконки достижений ДМ загружаются с внешнего домена. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={achievement.imageUrl} alt="" />
+      </span>
+    ) : (
+      <span className={styles.timelineIcon}>◆</span>
+    );
+  }
+
   return <span className={styles.timelineIcon}>{eventIcon(entry.event)}</span>;
 }
 
@@ -281,6 +383,18 @@ function TimelineBody({ entry, compact = false }: { entry: TimelineEntry; compac
           {entry.event.addedSmiles.map((src) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={src} alt="Новый личный смайлик" key={src} loading="lazy" />
+          ))}
+        </div>
+      ) : null}
+      {!compact && entry.event.type === "player_achievement_added" && entry.event.addedAchievements?.length ? (
+        <div className={styles.eventAchievements}>
+          {entry.event.addedAchievements.map((achievement) => (
+            <div className={styles.achievementCard} key={achievement.id}>
+              {/* Иконки достижений ДМ загружаются с внешнего домена. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={achievement.imageUrl} alt="" loading="lazy" />
+              <span>{achievement.name}</span>
+            </div>
           ))}
         </div>
       ) : null}
@@ -316,6 +430,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   const smiles = personalSmiles.find((item) => item.cuid === player.cuid);
   const items = uniqueItemsForPlayer(player.nick);
   const timeline = playerTimeline(player);
+  const positions = professionPositions(player.nick);
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
   const displayedItems = items.slice(0, 8);
   const partner = player.marriagePartner
@@ -454,6 +569,36 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
             ) : <p className={styles.emptyText}>В личной летописи пока тихо.</p>}
           </section>
         </div>
+
+        <section className={styles.ratingPositions}>
+          <header className={styles.chronicleTitle}>
+            <span />
+            <h2>Позиции в рейтингах</h2>
+            <span />
+          </header>
+          {positions.length ? (
+            <div className={styles.ratingGrid}>
+              {positions.map((position) => (
+                <Link
+                  className={styles.ratingCard}
+                  href={`/ratings#${position.key}`}
+                  key={position.key}
+                >
+                  <span className={styles.ratingTrophy} aria-hidden="true">🏆</span>
+                  <span className={styles.ratingCopy}>
+                    <strong>{position.label}</strong>
+                    <small>
+                      {position.rank}-е место · {formatRatingValue(position.value)} очков
+                    </small>
+                  </span>
+                  <span className={styles.ratingArrow} aria-hidden="true">→</span>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <p className={styles.emptyText}>В топ-20 профессиональных рейтингов пока нет.</p>
+          )}
+        </section>
 
         <section className={styles.fullChronicle}>
           <header className={styles.chronicleTitle}><span /><h2>Личная летопись</h2><span /></header>

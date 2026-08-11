@@ -90,6 +90,10 @@ function printResult(
   console.log(
     `  position:   ${result.position || "(none)"}`,
   );
+
+  console.log(
+    `  achievements: ${result.achievementsKnown ? result.achievements.length : "(unknown)"}`,
+  );
 }
 
 const EMPTY: ParsedProfile = {
@@ -107,6 +111,8 @@ const EMPTY: ParsedProfile = {
   marriagePartner: "",
   marriageSince: "",
   characterImage: null,
+  achievementsKnown: false,
+  achievements: [],
 };
 
 async function main(): Promise<void> {

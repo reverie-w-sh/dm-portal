@@ -7,6 +7,7 @@ import gameNewsJson from "../../../data/game-news.json";
 import clansJson from "../../../data/clans.json";
 import playersJson from "../../../data/players.json";
 import lastSyncJson from "../../../data/last-sync.json";
+import { chronicleFestivalTitle } from "@/lib/festival-names";
 import collectionStyles from "../collection-pages.module.css";
 import styles from "./page.module.css";
 
@@ -14,7 +15,7 @@ type ChronicleEvent = {
   id: string;
   syncId: string;
   createdAt: string;
-  scope: "clans" | "personal-smiles";
+  scope: "clans" | "personal-smiles" | "player";
   type: string;
   characterId?: string;
   characterName?: string;
@@ -507,6 +508,9 @@ function NewsText({ news }: { news: GameNewsItem }) {
       ? `${preferredPreview.slice(0, 277).trimEnd()}…`
       : preferredPreview;
   const isLong = body.length > preview.length;
+  const displayTitle = news.category === "festival"
+    ? chronicleFestivalTitle(news.title, news.festivalType)
+    : news.title;
 
   return (
     <div className={styles.newsBlock}>
@@ -517,7 +521,7 @@ function NewsText({ news }: { news: GameNewsItem }) {
           rel="noreferrer"
           className={styles.newsTitle}
         >
-          {news.title}
+          {displayTitle}
         </a>
         <span className={styles.newsTag}>
           {news.category === "festival"
@@ -608,7 +612,6 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
   const [bossType, setBossType] = useState<BossType>("all");
   const [query, setQuery] = useState(initialQuery);
   const [period, setPeriod] = useState<Period>("30");
-  const [showPositions, setShowPositions] = useState(false);
   const [visibleCount, setVisibleCount] = useState(36);
 
   const playersById = useMemo(
@@ -628,11 +631,11 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
 
     return ([...events, ...gameNews] as TimelineItem[])
       .filter(
-        (item) => isGameNews(item) || item.type !== "personal_item_added",
-      )
-      .filter(
         (item) =>
-          isGameNews(item) || showPositions || item.type !== POSITION_EVENT,
+          isGameNews(item) ||
+          (item.scope !== "player" &&
+            item.type !== "personal_item_added" &&
+            item.type !== POSITION_EVENT),
       )
       .filter(
         (item) => {
@@ -661,7 +664,7 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
         (a, b) =>
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
       );
-  }, [bossType, category, festivalType, period, query, showPositions]);
+  }, [bossType, category, festivalType, period, query]);
 
   const visibleEvents = filtered.slice(0, visibleCount);
   const groups = visibleEvents.reduce<Array<{ key: string; date: string; events: TimelineItem[] }>>(
@@ -801,18 +804,6 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
             ))}
           </div>
         </div>
-
-        <label className={styles.positionToggle}>
-          <input
-            type="checkbox"
-            checked={showPositions}
-            onChange={(event) => {
-              setShowPositions(event.target.checked);
-              setVisibleCount(36);
-            }}
-          />
-          <span>Показывать изменения должностей</span>
-        </label>
 
         <p className={styles.trackingNote}>
           Уровни отслеживаются с 08.08.2026

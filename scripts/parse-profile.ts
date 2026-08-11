@@ -1,3 +1,10 @@
+export interface ParsedAchievement {
+  id: string;
+  name: string;
+  imageUrl: string;
+  category: "battle" | "profession" | "research" | "underground" | "other";
+}
+
 export interface ParsedProfile {
   cuid: string | null;
   nick: string | null;
@@ -13,6 +20,8 @@ export interface ParsedProfile {
   marriagePartner: string;
   marriageSince: string;
   characterImage: string | null;
+  achievementsKnown: boolean;
+  achievements: ParsedAchievement[];
 }
 
 /**
@@ -54,6 +63,67 @@ function htmlToPlainText(html: string): string {
     .replace(/&[a-z][a-z0-9]+;/gi, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function decodeHtmlAttribute(value: string): string {
+  return value
+    .replace(/&nbsp;|&#160;/gi, " ")
+    .replace(/&quot;/gi, '"')
+    .replace(/&apos;|&#39;/gi, "'")
+    .replace(/&amp;/gi, "&")
+    .replace(/&#x([0-9a-f]+);/gi, (_, code: string) =>
+      String.fromCodePoint(Number.parseInt(code, 16)),
+    )
+    .replace(/&#(\d+);/g, (_, code: string) =>
+      String.fromCodePoint(Number.parseInt(code, 10)),
+    )
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function imageAttribute(tag: string, name: string): string {
+  const match = new RegExp(`\\b${name}\\s*=\\s*["']([^"']*)["']`, "i").exec(tag);
+  return match?.[1] ? decodeHtmlAttribute(match[1]) : "";
+}
+
+function parseAchievements(html: string): ParsedAchievement[] {
+  const achievements = new Map<string, ParsedAchievement>();
+  const categoryByGroup: Record<string, ParsedAchievement["category"]> = {
+    "1": "battle",
+    "2": "profession",
+    "3": "research",
+    "4": "underground",
+  };
+
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = match[0];
+    const source = imageAttribute(tag, "src");
+    const group = /\/subject\/+achievement\/+(\d+)\/+[^/?"']+/i.exec(source)?.[1];
+    if (!group) continue;
+
+    let imageUrl: string;
+    try {
+      const parsedUrl = new URL(source, "https://dm-game.com");
+      parsedUrl.pathname = parsedUrl.pathname.replace(/\/{2,}/g, "/");
+      imageUrl = parsedUrl.toString();
+    } catch {
+      continue;
+    }
+
+    const name = imageAttribute(tag, "title") || imageAttribute(tag, "alt");
+    if (!name) continue;
+
+    const id = new URL(imageUrl).pathname.toLocaleLowerCase("en-US");
+
+    achievements.set(id, {
+      id,
+      name,
+      imageUrl,
+      category: categoryByGroup[group] ?? "other",
+    });
+  }
+
+  return [...achievements.values()];
 }
 
 function parseInactiveMinutes(
@@ -462,6 +532,11 @@ export function parseProfileHtml(
   const inactiveMinutes =
     parseInactiveMinutes(html);
 
+  // ── Achievements ───────────────────────────
+
+  const achievementsKnown = /\bid\s*=\s*["']set_ach(?:Alone|All)Htm["']/i.test(html);
+  const achievements = achievementsKnown ? parseAchievements(html) : [];
+
   return {
     cuid,
     nick,
@@ -477,5 +552,7 @@ export function parseProfileHtml(
     marriagePartner,
     marriageSince,
     characterImage,
+    achievementsKnown,
+    achievements,
   };
 }

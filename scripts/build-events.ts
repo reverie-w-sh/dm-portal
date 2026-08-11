@@ -52,6 +52,13 @@ function parseGameDate(value: string): number | null {
   return time;
 }
 
+interface Achievement {
+  id: string;
+  name: string;
+  imageUrl: string;
+  category: "battle" | "profession" | "research" | "underground" | "other";
+}
+
 interface Player {
   cuid: string;
   nick: string;
@@ -61,6 +68,7 @@ interface Player {
   profileUrl?: string;
   marriagePartner?: string;
   marriageSince?: string;
+  achievements?: Achievement[];
   [key: string]: unknown;
 }
 
@@ -107,6 +115,7 @@ interface SnapshotPlayer {
   marriageKnown: boolean;
   marriagePartner: string;
   marriageSince: string;
+  achievements?: Achievement[];
 }
 
 interface SnapshotClan {
@@ -252,6 +261,18 @@ type SiteEvent =
       oldCount: number;
       newCount: number;
       addedSmiles: string[];
+    }
+  | {
+      id: string;
+      syncId: string;
+      createdAt: string;
+      scope: "player";
+      type: "player_achievement_added";
+      characterId: string;
+      characterName: string;
+      profileUrl: string;
+      amount: number;
+      addedAchievements: Achievement[];
     };
 
 async function readJson<T>(filePath: string): Promise<T> {
@@ -292,6 +313,34 @@ function uniqueStrings(value: unknown): string[] {
   );
 }
 
+function cleanAchievements(value: unknown): Achievement[] {
+  if (!Array.isArray(value)) return [];
+
+  const achievements = new Map<string, Achievement>();
+
+  for (const item of value) {
+    if (!item || typeof item !== "object") continue;
+    const record = item as Record<string, unknown>;
+    const id = cleanString(record.id);
+    const name = cleanString(record.name);
+    const imageUrl = cleanString(record.imageUrl);
+    const rawCategory = cleanString(record.category);
+    const category: Achievement["category"] = [
+      "battle",
+      "profession",
+      "research",
+      "underground",
+    ].includes(rawCategory)
+      ? rawCategory as Achievement["category"]
+      : "other";
+
+    if (!id || !name || !imageUrl) continue;
+    achievements.set(id, { id, name, imageUrl, category });
+  }
+
+  return [...achievements.values()];
+}
+
 function makeSnapshot(
   createdAt: string,
   players: Player[],
@@ -315,6 +364,7 @@ function makeSnapshot(
         marriageKnown: true,
         marriagePartner: cleanString(player.marriagePartner),
         marriageSince: cleanString(player.marriageSince),
+        achievements: cleanAchievements(player.achievements),
       })),
     clans: clans
       .filter((clan) => cleanString(clan.clanId) !== "")
@@ -457,6 +507,37 @@ function buildEvents(
           : currentPlayer.clanName,
         oldLevel: oldReincarnationLevel ?? null,
         newLevel: newReincarnationLevel,
+      });
+    }
+
+    const currentAchievements = currentPlayer.achievements ?? [];
+    const previousAchievements = previousPlayer.achievements;
+    const previousAchievementIds = new Set(
+      (previousAchievements ?? []).map((achievement) => achievement.id),
+    );
+    const addedAchievements = previousAchievements === undefined
+      ? currentAchievements
+      : currentAchievements.filter(
+          (achievement) => !previousAchievementIds.has(achievement.id),
+        );
+
+    /*
+     * Старый снимок без поля achievements означает первое включение
+     * отслеживания. Все уже имеющиеся достижения записываются одной записью
+     * в личную летопись игрока. В следующих запусках попадут только новые id.
+     */
+    if (addedAchievements.length > 0) {
+      events.push({
+        id: randomUUID(),
+        syncId,
+        createdAt: syncId,
+        scope: "player",
+        type: "player_achievement_added",
+        characterId: cuid,
+        characterName,
+        profileUrl,
+        amount: addedAchievements.length,
+        addedAchievements,
       });
     }
 
@@ -722,6 +803,29 @@ function buildEvents(
   return events;
 }
 
+function buildInitialAchievementEvents(
+  current: Snapshot,
+  syncId: string,
+): SiteEvent[] {
+  return current.players.flatMap((player) => {
+    const addedAchievements = player.achievements ?? [];
+    if (addedAchievements.length === 0) return [];
+
+    return [{
+      id: randomUUID(),
+      syncId,
+      createdAt: syncId,
+      scope: "player" as const,
+      type: "player_achievement_added" as const,
+      characterId: player.cuid,
+      characterName: player.nick || `Персонаж ${player.cuid}`,
+      profileUrl: player.profileUrl,
+      amount: addedAchievements.length,
+      addedAchievements,
+    }];
+  });
+}
+
 async function main(): Promise<void> {
   const [players, clans, personalSmiles, personalItemsData, lastSync] = await Promise.all([
     readJson<Player[]>(PLAYERS_PATH),
@@ -784,6 +888,11 @@ async function main(): Promise<void> {
   });
 
   if (!previousSnapshot) {
+    const initialAchievementEvents = buildInitialAchievementEvents(
+      currentSnapshot,
+      syncId,
+    );
+
     await Promise.all([
       writeFile(
         LAST_STATE_PATH,
@@ -792,13 +901,13 @@ async function main(): Promise<void> {
       ),
       writeFile(
         EVENTS_PATH,
-        `${JSON.stringify(recentStoredEvents, null, 2)}\n`,
+        `${JSON.stringify([...initialAchievementEvents, ...recentStoredEvents], null, 2)}\n`,
         "utf8",
       ),
     ]);
 
     console.log(
-      "Первый запуск: создан базовый снимок, события не генерировались.",
+      `Первый запуск: создан базовый снимок; личных записей о достижениях: ${initialAchievementEvents.length}.`,
     );
     return;
   }
