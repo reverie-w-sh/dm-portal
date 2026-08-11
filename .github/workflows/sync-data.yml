@@ -37,31 +37,34 @@ jobs:
       - name: Step 3 — update players from profiles
         run: npx tsx scripts/update-players-from-profiles.ts
 
-      - name: Step 4 — rebuild clan members lists
+      - name: Step 4 — cache player character images
+        run: npx tsx scripts/update-player-images.ts
+
+      - name: Step 5 — rebuild clan members lists
         run: npx tsx scripts/rebuild-clan-members.ts
 
-      - name: Step 5 — update clan alliances
+      - name: Step 6 — update clan alliances
         run: npx tsx scripts/update-clan-alliances.ts
 
-      - name: Step 6 — update clan smiles count
+      - name: Step 7 — update clan smiles count
         run: npm run update-clan-smiles
 
-      - name: Step 7 — update personal smiles
+      - name: Step 8 — update personal smiles
         run: npx tsx scripts/update-personal-smiles.ts
 
-      - name: Step 8 — update personal items
+      - name: Step 9 — update personal items
         run: npx tsx scripts/update-personal-items.ts
 
-      - name: Step 9 — update ratings
+      - name: Step 10 — update ratings
         run: npx tsx scripts/update-ratings.ts
 
-      - name: Step 10 — update game news
+      - name: Step 11 — update game news
         run: npx tsx scripts/update-game-news.ts
 
-      - name: Step 11 — write sync timestamp
+      - name: Step 12 — write sync timestamp
         run: npx tsx scripts/write-sync-timestamp.ts
 
-      - name: Step 12 — build events history
+      - name: Step 13 — build events history
         run: npx tsx scripts/build-events.ts
 
       - name: Commit and push updated data
@@ -80,7 +83,8 @@ jobs:
             data/events.json \
             data/game-news.json \
             data/ratings.json \
-            data/history/last-state.json
+            data/history/last-state.json \
+            public/images/players/characters
 
           if git diff --cached --quiet; then
             echo "Нет изменений в данных — коммит не нужен."
