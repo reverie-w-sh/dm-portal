@@ -202,7 +202,7 @@ export default function MembersPage() {
                 </div>
 
                 <div className={styles.memberMeta}>
-                  <span className={styles.reincarnationLabel}>Реинкарнация:</span>
+                  <span className={styles.reincarnationLabel}>Реинкарнация</span>
                   <strong>{player.reincarnationLevel ?? "—"}</strong>
 
                   {player.profileUrl ? (
