@@ -85,7 +85,10 @@
   place-items: center;
   isolation: isolate;
 }
-.portraitFrame { width: 156px; height: 276px; }
+.portraitFrame {
+  width: 168px;
+  height: 250px;
+}
 .portraitFrame::after,
 .familyPortraitFrame::after {
   content: "";
@@ -97,6 +100,10 @@
 }
 
 .portrait {
+  position: absolute;
+  z-index: 1;
+  top: 33px;
+  left: 32px;
   display: block;
   width: 104px;
   height: 184px;
