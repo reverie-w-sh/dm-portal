@@ -1,6 +1,7 @@
 import { chromium, type Page } from "playwright";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { getExperienceProgress } from "../src/lib/experience";
 
 type Item = {
   rank: number;
@@ -37,8 +38,18 @@ type PlayerApiRow = {
   statBattleWin?: string | number;
 };
 
+type StoredPlayer = {
+  nick: string;
+  level: number;
+  reincarnationLevel?: number | null;
+  levelUp?: number;
+  reincarnationUp?: number;
+  [key: string]: unknown;
+};
+
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, "data", "ratings.json");
+const PLAYERS_OUT = path.join(ROOT, "data", "players.json");
 const BASE = "https://dm-game.com/?file=library&page=";
 
 const PROFESSIONS = [
@@ -300,6 +311,43 @@ async function parseCommunity(
   );
 }
 
+async function rememberPlayerUps(items: Item[]) {
+  if (!items.length) return { level: 0, reincarnation: 0 };
+
+  const players = JSON.parse(
+    await readFile(PLAYERS_OUT, "utf8"),
+  ) as StoredPlayer[];
+  const playersByNick = new Map(
+    players.map((player) => [normalized(player.nick), player]),
+  );
+  let level = 0;
+  let reincarnation = 0;
+
+  for (const item of items) {
+    if (typeof item.experience !== "number" || !Number.isFinite(item.experience)) {
+      continue;
+    }
+
+    const player = playersByNick.get(normalized(item.name));
+    if (!player) continue;
+
+    const progress = getExperienceProgress(item.experience);
+    if (progress.level === player.level) {
+      player.levelUp = progress.up;
+      level += 1;
+    } else if (
+      player.reincarnationLevel != null &&
+      progress.level === player.reincarnationLevel
+    ) {
+      player.reincarnationUp = progress.up;
+      reincarnation += 1;
+    }
+  }
+
+  await writeFile(PLAYERS_OUT, `${JSON.stringify(players, null, 2)}\n`, "utf8");
+  return { level, reincarnation };
+}
+
 async function main() {
   const previous = JSON.parse(await readFile(OUT, "utf8")) as RatingsFile;
   const next: RatingsFile = {
@@ -381,6 +429,10 @@ async function main() {
   }
 
   await writeFile(OUT, `${JSON.stringify(next, null, 2)}\n`, "utf8");
+  const remembered = await rememberPlayerUps(next.ratings.players?.items ?? []);
+  console.log(
+    `player ups: main=${remembered.level}, reincarnation=${remembered.reincarnation}`,
+  );
 }
 
 main().catch((error) => {

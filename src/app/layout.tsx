@@ -1,16 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SiteAnalytics from "@/components/SiteAnalytics";
 import { SITE_NAME, SITE_URL } from "@/lib/metadata";
-
-const inter = Inter({
-  variable: "--font-inter-src",
-  subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700", "900"],
-});
 
 const defaultTitle = "die Wölfchen — клан игры «Древний Мир» (DM)";
 const defaultDescription =
@@ -81,7 +74,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={inter.variable}>
+    <html lang="ru">
       <body className="min-h-screen bg-dark text-ink">
         <Navbar />
         <main>{children}</main>

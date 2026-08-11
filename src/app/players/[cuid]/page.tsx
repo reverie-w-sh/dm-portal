@@ -25,10 +25,12 @@ type Player = {
   cuid: string;
   nick: string;
   level: number;
+  levelUp?: number;
   clanId?: string;
   clanName?: string;
   profileUrl?: string;
   reincarnationLevel?: number | null;
+  reincarnationUp?: number;
   allianceName?: string;
   inactiveMinutes?: number | null;
   marriagePartner?: string;
@@ -482,13 +484,16 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   const timeline = playerTimeline(player);
   const positions = professionPositions(player.nick);
   const experienceProgress = playerExperienceProgress(player.nick);
-  const displayedUp =
+  const currentLevelUp =
     experienceProgress?.level === player.level ? experienceProgress.up : undefined;
-  const displayedReincarnationUp =
-    displayedUp == null &&
+  const currentReincarnationUp =
+    currentLevelUp == null &&
     experienceProgress?.level === player.reincarnationLevel
       ? experienceProgress?.up
       : undefined;
+  const displayedUp = currentLevelUp ?? player.levelUp;
+  const displayedReincarnationUp =
+    currentReincarnationUp ?? player.reincarnationUp;
   const displayedSmiles = smiles?.personalSmiles.slice(0, 8) ?? [];
   const displayedItems = items.slice(0, 8);
   const partner = player.marriagePartner
