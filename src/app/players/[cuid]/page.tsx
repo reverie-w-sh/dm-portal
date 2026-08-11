@@ -156,6 +156,11 @@ function eventIcon(event: ChronicleEvent): string {
 
 function festivalName(result: PlayerFestivalResult): string {
   const title = result.title.trim();
+  if (/бойц/iu.test(title)) return "Бойцов";
+  if (/андвари/iu.test(title)) return "Андвари";
+  if (/собирател/iu.test(title)) return "Собирателя";
+  if (/рыбак/iu.test(title)) return "Рыбака";
+  if (/лабиринт/iu.test(title)) return "Лабиринта";
   if (/любимых|цветов/i.test(title)) return "Букетов";
   if (/крашен|пасхал/i.test(title)) return "Пасхальном";
 
