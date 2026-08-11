@@ -1,5 +1,19 @@
 [
   {
+    "id": "7488e6c6-f714-4aeb-b2cb-0f221064f738",
+    "syncId": "2026-08-11T18:40:52.674Z",
+    "createdAt": "2026-08-11T18:40:52.674Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "28463",
+    "characterName": "Чиловый парень",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28463",
+    "clanId": "249",
+    "clanName": "Phoenix (клан мультов) набор",
+    "oldLevel": 6,
+    "newLevel": 7
+  },
+  {
     "id": "27e4958f-1651-4fc9-aa67-0792b93faf06",
     "syncId": "2026-08-11T01:29:01.686Z",
     "createdAt": "2026-08-11T01:29:01.686Z",
