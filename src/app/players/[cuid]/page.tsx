@@ -449,7 +449,17 @@ function TimelineBody({ entry, compact = false }: { entry: TimelineEntry; compac
         </div>
       ) : null}
       {!compact && entry.event.type === "player_achievement_added" && entry.event.addedAchievements?.length ? (
-        <div className={styles.eventAchievements}>
+        <div
+          className={`${styles.eventAchievements} ${
+            entry.event.addedAchievements.length === 1
+              ? styles.achievementColumns1
+              : entry.event.addedAchievements.length === 2 || entry.event.addedAchievements.length === 4
+                ? styles.achievementColumns2
+                : entry.event.addedAchievements.length <= 6
+                  ? styles.achievementColumns3
+                  : styles.achievementColumns4
+          }`}
+        >
           {entry.event.addedAchievements.map((achievement) => (
             <div className={styles.achievementCard} key={achievement.id}>
               {/* Иконки достижений ДМ загружаются с внешнего домена. */}
