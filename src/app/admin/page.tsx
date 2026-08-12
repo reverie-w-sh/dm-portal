@@ -267,7 +267,8 @@ function SuggestionsPanel() {
   const [message, setMessage] = useState("");
 
   async function loadSuggestions() {
-    setMessage("");
+  setLoading(true);
+  setMessage("");
     try {
       const response = await fetch("/api/admin/suggestions", { cache: "no-store" });
       const next = (await response.json()) as SuggestionsData;
@@ -320,13 +321,15 @@ function SuggestionsPanel() {
         <h2 className="text-sm font-semibold text-ink uppercase tracking-wider">
           Предложения с сайта
         </h2>
-        <button
-          type="button"
-          onClick={loadSuggestions}
-          className="text-xs text-[#3d72a8] underline"
-        >
-          Обновить
-        </button>
+<button
+  type="button"
+  onClick={loadSuggestions}
+  disabled={loading}
+  className="rounded-lg border border-[#b47722] px-3 py-1.5 text-xs font-semibold text-[#8b5a18] transition hover:bg-[#b47722]/10 disabled:cursor-wait disabled:opacity-50"
+  style={{ cursor: loading ? "wait" : "pointer" }}
+>
+  {loading ? "Обновляю…" : "Обновить"}
+</button>
       </div>
 
       <p className="text-xs leading-relaxed text-ink-muted mb-5">
