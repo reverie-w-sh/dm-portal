@@ -578,6 +578,7 @@
 
 .itemCard img { max-width: 54px; max-height: 69px; }
 
+.smileCard,
 .itemCard {
   border-color: rgba(161, 105, 38, .56);
   background:
@@ -586,6 +587,26 @@
   box-shadow:
     inset 0 0 24px rgba(0, 0, 0, .74),
     0 4px 12px rgba(0, 0, 0, .25);
+}
+
+.smileVisual {
+  display: inline-grid;
+  width: max-content;
+  height: max-content;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 4px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid #9a7b48;
+  border-radius: 6px;
+  background: #efede5;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .5);
+}
+
+.smileVisual img {
+  max-width: 74px;
+  max-height: 74px;
 }
 
 .panelLink {

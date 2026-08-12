@@ -668,8 +668,10 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
               <div className={styles.smileGrid}>
                 {displayedSmiles.map((src, index) => (
                   <span className={styles.smileCard} key={`${src}-${index}`}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={src} alt={`Личный смайлик ${player.nick}`} loading="lazy" />
+                    <span className={styles.smileVisual}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={src} alt={`Личный смайлик ${player.nick}`} loading="lazy" />
+                    </span>
                   </span>
                 ))}
               </div>
