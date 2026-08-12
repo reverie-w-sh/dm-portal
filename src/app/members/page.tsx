@@ -174,6 +174,11 @@ export default function MembersPage() {
               {clan.allianceName ? (
                 <AllianceInfoButton
                   allianceName={clan.allianceName}
+                  currentClan={{
+                    clanId: clan.clanId,
+                    name: clan.name,
+                    crestSmall: clan.crestSmall,
+                  }}
                   clans={allianceClans}
                   className={styles.heroButton}
                   label={<>Альянс «{clan.allianceName}»</>}

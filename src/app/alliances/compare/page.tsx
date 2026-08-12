@@ -265,11 +265,12 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
                       )}
 
                       <div className="flex-1 min-w-0">
-                        {player.profileUrl ? (
-                          <a href={player.profileUrl} target="_blank" rel="noopener noreferrer" className={["truncate block hover:underline", highlighted ? "font-black text-ink" : "font-medium text-ink text-sm"].join(" ")}>{player.nick}</a>
-                        ) : (
-                          <span className={["truncate block", highlighted ? "font-black text-ink" : "font-medium text-ink text-sm"].join(" ")}>{player.nick}</span>
-                        )}
+                        <Link
+                          href={`/players/${player.cuid}`}
+                          className={["truncate block hover:underline", highlighted ? "font-black text-ink" : "font-medium text-ink text-sm"].join(" ")}
+                        >
+                          {player.nick}
+                        </Link>
                       </div>
                     </div>
                   );

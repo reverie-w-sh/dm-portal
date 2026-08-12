@@ -91,6 +91,16 @@
   -webkit-text-fill-color: transparent;
 }
 
+.currentClan {
+  width: calc((100% - 10px) / 2);
+  margin: 12px 0 20px;
+}
+
+.currentClan .clanLink {
+  border-color: rgba(190, 128, 48, .62);
+  background: rgba(38, 25, 11, .42);
+}
+
 .clans {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -158,6 +168,7 @@
 
   .layer { padding-top: 93px; }
   .panel { padding: 22px 20px 24px; }
+  .currentClan { width: 100%; }
   .clans { grid-template-columns: 1fr; }
 }
 

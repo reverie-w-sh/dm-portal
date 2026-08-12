@@ -13,6 +13,7 @@ export type AllianceClanLink = {
 
 type AllianceInfoButtonProps = {
   allianceName: string;
+  currentClan: AllianceClanLink;
   clans: AllianceClanLink[];
   className?: string;
   label?: ReactNode;
@@ -21,6 +22,7 @@ type AllianceInfoButtonProps = {
 
 export default function AllianceInfoButton({
   allianceName,
+  currentClan,
   clans,
   className = "",
   label,
@@ -84,6 +86,25 @@ export default function AllianceInfoButton({
             </button>
 
             <p className={styles.eyebrow}>Альянс «{allianceName}»</p>
+
+            <div className={styles.currentClan}>
+              <Link
+                href={`/clans/${currentClan.clanId}`}
+                className={styles.clanLink}
+                onClick={() => setOpen(false)}
+              >
+                {currentClan.crestSmall ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={currentClan.crestSmall} alt="" width={19} height={19} />
+                ) : (
+                  <span className={styles.crestFallback} aria-hidden="true">
+                    {currentClan.icon || "🛡"}
+                  </span>
+                )}
+                <span>{currentClan.name}</span>
+              </Link>
+            </div>
+
             <h2 id={titleId}>В одном альянсе с:</h2>
 
             {clans.length ? (

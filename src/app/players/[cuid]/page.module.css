@@ -885,8 +885,8 @@
 }
 
 .eventAchievements {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   margin-top: 12px;
 }
@@ -896,7 +896,8 @@
   grid-template-columns: 48px minmax(0, 1fr);
   gap: 9px;
   align-items: center;
-  width: min(100%, 260px);
+  width: 100%;
+  min-width: 0;
   padding: 7px 10px;
   border: 1px solid rgba(178, 120, 47, .42);
   background: rgba(7, 8, 7, .78);

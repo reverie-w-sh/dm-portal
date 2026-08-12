@@ -595,15 +595,21 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 <span className={styles.assetMark}>
                   <Image src="/images/players/alliance-banner.png" alt="" width={194} height={240} unoptimized />
                 </span>
-                {player.allianceName ? (
+                {player.allianceName && clan ? (
                   <AllianceInfoButton
                     allianceName={player.allianceName}
+                    currentClan={{
+                      clanId: clan.clanId,
+                      name: clan.name,
+                      crestSmall: clan.crestSmall,
+                      icon: clan.icon,
+                    }}
                     clans={allianceClans}
                     className={styles.allianceDetailButton}
                     label={<>Альянс «{player.allianceName}»</>}
                     compactLabel={<>«{player.allianceName}»</>}
                   />
-                ) : <strong>Без альянса</strong>}
+                ) : <strong>{player.allianceName ? `Альянс «${player.allianceName}»` : "Без альянса"}</strong>}
               </div>
             </div>
 
