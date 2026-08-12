@@ -77,7 +77,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className="min-h-screen bg-dark text-ink">
         <Navbar />
-        <main>{children}</main>
+        <main className="site-content">{children}</main>
         <Footer />
         <SiteAnalytics />
       </body>

@@ -15,5 +15,5 @@ export const metadata = {
 export default function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+  return <div className="admin-page-background">{children}</div>;
 }

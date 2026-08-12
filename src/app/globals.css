@@ -61,12 +61,32 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at 50% -12rem, rgba(129, 82, 25, 0.1), transparent 34rem),
-    linear-gradient(180deg, #1a1c1e 0%, #181a1c 48%, #161819 100%);
+  background: #030403;
   color: #e6e6e6;
   font-family: var(--font-inter-src, system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Единый фон всех открытых страниц сайта. Размер текстуры не меняем. */
+.site-content {
+  min-height: 100vh;
+  background-color: #030403;
+  background-image: url("/images/site-background.webp");
+  background-position: top left;
+  background-repeat: repeat;
+}
+
+/* Старые фоны оболочек страниц не должны перекрывать единый фон. */
+.site-content > * {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* В админке узор не показываем. */
+.site-content > .admin-page-background {
+  min-height: 100vh;
+  background-color: #060708 !important;
+  background-image: none !important;
 }
 
 img.clan-icon {
