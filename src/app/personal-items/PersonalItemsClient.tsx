@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "../collection-pages.module.css";
@@ -199,14 +200,10 @@ export default function PersonalItemsClient({
                     <div>
                       <p className={styles.mini}>Владелец коллекции</p>
                       <h2>
-                        {player?.profileUrl ? (
-                          <a
-                            href={player.profileUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                          >
+                        {player?.cuid ? (
+                          <Link href={`/players/${player.cuid}`}>
                             {owner}
-                          </a>
+                          </Link>
                         ) : (
                           owner
                         )}{" "}
