@@ -127,14 +127,12 @@ export default function Navbar() {
     setSuggestionMessage("");
 
     try {
-      const form = new FormData(event.currentTarget);
       const response = await fetch("/api/suggestions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           text,
           page: pathname,
-          website: form.get("website"),
         }),
       });
       const data = (await response.json()) as { message?: string };
@@ -290,14 +288,6 @@ export default function Navbar() {
             minLength={3}
             maxLength={1000}
             required
-          />
-          <input
-            type="text"
-            name="website"
-            className={styles.honeypot}
-            tabIndex={-1}
-            autoComplete="off"
-            aria-hidden="true"
           />
           <div className={styles.suggestionFooter}>
             <span className={styles.suggestionCount}>{suggestion.length}/1000</span>
