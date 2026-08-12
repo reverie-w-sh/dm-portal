@@ -36,11 +36,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Неверный запрос" }, { status: 400 });
   }
 
-  // Невидимое поле заполняют только простые спам-боты.
-  if (typeof body.website === "string" && body.website.trim()) {
-    return NextResponse.json({ ok: true });
-  }
-
   const text = typeof body.text === "string" ? body.text.trim() : "";
   if (text.length < 3 || text.length > 1000) {
     return NextResponse.json(
