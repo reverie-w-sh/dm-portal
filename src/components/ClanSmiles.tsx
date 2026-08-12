@@ -70,7 +70,7 @@ export default function ClanSmiles({ clanId }: ClanSmilesProps) {
         <div
           key={`${smile.src}-${index}`}
           title={smile.code || "Клановый смайлик"}
-          className="flex min-h-12 min-w-12 items-center justify-center rounded-xl border border-white/10 bg-white/[0.04] p-2"
+          className="flex min-h-12 min-w-12 items-center justify-center rounded-xl border border-white/10 bg-[#f5f9ff] p-2"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
