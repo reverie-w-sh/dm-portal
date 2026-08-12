@@ -278,12 +278,23 @@
 }
 
 .detailRow strong,
-.detailRow a {
+.detailRow a,
+.allianceDetailButton {
   color: #d8b97b;
   font: 500 .9rem Georgia, "Times New Roman", serif;
 }
 
-.detailRow a:hover { color: #f0cf8c; }
+.detailRow a:hover,
+.allianceDetailButton:hover { color: #f0cf8c; }
+
+.allianceDetailButton {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.mobileDetailLabel { display: none; }
 
 .levelShield {
   display: grid;
@@ -318,22 +329,23 @@
 .detailRow:nth-child(4) .assetMark img { width: 38px; height: 38px; }
 
 .dmLink {
-  display: block;
-  width: 190px;
-  margin-top: 11px;
+  display: inline-flex;
+  width: max-content;
+  margin-top: 14px;
+  padding: 2px 0 4px;
+  align-items: center;
+  gap: 7px;
+  border-bottom: 1px solid rgba(166, 109, 42, .7);
+  color: #d2a65d;
+  font: .9rem/1.25 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  text-decoration: none;
+  transition: color .16s ease, border-color .16s ease, filter .16s ease;
 }
 
-.profileButton {
-  display: block;
-  width: 190px;
-  aspect-ratio: 760 / 182;
-  background: url("/images/players/profile-button.png") center / contain no-repeat;
-  transition: filter .18s ease;
-}
-
-.dmLink:hover .profileButton {
-  background-image: url("/images/players/profile-button-hover.png");
-  filter: drop-shadow(0 0 7px rgba(210, 153, 69, .35));
+.dmLink:hover {
+  color: #f0cc82;
+  border-color: #d5a453;
+  filter: drop-shadow(0 0 5px rgba(210, 153, 69, .22));
 }
 
 .familyCard {
@@ -979,10 +991,40 @@
     justify-items: center;
     padding: 20px 14px;
   }
-  .identity { width: min(100%, 330px); }
+  .identity { width: min(100%, 360px); }
   .identity h1 { text-align: center; }
   .activity { justify-content: center; }
-  .details { margin-inline: auto; }
+  .details {
+    width: 100%;
+    margin: 13px auto 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .detailRow {
+    min-width: 0;
+    min-height: 62px;
+    padding: 6px 8px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 6px;
+    border: 1px solid rgba(170, 111, 40, .28);
+    background: rgba(5, 6, 5, .34);
+  }
+  .detailRow strong,
+  .detailRow a,
+  .allianceDetailButton {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: .78rem;
+    line-height: 1.25;
+  }
+  .levelShield { width: 33px; height: 39px; }
+  .levelShield b { font-size: .88rem; }
+  .assetMark { width: 32px; height: 34px; }
+  .assetMark img { width: 30px; height: 30px; }
+  .detailRow:nth-child(3) .assetMark img { width: 25px; height: 32px; }
+  .detailRow:nth-child(4) .assetMark img { width: 31px; height: 31px; }
+  .desktopDetailLabel { display: none; }
+  .mobileDetailLabel { display: inline; }
   .dmLink { margin-inline: auto; }
   .familyCard { grid-column: auto; width: min(100%, 360px); }
   .collectionPanel,
@@ -1010,6 +1052,20 @@
   }
   .chronicleTitle { gap: 8px; }
   .chronicleTitle h2 { font-size: 1.25rem; }
+  .eventAchievements {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 48px);
+    gap: 7px;
+  }
+  .achievementCard {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    padding: 2px;
+    place-items: center;
+  }
+  .achievementCard img { width: 42px; height: 42px; }
+  .achievementCard span { display: none; }
 }
 
 @media (max-width: 390px) {

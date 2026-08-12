@@ -10,6 +10,7 @@ import personalSmilesJson from "../../../../data/personal-smiles.json";
 import playersJson from "../../../../data/players.json";
 import ratingsJson from "../../../../data/ratings.json";
 import { ActivityDot } from "@/components/ActivityStatus";
+import AllianceInfoButton from "@/components/AllianceInfoButton";
 import { getExperienceProgress } from "@/lib/experience";
 import { shortFestivalName } from "@/lib/festival-names";
 import {
@@ -39,7 +40,14 @@ type Player = {
   characterImages?: string[];
 };
 
-type Clan = { clanId: string; name: string };
+type Clan = {
+  clanId: string;
+  name: string;
+  icon?: string;
+  crestSmall?: string;
+  allianceId?: string;
+  allianceName?: string;
+};
 
 type PersonalSmiles = {
   cuid: string;
@@ -499,6 +507,23 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
   if (!player) notFound();
 
   const clan = clans.find((item) => item.clanId === player.clanId);
+  const allianceClans = clan?.allianceId
+    ? clans
+        .filter(
+          (item) =>
+            item.allianceId === clan.allianceId &&
+            item.clanId !== clan.clanId,
+        )
+        .sort((a, b) =>
+          a.name.localeCompare(b.name, "ru", { sensitivity: "base" }),
+        )
+        .map(({ clanId, name, crestSmall, icon }) => ({
+          clanId,
+          name,
+          crestSmall,
+          icon,
+        }))
+    : [];
   const smiles = personalSmiles.find((item) => item.cuid === player.cuid);
   const items = uniqueItemsForPlayer(player.nick);
   const timeline = playerTimeline(player);
@@ -539,8 +564,9 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
               <div className={styles.detailRow}>
                 <span className={styles.levelShield}><b>{player.level}</b></span>
                 <strong>
-                  Уровень {player.level}
-                  {displayedUp != null ? `, ${displayedUp} ап` : ""}
+                  <span className={styles.desktopDetailLabel}>Уровень </span>
+                  <span className={styles.mobileDetailLabel}>Ур. </span>
+                  {player.level}{displayedUp != null ? `, ${displayedUp} ап` : ""}
                 </strong>
               </div>
               <div className={styles.detailRow}>
@@ -548,7 +574,9 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                   <Image src="/images/players/reincarnation-wheel.png" alt="" width={240} height={238} unoptimized />
                 </span>
                 <strong>
-                  Реинкарнация: {player.reincarnationLevel != null
+                  <span className={styles.desktopDetailLabel}>Реинкарнация: </span>
+                  <span className={styles.mobileDetailLabel}>Реник: </span>
+                  {player.reincarnationLevel != null
                     ? `${player.reincarnationLevel}${
                         displayedReincarnationUp != null
                           ? `, ${displayedReincarnationUp} ап`
@@ -567,13 +595,22 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                 <span className={styles.assetMark}>
                   <Image src="/images/players/alliance-banner.png" alt="" width={194} height={240} unoptimized />
                 </span>
-                {player.allianceName ? <Link href="/alliances">Альянс «{player.allianceName}»</Link> : <strong>Без альянса</strong>}
+                {player.allianceName ? (
+                  <AllianceInfoButton
+                    allianceName={player.allianceName}
+                    clans={allianceClans}
+                    className={styles.allianceDetailButton}
+                    label={<>Альянс «{player.allianceName}»</>}
+                    compactLabel={<>«{player.allianceName}»</>}
+                  />
+                ) : <strong>Без альянса</strong>}
               </div>
             </div>
 
             {player.profileUrl ? (
               <a href={player.profileUrl} target="_blank" rel="noreferrer" className={styles.dmLink} aria-label="Профиль в ДМ">
-                <span className={styles.profileButton} />
+                <span>Профиль в ДМ</span>
+                <span aria-hidden="true">↗</span>
               </a>
             ) : null}
           </div>

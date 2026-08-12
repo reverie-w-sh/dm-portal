@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import clansJson from "../../../data/clans.json";
 import playersJson from "../../../data/players.json";
+import AllianceInfoButton from "@/components/AllianceInfoButton";
 import styles from "./page.module.css";
 
 const OUR_CLAN_ID = "278";
@@ -10,6 +11,7 @@ type Clan = {
   clanId: string;
   name: string;
   membersCount: number;
+  crestSmall?: string;
   allianceId?: string;
   allianceName?: string;
 };
@@ -130,6 +132,18 @@ export default function MembersPage() {
     });
 
   const wolvesLabel = formatWolves(members.length);
+  const allianceClans = clan.allianceId
+    ? clansData
+        .filter(
+          (item) =>
+            item.allianceId === clan.allianceId &&
+            item.clanId !== clan.clanId,
+        )
+        .sort((a, b) =>
+          a.name.localeCompare(b.name, "ru", { sensitivity: "base" }),
+        )
+        .map(({ clanId, name, crestSmall }) => ({ clanId, name, crestSmall }))
+    : [];
 
   return (
     <div className={styles.page}>
@@ -158,9 +172,13 @@ export default function MembersPage() {
               </Link>
 
               {clan.allianceName ? (
-                <Link href="/alliances" className={styles.heroButton}>
-                  Альянс «{clan.allianceName}»
-                </Link>
+                <AllianceInfoButton
+                  allianceName={clan.allianceName}
+                  clans={allianceClans}
+                  className={styles.heroButton}
+                  label={<>Альянс «{clan.allianceName}»</>}
+                  compactLabel={clan.allianceName}
+                />
               ) : null}
             </div>
           </div>
