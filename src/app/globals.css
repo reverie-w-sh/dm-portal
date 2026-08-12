@@ -74,6 +74,7 @@ body {
   background-image: url("/images/site-background.webp");
   background-position: top left;
   background-repeat: repeat;
+  background-size: 1536px 1024px;
 }
 
 /* Старые фоны оболочек страниц не должны перекрывать единый фон. */
