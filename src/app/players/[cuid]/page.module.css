@@ -20,6 +20,7 @@
 .profileCard,
 .showcaseGrid,
 .ratingPositions,
+.achievementsSection,
 .fullChronicle {
   position: relative;
   border: 1px solid rgba(163, 107, 38, .72);
@@ -39,6 +40,8 @@
 .showcaseGrid::after,
 .ratingPositions::before,
 .ratingPositions::after,
+.achievementsSection::before,
+.achievementsSection::after,
 .fullChronicle::before,
 .fullChronicle::after {
   content: "";
@@ -53,6 +56,7 @@
 .profileCard::before,
 .showcaseGrid::before,
 .ratingPositions::before,
+.achievementsSection::before,
 .fullChronicle::before {
   top: 5px;
   left: 5px;
@@ -61,6 +65,7 @@
 .profileCard::after,
 .showcaseGrid::after,
 .ratingPositions::after,
+.achievementsSection::after,
 .fullChronicle::after {
   right: 5px;
   bottom: 5px;
@@ -746,6 +751,46 @@
   padding: 13px 30px 25px;
 }
 
+.achievementsSection {
+  margin-top: 13px;
+  padding: 13px 30px 27px;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.achievementCollectionCard {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 9px;
+  align-items: center;
+  min-width: 0;
+  min-height: 66px;
+  padding: 7px 9px;
+  border: 1px solid rgba(178, 120, 47, .42);
+  background:
+    linear-gradient(105deg, rgba(18, 18, 15, .92), rgba(5, 6, 5, .84)),
+    url("/images/about/dark-marble-tile.webp") center / 360px repeat;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, .6);
+}
+
+.achievementCollectionCard img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.achievementCollectionCard span {
+  min-width: 0;
+  color: #cdb27d;
+  font: .72rem/1.25 Georgia, serif;
+  overflow-wrap: anywhere;
+}
+
 .ratingGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -1028,6 +1073,8 @@
   .levelEventIcon { width: 36px; height: 41px; }
   .fullChronicle { padding-inline: 20px; }
   .ratingPositions { padding-inline: 20px; }
+  .achievementsSection { padding-inline: 20px; }
+  .achievementsGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .fullEntry { grid-template-columns: 104px 52px minmax(0, 1fr); }
 }
 
@@ -1112,6 +1159,11 @@
   .recentPanel { padding: 18px 14px; }
   .fullChronicle { padding: 14px 10px 24px; }
   .ratingPositions { padding: 14px 10px 22px; }
+  .achievementsSection { padding: 14px 10px 22px; }
+  .achievementsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .achievementCollectionCard { grid-template-columns: 44px minmax(0, 1fr); min-height: 58px; padding: 6px; }
+  .achievementCollectionCard img { width: 42px; height: 42px; }
+  .achievementCollectionCard span { font-size: .68rem; }
   .fullTimeline { padding-left: 0; }
   .fullTimeline::before,
   .fullEntry::before { display: none; }
@@ -1150,6 +1202,7 @@
 }
 
 @media (max-width: 390px) {
+  .achievementsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .smileGrid,
   .itemGrid { gap: 5px; }
   .smileCard { height: 65px; padding: 4px; }

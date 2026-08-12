@@ -38,6 +38,7 @@ type Player = {
   marriageSince?: string;
   characterImage?: string;
   characterImages?: string[];
+  achievements?: Achievement[];
 };
 
 type Clan = {
@@ -309,9 +310,10 @@ function playerTimeline(player: Player): TimelineEntry[] {
   const personalEvents = events
     .filter(
       (event) =>
-        event.characterId === player.cuid ||
-        (sameText(event.partnerName, player.nick) &&
-          (event.type === "player_married" || event.type === "player_divorced")),
+        (event.characterId === player.cuid ||
+          (sameText(event.partnerName, player.nick) &&
+            (event.type === "player_married" || event.type === "player_divorced"))) &&
+        !(event.type === "player_achievement_added" && event.isInitialImport !== false),
     )
     .map<TimelineEntry>((event) => {
       const isPartnerEvent =
@@ -745,6 +747,28 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
             </div>
           ) : (
             <p className={styles.emptyText}>В топ-20 профессиональных рейтингов пока нет.</p>
+          )}
+        </section>
+
+        <section className={styles.achievementsSection}>
+          <header className={styles.chronicleTitle}>
+            <span />
+            <h2>Достижения{player.achievements?.length ? `: ${player.achievements.length}` : ""}</h2>
+            <span />
+          </header>
+          {player.achievements?.length ? (
+            <div className={styles.achievementsGrid}>
+              {player.achievements.map((achievement) => (
+                <div className={styles.achievementCollectionCard} key={achievement.id}>
+                  {/* Иконки достижений ДМ загружаются с внешнего домена. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={achievement.imageUrl} alt="" loading="lazy" />
+                  <span>{achievement.name}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className={styles.emptyText}>Достижений пока нет.</p>
           )}
         </section>
 
