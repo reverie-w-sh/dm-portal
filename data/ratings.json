@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T23:53:21.322Z",
+  "updatedAt": "2026-08-12T01:57:55.582Z",
   "ratings": {
     "fishing": {
       "title": "Лучшие рыболовы",
@@ -93,13 +93,13 @@
           "rank": 15,
           "name": "ЭХО",
           "level": 13,
-          "value": 22963
+          "value": 22965
         },
         {
           "rank": 16,
           "name": "Fistashka",
           "level": 14,
-          "value": 17818
+          "value": 17822
         },
         {
           "rank": 17,
@@ -135,37 +135,37 @@
           "rank": 1,
           "name": "Катерина",
           "level": 16,
-          "value": 78702
+          "value": 78912
         },
         {
           "rank": 2,
           "name": "Takezo",
           "level": 12,
-          "value": 74539
+          "value": 74546
         },
         {
           "rank": 3,
           "name": "InDigo",
           "level": 15,
-          "value": 73425
+          "value": 73540
         },
         {
           "rank": 4,
           "name": "Мишаня",
           "level": 16,
-          "value": 71101
+          "value": 71157
         },
         {
           "rank": 5,
           "name": "Александр Николаевич",
           "level": 15,
-          "value": 69157
+          "value": 69171
         },
         {
           "rank": 6,
           "name": "ЭХО",
           "level": 13,
-          "value": 58262
+          "value": 58279
         },
         {
           "rank": 7,
@@ -177,7 +177,7 @@
           "rank": 8,
           "name": "Артур",
           "level": 16,
-          "value": 54270
+          "value": 54278
         },
         {
           "rank": 9,
@@ -207,13 +207,13 @@
           "rank": 13,
           "name": "Юпитер",
           "level": 15,
-          "value": 47537
+          "value": 47552
         },
         {
           "rank": 14,
           "name": "Партизан",
           "level": 14,
-          "value": 47405
+          "value": 47413
         },
         {
           "rank": 15,
@@ -237,19 +237,19 @@
           "rank": 18,
           "name": "Fistashka",
           "level": 14,
-          "value": 44346
+          "value": 44357
         },
         {
           "rank": 19,
           "name": "Hanibal",
           "level": 12,
-          "value": 43635
+          "value": 43649
         },
         {
           "rank": 20,
           "name": "Tequila",
           "level": 15,
-          "value": 43020
+          "value": 43032
         }
       ]
     },
@@ -1860,8 +1860,8 @@
           "rank": 2,
           "name": "Катерина",
           "level": 16,
-          "value": 2738826203,
-          "experience": 2738826203,
+          "value": 2738946203,
+          "experience": 2738946203,
           "monsterWins": 250923,
           "playerWins": 738
         },
@@ -2049,8 +2049,8 @@
           "rank": 23,
           "name": "InDigo",
           "level": 15,
-          "value": 892613533,
-          "experience": 892613533,
+          "value": 892683533,
+          "experience": 892683533,
           "monsterWins": 196267,
           "playerWins": 1223
         },
@@ -2076,9 +2076,9 @@
           "rank": 26,
           "name": "sinful",
           "level": 15,
-          "value": 841152917,
-          "experience": 841152917,
-          "monsterWins": 184042,
+          "value": 841223373,
+          "experience": 841223373,
+          "monsterWins": 184084,
           "playerWins": 4213
         },
         {
@@ -2202,9 +2202,9 @@
           "rank": 40,
           "name": "ЭХО",
           "level": 13,
-          "value": 359137076,
-          "experience": 359137076,
-          "monsterWins": 140019,
+          "value": 359324354,
+          "experience": 359324354,
+          "monsterWins": 140116,
           "playerWins": 1538
         },
         {
@@ -2283,9 +2283,9 @@
           "rank": 49,
           "name": "Hanibal",
           "level": 12,
-          "value": 171257407,
-          "experience": 171257407,
-          "monsterWins": 79897,
+          "value": 171320760,
+          "experience": 171320760,
+          "monsterWins": 79946,
           "playerWins": 1404
         },
         {
@@ -2319,9 +2319,9 @@
           "rank": 53,
           "name": "oFFWhite",
           "level": 12,
-          "value": 144594858,
-          "experience": 144594858,
-          "monsterWins": 96673,
+          "value": 144654010,
+          "experience": 144654010,
+          "monsterWins": 96747,
           "playerWins": 3605
         },
         {
@@ -2508,9 +2508,9 @@
           "rank": 74,
           "name": "Allania",
           "level": 11,
-          "value": 72310108,
-          "experience": 72310108,
-          "monsterWins": 87402,
+          "value": 72365638,
+          "experience": 72365638,
+          "monsterWins": 87476,
           "playerWins": 736
         },
         {
