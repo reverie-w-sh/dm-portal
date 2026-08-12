@@ -679,7 +679,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
             {smiles ? <Link className={styles.panelLink} href={`/personal-smiles?player=${player.cuid}`}>Показать все →</Link> : null}
           </section>
 
-          <section className={styles.collectionPanel}>
+          <section className={`${styles.collectionPanel} ${styles.itemPanel}`}>
             <header className={styles.collectionHeader}>
               <h2>Именные вещи</h2>
               <p>{displayedItems.length} из {items.length}</p>

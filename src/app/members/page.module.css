@@ -80,7 +80,9 @@
   justify-content: center;
   padding: 8px 18px 9px;
   border: 1px solid rgba(186, 124, 47, .82);
-  border-radius: 2px;
+  border-radius: 0;
+  /* Лёгкий срез противоположных углов — как у декоративных рамок сайта. */
+  clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
   color: #e2bc75;
   background:
     linear-gradient(180deg, rgba(63, 39, 15, .76), rgba(15, 12, 8, .94) 55%, rgba(40, 25, 10, .74));

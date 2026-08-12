@@ -471,7 +471,8 @@
 
 .showcaseGrid {
   display: grid;
-  grid-template-columns: 1fr 1.12fr .9fr;
+  /* Смайлам отдаём больше места, а именные вещи держим компактнее. */
+  grid-template-columns: minmax(0, 1.35fr) 330px minmax(285px, .9fr);
   margin-top: 13px;
 }
 
@@ -487,6 +488,10 @@
 .collectionPanel + .collectionPanel,
 .recentPanel {
   border-left: 1px solid rgba(168, 111, 41, .46);
+}
+
+.itemPanel {
+  padding-inline: 12px;
 }
 
 .collectionHeader {
@@ -542,9 +547,17 @@
 .smileGrid,
 .itemGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 8px;
   margin-top: 18px;
+}
+
+.smileGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.itemGrid {
+  grid-template-columns: repeat(4, 70px);
+  justify-content: center;
 }
 
 .smileCard,
@@ -576,6 +589,12 @@
   object-fit: contain;
 }
 
+.itemCard {
+  width: 70px;
+  height: 90px;
+  box-sizing: border-box;
+}
+
 .itemCard img { max-width: 54px; max-height: 69px; }
 
 .smileCard,
@@ -590,12 +609,13 @@
 }
 
 .smileVisual {
-  display: inline-grid;
-  width: max-content;
-  height: max-content;
+  display: grid;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   max-width: 100%;
   max-height: 100%;
-  padding: 4px;
+  box-sizing: border-box;
+  padding: 3px;
   place-items: center;
   overflow: hidden;
   border: 1px solid #9a7b48;
@@ -605,8 +625,11 @@
 }
 
 .smileVisual img {
-  max-width: 74px;
-  max-height: 74px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .panelLink {
@@ -968,8 +991,8 @@
   .recentPanel { padding-inline: 14px; }
   .smileGrid,
   .itemGrid { gap: 6px; }
-  .smileCard,
-  .itemCard { height: 82px; }
+  .smileCard { height: 82px; }
+  .itemCard { width: 70px; height: 90px; }
 }
 
 @media (max-width: 900px) {
@@ -989,8 +1012,16 @@
   .collectionHeader h2 { font-size: 1rem; }
   .collectionPanel,
   .recentPanel { padding-inline: 11px; }
-  .smileCard,
-  .itemCard { height: 76px; padding: 5px; }
+  .showcaseGrid { grid-template-columns: 1fr; }
+  .collectionPanel + .collectionPanel,
+  .recentPanel {
+    border-top: 1px solid rgba(168, 111, 41, .46);
+    border-left: 0;
+  }
+  .collectionPanel,
+  .recentPanel { min-height: 0; }
+  .smileCard { height: 76px; padding: 5px; }
+  .itemCard { width: 70px; height: 90px; padding: 5px; }
   .recentEntry { grid-template-columns: 38px minmax(0, 1fr); gap: 5px; }
   .timelineIcon { width: 33px; height: 33px; }
   .levelEventIcon { width: 36px; height: 41px; }
@@ -1005,16 +1036,8 @@
 }
 
 @media (max-width: 700px) {
-  .showcaseGrid { grid-template-columns: 1fr; }
-  .collectionPanel + .collectionPanel,
-  .recentPanel {
-    border-top: 1px solid rgba(168, 111, 41, .46);
-    border-left: 0;
-  }
-  .collectionPanel,
-  .recentPanel { min-height: 0; }
-  .smileGrid,
-  .itemGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .smileGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .itemGrid { grid-template-columns: repeat(4, 70px); }
 }
 
 @media (max-width: 560px) {
@@ -1128,6 +1151,6 @@
 @media (max-width: 390px) {
   .smileGrid,
   .itemGrid { gap: 5px; }
-  .smileCard,
-  .itemCard { height: 65px; padding: 4px; }
+  .smileCard { height: 65px; padding: 4px; }
+  .itemCard { width: 70px; height: 90px; padding: 4px; }
 }
