@@ -4,6 +4,7 @@ import path from "node:path";
 const DM_BASE_URL = "https://dm-game.com";
 const NEWS_LIST_URL = `${DM_BASE_URL}/guide/news.php?rid=48&index=1`;
 const OUTPUT_PATH = path.resolve("data", "game-news.json");
+const MANUAL_RESULTS_PATH = path.resolve("data", "game-news-manual-results.json");
 const CONCURRENCY = 4;
 const ARCHIVE_PAGE_COUNT = 19;
 
@@ -163,6 +164,7 @@ function classifyNews(title: string, body: string): {
 
   if (
     titleLower.includes("фестивал") ||
+    /фест.*кров/.test(titleLower) ||
     /безумн.*тыкв/.test(titleLower) ||
     /букетн.*фестивал/.test(fullText)
   ) {
@@ -468,8 +470,35 @@ async function mapWithConcurrency<T, R>(
   return result;
 }
 
+async function readManualResults(): Promise<Record<string, { date: string; author: string; body: string }>> {
+  try {
+    return JSON.parse(await readFile(MANUAL_RESULTS_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function applyManualResult(
+  item: GameNewsItem,
+  manual?: { date: string; author: string; body: string },
+): GameNewsItem {
+  if (!manual) return item;
+
+  const manualComment: GameNewsComment = {
+    author: manual.author,
+    date: manual.date,
+    body: manual.body,
+    isSystemResult: true,
+  };
+  const comments = (item.comments ?? []).filter(
+    (comment) => comment.body.trim() !== manual.body.trim(),
+  );
+  return { ...item, comments: [...comments, manualComment] };
+}
+
 async function main(): Promise<void> {
   const existing = await readExisting();
+  const manualResults = await readManualResults();
   const isArchiveBackfill = !existing.archiveComplete;
   const pageNumbers = isArchiveBackfill
     ? Array.from({ length: ARCHIVE_PAGE_COUNT }, (_, index) => index + 1)
@@ -536,7 +565,8 @@ async function main(): Promise<void> {
   );
   for (const item of current) merged.set(item.id, item);
 
-  const sourceItems = Array.from(merged.values()).map((item) => {
+  const sourceItems = Array.from(merged.values()).map((rawItem) => {
+    const item = applyManualResult(rawItem, manualResults[rawItem.tid]);
     const classification = classifyNews(item.title, item.body);
     const isFestivalResult =
       classification.category === "festival" && /^(?:итог|результат)/i.test(item.title);

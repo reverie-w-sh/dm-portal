@@ -54,6 +54,11 @@ const FESTIVAL_NAMES: Array<{
     name: { short: "Букетов", chronicle: "Фестиваль Букетов" },
   },
   {
+    types: ["blood"],
+    titlePattern: /фест(?:ивал)?.*кров|крови/iu,
+    name: { short: "Крови", chronicle: "Фестиваль Крови" },
+  },
+  {
     types: ["easter"],
     titlePattern: /крашен|пасхал/iu,
     name: { short: "Пасхальном", chronicle: "Пасхальный фестиваль" },

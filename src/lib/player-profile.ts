@@ -36,6 +36,7 @@ type ParsedOutcome = {
 function normalized(value: string): string {
   return value
     .replace(/[“”«»"']/g, "")
+    .replace(/[*_]+/g, "")
     .replace(/\s+/g, " ")
     .trim()
     .toLocaleLowerCase("ru-RU");
