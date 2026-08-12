@@ -194,6 +194,7 @@
   color: #9f8a6b;
   cursor: default;
   opacity: 1;
+  font-size: 0.7rem;
 }
 
 @media (max-width: 1100px) {
