@@ -477,7 +477,7 @@ const hasAnimal =
 
         <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-[#c5ad82]">
           Нажимай на верхнюю часть клетки, чтобы отметить
-          найденного зверя. Нижние три поля - поиск слева,
+          найденного зверя. Нижние три поля — поиск слева,
           по центру и справа. Подсказка: выбор происходит
           посредством последовательных нажатий на одну
           клеточку :)
@@ -527,12 +527,23 @@ const hasAnimal =
                     isPositiveResult,
                   );
 
+                // Если зверь найден по центру, сразу подсвечиваем всю клетку:
+                // красным без шкурки, зелёным со шкуркой / двумя шкурками.
+                const centerResult = cell.searches[1];
+                const centerCellStatusClass =
+                  centerResult === "plus1"
+                    ? "border-red-500/80 bg-[rgba(75,15,18,.42)] shadow-[0_0_0_1px_rgba(239,68,68,.25),0_0_20px_rgba(239,68,68,.28),inset_0_0_26px_rgba(127,29,29,.22)]"
+                    : centerResult === "plus3" || centerResult === "plus6"
+                      ? "border-emerald-500/80 bg-[rgba(10,67,43,.40)] shadow-[0_0_0_1px_rgba(16,185,129,.24),0_0_20px_rgba(16,185,129,.28),inset_0_0_26px_rgba(6,78,59,.24)]"
+                      : "";
+
                 return (
                   <div
                     key={cellIndex}
                     className={[
                       "min-w-0 overflow-hidden rounded-xl border border-[#68451d] shadow-[0_5px_13px_rgba(0,0,0,.42)]",
                       animal.cellClass,
+                      centerCellStatusClass,
                     ].join(" ")}
                   >
                     <button
