@@ -53,6 +53,7 @@ export async function GET() {
   if (!redis) {
     return NextResponse.json(
       {
+        configured: false,
         suggestions: [],
         message: "Хранилище предложений не подключено",
       },
@@ -61,29 +62,24 @@ export async function GET() {
   }
 
   try {
-/*
- * Upstash может автоматически превратить сохранённую JSON-строку
- * обратно в объект. Поэтому здесь специально используем unknown,
- * а parseSuggestion умеет работать с обоими вариантами.
- */
-const raw = await redis.lrange<unknown>(SUGGESTIONS_KEY, 0, 199);
+    const raw = await redis.lrange<unknown>(SUGGESTIONS_KEY, 0, 199);
 
-return NextResponse.json({
-  configured: true,
-  suggestions: parseSuggestions(raw),
-});
-
-} catch (error) {
-  console.error("Не удалось загрузить предложения:", error);
-
-  return NextResponse.json(
-    {
+    return NextResponse.json({
       configured: true,
-      suggestions: [],
-      message: "Не удалось загрузить предложения",
-    },
-    { status: 500 },
-  );
+      suggestions: parseSuggestions(raw),
+    });
+  } catch (error) {
+    console.error("Не удалось загрузить предложения:", error);
+
+    return NextResponse.json(
+      {
+        configured: true,
+        suggestions: [],
+        message: "Не удалось загрузить предложения",
+      },
+      { status: 500 },
+    );
+  }
 }
 
 export async function DELETE(request: Request) {
@@ -91,7 +87,10 @@ export async function DELETE(request: Request) {
 
   if (!redis) {
     return NextResponse.json(
-      { message: "Хранилище предложений не подключено" },
+      {
+        configured: false,
+        message: "Хранилище предложений не подключено",
+      },
       { status: 503 },
     );
   }
@@ -131,11 +130,6 @@ export async function DELETE(request: Request) {
       );
     }
 
-    /*
-     * В Redis запись хранится как JSON-строка.
-     * Но Upstash при чтении может вернуть уже готовый объект.
-     * Для LREM поэтому превращаем объект обратно в ту же JSON-строку.
-     */
     const redisValue =
       typeof found === "string"
         ? found
