@@ -9,29 +9,10 @@
     url("/images/home-pattern.webp") top center / auto repeat;
 }
 
-.page::before,
-.page::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  bottom: 0;
-  width: 125px;
-  background: url("/images/players/side-ornament-seamless.png") top center / 125px 1600px repeat-y;
-  opacity: .92;
-  pointer-events: none;
-}
-
-.page::before { left: max(0px, calc(50% - 680px)); }
-.page::after {
-  right: max(0px, calc(50% - 680px));
-  transform: scaleX(-1);
-}
-
 .shell {
   position: relative;
   z-index: 1;
-  width: min(1080px, calc(100% - 170px));
+  width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
   padding: 10px 0 72px;
 }
@@ -971,8 +952,6 @@
 }
 
 @media (max-width: 820px) {
-  .page::before,
-  .page::after { display: none; }
   .shell { width: calc(100% - 20px); }
   .profileCard { gap: 20px; }
 }
