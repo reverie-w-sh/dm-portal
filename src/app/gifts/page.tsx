@@ -84,7 +84,7 @@ export default function GiftsPage() {
                 </button>
               ) : (
                 <a href={gift.file} download className={styles.downloadButton}>
-                  ⬇ Скачать
+                  Скачать
                 </a>
               )}
             </article>
