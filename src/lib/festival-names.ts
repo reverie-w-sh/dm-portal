@@ -15,7 +15,7 @@ const FESTIVAL_NAMES: Array<{
   },
   {
     types: ["andvari"],
-    titlePattern: /андвари/iu,
+    titlePattern: /андвари|адвари/iu,
     name: { short: "Андвари", chronicle: "Фестиваль Андвари" },
   },
   {
