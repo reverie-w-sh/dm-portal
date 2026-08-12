@@ -80,7 +80,7 @@ export default function GiftsPage() {
 
               {gift.personal ? (
                 <button type="button" disabled className={styles.privateButton}>
-                  Личный подарок, его не скачивай :)
+                  Выбери другой, пожалуйста :)
                 </button>
               ) : (
                 <a href={gift.file} download className={styles.downloadButton}>
