@@ -24,3 +24,15 @@
 .eventsBlock{margin:18px 0 8px}.smileToolbar{margin-bottom:18px}.smileToolbar .stats{margin-bottom:12px}.smileOwner{display:flex;align-items:center;gap:14px;min-width:0}.ownerMeta{display:flex;flex-wrap:wrap;gap:8px 16px!important}.clanMeta{display:inline-flex;align-items:center;gap:7px}.clanMeta img{display:block;object-fit:contain}.smileGroup{scroll-margin-top:20px}.groupActions button.collectionLink{cursor:pointer;font-family:inherit}.smilePanel{padding:18px;border-top:1px solid rgba(173,113,34,.28);background:linear-gradient(180deg,rgba(75,44,18,.12),transparent)}.smileGrid{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px}.smileCard{display:grid;min-width:76px;min-height:76px;padding:8px;place-items:center;border:1px solid rgba(173,113,34,.3);border-radius:10px;background:#f5f9ff;box-shadow:0 4px 14px rgba(0,0,0,.2);transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}.smileCard:hover{transform:translateY(-2px) scale(1.03);border-color:#d4993b;box-shadow:0 7px 18px rgba(0,0,0,.3)}.smileCard img{display:block;width:auto;height:auto;max-width:100px;max-height:100px;object-fit:contain}.smileExternal{margin-top:16px;text-align:center}.smileExternal a{color:#a88c66;font-size:.82rem;font-weight:700;text-decoration:none}.smileExternal a:hover{color:#efd09a}.emptyIcon{margin-bottom:10px;font-size:34px}.empty p{margin:0}.smileToolbar .controls{margin:0}
 @media(max-width:760px){.eventsBlock{margin-top:12px}.smileToolbar .controls{gap:10px}.smileOwner{align-items:flex-start}.groupActions{align-items:center}.smilePanel{padding:10px}.smileGrid{gap:8px}.smileCard{min-width:70px;min-height:70px;padding:6px}.smileCard img{max-width:96px;max-height:96px}}
 .clanCrestBox{display:inline-flex;width:21px;height:21px;flex:0 0 21px;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(205,144,55,.72);border-radius:4px;background:#f5f9ff;box-shadow:0 1px 4px rgba(0,0,0,.2)}.clanCrestBox img{display:block;width:19px;height:19px;object-fit:contain}
+.smilesHeroIcon {
+  overflow: hidden;
+}
+
+.smilesHeroIcon img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: none;
+}
