@@ -101,10 +101,10 @@ export default function CouplesClient({
         <header className={styles.hero}>
           <div className={`${styles.heroIcon} ${styles.ringsIcon}`}>
             <Image
-              src="/ui/couple-rings.svg"
+              src="/images/couples-wolves.png"
               width={76}
               height={76}
-              alt="Два золотых обручальных кольца"
+              alt="Белый и чёрный волки"
               priority
             />
           </div>
