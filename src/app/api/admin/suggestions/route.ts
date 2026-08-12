@@ -61,27 +61,29 @@ export async function GET() {
   }
 
   try {
-    /*
-     * Upstash может автоматически превратить сохранённую JSON-строку
-     * обратно в объект. Поэтому здесь специально используем unknown,
-     * а parseSuggestion умеет работать с обоими вариантами.
-     */
-    const raw = await redis.lrange<unknown>(SUGGESTIONS_KEY, 0, 199);
+/*
+ * Upstash может автоматически превратить сохранённую JSON-строку
+ * обратно в объект. Поэтому здесь специально используем unknown,
+ * а parseSuggestion умеет работать с обоими вариантами.
+ */
+const raw = await redis.lrange<unknown>(SUGGESTIONS_KEY, 0, 199);
 
-    return NextResponse.json({
-      suggestions: parseSuggestions(raw),
-    });
-  } catch (error) {
-    console.error("Не удалось загрузить предложения:", error);
+return NextResponse.json({
+  configured: true,
+  suggestions: parseSuggestions(raw),
+});
 
-    return NextResponse.json(
-      {
-        suggestions: [],
-        message: "Не удалось загрузить предложения",
-      },
-      { status: 500 },
-    );
-  }
+} catch (error) {
+  console.error("Не удалось загрузить предложения:", error);
+
+  return NextResponse.json(
+    {
+      configured: true,
+      suggestions: [],
+      message: "Не удалось загрузить предложения",
+    },
+    { status: 500 },
+  );
 }
 
 export async function DELETE(request: Request) {
