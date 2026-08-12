@@ -130,7 +130,7 @@ export default function PersonalSmilesPage() {
       <section className={styles.shell}>
         <header className={styles.hero}>
 <div className={`${styles.heroIcon} ${styles.smilesHeroIcon}`}>
-  <img src="/personal-smiles.gif" alt="смайлики улучшают настроение" />
+  <img src="/images/personal-smiles.gif" alt="смайлики улучшают настроение" />
 </div>
           <div>
             <h1>Особисті колекції смайликів</h1>
