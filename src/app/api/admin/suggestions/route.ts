@@ -12,60 +12,142 @@ type StoredSuggestion = {
   createdAt: string;
 };
 
-function parseSuggestions(items: string[]): StoredSuggestion[] {
-  return items.flatMap((item) => {
-    try {
-      const value = JSON.parse(item) as StoredSuggestion;
-      return value.id && value.text && value.createdAt ? [value] : [];
-    } catch {
-      return [];
+function parseSuggestion(item: unknown): StoredSuggestion | null {
+  try {
+    const value =
+      typeof item === "string"
+        ? (JSON.parse(item) as StoredSuggestion)
+        : (item as StoredSuggestion);
+
+    if (
+      !value ||
+      typeof value !== "object" ||
+      typeof value.id !== "string" ||
+      typeof value.text !== "string" ||
+      typeof value.createdAt !== "string"
+    ) {
+      return null;
     }
+
+    return {
+      id: value.id,
+      text: value.text,
+      page: typeof value.page === "string" ? value.page : "/",
+      createdAt: value.createdAt,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function parseSuggestions(items: unknown[]): StoredSuggestion[] {
+  return items.flatMap((item) => {
+    const suggestion = parseSuggestion(item);
+    return suggestion ? [suggestion] : [];
   });
 }
 
 export async function GET() {
   const redis = getAnalyticsRedis();
-  if (!redis) return NextResponse.json({ configured: false, suggestions: [] });
 
-  const raw = await redis.lrange<string>(SUGGESTIONS_KEY, 0, 199);
-  return NextResponse.json({
-    configured: true,
-    suggestions: parseSuggestions(raw),
-  });
-}
-
-export async function DELETE(request: Request) {
-  const redis = getAnalyticsRedis();
   if (!redis) {
     return NextResponse.json(
-      { message: "Upstash Redis не подключён" },
+      {
+        suggestions: [],
+        message: "Хранилище предложений не подключено",
+      },
       { status: 503 },
     );
   }
 
-  let body: { id?: unknown };
+  try {
+    /*
+     * Upstash может автоматически превратить сохранённую JSON-строку
+     * обратно в объект. Поэтому здесь специально используем unknown,
+     * а parseSuggestion умеет работать с обоими вариантами.
+     */
+    const raw = await redis.lrange<unknown>(SUGGESTIONS_KEY, 0, 199);
+
+    return NextResponse.json({
+      suggestions: parseSuggestions(raw),
+    });
+  } catch (error) {
+    console.error("Не удалось загрузить предложения:", error);
+
+    return NextResponse.json(
+      {
+        suggestions: [],
+        message: "Не удалось загрузить предложения",
+      },
+      { status: 500 },
+    );
+  }
+}
+
+export async function DELETE(request: Request) {
+  const redis = getAnalyticsRedis();
+
+  if (!redis) {
+    return NextResponse.json(
+      { message: "Хранилище предложений не подключено" },
+      { status: 503 },
+    );
+  }
+
+  let body: Record<string, unknown>;
+
   try {
     body = await request.json();
   } catch {
-    return NextResponse.json({ message: "Неверный запрос" }, { status: 400 });
+    return NextResponse.json(
+      { message: "Неверный запрос" },
+      { status: 400 },
+    );
   }
 
-  const id = typeof body.id === "string" ? body.id : "";
-  if (!id) return NextResponse.json({ message: "Не указан ID" }, { status: 400 });
+  const id = typeof body.id === "string" ? body.id.trim() : "";
 
-  const raw = await redis.lrange<string>(SUGGESTIONS_KEY, 0, 199);
-  const stored = raw.find((item) => {
-    try {
-      return (JSON.parse(item) as StoredSuggestion).id === id;
-    } catch {
-      return false;
+  if (!id) {
+    return NextResponse.json(
+      { message: "Не указан ID предложения" },
+      { status: 400 },
+    );
+  }
+
+  try {
+    const raw = await redis.lrange<unknown>(SUGGESTIONS_KEY, 0, 199);
+
+    const found = raw.find((item) => {
+      const suggestion = parseSuggestion(item);
+      return suggestion?.id === id;
+    });
+
+    if (found === undefined) {
+      return NextResponse.json(
+        { message: "Предложение уже удалено или не найдено" },
+        { status: 404 },
+      );
     }
-  });
 
-  if (!stored) {
-    return NextResponse.json({ message: "Предложение не найдено" }, { status: 404 });
+    /*
+     * В Redis запись хранится как JSON-строка.
+     * Но Upstash при чтении может вернуть уже готовый объект.
+     * Для LREM поэтому превращаем объект обратно в ту же JSON-строку.
+     */
+    const redisValue =
+      typeof found === "string"
+        ? found
+        : JSON.stringify(found);
+
+    await redis.lrem(SUGGESTIONS_KEY, 1, redisValue);
+
+    return NextResponse.json({ ok: true });
+  } catch (error) {
+    console.error("Не удалось удалить предложение:", error);
+
+    return NextResponse.json(
+      { message: "Не удалось удалить предложение" },
+      { status: 500 },
+    );
   }
-
-  await redis.lrem(SUGGESTIONS_KEY, 1, stored);
-  return NextResponse.json({ ok: true });
 }
