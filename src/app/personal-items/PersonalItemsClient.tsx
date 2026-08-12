@@ -124,7 +124,9 @@ export default function PersonalItemsClient({
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.hero}>
-          <div className={styles.heroIcon}>⚔️</div>
+          <div className={styles.heroIcon}>
+            <img src="/images/personal-item-95.png" alt="" aria-hidden="true" />
+          </div>
           <div>
             <p className={styles.eyebrow}>Уникальные картинки</p>
             <h1>Именные вещи</h1>
