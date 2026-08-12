@@ -659,6 +659,24 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
         </section>
 
         <div className={styles.showcaseGrid}>
+          <section className={`${styles.collectionPanel} ${styles.itemPanel}`}>
+            <header className={styles.collectionHeader}>
+              <h2>Именные вещи</h2>
+              <p>{displayedItems.length} из {items.length}</p>
+            </header>
+            {displayedItems.length ? (
+              <div className={styles.itemGrid}>
+                {displayedItems.map((item) => (
+                  <a href={item.itemUrl} target="_blank" rel="noreferrer" className={styles.itemCard} key={`${item.id}-${item.imageUrl}`} title={item.name}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={item.imageUrl} alt={item.name} loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            ) : <p className={styles.emptyText}>Именных вещей пока нет.</p>}
+            {items.length ? <Link className={styles.panelLink} href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}>Показать все →</Link> : null}
+          </section>
+
           <section className={styles.collectionPanel}>
             <header className={styles.collectionHeader}>
               <h2>Личные смайлики</h2>
@@ -677,24 +695,6 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
               </div>
             ) : <p className={styles.emptyText}>Личных смайликов пока нет.</p>}
             {smiles ? <Link className={styles.panelLink} href={`/personal-smiles?player=${player.cuid}`}>Показать все →</Link> : null}
-          </section>
-
-          <section className={`${styles.collectionPanel} ${styles.itemPanel}`}>
-            <header className={styles.collectionHeader}>
-              <h2>Именные вещи</h2>
-              <p>{displayedItems.length} из {items.length}</p>
-            </header>
-            {displayedItems.length ? (
-              <div className={styles.itemGrid}>
-                {displayedItems.map((item) => (
-                  <a href={item.itemUrl} target="_blank" rel="noreferrer" className={styles.itemCard} key={`${item.id}-${item.imageUrl}`} title={item.name}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.imageUrl} alt={item.name} loading="lazy" />
-                  </a>
-                ))}
-              </div>
-            ) : <p className={styles.emptyText}>Именных вещей пока нет.</p>}
-            {items.length ? <Link className={styles.panelLink} href={`/personal-items?owner=${encodeURIComponent(player.nick)}`}>Показать все →</Link> : null}
           </section>
 
           <section className={styles.recentPanel}>

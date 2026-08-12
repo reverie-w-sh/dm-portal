@@ -471,8 +471,8 @@
 
 .showcaseGrid {
   display: grid;
-  /* Смайлам отдаём больше места, а именные вещи держим компактнее. */
-  grid-template-columns: minmax(0, 1.35fr) 330px minmax(285px, .9fr);
+  /* Именные вещи и последние события одинаковой ширины; смайлам — всё оставшееся место. */
+  grid-template-columns: 330px minmax(0, 1fr) 330px;
   margin-top: 13px;
 }
 
@@ -553,6 +553,7 @@
 
 .smileGrid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-content: center;
 }
 
 .itemGrid {
@@ -619,7 +620,7 @@
   place-items: center;
   overflow: hidden;
   border: 1px solid #9a7b48;
-  border-radius: 6px;
+  border-radius: 3px;
   background: #efede5;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .5);
 }
