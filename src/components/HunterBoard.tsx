@@ -70,32 +70,32 @@ const ANIMALS: Record<
   unknown: {
     emoji: "",
     name: "Ничего",
-    cellClass: "bg-[#0c0d0c]",
+    cellClass: "bg-[#080908]",
   },
   empty: {
   emoji: "×",
   name: "Пустая клетка",
-  cellClass: "bg-[#171109]",
+  cellClass: "bg-[#0d0e0d]",
 },
   rabbit: {
     emoji: "🐰",
     name: "Заяц",
-    cellClass: "bg-[#33240f]",
+    cellClass: "bg-[#151311]",
   },
   wolf: {
     emoji: "🐺",
     name: "Волк",
-    cellClass: "bg-[#172124]",
+    cellClass: "bg-[#111516]",
   },
   boar: {
     emoji: "🐗",
     name: "Кабан",
-    cellClass: "bg-[#351d12]",
+    cellClass: "bg-[#17110f]",
   },
   bear: {
     emoji: "🐻",
     name: "Медведь",
-    cellClass: "bg-[#302a10]",
+    cellClass: "bg-[#16140f]",
   },
 };
 
@@ -110,28 +110,28 @@ const SEARCHES: Record<
   none: {
     label: "",
     title: "Не проверено",
-    className: "bg-[#0c0d0c] text-[#806f58] hover:bg-[#17120b]",
+    className: "bg-[#080908] text-[#6f6250] hover:bg-[#11120f]",
   },
   miss: {
     label: "×",
     title: "Никого не нашли",
-    className: "bg-[#351315] text-[#ef9a9a] hover:bg-[#451a1d]",
+    className: "bg-[#1b0d10] text-[#b9797d] hover:bg-[#261115]",
   },
   plus1: {
     label: "+1",
     title: "Зверь найден, шкурку взять не удалось",
-    className: "bg-[#33240f] text-[#e0ad5a] hover:bg-[#433017]",
+    className: "bg-[#171209] text-[#bd8b45] hover:bg-[#21190c]",
   },
   plus3: {
     label: "+3",
     title: "Зверь найден, шкурка получена",
-    className: "bg-[#10271a] text-[#79c492] hover:bg-[#173622]",
+    className: "bg-[#1b1409] text-[#d6a653] hover:bg-[#281d0c]",
   },
   plus6: {
   label: "+6",
   title: "Получены две шкурки",
   className:
-    "bg-[#241a32] text-[#b69be0] hover:bg-[#302341]",
+    "bg-[#21170b] text-[#efd08b] hover:bg-[#30210e]",
 },
 };
 
@@ -467,15 +467,15 @@ const hasAnimal =
   return (
     <section className="mx-auto w-full max-w-5xl">
       <div className="mb-8">
-        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#a98249]">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-[#b88942]">
           Ни у кого такого не было! :)
         </p>
 
-        <h1 className="text-3xl font-black tracking-tight text-[#e7ca91] opacity-60 drop-shadow-[0_2px_10px_rgba(0,0,0,.9)] sm:text-4xl">
+        <h1 className="text-3xl font-black tracking-tight text-[#d9b46f] drop-shadow-[0_2px_10px_rgba(0,0,0,.9)] sm:text-4xl">
           Планшет охотника
         </h1>
 
-        <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-[#bda888]">
+        <p className="mt-3 max-w-3xl text-[13px] leading-relaxed text-[#c5ad82]">
           Нажимай на верхнюю часть клетки, чтобы отметить
           найденного зверя. Нижние три поля — поиск слева,
           по центру и справа. Подсказка: выбор происходит
@@ -487,8 +487,8 @@ const hasAnimal =
       </div>
 
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_220px]">
-        <div className="rounded-2xl border border-[#ad71227a] bg-[#080a09] p-2.5 shadow-[0_14px_36px_rgba(0,0,0,.32)] sm:p-4">
-          <div className="mb-2 grid grid-cols-4 gap-1.5 pl-7 text-center text-xs font-bold text-[#bda888] sm:gap-2 sm:pl-9">
+        <div className="rounded-2xl border border-[#79501f] bg-[#060706] p-2.5 shadow-[0_14px_36px_rgba(0,0,0,.46),inset_0_0_28px_rgba(0,0,0,.28)] sm:p-4">
+          <div className="mb-2 grid grid-cols-4 gap-1.5 pl-7 text-center text-xs font-bold text-[#c7a76d] sm:gap-2 sm:pl-9">
             <span>1</span>
             <span>2</span>
             <span>3</span>
@@ -496,7 +496,7 @@ const hasAnimal =
           </div>
 
           <div className="flex gap-1.5 sm:gap-2">
-            <div className="grid w-6 shrink-0 grid-rows-4 gap-1.5 py-0.5 text-center text-xs font-bold text-[#bda888] sm:w-7 sm:gap-2">
+            <div className="grid w-6 shrink-0 grid-rows-4 gap-1.5 py-0.5 text-center text-xs font-bold text-[#c7a76d] sm:w-7 sm:gap-2">
               <span className="flex items-center justify-center">
                 A
               </span>
@@ -531,7 +531,7 @@ const hasAnimal =
                   <div
                     key={cellIndex}
                     className={[
-                      "min-w-0 overflow-hidden rounded-xl border border-[#ad712252] shadow-md",
+                      "min-w-0 overflow-hidden rounded-xl border border-[#68451d] shadow-[0_5px_13px_rgba(0,0,0,.42)]",
                       animal.cellClass,
                     ].join(" ")}
                   >
@@ -544,14 +544,14 @@ const hasAnimal =
                       aria-label={`Клетка ${
                         cellIndex + 1
                       }: ${animal.name}`}
-                      className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-[#ad712252] transition hover:brightness-105 active:scale-[0.98] sm:aspect-[1.3/1]"
+                      className="relative flex aspect-[1.12/1] w-full items-center justify-center border-b border-[#68451d] transition hover:brightness-110 active:scale-[0.98] sm:aspect-[1.3/1]"
                     >
 {cell.animal === "unknown" ? (
   <span className="text-2xl font-light text-white/25 sm:text-3xl">
     ·
   </span>
 ) : cell.animal === "empty" ? (
-  <span className="text-3xl font-light text-[#806f58] sm:text-4xl">
+  <span className="text-3xl font-light text-[#76644c] sm:text-4xl">
     ×
   </span>
 ) : (
@@ -571,7 +571,7 @@ const hasAnimal =
                         )}
                     </button>
 
-                    <div className="grid grid-cols-3 divide-x divide-[#ad712252]">
+                    <div className="grid grid-cols-3 divide-x divide-[#68451d]">
                       {cell.searches.map(
                         (result, searchIndex) => {
                           const search = SEARCHES[result];
@@ -616,7 +616,7 @@ const hasAnimal =
                                 "relative flex h-9 min-w-0 items-center justify-center text-xs font-black transition sm:h-10 sm:text-sm",
 
                                 isDisabled
-                                  ? "cursor-not-allowed bg-[#070908] text-transparent"
+                                  ? "cursor-not-allowed bg-[#050605] text-transparent"
                                   : `${search.className} active:scale-95`,
 
                                 isCertainDirection
@@ -642,26 +642,26 @@ const hasAnimal =
             </div>
           </div>
 
-          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#ad712252] pt-3 text-xs text-[#bda888]">
+          <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-[#68451d] pt-3 text-xs text-[#baa077]">
             <span>
-              <b className="text-rose-400">×</b> — никого
+              <b className="text-[#b9797d]">×</b> — никого
             </span>
 
             <span>
-              <b className="text-amber-400">+1</b> — без шкурки
+              <b className="text-[#bd8b45]">+1</b> — без шкурки
             </span>
 
             <span>
-              <b className="text-emerald-400">+3</b> — шкурка
+              <b className="text-[#d6a653]">+3</b> — шкурка
             </span>
 
             <span>
-  <b className="text-violet-400">+6</b> — две шкурки
+  <b className="text-[#efd08b]">+6</b> — две шкурки
 </span>
           </div>
         </div>
 
-        <aside className="h-fit rounded-2xl border border-[#ad71227a] bg-[#080a09] p-4 text-[#e9dfcf] shadow-[0_14px_36px_rgba(0,0,0,.32)] sm:p-5">
+        <aside className="h-fit rounded-2xl border border-[#79501f] bg-[#060706] p-4 text-[#e9dfcf] shadow-[0_14px_36px_rgba(0,0,0,.46),inset_0_0_24px_rgba(0,0,0,.24)] sm:p-5">
           <h2 className="text-lg font-black text-[#ecd4a6]">
             Статистика
           </h2>
@@ -696,7 +696,7 @@ const hasAnimal =
             />
           </div>
 
-          <div className="mt-4 rounded-xl border border-[#ad712252] bg-[#0b0d0c] p-4 text-center">
+          <div className="mt-4 rounded-xl border border-[#68451d] bg-[#090a09] p-4 text-center">
             <div className="text-xs font-bold uppercase tracking-wide text-[#bda888]">
               Очки
             </div>
@@ -717,13 +717,13 @@ const hasAnimal =
               onClick={() =>
                 setShowResetConfirm(true)
               }
-              className="mt-5 w-full rounded-xl border border-rose-400/30 bg-rose-500/15 px-4 py-3 text-sm font-bold text-rose-300 transition hover:bg-rose-500/25 active:scale-[0.98]"
+              className="mt-5 w-full rounded-xl border border-[#6f2933] bg-[#2a0d13] px-4 py-3 text-sm font-bold text-[#d39b9e] transition hover:bg-[#381119] active:scale-[0.98]"
             >
               Очистить планшет
             </button>
           ) : (
-            <div className="mt-5 rounded-2xl border border-rose-400/30 bg-rose-500/10 p-3">
-              <p className="text-center text-xs font-semibold text-rose-200">
+            <div className="mt-5 rounded-2xl border border-[#6f2933] bg-[#1b0b0f] p-3">
+              <p className="text-center text-xs font-semibold text-[#d5adaf]">
                 Очистить все клетки и очки?
               </p>
 
@@ -733,7 +733,7 @@ const hasAnimal =
                   onClick={() =>
                     setShowResetConfirm(false)
                   }
-                  className="rounded-lg border border-[#ad712252] bg-[#0b0d0c] px-3 py-2 text-xs font-bold text-[#bda888] hover:bg-[#17120b]"
+                  className="rounded-lg border border-[#68451d] bg-[#090a09] px-3 py-2 text-xs font-bold text-[#baa077] hover:bg-[#12130f]"
                 >
                   Отмена
                 </button>
@@ -741,7 +741,7 @@ const hasAnimal =
                 <button
                   type="button"
                   onClick={resetBoard}
-                  className="rounded-lg bg-rose-600 px-3 py-2 text-xs font-bold text-white hover:bg-rose-500"
+                  className="rounded-lg border border-[#7e303a] bg-[#50151f] px-3 py-2 text-xs font-bold text-[#f0d8d9] hover:bg-[#641a26]"
                 >
                   Очистить
                 </button>
@@ -772,7 +772,7 @@ function StatRow({
   const completed = value >= total;
 
   return (
-    <div className="flex items-center justify-between rounded-xl border border-[#ad71223d] bg-[#0b0d0c] px-3 py-2">
+    <div className="flex items-center justify-between rounded-xl border border-[#5e401d] bg-[#090a09] px-3 py-2">
       <div className="flex items-center gap-2">
         <span>{emoji}</span>
 
@@ -785,7 +785,7 @@ function StatRow({
         className={[
           "text-sm font-black",
           completed
-            ? "text-emerald-400"
+            ? "text-[#d9aa55]"
             : "text-[#efd09a]",
         ].join(" ")}
       >
