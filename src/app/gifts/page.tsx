@@ -15,7 +15,7 @@ export default function GiftsPage() {
           <div>
             <h1>Подарки</h1>
             <p className={collectionStyles.heroDescription}>
-              Сначала тут были только клановые подарочки с волчатами для Волчат🐺. Но по многочисленной просьбе добавлены разные картинки из интернета, приведенные к нужному подарочковому размеру, которыми может воспользоваться каждый желающий) Дарите на здоровье)) кроме личных, их нельзя дарить, вы там поймете, о чем я)
+              Сначала тут были только клановые подарочки с волчатами для Волчат🐺. Но потом меня попросили добавить и другие картинки из интернета. Я привела их к нужному подарочковому размеру, так что можешь брать любую понравившуюся и дарить :) Только личные не трогай, там и так будет понятно, какие именно.
             </p>
           </div>
         </header>
@@ -23,7 +23,7 @@ export default function GiftsPage() {
         <div className={styles.boardCallout}>
           <div>
             <strong>Хочешь выложить рисунок подарками?</strong>
-            <span>Собери его сначала на планшете — теми же подарками, что здесь.</span>
+            <span>Сначала собери его на планшете теми же подарками, что есть здесь.</span>
           </div>
           <Link href="/gift-board" className={styles.boardButton}>
             Планшет подарков →
@@ -31,34 +31,36 @@ export default function GiftsPage() {
         </div>
 
         <section className={styles.instructions}>
-          <h2>Как заказать подарок</h2>
-          <ol>
-            <li>Скачайте понравившийся подарок на этой странице.</li>
-            <li>
-              Загрузите его в игре:
-              <ul>
-                <li>
-                  Перейдите в раздел{" "}
-                  <a
-                    href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Услуги комотдела → Личные подарки
-                  </a>
-                </li>
-                <li>
-                  На вашем счету должно быть не менее <strong>3 ТГ</strong>.
-                </li>
-                <li>
-                  Размер изображения должен быть <strong>60×60 px</strong>.
-                </li>
-                <li>
-                  Загрузите подарок, впишите название, сохраните. Нажмите «Выдать 35 шт.»
-                </li>
-              </ul>
-            </li>
-          </ol>
+          <div className={styles.instructionsText}>
+            <h2>Как заказать подарок</h2>
+            <ol>
+              <li>Скачай понравившийся подарок на этой странице.</li>
+              <li>
+                Загрузи его в игре:
+                <ul>
+                  <li>
+                    Перейди в раздел{" "}
+                    <a
+                      href="https://dm-game.com/index.php?file=com_otdel&mode=PresentSelf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Услуги комотдела → Личные подарки
+                    </a>
+                  </li>
+                  <li>
+                    Проверь, чтобы на счету было не меньше <strong>3 ТГ</strong>.
+                  </li>
+                  <li>
+                    Подготовь картинку размером <strong>60×60 px</strong>.
+                  </li>
+                  <li>
+                    Загрузи подарок, впиши название и сохрани. Потом нажми «Выдать 35 шт.»
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -78,7 +80,7 @@ export default function GiftsPage() {
 
               {gift.personal ? (
                 <button type="button" disabled className={styles.privateButton}>
-                  Приватный, не надо его скачивать :)
+                  Личный подарок, его не скачивай :)
                 </button>
               ) : (
                 <a href={gift.file} download className={styles.downloadButton}>
