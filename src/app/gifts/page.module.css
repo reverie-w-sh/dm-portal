@@ -72,11 +72,6 @@
     #080b0a;
 }
 
-.instructionsText {
-  position: relative;
-  z-index: 1;
-}
-
 .instructions h2 {
   margin: 0 0 16px;
   color: #ecd4a6;
@@ -116,13 +111,12 @@
 
 .instructionsWolf {
   position: absolute;
-  right: 0;
+  right: 18px;
   bottom: 0;
   display: block;
   width: 186px;
   height: 272px;
   object-fit: contain;
-  object-position: right bottom;
   pointer-events: none;
   user-select: none;
 }
@@ -153,7 +147,7 @@
 
 .visual {
   display: grid;
-  min-height: 152px;
+  min-height: 110px;
   place-items: center;
   overflow: hidden;
   border: 1px solid rgba(173, 113, 34, 0.3);
@@ -166,8 +160,10 @@
   display: block;
   width: auto;
   height: auto;
-  max-width: 110px;
-  max-height: 110px;
+  width: 60px;
+  height: 60px;
+  max-width: 60px;
+  max-height: 60px;
   object-fit: contain;
 }
 
@@ -220,14 +216,14 @@
   .instructions {
     min-height: 0;
     margin-top: 12px;
-    padding: 18px 16px 0;
+    padding: 18px 16px;
   }
 
   .instructionsWolf {
     position: static;
     width: min(186px, 72vw);
     height: auto;
-    margin: 12px -16px 0 auto;
+    margin: 18px 0 -18px auto;
   }
 
   .grid {
@@ -240,12 +236,14 @@
   }
 
   .visual {
-    min-height: 126px;
+    min-height: 100px;
   }
 
   .visual img {
-    max-width: 96px;
-    max-height: 96px;
+    width: 60px;
+    height: 60px;
+    max-width: 60px;
+    max-height: 60px;
   }
 
   .downloadButton,
