@@ -527,13 +527,13 @@ const hasAnimal =
                     isPositiveResult,
                   );
 
-                // Если зверь найден по центру, сразу подсвечиваем всю клетку:
-                // красным без шкурки, зелёным со шкуркой / двумя шкурками.
-                const centerResult = cell.searches[1];
-                const centerCellStatusClass =
-                  centerResult === "plus1"
+                // Подсвечиваем всю клетку по результату найденного зверя
+                // независимо от направления: слева, по центру или справа.
+                const foundResult = cell.searches.find(isPositiveResult);
+                const cellStatusClass =
+                  foundResult === "plus1"
                     ? "border-red-500/80 bg-[rgba(75,15,18,.42)] shadow-[0_0_0_1px_rgba(239,68,68,.25),0_0_20px_rgba(239,68,68,.28),inset_0_0_26px_rgba(127,29,29,.22)]"
-                    : centerResult === "plus3" || centerResult === "plus6"
+                    : foundResult === "plus3" || foundResult === "plus6"
                       ? "border-emerald-500/80 bg-[rgba(10,67,43,.40)] shadow-[0_0_0_1px_rgba(16,185,129,.24),0_0_20px_rgba(16,185,129,.28),inset_0_0_26px_rgba(6,78,59,.24)]"
                       : "";
 
@@ -543,7 +543,7 @@ const hasAnimal =
                     className={[
                       "min-w-0 overflow-hidden rounded-xl border border-[#68451d] shadow-[0_5px_13px_rgba(0,0,0,.42)]",
                       animal.cellClass,
-                      centerCellStatusClass,
+                      cellStatusClass,
                     ].join(" ")}
                   >
                     <button
