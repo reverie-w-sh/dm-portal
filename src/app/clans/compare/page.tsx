@@ -484,20 +484,19 @@ export default async function CompareClansPage({
             >
               <div className="px-5 py-4 border-b border-black/10">
                 <div className="flex items-center gap-3">
-                  {clan.crestSmall ? (
-                    <Image
-                      src={clan.crestSmall}
-                      alt=""
-                      width={28}
-                      height={28}
-                      unoptimized
-                      className="w-7 h-7 object-contain"
-                    />
-                  ) : (
-                    <span className="w-7 h-7 flex items-center justify-center">
-                      {clan.icon ?? "🛡"}
-                    </span>
-                  )}
+                  <span className="clan-crest-box clan-crest-box--large">
+                    {clan.crestSmall ? (
+                      <Image
+                        src={clan.crestSmall}
+                        alt=""
+                        width={28}
+                        height={28}
+                        unoptimized
+                      />
+                    ) : (
+                      clan.icon ?? "🛡"
+                    )}
+                  </span>
 
                   <div className="min-w-0">
                     <h2 className="font-black text-ink truncate">
@@ -554,32 +553,17 @@ export default async function CompareClansPage({
                         </div>
 
                         <div className="flex-1 min-w-0">
-                          {player.profileUrl ? (
-                            <a
-                              href={player.profileUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={[
-                                "truncate block hover:underline",
-                                highlighted
-                                  ? "font-black text-ink"
-                                  : "font-medium text-ink text-sm",
-                              ].join(" ")}
-                            >
-                              {player.nick}
-                            </a>
-                          ) : (
-                            <span
-                              className={[
-                                "truncate block",
-                                highlighted
-                                  ? "font-black text-ink"
-                                  : "font-medium text-ink text-sm",
-                              ].join(" ")}
-                            >
-                              {player.nick}
-                            </span>
-                          )}
+                          <Link
+                            href={`/players/${player.cuid}`}
+                            className={[
+                              "truncate block hover:underline",
+                              highlighted
+                                ? "font-black text-ink"
+                                : "font-medium text-ink text-sm",
+                            ].join(" ")}
+                          >
+                            {player.nick}
+                          </Link>
                         </div>
                       </div>
                     );

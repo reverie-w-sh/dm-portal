@@ -206,7 +206,9 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
                     {alliance.clans.map((clan) => (
                       <Link key={clan.clanId} href={`/clans/${clan.clanId}`} className="inline-flex items-center gap-1.5 text-xs text-ink-muted hover:text-accent">
                         {clan.crestSmall && (
-                          <Image src={clan.crestSmall} alt="" width={17} height={17} unoptimized className="w-[17px] h-[17px] object-contain" />
+                          <span className="clan-crest-box clan-crest-box--small">
+                            <Image src={clan.crestSmall} alt="" width={17} height={17} unoptimized />
+                          </span>
                         )}
                         <span>{clan.name}</span>
                       </Link>
@@ -259,7 +261,9 @@ export default async function CompareAlliancesPage({ searchParams }: ComparePage
                       </div>
 
                       {clan?.crestSmall ? (
-                        <Image src={clan.crestSmall} alt="" width={19} height={19} unoptimized title={clan.name} className="w-[19px] h-[19px] object-contain shrink-0" />
+                        <span className="clan-crest-box" title={clan.name}>
+                          <Image src={clan.crestSmall} alt="" width={19} height={19} unoptimized />
+                        </span>
                       ) : (
                         <span className="w-[19px] shrink-0" />
                       )}

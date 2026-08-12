@@ -148,8 +148,10 @@ export default function AlliancesPage() {
                   {alliance.clans.map((clan) => (
                     <span key={clan.clanId} className="inline-flex items-center gap-1.5 text-xs text-ink-muted">
                       {clan.crestSmall && (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img src={clan.crestSmall} alt="" width={17} height={17} className="w-[17px] h-[17px] object-contain" />
+                        <span className="clan-crest-box clan-crest-box--small">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={clan.crestSmall} alt="" width={17} height={17} />
+                        </span>
                       )}
                       <span>{clan.name}</span>
                     </span>

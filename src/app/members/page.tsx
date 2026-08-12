@@ -162,10 +162,6 @@ export default function MembersPage() {
 
           <div className={styles.heroContent}>
             <h1 id="members-title" className={styles.srOnly}>Наша стая</h1>
-            <p>
-              {clan.name} <span aria-hidden="true">·</span> {wolvesLabel}
-            </p>
-
             <div className={styles.heroActions}>
               <Link href="/about" className={styles.heroButton}>
                 О клане

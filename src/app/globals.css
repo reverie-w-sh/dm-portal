@@ -95,6 +95,50 @@ img.clan-icon {
   image-rendering: pixelated;
 }
 
+/* Светлая подложка для маленьких гербов на тёмном фоне — как у клановых смайлов. */
+.clan-crest-box {
+  display: inline-flex;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(205, 144, 55, .72);
+  border-radius: 4px;
+  background: #f5f9ff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .28);
+}
+
+.clan-crest-box > img {
+  display: block;
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
+}
+
+.clan-crest-box--small {
+  width: 19px;
+  height: 19px;
+  flex-basis: 19px;
+}
+
+.clan-crest-box--small > img {
+  width: 17px;
+  height: 17px;
+}
+
+.clan-crest-box--large {
+  width: 30px;
+  height: 30px;
+  flex-basis: 30px;
+}
+
+.clan-crest-box--large > img {
+  width: 28px;
+  height: 28px;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

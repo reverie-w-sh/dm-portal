@@ -128,11 +128,23 @@
   background: rgba(48, 31, 12, .44);
 }
 
-.clanLink img {
+.crestBox {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 21px;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(205, 144, 55, .72);
+  border-radius: 4px;
+  background: #f5f9ff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .28);
+}
+
+.crestBox img {
   display: block;
   width: 19px;
   height: 19px;
-  flex: 0 0 19px;
   object-fit: contain;
 }
 
@@ -143,11 +155,6 @@
 }
 
 .crestFallback {
-  display: grid;
-  width: 19px;
-  height: 19px;
-  flex: 0 0 19px;
-  place-items: center;
   font-size: 13px;
 }
 

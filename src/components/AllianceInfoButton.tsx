@@ -94,10 +94,12 @@ export default function AllianceInfoButton({
                 onClick={() => setOpen(false)}
               >
                 {currentClan.crestSmall ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={currentClan.crestSmall} alt="" width={19} height={19} />
+                  <span className={styles.crestBox} aria-hidden="true">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={currentClan.crestSmall} alt="" width={19} height={19} />
+                  </span>
                 ) : (
-                  <span className={styles.crestFallback} aria-hidden="true">
+                  <span className={`${styles.crestBox} ${styles.crestFallback}`} aria-hidden="true">
                     {currentClan.icon || "🛡"}
                   </span>
                 )}
@@ -117,10 +119,12 @@ export default function AllianceInfoButton({
                     onClick={() => setOpen(false)}
                   >
                     {clan.crestSmall ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={clan.crestSmall} alt="" width={19} height={19} />
+                      <span className={styles.crestBox} aria-hidden="true">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={clan.crestSmall} alt="" width={19} height={19} />
+                      </span>
                     ) : (
-                      <span className={styles.crestFallback} aria-hidden="true">
+                      <span className={`${styles.crestBox} ${styles.crestFallback}`} aria-hidden="true">
                         {clan.icon || "🛡"}
                       </span>
                     )}

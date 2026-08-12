@@ -251,14 +251,15 @@ export default async function ClanDetailPage(
                           className="flex items-center gap-2 rounded-lg px-2 py-1.5 hover:bg-white/40 transition-colors"
                         >
                           {allianceClan.crestSmall ? (
-                            <Image
-                              src={allianceClan.crestSmall}
-                              alt=""
-                              width={19}
-                              height={19}
-                              unoptimized
-                              className="w-[19px] h-[19px] object-contain shrink-0"
-                            />
+                            <span className="clan-crest-box">
+                              <Image
+                                src={allianceClan.crestSmall}
+                                alt=""
+                                width={19}
+                                height={19}
+                                unoptimized
+                              />
+                            </span>
                           ) : (
                             <span className="w-[19px] text-center">
                               {allianceClan.icon ?? "🛡"}
@@ -333,7 +334,7 @@ export default async function ClanDetailPage(
                     : "sm:grid sm:grid-cols-[32px_1fr_70px_70px_90px]",
                 ].join(" ")}
               >
-                <div className="w-7 h-7 rounded overflow-hidden shrink-0 border border-white/10 flex items-center justify-center text-sm">
+                <div className="clan-crest-box clan-crest-box--large text-sm">
                   {clan.crestSmall ? (
                     <Image
                       src={clan.crestSmall}
@@ -341,7 +342,6 @@ export default async function ClanDetailPage(
                       width={28}
                       height={28}
                       unoptimized
-                      className="w-full h-full object-contain"
                     />
                   ) : (
                     <span>{clan.icon}</span>

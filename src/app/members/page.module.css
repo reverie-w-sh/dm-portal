@@ -66,8 +66,8 @@
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 24px;
+  gap: 10px;
+  margin-top: 0;
 }
 
 .heroButton {
@@ -75,17 +75,20 @@
   display: inline-flex;
   width: max-content;
   min-width: 0;
-  min-height: 0;
+  min-height: 40px;
   align-items: center;
   justify-content: center;
-  padding: 3px 0 5px;
-  border: 0;
-  border-bottom: 1px solid rgba(166, 109, 42, .7);
-  border-radius: 0;
-  color: #d2a65d;
-  background: transparent;
-  box-shadow: none;
-  font: 400 .96rem/1.25 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  padding: 8px 18px 9px;
+  border: 1px solid rgba(186, 124, 47, .82);
+  border-radius: 2px;
+  color: #e2bc75;
+  background:
+    linear-gradient(180deg, rgba(63, 39, 15, .76), rgba(15, 12, 8, .94) 55%, rgba(40, 25, 10, .74));
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, .72),
+    inset 0 0 0 3px rgba(206, 146, 64, .12),
+    0 4px 12px rgba(0, 0, 0, .42);
+  font: 400 .92rem/1.2 "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   text-decoration: none;
   text-shadow: 0 2px 8px #000;
   cursor: pointer;
@@ -98,11 +101,14 @@
 }
 
 .heroButton:hover {
-  color: #f0cc82;
-  border-color: #d5a453;
-  background: transparent;
-  box-shadow: none;
-  transform: none;
+  color: #ffe0a0;
+  border-color: #e1ad5a;
+  background: linear-gradient(180deg, rgba(82, 49, 17, .86), rgba(19, 14, 8, .96) 55%, rgba(52, 31, 11, .84));
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 0, 0, .7),
+    inset 0 0 0 3px rgba(224, 164, 76, .18),
+    0 0 13px rgba(203, 137, 48, .18);
+  transform: translateY(-1px);
 }
 
 .heroButton:focus-visible,
@@ -381,7 +387,8 @@
   }
 
   .heroButton {
-    padding: 3px 0 5px;
+    min-height: 38px;
+    padding: 7px 14px 8px;
     font-size: 0.87rem;
   }
 
