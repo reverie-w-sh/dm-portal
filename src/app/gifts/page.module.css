@@ -204,6 +204,11 @@
 }
 
 @media (max-width: 760px) {
+  .heroGiftIcon img {
+    max-width: 42px;
+    max-height: 42px;
+  }
+
   .boardCallout {
     align-items: stretch;
     flex-direction: column;

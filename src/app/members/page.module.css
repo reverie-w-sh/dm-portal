@@ -365,8 +365,9 @@
   }
 
   .hero {
-    min-height: 390px;
+    min-height: 0;
     aspect-ratio: auto;
+    overflow: hidden;
     border-right: 0;
     border-left: 0;
   }
@@ -377,14 +378,16 @@
   }
 
   .heroShade {
-    background: linear-gradient(0deg, rgba(3, 4, 4, 0.94) 0%, rgba(3, 4, 4, 0.3) 38%, transparent 68%);
+    background: linear-gradient(0deg, rgba(3, 4, 4, 0.82) 0%, rgba(3, 4, 4, 0.18) 24%, transparent 50%);
   }
 
   .heroContent {
-    right: 20px;
-    bottom: 34px;
-    left: 20px;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    left: auto;
     max-width: none;
+    padding: calc(52.5% + 14px) 16px 16px;
   }
 
   .heroContent p {
@@ -393,18 +396,23 @@
   }
 
   .heroActions {
-    gap: 9px;
-    margin-top: 18px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    margin-top: 0;
   }
 
   .heroButton {
-    min-height: 38px;
-    padding: 7px 14px 8px;
+    width: 132px;
+    min-width: 132px;
+    min-height: 42px;
+    padding: 8px 10px 9px;
     font-size: 0.87rem;
+    white-space: nowrap;
   }
 
   .membersSection {
-    padding: 40px 10px 0;
+    padding: 24px 10px 0;
   }
 
   .sectionHeader {
@@ -471,8 +479,14 @@
 }
 
 @media (max-width: 430px) {
-  .hero {
-    min-height: 360px;
+  .heroContent {
+    padding-top: calc(52.5% + 12px);
+    padding-bottom: 14px;
+  }
+
+  .heroButton {
+    width: 126px;
+    min-width: 126px;
   }
 
   .memberCard {
