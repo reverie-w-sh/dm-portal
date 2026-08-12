@@ -102,8 +102,6 @@ export default function CouplesClient({
           <div className={`${styles.heroIcon} ${styles.ringsIcon}`}>
             <Image
               src="/images/couples-wolves.png"
-              width={76}
-              height={76}
               alt="Белый и чёрный волки"
               priority
             />
