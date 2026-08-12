@@ -11,6 +11,7 @@ export default async function ChroniclePage(props: PageProps<"/chronicle">) {
     <main className={styles.page}>
       <section className={styles.shell}>
         <header className={styles.hero}>
+           <h1>Летопись Древнего Мира</h1>         
           <div className={styles.ornament} aria-hidden="true">
             <span />
             <Image
@@ -23,7 +24,7 @@ export default async function ChroniclePage(props: PageProps<"/chronicle">) {
             <span />
           </div>
 
-          <h1>Летопись Древнего Мира</h1>
+
           <p>
             Здесь остаётся след всего важного: новые уровни, перемены в кланах,
             свадьбы, новые смайлики и новости самого Древнего Мира.
