@@ -8,7 +8,10 @@ export default function GiftsPage() {
     <main className={collectionStyles.page}>
       <section className={collectionStyles.shell}>
         <header className={collectionStyles.hero}>
-          <div className={collectionStyles.heroIcon}>🎁</div>
+          <div className={`${collectionStyles.heroIcon} ${styles.heroGiftIcon}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/gifts/gift-page-150.png" alt="" />
+          </div>
           <div>
             <h1>Подарки</h1>
             <p className={collectionStyles.heroDescription}>
@@ -56,6 +59,13 @@ export default function GiftsPage() {
               </ul>
             </li>
           </ol>
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/gifts/wolf-clan-gift-page.png"
+            alt="Волчонок с подарком"
+            className={styles.instructionsWolf}
+          />
         </section>
 
         <div className={styles.grid}>
