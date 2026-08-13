@@ -160,6 +160,11 @@
     gap: 10px;
   }
 
+  .titleRow h1 {
+    font-size: 27px;
+    white-space: nowrap;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     gap: 12px;
