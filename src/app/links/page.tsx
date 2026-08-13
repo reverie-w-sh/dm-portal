@@ -62,7 +62,7 @@ export default function LinksPage() {
         <header className={styles.heading}>
           <div className={styles.titleRow}>
             <span aria-hidden="true" />
-            <h1>Полезное и не очень :)</h1>
+            <h1>Полезное и красивое :)</h1>
             <span aria-hidden="true" />
           </div>
           <div className={styles.ornament} aria-hidden="true">
