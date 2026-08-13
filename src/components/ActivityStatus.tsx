@@ -23,7 +23,7 @@ function getActivityCategory(
   ) {
     if (inactiveMinutes < TWO_DAYS_MINUTES) {
       return {
-        color: "#78b8a0",
+        color: "#39a96b",
         label: "Заходил менее 48 часов назад",
       };
     }
@@ -121,7 +121,7 @@ export function ActivityLegend({
       <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
         <span>Вход:</span>
 
-        <LegendItem color="#78b8a0">менее 48 часов назад</LegendItem>
+        <LegendItem color="#39a96b">менее 48 часов назад</LegendItem>
         <LegendItem color="#c8ad6d">2–7 дней</LegendItem>
         <LegendItem color="#b98272">7–30 дней</LegendItem>
         <LegendItem color="#777b82">больше месяца</LegendItem>

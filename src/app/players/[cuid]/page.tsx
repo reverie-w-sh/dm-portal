@@ -575,7 +575,7 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
                     player.inactiveMinutes == null
                       ? "#777b82"
                       : player.inactiveMinutes < 2 * 24 * 60
-                        ? "#78b8a0"
+                        ? "#39a96b"
                         : player.inactiveMinutes < 7 * 24 * 60
                           ? "#c8ad6d"
                           : player.inactiveMinutes < 30 * 24 * 60
