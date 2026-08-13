@@ -569,7 +569,22 @@ export default async function PlayerPage(props: PageProps<"/players/[cuid]">) {
             <h1 id="player-title">{player.nick}</h1>
             <div className={styles.activity}>
               <ActivityDot inactiveMinutes={player.inactiveMinutes} className="w-4 h-4" />
-              <span>{activityLabel(player.inactiveMinutes)}</span>
+              <span
+                style={{
+                  color:
+                    player.inactiveMinutes == null
+                      ? "#777b82"
+                      : player.inactiveMinutes < 2 * 24 * 60
+                        ? "#78b8a0"
+                        : player.inactiveMinutes < 7 * 24 * 60
+                          ? "#c8ad6d"
+                          : player.inactiveMinutes < 30 * 24 * 60
+                            ? "#b98272"
+                            : "#777b82",
+                }}
+              >
+                {activityLabel(player.inactiveMinutes)}
+              </span>
             </div>
 
             <div className={styles.details}>
