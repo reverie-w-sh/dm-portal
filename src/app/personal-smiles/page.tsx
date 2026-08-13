@@ -235,11 +235,11 @@ export default function PersonalSmilesPage() {
                         {player.nick.trim().charAt(0).toUpperCase()}
                       </div>
                       <div>
-                        <h2>
-                          <a href={player.profileUrl} target="_blank" rel="noreferrer">
-                            {player.nick} <small>↗</small>
-                          </a>
-                        </h2>
+<h2>
+  <Link href={`/players/${player.cuid}`}>
+    {player.nick}
+  </Link>
+</h2>
                         <p className={styles.ownerMeta}>
                           <span>{player.level} рівень</span>
                           {player.clanName && (
