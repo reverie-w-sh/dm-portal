@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T20:17:12.101Z",
+  "updatedAt": "2026-08-13T21:25:59.011Z",
   "ratings": {
     "fishing": {
       "title": "Лучшие рыболовы",
@@ -27,13 +27,13 @@
           "rank": 4,
           "name": "Tequila",
           "level": 15,
-          "value": 38252
+          "value": 38253
         },
         {
           "rank": 5,
           "name": "Юпитер",
           "level": 15,
-          "value": 33276
+          "value": 33279
         },
         {
           "rank": 6,
@@ -81,7 +81,7 @@
           "rank": 13,
           "name": "Горлум",
           "level": 9,
-          "value": 23614
+          "value": 23615
         },
         {
           "rank": 14,
@@ -99,7 +99,7 @@
           "rank": 16,
           "name": "Fistashka",
           "level": 14,
-          "value": 17832
+          "value": 17836
         },
         {
           "rank": 17,
@@ -393,13 +393,13 @@
           "rank": 2,
           "name": "Tequila",
           "level": 15,
-          "value": 267203
+          "value": 270319
         },
         {
           "rank": 3,
           "name": "Allania",
           "level": 11,
-          "value": 227743
+          "value": 227745
         },
         {
           "rank": 4,
@@ -411,7 +411,7 @@
           "rank": 5,
           "name": "sinful",
           "level": 15,
-          "value": 111952
+          "value": 111998
         },
         {
           "rank": 6,
@@ -1860,9 +1860,9 @@
           "rank": 2,
           "name": "Катерина",
           "level": 16,
-          "value": 2742273539,
-          "experience": 2742273539,
-          "monsterWins": 251409,
+          "value": 2742335023,
+          "experience": 2742335023,
+          "monsterWins": 251415,
           "playerWins": 738
         },
         {
@@ -1932,9 +1932,9 @@
           "rank": 10,
           "name": "Zorro",
           "level": 15,
-          "value": 1360194842,
-          "experience": 1360194842,
-          "monsterWins": 345401,
+          "value": 1360218054,
+          "experience": 1360218054,
+          "monsterWins": 345416,
           "playerWins": 2442
         },
         {
@@ -2004,9 +2004,9 @@
           "rank": 18,
           "name": "Tequila",
           "level": 15,
-          "value": 1079953104,
-          "experience": 1079953104,
-          "monsterWins": 281306,
+          "value": 1079965430,
+          "experience": 1079965430,
+          "monsterWins": 281310,
           "playerWins": 2121
         },
         {
@@ -2031,8 +2031,8 @@
           "rank": 21,
           "name": "Юпитер",
           "level": 15,
-          "value": 926773031,
-          "experience": 926773031,
+          "value": 926774098,
+          "experience": 926774098,
           "monsterWins": 332787,
           "playerWins": 912
         },
@@ -2148,8 +2148,8 @@
           "rank": 34,
           "name": "Fistashka",
           "level": 14,
-          "value": 505472369,
-          "experience": 505472369,
+          "value": 505499550,
+          "experience": 505499550,
           "monsterWins": 182734,
           "playerWins": 747
         },
@@ -2292,8 +2292,8 @@
           "rank": 50,
           "name": "Мишаня",
           "level": 12,
-          "value": 146563403,
-          "experience": 146563403,
+          "value": 146603403,
+          "experience": 146603403,
           "monsterWins": 243893,
           "playerWins": 1856
         },
@@ -2355,8 +2355,8 @@
           "rank": 57,
           "name": "Gudini",
           "level": 12,
-          "value": 118316687,
-          "experience": 118316687,
+          "value": 118316732,
+          "experience": 118316732,
           "monsterWins": 107164,
           "playerWins": 739
         },
@@ -2490,8 +2490,8 @@
           "rank": 72,
           "name": "ЛиН Орк",
           "level": 11,
-          "value": 73161993,
-          "experience": 73161993,
+          "value": 73171822,
+          "experience": 73171822,
           "monsterWins": 80747,
           "playerWins": 535
         },
@@ -2499,9 +2499,9 @@
           "rank": 73,
           "name": "Allania",
           "level": 11,
-          "value": 72460627,
-          "experience": 72460627,
-          "monsterWins": 87628,
+          "value": 72493864,
+          "experience": 72493864,
+          "monsterWins": 87667,
           "playerWins": 736
         },
         {
@@ -2571,9 +2571,9 @@
           "rank": 81,
           "name": "Bukashka",
           "level": 11,
-          "value": 54507305,
-          "experience": 54507305,
-          "monsterWins": 25418,
+          "value": 54509591,
+          "experience": 54509591,
+          "monsterWins": 25420,
           "playerWins": 1728
         },
         {
@@ -2742,9 +2742,9 @@
           "rank": 100,
           "name": "Takezo",
           "level": 10,
-          "value": 39544934,
-          "experience": 39544934,
-          "monsterWins": 89832,
+          "value": 39550099,
+          "experience": 39550099,
+          "monsterWins": 89853,
           "playerWins": 2847
         },
         {
@@ -2850,9 +2850,9 @@
           "rank": 112,
           "name": "oFFWhite",
           "level": 10,
-          "value": 35183903,
-          "experience": 35183903,
-          "monsterWins": 97008,
+          "value": 35184631,
+          "experience": 35184631,
+          "monsterWins": 97011,
           "playerWins": 3605
         },
         {
@@ -3273,8 +3273,8 @@
           "rank": 159,
           "name": "Dark_Queen",
           "level": 9,
-          "value": 16644446,
-          "experience": 16644446,
+          "value": 16650446,
+          "experience": 16650446,
           "monsterWins": 9646,
           "playerWins": 319
         },
