@@ -1,5 +1,42 @@
 [
   {
+    "id": "da785574-09c4-4e94-9617-d745ccf211ec",
+    "syncId": "2026-08-13T15:09:35.644Z",
+    "createdAt": "2026-08-13T15:09:35.644Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "4394",
+    "characterName": "Allania",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4394",
+    "amount": 1,
+    "oldCount": 36,
+    "newCount": 37,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/4394/prv_allania41.gif"
+    ]
+  },
+  {
+    "id": "ab63a018-214d-4888-86e1-87b493d2e9a9",
+    "syncId": "2026-08-13T15:09:35.644Z",
+    "createdAt": "2026-08-13T15:09:35.644Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "1939",
+    "characterName": "Александр Николаевич",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1939",
+    "amount": 6,
+    "oldCount": 6,
+    "newCount": 8,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/1939/clan_228.gif",
+      "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich1.gif",
+      "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich2.gif",
+      "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich3.gif",
+      "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich4.gif",
+      "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich5.gif"
+    ]
+  },
+  {
     "id": "8775a193-5e02-4fbe-ae5f-229705eddeaa",
     "syncId": "2026-08-11T19:35:21.509Z",
     "createdAt": "2026-08-11T19:35:21.509Z",
