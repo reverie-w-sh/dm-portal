@@ -1,5 +1,19 @@
 [
   {
+    "id": "e3c00b2b-93d5-4713-8dee-996ec2f67d1f",
+    "syncId": "2026-08-14T05:05:45.790Z",
+    "createdAt": "2026-08-14T05:05:45.790Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "1966",
+    "characterName": "ХАРАКТЕРНИК",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1966",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "Глава спільноти",
+    "newPosition": "Лидер альянса"
+  },
+  {
     "id": "da785574-09c4-4e94-9617-d745ccf211ec",
     "syncId": "2026-08-13T15:09:35.644Z",
     "createdAt": "2026-08-13T15:09:35.644Z",
