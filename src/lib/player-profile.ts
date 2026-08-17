@@ -101,7 +101,12 @@ function resultSegments(body: string): string[] {
   return body
     .replace(/\r/g, "")
     .split(/(?=\d{1,2}:\d{2}\s*\[Система\]:)|\n\s*\n+/)
-    .map((part) => part.replace(/\s*\n\s*/g, " ").trim())
+    .map((part) =>
+      part
+        .replace(/\s*\n\s*/g, " ")
+        .replace(/^\.\s+/, "")
+        .trim(),
+    )
     .filter(Boolean);
 }
 
