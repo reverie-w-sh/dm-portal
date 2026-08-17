@@ -1,4 +1,4 @@
-export type Gift = {
+﻿export type Gift = {
   title: string;
   file: string;
   personal?: boolean;
@@ -29,6 +29,12 @@ export const GIFTS: Gift[] = [
   { title: "Кофе Волчонок 2 Подарок", file: "/gifts/coffee1.gif", personal: true },
   { title: "Кофе Волчонок 3 Подарок", file: "/gifts/coffee2.gif", personal: true },
   { title: "Кофе Томми 4 Подарок", file: "/gifts/coffee-tommy.gif", personal: true },
+  { title: "Нарисованный Волк Подарок", file: "/gifts/wolf-blue.gif" },
+  { title: "Волк с Розочкой Подарок", file: "/gifts/wolf-rose.gif" },
+  { title: "Волчонок и Луна Подарок", file: "/gifts/wolf-2.gif" },
+  { title: "Улыбчивый Волк Подарок", file: "/gifts/wolf-1.gif" },
+  { title: "Волк и Кофе Подарок", file: "/gifts/wolf-caffee.gif" },
+
   { title: "Обнимашки Подарок", file: "/gifts/hug.gif" },
   { title: "Лавочка с попкорном Подарок", file: "/gifts/lavochka.gif" },
   { title: "Волчица Лени Подарок", file: "/gifts/len-g.gif" },
