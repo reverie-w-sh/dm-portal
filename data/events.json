@@ -1,5 +1,25 @@
 [
   {
+    "id": "8a6ee6fc-7c79-4793-aa79-e76e53a29f7d",
+    "syncId": "2026-08-17T04:05:53.828Z",
+    "createdAt": "2026-08-17T04:05:53.828Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "15457",
+    "characterName": "Nimona",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=15457",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/repairer.gif",
+        "name": "Мастер ремонтник",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/repairer.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "ae5e54a7-89c0-4cf3-aed0-170351fd41a3",
     "syncId": "2026-08-15T15:38:08.348Z",
     "createdAt": "2026-08-15T15:38:08.348Z",
