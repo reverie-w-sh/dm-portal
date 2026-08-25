@@ -1,5 +1,29 @@
 [
   {
+    "id": "fba35d19-b2c1-432d-b753-cdeea60b40d5",
+    "syncId": "2026-08-25T16:03:35.340Z",
+    "createdAt": "2026-08-25T16:03:35.340Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "19013",
+    "characterName": "black metals",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19013",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы"
+  },
+  {
+    "id": "23e04cca-e7eb-4e70-9851-8c3fb3c9709c",
+    "syncId": "2026-08-25T16:03:35.340Z",
+    "createdAt": "2026-08-25T16:03:35.340Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "7224",
+    "characterName": "Takezo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7224",
+    "clanId": "213",
+    "clanName": "Ozune"
+  },
+  {
     "id": "ca2295f3-315b-428d-ae93-c6e9700cc139",
     "syncId": "2026-08-25T04:04:08.962Z",
     "createdAt": "2026-08-25T04:04:08.962Z",
