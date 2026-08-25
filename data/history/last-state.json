@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-08-24T15:58:28.208Z",
+  "createdAt": "2026-08-25T04:04:08.962Z",
   "players": [
     {
       "cuid": "7939",
@@ -2346,8 +2346,8 @@
       "position": "Я сама не воровка, не пьяница....",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=5986",
       "marriageKnown": true,
-      "marriagePartner": "",
-      "marriageSince": "",
+      "marriagePartner": "SubZero",
+      "marriageSince": "24.08.2026",
       "achievements": [
         {
           "id": "/layout/all/subject/achievement/2/fisher.gif",
@@ -14672,8 +14672,8 @@
       "position": "Наблюдатель",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11577",
       "marriageKnown": true,
-      "marriagePartner": "",
-      "marriageSince": "",
+      "marriagePartner": "Dark_Queen",
+      "marriageSince": "24.08.2026",
       "achievements": [
         {
           "id": "/layout/all/subject/achievement/2/fisher.gif",
@@ -33168,16 +33168,38 @@
     {
       "owner": "Bukashka",
       "itemIds": [
+        "487686",
+        "368238",
+        "293983",
         "275152",
+        "510524",
+        "505425",
         "509072",
         "537893",
-        "491043"
+        "508588",
+        "204384",
+        "491043",
+        "510740",
+        "517159",
+        "351998",
+        "337513"
       ],
       "itemNames": [
+        "Бабочка для Жучка(Зч)",
+        "Босоножки сороконожки(Зч)(+6 силы)",
+        "Букетик в лапки(Мд)(+6 силы)",
         "Генератор иллюзий(Зч)",
+        "Гримуар лесной ведьмы",
+        "Жало(Мд)(+12)",
         "Лапка Возмездия(Мд)(+12)",
         "Лапка Возмездия(Мд)(+15)",
-        "Сердце Куахога"
+        "Пояс космической пыльцы(Мд)",
+        "Сердце Куахога",
+        "Сердце Куахога",
+        "Сердце Куахога",
+        "Сердце Куахога",
+        "Хитиновая вуаль Скарабея(Мд)(+15)",
+        "Эту сумку муж купил(+4 брони)"
       ]
     },
     {
@@ -34266,7 +34288,6 @@
       "owner": "sinful",
       "itemIds": [
         "269738",
-        "270055",
         "557597",
         "321198",
         "368457",
@@ -34288,7 +34309,6 @@
         "390935"
       ],
       "itemNames": [
-        "Кольцо Мечтаний",
         "Кольцо Мечтаний",
         "Bloody Step(Зч)(+6 силы)",
         "Bow of the Deadlands(Мд)(+12)",
