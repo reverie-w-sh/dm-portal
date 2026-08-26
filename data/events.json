@@ -1,5 +1,47 @@
 [
   {
+    "id": "f8179c55-cec2-4f03-981a-5af2c1ddf660",
+    "syncId": "2026-08-26T04:08:22.438Z",
+    "createdAt": "2026-08-26T04:08:22.438Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "10026",
+    "characterName": "Sally Whitemane",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10026",
+    "clanId": "213",
+    "clanName": "Ozune",
+    "oldPosition": "Лідер альянсу",
+    "newPosition": "Член сообщества"
+  },
+  {
+    "id": "b960772a-a4ae-45ab-972c-98d529f91884",
+    "syncId": "2026-08-26T04:08:22.438Z",
+    "createdAt": "2026-08-26T04:08:22.438Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "7224",
+    "characterName": "Takezo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7224",
+    "clanId": "213",
+    "clanName": "Ozune",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Лидер альянса"
+  },
+  {
+    "id": "e6970c6f-e61e-4f0e-8e6d-4d5eeb95e265",
+    "syncId": "2026-08-26T04:08:22.438Z",
+    "createdAt": "2026-08-26T04:08:22.438Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "6286",
+    "characterName": "ЭХО",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6286",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldLevel": 13,
+    "newLevel": 14
+  },
+  {
     "id": "fba35d19-b2c1-432d-b753-cdeea60b40d5",
     "syncId": "2026-08-25T16:03:35.340Z",
     "createdAt": "2026-08-25T16:03:35.340Z",
