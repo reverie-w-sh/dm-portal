@@ -1,5 +1,31 @@
 [
   {
+    "id": "74fb5227-abaf-4f32-b424-65324dd46ab3",
+    "syncId": "2026-08-27T14:13:34.910Z",
+    "createdAt": "2026-08-27T14:13:34.910Z",
+    "scope": "clans",
+    "type": "player_reincarnation_level_up",
+    "characterId": "1318",
+    "characterName": "gae4ka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1318",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 9,
+    "newLevel": 10
+  },
+  {
+    "id": "e561a758-6499-4684-baf0-9de988af8635",
+    "syncId": "2026-08-27T14:13:34.910Z",
+    "createdAt": "2026-08-27T14:13:34.910Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "27221",
+    "characterName": "Mixser",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27221",
+    "clanId": "235",
+    "clanName": "Храм Мечей"
+  },
+  {
     "id": "44b9f3f8-889d-4f31-b568-54c849bce161",
     "syncId": "2026-08-26T16:35:00.085Z",
     "createdAt": "2026-08-26T16:35:00.085Z",
