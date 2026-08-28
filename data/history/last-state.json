@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-08-28T00:32:15.962Z",
+  "createdAt": "2026-08-28T15:24:32.587Z",
   "players": [
     {
       "cuid": "7939",
@@ -30717,6 +30717,51 @@
       "marriagePartner": "",
       "marriageSince": "",
       "achievements": []
+    },
+    {
+      "cuid": "11177",
+      "nick": "Princess",
+      "level": 9,
+      "reincarnationLevel": 8,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11177",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/hunter.gif",
+          "name": "Мастер охотник",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/labirint_l1.gif",
+          "name": "Мастер лабиринта 1-го уровня",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/labirint_l1.gif",
+          "category": "underground"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/smith.gif",
+          "name": "Мастер кузнец",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "category": "profession"
+        }
+      ]
     }
   ],
   "clans": [
