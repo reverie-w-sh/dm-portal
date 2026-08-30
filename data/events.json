@@ -1,5 +1,19 @@
 [
   {
+    "id": "3a2348e2-0fe8-4e3e-b398-adae3d5655b1",
+    "syncId": "2026-08-30T09:18:14.641Z",
+    "createdAt": "2026-08-30T09:18:14.641Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "12202",
+    "characterName": "Exava",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=12202",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldPosition": "Фехтовальщик(Герольд)",
+    "newPosition": "Фехтовальщик"
+  },
+  {
     "id": "b9e48d83-60f3-408c-8d54-11311dc7cb50",
     "syncId": "2026-08-29T18:29:11.448Z",
     "createdAt": "2026-08-29T18:29:11.448Z",
