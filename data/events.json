@@ -1,5 +1,29 @@
 [
   {
+    "id": "c3cf953e-622a-4485-8893-fc0ef171eb72",
+    "syncId": "2026-08-31T09:46:30.809Z",
+    "createdAt": "2026-08-31T09:46:30.809Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "6250",
+    "characterName": "BlackGeneral",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6250",
+    "clanId": "213",
+    "clanName": "Ozune"
+  },
+  {
+    "id": "d02c6829-7566-4ad6-81a2-d289010169fe",
+    "syncId": "2026-08-31T09:46:30.809Z",
+    "createdAt": "2026-08-31T09:46:30.809Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "27239",
+    "characterName": "Волк",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27239",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы"
+  },
+  {
     "id": "3a2348e2-0fe8-4e3e-b398-adae3d5655b1",
     "syncId": "2026-08-30T09:18:14.641Z",
     "createdAt": "2026-08-30T09:18:14.641Z",
