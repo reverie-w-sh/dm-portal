@@ -1,5 +1,37 @@
 [
   {
+    "id": "419733df-061d-4a5e-a72b-69dcb29ff0ee",
+    "syncId": "2026-09-01T08:42:45.665Z",
+    "createdAt": "2026-09-01T08:42:45.665Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "22619",
+    "characterName": "911",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22619",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/4/labirint_l1.gif",
+        "name": "Мастер лабиринта 1-го уровня",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/labirint_l1.gif",
+        "category": "underground"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "78a73b72-c856-4ddb-8d3b-c782c2881a6e",
+    "syncId": "2026-09-01T08:42:45.665Z",
+    "createdAt": "2026-09-01T08:42:45.665Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "7167",
+    "characterName": "Vazilin",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7167",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "c3cf953e-622a-4485-8893-fc0ef171eb72",
     "syncId": "2026-08-31T09:46:30.809Z",
     "createdAt": "2026-08-31T09:46:30.809Z",

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-08-31T20:56:47.162Z",
+  "createdAt": "2026-09-01T08:42:45.665Z",
   "players": [
     {
       "cuid": "7939",
@@ -9013,6 +9013,12 @@
           "category": "profession"
         },
         {
+          "id": "/layout/all/subject/achievement/4/labirint_l1.gif",
+          "name": "Мастер лабиринта 1-го уровня",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/labirint_l1.gif",
+          "category": "underground"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/hunter.gif",
           "name": "Мастер охотник",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
@@ -13705,9 +13711,9 @@
       "nick": "Vazilin",
       "level": 11,
       "reincarnationLevel": 9,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Дрочер лівою рукой",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7167",
       "marriageKnown": true,
       "marriagePartner": "",
