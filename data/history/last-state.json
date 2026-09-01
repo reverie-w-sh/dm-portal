@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-01T08:42:45.665Z",
+  "createdAt": "2026-09-01T18:31:53.920Z",
   "players": [
     {
       "cuid": "7939",
@@ -1972,9 +1972,9 @@
       "nick": "Schneider11",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "218",
+      "clanName": "Restless souls",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10106",
       "marriageKnown": true,
       "marriagePartner": "Хитана",
@@ -2035,7 +2035,7 @@
       "nick": "вилда",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
+      "clanId": "218",
       "clanName": "Restless souls",
       "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10021",
@@ -4000,9 +4000,9 @@
       "nick": "Apmagedon_ua",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10370",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -19390,9 +19390,9 @@
       "nick": "GUCCI",
       "level": 8,
       "reincarnationLevel": null,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=26384",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -30927,6 +30927,15 @@
       ]
     },
     {
+      "owner": "911",
+      "itemIds": [
+        "111628"
+      ],
+      "itemNames": [
+        "Наручи Династии Воинов"
+      ]
+    },
+    {
       "owner": "Адский _Крик",
       "itemIds": [
         "243979",
@@ -33202,23 +33211,23 @@
     {
       "owner": "Bukashka",
       "itemIds": [
-        "487686",
-        "368238",
-        "293983",
-        "275152",
-        "510524",
+        "249923",
+        "507733",
+        "491456",
+        "527777",
+        "174463",
         "505425",
         "509072",
         "227698",
         "295902",
         "537893",
-        "508588",
-        "204384",
+        "508364",
         "491043",
-        "510740",
-        "517159",
-        "351998",
-        "337513"
+        "547426",
+        "547427",
+        "548267",
+        "102123",
+        "508367"
       ],
       "itemNames": [
         "Бабочка для Жучка(Зч)",
@@ -33560,12 +33569,12 @@
     {
       "owner": "FaLLeN",
       "itemIds": [
-        "549420",
         "203431",
+        "203432",
         "258826"
       ],
       "itemNames": [
-        "Меч Рыцаря(Мд)(+12)",
+        "Меч Рыцаря(Мд)(+15)",
         "Меч Рыцаря(Мд)(+15)",
         "Jumbo Wagner(Мд)(+15)"
       ]
@@ -34535,19 +34544,19 @@
         "487018",
         "347569",
         "347309",
-        "451179",
+        "475525",
         "451162",
         "323768",
-        "239664",
+        "475388",
         "472868",
         "472869",
         "475441",
         "475442",
         "294892",
         "380761",
-        "171840",
+        "475334",
         "468140",
-        "245030",
+        "385388",
         "298550",
         "369282",
         "347314",
@@ -34557,22 +34566,22 @@
         "332809",
         "322584",
         "224262",
+        "475439",
         "203927",
         "245032",
-        "452184",
         "390349",
         "508726",
         "93760",
         "412756",
-        "173598",
+        "475335",
         "475383",
         "475385",
         "400165",
-        "294692",
+        "275475",
         "347312",
         "451154",
         "160578",
-        "531543"
+        "475387"
       ],
       "itemNames": [
         "Її солодке серденько",
@@ -34607,14 +34616,14 @@
         "Runes of Fate(Мд)(+9 силы)",
         "Shadowstep Boots(Зч)(+6 силы)",
         "Shield of Fortitude(+75 жизни)",
-        "Shirt of Fortitude(+4 брони)",
+        "Shirt of Fortitude(+20 жизни)",
         "Shirt of Fortitude(+4 брони)",
         "Shirt of Fortitude(+4 брони)",
         "SoulBlade(Мд)(+15)",
         "SoulBlade(Мд)(+15)",
         "Tamed Raven(Мд)(+15)",
         "Tamed Raven(Мд)(+15)",
-        "Tissot Savonnette Mechanical",
+        "Tissot Savonnette Mechanical(Мд)",
         "Toothpick(Мд)(+15)",
         "Toothpick(Мд)(+15)",
         "Torn-Heart Axe of Battle(Мд)(+15)",
@@ -34622,7 +34631,7 @@
         "Warriorʼs Embrace",
         "Warriorʼs Embrace",
         "Warriorʼs Embrace(+20 жизни)",
-        "Wizards Hat(Зч)(+4 брони)"
+        "Wizards Hat(Зч)(+20 жизни)"
       ]
     },
     {
