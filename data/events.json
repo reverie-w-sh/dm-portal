@@ -1,5 +1,25 @@
 [
   {
+    "id": "61614d34-9ca8-4e69-9f02-a806e3d04024",
+    "syncId": "2026-09-02T18:42:54.632Z",
+    "createdAt": "2026-09-02T18:42:54.632Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "28464",
+    "characterName": "Friiend",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28464",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/begun.gif",
+        "name": "Мастер бегун",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "b65acdc8-620e-4289-9297-82a342c61c50",
     "syncId": "2026-09-02T08:00:01.682Z",
     "createdAt": "2026-09-02T08:00:01.682Z",

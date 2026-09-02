@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-02T08:00:01.682Z",
+  "createdAt": "2026-09-02T18:42:54.632Z",
   "players": [
     {
       "cuid": "7939",
@@ -16254,6 +16254,12 @@
           "name": "Мастер собиратель",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "category": "profession"
         }
       ]
     },
@@ -31809,7 +31815,6 @@
         "464556",
         "424485",
         "385352",
-        "352727",
         "371821",
         "503154",
         "491819",
@@ -31844,7 +31849,6 @@
         "Шпильки Лучика(+6 силы)",
         "Amulett der Blitze(Зч)",
         "Armschiene der Blitze(Мд)",
-        "Blitzbogen(Мд)(+15)",
         "Blitzesfäuste(Мд)",
         "Blitzhelm(+20 жизни)",
         "Blitzstiefel(+6 силы)",
@@ -33609,12 +33613,12 @@
     {
       "owner": "FaLLeN",
       "itemIds": [
+        "549420",
         "203431",
-        "203432",
         "258826"
       ],
       "itemNames": [
-        "Меч Рыцаря(Мд)(+15)",
+        "Меч Рыцаря(Мд)(+12)",
         "Меч Рыцаря(Мд)(+15)",
         "Jumbo Wagner(Мд)(+15)"
       ]
