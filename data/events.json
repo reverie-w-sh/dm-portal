@@ -1,5 +1,59 @@
 [
   {
+    "id": "b65acdc8-620e-4289-9297-82a342c61c50",
+    "syncId": "2026-09-02T08:00:01.682Z",
+    "createdAt": "2026-09-02T08:00:01.682Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "28464",
+    "characterName": "Friiend",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28464",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/fisher.gif",
+        "name": "Мастер рыбак",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "62213032-b4a8-481b-8ccd-e0a871131064",
+    "syncId": "2026-09-02T08:00:01.682Z",
+    "createdAt": "2026-09-02T08:00:01.682Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "24036",
+    "characterName": "Shturmovik",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=24036",
+    "clanId": "235",
+    "clanName": "Храм Мечей",
+    "oldLevel": 6,
+    "newLevel": 7
+  },
+  {
+    "id": "1f30ca27-52b0-4930-9ffd-a4ec1d773f69",
+    "syncId": "2026-09-02T08:00:01.682Z",
+    "createdAt": "2026-09-02T08:00:01.682Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "28463",
+    "characterName": "Чиловый парень",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28463",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/hunter.gif",
+        "name": "Мастер охотник",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "7d003841-ad41-4962-9594-423edb1031a5",
     "syncId": "2026-09-01T18:31:53.920Z",
     "createdAt": "2026-09-01T18:31:53.920Z",

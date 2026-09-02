@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-01T18:31:53.920Z",
+  "createdAt": "2026-09-02T08:00:01.682Z",
   "players": [
     {
       "cuid": "7939",
@@ -16244,6 +16244,12 @@
       "marriageSince": "",
       "achievements": [
         {
+          "id": "/layout/all/subject/achievement/2/fisher.gif",
+          "name": "Мастер рыбак",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
+          "category": "profession"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/collector.gif",
           "name": "Мастер собиратель",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
@@ -18031,7 +18037,7 @@
     {
       "cuid": "24036",
       "nick": "Shturmovik",
-      "level": 6,
+      "level": 7,
       "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
@@ -19520,6 +19526,12 @@
           "id": "/layout/all/subject/achievement/2/fisher.gif",
           "name": "Мастер рыбак",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/hunter.gif",
+          "name": "Мастер охотник",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
           "category": "profession"
         },
         {
@@ -30768,6 +30780,34 @@
           "category": "profession"
         }
       ]
+    },
+    {
+      "cuid": "1854",
+      "nick": "Камул",
+      "level": 6,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1854",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": []
+    },
+    {
+      "cuid": "26736",
+      "nick": "Ares",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=26736",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": []
     }
   ],
   "clans": [
