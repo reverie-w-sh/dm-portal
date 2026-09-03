@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-02T18:42:54.632Z",
+  "createdAt": "2026-09-03T08:07:40.927Z",
   "players": [
     {
       "cuid": "7939",
@@ -8515,9 +8515,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
-          "name": "Мастер садов кошмаров",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "id": "/layout/all/subject/achievement/4/labirint_l2.gif",
+          "name": "Мастер лабиринта 2-го уровня",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/labirint_l2.gif",
           "category": "underground"
         },
         {
@@ -8531,6 +8531,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "name": "Мастер садов кошмаров",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "category": "underground"
         },
         {
           "id": "/layout/all/subject/achievement/2/smith.gif",
@@ -30941,7 +30947,6 @@
         "439351",
         "434484",
         "579072",
-        "419093",
         "382767"
       ],
       "itemNames": [
@@ -30959,7 +30964,6 @@
         "Сапоги солнца(Зч)(+4 силы)",
         "Топор солнца(Мд)",
         "Топор солнца(Мд)",
-        "Шлем солнца(Зч)(+3 брони)",
         "Щит солнца(+50 жизни)"
       ]
     },
