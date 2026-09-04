@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-04T08:09:28.530Z",
+  "createdAt": "2026-09-04T18:26:41.637Z",
   "players": [
     {
       "cuid": "7939",
@@ -15910,6 +15910,12 @@
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/drop.gif",
+          "name": "Мастер дропа",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
+          "category": "profession"
         }
       ]
     },
@@ -18148,6 +18154,12 @@
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -23568,6 +23580,12 @@
           "id": "/layout/all/subject/achievement/2/smith.gif",
           "name": "Мастер кузнец",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
         }
       ]
