@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-04T18:26:41.637Z",
+  "createdAt": "2026-09-05T07:45:46.175Z",
   "players": [
     {
       "cuid": "7939",
@@ -1140,6 +1140,12 @@
           "category": "profession"
         },
         {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/smith.gif",
           "name": "Мастер кузнец",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
@@ -1684,6 +1690,12 @@
           "name": "Букварь (2021)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2021.png",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+          "name": "Мастер алхимик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
@@ -6218,7 +6230,7 @@
       "cuid": "8116",
       "nick": "Zhulik",
       "level": 10,
-      "reincarnationLevel": 8,
+      "reincarnationLevel": 9,
       "clanId": "218",
       "clanName": "Restless souls",
       "position": "Член сообщества",
@@ -8673,6 +8685,12 @@
           "category": "profession"
         },
         {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/drop.gif",
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
@@ -9189,9 +9207,9 @@
           "category": "underground"
         },
         {
-          "id": "/layout/all/subject/achievement/2/collector.gif",
-          "name": "Мастер собиратель",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "id": "/layout/all/subject/achievement/2/hunter.gif",
+          "name": "Мастер охотник",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
           "category": "profession"
         },
         {
@@ -9207,9 +9225,9 @@
           "category": "underground"
         },
         {
-          "id": "/layout/all/subject/achievement/2/all_hands.gif",
-          "name": "Мастер на все руки",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
           "category": "profession"
         },
         {
@@ -9225,9 +9243,9 @@
           "category": "underground"
         },
         {
-          "id": "/layout/all/subject/achievement/2/smith.gif",
-          "name": "Мастер кузнец",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "id": "/layout/all/subject/achievement/2/all_hands.gif",
+          "name": "Мастер на все руки",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
           "category": "profession"
         },
         {
@@ -9235,6 +9253,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/smith.gif",
+          "name": "Мастер кузнец",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
@@ -15232,6 +15256,12 @@
           "name": "Мастер собиратель",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/all_hands.gif",
