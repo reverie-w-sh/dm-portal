@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-05T07:45:46.175Z",
+  "createdAt": "2026-09-05T17:26:28.043Z",
   "players": [
     {
       "cuid": "7939",
@@ -610,6 +610,12 @@
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/drop.gif",

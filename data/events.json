@@ -1,5 +1,25 @@
 [
   {
+    "id": "ae999da0-1c2e-4a68-9748-e080377f6991",
+    "syncId": "2026-09-05T17:26:28.043Z",
+    "createdAt": "2026-09-05T17:26:28.043Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "3925",
+    "characterName": "sinful",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3925",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "5f3dfbcb-e08c-4f70-9838-7d229927f1e1",
     "syncId": "2026-09-05T07:45:46.175Z",
     "createdAt": "2026-09-05T07:45:46.175Z",
