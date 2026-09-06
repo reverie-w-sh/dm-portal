@@ -1,5 +1,65 @@
 [
   {
+    "id": "b3e517d3-8702-4016-914e-5fbedf032320",
+    "syncId": "2026-09-06T08:00:36.197Z",
+    "createdAt": "2026-09-06T08:00:36.197Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "4183",
+    "characterName": "Zorro",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4183",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "463d39c9-d6e5-4510-b1a2-16d03ec0a72b",
+    "syncId": "2026-09-06T08:00:36.197Z",
+    "createdAt": "2026-09-06T08:00:36.197Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "10420",
+    "characterName": "InDigo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "2ebfa39a-549c-4e69-ba10-612478bcab8d",
+    "syncId": "2026-09-06T08:00:36.197Z",
+    "createdAt": "2026-09-06T08:00:36.197Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "4603",
+    "characterName": "АреоН",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4603",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "ae999da0-1c2e-4a68-9748-e080377f6991",
     "syncId": "2026-09-05T17:26:28.043Z",
     "createdAt": "2026-09-05T17:26:28.043Z",

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-05T17:26:28.043Z",
+  "createdAt": "2026-09-06T08:00:36.197Z",
   "players": [
     {
       "cuid": "7939",
@@ -8872,6 +8872,12 @@
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -10767,6 +10773,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2025.gif",
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]
@@ -18424,6 +18436,12 @@
           "name": "Мастер алхимик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/lekar.gif",
