@@ -1,5 +1,39 @@
 [
   {
+    "id": "a6e4ca66-a47c-4e6b-9311-038777a3456b",
+    "syncId": "2026-09-06T17:46:12.637Z",
+    "createdAt": "2026-09-06T17:46:12.637Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "11577",
+    "characterName": "SubZero",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11577",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "cd893f36-ccaf-4e2d-80aa-264951347673",
+    "syncId": "2026-09-06T17:46:12.637Z",
+    "createdAt": "2026-09-06T17:46:12.637Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "28407",
+    "characterName": "БЛИК",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28407",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 7,
+    "newLevel": 8
+  },
+  {
     "id": "b3e517d3-8702-4016-914e-5fbedf032320",
     "syncId": "2026-09-06T08:00:36.197Z",
     "createdAt": "2026-09-06T08:00:36.197Z",

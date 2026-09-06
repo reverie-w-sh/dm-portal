@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-06T08:00:36.197Z",
+  "createdAt": "2026-09-06T17:46:12.637Z",
   "players": [
     {
       "cuid": "7939",
@@ -15954,6 +15954,12 @@
           "category": "profession"
         },
         {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/begun.gif",
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
@@ -19657,7 +19663,7 @@
     {
       "cuid": "28407",
       "nick": "БЛИК",
-      "level": 7,
+      "level": 8,
       "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",
@@ -38970,7 +38976,6 @@
     {
       "owner": "Fistashka",
       "itemIds": [
-        "454294",
         "454419",
         "476376",
         "485558",
@@ -38986,6 +38991,7 @@
         "453402",
         "453401",
         "453405",
+        "454294",
         "408199",
         "453404",
         "454293",
@@ -38993,7 +38999,6 @@
         "484477"
       ],
       "itemNames": [
-        "Есть че пожрать?",
         "Капля крови",
         "Капля крови",
         "Капля крови",
@@ -39009,6 +39014,7 @@
         "Мантия забвения(Мд)(+15)",
         "Ремень страданий(Мд)",
         "Сделано из и палок(Мд)(+12)",
+        "Фисташковый уют",
         "Чуваааак!(Мд)",
         "Чуваааак!(Мд)(+15)",
         "Шифоньер(+75 жизни)",
