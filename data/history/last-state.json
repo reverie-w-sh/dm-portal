@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-07T08:22:26.402Z",
+  "createdAt": "2026-09-07T19:16:31.109Z",
   "players": [
     {
       "cuid": "7939",
@@ -1621,6 +1621,12 @@
           "name": "Мастер кузнец",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/vedun.gif",
@@ -14592,6 +14598,12 @@
           "category": "profession"
         },
         {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/drop.gif",
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
@@ -18418,6 +18430,12 @@
           "name": "Добытчик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "name": "Мастер садов кошмаров",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "category": "underground"
         },
         {
           "id": "/layout/all/subject/achievement/2/all_hands.gif",
@@ -39817,6 +39835,7 @@
     {
       "owner": "Tequila",
       "itemIds": [
+        "585333",
         "434742",
         "412062",
         "383447",
@@ -39837,6 +39856,7 @@
         "418282"
       ],
       "itemNames": [
+        "Амулет Текилы(Зч)",
         "Арбалет Текилы(Мд)(+12)",
         "Браслеты Текилы(Мд)",
         "Верность",

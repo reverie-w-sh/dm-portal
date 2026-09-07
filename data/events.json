@@ -1,5 +1,65 @@
 [
   {
+    "id": "14a23cbc-0a7b-4004-8bed-00eac6691484",
+    "syncId": "2026-09-07T19:16:31.109Z",
+    "createdAt": "2026-09-07T19:16:31.109Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "19182",
+    "characterName": "Чудик",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19182",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "c5d7720e-a47a-4bbf-a6d0-a05e48ff1832",
+    "syncId": "2026-09-07T19:16:31.109Z",
+    "createdAt": "2026-09-07T19:16:31.109Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "5bd8eb94-ac5d-4174-b986-6208f0a2f5ca",
+    "syncId": "2026-09-07T19:16:31.109Z",
+    "createdAt": "2026-09-07T19:16:31.109Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "4603",
+    "characterName": "АреоН",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4603",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+        "name": "Мастер садов кошмаров",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+        "category": "underground"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "27c26315-56cb-46d7-a0db-6ec3f5114b76",
     "syncId": "2026-09-07T08:22:26.402Z",
     "createdAt": "2026-09-07T08:22:26.402Z",
