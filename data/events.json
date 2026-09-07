@@ -1,5 +1,65 @@
 [
   {
+    "id": "27c26315-56cb-46d7-a0db-6ec3f5114b76",
+    "syncId": "2026-09-07T08:22:26.402Z",
+    "createdAt": "2026-09-07T08:22:26.402Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "21932",
+    "characterName": "Мамонт",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=21932",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/collector.gif",
+        "name": "Мастер собиратель",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "615480e3-81a0-429a-a1ba-f1e103c45bf8",
+    "syncId": "2026-09-07T08:22:26.402Z",
+    "createdAt": "2026-09-07T08:22:26.402Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "22733",
+    "characterName": "Bukashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22733",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "8dad3dbc-34ca-4bd8-a6b2-bbf9d3b88ef2",
+    "syncId": "2026-09-07T08:22:26.402Z",
+    "createdAt": "2026-09-07T08:22:26.402Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "27046",
+    "characterName": "DooMavoD",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27046",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/fisher.gif",
+        "name": "Мастер рыбак",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "a6e4ca66-a47c-4e6b-9311-038777a3456b",
     "syncId": "2026-09-06T17:46:12.637Z",
     "createdAt": "2026-09-06T17:46:12.637Z",

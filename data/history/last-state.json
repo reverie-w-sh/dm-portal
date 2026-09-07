@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-06T17:46:12.637Z",
+  "createdAt": "2026-09-07T08:22:26.402Z",
   "players": [
     {
       "cuid": "7939",
@@ -5289,6 +5289,12 @@
       "marriageSince": "",
       "achievements": [
         {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        },
+        {
           "id": "/layout/all/subject/achievement/3/getter.gif",
           "name": "Добытчик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
@@ -9271,6 +9277,12 @@
           "name": "Мастер кузнец",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
@@ -15156,9 +15168,9 @@
       "marriageSince": "",
       "achievements": [
         {
-          "id": "/layout/all/subject/achievement/2/hunter.gif",
-          "name": "Мастер охотник",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
+          "id": "/layout/all/subject/achievement/2/fisher.gif",
+          "name": "Мастер рыбак",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
           "category": "profession"
         },
         {
@@ -15168,9 +15180,9 @@
           "category": "underground"
         },
         {
-          "id": "/layout/all/subject/achievement/2/collector.gif",
-          "name": "Мастер собиратель",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "id": "/layout/all/subject/achievement/2/hunter.gif",
+          "name": "Мастер охотник",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
           "category": "profession"
         },
         {
@@ -15178,6 +15190,12 @@
           "name": "Добытчик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/smith.gif",
@@ -39799,7 +39817,6 @@
     {
       "owner": "Tequila",
       "itemIds": [
-        "563718",
         "434742",
         "412062",
         "383447",
@@ -39820,7 +39837,6 @@
         "418282"
       ],
       "itemNames": [
-        "Амулет Текилы(Зч)",
         "Арбалет Текилы(Мд)(+12)",
         "Браслеты Текилы(Мд)",
         "Верность",
