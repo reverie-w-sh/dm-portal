@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-07T19:16:31.109Z",
+  "createdAt": "2026-09-08T08:09:17.481Z",
   "players": [
     {
       "cuid": "7939",
@@ -4609,6 +4609,12 @@
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -5046,9 +5052,9 @@
       "nick": "black metals",
       "level": 8,
       "reincarnationLevel": null,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "213",
+      "clanName": "Ozune",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19013",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -9036,6 +9042,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2025.gif",
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]

@@ -1,5 +1,57 @@
 [
   {
+    "id": "3d2c9aa2-5099-4a60-8939-8f6c5f5dd390",
+    "syncId": "2026-09-08T08:09:17.481Z",
+    "createdAt": "2026-09-08T08:09:17.481Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1780",
+    "characterName": "bolt1k",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1780",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "4d52c79b-daa7-4fc1-a080-efc10ef07194",
+    "syncId": "2026-09-08T08:09:17.481Z",
+    "createdAt": "2026-09-08T08:09:17.481Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "19013",
+    "characterName": "black metals",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19013",
+    "clanId": "213",
+    "clanName": "Ozune"
+  },
+  {
+    "id": "b1fa13e4-465c-441c-9684-c11026cb0a8f",
+    "syncId": "2026-09-08T08:09:17.481Z",
+    "createdAt": "2026-09-08T08:09:17.481Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1365",
+    "characterName": "Луч света",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1365",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "14a23cbc-0a7b-4004-8bed-00eac6691484",
     "syncId": "2026-09-07T19:16:31.109Z",
     "createdAt": "2026-09-07T19:16:31.109Z",
