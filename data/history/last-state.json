@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-08T08:09:17.481Z",
+  "createdAt": "2026-09-08T18:39:06.421Z",
   "players": [
     {
       "cuid": "7939",
@@ -2371,6 +2371,12 @@
           "name": "Мастер лекарь",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
@@ -10987,6 +10993,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -18395,7 +18407,7 @@
       "reincarnationLevel": 10,
       "clanId": "235",
       "clanName": "Храм Мечей",
-      "position": "Властелин колец",
+      "position": "Хранитель Храма",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4603",
       "marriageKnown": true,
       "marriagePartner": "Marishka",
@@ -19266,6 +19278,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2023.gif",
           "name": "Букварь (2023)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2023.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]
@@ -25110,12 +25128,12 @@
     },
     {
       "cuid": "1389",
-      "nick": "ZaraZa",
+      "nick": "MoNiKa",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "235",
+      "clanName": "Храм Мечей",
+      "position": "Загадка",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1389",
       "marriageKnown": true,
       "marriagePartner": "trotil82",
@@ -40886,7 +40904,7 @@
     },
     {
       "cuid": "1389",
-      "nick": "ZaraZa",
+      "nick": "MoNiKa",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1389",
       "personalSmilesCount": 10,
       "personalSmiles": [

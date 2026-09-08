@@ -1,5 +1,91 @@
 [
   {
+    "id": "a8a46b9d-4fe9-4db1-9de5-c6de94d2cfb8",
+    "syncId": "2026-09-08T18:39:06.421Z",
+    "createdAt": "2026-09-08T18:39:06.421Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "15069",
+    "characterName": "Gudini",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=15069",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "9fc9c5e7-256d-4441-ac67-31e4aef06b5d",
+    "syncId": "2026-09-08T18:39:06.421Z",
+    "createdAt": "2026-09-08T18:39:06.421Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "4116",
+    "characterName": "Tequila",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4116",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "7ef901c8-55e3-4941-8fea-6a383740157e",
+    "syncId": "2026-09-08T18:39:06.421Z",
+    "createdAt": "2026-09-08T18:39:06.421Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "4603",
+    "characterName": "АреоН",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4603",
+    "clanId": "235",
+    "clanName": "Храм Мечей",
+    "oldPosition": "Властелин колец",
+    "newPosition": "Хранитель Храма"
+  },
+  {
+    "id": "03b54257-b2c6-41d6-9b17-d499671d0159",
+    "syncId": "2026-09-08T18:39:06.421Z",
+    "createdAt": "2026-09-08T18:39:06.421Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "14066",
+    "characterName": "Цибуля",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=14066",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "2ca1b59b-c2c1-4870-bb2a-d4a38b2b0cb4",
+    "syncId": "2026-09-08T18:39:06.421Z",
+    "createdAt": "2026-09-08T18:39:06.421Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "1389",
+    "characterName": "MoNiKa",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1389",
+    "clanId": "235",
+    "clanName": "Храм Мечей"
+  },
+  {
     "id": "3d2c9aa2-5099-4a60-8939-8f6c5f5dd390",
     "syncId": "2026-09-08T08:09:17.481Z",
     "createdAt": "2026-09-08T08:09:17.481Z",
