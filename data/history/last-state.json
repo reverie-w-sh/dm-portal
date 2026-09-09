@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-09T08:12:55.351Z",
+  "createdAt": "2026-09-09T18:38:25.314Z",
   "players": [
     {
       "cuid": "7939",
@@ -805,6 +805,12 @@
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/drop.gif",
@@ -37601,6 +37607,7 @@
         "268158",
         "407887",
         "531310",
+        "584721",
         "33549",
         "322536",
         "320079",
@@ -37610,7 +37617,7 @@
         "531309",
         "290572",
         "345249",
-        "426654",
+        "584720",
         "358493"
       ],
       "itemNames": [
@@ -37618,6 +37625,7 @@
         "Коза(Мд)(+6 силы)",
         "Комбез(+4 брони)",
         "Косилка",
+        "Кубик-Релаксант",
         "Кубик-Релаксант",
         "Кубик-Релаксант",
         "Кубик-Релаксант",
