@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "", "/about", "/alliances", "/alliances/compare", "/chronicle", "/clans",
     "/clans/compare", "/dom-boli", "/dungeons", "/gallery", "/gifts",
     "/hunter-board", "/les-teney", "/links", "/malahitovye-rudniki",
-    "/members", "/players", "/personal-smiles", "/smile-sufficiency", "/personal-items", "/couples", "/ratings", "/sad-koshmarov",
+    "/members", "/players", "/personal-smiles", "/personal-items", "/couples", "/ratings", "/sad-koshmarov", "/smile-sufficiency",
   ];
 
   const staticPages = staticRoutes.map((route) => ({

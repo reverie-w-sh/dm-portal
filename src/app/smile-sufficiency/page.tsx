@@ -17,6 +17,7 @@ const clans = [...(clansJson as Clan[])].sort((a, b) =>
 );
 
 const WOLFCHEN_ID = "278";
+const WEREWOLVES_ID = "212";
 
 function makeRecommendedDate() {
   const date = new Date();
@@ -40,10 +41,15 @@ export default function SmileSufficiencyPage() {
   );
 
   const isWolfchen = clan?.clanId === WOLFCHEN_ID;
+  const isWerewolves = clan?.clanId === WEREWOLVES_ID;
 
   function selectClan(clanId: string) {
     setSelectedId(clanId);
-    setRecommendedDate(clanId && clanId !== WOLFCHEN_ID ? makeRecommendedDate() : "");
+    setRecommendedDate(
+      clanId && clanId !== WOLFCHEN_ID && clanId !== WEREWOLVES_ID
+        ? makeRecommendedDate()
+        : "",
+    );
   }
 
   return (
@@ -89,7 +95,15 @@ export default function SmileSufficiencyPage() {
             <span>Выберите клан из списка выше.</span>
           </div>
         ) : (
-          <article className={`${styles.report} ${isWolfchen ? styles.criticalReport : ""}`}>
+          <article
+            className={`${styles.report} ${
+              isWolfchen
+                ? styles.criticalReport
+                : isWerewolves
+                  ? styles.excessReport
+                  : ""
+            }`}
+          >
             <div className={styles.reportHead}>
               <div className={styles.clanIdentity}>
                 {clan.crestSmall ? (
@@ -112,8 +126,16 @@ export default function SmileSufficiencyPage() {
               </div>
               <div>
                 <span>Оценка состояния</span>
-                <strong className={isWolfchen ? styles.criticalText : styles.normalText}>
-                  {isWolfchen ? "КРИТИЧЕСКОЕ" : "НОРМА"}
+                <strong
+                  className={
+                    isWolfchen
+                      ? styles.criticalText
+                      : isWerewolves
+                        ? styles.excessText
+                        : styles.normalText
+                  }
+                >
+                  {isWolfchen ? "КРИТИЧЕСКОЕ" : isWerewolves ? "ПЕРЕБОР" : "НОРМА"}
                 </strong>
               </div>
             </div>
@@ -126,7 +148,15 @@ export default function SmileSufficiencyPage() {
                 <span>Избыток</span>
               </div>
               <div className={styles.scale}>
-                <span className={`${styles.pointer} ${isWolfchen ? styles.pointerCritical : styles.pointerNormal}`} />
+                <span
+                  className={`${styles.pointer} ${
+                    isWolfchen
+                      ? styles.pointerCritical
+                      : isWerewolves
+                        ? styles.pointerExcess
+                        : styles.pointerNormal
+                  }`}
+                />
               </div>
             </div>
 
@@ -140,6 +170,22 @@ export default function SmileSufficiencyPage() {
                     Уровень смайликового обеспечения находится значительно ниже минимально допустимого для нормального функционирования клана.
                   </p>
                   <p className={styles.urgent}>Необходимо срочное пополнение смайликового фонда!</p>
+                </div>
+              </div>
+            ) : isWerewolves ? (
+              <div className={styles.excessBox}>
+                <div className={styles.excessIcon}>!</div>
+                <div>
+                  <p className={styles.excessLabel}>ЗАКЛЮЧЕНИЕ</p>
+                  <h3>СМАЙЛИКОВЫЙ ПЕРЕБОР</h3>
+                  <p>
+                    Количество смайлов превышает рекомендуемый уровень. Дальнейшее увеличение смайликового фонда признано системой нецелесообразным.
+                  </p>
+                  <p className={styles.neverAgain}>Рекомендуем больше никогда не добавлять смайлов.</p>
+                  <div className={styles.recommendation}>
+                    <span>Рекомендованная дата следующего пополнения</span>
+                    <strong>Не требуется</strong>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -159,7 +205,13 @@ export default function SmileSufficiencyPage() {
             <footer className={styles.reportFooter}>
               <span>Результат сформирован автоматически</span>
               <strong>
-                Рекомендация системы: {isWolfchen ? "пополнение требуется незамедлительно" : "плановое наблюдение"}
+                Рекомендация системы: {
+                  isWolfchen
+                    ? "пополнение требуется незамедлительно"
+                    : isWerewolves
+                      ? "дальнейшее пополнение категорически не рекомендуется"
+                      : "плановое наблюдение"
+                }
               </strong>
             </footer>
           </article>

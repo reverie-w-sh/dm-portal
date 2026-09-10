@@ -53,6 +53,11 @@ const usefulLinks = [
     image: "/images/links/ratings.webp",
     alt: "Рейтинги",
   },
+  {
+    href: "/smile-sufficiency",
+    image: "/images/links/smile-sufficiency.webp",
+    alt: "Определение уровня достаточности клановых смайлов",
+  },
 ];
 
 export default function LinksPage() {
