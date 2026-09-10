@@ -1,5 +1,37 @@
 [
   {
+    "id": "dc0a9b50-7382-4926-a943-794b5478cc1a",
+    "syncId": "2026-09-10T08:13:12.148Z",
+    "createdAt": "2026-09-10T08:13:12.148Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "8049",
+    "characterName": "ЛиН Орк",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8049",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "d8772389-9d78-485f-972f-578a096cb443",
+    "syncId": "2026-09-10T08:13:12.148Z",
+    "createdAt": "2026-09-10T08:13:12.148Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "11230",
+    "characterName": "ЗлобныйСуслик",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11230",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы"
+  },
+  {
     "id": "2cb5f9ad-2f56-4ed9-b9bf-265025827bae",
     "syncId": "2026-09-09T18:38:25.314Z",
     "createdAt": "2026-09-09T18:38:25.314Z",
