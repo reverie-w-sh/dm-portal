@@ -1,5 +1,85 @@
 [
   {
+    "id": "7c105a1b-d013-4e42-b987-db4157e301f2",
+    "syncId": "2026-09-10T18:28:00.356Z",
+    "createdAt": "2026-09-10T18:28:00.356Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "4441",
+    "characterName": "Лень",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4441",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "f0001df6-0757-407a-9df1-be5eb5dca8aa",
+    "syncId": "2026-09-10T18:28:00.356Z",
+    "createdAt": "2026-09-10T18:28:00.356Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "3804",
+    "characterName": "Латыш",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3804",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "775453a5-debb-4800-acb0-7c1bdca24daf",
+    "syncId": "2026-09-10T18:28:00.356Z",
+    "createdAt": "2026-09-10T18:28:00.356Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "17507",
+    "characterName": "немец",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17507",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+        "name": "Мастер алхимик",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "e755f62d-67c7-46bd-9ef3-c296767a48f7",
+    "syncId": "2026-09-10T18:28:00.356Z",
+    "createdAt": "2026-09-10T18:28:00.356Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "12846",
+    "characterName": "Гарпий",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=12846",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "dc0a9b50-7382-4926-a943-794b5478cc1a",
     "syncId": "2026-09-10T08:13:12.148Z",
     "createdAt": "2026-09-10T08:13:12.148Z",
