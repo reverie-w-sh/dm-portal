@@ -176,12 +176,12 @@ export default function HunterGuidePage() {
             <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9814a]">Перед первой охотой</p>
             <h2 className="mt-2 text-2xl font-black text-[#ecd4a6]">Если охота ещё не открыта</h2>
             <p className="mt-3 text-sm leading-7 text-[#baa787]">
-              В Лесном домике поговори с Дедушкой Егерем. Он меняет кучу ресурсов на охотничье снаряжение. 
+              Охота открывается с 4 уровня. В Лесном домике поговори с Дедушкой Егерем. Он меняет кучу ресурсов на охотничье снаряжение. 
             </p>
             <Shot
               src="/images/hunter-guide/ohota-lesnoi-domik.webp"
               alt="Дедушка Егерь в Лесном домике игры Древний Мир"
-              title="Лесной домик или где купить пращу и прочее оружие для охоты"
+              title="Лесной домик или где получить охотничье снаряжение"
             />
           </div>
         </section>
@@ -278,6 +278,18 @@ export default function HunterGuidePage() {
                 С неё всё начинается. Дедушка Егерь предлагает начать с охоты на зайцев
                 и отдаёт пращу после того, как ты принесёшь нужный набор ресурсов.
               </p>
+              <div className="mt-4 rounded-lg border border-[#4f3b22] bg-[#0b0c0b] p-3 text-sm leading-7 text-[#c7b18b]">
+                <div><b className="text-[#ead1a2]">Уголь</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Железное дерево</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Железная руда</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Серебро</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Капля крови</b> - 50</div>
+                <div><b className="text-[#ead1a2]">Корм</b> - 30</div>
+                <div><b className="text-[#ead1a2]">Кровавое Сердце</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Душа повелителя</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Крысиная лапка</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Крыло летучей мыши</b> - 1</div>
+              </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik.webp"
                 alt="Дедушка Егерь предлагает пращу для охоты на зайцев"
@@ -291,38 +303,57 @@ export default function HunterGuidePage() {
             </section>
 
             <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
-              <h3 className="text-xl font-black text-[#ead1a2]">🐺 Волк - лук</h3>
+              <h3 className="text-xl font-black text-[#ead1a2]">🐺 Волк - Копье охотника</h3>
               <p className="mt-2 text-sm leading-6 text-[#aa987a]">
-                Следующий зверь - волк. Для него у Егеря появляется новый лук.
+                Следующий зверь - волк. Для охоты на него нужно Копье охотника.
                 На втором скриншоте видны все ресурсы и их количество.
               </p>
+              <div className="mt-4 rounded-lg border border-[#4f3b22] bg-[#0b0c0b] p-3 text-sm leading-7 text-[#c7b18b]">
+                <div><b className="text-[#ead1a2]">Дуб</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Топаз</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Сапфир</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Кости</b> - 1</div>
+                <div><b className="text-[#ead1a2]">Мухомор</b> - 8</div>
+                <div><b className="text-[#ead1a2]">Шкура зайца</b> - 50</div>
+                <div><b className="text-[#ead1a2]">Капля крови</b> - 35</div>
+              </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-dialog.webp"
-                alt="Дедушка Егерь рассказывает про лук для охоты на волка"
-                title="Лук для охоты на волка"
+                alt="Дедушка Егерь рассказывает про Копье охотника для охоты на волка"
+                title="Копье охотника для охоты на волка"
               />
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-resursy.webp"
-                alt="Ресурсы, необходимые для получения лука для охоты на волка"
-                title="Ресурсы для лука - точные предметы и количество"
+                alt="Ресурсы, необходимые для получения Колья охотника для охоты на волка"
+                title="Ресурсы для Колья охотника - точные предметы и количество"
               />
             </section>
 
             <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
-              <h3 className="text-xl font-black text-[#ead1a2]">🐗 Кабан - копьё</h3>
+              <h3 className="text-xl font-black text-[#ead1a2]">🐗 Кабан - Копье следопыта</h3>
               <p className="mt-2 text-sm leading-6 text-[#aa987a]">
-                Для кабана понадобится копьё. Егерь прямо говорит, что новые копья должны
-                подойти для кабанов. Рядом оставлен скрин со всем набором ресурсов.
+                Для охоты на кабана нужно Копье следопыта. Рядом оставлен скрин со всем
+                набором ресурсов и точным количеством.
               </p>
+              <div className="mt-4 rounded-lg border border-[#4f3b22] bg-[#0b0c0b] p-3 text-sm leading-7 text-[#c7b18b]">
+                <div><b className="text-[#ead1a2]">Бечевка</b> - 2</div>
+                <div><b className="text-[#ead1a2]">Кожа</b> - 2</div>
+                <div><b className="text-[#ead1a2]">Ткань</b> - 2</div>
+                <div><b className="text-[#ead1a2]">Мухомор</b> - 3</div>
+                <div><b className="text-[#ead1a2]">Капля крови</b> - 35</div>
+                <div><b className="text-[#ead1a2]">Шкура зайца</b> - 50</div>
+                <div><b className="text-[#ead1a2]">Шкура волка</b> - 25</div>
+                <div><b className="text-[#ead1a2]">Декоративная трава</b> - 1</div>
+              </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-zadanie.webp"
-                alt="Дедушка Егерь предлагает копьё для охоты на кабана"
-                title="Копьё для охоты на кабана"
+                alt="Дедушка Егерь предлагает Копье следопыта для охоты на кабана"
+                title="Копье следопыта для охоты на кабана"
               />
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-nagrady.webp"
-                alt="Ресурсы, необходимые для получения копья для охоты на кабана"
-                title="Ресурсы для копья - точные предметы и количество"
+                alt="Ресурсы, необходимые для получения Копья следопыта для охоты на кабана"
+                title="Ресурсы для Копья следопыта - точные предметы и количество"
               />
             </section>
 
@@ -332,6 +363,17 @@ export default function HunterGuidePage() {
                 Для продвинутых охотников Егерь предлагает рогатину на медведя.
                 На скриншоте с наградой виден полный список ресурсов и нужное количество.
               </p>
+              <div className="mt-4 rounded-lg border border-[#4f3b22] bg-[#0b0c0b] p-3 text-sm leading-7 text-[#c7b18b]">
+                <div><b className="text-[#ead1a2]">Уголь</b> - 10</div>
+                <div><b className="text-[#ead1a2]">Дуб</b> - 10</div>
+                <div><b className="text-[#ead1a2]">Бечевка</b> - 10</div>
+                <div><b className="text-[#ead1a2]">Мухомор</b> - 5</div>
+                <div><b className="text-[#ead1a2]">Капля крови</b> - 50</div>
+                <div><b className="text-[#ead1a2]">Декоративная трава</b> - 3</div>
+                <div><b className="text-[#ead1a2]">Шкура зайца</b> - 50</div>
+                <div><b className="text-[#ead1a2]">Шкура волка</b> - 25</div>
+                <div><b className="text-[#ead1a2]">Шкура кабана</b> - 25</div>
+              </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-progress.webp"
                 alt="Дедушка Егерь рассказывает про рогатину для охоты на медведя"
