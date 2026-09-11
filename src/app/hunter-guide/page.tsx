@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ScreenshotModal from "./ScreenshotModal";
 
 const animals = [
   ["🐰", "Заяц", "4"],
@@ -75,28 +76,7 @@ function Shot({
   alt: string;
   title: string;
 }) {
-  return (
-    <figure className="mt-5 overflow-hidden rounded-xl border border-[#79501f] bg-[#050605] p-2 shadow-[0_12px_30px_rgba(0,0,0,.38)]">
-      <a
-        href={src}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={`${title}. Нажми, чтобы открыть скриншот в полном размере`}
-        className="block cursor-zoom-in"
-      >
-        <img
-          src={src}
-          alt={alt}
-          title={title}
-          loading="lazy"
-          className="h-auto w-full rounded-lg object-contain"
-        />
-      </a>
-      <figcaption className="px-2 pb-1 pt-2 text-center text-[11px] text-[#8f7a5c]">
-        Нажми на скриншот, чтобы открыть его в полном размере
-      </figcaption>
-    </figure>
-  );
+  return <ScreenshotModal src={src} alt={alt} title={title} />;
 }
 
 export default function HunterGuidePage() {
@@ -176,11 +156,11 @@ export default function HunterGuidePage() {
             <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9814a]">Перед первой охотой</p>
             <h2 className="mt-2 text-2xl font-black text-[#ecd4a6]">Если охота ещё не открыта</h2>
             <p className="mt-3 text-sm leading-7 text-[#baa787]">
-              Охота открывается с 4 уровня. В Лесном домике поговори с Дедушкой Егерем. Он меняет кучу ресурсов на охотничье снаряжение. 
+              Охота открывается с 4 уровня. В Лесном домике поговори с Дядюшкой Егерем. Он меняет кучу ресурсов на охотничье снаряжение. 
             </p>
             <Shot
               src="/images/hunter-guide/ohota-lesnoi-domik.webp"
-              alt="Дедушка Егерь в Лесном домике игры Древний Мир"
+              alt="Дядюшка Егерь в Лесном домике игры Древний Мир"
               title="Лесной домик или где получить охотничье снаряжение"
             />
           </div>
@@ -260,22 +240,21 @@ export default function HunterGuidePage() {
 
         <section className="mt-8 rounded-2xl border border-[#79501f] bg-[#080907] p-5 sm:p-6">
           <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9814a]">
-            Снаряжение у Дедушки Егеря
+            Снаряжение у Дядюшки Егеря
           </p>
           <h2 className="mt-2 text-2xl font-black text-[#ecd4a6]">
             Что нужно для каждого зверя
           </h2>
           <p className="mt-3 text-sm leading-7 text-[#baa787]">
             Снаряжение открывается постепенно. На скриншотах ниже есть и подсказки Егеря,
-            и полный набор ресурсов с точным количеством. Нажимай на картинки - они откроются
-            в полном размере, чтобы всё можно было нормально прочитать.
+            и полный набор ресурсов с точным количеством. Нажимай на картинки - они откроются поверх страницы в полном размере, чтобы всё можно было нормально прочитать.
           </p>
 
           <div className="mt-6 grid gap-5 lg:grid-cols-2">
             <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
               <h3 className="text-xl font-black text-[#ead1a2]">🐰 Заяц - праща</h3>
               <p className="mt-2 text-sm leading-6 text-[#aa987a]">
-                С неё всё начинается. Дедушка Егерь предлагает начать с охоты на зайцев
+                С неё всё начинается. Дядюшка Егерь предлагает начать с охоты на зайцев
                 и отдаёт пращу после того, как ты принесёшь нужный набор ресурсов.
               </p>
               <div className="mt-4 rounded-lg border border-[#4f3b22] bg-[#0b0c0b] p-3 text-sm leading-7 text-[#c7b18b]">
@@ -292,12 +271,12 @@ export default function HunterGuidePage() {
               </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik.webp"
-                alt="Дедушка Егерь предлагает пращу для охоты на зайцев"
+                alt="Дядюшка Егерь предлагает пращу для охоты на зайцев"
                 title="Праща для охоты на зайцев"
               />
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-nagrada.webp"
-                alt="Ресурсы, необходимые для получения пращи у Дедушки Егеря"
+                alt="Ресурсы, необходимые для получения пращи у Дядюшки Егеря"
                 title="Ресурсы для пращи - точные предметы и количество"
               />
             </section>
@@ -319,13 +298,13 @@ export default function HunterGuidePage() {
               </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-dialog.webp"
-                alt="Дедушка Егерь рассказывает про Копье охотника для охоты на волка"
+                alt="Дядюшка Егерь рассказывает про Копье охотника для охоты на волка"
                 title="Копье охотника для охоты на волка"
               />
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-resursy.webp"
-                alt="Ресурсы, необходимые для получения Колья охотника для охоты на волка"
-                title="Ресурсы для Колья охотника - точные предметы и количество"
+                alt="Ресурсы, необходимые для получения Копья охотника для охоты на волка"
+                title="Ресурсы для Копья охотника - точные предметы и количество"
               />
             </section>
 
@@ -347,7 +326,7 @@ export default function HunterGuidePage() {
               </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-zadanie.webp"
-                alt="Дедушка Егерь предлагает Копье следопыта для охоты на кабана"
+                alt="Дядюшка Егерь предлагает Копье следопыта для охоты на кабана"
                 title="Копье следопыта для охоты на кабана"
               />
               <Shot
@@ -376,7 +355,7 @@ export default function HunterGuidePage() {
               </div>
               <Shot
                 src="/images/hunter-guide/ohota-lesnoi-domik-progress.webp"
-                alt="Дедушка Егерь рассказывает про рогатину для охоты на медведя"
+                alt="Дядюшка Егерь рассказывает про рогатину для охоты на медведя"
                 title="Рогатина для охоты на медведя"
               />
               <Shot
