@@ -43,7 +43,7 @@ const guideSteps = [
   {
     n: "05",
     title: "Ищи зверя в трёх направлениях",
-    text: "Пришёл в клетку со зверем? Теперь его ещё надо найти :) Искать можно в трёх направлениях: слева, по центру и справа. Проверяй по очереди. Если в первом месте никого нет — пробуй второе. Если пустыми оказались уже два, значит зверь прячется в третьем.",
+    text: "Пришёл в клетку со зверем? Теперь его ещё надо найти :) Искать можно в трёх направлениях: слева, по центру и справа. Проверяй по очереди. Если в первом месте никого нет - пробуй второе. Если пустыми оказались уже два, значит зверь прячется в третьем.",
     image: "/images/hunter-guide/ohota-poisk-zverya.webp",
     alt: "Кнопки поиска слева по центру и справа во время охоты",
     imageTitle: "Три направления поиска зверя",
@@ -77,14 +77,24 @@ function Shot({
 }) {
   return (
     <figure className="mt-5 overflow-hidden rounded-xl border border-[#79501f] bg-[#050605] p-2 shadow-[0_12px_30px_rgba(0,0,0,.38)]">
-      {/* Оставляем исходное соотношение сторон игрового скриншота. */}
-      <img
-        src={src}
-        alt={alt}
-        title={title}
-        loading="lazy"
-        className="h-auto w-full rounded-lg object-contain"
-      />
+      <a
+        href={src}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`${title}. Нажми, чтобы открыть скриншот в полном размере`}
+        className="block cursor-zoom-in"
+      >
+        <img
+          src={src}
+          alt={alt}
+          title={title}
+          loading="lazy"
+          className="h-auto w-full rounded-lg object-contain"
+        />
+      </a>
+      <figcaption className="px-2 pb-1 pt-2 text-center text-[11px] text-[#8f7a5c]">
+        Нажми на скриншот, чтобы открыть его в полном размере
+      </figcaption>
     </figure>
   );
 }
@@ -120,7 +130,7 @@ export default function HunterGuidePage() {
             Охота в «Древнем Мире»: подробная инструкция для новичка
           </h1>
           <p className="mt-4 max-w-4xl text-[15px] leading-7 text-[#cbb58d]">
-            Если ты впервые открыл Охотничьи угодья и не понимаешь, что означают клетки, «Осмотреться» и три кнопки поиска - начинай отсюда.
+            Если ты впервые попал в Охотничьи угодья и пока не очень понимаешь, что тут вообще делать - сейчас разберёмся :)
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
@@ -182,8 +192,7 @@ export default function HunterGuidePage() {
               <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9814a]">Полезная экипировка</p>
               <h2 className="mt-2 text-2xl font-black text-[#ecd4a6]">Шапка следопыта</h2>
               <p className="mt-3 text-sm leading-7 text-[#baa787]">
-                На скриншоте игры указано, что Шапка следопыта сокращает время осмотра,
-                передвижения и поиска зверей на 25%. Для самой механики охоты она не
+                Шапка следопыта сокращает время осмотра, передвижения и поиска зверей на 25%. Для самой механики охоты она не
                 обязательна, но заметно ускоряет процесс.
               </p>
             </div>
@@ -197,7 +206,7 @@ export default function HunterGuidePage() {
 
         <section id="steps" className="mt-10 scroll-mt-24">
           <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9814a]">Пошагово</p>
-          <h2 className="mt-2 text-3xl font-black text-[#ecd4a6]">Как проходит обычная охота</h2>
+          <h2 className="mt-2 text-3xl font-black text-[#ecd4a6]">Как проходит охота</h2>
 
           <div className="mt-6 space-y-5">
             {guideSteps.map((step) => (
@@ -218,29 +227,123 @@ export default function HunterGuidePage() {
         </section>
 
         <section className="mt-8 rounded-2xl border border-[#79501f] bg-[#0a0906] p-5 sm:p-6">
-          <h2 className="text-2xl font-black text-[#ecd4a6]">Как осматривать карту быстрее</h2>
+          <h2 className="text-2xl font-black text-[#ecd4a6]">
+            А чтобы не запутаться - отмечай всё в Планшете 🐾
+          </h2>
           <div className="mt-4 space-y-3 text-sm leading-7 text-[#baa787]">
             <p>
-              Осмотр показывает информацию вокруг текущей клетки, поэтому выгоднее выбирать
-              позицию, рядом с которой осталось больше всего ещё неизвестных клеток. Центр карты
-              обычно информативнее края и угла: одним осмотром там можно проверить больше направлений.
+              После каждого осмотра переноси найденных зверей в Планшет охотника.
+              Пустые клетки тоже отмечай сразу - так ты всегда будешь видеть, где уже был
+              и куда ещё стоит сходить.
             </p>
             <p>
-              Если рядом с текущей клеткой почти всё уже известно, не трать осмотр впустую -
-              перейди туда, где остаётся больше закрытых клеток. При равном выборе логично идти
-              к ближайшей позиции, чтобы не терять время на лишние переходы.
+              Когда начинаешь искать зверя, отмечай результат каждого направления:
+              × - никого, +1 - зверь найден без шкурки, +3 - одна шкурка,
+              +6 - две шкурки.
             </p>
             <p>
-              И самое полезное в конце: если осталась ровно одна неизвестная клетка, а по счёту
-              зверей не хватает только одного конкретного вида, дополнительный осмотр уже не нужен - 
-              содержимое последней клетки определяется по составу охоты.
+              Планшет сам считает найденных зверей и очки, поэтому тебе остаётся только
+              вовремя нажимать на нужные клеточки :)
+            </p>
+            <p>
+              И маленькая хитрость напоследок: если осталась одна неизвестная клетка,
+              просто посмотри, кого из 9 зверей тебе не хватает. Например, уже найдены
+              4 зайца, 2 волка, 2 кабана, а медведя нет? Ну вот он там и сидит 😏
             </p>
           </div>
           <Shot
             src="/images/hunter-guide/ohota-karta-4x4.webp"
             alt="Карта 4 на 4 с открытыми и неизвестными клетками охоты"
-            title="Как выбирать клетку для следующего осмотра"
+            title="Карта охоты и Планшет охотника"
           />
+        </section>
+
+        <section className="mt-8 rounded-2xl border border-[#79501f] bg-[#080907] p-5 sm:p-6">
+          <p className="text-xs font-bold uppercase tracking-[.18em] text-[#a9814a]">
+            Снаряжение у Дедушки Егеря
+          </p>
+          <h2 className="mt-2 text-2xl font-black text-[#ecd4a6]">
+            Что нужно для каждого зверя
+          </h2>
+          <p className="mt-3 text-sm leading-7 text-[#baa787]">
+            Снаряжение открывается постепенно. На скриншотах ниже есть и подсказки Егеря,
+            и полный набор ресурсов с точным количеством. Нажимай на картинки - они откроются
+            в полном размере, чтобы всё можно было нормально прочитать.
+          </p>
+
+          <div className="mt-6 grid gap-5 lg:grid-cols-2">
+            <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
+              <h3 className="text-xl font-black text-[#ead1a2]">🐰 Заяц - праща</h3>
+              <p className="mt-2 text-sm leading-6 text-[#aa987a]">
+                С неё всё начинается. Дедушка Егерь предлагает начать с охоты на зайцев
+                и отдаёт пращу после того, как ты принесёшь нужный набор ресурсов.
+              </p>
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik.webp"
+                alt="Дедушка Егерь предлагает пращу для охоты на зайцев"
+                title="Праща для охоты на зайцев"
+              />
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-nagrada.webp"
+                alt="Ресурсы, необходимые для получения пращи у Дедушки Егеря"
+                title="Ресурсы для пращи - точные предметы и количество"
+              />
+            </section>
+
+            <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
+              <h3 className="text-xl font-black text-[#ead1a2]">🐺 Волк - лук</h3>
+              <p className="mt-2 text-sm leading-6 text-[#aa987a]">
+                Следующий зверь - волк. Для него у Егеря появляется новый лук.
+                На втором скриншоте видны все ресурсы и их количество.
+              </p>
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-dialog.webp"
+                alt="Дедушка Егерь рассказывает про лук для охоты на волка"
+                title="Лук для охоты на волка"
+              />
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-resursy.webp"
+                alt="Ресурсы, необходимые для получения лука для охоты на волка"
+                title="Ресурсы для лука - точные предметы и количество"
+              />
+            </section>
+
+            <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
+              <h3 className="text-xl font-black text-[#ead1a2]">🐗 Кабан - копьё</h3>
+              <p className="mt-2 text-sm leading-6 text-[#aa987a]">
+                Для кабана понадобится копьё. Егерь прямо говорит, что новые копья должны
+                подойти для кабанов. Рядом оставлен скрин со всем набором ресурсов.
+              </p>
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-zadanie.webp"
+                alt="Дедушка Егерь предлагает копьё для охоты на кабана"
+                title="Копьё для охоты на кабана"
+              />
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-nagrady.webp"
+                alt="Ресурсы, необходимые для получения копья для охоты на кабана"
+                title="Ресурсы для копья - точные предметы и количество"
+              />
+            </section>
+
+            <section className="rounded-xl border border-[#68451d] bg-[#070807] p-4">
+              <h3 className="text-xl font-black text-[#ead1a2]">🐻 Медведь - рогатина</h3>
+              <p className="mt-2 text-sm leading-6 text-[#aa987a]">
+                Для продвинутых охотников Егерь предлагает рогатину на медведя.
+                На скриншоте с наградой виден полный список ресурсов и нужное количество.
+              </p>
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-progress.webp"
+                alt="Дедушка Егерь рассказывает про рогатину для охоты на медведя"
+                title="Рогатина для охоты на медведя"
+              />
+              <Shot
+                src="/images/hunter-guide/ohota-lesnoi-domik-nagrada-2.webp"
+                alt="Ресурсы, необходимые для получения рогатины для охоты на медведя"
+                title="Ресурсы для рогатины - точные предметы и количество"
+              />
+            </section>
+          </div>
         </section>
 
         <section className="mt-8 grid gap-4 sm:grid-cols-3">
