@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 type AnimalType =
@@ -481,6 +482,19 @@ const hasAnimal =
           по центру и справа. Подсказка: выбор происходит
           посредством последовательных нажатий на одну
           клеточку :)
+        </p>
+
+        <p className="mt-4 text-[13px] leading-relaxed text-[#c5ad82]">
+          Зашёл сюда случайно и вообще не знаешь, что такое охота? 🐺
+          <br />
+          Не беда :) Сначала прочитай{" "}
+          <Link
+            href="/hunter-guide"
+            className="font-bold text-[#e1bd79] underline decoration-[#8e642c] underline-offset-4 transition hover:text-[#f0d59f]"
+          >
+            инструкцию по охоте →
+          </Link>{" "}
+          — там всё объяснено с самого начала и по шагам.
         </p>
 
         <div className="divider-accent mt-7" />

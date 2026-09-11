@@ -8,8 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "", "/about", "/alliances", "/alliances/compare", "/chronicle", "/clans",
     "/clans/compare", "/dom-boli", "/dungeons", "/gallery", "/gifts",
-    "/hunter-board", "/les-teney", "/links", "/malahitovye-rudniki",
-    "/members", "/players", "/personal-smiles", "/personal-items", "/couples", "/ratings", "/sad-koshmarov", "/smile-sufficiency",
+    "/hunter-board", "/hunter-guide", "/les-teney", "/links", "/malahitovye-rudniki",
+    "/members", "/players", "/personal-smiles", "/personal-items", "/couples", "/ratings", "/sad-koshmarov",
   ];
 
   const staticPages = staticRoutes.map((route) => ({
