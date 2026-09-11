@@ -840,7 +840,7 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
         </div>
 
         <p className={styles.trackingNote}>
-          Уровни отслеживаются с 08.08.2026
+          Уровни и личные отношения отслеживаются с августа 2026, кланы - с июля 2026
         </p>
       </section>
 
