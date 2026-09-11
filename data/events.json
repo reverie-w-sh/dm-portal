@@ -1,5 +1,25 @@
 [
   {
+    "id": "c6bbf336-3d34-4c93-9791-bd9dfd40bef5",
+    "syncId": "2026-09-11T18:31:52.065Z",
+    "createdAt": "2026-09-11T18:31:52.065Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "27221",
+    "characterName": "Mixser",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27221",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/collector.gif",
+        "name": "Мастер собиратель",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "7c105a1b-d013-4e42-b987-db4157e301f2",
     "syncId": "2026-09-10T18:28:00.356Z",
     "createdAt": "2026-09-10T18:28:00.356Z",

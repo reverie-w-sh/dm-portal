@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-11T08:08:29.465Z",
+  "createdAt": "2026-09-11T18:31:52.065Z",
   "players": [
     {
       "cuid": "7939",
@@ -19727,6 +19727,12 @@
       "marriagePartner": "",
       "marriageSince": "",
       "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        },
         {
           "id": "/layout/all/subject/achievement/3/getter.gif",
           "name": "Добытчик",
