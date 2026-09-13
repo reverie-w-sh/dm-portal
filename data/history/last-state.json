@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-12T17:54:59.371Z",
+  "createdAt": "2026-09-13T08:23:07.784Z",
   "players": [
     {
       "cuid": "7939",
@@ -14890,6 +14890,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -15148,6 +15154,12 @@
           "name": "Мастер собиратель",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/smith.gif",
@@ -36420,15 +36432,6 @@
       ]
     },
     {
-      "owner": "911",
-      "itemIds": [
-        "111628"
-      ],
-      "itemNames": [
-        "Наручи Династии Воинов"
-      ]
-    },
-    {
       "owner": "Адский _Крик",
       "itemIds": [
         "243979",
@@ -38391,19 +38394,6 @@
         "Ярi EXO",
         "Ярi EXO(Мд)(+12)",
         "Ярi EXO(Мд)(+12)"
-      ]
-    },
-    {
-      "owner": "Юпитер",
-      "itemIds": [
-        "354044",
-        "359644",
-        "460160"
-      ],
-      "itemNames": [
-        "Обручальное колечко",
-        "Обручальное колечко",
-        "Обручальное колечко"
       ]
     },
     {

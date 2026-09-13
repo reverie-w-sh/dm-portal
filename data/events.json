@@ -1,5 +1,45 @@
 [
   {
+    "id": "0329338c-a025-45f4-b79b-4f9af29e9feb",
+    "syncId": "2026-09-13T08:23:07.784Z",
+    "createdAt": "2026-09-13T08:23:07.784Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "7224",
+    "characterName": "Takezo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7224",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "98190baf-e9d4-4652-a25d-9759da6b603c",
+    "syncId": "2026-09-13T08:23:07.784Z",
+    "createdAt": "2026-09-13T08:23:07.784Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "22510",
+    "characterName": "Skullreaper",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22510",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "69737b3a-63f5-4f45-87c7-3e377ba09daf",
     "syncId": "2026-09-12T08:02:06.429Z",
     "createdAt": "2026-09-12T08:02:06.429Z",
