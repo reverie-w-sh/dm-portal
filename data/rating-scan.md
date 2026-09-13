@@ -555,10 +555,11 @@
 553. ЦАРЮКА[4] — cuid=4668 — https://dm-game.com/index.php?file=infouser&cuid=4668
 554. Эрагон[4] — cuid=7800 — https://dm-game.com/index.php?file=infouser&cuid=7800
 
-## Хранители — CLAN 7 — знайдено 2
+## Хранители — CLAN 7 — знайдено 3
 
 1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-2. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+2. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
+3. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -815,18 +816,17 @@
 13. Skullreaper[8] — cuid=22510 — https://dm-game.com/index.php?file=infouser&cuid=22510
 14. Смотрящий[8] — cuid=28724 — https://dm-game.com/index.php?file=infouser&cuid=28724
 
-## Гладиаторы — CLAN 247 — знайдено 10
+## Гладиаторы — CLAN 247 — знайдено 9
 
-1. Юпитер[13] — cuid=1244 — https://dm-game.com/index.php?file=infouser&cuid=1244
+1. 911[13] — cuid=1244 — https://dm-game.com/index.php?file=infouser&cuid=1244
 2. Zorro[12] — cuid=4183 — https://dm-game.com/index.php?file=infouser&cuid=4183
 3. Луч света[12] — cuid=1365 — https://dm-game.com/index.php?file=infouser&cuid=1365
 4. Мишаня[12] — cuid=2094 — https://dm-game.com/index.php?file=infouser&cuid=2094
 5. Крикс[11] — cuid=5605 — https://dm-game.com/index.php?file=infouser&cuid=5605
 6. Ангел из преисподней[9] — cuid=24289 — https://dm-game.com/index.php?file=infouser&cuid=24289
 7. Гарпий[9] — cuid=12846 — https://dm-game.com/index.php?file=infouser&cuid=12846
-8. 911[8] — cuid=22619 — https://dm-game.com/index.php?file=infouser&cuid=22619
-9. Nik[8] — cuid=27039 — https://dm-game.com/index.php?file=infouser&cuid=27039
-10. Невия[6] — cuid=24167 — https://dm-game.com/index.php?file=infouser&cuid=24167
+8. Nik[8] — cuid=27039 — https://dm-game.com/index.php?file=infouser&cuid=27039
+9. Невия[6] — cuid=24167 — https://dm-game.com/index.php?file=infouser&cuid=24167
 
 ## Phoenix (клан мультов) набор — CLAN 249 — знайдено 4
 

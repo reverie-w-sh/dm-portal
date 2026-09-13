@@ -1,5 +1,93 @@
 [
   {
+    "id": "a568dbdd-f6e7-444a-8b3b-ec41130838fe",
+    "syncId": "2026-09-13T18:13:35.559Z",
+    "createdAt": "2026-09-13T18:13:35.559Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "5986",
+    "characterName": "Dark_Queen",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=5986",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "45f44018-3fbe-4dfc-ac5d-51661d6b3199",
+    "syncId": "2026-09-13T18:13:35.559Z",
+    "createdAt": "2026-09-13T18:13:35.559Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "1244",
+    "characterName": "911",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1244",
+    "clanId": "247",
+    "clanName": "Гладиаторы",
+    "oldPosition": "Юпитер",
+    "newPosition": "911"
+  },
+  {
+    "id": "35b8613f-3c8e-4354-8fe2-70147abcca42",
+    "syncId": "2026-09-13T18:13:35.559Z",
+    "createdAt": "2026-09-13T18:13:35.559Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "22619",
+    "characterName": "на удаление13_08_2026",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22619",
+    "clanId": "247",
+    "clanName": "Гладиаторы"
+  },
+  {
+    "id": "eeba7304-11a9-4b46-b94e-9dfd4bc3d09c",
+    "syncId": "2026-09-13T18:13:35.559Z",
+    "createdAt": "2026-09-13T18:13:35.559Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "8772",
+    "characterName": "Hanibal",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8772",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "94d96825-846a-44bd-b2bd-f5954c33f38b",
+    "syncId": "2026-09-13T18:13:35.559Z",
+    "createdAt": "2026-09-13T18:13:35.559Z",
+    "scope": "clans",
+    "type": "player_divorced",
+    "characterId": "13079",
+    "characterName": "Юнона",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=13079",
+    "partnerName": "Юпитер"
+  },
+  {
+    "id": "bca6aa9a-dfd3-4f21-a23c-e232a35bae0f",
+    "syncId": "2026-09-13T18:13:35.559Z",
+    "createdAt": "2026-09-13T18:13:35.559Z",
+    "scope": "clans",
+    "type": "player_divorced",
+    "characterId": "1244",
+    "characterName": "911",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1244",
+    "partnerName": "Юнона"
+  },
+  {
     "id": "0329338c-a025-45f4-b79b-4f9af29e9feb",
     "syncId": "2026-09-13T08:23:07.784Z",
     "createdAt": "2026-09-13T08:23:07.784Z",

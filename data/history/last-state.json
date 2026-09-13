@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-13T08:23:07.784Z",
+  "createdAt": "2026-09-13T18:13:35.559Z",
   "players": [
     {
       "cuid": "7939",
@@ -2613,6 +2613,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2023.gif",
           "name": "Букварь (2023)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2023.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]
@@ -8123,8 +8129,8 @@
       "position": "жена Юпитера",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=13079",
       "marriageKnown": true,
-      "marriagePartner": "Юпитер",
-      "marriageSince": "07.07.2026",
+      "marriagePartner": "",
+      "marriageSince": "",
       "achievements": [
         {
           "id": "/layout/all/subject/achievement/2/fisher.gif",
@@ -9090,16 +9096,16 @@
     },
     {
       "cuid": "1244",
-      "nick": "Юпитер",
+      "nick": "911",
       "level": 15,
       "reincarnationLevel": 13,
       "clanId": "247",
       "clanName": "Гладиаторы",
-      "position": "Юпитер",
+      "position": "911",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1244",
       "marriageKnown": true,
-      "marriagePartner": "Юнона",
-      "marriageSince": "07.07.2026",
+      "marriagePartner": "",
+      "marriageSince": "",
       "achievements": [
         {
           "id": "/layout/all/subject/achievement/1/dragon.gif",
@@ -9831,12 +9837,12 @@
     },
     {
       "cuid": "22619",
-      "nick": "911",
+      "nick": "на удаление13_08_2026",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "247",
-      "clanName": "Гладиаторы",
-      "position": "911",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22619",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -16282,6 +16288,12 @@
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/drop.gif",
@@ -41008,6 +41020,22 @@
       ]
     },
     {
+      "cuid": "1244",
+      "nick": "911",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1244",
+      "personalSmilesCount": 8,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/prv_18plus2.gif",
+        "https://dm-game.com/layout/all/smiles/prv_18tanets.gif",
+        "https://dm-game.com/layout/all/smiles/prv_fifi.gif",
+        "https://dm-game.com/layout/all/smiles/prv_fifi2.gif",
+        "https://dm-game.com/layout/all/smiles/prv_fifi3.gif",
+        "https://dm-game.com/layout/all/smiles/prv_fifi4.gif",
+        "https://dm-game.com/layout/all/smiles/prv_fifi16.gif",
+        "https://dm-game.com/layout/all/smiles/prv_artems1.gif"
+      ]
+    },
+    {
       "cuid": "1939",
       "nick": "Александр Николаевич",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1939",
@@ -41037,22 +41065,6 @@
         "https://dm-game.com/layout/all/smiles/prv_flags.gif",
         "https://dm-game.com/layout/all/smiles/prv_didjay.gif",
         "https://dm-game.com/layout/all/smiles/prv_didjay2.gif"
-      ]
-    },
-    {
-      "cuid": "1244",
-      "nick": "Юпитер",
-      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1244",
-      "personalSmilesCount": 8,
-      "personalSmiles": [
-        "https://dm-game.com/layout/all/smiles/prv_18plus2.gif",
-        "https://dm-game.com/layout/all/smiles/prv_18tanets.gif",
-        "https://dm-game.com/layout/all/smiles/prv_fifi.gif",
-        "https://dm-game.com/layout/all/smiles/prv_fifi2.gif",
-        "https://dm-game.com/layout/all/smiles/prv_fifi3.gif",
-        "https://dm-game.com/layout/all/smiles/prv_fifi4.gif",
-        "https://dm-game.com/layout/all/smiles/prv_fifi16.gif",
-        "https://dm-game.com/layout/all/smiles/prv_artems1.gif"
       ]
     },
     {
