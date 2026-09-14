@@ -1,5 +1,45 @@
 [
   {
+    "id": "a02fa41f-90c6-491c-a65b-ae20b7544db6",
+    "syncId": "2026-09-14T08:58:07.135Z",
+    "createdAt": "2026-09-14T08:58:07.135Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "2122",
+    "characterName": "oFFWhite",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2122",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "9d6ef54f-b5dd-46b7-9c4d-9056273e6de9",
+    "syncId": "2026-09-14T08:58:07.135Z",
+    "createdAt": "2026-09-14T08:58:07.135Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1318",
+    "characterName": "gae4ka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1318",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "a568dbdd-f6e7-444a-8b3b-ec41130838fe",
     "syncId": "2026-09-13T18:13:35.559Z",
     "createdAt": "2026-09-13T18:13:35.559Z",
