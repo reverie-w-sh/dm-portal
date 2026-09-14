@@ -1,5 +1,79 @@
 [
   {
+    "id": "af1dd784-6458-47e7-9735-05eb35620f7f",
+    "syncId": "2026-09-14T19:59:22.828Z",
+    "createdAt": "2026-09-14T19:59:22.828Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "7939",
+    "characterName": "Артур",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7939",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "c280ac91-9279-4884-8bb7-11e504c81b44",
+    "syncId": "2026-09-14T19:59:22.828Z",
+    "createdAt": "2026-09-14T19:59:22.828Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "17507",
+    "characterName": "немец",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17507",
+    "clanId": "278",
+    "clanName": "die Wölfchen",
+    "oldPosition": "Молчун",
+    "newPosition": ""
+  },
+  {
+    "id": "85852f76-50d5-4f16-a1ac-0039e35f0754",
+    "syncId": "2026-09-14T19:59:22.828Z",
+    "createdAt": "2026-09-14T19:59:22.828Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "3358",
+    "characterName": "Mentalist",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3358",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "bb9f2751-2803-410f-988a-067aae309738",
+    "syncId": "2026-09-14T19:59:22.828Z",
+    "createdAt": "2026-09-14T19:59:22.828Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1921",
+    "characterName": "МАСКА",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1921",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "a02fa41f-90c6-491c-a65b-ae20b7544db6",
     "syncId": "2026-09-14T08:58:07.135Z",
     "createdAt": "2026-09-14T08:58:07.135Z",

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-14T08:58:07.135Z",
+  "createdAt": "2026-09-14T19:59:22.828Z",
   "players": [
     {
       "cuid": "7939",
@@ -157,6 +157,12 @@
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/drop.gif",
@@ -1510,8 +1516,8 @@
       "level": 11,
       "reincarnationLevel": 9,
       "clanId": "278",
-      "clanName": "die Wölfchen",
-      "position": "Молчун",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17507",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -12490,6 +12496,12 @@
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -19066,6 +19078,12 @@
           "name": "Мастер лекарь",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
@@ -37356,7 +37374,7 @@
       "itemIds": [
         "514077",
         "520150",
-        "513365",
+        "523399",
         "399043",
         "391327",
         "520146",
@@ -37376,7 +37394,7 @@
       "itemNames": [
         "Клинок архангела(Мд)(+12)",
         "Небесная броня(+4 брони)",
-        "Небесные наручи(Мд)",
+        "Небесные наручи",
         "Небесные перчатки(Мд)(+6 силы)",
         "Небесные поножи(Мд)(+13)",
         "Небесные сапоги(+6 силы)",
