@@ -555,11 +555,10 @@
 553. ЦАРЮКА[4] — cuid=4668 — https://dm-game.com/index.php?file=infouser&cuid=4668
 554. Эрагон[4] — cuid=7800 — https://dm-game.com/index.php?file=infouser&cuid=7800
 
-## Хранители — CLAN 7 — знайдено 3
+## Хранители — CLAN 7 — знайдено 2
 
 1. Pantera[11] — cuid=1298 — https://dm-game.com/index.php?file=infouser&cuid=1298
-2. NoirCat[8] — cuid=27214 — https://dm-game.com/index.php?file=infouser&cuid=27214
-3. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
+2. Хранитель Тайн[8] — cuid=21786 — https://dm-game.com/index.php?file=infouser&cuid=21786
 
 ## Механики — CLAN 193 — знайдено 3
 
@@ -733,16 +732,16 @@
 23. rasamaha[8] — cuid=21860 — https://dm-game.com/index.php?file=infouser&cuid=21860
 24. Tsarskiy[8] — cuid=8546 — https://dm-game.com/index.php?file=infouser&cuid=8546
 25. Tеletsss[8] — cuid=1370 — https://dm-game.com/index.php?file=infouser&cuid=1370
-26. Вампир[8] — cuid=3243 — https://dm-game.com/index.php?file=infouser&cuid=3243
-27. Древний Мир[8] — cuid=3448 — https://dm-game.com/index.php?file=infouser&cuid=3448
-28. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
-29. Иваныч[8] — cuid=15084 — https://dm-game.com/index.php?file=infouser&cuid=15084
-30. Кись[8] — cuid=21993 — https://dm-game.com/index.php?file=infouser&cuid=21993
-31. Корвин[8] — cuid=4277 — https://dm-game.com/index.php?file=infouser&cuid=4277
-32. Мик31[8] — cuid=3182 — https://dm-game.com/index.php?file=infouser&cuid=3182
-33. Папай[8] — cuid=1981 — https://dm-game.com/index.php?file=infouser&cuid=1981
-34. Friiend[7] — cuid=28464 — https://dm-game.com/index.php?file=infouser&cuid=28464
-35. URBAN[7] — cuid=13883 — https://dm-game.com/index.php?file=infouser&cuid=13883
+26. URBAN[8] — cuid=13883 — https://dm-game.com/index.php?file=infouser&cuid=13883
+27. Вампир[8] — cuid=3243 — https://dm-game.com/index.php?file=infouser&cuid=3243
+28. Древний Мир[8] — cuid=3448 — https://dm-game.com/index.php?file=infouser&cuid=3448
+29. ЗлобныйСуслик[8] — cuid=11230 — https://dm-game.com/index.php?file=infouser&cuid=11230
+30. Иваныч[8] — cuid=15084 — https://dm-game.com/index.php?file=infouser&cuid=15084
+31. Кись[8] — cuid=21993 — https://dm-game.com/index.php?file=infouser&cuid=21993
+32. Корвин[8] — cuid=4277 — https://dm-game.com/index.php?file=infouser&cuid=4277
+33. Мик31[8] — cuid=3182 — https://dm-game.com/index.php?file=infouser&cuid=3182
+34. Папай[8] — cuid=1981 — https://dm-game.com/index.php?file=infouser&cuid=1981
+35. Friiend[7] — cuid=28464 — https://dm-game.com/index.php?file=infouser&cuid=28464
 36. Добро[7] — cuid=15414 — https://dm-game.com/index.php?file=infouser&cuid=15414
 37. Роза[7] — cuid=27120 — https://dm-game.com/index.php?file=infouser&cuid=27120
 38. Чумик[7] — cuid=5934 — https://dm-game.com/index.php?file=infouser&cuid=5934

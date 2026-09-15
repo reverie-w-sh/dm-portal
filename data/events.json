@@ -1,5 +1,19 @@
 [
   {
+    "id": "795d0ee0-2137-4459-a735-85034860d1fc",
+    "syncId": "2026-09-15T19:03:31.889Z",
+    "createdAt": "2026-09-15T19:03:31.889Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "13883",
+    "characterName": "URBAN",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=13883",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldLevel": 7,
+    "newLevel": 8
+  },
+  {
     "id": "efb900d3-8f34-4c89-8b60-80ea27f0fcbe",
     "syncId": "2026-09-15T08:45:53.733Z",
     "createdAt": "2026-09-15T08:45:53.733Z",
