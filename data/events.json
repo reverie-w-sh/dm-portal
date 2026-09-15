@@ -1,5 +1,25 @@
 [
   {
+    "id": "efb900d3-8f34-4c89-8b60-80ea27f0fcbe",
+    "syncId": "2026-09-15T08:45:53.733Z",
+    "createdAt": "2026-09-15T08:45:53.733Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "6286",
+    "characterName": "ЭХО",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6286",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/1/dragon.gif",
+        "name": "Убийца",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/1/dragon.gif",
+        "category": "battle"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "af1dd784-6458-47e7-9735-05eb35620f7f",
     "syncId": "2026-09-14T19:59:22.828Z",
     "createdAt": "2026-09-14T19:59:22.828Z",

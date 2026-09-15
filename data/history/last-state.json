@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-14T19:59:22.828Z",
+  "createdAt": "2026-09-15T08:45:53.733Z",
   "players": [
     {
       "cuid": "7939",
@@ -15539,6 +15539,12 @@
       "marriagePartner": "",
       "marriageSince": "",
       "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/1/dragon.gif",
+          "name": "Убийца",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/1/dragon.gif",
+          "category": "battle"
+        },
         {
           "id": "/layout/all/subject/achievement/2/fisher.gif",
           "name": "Мастер рыбак",
@@ -36439,7 +36445,7 @@
         "286027",
         "363845",
         "288411",
-        "439351",
+        "585814",
         "434484",
         "579072",
         "585218",
@@ -36457,7 +36463,7 @@
         "Перчатки солнца(Мд)(+4 силы)",
         "Плащ солнца(Мд)",
         "Пояс солнца(Мд)",
-        "Сапоги солнца(Зч)(+4 силы)",
+        "Сапоги солнца(+4 силы)",
         "Топор солнца(Мд)",
         "Топор солнца(Мд)",
         "Шлем солнца(+3 брони)",
