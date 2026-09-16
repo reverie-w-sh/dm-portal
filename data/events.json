@@ -1,5 +1,25 @@
 [
   {
+    "id": "dba882de-ca4b-47a0-b3fd-c315b49f8684",
+    "syncId": "2026-09-16T08:40:16.975Z",
+    "createdAt": "2026-09-16T08:40:16.975Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "8056",
+    "characterName": "аномалька",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8056",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "795d0ee0-2137-4459-a735-85034860d1fc",
     "syncId": "2026-09-15T19:03:31.889Z",
     "createdAt": "2026-09-15T19:03:31.889Z",

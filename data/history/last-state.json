@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-15T19:03:31.889Z",
+  "createdAt": "2026-09-16T08:40:16.975Z",
   "players": [
     {
       "cuid": "7939",
@@ -11433,6 +11433,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2025.gif",
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]
