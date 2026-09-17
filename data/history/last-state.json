@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-17T08:44:26.850Z",
+  "createdAt": "2026-09-17T19:06:29.384Z",
   "players": [
     {
       "cuid": "7939",
@@ -5733,6 +5733,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2025.gif",
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]
@@ -36240,9 +36246,9 @@
       "nick": "Princess",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11177",
       "marriageKnown": true,
       "marriagePartner": "",

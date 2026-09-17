@@ -1,5 +1,37 @@
 [
   {
+    "id": "47fef590-5e48-4ffa-8a3d-0645f3833235",
+    "syncId": "2026-09-17T19:06:29.384Z",
+    "createdAt": "2026-09-17T19:06:29.384Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1939",
+    "characterName": "Александр Николаевич",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1939",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "f20a0093-7eea-4277-a8c2-25cbac792d4a",
+    "syncId": "2026-09-17T19:06:29.384Z",
+    "createdAt": "2026-09-17T19:06:29.384Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "11177",
+    "characterName": "Princess",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11177",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "dba882de-ca4b-47a0-b3fd-c315b49f8684",
     "syncId": "2026-09-16T08:40:16.975Z",
     "createdAt": "2026-09-16T08:40:16.975Z",
