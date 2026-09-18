@@ -1,5 +1,25 @@
 [
   {
+    "id": "5cbb93ca-d3e0-4a55-952a-c7afab6b40d5",
+    "syncId": "2026-09-18T08:19:58.386Z",
+    "createdAt": "2026-09-18T08:19:58.386Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "5605",
+    "characterName": "Крикс",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=5605",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "47fef590-5e48-4ffa-8a3d-0645f3833235",
     "syncId": "2026-09-17T19:06:29.384Z",
     "createdAt": "2026-09-17T19:06:29.384Z",

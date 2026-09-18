@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-17T19:06:29.384Z",
+  "createdAt": "2026-09-18T08:19:58.386Z",
   "players": [
     {
       "cuid": "7939",
@@ -9514,6 +9514,12 @@
           "name": "Мастер лекарь",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
