@@ -1,5 +1,65 @@
 [
   {
+    "id": "6906c1e8-1564-481f-899f-f5834f04a488",
+    "syncId": "2026-09-18T18:27:38.987Z",
+    "createdAt": "2026-09-18T18:27:38.987Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1521",
+    "characterName": "MAX PAYNE",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1521",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "ea897a69-0fea-463a-bda9-f4c8a95230bb",
+    "syncId": "2026-09-18T18:27:38.987Z",
+    "createdAt": "2026-09-18T18:27:38.987Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1959",
+    "characterName": "ФКСПАРТАK",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1959",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "9e78e913-1704-4d03-b48e-bf9e7deb223b",
+    "syncId": "2026-09-18T18:27:38.987Z",
+    "createdAt": "2026-09-18T18:27:38.987Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "27221",
+    "characterName": "Mixser",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27221",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/begun.gif",
+        "name": "Мастер бегун",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "5cbb93ca-d3e0-4a55-952a-c7afab6b40d5",
     "syncId": "2026-09-18T08:19:58.386Z",
     "createdAt": "2026-09-18T08:19:58.386Z",

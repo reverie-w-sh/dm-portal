@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-18T08:19:58.386Z",
+  "createdAt": "2026-09-18T18:27:38.987Z",
   "players": [
     {
       "cuid": "7939",
@@ -10594,6 +10594,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -11328,6 +11334,12 @@
           "id": "/layout/all/subject/achievement/3/bukvar2025.gif",
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
         }
       ]
@@ -19815,6 +19827,12 @@
           "id": "/layout/all/subject/achievement/2/collector.gif",
           "name": "Мастер собиратель",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
         },
         {
