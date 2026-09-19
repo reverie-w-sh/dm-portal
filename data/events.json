@@ -1,5 +1,19 @@
 [
   {
+    "id": "7ae4b284-2a86-4a25-b7d1-ae3936d523d0",
+    "syncId": "2026-09-19T18:05:47.798Z",
+    "createdAt": "2026-09-19T18:05:47.798Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "27221",
+    "characterName": "Mixser",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27221",
+    "clanId": "235",
+    "clanName": "Храм Мечей",
+    "oldLevel": 7,
+    "newLevel": 8
+  },
+  {
     "id": "6906c1e8-1564-481f-899f-f5834f04a488",
     "syncId": "2026-09-18T18:27:38.987Z",
     "createdAt": "2026-09-18T18:27:38.987Z",
