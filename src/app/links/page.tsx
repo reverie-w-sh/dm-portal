@@ -5,7 +5,7 @@ import styles from "./page.module.css";
 const usefulLinks = [
   {
     href: "/world",
-    image: "/images/world/world-map.webp",
+    image: "/images/links/world-map.webp",
     alt: "Карта мира и навигатор",
   },
   {
