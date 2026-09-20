@@ -24,17 +24,17 @@ type WorldEdge = {
 };
 
 export const WORLD_LOCATIONS: WorldLocation[] = [
-  { id: "home", slug: "home", name: "Дом", description: "Дом персонажа, удобная начальная точка для всех маршрутов.", image: "/images/world/locations/home.jpg", mapPoint: { x: 58, y: 59 } },
+  { id: "home", slug: "home", name: "Дом", description: "Дом персонажа, удобная начальная точка для всех маршрутов.", image: "/images/world/locations/home.jpg", mapPoint: { x: 74, y: 49 } },
   { id: "central", slug: "central-square", name: "Центральная площадь", description: "Главная площадь города. Отсюда можно пройти к Площади шахтёров или на Улицу гладиаторов.", image: "/images/world/locations/central-square.jpg", mapPoint: { x: 61, y: 54 } },
-  { id: "shop", slug: "shop", name: "Лавка", description: "Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 56, y: 44 } },
-  { id: "alchemist", slug: "alchemist", name: "Алхимик", description: "Алхимическая лавка на Центральной площади.", image: "/images/world/locations/alchemist.jpg", mapPoint: { x: 57, y: 48 } },
+  { id: "shop", slug: "shop", name: "Лавка", description: "Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 57, y: 48 } },
+  { id: "alchemist", slug: "alchemist", name: "Алхимик", description: "Алхимическая лавка на Центральной площади.", image: "/images/world/locations/alchemist.jpg", mapPoint: { x: 56, y: 44 } },
   { id: "market", slug: "market", name: "Рынок", description: "Городской рынок и торговые разделы.", image: "/images/world/locations/market.jpg", mapPoint: { x: 63, y: 43 } },
   { id: "royal-shop", slug: "royal-shop", name: "Королевская лавка", shortName: "Кор. лавка", description: "Королевская лавка на Центральной площади.", image: "/images/world/locations/royal-shop.jpg", mapPoint: { x: 67, y: 47 } },
 
   { id: "miners", slug: "miners-square", name: "Площадь шахтёров", description: "Каменная площадь между Центральной площадью и дорогой к озеру.", image: "/images/world/locations/miners-square.jpg", mapPoint: { x: 43, y: 29 } },
   { id: "donor", slug: "donor-search", name: "Поиск донора", description: "Сервис поиска донора на Площади шахтёров.", image: "/images/world/locations/donor-search.jpg", mapPoint: { x: 32, y: 25 } },
-  { id: "farm", slug: "farm", name: "Ферма", description: "Ферма возле Площади шахтёров.", mapPoint: { x: 45, y: 15 } },
-  { id: "blood", slug: "blood-dungeon", name: "Кровавое подземелье", shortName: "Дом Боли", description: "Кровавое подземелье, также известное как Дом Боли.", image: "/images/world/locations/blood-dungeon.jpg", guideHref: "/dom-boli", guideLabel: "Открыть карты Дома Боли", mapPoint: { x: 34, y: 15 } },
+  { id: "farm", slug: "farm", name: "Ферма", description: "Ферма возле Площади шахтёров.", mapPoint: { x: 34, y: 15 } },
+  { id: "blood", slug: "blood-dungeon", name: "Кровавое подземелье", shortName: "Дом Боли", description: "Кровавое подземелье, также известное как Дом Боли.", image: "/images/world/locations/blood-dungeon.jpg", guideHref: "/dom-boli", guideLabel: "Открыть карты Дома Боли", mapPoint: { x: 45, y: 15 } },
   { id: "vampire-tomb", slug: "vampire-tomb", name: "Гробница вампиров", shortName: "Гробница", description: "Сюда ходят, чтобы варить руны... Позже напишу подробнее :)", mapPoint: { x: 51, y: 21 } },
 
   { id: "lake-road", slug: "lake-road", name: "Дорога к озеру", description: "Зелёный перекрёсток между пустыней, Площадью шахтёров, лесом, охотой и озером.", image: "/images/world/locations/lake-road.jpg", mapPoint: { x: 28, y: 50 } },
@@ -58,10 +58,10 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
   { id: "workshop", slug: "workshop", name: "Мастерская", description: "Ремонт, гравировка, крафт и кожевничество.", image: "/images/world/locations/workshop.jpg", mapPoint: { x: 84, y: 67 } },
 
   { id: "cave-road", slug: "cave-road", name: "Дорога к Пещере", description: "Дорога от города к пещере с Подземным озером, Лабиринтом и прочими подземельями.", image: "/images/world/locations/cave-road.jpg", mapPoint: { x: 93, y: 56 } },
-  { id: "grey-cave", slug: "grey-cave", name: "Серая Пещера", description: "Главный вход в пещерный комплекс.", image: "/images/world/locations/grey-cave.jpg", mapPoint: { x: 73, y: 13 } },
-  { id: "guardian", slug: "guardian", name: "Хранитель", description: "Комната Хранителя в Серой Пещере.", image: "/images/world/locations/guardian.jpg", mapPoint: { x: 79, y: 10 } },
-  { id: "labyrinth", slug: "labyrinth", name: "Лабиринт", description: "Прямой проход из Серой Пещеры.", image: "/images/world/locations/labyrinth.jpg", mapPoint: { x: 73, y: 6 } },
-  { id: "underground-lake", slug: "underground-lake", name: "Подземное озеро", shortName: "Подз. озеро", description: "Подземное озеро в Серой Пещере.", image: "/images/world/locations/underground-lake.jpg", mapPoint: { x: 86, y: 15 } },
+  { id: "grey-cave", slug: "grey-cave", name: "Серая Пещера", description: "Главный вход в пещерный комплекс.", image: "/images/world/locations/grey-cave.jpg", mapPoint: { x: 73, y: 18 } },
+  { id: "guardian", slug: "guardian", name: "Хранитель", description: "Комната Хранителя в Серой Пещере.", image: "/images/world/locations/guardian.jpg", mapPoint: { x: 84, y: 9 } },
+  { id: "labyrinth", slug: "labyrinth", name: "Лабиринт", description: "Прямой проход из Серой Пещеры.", image: "/images/world/locations/labyrinth.jpg", mapPoint: { x: 72, y: 6 } },
+  { id: "underground-lake", slug: "underground-lake", name: "Подземное озеро", shortName: "Подз. озеро", description: "Подземное озеро в Серой Пещере.", image: "/images/world/locations/underground-lake.jpg", mapPoint: { x: 84, y: 14 } },
   { id: "rift", slug: "rift", name: "Расщелина", description: "Перекрёсток трёх больших подземелий.", image: "/images/world/locations/rift.jpg", guideHref: "/dungeons", guideLabel: "Открыть карты подземелий", mapPoint: { x: 62, y: 14 } },
   { id: "malachite", slug: "malachite-mines", name: "Малахитовые Рудники", shortName: "Рудники", description: "Подземелье Малахитовые Рудники.", guideHref: "/malahitovye-rudniki", guideLabel: "Открыть карту Рудников", mapPoint: { x: 53, y: 10 } },
   { id: "garden", slug: "garden-of-nightmares", name: "Сад Кошмаров", shortName: "Сад Кошмаров", description: "Подземелье Сад Кошмаров.", guideHref: "/sad-koshmarov", guideLabel: "Открыть карту Сада", mapPoint: { x: 58, y: 5 } },
