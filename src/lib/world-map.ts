@@ -24,9 +24,9 @@ type WorldEdge = {
 };
 
 export const WORLD_LOCATIONS: WorldLocation[] = [
-  { id: "home", slug: "home", name: "Дом", description: "Дом персонажа, удобная начальная точка для всех маршрутов.", image: "/images/world/locations/home.jpg", mapPoint: { x: 74, y: 49 } },
+  { id: "home", slug: "home", name: "Дом", description: "Дом персонажа, удобная начальная точка для всех маршрутов.", image: "/images/world/locations/home.jpg", mapPoint: { x: 70, y: 52 } },
   { id: "central", slug: "central-square", name: "Центральная площадь", description: "Главная площадь города. Отсюда можно пройти к Площади шахтёров или на Улицу гладиаторов.", image: "/images/world/locations/central-square.jpg", mapPoint: { x: 61, y: 54 } },
-  { id: "shop", slug: "shop", name: "Лавка", description: "Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 57, y: 48 } },
+  { id: "shop", slug: "shop", name: "Лавка", description: "Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 54.5, y: 48 } },
   { id: "alchemist", slug: "alchemist", name: "Алхимик", description: "Алхимическая лавка на Центральной площади.", image: "/images/world/locations/alchemist.jpg", mapPoint: { x: 56, y: 44 } },
   { id: "market", slug: "market", name: "Рынок", description: "Городской рынок и торговые разделы.", image: "/images/world/locations/market.jpg", mapPoint: { x: 63, y: 43 } },
   { id: "royal-shop", slug: "royal-shop", name: "Королевская лавка", shortName: "Кор. лавка", description: "Королевская лавка на Центральной площади.", image: "/images/world/locations/royal-shop.jpg", mapPoint: { x: 67, y: 47 } },
