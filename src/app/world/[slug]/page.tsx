@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import ScreenshotModal from "./ScreenshotModal";
 import { notFound } from "next/navigation";
 import {
   findWorldRoute,
@@ -12,6 +12,19 @@ import {
 import styles from "./page.module.css";
 
 type LocationPageProps = { params: Promise<{ slug: string }> };
+
+type NaturalScreenshotProps = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  priority?: boolean;
+};
+
+function NaturalScreenshot({ src, alt, priority = false }: NaturalScreenshotProps) {
+  return <ScreenshotModal src={src} alt={alt} priority={priority} />;
+}
 
 export function generateStaticParams() {
   return WORLD_LOCATIONS.map((location) => ({ slug: location.slug }));
@@ -55,7 +68,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
         {location.image && (
           <div className={styles.screenshot}>
-            <Image
+            <NaturalScreenshot
               src={location.image}
               alt={`Игровой экран: ${location.name}`}
               width={1200}
@@ -138,7 +151,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                 ["/images/world/locations/desert-gathering.jpg", "Сбор корма"],
               ].map(([src, alt]) => (
                 <figure key={src}>
-                  <Image src={src} alt={alt} width={1000} height={600} sizes="(max-width: 780px) 100vw, 520px" />
+                  <NaturalScreenshot src={src} alt={alt} width={1000} height={600} sizes="(max-width: 780px) 100vw, 520px" />
                   <figcaption>{alt}</figcaption>
                 </figure>
               ))}
@@ -180,15 +193,15 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
             <div className={styles.locationGallery}>
               <figure>
-                <Image src="/images/world/locations/lake-fishing.jpg" alt="Рыбалка на обычном Озере" width={1010} height={477} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/lake-fishing.jpg" alt="Рыбалка на обычном Озере" width={1010} height={477} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Ждём, когда надпись «Подсечь» станет жёлтой</figcaption>
               </figure>
               <figure>
-                <Image src="/images/world/locations/fishing-rods.jpg" alt="Обычная удочка, Удочка up и Удочка up2" width={556} height={520} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/fishing-rods.jpg" alt="Обычная удочка, Удочка up и Удочка up2" width={556} height={520} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Обычная удочка и две улучшенные</figcaption>
               </figure>
               <figure className={styles.compactFigure}>
-                <Image src="/images/world/locations/fishing-hook.jpg" alt="Жёлтая надпись Подсечь на кнопке" width={299} height={193} sizes="299px" />
+                <NaturalScreenshot src="/images/world/locations/fishing-hook.jpg" alt="Жёлтая надпись Подсечь на кнопке" width={299} height={193} sizes="299px" />
                 <figcaption>Вот теперь пора нажимать «Подсечь»</figcaption>
               </figure>
             </div>
@@ -215,7 +228,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               После похода начинается перерыв. Снова зайти в лес можно через два часа.
             </p>
             <figure className={styles.wideFigure}>
-              <Image src="/images/world/locations/forest-paths.jpg" alt="Три тропы и кнопка Собирать в Зачарованном лесу" width={1006} height={469} sizes="(max-width: 1120px) 100vw, 1006px" />
+              <NaturalScreenshot src="/images/world/locations/forest-paths.jpg" alt="Три тропы и кнопка Собирать в Зачарованном лесу" width={1006} height={469} sizes="(max-width: 1120px) 100vw, 1006px" />
               <figcaption>Можно пойти налево, прямо или направо. А на поляне нажимаем «Собирать»</figcaption>
             </figure>
           </section>
@@ -289,7 +302,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               После передачи МД-вещи или её покупки у торговца либо в лавке следующий владелец не сможет передать или продать её в течение двух недель. Для уникальных вещей ограничение действует один месяц.
             </p>
             <figure className={styles.wideFigure}>
-              <Image src="/images/world/locations/market-own-stall.jpg" alt="Вкладка Своя палатка на Рынке" width={879} height={409} sizes="(max-width: 1120px) 100vw, 879px" />
+              <NaturalScreenshot src="/images/world/locations/market-own-stall.jpg" alt="Вкладка Своя палатка на Рынке" width={879} height={409} sizes="(max-width: 1120px) 100vw, 879px" />
               <figcaption>Во вкладке «Своя палатка» можно настроить палатку и купить лицензию</figcaption>
             </figure>
           </section>
@@ -312,7 +325,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               При покупке у игроков курс может меняться. Если теры в продаже нет, остаётся немного подождать и проверить позже. Или грустно посмотреть на красивые вещи и пока закрыть вкладку 😅
             </p>
             <figure className={styles.wideFigure}>
-              <Image src="/images/world/locations/royal-shop-terra.jpg" alt="Покупка терра-голда за серебро у игроков" width={1004} height={413} sizes="(max-width: 1120px) 100vw, 1004px" />
+              <NaturalScreenshot src="/images/world/locations/royal-shop-terra.jpg" alt="Покупка терра-голда за серебро у игроков" width={1004} height={413} sizes="(max-width: 1120px) 100vw, 1004px" />
               <figcaption>Терра-голд, выставленный игроками на продажу за серебро</figcaption>
             </figure>
           </section>
@@ -353,7 +366,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             </p>
 
             <figure className={styles.wideFigure}>
-              <Image src="/images/world/locations/towers.jpg" alt="Строительство и поддержка Башни Познания 10-го уровня" width={1014} height={402} sizes="(max-width: 1120px) 100vw, 1014px" />
+              <NaturalScreenshot src="/images/world/locations/towers.jpg" alt="Строительство и поддержка Башни Познания 10-го уровня" width={1014} height={402} sizes="(max-width: 1120px) 100vw, 1014px" />
               <figcaption>Башня 10-го уровня и Хранилище ресурсов</figcaption>
             </figure>
           </section>
@@ -442,15 +455,15 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
             <div className={styles.locationGallery}>
               <figure>
-                <Image src="/images/world/locations/underground-fishing.jpg" alt="Рыбалка в Подземном озере" width={1018} height={459} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/underground-fishing.jpg" alt="Рыбалка в Подземном озере" width={1018} height={459} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Рыбалка длится до пяти минут</figcaption>
               </figure>
               <figure className={styles.compactFigure}>
-                <Image src="/images/world/locations/golden-fish.jpg" alt="Золотая рыбка из ежедневного задания" width={570} height={90} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/golden-fish.jpg" alt="Золотая рыбка из ежедневного задания" width={570} height={90} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Та самая Золотая рыбка</figcaption>
               </figure>
               <figure>
-                <Image src="/images/world/locations/golden-fish-experience.jpg" alt="Награда опытом за Золотую рыбку" width={696} height={351} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/golden-fish-experience.jpg" alt="Награда опытом за Золотую рыбку" width={696} height={351} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Награда опытом за выполненное задание</figcaption>
               </figure>
             </div>
@@ -481,15 +494,15 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
             <div className={styles.locationGallery}>
               <figure>
-                <Image src="/images/world/locations/labyrinth-mob-fight.jpg" alt="Бой с обычным мобом в Лабиринте" width={1086} height={482} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/labyrinth-mob-fight.jpg" alt="Бой с обычным мобом в Лабиринте" width={1086} height={482} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Бой с обычным мобом</figcaption>
               </figure>
               <figure>
-                <Image src="/images/world/locations/labyrinth-boss-fight.jpg" alt="Бой с Повелителем Лабиринта" width={1040} height={499} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/labyrinth-boss-fight.jpg" alt="Бой с Повелителем Лабиринта" width={1040} height={499} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Повелитель Лабиринта и третий ключ</figcaption>
               </figure>
               <figure className={styles.compactFigure}>
-                <Image src="/images/world/locations/labyrinth-heart.jpg" alt="Золотое Сердце в сундуке Лабиринта" width={567} height={359} sizes="(max-width: 780px) 100vw, 520px" />
+                <NaturalScreenshot src="/images/world/locations/labyrinth-heart.jpg" alt="Золотое Сердце в сундуке Лабиринта" width={567} height={359} sizes="(max-width: 780px) 100vw, 520px" />
                 <figcaption>Золотое Сердце из сундука</figcaption>
               </figure>
             </div>
