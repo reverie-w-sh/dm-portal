@@ -25,7 +25,7 @@ type WorldEdge = {
 
 export const WORLD_LOCATIONS: WorldLocation[] = [
   { id: "home", slug: "home", name: "Дом", description: "Дом персонажа, удобная начальная точка для всех маршрутов.", image: "/images/world/locations/home.jpg", mapPoint: { x: 58, y: 59 } },
-  { id: "central", slug: "central-square", name: "Центральная площадь", description: "Главная площадь города. Отсюда можно пройти к Площади шахтёров или на Улицу гладиаторов.", image: "/images/world/locations/central-square.jpg", mapPoint: { x: 61, y: 51 } },
+  { id: "central", slug: "central-square", name: "Центральная площадь", description: "Главная площадь города. Отсюда можно пройти к Площади шахтёров или на Улицу гладиаторов.", image: "/images/world/locations/central-square.jpg", mapPoint: { x: 61, y: 54 } },
   { id: "shop", slug: "shop", name: "Лавка", description: "Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 56, y: 44 } },
   { id: "alchemist", slug: "alchemist", name: "Алхимик", description: "Алхимическая лавка на Центральной площади.", image: "/images/world/locations/alchemist.jpg", mapPoint: { x: 57, y: 48 } },
   { id: "market", slug: "market", name: "Рынок", description: "Городской рынок и торговые разделы.", image: "/images/world/locations/market.jpg", mapPoint: { x: 63, y: 43 } },
@@ -43,7 +43,7 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
   { id: "fish-shop", slug: "fish-shop", name: "Рыбная лавка", description: "Рыбная лавка на пути к озеру.", mapPoint: { x: 18, y: 65 } },
   { id: "lake", slug: "lake", name: "Озеро", description: "Место рыбалки на светлом лесном озере.", image: "/images/world/locations/lake.jpg", mapPoint: { x: 27, y: 67 } },
   { id: "forest", slug: "enchanted-forest", name: "Зачарованный лес", description: "Тёмный зачарованный лес возле дороги к озеру.", image: "/images/world/locations/enchanted-forest.jpg", mapPoint: { x: 35, y: 71 } },
-  { id: "hunting", slug: "hunting-grounds", name: "Охотничьи угодья", description: "", image: "/images/world/locations/hunting-grounds.jpg", guideHref: "/hunter-guide", guideLabel: "Открыть гайд по охоте", mapPoint: { x: 43, y: 73 } },
+  { id: "hunting", slug: "hunting-grounds", name: "Охотничьи угодья", description: "", image: "/images/world/locations/hunting-grounds.jpg", guideHref: "/hunter-guide", guideLabel: "Открыть гайд по охоте", mapPoint: { x: 46, y: 75 } },
   { id: "desert", slug: "desert", name: "Пустыня", description: "Дальняя западная область мира за дорогой к озеру.", image: "/images/world/locations/desert.jpg", mapPoint: { x: 8, y: 55 } },
 
   { id: "gladiators", slug: "gladiators-street", name: "Улица гладиаторов", description: "Восточная часть города с Мэрией, Трактиром, Колизеем, Осадами и Мастерской.", image: "/images/world/locations/gladiators-street.jpg", mapPoint: { x: 85, y: 52 } },
@@ -52,20 +52,20 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
   { id: "colosseum", slug: "colosseum", name: "Колизей", description: "Боевой район Улицы гладиаторов. Здесь находятся Арена гладиаторов, Бестиарий и Бои сообществ.", image: "/images/world/locations/colosseum.jpg", mapPoint: { x: 91, y: 43 } },
   { id: "arena", slug: "arena", name: "Арена гладиаторов", shortName: "Арена", description: "PvP-локация, где игроки сражаются друг с другом.", image: "/images/world/locations/arena.jpg", mapPoint: { x: 94, y: 35 } },
   { id: "bestiary", slug: "bestiary", name: "Бестиарий", description: "Бои с монстрами. Скучно, но что поделать... Мы ходим туда ради опыта и дропа.", image: "/images/world/locations/bestiary.jpg", mapPoint: { x: 91, y: 39 } },
-  { id: "community-battles", slug: "community-battles", name: "Бои сообществ", shortName: "Бои сообществ", description: "Ещё одна покрытая пылью локация...", image: "/images/world/locations/community-battles.jpg", mapPoint: { x: 96, y: 44 } },
+  { id: "community-battles", slug: "community-battles", name: "Бои сообществ", shortName: "Бои сообществ", description: "Ещё одна покрытая пылью локация...", image: "/images/world/locations/community-battles.jpg", mapPoint: { x: 97, y: 48 } },
   { id: "sieges", slug: "sieges", name: "Осады", description: "Осадный район и начало пути к Серой Пещере.", image: "/images/world/locations/sieges.jpg", mapPoint: { x: 90, y: 61 } },
   { id: "towers", slug: "siege-tower", name: "Башня Познания", shortName: "Башня", description: "Башня сообщества, которая увеличивает опыт во всех боях.", image: "/images/world/locations/towers.jpg", mapPoint: { x: 95, y: 67 } },
   { id: "workshop", slug: "workshop", name: "Мастерская", description: "Ремонт, гравировка, крафт и кожевничество.", image: "/images/world/locations/workshop.jpg", mapPoint: { x: 84, y: 67 } },
 
-  { id: "cave-road", slug: "cave-road", name: "Дорога к Пещерам", description: "Дорога от города к пещере с Подземным озером, Лабиринтом и прочими подземельями.", image: "/images/world/locations/cave-road.jpg", mapPoint: { x: 82, y: 28 } },
+  { id: "cave-road", slug: "cave-road", name: "Дорога к Пещере", description: "Дорога от города к пещере с Подземным озером, Лабиринтом и прочими подземельями.", image: "/images/world/locations/cave-road.jpg", mapPoint: { x: 93, y: 56 } },
   { id: "grey-cave", slug: "grey-cave", name: "Серая Пещера", description: "Главный вход в пещерный комплекс.", image: "/images/world/locations/grey-cave.jpg", mapPoint: { x: 73, y: 13 } },
   { id: "guardian", slug: "guardian", name: "Хранитель", description: "Комната Хранителя в Серой Пещере.", image: "/images/world/locations/guardian.jpg", mapPoint: { x: 79, y: 10 } },
   { id: "labyrinth", slug: "labyrinth", name: "Лабиринт", description: "Прямой проход из Серой Пещеры.", image: "/images/world/locations/labyrinth.jpg", mapPoint: { x: 73, y: 6 } },
   { id: "underground-lake", slug: "underground-lake", name: "Подземное озеро", shortName: "Подз. озеро", description: "Подземное озеро в Серой Пещере.", image: "/images/world/locations/underground-lake.jpg", mapPoint: { x: 86, y: 15 } },
   { id: "rift", slug: "rift", name: "Расщелина", description: "Перекрёсток трёх больших подземелий.", image: "/images/world/locations/rift.jpg", guideHref: "/dungeons", guideLabel: "Открыть карты подземелий", mapPoint: { x: 62, y: 14 } },
   { id: "malachite", slug: "malachite-mines", name: "Малахитовые Рудники", shortName: "Рудники", description: "Подземелье Малахитовые Рудники.", guideHref: "/malahitovye-rudniki", guideLabel: "Открыть карту Рудников", mapPoint: { x: 53, y: 10 } },
-  { id: "garden", slug: "garden-of-nightmares", name: "Сад Кошмаров", shortName: "Сад Кошмаров", description: "Подземелье Сад Кошмаров.", guideHref: "/sad-koshmarov", guideLabel: "Открыть карту Сада", mapPoint: { x: 59, y: 6 } },
-  { id: "shadow-forest", slug: "shadow-forest", name: "Лес Теней", description: "Подземелье Лес Теней.", guideHref: "/les-teney", guideLabel: "Открыть карту Леса Теней", mapPoint: { x: 64, y: 8 } },
+  { id: "garden", slug: "garden-of-nightmares", name: "Сад Кошмаров", shortName: "Сад Кошмаров", description: "Подземелье Сад Кошмаров.", guideHref: "/sad-koshmarov", guideLabel: "Открыть карту Сада", mapPoint: { x: 58, y: 5 } },
+  { id: "shadow-forest", slug: "shadow-forest", name: "Лес Теней", description: "Подземелье Лес Теней.", guideHref: "/les-teney", guideLabel: "Открыть карту Леса Теней", mapPoint: { x: 65, y: 9 } },
 ];
 
 const WORLD_EDGES: WorldEdge[] = [
@@ -97,8 +97,8 @@ const WORLD_EDGES: WorldEdge[] = [
   { from: "gladiators", to: "sieges", forward: "На Улице гладиаторов нажми «Осады».", backward: "Из Осад вернись на Улицу гладиаторов." },
   { from: "sieges", to: "towers", forward: "В разделе Осад открой «Башню Познания».", backward: "Из Башни Познания вернись в Осады." },
   { from: "gladiators", to: "workshop", forward: "На Улице гладиаторов нажми «Мастерская».", backward: "Из Мастерской вернись на Улицу гладиаторов." },
-  { from: "sieges", to: "cave-road", forward: "Из района Осад выйди на Дорогу к Пещерам.", backward: "По Дороге к Пещерам вернись к Осадному району." },
-  { from: "cave-road", to: "grey-cave", forward: "Пройди по Дороге к Пещерам до входа в Серую Пещеру.", backward: "Выйди из Серой Пещеры на Дорогу к Пещерам." },
+  { from: "sieges", to: "cave-road", forward: "Из района Осад выйди на Дорогу к Пещере.", backward: "По Дороге к Пещере вернись к Осадному району." },
+  { from: "cave-road", to: "grey-cave", forward: "Пройди по Дороге к Пещере до входа в Серую Пещеру.", backward: "Выйди из Серой Пещеры на Дорогу к Пещере." },
   { from: "grey-cave", to: "guardian", forward: "В Серой Пещере поверни направо, к Хранителю.", backward: "От Хранителя вернись в Серую Пещеру." },
   { from: "grey-cave", to: "labyrinth", forward: "В Серой Пещере иди прямо, в Лабиринт.", backward: "Из Лабиринта вернись в Серую Пещеру." },
   { from: "grey-cave", to: "underground-lake", forward: "В Серой Пещере выбери «Подземное озеро».", backward: "С Подземного озера вернись в Серую Пещеру." },

@@ -186,6 +186,25 @@
 
 .pin:hover,
 .pin:focus-visible { border-color: #ffd47b; color: #fff6df; background: rgba(75, 43, 15, .92); }
+.pinHub {
+  z-index: 1;
+  border-color: rgba(240, 183, 83, .82);
+  border-radius: 6px;
+  padding: 6px 11px 6px 8px;
+  color: #ffe0a0;
+  background: linear-gradient(180deg, rgba(91, 29, 24, .96), rgba(48, 20, 18, .96));
+  box-shadow:
+    0 0 0 1px rgba(44, 15, 12, .92),
+    0 4px 14px rgba(0, 0, 0, .7),
+    inset 0 0 10px rgba(223, 150, 49, .12);
+  font-size: clamp(11px, .88vw, 14px);
+  font-weight: 700;
+}
+.pinHub .pinDot {
+  border-radius: 2px;
+  transform: rotate(45deg);
+  background: #f0bd5f;
+}
 .pinRoute { box-shadow: 0 0 0 2px rgba(234, 171, 67, .38), 0 0 20px rgba(255, 183, 65, .55); }
 .pinActive { z-index: 3; border-color: #fff0b8; color: #211207; background: #e6b252; }
 .pinDot { width: 8px; height: 8px; flex: 0 0 8px; border-radius: 50%; background: #e8b755; box-shadow: 0 0 8px #f6ca76; }

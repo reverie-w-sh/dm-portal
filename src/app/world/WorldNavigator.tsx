@@ -11,6 +11,18 @@ import {
 import styles from "./page.module.css";
 
 const MAP_LOCATIONS = WORLD_LOCATIONS.filter((location) => location.mapPoint);
+const MAP_HUB_IDS = new Set([
+  "central",
+  "miners",
+  "lake-road",
+  "fisher-road",
+  "gladiators",
+  "colosseum",
+  "sieges",
+  "cave-road",
+  "grey-cave",
+  "rift",
+]);
 
 type WorldNavigatorProps = {
   initialFrom?: string;
@@ -91,11 +103,12 @@ export default function WorldNavigator({ initialFrom, initialTo }: WorldNavigato
               const point = location.mapPoint!;
               const active = location.id === to;
               const onRoute = routeIds.has(location.id);
+              const hub = MAP_HUB_IDS.has(location.id);
               return (
                 <button
                   key={location.id}
                   type="button"
-                  className={`${styles.pin} ${active ? styles.pinActive : ""} ${onRoute ? styles.pinRoute : ""}`}
+                  className={`${styles.pin} ${hub ? styles.pinHub : ""} ${active ? styles.pinActive : ""} ${onRoute ? styles.pinRoute : ""}`}
                   style={{ left: `${point.x}%`, top: `${point.y}%` }}
                   onClick={() => selectDestination(location.id)}
                   aria-pressed={active}
