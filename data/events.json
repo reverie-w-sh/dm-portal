@@ -1,5 +1,93 @@
 [
   {
+    "id": "3e5bbc4c-34e6-41c0-ad4d-59c123133c39",
+    "syncId": "2026-09-20T18:20:01.050Z",
+    "createdAt": "2026-09-20T18:20:01.050Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "3712",
+    "characterName": "Тьма",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3712",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "b5ad4223-450c-476c-8bca-92c67e6c5b88",
+    "syncId": "2026-09-20T18:20:01.050Z",
+    "createdAt": "2026-09-20T18:20:01.050Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "22695",
+    "characterName": "MadDad",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22695",
+    "clanId": "243",
+    "clanName": "Guardians",
+    "oldLevel": 7,
+    "newLevel": 8
+  },
+  {
+    "id": "70821977-d2d9-4578-8ce5-b8da5caa3e45",
+    "syncId": "2026-09-20T18:20:01.050Z",
+    "createdAt": "2026-09-20T18:20:01.050Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "21932",
+    "characterName": "Мамонт",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=21932",
+    "clanId": "213",
+    "clanName": "Ozune",
+    "oldLevel": 6,
+    "newLevel": 7
+  },
+  {
+    "id": "dc2b55f6-4593-4c89-bfa3-2d8d45482425",
+    "syncId": "2026-09-20T18:20:01.050Z",
+    "createdAt": "2026-09-20T18:20:01.050Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "2948",
+    "characterName": "ХОМ",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2948",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "80b7a77e-e448-4290-9cab-012c296d01cd",
+    "syncId": "2026-09-20T18:20:01.050Z",
+    "createdAt": "2026-09-20T18:20:01.050Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1985",
+    "characterName": "Serg",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1985",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "7ae4b284-2a86-4a25-b7d1-ae3936d523d0",
     "syncId": "2026-09-19T18:05:47.798Z",
     "createdAt": "2026-09-19T18:05:47.798Z",
