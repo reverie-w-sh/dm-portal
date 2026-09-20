@@ -23,8 +23,7 @@ export default async function WorldPage({ searchParams }: WorldPageProps) {
             <span />
           </div>
           <p>
-            Выбери, где стоишь и куда хочешь попасть. Навигатор покажет путь
-            по тем названиям и кнопкам, которые ты увидишь в игре.
+            Выбери, где стоишь и куда хочешь попасть. Навигатор покажет тебе путь.
           </p>
         </header>
         <WorldNavigator initialFrom={from} initialTo={to} />

@@ -146,7 +146,7 @@ export default function WorldNavigator({ initialFrom, initialTo }: WorldNavigato
       <section className={styles.catalogue}>
         <div className={styles.sectionTitle}>
           <p className={styles.eyebrow}>Все точки мира</p>
-          <h2>Локации и полезные места</h2>
+          <h2>Локации</h2>
         </div>
         <div className={styles.locationGrid}>
           {WORLD_LOCATIONS.map((location) => (
