@@ -4,6 +4,7 @@ export const NAV_LINKS = [
   { href: "/chronicle", label: "ЛЕТОПИСЬ" },
   { href: "/gallery", label: "ГАЛЕРЕЯ" },
   { href: "/gifts", label: "ПОДАРОЧКИ" },
+  { href: "/world", label: "КАРТА МИРА" },
   { href: "/links", label: "БИБЛИОТЕКА" },
 ] as const;
 

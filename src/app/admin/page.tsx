@@ -392,6 +392,7 @@ const PAGE_NAMES: Record<string, string> = {
   "/gifts": "Подарочки",
   "/links": "Что-то полезное",
   "/gallery": "Галерея",
+  "/world": "Карта мира",
 };
 
 function pageName(pathname: string): string {

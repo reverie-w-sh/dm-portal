@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import clansJson from "../../data/clans.json";
 import playersJson from "../../data/players.json";
+import { WORLD_LOCATIONS } from "@/lib/world-map";
 
 const baseUrl = "https://wolfchen-clan.com";
 
@@ -9,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "", "/about", "/alliances", "/alliances/compare", "/chronicle", "/clans",
     "/clans/compare", "/dom-boli", "/dungeons", "/gallery", "/gifts",
     "/hunter-board", "/hunter-guide", "/les-teney", "/links", "/malahitovye-rudniki",
-    "/members", "/players", "/personal-smiles", "/personal-items", "/couples", "/ratings", "/sad-koshmarov",
+    "/members", "/players", "/personal-smiles", "/personal-items", "/couples", "/ratings", "/sad-koshmarov", "/world",
   ];
 
   const staticPages = staticRoutes.map((route) => ({
@@ -33,5 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.5,
   }));
 
-  return [...staticPages, ...clanPages, ...playerPages];
+  const worldPages = WORLD_LOCATIONS.map((location) => ({
+    url: `${baseUrl}/world/${location.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.55,
+  }));
+
+  return [...staticPages, ...worldPages, ...clanPages, ...playerPages];
 }

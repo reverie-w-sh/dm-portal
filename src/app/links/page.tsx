@@ -4,6 +4,11 @@ import styles from "./page.module.css";
 
 const usefulLinks = [
   {
+    href: "/world",
+    image: "/images/world/world-map.webp",
+    alt: "Карта мира и навигатор",
+  },
+  {
     href: "/couples",
     image: "/images/links/couples.webp",
     alt: "Семейные пары",
