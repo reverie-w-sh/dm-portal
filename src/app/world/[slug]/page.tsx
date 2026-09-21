@@ -79,6 +79,18 @@ export default async function LocationPage({ params }: LocationPageProps) {
           </div>
         )}
 
+        {location.id === "bestiary" && (
+          <div className={styles.screenshot}>
+            <NaturalScreenshot
+              src="/images/world/locations/bestiary-monsters.webp"
+              alt="Мобы Бестиария в виде стикеров"
+              width={1447}
+              height={2048}
+              sizes="(max-width: 780px) 100vw, 720px"
+            />
+          </div>
+        )}
+
         {location.id === "memory-tree" && (
           <section className={styles.locationGuide}>
             <p className={styles.eyebrow}>Квест локации</p>
