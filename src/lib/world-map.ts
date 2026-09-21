@@ -33,7 +33,7 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
 
   { id: "miners", slug: "miners-square", name: "Площадь шахтёров", description: "Каменная площадь между Центральной площадью и дорогой к озеру.", image: "/images/world/locations/miners-square.jpg", mapPoint: { x: 43, y: 43 } },
   { id: "donor", slug: "donor-search", name: "Поиск донора", description: "Тут можно кого-то укусить.", image: "/images/world/locations/donor-search.jpg", mapPoint: { x: 32, y: 33 } },
-  { id: "farm", slug: "farm", name: "Ферма", description: "Ферма возле Площади шахтёров.", mapPoint: { x: 43, y: 37 } },
+  { id: "farm", slug: "farm", name: "Ферма", description: "Чеснок сажать тут!", mapPoint: { x: 43, y: 37 } },
   { id: "blood", slug: "blood-dungeon", name: "Кровавое подземелье", shortName: "Дом Боли", description: "Кровавое подземелье, в прошлом известное как Дом Боли.", image: "/images/world/locations/blood-dungeon.jpg", guideHref: "/dom-boli", guideLabel: "Открыть карты Дома Боли", mapPoint: { x: 34, y: 23 } },
   { id: "vampire-tomb", slug: "vampire-tomb", name: "Гробница вампиров", shortName: "Гробница", description: "Сюда ходят, чтобы варить руны... Позже напишу подробнее :)", mapPoint: { x: 45, y: 23 } },
 
@@ -51,7 +51,7 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
   { id: "city-hall", slug: "city-hall", name: "Мэрия", description: "Здесь можно найти Хранилища сообщества и альянса, Реинкарнироваться и Стать немножко счастливее.", image: "/images/world/locations/city-hall.jpg", mapPoint: { x: 79, y: 47 } },
   { id: "tavern", slug: "tavern", name: "ПивБар", description: "У Трактирщика много интересного. Квестовые вещи с фестивалей тоже сюда", image: "/images/world/locations/tavern.jpg", mapPoint: { x: 81, y: 56 } },
   { id: "colosseum", slug: "colosseum", name: "Колизей", description: "Боевой район Улицы гладиаторов. Здесь находятся Арена гладиаторов, Бестиарий и Бои сообществ.", image: "/images/world/locations/colosseum.jpg", mapPoint: { x: 91, y: 43 } },
-  { id: "arena", slug: "arena", name: "Арена гладиаторов", shortName: "Арена гладиаторов", description: "PvP-локация, где игроки сражаются друг с другом.", image: "/images/world/locations/arena.jpg", mapPoint: { x: 94, y: 35 } },
+  { id: "arena", slug: "arena", name: "Арена гладиаторов", shortName: "PVP Арена", description: "PvP-локация, где игроки сражаются друг с другом.", image: "/images/world/locations/arena.jpg", mapPoint: { x: 94, y: 35 } },
   { id: "bestiary", slug: "bestiary", name: "Бестиарий", description: "Бои с монстрами. Скучно, но что поделать... Мы ходим сюда ради опыта и дропа.", image: "/images/world/locations/bestiary.jpg", mapPoint: { x: 91, y: 39 } },
   { id: "community-battles", slug: "community-battles", name: "Бои сообществ", shortName: "Бои сообществ", description: "Ещё одна покрытая пылью локация...", image: "/images/world/locations/community-battles.jpg", mapPoint: { x: 97, y: 48 } },
   { id: "sieges", slug: "sieges", name: "Осады", description: "Сейчас тут Башня и выход из города к Серой Пещере, но может когда-то и осады вернутся", image: "/images/world/locations/sieges.jpg", mapPoint: { x: 90, y: 61 } },
