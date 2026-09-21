@@ -15,6 +15,7 @@ const MAP_HUB_IDS = new Set([
   "central",
   "miners",
   "lake-road",
+  "lake-road-fishing",
   "gladiators",
   "colosseum",
   "sieges",
