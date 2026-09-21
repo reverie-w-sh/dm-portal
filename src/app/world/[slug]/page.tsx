@@ -84,9 +84,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
             <p className={styles.eyebrow}>Квест локации</p>
             <h2>Как вырастить яблоко</h2>
             <p>
-              Оставьте о себе память навеки, выполнив несложный квест.
-            </p>
-            <p>
               Разместите своё яблоко на дереве и удобряйте его. Через 30 дней яблоко созреет.
             </p>
             <p className={styles.reward}>
