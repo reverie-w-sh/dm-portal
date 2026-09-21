@@ -496,7 +496,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               </figure>
               <figure>
                 <NaturalScreenshot src="/images/world/locations/labyrinth-boss-fight.jpg" alt="Бой с Повелителем Лабиринта" width={1040} height={499} sizes="(max-width: 780px) 100vw, 520px" />
-                <figcaption>></figcaption>Бой с Повелителем Бармаглотов за третий ключ</figcaption>
+                <figcaption>Бой с Повелителем Бармаглотов за третий ключ</figcaption>
               </figure>
               <figure className={styles.compactFigure}>
                 <NaturalScreenshot src="/images/world/locations/labyrinth-heart.jpg" alt="Золотое Сердце в сундуке Лабиринта" width={567} height={359} sizes="(max-width: 780px) 100vw, 520px" />
