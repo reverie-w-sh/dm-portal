@@ -39,7 +39,7 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
 
   { id: "lake-road", slug: "lake-road", name: "Дорога к озеру", description: "Зелёный перекрёсток между пустыней, Площадью шахтёров, лесом, охотой и озером.", image: "/images/world/locations/lake-road.jpg", mapPoint: { x: 28, y: 50 } },
   { id: "memory-tree", slug: "memory-tree", name: "Древо памяти", description: "Это дерево все помнит! Ладно, если серьезно - здесь можно вырастить своё яблоко и получить доступ к загрузке фотографий в галерею", image: "/images/world/locations/memory-tree.jpg", mapPoint: { x: 24, y: 43 } },
-  { id: "lake-road-fishing", slug: "lake-road-fishing", name: "Дорога к озеру — к рыбалке", shortName: "Дорога к озеру", description: "Отсюда можно пройти на Озеро, в Рыбную лавку или на Путь рыбака.", image: "/images/world/locations/fisher-road.jpg", mapPoint: { x: 27, y: 59 } },
+  { id: "lake-road-fishing", slug: "lake-road-fishing", name: "Дорога к озеру → к рыбалке", shortName: "Дорога к озеру → к рыбалке", description: "Отсюда можно пройти на Озеро, в Рыбную лавку или на Путь рыбака.", image: "/images/world/locations/fisher-road.jpg", mapPoint: { x: 27, y: 59 } },
   { id: "fisher-road", slug: "fisher-road", name: "Путь рыбака", description: "Не ходи сюда! Просто поверь на слово - оно тебе не нужно)", mapPoint: { x: 15, y: 59 } },
   { id: "fish-shop", slug: "fish-shop", name: "Рыбная лавка", description: "Самое полезное, что здесь есть - это Де-Крафт.", mapPoint: { x: 18, y: 65 } },
   { id: "lake", slug: "lake", name: "Озеро", description: "Место рыбалки на светлом лесном озере.", image: "/images/world/locations/lake.jpg", mapPoint: { x: 27, y: 67 } },

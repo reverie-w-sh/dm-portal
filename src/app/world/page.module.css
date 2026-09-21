@@ -162,6 +162,27 @@
 
 .mapImage { display: block; width: 100%; height: auto; }
 
+.mapArrows {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(20, 8, 0, .95)) drop-shadow(0 0 4px rgba(255, 190, 55, .6));
+}
+
+.mapArrow {
+  fill: none;
+  stroke: #f0b73f;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.mapArrowHead { fill: #f0b73f; }
+
 .pin {
   position: absolute;
   z-index: 2;

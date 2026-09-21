@@ -99,6 +99,19 @@ export default function WorldNavigator({ initialFrom, initialTo }: WorldNavigato
               sizes="(max-width: 800px) 1100px, 1500px"
               className={styles.mapImage}
             />
+            <svg className={styles.mapArrows} viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <marker id="gold-arrow-start" markerWidth="5" markerHeight="5" refX="1.4" refY="2.5" orient="auto-start-reverse">
+                  <path d="M5,0 L0,2.5 L5,5 Z" className={styles.mapArrowHead} />
+                </marker>
+                <marker id="gold-arrow-end" markerWidth="5" markerHeight="5" refX="3.6" refY="2.5" orient="auto">
+                  <path d="M0,0 L5,2.5 L0,5 Z" className={styles.mapArrowHead} />
+                </marker>
+              </defs>
+              <line x1="57" y1="51" x2="47" y2="40.5" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
+              <line x1="39.5" y1="40.5" x2="31" y2="47.5" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
+              <line x1="66" y1="54" x2="80" y2="52" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
+            </svg>
             {MAP_LOCATIONS.map((location) => {
               const point = location.mapPoint!;
               const active = location.id === to;
