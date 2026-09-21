@@ -24,12 +24,12 @@ type WorldEdge = {
 };
 
 export const WORLD_LOCATIONS: WorldLocation[] = [
-  { id: "home", slug: "home", name: "Дом", description: "Это твой дом. Выработай в себе привычку выходить из игры отсюда и не бросать персонажа на улице - пригодится ;).", image: "/images/world/locations/home.jpg", mapPoint: { x: 70, y: 52 } },
-  { id: "central", slug: "central-square", name: "Центральная площадь", description: "Главная площадь города. Отсюда можно пройти к Площади шахтёров или на Улицу гладиаторов.", image: "/images/world/locations/central-square.jpg", mapPoint: { x: 61, y: 54 } },
-  { id: "shop", slug: "shop", name: "Лавка", description: "Магазин. Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 54.5, y: 48 } },
-  { id: "alchemist", slug: "alchemist", name: "Алхимик", description: "Алхимическая лавка на Центральной площади.", image: "/images/world/locations/alchemist.jpg", mapPoint: { x: 56, y: 44 } },
-  { id: "market", slug: "market", name: "Рынок", description: "Городской рынок", image: "/images/world/locations/market.jpg", mapPoint: { x: 63, y: 43 } },
-  { id: "royal-shop", slug: "royal-shop", name: "Королевская лавка", shortName: "Кор. лавка", description: "Королевская лавка на Центральной площади.", image: "/images/world/locations/royal-shop.jpg", mapPoint: { x: 67, y: 47 } },
+  { id: "home", slug: "home", name: "Дом", description: "Это твой дом. Выработай в себе привычку выходить из игры отсюда и не бросать персонажа на улице - пригодится ;).", image: "/images/world/locations/home.jpg", mapPoint: { x: 70, y: 59 } },
+  { id: "central", slug: "central-square", name: "Центральная площадь", description: "Главная площадь города. Отсюда можно пройти к Площади шахтёров или на Улицу гладиаторов.", image: "/images/world/locations/central-square.jpg", mapPoint: { x: 61, y: 61 } },
+  { id: "shop", slug: "shop", name: "Лавка", description: "Магазин. Городская лавка на Центральной площади.", image: "/images/world/locations/shop.jpg", mapPoint: { x: 54.5, y: 55 } },
+  { id: "alchemist", slug: "alchemist", name: "Алхимик", description: "Алхимическая лавка на Центральной площади.", image: "/images/world/locations/alchemist.jpg", mapPoint: { x: 56, y: 51 } },
+  { id: "market", slug: "market", name: "Рынок", description: "Городской рынок", image: "/images/world/locations/market.jpg", mapPoint: { x: 63, y: 50 } },
+  { id: "royal-shop", slug: "royal-shop", name: "Королевская лавка", shortName: "Кор. лавка", description: "Королевская лавка на Центральной площади.", image: "/images/world/locations/royal-shop.jpg", mapPoint: { x: 67, y: 54 } },
 
   { id: "miners", slug: "miners-square", name: "Площадь шахтёров", description: "Каменная площадь между Центральной площадью и дорогой к озеру.", image: "/images/world/locations/miners-square.jpg", mapPoint: { x: 43, y: 43 } },
   { id: "donor", slug: "donor-search", name: "Поиск донора", description: "Тут можно кого-то укусить.", image: "/images/world/locations/donor-search.jpg", mapPoint: { x: 32, y: 33 } },

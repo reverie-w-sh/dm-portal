@@ -108,9 +108,9 @@ export default function WorldNavigator({ initialFrom, initialTo }: WorldNavigato
                   <path d="M0,0 L5,2.5 L0,5 Z" className={styles.mapArrowHead} />
                 </marker>
               </defs>
-              <line x1="57" y1="51" x2="47" y2="45" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
+              <line x1="57" y1="58" x2="47" y2="46" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
               <line x1="39.5" y1="43.5" x2="31" y2="48" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
-              <line x1="66" y1="54" x2="80" y2="52" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
+              <line x1="66" y1="59" x2="80" y2="54" className={styles.mapArrow} markerStart="url(#gold-arrow-start)" markerEnd="url(#gold-arrow-end)" />
             </svg>
             {MAP_LOCATIONS.map((location) => {
               const point = location.mapPoint!;
