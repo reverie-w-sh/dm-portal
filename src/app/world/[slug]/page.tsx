@@ -550,15 +550,21 @@ export default async function LocationPage({ params }: LocationPageProps) {
         </div>
 
         {location.id === "bestiary" && (
-          <div className={styles.screenshot}>
-            <NaturalScreenshot
-              src="/images/world/locations/bestiary-monsters.webp"
-              alt="Мобы Бестиария в виде стикеров"
-              width={1447}
-              height={2048}
-              sizes="(max-width: 780px) 100vw, 720px"
-            />
-          </div>
+          <section className={styles.monsterGrid} aria-label="Мобы Бестиария">
+            {Array.from({ length: 20 }, (_, index) => {
+              const number = String(index + 1).padStart(2, "0");
+              return (
+                <div key={number}>
+                  <img
+                    src={`/images/world/locations/bestiary-monster-${number}.webp`}
+                    alt={`Моб Бестиария ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              );
+            })}
+          </section>
         )}
       </article>
     </main>

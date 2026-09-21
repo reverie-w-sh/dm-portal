@@ -10,6 +10,9 @@
 .header > span { display: block; max-width: 700px; margin: 12px auto 0; color: #bbaa8d; line-height: 1.6; }
 .screenshot { margin-bottom: 22px; overflow: hidden; border: 1px solid rgba(201, 141, 49, .4); border-radius: 16px; background: #090a09; box-shadow: 0 18px 44px rgba(0, 0, 0, .5); }
 .screenshot img { display: block; width: auto; max-width: 100%; height: auto; max-height: 680px; margin: 0 auto; object-fit: contain; }
+.monsterGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px 14px; align-items: end; margin-top: 28px; }
+.monsterGrid > div { display: flex; min-width: 0; min-height: 210px; align-items: flex-end; justify-content: center; padding: 4px; }
+.monsterGrid img { display: block; width: 100%; max-width: 200px; height: 210px; object-fit: contain; filter: drop-shadow(0 9px 9px rgba(0, 0, 0, .55)); }
 .locationGuide { margin: 0 0 22px; border: 1px solid rgba(194, 132, 41, .3); border-radius: 16px; padding: 22px 26px; background: linear-gradient(145deg, rgba(35, 28, 20, .92), rgba(9, 10, 9, .94)); box-shadow: 0 14px 38px rgba(0, 0, 0, .35); }
 .locationGuide h2 { margin: 0 0 16px; color: #e4b75e; font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 400; text-shadow: 0 2px 2px #000; }
 .locationGuide p, .locationGuide li { color: #c5b79f; font-size: 15px; line-height: 1.65; }
@@ -65,4 +68,6 @@
 .neighbours b { color: #d79d43; }
 .guideButton { color: #211307; background: linear-gradient(#e3b45b, #b97824); border-color: #efcd83; }
 .guideButton:hover { color: #1c1007; background: linear-gradient(#efc774, #c4872d); }
+@media (max-width: 900px) { .monsterGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .monsterGrid > div, .monsterGrid img { height: 190px; min-height: 190px; } }
 @media (max-width: 780px) { .page { padding: 20px 8px 52px; } .columns, .locationGallery, .itemList, .licenseGrid { grid-template-columns: 1fr; } .card, .locationGuide { padding: 17px 14px; } }
+@media (max-width: 620px) { .monsterGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 8px; } .monsterGrid > div, .monsterGrid img { height: 180px; min-height: 180px; } }
