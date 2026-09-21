@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-21T08:59:08.863Z",
+  "createdAt": "2026-09-21T20:07:33.771Z",
   "players": [
     {
       "cuid": "7939",
@@ -14750,7 +14750,7 @@
       "reincarnationLevel": 8,
       "clanId": "212",
       "clanName": "Лесные Оборотни",
-      "position": "Глава сообщества",
+      "position": "Глава спільноти",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1966",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -38178,30 +38178,18 @@
     {
       "owner": "Хранитель Тайн",
       "itemIds": [
-        "505965",
         "505960",
         "506870",
         "505957",
-        "505962",
-        "505963",
-        "505964",
-        "505961",
         "505958",
-        "430127",
-        "505967"
+        "430127"
       ],
       "itemNames": [
-        "Армани(+4 силы)",
         "Броня Тишины(+3 брони)",
         "Время-Деньги",
         "Загадка",
-        "Кольцо Законной Любви",
-        "Наследство",
-        "Наследство",
-        "Обручальное колечко",
         "Память",
-        "Перчатки Удачи(Мд)",
-        "Пояс Власти(Мд)"
+        "Перчатки Удачи(Мд)"
       ]
     },
     {
@@ -39186,12 +39174,12 @@
     {
       "owner": "FaLLeN",
       "itemIds": [
-        "549420",
         "203431",
+        "203432",
         "258826"
       ],
       "itemNames": [
-        "Меч Рыцаря(Мд)(+12)",
+        "Меч Рыцаря(Мд)(+15)",
         "Меч Рыцаря(Мд)(+15)",
         "Jumbo Wagner(Мд)(+15)"
       ]
@@ -39998,43 +39986,33 @@
     {
       "owner": "SubZero",
       "itemIds": [
-        "317784",
-        "438066",
-        "442530",
-        "432501",
-        "443043",
-        "443045",
-        "495401",
-        "576795",
-        "362774",
-        "580424",
-        "337663",
-        "383015",
-        "443621",
-        "575394",
-        "443047",
-        "443060",
-        "404084",
-        "457987"
+        "403823",
+        "406324",
+        "419371",
+        "484061",
+        "484062",
+        "464077",
+        "359076",
+        "430138",
+        "250850",
+        "95019",
+        "446990",
+        "484060",
+        "431745"
       ],
       "itemNames": [
         "Арктический пояс(Мд)",
         "Булава холода(Мд)(+15)",
-        "Защита льдом(+75 жизни)",
-        "Кольцо SubZero",
         "Кольцо SubZero",
         "Кольцо SubZero",
         "Кольцо SubZero",
         "Кристаллы льда(Зч)",
-        "Ледяная скорбь(Мд)(+12)",
-        "Ледяной шаг(Зч)(+6 силы)",
+        "Ледяной шаг(Зч)(+4 силы)",
         "Мантия снежной бури(Мд)(+15)",
-        "Перчатки заморозки(Мд)(+6 силы)",
+        "Перчатки заморозки(Мд)(+4 силы)",
         "Поток холода",
         "Призрак холода(Зч)(+3 брони)",
         "Снежная защита(+3 брони)",
-        "Стрелы льда(Мд)(+12)",
-        "Топор Лед и Холод(Мд)(+15)",
         "Топор Лед и Холод(Мд)(+15)"
       ]
     },
@@ -40960,6 +40938,28 @@
       ]
     },
     {
+      "cuid": "22733",
+      "nick": "Bukashka",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22733",
+      "personalSmilesCount": 14,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/prv_bukashka1.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka2.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka3.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka4.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka5.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka6.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka7.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka8.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka9.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka11.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka12.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka13.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka14.gif",
+        "https://dm-game.com/layout/all/smiles/prv_bukashka15.gif"
+      ]
+    },
+    {
       "cuid": "1958",
       "nick": "Noelvena",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1958",
@@ -40979,27 +40979,6 @@
         "https://dm-game.com/layout/all/smiles/prv_dances7.gif",
         "https://dm-game.com/layout/all/smiles/prv_dances8.gif",
         "https://dm-game.com/layout/all/smiles/prv_dances9.gif"
-      ]
-    },
-    {
-      "cuid": "22733",
-      "nick": "Bukashka",
-      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22733",
-      "personalSmilesCount": 13,
-      "personalSmiles": [
-        "https://dm-game.com/layout/all/smiles/prv_bukashka1.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka2.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka3.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka4.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka5.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka6.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka7.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka8.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka9.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka11.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka12.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka13.gif",
-        "https://dm-game.com/layout/all/smiles/prv_bukashka14.gif"
       ]
     },
     {

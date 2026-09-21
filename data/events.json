@@ -1,5 +1,35 @@
 [
   {
+    "id": "e1594542-dbd2-4c5b-9951-cf5b204ff44d",
+    "syncId": "2026-09-21T20:07:33.771Z",
+    "createdAt": "2026-09-21T20:07:33.771Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "1966",
+    "characterName": "ХАРАКТЕРНИК",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1966",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldPosition": "Глава сообщества",
+    "newPosition": "Глава спільноти"
+  },
+  {
+    "id": "ae3c04c9-340e-4a14-8409-2609e212f073",
+    "syncId": "2026-09-21T20:07:33.771Z",
+    "createdAt": "2026-09-21T20:07:33.771Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "22733",
+    "characterName": "Bukashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=22733",
+    "amount": 1,
+    "oldCount": 13,
+    "newCount": 14,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_bukashka15.gif"
+    ]
+  },
+  {
     "id": "293b5a9b-13df-4f76-a1ba-ae2bf9616709",
     "syncId": "2026-09-21T08:59:08.863Z",
     "createdAt": "2026-09-21T08:59:08.863Z",
