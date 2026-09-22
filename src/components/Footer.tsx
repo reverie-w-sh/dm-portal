@@ -38,6 +38,15 @@ export default function Footer() {
           ))}
         </nav>
 
+        <a
+          href="https://dm-game.com/register.php"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.gameButton}
+        >
+          Зарегистрироваться в игре
+        </a>
+
         <p className={styles.copyright}>♥ 2026 © A&amp;W ♥</p>
       </div>
     </footer>

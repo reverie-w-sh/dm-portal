@@ -210,6 +210,15 @@ export default function Navbar() {
           })}
         </nav>
 
+        <a
+          href="https://dm-game.com/register.php"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.gameButton}
+        >
+          Зарегистрироваться в игре
+        </a>
+
         <button
           type="button"
           className={`${styles.searchButton} ${searchOpen ? styles.searchButtonOpen : ""}`}
@@ -340,6 +349,16 @@ export default function Navbar() {
         className={`${styles.mobileNav} ${open ? styles.mobileNavOpen : ""}`}
       >
         <nav aria-label="Мобильная навигация">
+          <a
+            href="https://dm-game.com/register.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.mobileLink} ${styles.mobileGameLink}`}
+            onClick={() => setOpen(false)}
+          >
+            <span>Зарегистрироваться в игре</span>
+            <b aria-hidden="true">→</b>
+          </a>
           {NAV_LINKS.map(({ href, label }) => {
             const active = isActive(href);
             const showNew = isNew(href);
