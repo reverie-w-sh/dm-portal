@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./page.module.css";
 
 const desktopCards = [
   {
@@ -172,6 +173,38 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <section className={styles.gameIntro} aria-labelledby="game-intro-title">
+          <div className={styles.gameIntroOrnament} aria-hidden="true">
+            <span />
+            <img src="/icons/paw-gold.svg" alt="" />
+            <span />
+          </div>
+          <h1 id="game-intro-title">Древний Мир</h1>
+          <p>
+            «Древний Мир» - браузерная ролевая игра с боями, кланами, охотой,
+            рыбалкой, лесом, лабиринтами, профессиями и торговлей. На нашем сайте
+            собраны карты, инструкции, рейтинги, подарочки и всё, что может
+            пригодиться игрокам.
+          </p>
+          <p>
+            Если ты здесь впервые, загляни на карту мира. Там можно выбрать нужную
+            локацию, узнать, как до неё добраться и что там вообще делать.
+          </p>
+          <div className={styles.gameIntroActions}>
+            <Link href="/world" className={styles.mapLink}>
+              Открыть карту мира
+            </Link>
+            <a
+              href="https://dm-game.com/register.php"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.registerLink}
+            >
+              Зарегистрироваться в игре
+            </a>
+          </div>
+        </section>
       </section>
     </main>
   );
