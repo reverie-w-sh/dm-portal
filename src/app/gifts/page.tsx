@@ -30,6 +30,13 @@ export default function GiftsPage() {
           </Link>
         </div>
 
+        <div className={styles.boardCallout}>
+          <div>
+            <strong>Есть идея подарочка?</strong>
+            <span>Напиши мне в приват или на почту, я добавлю. (Аланька)</span>
+          </div>
+        </div>
+
         <section className={styles.instructions}>
           <div className={styles.instructionsText}>
             <h2>Как заказать подарок</h2>
