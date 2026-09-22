@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://wolfchen-clan.com";
+export const SITE_URL = "https://www.wolfchen-clan.com";
 export const SITE_NAME = "die Wölfchen";
 
 type PageMetadataOptions = {

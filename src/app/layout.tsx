@@ -73,9 +73,24 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  const websiteStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    alternateName: "Сайт игроков Древнего Мира",
+    url: SITE_URL,
+    inLanguage: "ru",
+  };
+
   return (
     <html lang="ru">
       <body className="min-h-screen bg-dark text-ink">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData).replace(/</g, "\\u003c"),
+          }}
+        />
         <Navbar />
         <main className="site-content">{children}</main>
         <Footer />
