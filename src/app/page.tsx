@@ -175,12 +175,12 @@ export default function Home() {
         </div>
 
         <section className={styles.gameIntro} aria-labelledby="game-intro-title">
+          <h1 id="game-intro-title">Древний Мир</h1>
           <div className={styles.gameIntroOrnament} aria-hidden="true">
             <span />
-            <img src="/icons/paw-gold.svg" alt="" />
+            <img src="/icons/wolf-paw-gold.png" alt="" />
             <span />
           </div>
-          <h1 id="game-intro-title">Древний Мир</h1>
           <p>
             «Древний Мир» - браузерная ролевая игра с боями, кланами, охотой,
             рыбалкой, лесом, лабиринтами, профессиями и торговлей. На нашем сайте

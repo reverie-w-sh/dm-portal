@@ -226,17 +226,28 @@
 }
 
 .gameIntro {
+  position: relative;
+  isolation: isolate;
   width: min(100%, 1080px);
   margin: 28px auto 8px;
   padding: 26px clamp(20px, 4vw, 48px) 30px;
-  border: 1px solid rgba(178, 116, 31, 0.42);
-  border-radius: 18px;
+  border: 0;
   color: #cbb995;
-  background:
-    radial-gradient(circle at 50% 0, rgba(130, 77, 20, 0.18), transparent 54%),
-    linear-gradient(145deg, rgba(23, 19, 14, 0.96), rgba(5, 7, 6, 0.98));
+  background: #a96f22;
   box-shadow: 0 18px 44px rgba(0, 0, 0, 0.42), inset 0 0 35px rgba(0, 0, 0, 0.24);
   text-align: center;
+  clip-path: polygon(14px 0, calc(100% - 14px) 0, 100% 14px, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px);
+}
+
+.gameIntro::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 0, rgba(130, 77, 20, 0.18), transparent 54%),
+    linear-gradient(145deg, rgba(23, 19, 14, 0.98), rgba(5, 7, 6, 0.99));
+  clip-path: polygon(13px 0, calc(100% - 13px) 0, 100% 13px, 100% calc(100% - 13px), calc(100% - 13px) 100%, 13px 100%, 0 calc(100% - 13px), 0 13px);
 }
 
 .gameIntroOrnament {
@@ -245,7 +256,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 7px;
+  margin: 0 0 12px;
 }
 
 .gameIntroOrnament span {
@@ -265,7 +276,7 @@
 }
 
 .gameIntro h1 {
-  margin: 0 0 12px;
+  margin: 0 0 7px;
   color: #e4b65f;
   font: 400 clamp(31px, 4vw, 43px)/1 Georgia, "Times New Roman", serif;
   text-shadow: 0 2px 4px #000;
@@ -288,38 +299,49 @@
 
 .mapLink,
 .registerLink {
+  position: relative;
   display: grid;
-  min-height: 44px;
+  width: 248px;
+  min-height: 50px;
   place-items: center;
-  color: #efd09a;
+  border: 1px solid rgba(240, 183, 83, 0.82);
+  border-radius: 7px;
+  padding: 10px 18px 10px 32px;
+  color: #ffe0a0;
+  background: linear-gradient(180deg, rgba(91, 29, 24, 0.76), rgba(48, 20, 18, 0.72));
+  box-shadow:
+    0 0 0 1px rgba(44, 15, 12, 0.92),
+    0 4px 14px rgba(0, 0, 0, 0.7),
+    inset 0 0 10px rgba(223, 150, 49, 0.12);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 14px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
   text-decoration: none;
   text-shadow: 0 1px 3px #000;
-  transition: color 180ms ease, filter 180ms ease, transform 180ms ease;
+  transition: border-color 180ms ease, color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.mapLink {
-  min-width: 188px;
-  border: 1px solid rgba(205, 144, 55, 0.58);
-  border-radius: 999px;
-  padding: 10px 20px;
-  background: rgba(106, 61, 18, 0.28);
-}
-
-.registerLink {
-  width: 260px;
-  min-height: 62px;
-  margin: -9px 0;
-  padding: 10px 53px;
-  background: url("/images/ui/register-game-button.png") center / 100% 100% no-repeat;
-  filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.48));
+.mapLink::before,
+.registerLink::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: #f0bd5f;
+  box-shadow: 0 0 7px rgba(240, 189, 95, 0.5);
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .mapLink:hover,
 .registerLink:hover {
-  color: #ffe1a5;
-  filter: brightness(1.13) drop-shadow(0 6px 10px rgba(117, 65, 12, 0.3));
+  border-color: #ffd47b;
+  color: #fff6df;
+  background: linear-gradient(180deg, rgba(113, 38, 29, 0.9), rgba(64, 27, 21, 0.86));
   transform: translateY(-1px);
 }
 
@@ -373,7 +395,6 @@
   .gameIntro {
     margin-top: 18px;
     padding: 22px 17px 25px;
-    border-radius: 14px;
   }
 
   .gameIntro p {
@@ -385,12 +406,8 @@
     flex-direction: column;
   }
 
-  .mapLink {
-    width: min(100%, 260px);
-  }
-
+  .mapLink,
   .registerLink {
-    width: min(100%, 300px);
-    min-height: 70px;
+    width: min(100%, 260px);
   }
 }
