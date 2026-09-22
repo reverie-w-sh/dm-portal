@@ -1,5 +1,37 @@
 [
   {
+    "id": "db2d0b4a-6059-40ec-b001-54338d685932",
+    "syncId": "2026-09-22T18:54:18.873Z",
+    "createdAt": "2026-09-22T18:54:18.873Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "11603",
+    "characterName": "ко4евник",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11603",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "1a8b031f-27e2-4c6e-be2a-e6d03345340d",
+    "syncId": "2026-09-22T18:54:18.873Z",
+    "createdAt": "2026-09-22T18:54:18.873Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "28463",
+    "characterName": "Чиловый парень",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28463",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/smith.gif",
+        "name": "Мастер кузнец",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "d273705b-a5ed-45d3-8a15-918494479818",
     "syncId": "2026-09-22T08:36:39.095Z",
     "createdAt": "2026-09-22T08:36:39.095Z",
