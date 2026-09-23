@@ -1,5 +1,33 @@
 [
   {
+    "id": "3122413d-9ca7-4767-bcca-bff0fcba6cef",
+    "syncId": "2026-09-23T08:39:47.413Z",
+    "createdAt": "2026-09-23T08:39:47.413Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "28875",
+    "characterName": "Незнайка",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28875",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 4,
+    "newLevel": 5
+  },
+  {
+    "id": "292c6c4a-a3c5-4238-9a6b-e48a6a59df9c",
+    "syncId": "2026-09-23T08:39:47.413Z",
+    "createdAt": "2026-09-23T08:39:47.413Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "31534",
+    "characterName": "Atlant2026",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31534",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 4,
+    "newLevel": 5
+  },
+  {
     "id": "db2d0b4a-6059-40ec-b001-54338d685932",
     "syncId": "2026-09-22T18:54:18.873Z",
     "createdAt": "2026-09-22T18:54:18.873Z",
