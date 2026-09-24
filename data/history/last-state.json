@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-23T19:07:20.323Z",
+  "createdAt": "2026-09-24T08:30:56.823Z",
   "players": [
     {
       "cuid": "7939",
@@ -10699,6 +10699,12 @@
           "name": "Мастер ремонтник",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/repairer.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/4/shadow2.gif",
@@ -21493,7 +21499,7 @@
     {
       "cuid": "28463",
       "nick": "Чиловый парень",
-      "level": 7,
+      "level": 8,
       "reincarnationLevel": null,
       "clanId": "",
       "clanName": "",

@@ -1,5 +1,39 @@
 [
   {
+    "id": "66b2ed4e-3194-4655-8c07-5fe84cdca61f",
+    "syncId": "2026-09-24T08:30:56.823Z",
+    "createdAt": "2026-09-24T08:30:56.823Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "2063",
+    "characterName": "Ведьмак",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2063",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "03f798b2-c074-425b-9e82-bce71f250695",
+    "syncId": "2026-09-24T08:30:56.823Z",
+    "createdAt": "2026-09-24T08:30:56.823Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "28463",
+    "characterName": "Чиловый парень",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28463",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 7,
+    "newLevel": 8
+  },
+  {
     "id": "3122413d-9ca7-4767-bcca-bff0fcba6cef",
     "syncId": "2026-09-23T08:39:47.413Z",
     "createdAt": "2026-09-23T08:39:47.413Z",

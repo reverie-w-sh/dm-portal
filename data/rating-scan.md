@@ -130,53 +130,53 @@
 128. умный[8] — cuid=1951 — https://dm-game.com/index.php?file=infouser&cuid=1951
 129. франт[8] — cuid=5556 — https://dm-game.com/index.php?file=infouser&cuid=5556
 130. христоносець[8] — cuid=2199 — https://dm-game.com/index.php?file=infouser&cuid=2199
-131. Шкурнадзор[8] — cuid=12804 — https://dm-game.com/index.php?file=infouser&cuid=12804
-132. Эпидемия[8] — cuid=12636 — https://dm-game.com/index.php?file=infouser&cuid=12636
-133. яверт[8] — cuid=3699 — https://dm-game.com/index.php?file=infouser&cuid=3699
-134. _gosa_[7] — cuid=1628 — https://dm-game.com/index.php?file=infouser&cuid=1628
-135. _noname_[7] — cuid=3128 — https://dm-game.com/index.php?file=infouser&cuid=3128
-136. _Викинг_[7] — cuid=6499 — https://dm-game.com/index.php?file=infouser&cuid=6499
-137. Aaz[7] — cuid=5609 — https://dm-game.com/index.php?file=infouser&cuid=5609
-138. Abdustciius[7] — cuid=6145 — https://dm-game.com/index.php?file=infouser&cuid=6145
-139. alex_taxi[7] — cuid=1180 — https://dm-game.com/index.php?file=infouser&cuid=1180
-140. ap_res[7] — cuid=2026 — https://dm-game.com/index.php?file=infouser&cuid=2026
-141. Argentum[7] — cuid=4589 — https://dm-game.com/index.php?file=infouser&cuid=4589
-142. Avalan[7] — cuid=2234 — https://dm-game.com/index.php?file=infouser&cuid=2234
-143. Cagucm[7] — cuid=5056 — https://dm-game.com/index.php?file=infouser&cuid=5056
-144. CUBA[7] — cuid=19543 — https://dm-game.com/index.php?file=infouser&cuid=19543
-145. DANIK[7] — cuid=1046 — https://dm-game.com/index.php?file=infouser&cuid=1046
-146. Deus[7] — cuid=8500 — https://dm-game.com/index.php?file=infouser&cuid=8500
-147. DJ SINYAK[7] — cuid=2371 — https://dm-game.com/index.php?file=infouser&cuid=2371
-148. eWs[7] — cuid=3319 — https://dm-game.com/index.php?file=infouser&cuid=3319
-149. HerFlugger[7] — cuid=6829 — https://dm-game.com/index.php?file=infouser&cuid=6829
-150. Hollow[7] — cuid=3049 — https://dm-game.com/index.php?file=infouser&cuid=3049
-151. IGN[7] — cuid=2319 — https://dm-game.com/index.php?file=infouser&cuid=2319
-152. Kirsankafat[7] — cuid=9533 — https://dm-game.com/index.php?file=infouser&cuid=9533
-153. Kolotilovka[7] — cuid=19173 — https://dm-game.com/index.php?file=infouser&cuid=19173
-154. Kot[7] — cuid=19062 — https://dm-game.com/index.php?file=infouser&cuid=19062
-155. Ler[7] — cuid=19178 — https://dm-game.com/index.php?file=infouser&cuid=19178
-156. Nameko[7] — cuid=6618 — https://dm-game.com/index.php?file=infouser&cuid=6618
-157. Nordik[7] — cuid=6019 — https://dm-game.com/index.php?file=infouser&cuid=6019
-158. rapgepo6[7] — cuid=5525 — https://dm-game.com/index.php?file=infouser&cuid=5525
-159. TALLINN[7] — cuid=19381 — https://dm-game.com/index.php?file=infouser&cuid=19381
-160. xtremerok[7] — cuid=2212 — https://dm-game.com/index.php?file=infouser&cuid=2212
-161. Арт[7] — cuid=14536 — https://dm-game.com/index.php?file=infouser&cuid=14536
-162. Боецц[7] — cuid=1727 — https://dm-game.com/index.php?file=infouser&cuid=1727
-163. Виктория[7] — cuid=2158 — https://dm-game.com/index.php?file=infouser&cuid=2158
-164. гера[7] — cuid=4908 — https://dm-game.com/index.php?file=infouser&cuid=4908
-165. Гладиатор[7] — cuid=1745 — https://dm-game.com/index.php?file=infouser&cuid=1745
-166. Динаму[7] — cuid=10566 — https://dm-game.com/index.php?file=infouser&cuid=10566
-167. Зеленый[7] — cuid=1728 — https://dm-game.com/index.php?file=infouser&cuid=1728
-168. Легионер[7] — cuid=1744 — https://dm-game.com/index.php?file=infouser&cuid=1744
-169. Молодая графиня[7] — cuid=1726 — https://dm-game.com/index.php?file=infouser&cuid=1726
-170. НеМоЙ[7] — cuid=7324 — https://dm-game.com/index.php?file=infouser&cuid=7324
-171. Переcвет[7] — cuid=3324 — https://dm-game.com/index.php?file=infouser&cuid=3324
-172. саня[7] — cuid=17648 — https://dm-game.com/index.php?file=infouser&cuid=17648
-173. Седой граф[7] — cuid=1724 — https://dm-game.com/index.php?file=infouser&cuid=1724
-174. Таранис[7] — cuid=1750 — https://dm-game.com/index.php?file=infouser&cuid=1750
-175. Турист[7] — cuid=4565 — https://dm-game.com/index.php?file=infouser&cuid=4565
-176. Фаныч[7] — cuid=6831 — https://dm-game.com/index.php?file=infouser&cuid=6831
-177. Чиловый парень[7] — cuid=28463 — https://dm-game.com/index.php?file=infouser&cuid=28463
+131. Чиловый парень[8] — cuid=28463 — https://dm-game.com/index.php?file=infouser&cuid=28463
+132. Шкурнадзор[8] — cuid=12804 — https://dm-game.com/index.php?file=infouser&cuid=12804
+133. Эпидемия[8] — cuid=12636 — https://dm-game.com/index.php?file=infouser&cuid=12636
+134. яверт[8] — cuid=3699 — https://dm-game.com/index.php?file=infouser&cuid=3699
+135. _gosa_[7] — cuid=1628 — https://dm-game.com/index.php?file=infouser&cuid=1628
+136. _noname_[7] — cuid=3128 — https://dm-game.com/index.php?file=infouser&cuid=3128
+137. _Викинг_[7] — cuid=6499 — https://dm-game.com/index.php?file=infouser&cuid=6499
+138. Aaz[7] — cuid=5609 — https://dm-game.com/index.php?file=infouser&cuid=5609
+139. Abdustciius[7] — cuid=6145 — https://dm-game.com/index.php?file=infouser&cuid=6145
+140. alex_taxi[7] — cuid=1180 — https://dm-game.com/index.php?file=infouser&cuid=1180
+141. ap_res[7] — cuid=2026 — https://dm-game.com/index.php?file=infouser&cuid=2026
+142. Argentum[7] — cuid=4589 — https://dm-game.com/index.php?file=infouser&cuid=4589
+143. Avalan[7] — cuid=2234 — https://dm-game.com/index.php?file=infouser&cuid=2234
+144. Cagucm[7] — cuid=5056 — https://dm-game.com/index.php?file=infouser&cuid=5056
+145. CUBA[7] — cuid=19543 — https://dm-game.com/index.php?file=infouser&cuid=19543
+146. DANIK[7] — cuid=1046 — https://dm-game.com/index.php?file=infouser&cuid=1046
+147. Deus[7] — cuid=8500 — https://dm-game.com/index.php?file=infouser&cuid=8500
+148. DJ SINYAK[7] — cuid=2371 — https://dm-game.com/index.php?file=infouser&cuid=2371
+149. eWs[7] — cuid=3319 — https://dm-game.com/index.php?file=infouser&cuid=3319
+150. HerFlugger[7] — cuid=6829 — https://dm-game.com/index.php?file=infouser&cuid=6829
+151. Hollow[7] — cuid=3049 — https://dm-game.com/index.php?file=infouser&cuid=3049
+152. IGN[7] — cuid=2319 — https://dm-game.com/index.php?file=infouser&cuid=2319
+153. Kirsankafat[7] — cuid=9533 — https://dm-game.com/index.php?file=infouser&cuid=9533
+154. Kolotilovka[7] — cuid=19173 — https://dm-game.com/index.php?file=infouser&cuid=19173
+155. Kot[7] — cuid=19062 — https://dm-game.com/index.php?file=infouser&cuid=19062
+156. Ler[7] — cuid=19178 — https://dm-game.com/index.php?file=infouser&cuid=19178
+157. Nameko[7] — cuid=6618 — https://dm-game.com/index.php?file=infouser&cuid=6618
+158. Nordik[7] — cuid=6019 — https://dm-game.com/index.php?file=infouser&cuid=6019
+159. rapgepo6[7] — cuid=5525 — https://dm-game.com/index.php?file=infouser&cuid=5525
+160. TALLINN[7] — cuid=19381 — https://dm-game.com/index.php?file=infouser&cuid=19381
+161. xtremerok[7] — cuid=2212 — https://dm-game.com/index.php?file=infouser&cuid=2212
+162. Арт[7] — cuid=14536 — https://dm-game.com/index.php?file=infouser&cuid=14536
+163. Боецц[7] — cuid=1727 — https://dm-game.com/index.php?file=infouser&cuid=1727
+164. Виктория[7] — cuid=2158 — https://dm-game.com/index.php?file=infouser&cuid=2158
+165. гера[7] — cuid=4908 — https://dm-game.com/index.php?file=infouser&cuid=4908
+166. Гладиатор[7] — cuid=1745 — https://dm-game.com/index.php?file=infouser&cuid=1745
+167. Динаму[7] — cuid=10566 — https://dm-game.com/index.php?file=infouser&cuid=10566
+168. Зеленый[7] — cuid=1728 — https://dm-game.com/index.php?file=infouser&cuid=1728
+169. Легионер[7] — cuid=1744 — https://dm-game.com/index.php?file=infouser&cuid=1744
+170. Молодая графиня[7] — cuid=1726 — https://dm-game.com/index.php?file=infouser&cuid=1726
+171. НеМоЙ[7] — cuid=7324 — https://dm-game.com/index.php?file=infouser&cuid=7324
+172. Переcвет[7] — cuid=3324 — https://dm-game.com/index.php?file=infouser&cuid=3324
+173. саня[7] — cuid=17648 — https://dm-game.com/index.php?file=infouser&cuid=17648
+174. Седой граф[7] — cuid=1724 — https://dm-game.com/index.php?file=infouser&cuid=1724
+175. Таранис[7] — cuid=1750 — https://dm-game.com/index.php?file=infouser&cuid=1750
+176. Турист[7] — cuid=4565 — https://dm-game.com/index.php?file=infouser&cuid=4565
+177. Фаныч[7] — cuid=6831 — https://dm-game.com/index.php?file=infouser&cuid=6831
 178. Швея мотористка[7] — cuid=1746 — https://dm-game.com/index.php?file=infouser&cuid=1746
 179. Эвменида[7] — cuid=9880 — https://dm-game.com/index.php?file=infouser&cuid=9880
 180. __Flesh__[6] — cuid=17658 — https://dm-game.com/index.php?file=infouser&cuid=17658
@@ -668,7 +668,7 @@
 11. сантила[8] — cuid=1974 — https://dm-game.com/index.php?file=infouser&cuid=1974
 12. maria2004[6] — cuid=23023 — https://dm-game.com/index.php?file=infouser&cuid=23023
 
-## Restless souls — CLAN 218 — знайдено 13
+## Restless souls — CLAN 218 — знайдено 12
 
 1. Александр Николаевич[11] — cuid=1939 — https://dm-game.com/index.php?file=infouser&cuid=1939
 2. 1mpulse[10] — cuid=6924 — https://dm-game.com/index.php?file=infouser&cuid=6924
@@ -680,9 +680,8 @@
 8. St Petersburg[8] — cuid=2209 — https://dm-game.com/index.php?file=infouser&cuid=2209
 9. Веканс[8] — cuid=19475 — https://dm-game.com/index.php?file=infouser&cuid=19475
 10. вилда[8] — cuid=10021 — https://dm-game.com/index.php?file=infouser&cuid=10021
-11. Красивая[8] — cuid=12334 — https://dm-game.com/index.php?file=infouser&cuid=12334
-12. Подколодная[8] — cuid=1279 — https://dm-game.com/index.php?file=infouser&cuid=1279
-13. Умницa[8] — cuid=2128 — https://dm-game.com/index.php?file=infouser&cuid=2128
+11. Подколодная[8] — cuid=1279 — https://dm-game.com/index.php?file=infouser&cuid=1279
+12. Умницa[8] — cuid=2128 — https://dm-game.com/index.php?file=infouser&cuid=2128
 
 ## Викинги — CLAN 221 — знайдено 11
 
