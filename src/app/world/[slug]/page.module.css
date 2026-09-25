@@ -73,3 +73,5 @@
 @media (max-width: 620px) { .monsterGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 8px; } .monsterGrid > div, .monsterGrid img { height: 180px; min-height: 180px; } }
 
 .locationGuide .guideLink{color:#f0bc5c;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.locationGuide .guideLink:hover,.locationGuide .guideLink:focus-visible{color:#ffe09d;text-shadow:0 0 12px rgba(231,169,64,.45)}
+
+.notificationFigure{width:max-content;max-width:100%;margin:14px 0 22px;padding:12px;border:1px solid rgba(194,132,41,.36);border-radius:9px;background:#0b0d0b}.notificationFigure figcaption{margin-top:8px;color:#c7ad7d;font-size:13px}
