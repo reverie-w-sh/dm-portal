@@ -182,3 +182,5 @@
     transition: none;
   }
 }
+
+.craftingCard{min-height:150px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;border:1px solid #a87732;color:#ebc179;background:radial-gradient(circle at center,#352416,#100f0c 75%);font:28px Georgia,serif;text-align:center;text-decoration:none}.craftingCard span{font:15px Georgia,serif;color:#c5aa7c}.craftingCard:hover{border-color:#e5b55b;filter:brightness(1.1)}

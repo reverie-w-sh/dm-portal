@@ -7,7 +7,7 @@ import { SITE_URL } from "@/lib/metadata";
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "", "/about", "/alliances", "/alliances/compare", "/chronicle", "/clans",
-    "/clans/compare", "/dom-boli", "/dungeons", "/experience", "/gallery",
+    "/clans/compare", "/crafting-guide", "/dom-boli", "/dungeons", "/experience", "/gallery",
     "/gift-board", "/gifts",
     "/hunter-board", "/hunter-guide", "/les-teney", "/links", "/malahitovye-rudniki",
     "/members", "/players", "/personal-smiles", "/personal-items", "/couples",

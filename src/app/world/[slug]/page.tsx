@@ -256,6 +256,17 @@ export default async function LocationPage({ params }: LocationPageProps) {
             <p>
               Если обычная вещь вдруг должна стать чуточку волшебнее, нам сюда ✨
             </p>
+            <p>
+              Какие ресурсы нужны для ЗЧ, смотри в <Link href="/crafting-guide#casting">справочнике по заклинательству</Link>.
+            </p>
+          </section>
+        )}
+
+        {location.id === "workshop" && (
+          <section className={styles.locationGuide}>
+            <p className={styles.eyebrow}>Ремесло</p>
+            <h2>Кожевничество в Мастерской</h2>
+            <p>Здесь можно поставить заплатку на вещь. Прибавки к характеристикам и ресурсы для каждого уровня собраны в <Link href="/crafting-guide#leather">справочнике по кожевничеству</Link>.</p>
           </section>
         )}
 
