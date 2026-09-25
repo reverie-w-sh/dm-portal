@@ -63,7 +63,7 @@ const usefulLinks = [
     image: "/images/links/smile-sufficiency.webp",
     alt: "Определение уровня достаточности клановых смайлов",
   },
-  { href: "/crafting-guide", image: "/images/links/crafting-guide.webp", alt: "Кожевничество и заклинательство" },
+  { href: "/crafting-guide", image: "/images/links/crafting-guide-v2.webp", alt: "Кожевничество и заклинательство" },
 ];
 
 export default function LinksPage() {

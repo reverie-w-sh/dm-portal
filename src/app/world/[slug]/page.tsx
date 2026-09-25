@@ -257,7 +257,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               Если обычная вещь вдруг должна стать чуточку волшебнее, нам сюда ✨
             </p>
             <p>
-              Какие ресурсы нужны для ЗЧ, смотри в <Link href="/crafting-guide#casting">справочнике по заклинательству</Link>.
+              Какие ресурсы нужны для ЗЧ, смотри в <Link href="/crafting-guide#casting" className={styles.guideLink}>справочнике по заклинательству →</Link>.
             </p>
           </section>
         )}
@@ -266,7 +266,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
           <section className={styles.locationGuide}>
             <p className={styles.eyebrow}>Ремесло</p>
             <h2>Кожевничество в Мастерской</h2>
-            <p>Здесь можно поставить заплатку на вещь. Прибавки к характеристикам и ресурсы для каждого уровня собраны в <Link href="/crafting-guide#leather">справочнике по кожевничеству</Link>.</p>
+            <p>Здесь можно поставить заплатку на вещь. Прибавки к характеристикам и ресурсы для каждого уровня собраны в <Link href="/crafting-guide#leather" className={styles.guideLink}>справочнике по кожевничеству →</Link>.</p>
           </section>
         )}
 
@@ -457,7 +457,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
             <h3>Золотая рыбка</h3>
             <p>
-              Один раз в день в Подземном озере можно взять квест на Золотую рыбку. Если она поймается, в награду получаем опыт 🐟✨
+              Один раз в день в Подземном озере можно взять квест на Золотую рыбку. Если она поймается, в награду получаем три базовых опыта. Это в три раза больше, чем дают одна слива, кусочек мяса или шкурка андвари на фестивале. Сколько таких наград нужно до апа, можно прикинуть в <Link href="/experience#festival-experience" className={styles.guideLink}>калькуляторе опыта →</Link>
             </p>
 
             <div className={styles.locationGallery}>

@@ -71,3 +71,5 @@
 @media (max-width: 900px) { .monsterGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .monsterGrid > div, .monsterGrid img { height: 190px; min-height: 190px; } }
 @media (max-width: 780px) { .page { padding: 20px 8px 52px; } .columns, .locationGallery, .itemList, .licenseGrid { grid-template-columns: 1fr; } .card, .locationGuide { padding: 17px 14px; } }
 @media (max-width: 620px) { .monsterGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 8px; } .monsterGrid > div, .monsterGrid img { height: 180px; min-height: 180px; } }
+
+.locationGuide .guideLink{color:#f0bc5c;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.locationGuide .guideLink:hover,.locationGuide .guideLink:focus-visible{color:#ffe09d;text-shadow:0 0 12px rgba(231,169,64,.45)}

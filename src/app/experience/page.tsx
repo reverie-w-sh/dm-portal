@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import {
+  BASE_EXPERIENCE_BY_LEVEL,
   EXPERIENCE_STAGES,
   getExperienceProgress,
 } from "@/lib/experience";
@@ -20,6 +21,9 @@ export default function ExperiencePage() {
     () => getExperienceProgress(numericExperience),
     [numericExperience],
   );
+
+  const baseExperience = BASE_EXPERIENCE_BY_LEVEL[progress.level];
+  const needed = (remaining: number | null, multiplier: number) => remaining == null || !baseExperience ? null : Math.ceil(remaining / (baseExperience * multiplier));
 
   function handleChange(value: string) {
     const digits = value.replace(/\D/g, "");
@@ -102,6 +106,18 @@ export default function ExperiencePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="festival-experience" className="rounded-2xl border border-[#ad71227a] bg-[#080a09] p-6 md:p-8 mb-7 shadow-[0_14px_36px_rgba(0,0,0,.32)] scroll-mt-24">
+        <h2 className="text-2xl font-black tracking-tight text-[#ecd4a6]">Сколько рыбок до апа?</h2>
+        <p className="text-[#bda888] mt-2 mb-5">На {progress.level}-м уровне один базовый опыт равен {formatNumber(baseExperience)}. Золотая рыбка даёт три базовых опыта, а слива, кусочек мяса или шкурка андвари на фестивале — один. Считаем с округлением вверх: последняя награда может перекрыть остаток.</p>
+        <div className="grid sm:grid-cols-2 gap-4">
+          {([['До следующего апа', progress.toNextUp], [`До ${progress.level + 1} уровня`, progress.toNextLevel]] as const).map(([label, remaining]) => <div key={label} className="rounded-xl bg-[#0b0d0c] border border-[#ad712252] p-5">
+            <h3 className="text-[#efd09a] font-bold mb-2">{label}</h3>
+            {remaining == null ? <p className="text-[#bda888]">Таблица закончилась :)</p> : <><p>Золотых рыбок: <strong className="text-[#efd09a]">{formatNumber(needed(remaining, 3) ?? 0)}</strong></p><p>Слив, кусочков мяса или шкурок андвари: <strong className="text-[#efd09a]">{formatNumber(needed(remaining, 1) ?? 0)}</strong></p></>}
+          </div>)}
+        </div>
+        <p className="text-sm text-[#a89679] mt-4">Расчёт по базовому опыту без дополнительных бонусов. Рыбку можно поймать по ежедневному заданию в <a href="/world/underground-lake" className="text-[#e5b65b] underline underline-offset-4">Подземном озере</a>.</p>
       </section>
 
       <section className="rounded-2xl border border-[#ad71227a] bg-[#080a09] p-6 md:p-8 shadow-[0_14px_36px_rgba(0,0,0,.32)]">
