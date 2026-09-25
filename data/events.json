@@ -1,5 +1,37 @@
 [
   {
+    "id": "61b26eca-ea6b-4b79-8cfd-a386a279f02f",
+    "syncId": "2026-09-25T08:54:22.852Z",
+    "createdAt": "2026-09-25T08:54:22.852Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "8056",
+    "characterName": "аномалька",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8056",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/repairer.gif",
+        "name": "Мастер ремонтник",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/repairer.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "3f2a9235-9e85-49fd-9680-5703283a2835",
+    "syncId": "2026-09-25T08:54:22.852Z",
+    "createdAt": "2026-09-25T08:54:22.852Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "10013",
+    "characterName": "Дэмбель",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10013",
+    "clanId": "235",
+    "clanName": "Храм Мечей"
+  },
+  {
     "id": "33fc0969-686b-4a59-82d4-2c8761437c07",
     "syncId": "2026-09-24T19:09:34.568Z",
     "createdAt": "2026-09-24T19:09:34.568Z",

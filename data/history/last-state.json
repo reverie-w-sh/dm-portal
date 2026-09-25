@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-24T19:09:34.568Z",
+  "createdAt": "2026-09-25T08:54:22.852Z",
   "players": [
     {
       "cuid": "7939",
@@ -11424,9 +11424,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/smith.gif",
-          "name": "Мастер кузнец",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "id": "/layout/all/subject/achievement/2/repairer.gif",
+          "name": "Мастер ремонтник",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/repairer.gif",
           "category": "profession"
         },
         {
@@ -11436,9 +11436,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/lekar.gif",
-          "name": "Мастер лекарь",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
+          "id": "/layout/all/subject/achievement/2/smith.gif",
+          "name": "Мастер кузнец",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
           "category": "profession"
         },
         {
@@ -11448,9 +11448,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/begun.gif",
-          "name": "Мастер бегун",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "id": "/layout/all/subject/achievement/2/lekar.gif",
+          "name": "Мастер лекарь",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
           "category": "profession"
         },
         {
@@ -11460,9 +11460,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/drop.gif",
-          "name": "Мастер дропа",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
         },
         {
@@ -11470,6 +11470,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/drop.gif",
+          "name": "Мастер дропа",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/3/bukvar2026.png",
@@ -21738,12 +21744,12 @@
     },
     {
       "cuid": "10013",
-      "nick": "Леон Магнум",
+      "nick": "Дэмбель",
       "level": 16,
       "reincarnationLevel": 8,
-      "clanId": "235",
-      "clanName": "Храм Мечей",
-      "position": "Батька!",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10013",
       "marriageKnown": true,
       "marriagePartner": "",
