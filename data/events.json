@@ -1,5 +1,25 @@
 [
   {
+    "id": "175976e0-c5b2-4d3b-a5be-9f8890584884",
+    "syncId": "2026-09-25T19:24:05.299Z",
+    "createdAt": "2026-09-25T19:24:05.299Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "15069",
+    "characterName": "Gudini",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=15069",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/vedun.gif",
+        "name": "Мастер ведун",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "61b26eca-ea6b-4b79-8cfd-a386a279f02f",
     "syncId": "2026-09-25T08:54:22.852Z",
     "createdAt": "2026-09-25T08:54:22.852Z",

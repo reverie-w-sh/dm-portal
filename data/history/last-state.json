@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-25T08:54:22.852Z",
+  "createdAt": "2026-09-25T19:24:05.299Z",
   "players": [
     {
       "cuid": "7939",
@@ -2409,9 +2409,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/lekar.gif",
-          "name": "Мастер лекарь",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
+          "id": "/layout/all/subject/achievement/2/vedun.gif",
+          "name": "Мастер ведун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
           "category": "profession"
         },
         {
@@ -2419,6 +2419,12 @@
           "name": "Букварь (2026)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/lekar.gif",
+          "name": "Мастер лекарь",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
@@ -36594,7 +36600,7 @@
         "583948",
         "290429",
         "290436",
-        "290438",
+        "290437",
         "290439",
         "470048",
         "583947",
