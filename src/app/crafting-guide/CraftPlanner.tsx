@@ -54,8 +54,8 @@ export default function CraftPlanner() {
   return <section className={styles.planner} aria-labelledby="planner-title">
     <p className={styles.kicker}>Мастерская и Алхимик</p><h2 id="planner-title">Что хочешь сделать с вещью?</h2>
     <div className={styles.modeGrid}>
-      <button type="button" className={`${styles.modeCard} ${mode === "enchant" ? styles.active : ""}`} onClick={() => setMode("enchant")} aria-pressed={mode === "enchant"} id="casting"><span className={styles.modeIcon}>✦</span><strong>Зачаровать вещь</strong><span>Выбери предмет, сравни обычную вещь и ЗЧ</span></button>
-      <button type="button" className={`${styles.modeCard} ${mode === "patch" ? styles.active : ""}`} onClick={() => setMode("patch")} aria-pressed={mode === "patch"} id="leather"><span className={styles.modeIcon}>◆</span><strong>Поставить заплатку</strong><span>Узнай, какие ресурсы нужны и что даст заплатка</span></button>
+      <button type="button" className={`${styles.modeCard} ${mode === "enchant" ? styles.active : ""}`} onClick={() => setMode("enchant")} aria-pressed={mode === "enchant"} id="casting"><span className={styles.modeCardInner}><img className={styles.modeIcon} src="/images/ratings/icons/enchanter.png" alt="" /><strong>Зачаровать вещь</strong><span>Выбери предмет, сравни обычную вещь и ЗЧ</span></span></button>
+      <button type="button" className={`${styles.modeCard} ${mode === "patch" ? styles.active : ""}`} onClick={() => setMode("patch")} aria-pressed={mode === "patch"} id="leather"><span className={styles.modeCardInner}><img className={styles.modeIcon} src="/images/ratings/icons/leatherworker.png" alt="" /><strong>Поставить заплатку</strong><span>Узнай, какие ресурсы нужны и что даст заплатка</span></span></button>
     </div>
     {mode === "enchant" && <div className={styles.workArea}>
       <p>Чтобы зачаровать вещь, иди к <Link href="/world/alchemist">Алхимику</Link> на Центральной площади. Если твоего навыка заклинательства пока не хватает, выбери <Link href="/ratings#enchanter">заклинателя в рейтинге</Link> и обратись к нему за помощью.</p>

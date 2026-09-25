@@ -102,7 +102,7 @@
   min-height: 55px;
   place-items: center;
   margin-left: clamp(14px, 1.5vw, 24px);
-  padding: 8px 42px;
+  padding: 8px 18px;
   color: #f4d18f;
   background: url("/images/ui/register-game-button.png") center / 100% 100% no-repeat;
   font-family: Georgia, "Times New Roman", serif;
@@ -111,7 +111,7 @@
   text-align: center;
   text-decoration: none;
   text-shadow: 0 1px 3px #000;
-  white-space: nowrap;
+  white-space: normal;
   filter: drop-shadow(0 5px 9px rgba(0, 0, 0, 0.54));
   transition: color 180ms ease, filter 180ms ease, transform 180ms ease;
 }
