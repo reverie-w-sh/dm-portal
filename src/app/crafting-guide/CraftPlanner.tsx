@@ -2,8 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { patches, recipes } from "./data";
+import { patches, recipes, requiredCastingSkill } from "./data";
 import { itemDifferences } from "./differences";
+import { resourceIcons } from "./resourceIcons";
 import styles from "./page.module.css";
 
 type Mode = "patch" | "enchant" | null;
@@ -24,7 +25,7 @@ const patchHearts: Record<number, Resource[]> = {
 };
 const patchRequirement: Record<number, string> = {3:"Вещь от 10-го уровня",4:"Вещь от 12-го уровня",5:"Вещь от 14-го уровня",6:"Вещь 16-го уровня"};
 function ResourceList({items}: {items: Resource[]}) {
-  return <ul className={styles.resourceList}>{items.map(([name,count]) => <li key={name}><span>{name}</span><strong>×{count.toLocaleString("ru-RU")}</strong></li>)}</ul>;
+  return <ul className={styles.resourceList}>{items.map(([name,count]) => <li key={name}><span className={styles.resourceName}>{resourceIcons[name] && <img src={resourceIcons[name]} alt="" width="36" height="36" loading="lazy" />}{name}</span><strong>×{count.toLocaleString("ru-RU")}</strong></li>)}</ul>;
 }
 export default function CraftPlanner() {
   const [mode,setMode] = useState<Mode>(null);
@@ -64,7 +65,7 @@ export default function CraftPlanner() {
         <label>2. Тип вещи<select value={enchantSlot} disabled={!enchantLevel} onChange={e => {setEnchantSlot(e.target.value);setEnchantName("")}}><option value="">Выбери тип</option>{slots.map(value => <option key={value} value={value}>{value}</option>)}</select></label>
         <label>3. Твоя вещь<select value={enchantName} disabled={!recipe} onChange={e => setEnchantName(e.target.value)}><option value="">Выбери предмет</option>{recipe?.names.map(name => <option key={name} value={name}>{name}</option>)}</select></label>
       </div>
-      {item && recipe ? <div className={styles.result} aria-live="polite"><p className={styles.resultLabel}>Получится</p><h3>{enchantName} (Зч)</h3><p className={styles.muted}>Что изменится:</p><ul className={styles.changeList}>{item.diff.map(([stat, before, after]) => <li key={stat}><span>{stat}</span><span>{before} → <b>{after}</b> <em>{after-before>0?"+":""}{after-before}</em></span></li>)}</ul>{item.req.length > 0 && <p className={styles.requirement}>Требования: {item.req.map(([stat,before,after]) => `${stat} ${before} → ${after}`).join(", ")}</p>}<h4>Нужно для одной попытки</h4><ResourceList items={[[`Обычная вещь: ${enchantName}`,1],...recipe.resources]}/><p className={styles.itemLinks}><a href={item.base} target="_blank" rel="noreferrer">Обычная вещь ↗</a> · <a href={item.ench} target="_blank" rel="noreferrer">ЗЧ в игре ↗</a> · <Link href="/world/alchemist">К Алхимику на карте →</Link></p></div> : <p className={styles.placeholder}>Выбери предмет, чтобы увидеть результат и нужные ресурсы.</p>}
+      {item && recipe ? <div className={styles.result} aria-live="polite"><p className={styles.resultLabel}>Получится</p><h3>{enchantName} (Зч)</h3>{requiredCastingSkill[recipe.level] != null && <p className={styles.requirement}>Нужен {requiredCastingSkill[recipe.level]}-й уровень заклинательства.</p>}<p className={styles.muted}>Что изменится:</p><ul className={styles.changeList}>{item.diff.map(([stat, before, after]) => <li key={stat}><span>{stat}</span><span>{before} → <b>{after}</b> <em>{after-before>0?"+":""}{after-before}</em></span></li>)}</ul>{item.req.length > 0 && <p className={styles.requirement}>Требования: {item.req.map(([stat,before,after]) => `${stat} ${before} → ${after}`).join(", ")}</p>}<h4>Нужно для одной попытки</h4><ResourceList items={[[`Обычная вещь: ${enchantName}`,1],...recipe.resources]}/><p className={styles.itemLinks}><a href={item.base} target="_blank" rel="noreferrer">Обычная вещь ↗</a> · <a href={item.ench} target="_blank" rel="noreferrer">ЗЧ в игре ↗</a> · <Link href="/world/alchemist">К Алхимику на карте →</Link></p></div> : <p className={styles.placeholder}>Выбери предмет, чтобы увидеть результат и нужные ресурсы.</p>}
     </div>}
     {mode === "patch" && <div className={styles.workArea}>
       <p>Чтобы поставить заплатку, иди в <Link href="/world/workshop">Мастерскую</Link> на Улице гладиаторов. Если твоего навыка кожевничества пока не хватает, выбери <Link href="/ratings#leatherworker">кожевника в рейтинге</Link> и обратись к нему за помощью.</p>
