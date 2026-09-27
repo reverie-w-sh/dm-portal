@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import ScreenshotModal from "./ScreenshotModal";
 import NewRoadPuzzle, { type NewRound } from "./NewRoadPuzzle";
-import type { PuzzleDifficulty } from "@/lib/road-puzzle-data";
+import { NEW_PUZZLES, type PuzzleDifficulty } from "@/lib/road-puzzle-data";
 import styles from "./RoadPuzzle.module.css";
 
 const COUNT = 41;
@@ -67,6 +67,7 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   const [result, setResult] = useState<"won" | "lost" | null>(null);
   const [number, setNumber] = useState(1);
   const [zoomed, setZoomed] = useState<number | null>(null);
+  const [zoomedNew, setZoomedNew] = useState<number | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const dragRef = useRef<Drag | null>(null);
   const piecesRef = useRef<Piece[]>([]);
@@ -84,11 +85,11 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   }, [active, result]);
 
   useEffect(() => {
-    if (zoomed === null) return;
-    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setZoomed(null); };
+    if (zoomed === null && zoomedNew === null) return;
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") { setZoomed(null); setZoomedNew(null); } };
     window.addEventListener("keydown", close);
     return () => window.removeEventListener("keydown", close);
-  }, [zoomed]);
+  }, [zoomed, zoomedNew]);
 
   function start() {
     requestIdRef.current += 1;
@@ -230,7 +231,17 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
           {Array.from({ length: COUNT }, (_, index) => index + 1).map((id) => <button type="button" key={id} onClick={() => setZoomed(id)} aria-label={`Увеличить пазл ${id}`}><img src={`/images/world/puzzles/pazl${id}.jpg`} alt={`КМовский пазл ${id}`} loading="lazy" /></button>)}
         </div>
       </details>
+      <details className={`${styles.archive} ${styles.newArchive}`}>
+        <summary>Показать новые пазлы</summary>
+        <div className={styles.gallery}>
+          {NEW_PUZZLES.map((puzzle, index) => <button type="button" key={puzzle.file} onClick={() => setZoomedNew(index)} aria-label={`Увеличить: ${puzzle.name}`}>
+            <img src={`/images/world/new-puzzles/${puzzle.file}.webp`} alt={puzzle.name} loading="lazy" />
+            <span>{puzzle.name}</span>
+          </button>)}
+        </div>
+      </details>
       {zoomed !== null && <div className={styles.modal} role="dialog" aria-modal="true" aria-label={`КМовский пазл ${zoomed}`} onClick={() => setZoomed(null)}><button type="button" className={styles.close} onClick={() => setZoomed(null)} aria-label="Закрыть">×</button><img src={`/images/world/puzzles/pazl${zoomed}.jpg`} alt={`КМовский пазл ${zoomed}`} onClick={(event) => event.stopPropagation()} /></div>}
+      {zoomedNew !== null && <div className={styles.modal} role="dialog" aria-modal="true" aria-label={NEW_PUZZLES[zoomedNew].name} onClick={() => setZoomedNew(null)}><button type="button" className={styles.close} onClick={() => setZoomedNew(null)} aria-label="Закрыть">×</button><figure className={styles.modalFigure} onClick={(event) => event.stopPropagation()}><img src={`/images/world/new-puzzles/${NEW_PUZZLES[zoomedNew].file}.webp`} alt={NEW_PUZZLES[zoomedNew].name} /><figcaption>{NEW_PUZZLES[zoomedNew].name}</figcaption></figure></div>}
     </div>
   );
 }

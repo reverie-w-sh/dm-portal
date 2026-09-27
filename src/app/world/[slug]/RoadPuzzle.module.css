@@ -24,10 +24,15 @@
 .archive { border: 1px solid rgba(194,132,41,.35); border-radius: 13px; padding: 15px 20px; color: #c5b79f; background: #17130f; }
 .archive summary { color: #e4b75e; font: 400 22px Georgia,serif; cursor: pointer; }
 .archive p { line-height: 1.5; }
+.newArchive { margin-top: 12px; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fill,minmax(120px,1fr)); gap: 12px; margin-top: 18px; }
 .gallery button { border: 1px solid rgba(208,158,80,.48); border-radius: 8px; padding: 5px; background: #090a09; cursor: zoom-in; }
 .gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.gallery button span { display: block; padding: 7px 3px 3px; color: #e4cfaa; font-size: 13px; line-height: 1.25; text-align: center; }
 .modal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(0,0,0,.9); cursor: zoom-out; }
 .modal img { display: block; max-width: 95vw; max-height: 90vh; width: auto; height: auto; box-shadow: 0 20px 70px #000; cursor: default; image-rendering: auto; }
+.modalFigure { margin: 0; max-width: 95vw; color: #eed4a6; text-align: center; cursor: default; }
+.modalFigure img { max-height: calc(90vh - 40px); }
+.modalFigure figcaption { margin-top: 10px; font: 20px Georgia,serif; }
 .close { position: fixed; top: 16px; right: 16px; width: 44px; height: 44px; border: 1px solid #a67a3a; border-radius: 50%; color: #ead1a2; background: #090a09; font-size: 28px; cursor: pointer; }
 @media (max-width: 650px) { .game { min-height: 270px; } .clock { top: 3px; font-size: 11px; padding: 3px 8px; } .gallery { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; } }

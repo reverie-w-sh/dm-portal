@@ -7,6 +7,14 @@ export const NEW_PUZZLES = [
   { name: "Древний дракон", file: "ancient-dragon" },
   { name: "Волчата", file: "wolfchen" },
   { name: "Зачарование вещи", file: "enchanting" },
+  { name: "Дриада", file: "dryad" },
+  { name: "Вампир", file: "vampire" },
+  { name: "Привидение", file: "ghost" },
+  { name: "Единорог", file: "unicorn" },
+  { name: "Руна из мандрагоры", file: "mandrake-rune" },
+  { name: "Мухомор в лесу", file: "forest-amanita" },
+  { name: "Корм в пустыне", file: "desert-fish-feed" },
+  { name: "Зал Костей в Гробнице", file: "chess-chest" },
 ] as const;
 
 export type PuzzleDifficulty = "5x7" | "7x10";
