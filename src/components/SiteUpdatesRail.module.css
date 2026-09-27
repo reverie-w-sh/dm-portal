@@ -1,0 +1,74 @@
+.rail {
+  display: none;
+}
+
+@media (min-width: 1240px) {
+  .rail {
+    position: sticky;
+    top: 92px;
+    display: block;
+    align-self: start;
+    max-height: calc(100vh - 108px);
+    margin-top: 20px;
+    overflow-y: auto;
+    border: 1px solid rgba(197, 134, 51, .55);
+    border-radius: 13px;
+    padding: 17px 13px 13px;
+    color: #e3cfab;
+    background: linear-gradient(160deg, rgba(36, 27, 20, .98), rgba(9, 11, 10, .98));
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .42);
+  }
+}
+
+.heading {
+  padding: 0 4px 12px;
+  text-align: center;
+}
+
+.heading h2 {
+  margin: 0;
+  color: #edc782;
+  font: 400 24px/1.1 Georgia, "Times New Roman", serif;
+}
+
+.list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  gap: 5px;
+  border: 1px solid #655033;
+  border-radius: 8px;
+  padding: 12px 11px;
+  color: #c8bba3;
+  background: rgba(13, 14, 12, .78);
+  text-decoration: none;
+  transition: border-color .18s ease, background-color .18s ease;
+}
+
+.card:hover,
+.card:focus-visible {
+  border-color: #d1a45e;
+  background: rgba(75, 51, 26, .55);
+}
+
+.card strong {
+  color: #f0d196;
+  font: 400 17px/1.2 Georgia, "Times New Roman", serif;
+}
+
+.card span {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.card small {
+  color: #e1ad61;
+  font-size: 11px;
+  font-weight: 700;
+}

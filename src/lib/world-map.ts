@@ -35,7 +35,7 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
   { id: "donor", slug: "donor-search", name: "Поиск донора", description: "Тут можно кого-то укусить.", image: "/images/world/locations/donor-search.jpg", mapPoint: { x: 32, y: 33 } },
   { id: "farm", slug: "farm", name: "Ферма", description: "Чеснок сажать тут!", mapPoint: { x: 43, y: 37 } },
   { id: "blood", slug: "blood-dungeon", name: "Кровавое подземелье", shortName: "Дом Боли", description: "Кровавое подземелье, в прошлом известное как Дом Боли.", image: "/images/world/locations/blood-dungeon.jpg", guideHref: "/dom-boli", guideLabel: "Открыть карты Дома Боли", mapPoint: { x: 34, y: 23 } },
-  { id: "vampire-tomb", slug: "vampire-tomb", name: "Гробница вампиров", shortName: "Гробница", description: "Сюда ходят, чтобы варить руны... Позже напишу подробнее :)", mapPoint: { x: 45, y: 23 } },
+  { id: "vampire-tomb", slug: "vampire-tomb", name: "Гробница вампиров", shortName: "Гробница", description: "Логово, Кристальный зал, подъёмный мост, Зал костей и Алхимик. Здесь варят руны.", image: "/images/vampire-tomb/01.jpg", guideHref: "/vampire-tomb", guideLabel: "Открыть прохождение Гробницы", mapPoint: { x: 45, y: 23 } },
 
   { id: "lake-road", slug: "lake-road", name: "Дорога к озеру", description: "Зелёный перекрёсток между пустыней, Площадью шахтёров, лесом, охотой и озером.", image: "/images/world/locations/lake-road.jpg", mapPoint: { x: 28, y: 50 } },
   { id: "memory-tree", slug: "memory-tree", name: "Древо памяти", description: "Это дерево все помнит! Ладно, если серьезно - здесь можно вырастить своё яблоко и получить доступ к загрузке фотографий в галерею", image: "/images/world/locations/memory-tree.jpg", mapPoint: { x: 24, y: 43 } },

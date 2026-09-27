@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SiteAnalytics from "@/components/SiteAnalytics";
+import SiteUpdatesRail from "@/components/SiteUpdatesRail";
 import { SITE_NAME, SITE_URL } from "@/lib/metadata";
 
 const defaultTitle = "die Wölfchen — клан игры «Древний Мир» (DM)";
@@ -92,7 +93,10 @@ export default function RootLayout({
           }}
         />
         <Navbar />
-        <main className="site-content">{children}</main>
+        <div className="site-layout">
+          <main className="site-content">{children}</main>
+          <SiteUpdatesRail />
+        </div>
         <Footer />
         <SiteAnalytics />
       </body>

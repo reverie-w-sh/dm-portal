@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/gift-board", "/gifts",
     "/hunter-board", "/hunter-guide", "/les-teney", "/links", "/malahitovye-rudniki",
     "/members", "/players", "/personal-smiles", "/personal-items", "/couples",
-    "/ratings", "/sad-koshmarov", "/smile-sufficiency", "/world",
+    "/ratings", "/sad-koshmarov", "/smile-sufficiency", "/vampire-tomb", "/world",
   ];
 
   const staticPages = staticRoutes.map((route) => ({

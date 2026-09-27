@@ -67,6 +67,33 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.site-layout {
+  min-height: 100vh;
+}
+
+@media (min-width: 1240px) {
+  .site-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 252px;
+    align-items: start;
+    gap: 16px;
+    padding-right: 16px;
+  }
+
+  .site-content {
+    min-width: 0;
+  }
+
+  body:has(.admin-page-background) .site-layout {
+    display: block;
+    padding-right: 0;
+  }
+
+  body:has(.admin-page-background) .site-updates-rail {
+    display: none;
+  }
+}
+
 /* Единый фон всех открытых страниц сайта. Размер текстуры не меняем. */
 .site-content {
   min-height: 100vh;
