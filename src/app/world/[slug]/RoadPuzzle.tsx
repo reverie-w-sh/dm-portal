@@ -57,7 +57,7 @@ function pieceShape(id: number): string {
 export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   const [active, setActive] = useState(false);
   const [pieces, setPieces] = useState<Piece[]>([]);
-  const [seconds, setSeconds] = useState(60);
+  const [seconds, setSeconds] = useState(75);
   const [result, setResult] = useState<"won" | "lost" | null>(null);
   const [number, setNumber] = useState(1);
   const [zoomed, setZoomed] = useState<number | null>(null);
@@ -88,8 +88,8 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
     piecesRef.current = next;
     setPieces(next);
     setNumber(Math.floor(Math.random() * COUNT) + 1);
-    deadlineRef.current = Date.now() + 60_000;
-    setSeconds(60);
+    deadlineRef.current = Date.now() + 75_000;
+    setSeconds(75);
     setResult(null);
     setActive(true);
   }
