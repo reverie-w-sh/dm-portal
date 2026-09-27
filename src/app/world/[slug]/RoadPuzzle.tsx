@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import ScreenshotModal from "./ScreenshotModal";
+import NewRoadPuzzle, { type NewRound } from "./NewRoadPuzzle";
+import type { PuzzleDifficulty } from "@/lib/road-puzzle-data";
 import styles from "./RoadPuzzle.module.css";
 
 const COUNT = 41;
@@ -56,8 +58,12 @@ function pieceShape(id: number): string {
 
 export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   const [active, setActive] = useState(false);
+  const [newRound, setNewRound] = useState<NewRound | null>(null);
+  const [showChoice, setShowChoice] = useState(false);
+  const [newLoading, setNewLoading] = useState(false);
+  const [newError, setNewError] = useState("");
   const [pieces, setPieces] = useState<Piece[]>([]);
-  const [seconds, setSeconds] = useState(75);
+  const [seconds, setSeconds] = useState(65);
   const [result, setResult] = useState<"won" | "lost" | null>(null);
   const [number, setNumber] = useState(1);
   const [zoomed, setZoomed] = useState<number | null>(null);
@@ -65,6 +71,7 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   const dragRef = useRef<Drag | null>(null);
   const piecesRef = useRef<Piece[]>([]);
   const deadlineRef = useRef(0);
+  const requestIdRef = useRef(0);
 
   useEffect(() => {
     if (!active || result) return;
@@ -84,14 +91,39 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   }, [zoomed]);
 
   function start() {
+    requestIdRef.current += 1;
+    setNewRound(null);
+    setShowChoice(false);
     const next = shuffledPieces();
     piecesRef.current = next;
     setPieces(next);
     setNumber(Math.floor(Math.random() * COUNT) + 1);
-    deadlineRef.current = Date.now() + 75_000;
-    setSeconds(75);
+    deadlineRef.current = Date.now() + 65_000;
+    setSeconds(65);
     setResult(null);
     setActive(true);
+  }
+
+  async function startNew(difficulty: PuzzleDifficulty) {
+    const requestId = ++requestIdRef.current;
+    setNewLoading(true);
+    setNewError("");
+    try {
+      const response = await fetch("/api/road-puzzle", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "start", difficulty }),
+      });
+      const round = await response.json();
+      if (!response.ok) throw Error(round.message || "Не удалось начать пазл");
+      if (requestId !== requestIdRef.current) return;
+      setActive(false);
+      setNewRound(round);
+      setShowChoice(false);
+    } catch (error) {
+      if (requestId === requestIdRef.current) setNewError(error instanceof Error ? error.message : "Не удалось начать пазл");
+    } finally {
+      if (requestId === requestIdRef.current) setNewLoading(false);
+    }
   }
 
   function point(event: React.PointerEvent<SVGElement>) {
@@ -152,7 +184,8 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.screenshot}>
-        {!active && <ScreenshotModal src={screenshot} alt="Игровой экран: Дорога к Пещере" priority />}
+        {!active && !newRound && <ScreenshotModal src={screenshot} alt="Игровой экран: Дорога к Пещере" priority />}
+        {newRound && <NewRoadPuzzle key={newRound.id} round={newRound} screenshot={screenshot} onAgain={startNew} />}
         {active && (
           <div className={styles.game}>
             <img src={screenshot} alt="" className={styles.backdrop} />
@@ -180,9 +213,16 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
         )}
       </div>
       <div className={styles.actions}>
-        <button type="button" onClick={start}>{active ? "Начать заново" : "Собрать пазл"}</button>
-        <p>Перетащи деталь на место. Нажми на неё, чтобы повернуть.</p>
+        <button type="button" onClick={start}>{active ? "Собрать старый пазл заново" : "Собрать старый пазл"}</button>
+        <button type="button" onClick={() => setShowChoice((value) => !value)}>Собрать новый пазл</button>
+        <p>{newRound ? "Нажми на две части картинки, чтобы поменять их местами." : "Старый пазл: перетащи деталь на место. Нажми на неё, чтобы повернуть."}</p>
       </div>
+      {showChoice && <div className={styles.difficulty}>
+        <span>Выбери сложность:</span>
+        <button type="button" disabled={newLoading} onClick={() => void startNew("5x7")}>5×7 деталей</button>
+        <button type="button" disabled={newLoading} onClick={() => void startNew("7x10")}>7×10 деталей</button>
+      </div>}
+      {newError && <p className={styles.puzzleError} role="alert">{newError}</p>}
       <details className={styles.archive}>
         <summary>Показать КМовские пазлики</summary>
         <p>В BloodyWorld в дороге можно было собирать пазлы... Эта страничка для тех, кто помнит :)</p>

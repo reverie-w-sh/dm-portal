@@ -131,6 +131,17 @@ export default function WorldNavigator({ initialFrom, initialTo }: WorldNavigato
                 </button>
               );
             })}
+            <button
+              type="button"
+              className={`${styles.pin} ${styles.pinHub} ${to === "cave-road" ? styles.pinActive : ""} ${routeIds.has("cave-road") ? styles.pinRoute : ""}`}
+              style={{ left: "89%", top: "24%" }}
+              onClick={() => selectDestination("cave-road")}
+              aria-label="Дорога к Пещере, второй вход на карте"
+              aria-pressed={to === "cave-road"}
+            >
+              <span className={styles.pinDot} aria-hidden="true" />
+              <span>Дорога к Пещере</span>
+            </button>
           </div>
         </div>
       </section>

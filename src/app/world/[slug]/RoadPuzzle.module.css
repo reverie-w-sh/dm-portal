@@ -13,8 +13,14 @@
 .finish strong { color: #ecc26f; font: 400 clamp(24px,4vw,42px) Georgia,serif; }
 .finish p { max-width: 450px; line-height: 1.5; }
 .finish button, .actions button { border: 1px solid #f0cb81; border-radius: 9px; padding: 11px 20px; color: #211307; background: linear-gradient(#edc66f,#bd812d); font-weight: 800; cursor: pointer; }
-.actions { margin: 13px 0 22px; text-align: center; }
+.actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 13px 0 22px; text-align: center; }
 .actions p { margin: 9px 0 0; color: #bba989; font-size: 13px; }
+.actions p { flex-basis: 100%; }
+.difficulty { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 9px; margin: -8px 0 20px; color: #d8c29d; }
+.difficulty button { border: 1px solid #b38a4d; border-radius: 8px; padding: 9px 14px; color: #f1d7a8; background: #322214; cursor: pointer; }
+.difficulty button:hover { background: #573719; }
+.difficulty button:disabled { opacity: .55; cursor: wait; }
+.puzzleError { color: #ffb7a9; text-align: center; }
 .archive { border: 1px solid rgba(194,132,41,.35); border-radius: 13px; padding: 15px 20px; color: #c5b79f; background: #17130f; }
 .archive summary { color: #e4b75e; font: 400 22px Georgia,serif; cursor: pointer; }
 .archive p { line-height: 1.5; }
