@@ -63,7 +63,7 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
   const [newLoading, setNewLoading] = useState(false);
   const [newError, setNewError] = useState("");
   const [pieces, setPieces] = useState<Piece[]>([]);
-  const [seconds, setSeconds] = useState(65);
+  const [seconds, setSeconds] = useState(70);
   const [result, setResult] = useState<"won" | "lost" | null>(null);
   const [number, setNumber] = useState(1);
   const [zoomed, setZoomed] = useState<number | null>(null);
@@ -99,8 +99,8 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
     piecesRef.current = next;
     setPieces(next);
     setNumber(Math.floor(Math.random() * COUNT) + 1);
-    deadlineRef.current = Date.now() + 65_000;
-    setSeconds(65);
+    deadlineRef.current = Date.now() + 70_000;
+    setSeconds(70);
     setResult(null);
     setActive(true);
   }
