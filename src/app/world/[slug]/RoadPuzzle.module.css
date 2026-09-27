@@ -14,6 +14,7 @@
 .finish p { max-width: 450px; line-height: 1.5; }
 .finish button, .actions button { border: 1px solid #f0cb81; border-radius: 9px; padding: 11px 20px; color: #211307; background: linear-gradient(#edc66f,#bd812d); font-weight: 800; cursor: pointer; }
 .actions { margin: 13px 0 22px; text-align: center; }
+.actions p { margin: 9px 0 0; color: #bba989; font-size: 13px; }
 .archive { border: 1px solid rgba(194,132,41,.35); border-radius: 13px; padding: 15px 20px; color: #c5b79f; background: #17130f; }
 .archive summary { color: #e4b75e; font: 400 22px Georgia,serif; cursor: pointer; }
 .archive p { line-height: 1.5; }

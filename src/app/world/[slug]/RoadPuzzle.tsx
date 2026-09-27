@@ -4,21 +4,24 @@ import { useEffect, useRef, useState } from "react";
 import ScreenshotModal from "./ScreenshotModal";
 import styles from "./RoadPuzzle.module.css";
 
-const COUNT = 42;
-const COLS = 3;
-const ROWS = 3;
-const WIDTH = 160;
-const HEIGHT = 120;
+const COUNT = 41;
+const COLS = 4;
+const ROWS = 4;
+const WIDTH = 120;
+const HEIGHT = 90;
 const BOARD_X = 260;
 const BOARD_Y = 135;
 const STARTS = [
-  { x: 42, y: 40 }, { x: 800, y: 36 }, { x: 39, y: 247 },
-  { x: 802, y: 243 }, { x: 43, y: 445 }, { x: 800, y: 445 },
-  { x: 242, y: 515 }, { x: 423, y: 515 }, { x: 602, y: 515 },
+  { x: 45, y: 53 }, { x: 825, y: 51 },
+  { x: 45, y: 185 }, { x: 825, y: 181 },
+  { x: 45, y: 318 }, { x: 825, y: 314 },
+  { x: 45, y: 450 }, { x: 825, y: 446 },
+  { x: 251, y: 20 }, { x: 378, y: 20 }, { x: 505, y: 20 }, { x: 632, y: 20 },
+  { x: 251, y: 536 }, { x: 378, y: 536 }, { x: 505, y: 536 }, { x: 632, y: 536 },
 ];
 
-type Piece = { id: number; x: number; y: number; placed: boolean };
-type Drag = { id: number; offsetX: number; offsetY: number };
+type Piece = { id: number; x: number; y: number; rotation: number; placed: boolean };
+type Drag = { id: number; offsetX: number; offsetY: number; startX: number; startY: number; moved: boolean };
 
 function shuffledPieces(): Piece[] {
   const order = Array.from({ length: COLS * ROWS }, (_, id) => id);
@@ -26,29 +29,29 @@ function shuffledPieces(): Piece[] {
     const j = Math.floor(Math.random() * (i + 1));
     [order[i], order[j]] = [order[j], order[i]];
   }
-  return order.map((id, index) => ({ id, ...STARTS[index], placed: false }));
+  return order.map((id, index) => ({ id, ...STARTS[index], rotation: (index % 3 + 1) % 4, placed: false }));
 }
 
 function pieceShape(id: number): string {
   const col = id % COLS;
   const row = Math.floor(id / COLS);
-  const top = row === 0 ? 0 : -((row - 1 + col) % 2 ? 1 : -1);
-  const right = col === COLS - 1 ? 0 : (row + col) % 2 ? 1 : -1;
-  const bottom = row === ROWS - 1 ? 0 : (row + col + 1) % 2 ? 1 : -1;
-  const left = col === 0 ? 0 : -((row + col - 1) % 2 ? 1 : -1);
-  const h = (sign: number, y: number, direction: 1 | -1) => {
-    if (!sign) return ` L${direction === 1 ? WIDTH : 0} ${y}`;
-    const a = direction === 1 ? 1 : -1;
-    const start = direction === 1 ? 0 : WIDTH;
-    return ` L${start + a * 54} ${y} C${start + a * 60} ${y},${start + a * 59} ${y - sign * 17},${start + a * 72} ${y - sign * 18} C${start + a * 91} ${y - sign * 32},${start + a * 108} ${y - sign * 11},${start + a * 106} ${y} L${direction === 1 ? WIDTH : 0} ${y}`;
+  // One shared boundary sign is used by both neighbours. Reversing the
+  // traversal reverses the control points, so a tab fits its adjacent notch.
+  const horizontal = (boundaryRow: number, boundaryCol: number) => (boundaryRow + boundaryCol) % 2 ? 1 : -1;
+  const vertical = (boundaryRow: number, boundaryCol: number) => (boundaryRow + boundaryCol) % 2 ? -1 : 1;
+  const top = row === 0 ? 0 : horizontal(row - 1, col);
+  const bottom = row === ROWS - 1 ? 0 : horizontal(row, col);
+  const left = col === 0 ? 0 : vertical(row, col - 1);
+  const right = col === COLS - 1 ? 0 : vertical(row, col);
+  const edge = (length: number, sign: number, reverse: boolean, horizontalEdge: boolean, fixed: number) => {
+    const at = (fraction: number, depth = 0) => horizontalEdge
+      ? `${(reverse ? 1 - fraction : fraction) * length} ${fixed + sign * depth}`
+      : `${fixed + sign * depth} ${(reverse ? 1 - fraction : fraction) * length}`;
+    if (!sign) return ` L${at(1)}`;
+    const depth = horizontalEdge ? 18 : 17;
+    return ` L${at(.32)} C${at(.37)},${at(.36, depth)},${at(.43, depth)} C${at(.46, depth * 1.45)},${at(.54, depth * 1.45)},${at(.57, depth)} C${at(.64, depth)},${at(.63)},${at(.68)} L${at(1)}`;
   };
-  const v = (sign: number, x: number, direction: 1 | -1) => {
-    if (!sign) return ` L${x} ${direction === 1 ? HEIGHT : 0}`;
-    const a = direction === 1 ? 1 : -1;
-    const start = direction === 1 ? 0 : HEIGHT;
-    return ` L${x} ${start + a * 37} C${x} ${start + a * 45},${x + sign * 18} ${start + a * 44},${x + sign * 19} ${start + a * 55} C${x + sign * 30} ${start + a * 74},${x + sign * 12} ${start + a * 86},${x} ${start + a * 83} L${x} ${direction === 1 ? HEIGHT : 0}`;
-  };
-  return `M0 0${h(top, 0, 1)}${v(right, WIDTH, 1)}${h(-bottom, HEIGHT, -1)}${v(-left, 0, -1)} Z`;
+  return `M0 0${edge(WIDTH, top, false, true, 0)}${edge(HEIGHT, right, false, false, WIDTH)}${edge(WIDTH, bottom, true, true, HEIGHT)}${edge(HEIGHT, left, true, false, 0)} Z`;
 }
 
 export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
@@ -103,7 +106,7 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
     const p = point(event);
     if (!p) return;
     event.currentTarget.setPointerCapture(event.pointerId);
-    dragRef.current = { id: piece.id, offsetX: p.x - piece.x, offsetY: p.y - piece.y };
+    dragRef.current = { id: piece.id, offsetX: p.x - piece.x, offsetY: p.y - piece.y, startX: p.x, startY: p.y, moved: false };
     event.preventDefault();
   }
 
@@ -111,6 +114,8 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
     const drag = dragRef.current;
     const p = point(event);
     if (!drag || !p) return;
+    if (Math.hypot(p.x - drag.startX, p.y - drag.startY) < 8 && !drag.moved) return;
+    drag.moved = true;
     const next = piecesRef.current.map((piece) => piece.id === drag.id
       ? { ...piece, x: p.x - drag.offsetX, y: p.y - drag.offsetY } : piece);
     piecesRef.current = next;
@@ -123,9 +128,16 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
     const piece = piecesRef.current.find((item) => item.id === drag.id);
     dragRef.current = null;
     if (!piece || result || seconds === 0) return;
+    if (!drag.moved) {
+      const next = piecesRef.current.map((item) => item.id === piece.id
+        ? { ...item, rotation: (item.rotation + 1) % 4 } : item);
+      piecesRef.current = next;
+      setPieces(next);
+      return;
+    }
     const targetX = BOARD_X + (piece.id % COLS) * WIDTH;
     const targetY = BOARD_Y + Math.floor(piece.id / COLS) * HEIGHT;
-    if (Math.hypot(piece.x - targetX, piece.y - targetY) < 46) {
+    if (piece.rotation === 0 && Math.hypot(piece.x - targetX, piece.y - targetY) < 38) {
       const next = piecesRef.current.map((item) => item.id === piece.id
         ? { ...item, x: targetX, y: targetY, placed: true } : item);
       piecesRef.current = next;
@@ -144,19 +156,21 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
         {active && (
           <div className={styles.game}>
             <img src={screenshot} alt="" className={styles.backdrop} />
-            <svg ref={svgRef} viewBox="0 0 1000 650" className={styles.playArea} role="img" aria-label="Пазл: перетащи детали на места в центральном поле">
+            <svg ref={svgRef} viewBox="0 0 1000 650" className={styles.playArea} role="img" aria-label="Пазл: перетащи детали на места в центральном поле, нажми на деталь для поворота">
               <defs>
-                {Array.from({ length: 9 }, (_, id) => <clipPath key={id} id={`road-piece-${id}`} clipPathUnits="userSpaceOnUse"><path d={pieceShape(id)} /></clipPath>)}
+                {Array.from({ length: COLS * ROWS }, (_, id) => <clipPath key={id} id={`road-piece-${id}`} clipPathUnits="userSpaceOnUse"><path d={pieceShape(id)} /></clipPath>)}
               </defs>
               <rect x={BOARD_X} y={BOARD_Y} width={WIDTH * COLS} height={HEIGHT * ROWS} fill="#100d09" fillOpacity=".9" stroke="#d5a657" strokeWidth="4" />
-              {Array.from({ length: 9 }, (_, id) => <rect key={id} x={BOARD_X + id % 3 * WIDTH} y={BOARD_Y + Math.floor(id / 3) * HEIGHT} width={WIDTH} height={HEIGHT} fill="none" stroke="#a68856" strokeOpacity=".65" strokeDasharray="5 5" />)}
+              {Array.from({ length: COLS * ROWS }, (_, id) => <rect key={id} x={BOARD_X + id % COLS * WIDTH} y={BOARD_Y + Math.floor(id / COLS) * HEIGHT} width={WIDTH} height={HEIGHT} fill="none" stroke="#a68856" strokeOpacity=".65" strokeDasharray="5 5" />)}
               {pieces.map((piece) => (
                 <g key={piece.id} transform={`translate(${piece.x} ${piece.y})`} onPointerDown={(event) => begin(event, piece)} onPointerMove={move} onPointerUp={end} onPointerCancel={end} className={piece.placed ? styles.placed : styles.draggable}>
-                  <path d={pieceShape(piece.id)} fill="#392918" stroke="#f0cb81" strokeWidth="5" />
-                  <g clipPath={`url(#road-piece-${piece.id})`}>
-                    <image href={image} x={-(piece.id % 3) * WIDTH} y={-Math.floor(piece.id / 3) * HEIGHT} width={WIDTH * 3} height={HEIGHT * 3} preserveAspectRatio="none" />
+                  <g transform={`rotate(${piece.rotation * 90} ${WIDTH / 2} ${HEIGHT / 2})`}>
+                    <path d={pieceShape(piece.id)} fill="#392918" stroke="#f0cb81" strokeWidth="5" />
+                    <g clipPath={`url(#road-piece-${piece.id})`}>
+                      <image href={image} x={-(piece.id % COLS) * WIDTH} y={-Math.floor(piece.id / COLS) * HEIGHT} width={WIDTH * COLS} height={HEIGHT * ROWS} preserveAspectRatio="none" />
+                    </g>
+                    <path d={pieceShape(piece.id)} fill="transparent" stroke="#f0cb81" strokeWidth="2" />
                   </g>
-                  <path d={pieceShape(piece.id)} fill="transparent" stroke="#f0cb81" strokeWidth="2" />
                 </g>
               ))}
             </svg>
@@ -167,6 +181,7 @@ export default function RoadPuzzle({ screenshot }: { screenshot: string }) {
       </div>
       <div className={styles.actions}>
         <button type="button" onClick={start}>{active ? "Начать заново" : "Собрать пазл"}</button>
+        <p>Перетащи деталь на место. Нажми на неё, чтобы повернуть.</p>
       </div>
       <details className={styles.archive}>
         <summary>Показать КМовские пазлики</summary>
