@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ScreenshotModal from "./ScreenshotModal";
+import RoadPuzzle from "./RoadPuzzle";
 import { notFound } from "next/navigation";
 import {
   findWorldRoute,
@@ -66,7 +67,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
           {location.description && <span>{location.description}</span>}
         </header>
 
-        {location.image && (
+        {location.id === "cave-road" && location.image ? (
+          <RoadPuzzle screenshot={location.image} />
+        ) : location.image && (
           <div className={styles.screenshot}>
             <NaturalScreenshot
               src={location.image}
@@ -78,6 +81,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             />
           </div>
         )}
+
 
         {location.id === "memory-tree" && (
           <section className={styles.locationGuide}>
@@ -162,14 +166,9 @@ export default async function LocationPage({ params }: LocationPageProps) {
             <p>
               Рыбачить на Озере можно один раз в 30 минут. Сама рыбалка длится до 10 минут. Нужно дождаться момента, когда надпись «Подсечь» на кнопке станет жёлтой и вовремя нажать на эту кнопку.
             </p>
-            <h3>Как включить звук поклёвки</h3>
             <p>
-              Нажми на эту иконку справа внизу, под списком чата, и включи системные оповещения. Когда придёт время подсекать, игра подаст звуковой сигнал.
+              Если включены системные оповещения, игра подаст звуковой сигнал. 
             </p>
-            <figure className={styles.notificationFigure}>
-              <NaturalScreenshot src="/images/world/locations/system-notifications.jpg" alt="Иконка системных оповещений справа внизу под списком чата обведена красным" width={215} height={32} sizes="215px" />
-              <figcaption>Иконка системных оповещений под списком чата</figcaption>
-            </figure>
 
             <h3>Какие бывают удочки</h3>
             <div className={styles.itemList}>
@@ -261,17 +260,6 @@ export default async function LocationPage({ params }: LocationPageProps) {
             <p>
               Если обычная вещь вдруг должна стать чуточку волшебнее, нам сюда ✨
             </p>
-            <p>
-              Какие ресурсы нужны для ЗЧ, смотри в <Link href="/crafting-guide#casting" className={styles.guideLink}>справочнике по заклинательству →</Link>.
-            </p>
-          </section>
-        )}
-
-        {location.id === "workshop" && (
-          <section className={styles.locationGuide}>
-            <p className={styles.eyebrow}>Ремесло</p>
-            <h2>Кожевничество в Мастерской</h2>
-            <p>Здесь можно поставить заплатку на вещь. Прибавки к характеристикам и ресурсы для каждого уровня собраны в <Link href="/crafting-guide#leather" className={styles.guideLink}>справочнике по кожевничеству →</Link>.</p>
           </section>
         )}
 
@@ -462,7 +450,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
 
             <h3>Золотая рыбка</h3>
             <p>
-              Один раз в день в Подземном озере можно взять квест на Золотую рыбку. Если она поймается, в награду получаем три базовых опыта. Это в три раза больше, чем дают одна слива, кусочек мяса или шкурка андвари на фестивале. Сколько таких наград нужно до апа, можно прикинуть в <Link href="/experience#festival-experience" className={styles.guideLink}>калькуляторе опыта →</Link>
+              Один раз в день в Подземном озере можно взять квест на Золотую рыбку. Если она поймается, в награду получаем опыт 🐟✨
             </p>
 
             <div className={styles.locationGallery}>
