@@ -1,5 +1,33 @@
 [
   {
+    "id": "0c93d5ae-bf50-4622-bc63-4431ef9e0850",
+    "syncId": "2026-09-28T09:49:30.125Z",
+    "createdAt": "2026-09-28T09:49:30.125Z",
+    "scope": "clans",
+    "type": "player_reincarnation_level_up",
+    "characterId": "8772",
+    "characterName": "Hanibal",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8772",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldLevel": 10,
+    "newLevel": 11
+  },
+  {
+    "id": "45fe2bc7-53f2-43e4-9cfa-adedf499626b",
+    "syncId": "2026-09-28T09:49:30.125Z",
+    "createdAt": "2026-09-28T09:49:30.125Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "28875",
+    "characterName": "Незнайка",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28875",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 5,
+    "newLevel": 6
+  },
+  {
     "id": "cb0f6a6d-f87c-42b1-850c-66a358ce0541",
     "syncId": "2026-09-26T18:39:22.157Z",
     "createdAt": "2026-09-26T18:39:22.157Z",
