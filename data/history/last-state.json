@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-09-30T09:45:22.569Z",
+  "createdAt": "2026-09-30T20:05:46.272Z",
   "players": [
     {
       "cuid": "7939",
@@ -6258,6 +6258,12 @@
           "category": "profession"
         },
         {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
+        },
+        {
           "id": "/layout/all/subject/achievement/2/begun.gif",
           "name": "Мастер бегун",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
@@ -9793,6 +9799,12 @@
           "name": "Мастер кузнец",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         },
         {
           "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
@@ -19736,7 +19748,7 @@
       "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
-      "position": "Хранитель Равновесия",
+      "position": "К8",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7938",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36505,6 +36517,27 @@
       "clanName": "",
       "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10350",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/3/getter.gif",
+          "name": "Добытчик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
+          "category": "research"
+        }
+      ]
+    },
+    {
+      "cuid": "8203",
+      "nick": "Dark_Hunter",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "235",
+      "clanName": "Храм Мечей",
+      "position": "Хранитель Равновесия",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8203",
       "marriageKnown": true,
       "marriagePartner": "",
       "marriageSince": "",

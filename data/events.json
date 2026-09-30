@@ -1,5 +1,59 @@
 [
   {
+    "id": "ca4030fc-50bc-40a2-b7e1-b941846cefee",
+    "syncId": "2026-09-30T20:05:46.272Z",
+    "createdAt": "2026-09-30T20:05:46.272Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "2128",
+    "characterName": "Умницa",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2128",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "1cd4e046-b06a-416a-b89f-ad84f6b03574",
+    "syncId": "2026-09-30T20:05:46.272Z",
+    "createdAt": "2026-09-30T20:05:46.272Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "24289",
+    "characterName": "Ангел из преисподней",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=24289",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+        "name": "Букварь (2026)",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "67134ddf-fafa-4929-b43d-c7d75b3905ad",
+    "syncId": "2026-09-30T20:05:46.272Z",
+    "createdAt": "2026-09-30T20:05:46.272Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "7938",
+    "characterName": "DanGar",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7938",
+    "clanId": "235",
+    "clanName": "Храм Мечей",
+    "oldPosition": "Хранитель Равновесия",
+    "newPosition": "К8"
+  },
+  {
     "id": "0c93d5ae-bf50-4622-bc63-4431ef9e0850",
     "syncId": "2026-09-28T09:49:30.125Z",
     "createdAt": "2026-09-28T09:49:30.125Z",
