@@ -1,5 +1,47 @@
 [
   {
+    "id": "6eccd36a-0c37-44c0-9a20-0c8d6dbd80e1",
+    "syncId": "2026-10-01T10:10:57.304Z",
+    "createdAt": "2026-10-01T10:10:57.304Z",
+    "scope": "clans",
+    "type": "player_reincarnation_level_up",
+    "characterId": "1780",
+    "characterName": "bolt1k",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1780",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldLevel": 9,
+    "newLevel": 10
+  },
+  {
+    "id": "f1532362-7144-47aa-8c99-f5a1be6ca9bb",
+    "syncId": "2026-10-01T10:10:57.304Z",
+    "createdAt": "2026-10-01T10:10:57.304Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "31554",
+    "characterName": "Mauler",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31554",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 5,
+    "newLevel": 6
+  },
+  {
+    "id": "c42cebc4-fe35-4da0-a7d9-2c7ef2d992fb",
+    "syncId": "2026-10-01T10:10:57.304Z",
+    "createdAt": "2026-10-01T10:10:57.304Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "8203",
+    "characterName": "Dark_Hunter",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8203",
+    "clanId": "235",
+    "clanName": "Храм Мечей",
+    "oldLevel": 4,
+    "newLevel": 5
+  },
+  {
     "id": "ca4030fc-50bc-40a2-b7e1-b941846cefee",
     "syncId": "2026-09-30T20:05:46.272Z",
     "createdAt": "2026-09-30T20:05:46.272Z",
