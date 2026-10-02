@@ -1,5 +1,33 @@
 [
   {
+    "id": "fa5871f4-8132-4d3d-b2e4-12538ac6a2e9",
+    "syncId": "2026-10-02T20:01:27.871Z",
+    "createdAt": "2026-10-02T20:01:27.871Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "3054",
+    "characterName": "Dillinger",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3054",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "4b92df18-bd47-4fdf-ab09-57379247087b",
+    "syncId": "2026-10-02T20:01:27.871Z",
+    "createdAt": "2026-10-02T20:01:27.871Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "8717",
+    "characterName": "Fistashka",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+    "amount": 1,
+    "oldCount": 1,
+    "newCount": 2,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/prv_scream2.gif"
+    ]
+  },
+  {
     "id": "6eccd36a-0c37-44c0-9a20-0c8d6dbd80e1",
     "syncId": "2026-10-01T10:10:57.304Z",
     "createdAt": "2026-10-01T10:10:57.304Z",

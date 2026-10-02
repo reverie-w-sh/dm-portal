@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-02T09:48:07.343Z",
+  "createdAt": "2026-10-02T20:01:27.871Z",
   "players": [
     {
       "cuid": "7939",
@@ -3279,9 +3279,9 @@
       "nick": "Dillinger",
       "level": 12,
       "reincarnationLevel": 10,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3054",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -38641,11 +38641,13 @@
       "owner": "Я человек",
       "itemIds": [
         "204684",
-        "376253"
+        "376253",
+        "392005"
       ],
       "itemNames": [
         "Оплот Надежды(+75 жизни)",
-        "Полет фантазии(Мд)"
+        "Полет фантазии(Мд)",
+        "Птички Счастья"
       ]
     },
     {
@@ -41805,6 +41807,16 @@
       ]
     },
     {
+      "cuid": "8717",
+      "nick": "Fistashka",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
+      "personalSmilesCount": 2,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/prv_scream1.gif",
+        "https://dm-game.com/layout/all/smiles/prv_scream2.gif"
+      ]
+    },
+    {
       "cuid": "3358",
       "nick": "Mentalist",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3358",
@@ -42023,15 +42035,6 @@
       "personalSmilesCount": 1,
       "personalSmiles": [
         "https://dm-game.com/layout/all/smiles/prv_badboy.gif"
-      ]
-    },
-    {
-      "cuid": "8717",
-      "nick": "Fistashka",
-      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8717",
-      "personalSmilesCount": 1,
-      "personalSmiles": [
-        "https://dm-game.com/layout/all/smiles/prv_scream1.gif"
       ]
     },
     {
