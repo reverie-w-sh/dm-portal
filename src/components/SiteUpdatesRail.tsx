@@ -4,8 +4,8 @@ import styles from "./SiteUpdatesRail.module.css";
 const updates = [
   {
     href: "/world/workshop",
-    title: "Ремонт в Мастерской",
-    description: "21 уровень кузнеца, +3 навыка за каждую удачную единицу и 10 секунд между ремонтами своих вещей.",
+    title: "Мастерская",
+    description: "Актуализирована таблица, добавлено описание текущих изменений в кузнечном деле.",
   },
   {
     href: "/world/cave-road",
