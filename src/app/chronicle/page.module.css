@@ -69,6 +69,7 @@
   margin: 0 auto;
 }
 
+
 .filters {
   padding: 18px 20px;
   border: 1px solid rgba(170, 116, 43, 0.45);
@@ -380,6 +381,9 @@
   padding-top: 13px;
   padding-bottom: 13px;
 }
+
+.siteUpdateLink { display: inline-block; margin-top: 8px; color: #f0c678; font-size: .81rem; font-weight: 700; text-underline-offset: 3px; }
+.siteUpdateLink:hover { color: #ffe0a0; }
 
 .eventText {
   color: #c9c0b2;

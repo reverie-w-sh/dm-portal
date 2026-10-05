@@ -74,4 +74,17 @@
 
 .locationGuide .guideLink{color:#f0bc5c;font-weight:700;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.locationGuide .guideLink:hover,.locationGuide .guideLink:focus-visible{color:#ffe09d;text-shadow:0 0 12px rgba(231,169,64,.45)}
 
+.smithTableScroll { max-width: 100%; overflow-x: auto; border: 1px solid rgba(194, 132, 41, .3); border-radius: 10px; }
+.locationGuide .smithSwipeHint { display: none; margin: -3px 0 8px; color: #c7a46a; font-size: 12px; }
+.smithTableScroll:focus-visible { outline: 2px solid #e4b75e; outline-offset: 3px; }
+.smithTable { width: 100%; min-width: 480px; border-collapse: collapse; color: #d5c5a9; font-size: 14px; text-align: left; }
+.smithTable th, .smithTable td { padding: 10px 14px; border-bottom: 1px solid rgba(194, 132, 41, .18); }
+.smithTable thead { color: #f0ce90; background: rgba(128, 78, 22, .35); }
+.smithTable tbody tr:nth-child(even) { background: rgba(179, 127, 56, .07); }
+.smithTable tbody tr:last-child th, .smithTable tbody tr:last-child td { border-bottom: 0; }
+.smithTable th small { color: #9f9079; font-weight: 400; }
+.locationGuide .smithNote { margin: 9px 0 20px; color: #a89a84; font-size: 13px; }
+.smithNote a { color: #e4b75e; }
+@media (max-width: 620px) { .locationGuide .smithSwipeHint { display: block; } }
+
 .notificationFigure{width:max-content;max-width:100%;margin:14px 0 22px;padding:12px;border:1px solid rgba(194,132,41,.36);border-radius:9px;background:#0b0d0b}.notificationFigure figcaption{margin-top:8px;color:#c7ad7d;font-size:13px}

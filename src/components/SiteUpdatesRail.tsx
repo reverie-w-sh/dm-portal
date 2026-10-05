@@ -3,6 +3,11 @@ import styles from "./SiteUpdatesRail.module.css";
 
 const updates = [
   {
+    href: "/world/workshop",
+    title: "Ремонт в Мастерской",
+    description: "21 уровень кузнеца, +3 навыка за каждую удачную единицу и 10 секунд между ремонтами своих вещей.",
+  },
+  {
     href: "/world/cave-road",
     title: "Пазлы в дороге",
     description: "В дороге теперь можно собирать пазлы. Заходи попробовать.",

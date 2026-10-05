@@ -105,6 +105,15 @@ type GameNewsItem = {
   resultText?: string;
 };
 
+type SiteUpdateItem = {
+  id: string;
+  kind: "site-update";
+  createdAt: string;
+  title: string;
+  body: string;
+  href: string;
+};
+
 type Category =
   | "all"
   | "levels"
@@ -115,10 +124,20 @@ type Category =
   | "bosses"
   | "game-news";
 type Period = "7" | "30" | "90" | "all";
-type TimelineItem = ChronicleEvent | GameNewsItem;
+type TimelineItem = ChronicleEvent | GameNewsItem | SiteUpdateItem;
 
 const events = eventsJson as ChronicleEvent[];
 const gameNews = gameNewsJson.items as GameNewsItem[];
+const siteUpdates: SiteUpdateItem[] = [
+  {
+    id: "site-smithing-2026-10-05",
+    kind: "site-update",
+    createdAt: "2026-10-05T17:25:00.000Z",
+    title: "Изменения в Кузнечном деле",
+    body: "В Мастерской теперь есть руководство по ремонту и новая таблица кузнеца с 21 уровнем. За каждую удачно починенную единицу долговечности начисляется +3 очка навыка, а не +3 за всю починку. Между ремонтами своих вещей действует задержка 10 секунд.",
+    href: "/world/workshop",
+  },
+];
 const clans = clansJson as Clan[];
 const players = playersJson as Player[];
 const playerLinksById = new Map(players.map((player) => [player.cuid, player]));
@@ -181,8 +200,18 @@ function isGameNews(item: TimelineItem): item is GameNewsItem {
   return "sourceUrl" in item && "publishedAt" in item;
 }
 
+function isSiteUpdate(item: TimelineItem): item is SiteUpdateItem {
+  return "kind" in item && item.kind === "site-update";
+}
+
 function matchesNickSearch(item: TimelineItem, query: string): boolean {
   if (!query) return true;
+
+  if (isSiteUpdate(item)) {
+    return [item.title, item.body].some((value) =>
+      value.toLocaleLowerCase("ru-RU").includes(query),
+    );
+  }
 
   if (!isGameNews(item)) {
     return [item.characterName, item.partnerName].some((value) =>
@@ -228,6 +257,7 @@ function categoryFor(event: ChronicleEvent): Category | "positions" | "other" {
 }
 
 function categoryForItem(item: TimelineItem): Category | "positions" | "other" {
+  if (isSiteUpdate(item)) return "game-news";
   if (!isGameNews(item)) return categoryFor(item);
   if (item.category === "festival") return "festivals";
   if (item.category === "boss") return "bosses";
@@ -356,6 +386,7 @@ function eventIcon(event: ChronicleEvent): string {
 }
 
 function itemIcon(item: TimelineItem): string {
+  if (isSiteUpdate(item)) return "✦";
   if (!isGameNews(item)) return eventIcon(item);
   if (item.category === "festival") return "✦";
   if (item.category === "boss") return "⚔";
@@ -663,10 +694,10 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
       period === "all" ? 0 : dataNowTime - Number(period) * 86_400_000;
     const normalizedQuery = query.trim().toLocaleLowerCase("ru-RU");
 
-    return ([...events, ...gameNews] as TimelineItem[])
+    return ([...events, ...gameNews, ...siteUpdates] as TimelineItem[])
       .filter(
         (item) =>
-          isGameNews(item) ||
+          isGameNews(item) || isSiteUpdate(item) ||
           (item.scope !== "player" &&
             item.type !== "personal_item_added" &&
             item.type !== POSITION_EVENT),
@@ -863,6 +894,25 @@ export default function ChronicleClient({ initialQuery = "" }: { initialQuery?: 
 
               <div className={styles.dayEvents}>
                 {group.events.map((item) => {
+                  if (isSiteUpdate(item)) {
+                    return (
+                      <article key={item.id} className={`${styles.eventCard} ${styles.newsCard}`}>
+                        <div className={`${styles.icon} ${styles.icon_news}`} aria-hidden="true">
+                          <ScrollIcon />
+                        </div>
+                        <div className={styles.eventBody}>
+                          <div className={styles.newsHeading}>
+                            <Link href={item.href} className={styles.newsTitle}>{item.title}</Link>
+                            <span className={styles.newsTag}>Обновление сайта</span>
+                          </div>
+                          <p className={styles.newsPreview}>{item.body}</p>
+                          <Link href={item.href} className={styles.siteUpdateLink}>В мастерскую →</Link>
+                          <time dateTime={item.createdAt} className={styles.time}>{formatTime(item.createdAt)}</time>
+                        </div>
+                      </article>
+                    );
+                  }
+
                   if (isGameNews(item)) {
                     const categoryName = categoryForItem(item);
 
