@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-04T18:46:53.342Z",
+  "createdAt": "2026-10-05T10:27:33.815Z",
   "players": [
     {
       "cuid": "7939",
@@ -22470,7 +22470,7 @@
       "nick": "pr0gress1ve",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
+      "clanId": "244",
       "clanName": "Devils of Death",
       "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3456",
@@ -36549,6 +36549,59 @@
           "category": "research"
         }
       ]
+    },
+    {
+      "cuid": "31717",
+      "nick": "Granddniwe",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31717",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": []
+    },
+    {
+      "cuid": "7299",
+      "nick": "Сидх1",
+      "level": 9,
+      "reincarnationLevel": null,
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Сидх",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7299",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/smith.gif",
+          "name": "Мастер кузнец",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/labirint_l1.gif",
+          "name": "Мастер лабиринта 1-го уровня",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/labirint_l1.gif",
+          "category": "underground"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/getter.gif",
+          "name": "Добытчик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
+          "category": "research"
+        }
+      ]
     }
   ],
   "clans": [
@@ -38644,8 +38697,8 @@
         "392004",
         "374783",
         "385116",
-        "258219",
         "358348",
+        "392010",
         "392011",
         "392464",
         "204684",

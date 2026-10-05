@@ -1,5 +1,17 @@
 [
   {
+    "id": "bcfa4a16-f396-4cae-acbb-d1f6d7125112",
+    "syncId": "2026-10-05T10:27:33.815Z",
+    "createdAt": "2026-10-05T10:27:33.815Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "3456",
+    "characterName": "pr0gress1ve",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3456",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "fa5871f4-8132-4d3d-b2e4-12538ac6a2e9",
     "syncId": "2026-10-02T20:01:27.871Z",
     "createdAt": "2026-10-02T20:01:27.871Z",
