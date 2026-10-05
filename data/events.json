@@ -1,5 +1,33 @@
 [
   {
+    "id": "516ae7c6-2a2c-49b1-9ebd-f152a6441367",
+    "syncId": "2026-10-05T22:07:29.855Z",
+    "createdAt": "2026-10-05T22:07:29.855Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "26736",
+    "characterName": "Ares",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=26736",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 4,
+    "newLevel": 5
+  },
+  {
+    "id": "3ffeddc3-d221-472c-82cc-5419d4104a41",
+    "syncId": "2026-10-05T22:07:29.855Z",
+    "createdAt": "2026-10-05T22:07:29.855Z",
+    "scope": "clans",
+    "type": "player_reincarnation_level_up",
+    "characterId": "7299",
+    "characterName": "Сидх1",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7299",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldLevel": null,
+    "newLevel": 8
+  },
+  {
     "id": "bcfa4a16-f396-4cae-acbb-d1f6d7125112",
     "syncId": "2026-10-05T10:27:33.815Z",
     "createdAt": "2026-10-05T10:27:33.815Z",
