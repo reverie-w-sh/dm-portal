@@ -1,5 +1,19 @@
 [
   {
+    "id": "8c311a13-e8ae-445d-94fa-e162a8a0a64c",
+    "syncId": "2026-10-06T10:14:51.148Z",
+    "createdAt": "2026-10-06T10:14:51.148Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "19013",
+    "characterName": "black metals",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=19013",
+    "clanId": "213",
+    "clanName": "Ozune",
+    "oldLevel": 8,
+    "newLevel": 9
+  },
+  {
     "id": "516ae7c6-2a2c-49b1-9ebd-f152a6441367",
     "syncId": "2026-10-05T22:07:29.855Z",
     "createdAt": "2026-10-05T22:07:29.855Z",

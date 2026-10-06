@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-05T22:07:29.855Z",
+  "createdAt": "2026-10-06T10:14:51.148Z",
   "players": [
     {
       "cuid": "7939",
@@ -5116,7 +5116,7 @@
     {
       "cuid": "19013",
       "nick": "black metals",
-      "level": 8,
+      "level": 9,
       "reincarnationLevel": null,
       "clanId": "213",
       "clanName": "Ozune",
@@ -36602,6 +36602,34 @@
           "category": "research"
         }
       ]
+    },
+    {
+      "cuid": "31773",
+      "nick": "CaptainCartmanLi",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31773",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": []
+    },
+    {
+      "cuid": "31541",
+      "nick": "war10k",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31541",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": []
     }
   ],
   "clans": [
