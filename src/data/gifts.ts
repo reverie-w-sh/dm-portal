@@ -78,6 +78,6 @@ export const GIFTS: Gift[] = [
   { title: "White Fox Heart 1", file: "/gifts/fox-with-heart.gif"},
   { title: "White Fox Heart 2", file: "/gifts/fox-with-heart-small.gif"},
   { title: "Love 3", file: "/gifts/love-3.gif"},
-  { title: "Love 4", file: "/gifts/love-3.gif"},
+  { title: "Love 4", file: "/gifts/love-4.gif"},
   
 ];
