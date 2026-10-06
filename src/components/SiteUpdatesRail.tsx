@@ -2,6 +2,11 @@ import Link from "next/link";
 import styles from "./SiteUpdatesRail.module.css";
 
 const updates = [
+    {
+    href: "/gifts",
+    title: "Подарочки",
+    description: "Добавила пару подарочков.. Опять же, если хотите какой-то особенный - пишите.. мали ли, вдруг мне нечего делать будет))",
+  },
   {
     href: "/world/workshop",
     title: "Мастерская",
