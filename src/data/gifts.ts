@@ -75,4 +75,9 @@ export const GIFTS: Gift[] = [
   { title: "It's Halloween", file: "/gifts/it's-halloween-halloween-ghost.gif"},
   { title: "Boo To You", file: "/gifts/boo-to-you.gif"},
   { title: "Missing you", file: "/gifts/missing-you-miss-you.gif"},
+  { title: "White Fox Heart 1", file: "/gifts/fox-with-heart.gif"},
+  { title: "White Fox Heart 2", file: "/gifts/fox-with-heart-small.gif"},
+  { title: "Love 3", file: "/gifts/love-3.gif"},
+  { title: "Love 4", file: "/gifts/love-3.gif"},
+  
 ];
