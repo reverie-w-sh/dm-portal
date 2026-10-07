@@ -1,5 +1,25 @@
 [
   {
+    "id": "ba9362ba-80bb-43f5-9751-172510ff351f",
+    "syncId": "2026-10-07T10:18:58.899Z",
+    "createdAt": "2026-10-07T10:18:58.899Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "2000",
+    "characterName": "CoMeBaCk",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2000",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+        "name": "Мастер алхимик",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "e4c43708-ee4f-44bb-a80e-cb86927643fe",
     "syncId": "2026-10-06T20:18:31.538Z",
     "createdAt": "2026-10-06T20:18:31.538Z",
