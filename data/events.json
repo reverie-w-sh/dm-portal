@@ -1,5 +1,79 @@
 [
   {
+    "id": "ebf0aeb8-3165-4dc0-846c-bea7bb36e106",
+    "syncId": "2026-10-07T20:49:37.125Z",
+    "createdAt": "2026-10-07T20:49:37.125Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "3054",
+    "characterName": "Dillinger",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3054",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Старый и опытный"
+  },
+  {
+    "id": "cea83150-2623-467f-80a2-916c25336491",
+    "syncId": "2026-10-07T20:49:37.125Z",
+    "createdAt": "2026-10-07T20:49:37.125Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "11119",
+    "characterName": "fisherman",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11119",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "24ccf4b6-013c-41b6-8e48-87aff54985b4",
+    "syncId": "2026-10-07T20:49:37.125Z",
+    "createdAt": "2026-10-07T20:49:37.125Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "3456",
+    "characterName": "pr0gress1ve",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3456",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldPosition": "Член сообщества",
+    "newPosition": "pr0gress1ve"
+  },
+  {
+    "id": "5853ee1e-a464-4292-bdd7-95bf09185740",
+    "syncId": "2026-10-07T20:49:37.125Z",
+    "createdAt": "2026-10-07T20:49:37.125Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "11177",
+    "characterName": "Princess",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11177",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldPosition": "Член сообщества",
+    "newPosition": ""
+  },
+  {
+    "id": "310e55cd-6199-4936-a91a-e42be82aec4c",
+    "syncId": "2026-10-07T20:49:37.125Z",
+    "createdAt": "2026-10-07T20:49:37.125Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "31541",
+    "characterName": "war10k",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31541",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/collector.gif",
+        "name": "Мастер собиратель",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "ba9362ba-80bb-43f5-9751-172510ff351f",
     "syncId": "2026-10-07T10:18:58.899Z",
     "createdAt": "2026-10-07T10:18:58.899Z",

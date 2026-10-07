@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-07T10:18:58.899Z",
+  "createdAt": "2026-10-07T20:49:37.125Z",
   "players": [
     {
       "cuid": "7939",
@@ -1436,7 +1436,7 @@
       "reincarnationLevel": 8,
       "clanId": "",
       "clanName": "Devils of Death",
-      "position": "Член сообщества",
+      "position": "songre",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1996",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -3281,7 +3281,7 @@
       "reincarnationLevel": 10,
       "clanId": "244",
       "clanName": "Devils of Death",
-      "position": "Член сообщества",
+      "position": "Старый и опытный",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3054",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -19200,9 +19200,9 @@
       "nick": "fisherman",
       "level": 9,
       "reincarnationLevel": 8,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "fisherman",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11119",
       "marriageKnown": true,
       "marriagePartner": "Milady",
@@ -19804,8 +19804,8 @@
       "level": 8,
       "reincarnationLevel": null,
       "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanName": "Devils of Death",
+      "position": "Milady",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17756",
       "marriageKnown": true,
       "marriagePartner": "fisherman",
@@ -22478,7 +22478,7 @@
       "reincarnationLevel": 8,
       "clanId": "244",
       "clanName": "Devils of Death",
-      "position": "Член сообщества",
+      "position": "pr0gress1ve",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3456",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36344,7 +36344,7 @@
       "reincarnationLevel": 8,
       "clanId": "244",
       "clanName": "Devils of Death",
-      "position": "Член сообщества",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11177",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36635,7 +36635,14 @@
       "marriageKnown": true,
       "marriagePartner": "",
       "marriageSince": "",
-      "achievements": []
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        }
+      ]
     },
     {
       "cuid": "31716",
@@ -38169,6 +38176,7 @@
         "381637",
         "382598",
         "530054",
+        "588155",
         "350656",
         "372383",
         "408123",
@@ -38200,6 +38208,7 @@
         "Кулон Тьмы",
         "Кулон Тьмы",
         "Меч Тьмы(Мд)(+12)",
+        "Обручальное кольцо",
         "Обручальное кольцо",
         "Обручальное кольцо",
         "Обручальное кольцо",
@@ -40257,7 +40266,7 @@
         "479853",
         "479854",
         "479855",
-        "587996",
+        "587998",
         "386727",
         "479852"
       ],
@@ -40293,7 +40302,7 @@
         "430138",
         "250850",
         "95019",
-        "446990",
+        "511578",
         "484060",
         "431745"
       ],
