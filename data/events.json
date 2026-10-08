@@ -1,5 +1,29 @@
 [
   {
+    "id": "495e3590-a951-41e6-b36c-8392e4fbfa19",
+    "syncId": "2026-10-08T10:33:39.451Z",
+    "createdAt": "2026-10-08T10:33:39.451Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "1401",
+    "characterName": "melnikov",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1401",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "eb03cf22-8323-4a9a-a4e5-d127bed5bab4",
+    "syncId": "2026-10-08T10:33:39.451Z",
+    "createdAt": "2026-10-08T10:33:39.451Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "17756",
+    "characterName": "Milady",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17756",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "ebf0aeb8-3165-4dc0-846c-bea7bb36e106",
     "syncId": "2026-10-07T20:49:37.125Z",
     "createdAt": "2026-10-07T20:49:37.125Z",
