@@ -1,5 +1,55 @@
 [
   {
+    "id": "f37a22ec-fb6c-48c5-abd3-35d104cd02ea",
+    "syncId": "2026-10-09T20:13:51.852Z",
+    "createdAt": "2026-10-09T20:13:51.852Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "31534",
+    "characterName": "Atlant2026",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31534",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "5035ba3a-b46f-4733-aa94-cda7979e725f",
+    "syncId": "2026-10-09T20:13:51.852Z",
+    "createdAt": "2026-10-09T20:13:51.852Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "31717",
+    "characterName": "Granddniwe",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31717",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "b711b0f6-5a73-4957-90c5-abec2562cff4",
+    "syncId": "2026-10-09T20:13:51.852Z",
+    "createdAt": "2026-10-09T20:13:51.852Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "31716",
+    "characterName": "Legolas",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31716",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldLevel": 4,
+    "newLevel": 5
+  },
+  {
+    "id": "0001a7a0-7481-43e3-9a2d-ea5a143c77e7",
+    "syncId": "2026-10-09T20:13:51.852Z",
+    "createdAt": "2026-10-09T20:13:51.852Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "31716",
+    "characterName": "Legolas",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31716",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "3ac1d07d-61a2-403c-bc85-be1667da3ada",
     "syncId": "2026-10-09T10:32:27.337Z",
     "createdAt": "2026-10-09T10:32:27.337Z",

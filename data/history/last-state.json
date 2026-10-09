@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-09T10:32:27.337Z",
+  "createdAt": "2026-10-09T20:13:51.852Z",
   "players": [
     {
       "cuid": "7939",
@@ -36477,9 +36477,9 @@
       "nick": "Atlant2026",
       "level": 6,
       "reincarnationLevel": null,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31534",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36561,9 +36561,9 @@
       "nick": "Granddniwe",
       "level": 5,
       "reincarnationLevel": null,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31717",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36647,11 +36647,11 @@
     {
       "cuid": "31716",
       "nick": "Legolas",
-      "level": 4,
+      "level": 5,
       "reincarnationLevel": null,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "244",
+      "clanName": "Devils of Death",
+      "position": "Legolas",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31716",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -39088,6 +39088,8 @@
         "275152",
         "510524",
         "505425",
+        "509072",
+        "537893",
         "508588",
         "204384",
         "510740",
@@ -39103,6 +39105,8 @@
         "Генератор иллюзий(Зч)",
         "Гримуар лесной ведьмы",
         "Жало(Мд)(+12)",
+        "Лапка Возмездия(Мд)(+12)",
+        "Лапка Возмездия(Мд)(+15)",
         "Пояс космической пыльцы(Мд)",
         "Сердце Куахога",
         "Сердце Куахога",
@@ -39436,12 +39440,12 @@
     {
       "owner": "FaLLeN",
       "itemIds": [
-        "549420",
+        "203431",
         "203432",
         "258826"
       ],
       "itemNames": [
-        "Меч Рыцаря(Мд)(+12)",
+        "Меч Рыцаря(Мд)(+15)",
         "Меч Рыцаря(Мд)(+15)",
         "Jumbo Wagner(Мд)(+15)"
       ]
