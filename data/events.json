@@ -1,5 +1,19 @@
 [
   {
+    "id": "1356d3fd-b2c2-4138-bfc5-094ff4e60fee",
+    "syncId": "2026-10-10T09:53:09.892Z",
+    "createdAt": "2026-10-10T09:53:09.892Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "31716",
+    "characterName": "Legolas",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31716",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldLevel": 5,
+    "newLevel": 6
+  },
+  {
     "id": "f37a22ec-fb6c-48c5-abd3-35d104cd02ea",
     "syncId": "2026-10-09T20:13:51.852Z",
     "createdAt": "2026-10-09T20:13:51.852Z",
