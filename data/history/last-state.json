@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-11T10:03:57.048Z",
+  "createdAt": "2026-10-11T19:37:44.881Z",
   "players": [
     {
       "cuid": "7939",
@@ -6690,9 +6690,9 @@
       "nick": "египтянин",
       "level": 6,
       "reincarnationLevel": null,
-      "clanId": "",
-      "clanName": "",
-      "position": "",
+      "clanId": "212",
+      "clanName": "Лесные Оборотни",
+      "position": "египтянин",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28595",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -14787,7 +14787,7 @@
     },
     {
       "cuid": "1966",
-      "nick": "ХАРАКТЕРНИК",
+      "nick": "SHPILwarKIEV",
       "level": 12,
       "reincarnationLevel": 8,
       "clanId": "212",
@@ -36479,7 +36479,7 @@
       "reincarnationLevel": null,
       "clanId": "244",
       "clanName": "Devils of Death",
-      "position": "Член сообщества",
+      "position": "Atlant",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31534",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36538,7 +36538,7 @@
     {
       "cuid": "8203",
       "nick": "Dark_Hunter",
-      "level": 5,
+      "level": 6,
       "reincarnationLevel": null,
       "clanId": "235",
       "clanName": "Храм Мечей",
@@ -36563,7 +36563,7 @@
       "reincarnationLevel": null,
       "clanId": "244",
       "clanName": "Devils of Death",
-      "position": "Член сообщества",
+      "position": "Нупас",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31717",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -37984,7 +37984,6 @@
     {
       "owner": "Стьюи",
       "itemIds": [
-        "426655",
         "351078",
         "407819",
         "333660",
@@ -38006,7 +38005,6 @@
         "358493"
       ],
       "itemNames": [
-        "Кедули(Зч)(+6 силы)",
         "Коза(Мд)(+6 силы)",
         "Комбез(+4 брони)",
         "Косилка",
@@ -40285,7 +40283,7 @@
         "Божественные наручи",
         "Вознесения Богини(Мд)(+4 силы)",
         "Гнев Богини(Мд)(+15)",
-        "Корона Великой Богини(Зч)",
+        "Корона Великой Богини(Зч)(+3 брони)",
         "Корсет Богини(+3 брони)",
         "Ломающая Судьбы(Мд)(+15)",
         "Мантия Светоносной Богини(Мд)(+15)",
@@ -41715,7 +41713,7 @@
     },
     {
       "cuid": "1966",
-      "nick": "ХАРАКТЕРНИК",
+      "nick": "SHPILwarKIEV",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1966",
       "personalSmilesCount": 4,
       "personalSmiles": [
