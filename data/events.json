@@ -1,5 +1,33 @@
 [
   {
+    "id": "2ce09f8c-fcf2-4d44-a055-1e065f154e50",
+    "syncId": "2026-10-12T22:39:17.017Z",
+    "createdAt": "2026-10-12T22:39:17.017Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "27039",
+    "characterName": "Nik",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=27039",
+    "clanId": "247",
+    "clanName": "Гладиаторы",
+    "oldLevel": 9,
+    "newLevel": 10
+  },
+  {
+    "id": "902a490f-4208-462b-b8f7-1eb1933d2491",
+    "syncId": "2026-10-12T22:39:17.017Z",
+    "createdAt": "2026-10-12T22:39:17.017Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "8772",
+    "characterName": "Hanibal",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8772",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldLevel": 12,
+    "newLevel": 13
+  },
+  {
     "id": "81cc6f6f-8146-49e5-b0b1-484498f8e3d5",
     "syncId": "2026-10-11T19:37:44.881Z",
     "createdAt": "2026-10-11T19:37:44.881Z",
