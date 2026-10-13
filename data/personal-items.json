@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T10:34:26.811Z",
+  "updatedAt": "2026-10-13T20:45:24.670Z",
   "items": [
     {
       "id": "328358",
@@ -828,11 +828,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=293133"
     },
     {
-      "id": "418946",
+      "id": "534174",
       "name": "Кольцо Ведьмака",
       "owner": "Ведьмак",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/vedmak/16-2875-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=418946"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=534174"
     },
     {
       "id": "394921",
@@ -842,11 +842,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=394921"
     },
     {
-      "id": "384705",
+      "id": "386268",
       "name": "Плащ Ведьмака(Мд)(+15)",
       "owner": "Ведьмак",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/vedmak/20-2875-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=384705"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=386268"
     },
     {
       "id": "411941",
@@ -5848,9 +5848,9 @@
     },
     {
       "id": "376771",
-      "name": "Воздушная нежность(Мд)(+13)",
+      "name": "Воздушная нежность(Мд)(+15)",
       "owner": "Я человек",
-      "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/20-1927-00-13.gif",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/20-1927-00-15.gif",
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=376771"
     },
     {
@@ -5924,32 +5924,18 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=376253"
     },
     {
-      "id": "358761",
-      "name": "Прикосновение нежности(Мд)(+12)",
-      "owner": "Я человек",
-      "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/02-1927-00-12.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=358761"
-    },
-    {
-      "id": "385326",
-      "name": "Прикосновение нежности(Мд)(+12)",
-      "owner": "Я человек",
-      "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/02-1927-00-12.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=385326"
-    },
-    {
-      "id": "385625",
-      "name": "Прикосновение нежности(Мд)(+12)",
-      "owner": "Я человек",
-      "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/02-1927-00-12.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=385625"
-    },
-    {
       "id": "393430",
       "name": "Прикосновение нежности(Мд)(+12)",
       "owner": "Я человек",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/02-1927-00-12.gif",
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=393430"
+    },
+    {
+      "id": "385625",
+      "name": "Прикосновение нежности(Мд)(+15)",
+      "owner": "Я человек",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/milli/02-1927-00-15.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=385625"
     },
     {
       "id": "376772",
@@ -7898,18 +7884,18 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=386335"
     },
     {
-      "id": "549420",
-      "name": "Меч Рыцаря(Мд)(+12)",
-      "owner": "FaLLeN",
-      "imageUrl": "https://dm-game.com//layout//all//subject//self/fallen/04-4603-00-12.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=549420"
-    },
-    {
       "id": "203431",
       "name": "Меч Рыцаря(Мд)(+15)",
       "owner": "FaLLeN",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/fallen/04-4603-00-15.gif",
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=203431"
+    },
+    {
+      "id": "203432",
+      "name": "Меч Рыцаря(Мд)(+15)",
+      "owner": "FaLLeN",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/fallen/04-4603-00-15.gif",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=203432"
     },
     {
       "id": "258826",
@@ -10180,11 +10166,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=392941"
     },
     {
-      "id": "541431",
+      "id": "579358",
       "name": "Nails of Fate(Зч)",
       "owner": "sinful",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/sinful/15-3925-00.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541431"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=579358"
     },
     {
       "id": "405927",
