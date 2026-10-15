@@ -1,5 +1,19 @@
 [
   {
+    "id": "e767cc77-6f73-426d-a45c-3950433be33c",
+    "syncId": "2026-10-15T19:12:19.774Z",
+    "createdAt": "2026-10-15T19:12:19.774Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "2071",
+    "characterName": "Бабай",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2071",
+    "clanId": "206",
+    "clanName": "Бомжи Кровожадного Мира",
+    "oldPosition": "Глава сообщества",
+    "newPosition": "Член сообщества"
+  },
+  {
     "id": "6591cd25-5baa-431c-b7f7-98571a6fd4df",
     "syncId": "2026-10-13T20:45:47.489Z",
     "createdAt": "2026-10-13T20:45:47.489Z",
