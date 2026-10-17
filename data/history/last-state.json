@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-16T18:54:16.535Z",
+  "createdAt": "2026-10-17T07:52:05.650Z",
   "players": [
     {
       "cuid": "7939",
@@ -16105,7 +16105,7 @@
     {
       "cuid": "11577",
       "nick": "SubZero",
-      "level": 11,
+      "level": 12,
       "reincarnationLevel": 9,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
@@ -19761,15 +19761,15 @@
       "marriageSince": "",
       "achievements": [
         {
-          "id": "/layout/all/subject/achievement/2/collector.gif",
-          "name": "Мастер собиратель",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "id": "/layout/all/subject/achievement/2/hunter.gif",
+          "name": "Мастер охотник",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/2/all_hands.gif",
-          "name": "Мастер на все руки",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
           "category": "profession"
         },
         {
@@ -19777,6 +19777,12 @@
           "name": "Добытчик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/all_hands.gif",
+          "name": "Мастер на все руки",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/repairer.gif",

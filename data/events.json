@@ -1,5 +1,39 @@
 [
   {
+    "id": "8d4bc2fd-0fd6-461e-a4d5-94b161654875",
+    "syncId": "2026-10-17T07:52:05.650Z",
+    "createdAt": "2026-10-17T07:52:05.650Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "11577",
+    "characterName": "SubZero",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11577",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldLevel": 11,
+    "newLevel": 12
+  },
+  {
+    "id": "8055be16-4c35-4a4b-9c67-2ddad1d43c15",
+    "syncId": "2026-10-17T07:52:05.650Z",
+    "createdAt": "2026-10-17T07:52:05.650Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "7938",
+    "characterName": "DanGar",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=7938",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/hunter.gif",
+        "name": "Мастер охотник",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/hunter.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "1119a699-fbea-4b20-be7a-081b223892fd",
     "syncId": "2026-10-16T18:54:16.535Z",
     "createdAt": "2026-10-16T18:54:16.535Z",
