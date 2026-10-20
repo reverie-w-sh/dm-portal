@@ -666,10 +666,6 @@
 11. сантила[8] — cuid=1974 — https://dm-game.com/index.php?file=infouser&cuid=1974
 12. maria2004[6] — cuid=23023 — https://dm-game.com/index.php?file=infouser&cuid=23023
 
-## Restless souls — CLAN 218 — знайдено 1
-
-1. Александр Николаевич[11] — cuid=1939 — https://dm-game.com/index.php?file=infouser&cuid=1939
-
 ## Викинги — CLAN 221 — знайдено 11
 
 1. Антип[10] — cuid=7273 — https://dm-game.com/index.php?file=infouser&cuid=7273
