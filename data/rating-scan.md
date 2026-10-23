@@ -614,7 +614,7 @@
 15. оля[8] — cuid=3462 — https://dm-game.com/index.php?file=infouser&cuid=3462
 16. Сарацын[8] — cuid=1963 — https://dm-game.com/index.php?file=infouser&cuid=1963
 17. халик[8] — cuid=3631 — https://dm-game.com/index.php?file=infouser&cuid=3631
-18. war10k[4] — cuid=31541 — https://dm-game.com/index.php?file=infouser&cuid=31541
+18. war10k[5] — cuid=31541 — https://dm-game.com/index.php?file=infouser&cuid=31541
 
 ## Лесные Оборотни — CLAN 212 — знайдено 4
 
