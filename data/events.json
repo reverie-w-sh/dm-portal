@@ -1,5 +1,49 @@
 [
   {
+    "id": "cad1a90c-9f76-46ff-938e-0893539f3a08",
+    "syncId": "2026-10-25T18:31:02.650Z",
+    "createdAt": "2026-10-25T18:31:02.650Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "4116",
+    "characterName": "Tequila",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4116",
+    "clanId": "200",
+    "clanName": "Грезы Единорога"
+  },
+  {
+    "id": "c55d47ce-4e7b-48ff-9723-ab9c110fd352",
+    "syncId": "2026-10-25T18:31:02.650Z",
+    "createdAt": "2026-10-25T18:31:02.650Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "4116",
+    "characterName": "Tequila",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4116",
+    "clanId": "247",
+    "clanName": "Гладиаторы"
+  },
+  {
+    "id": "e0e34e04-1cf4-40b2-9d66-761ffd34fd5f",
+    "syncId": "2026-10-25T18:31:02.650Z",
+    "createdAt": "2026-10-25T18:31:02.650Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1915",
+    "characterName": "Безликий",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1915",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+        "name": "Мастер садов кошмаров",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+        "category": "underground"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "74c8d70e-20fe-4a56-9b73-4934a2ad8940",
     "syncId": "2026-10-23T19:25:04.158Z",
     "createdAt": "2026-10-23T19:25:04.158Z",

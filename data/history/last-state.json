@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-25T08:28:28.502Z",
+  "createdAt": "2026-10-25T18:31:02.650Z",
   "players": [
     {
       "cuid": "7939",
@@ -10944,9 +10944,9 @@
       "nick": "Tequila",
       "level": 15,
       "reincarnationLevel": 12,
-      "clanId": "200",
-      "clanName": "Грезы Единорога",
-      "position": "Tequila",
+      "clanId": "247",
+      "clanName": "Гладиаторы",
+      "position": "Текила Санрайз",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4116",
       "marriageKnown": true,
       "marriagePartner": "Мишаня",
@@ -12771,9 +12771,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/4/malahit.gif",
-          "name": "Малахитовый мастер",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/malahit.gif",
+          "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "name": "Мастер садов кошмаров",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
           "category": "underground"
         },
         {
@@ -12787,6 +12787,12 @@
           "name": "Букварь (2021)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2021.png",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/malahit.gif",
+          "name": "Малахитовый мастер",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/malahit.gif",
+          "category": "underground"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
@@ -38783,7 +38789,7 @@
         "Нежный бриз",
         "Оберег",
         "Оплот Надежды",
-        "Полет фантазии(Мд)",
+        "Полет фантазии(Мд)(+12)",
         "Прикосновение нежности(Мд)(+12)",
         "Прикосновение нежности(Мд)(+15)",
         "Причал надежды(Мд)",
