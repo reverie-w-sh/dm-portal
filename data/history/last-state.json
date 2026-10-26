@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-25T18:31:02.650Z",
+  "createdAt": "2026-10-26T08:55:49.890Z",
   "players": [
     {
       "cuid": "7939",
@@ -14173,6 +14173,12 @@
           "name": "Букварь (2020)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "name": "Мастер садов кошмаров",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+          "category": "underground"
         },
         {
           "id": "/layout/all/subject/achievement/2/smith.gif",
@@ -36782,7 +36788,7 @@
     {
       "owner": "_GRACIA_",
       "itemIds": [
-        "328358",
+        "440544",
         "583948",
         "290429",
         "290436",
@@ -36800,7 +36806,7 @@
         "382767"
       ],
       "itemNames": [
-        "Амулет солнца(Зч)",
+        "Амулет солнца",
         "Арбалет солнца",
         "Броня солнца(+3 брони)",
         "Кольцо солнца",

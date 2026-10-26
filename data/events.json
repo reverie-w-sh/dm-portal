@@ -1,5 +1,25 @@
 [
   {
+    "id": "8a5b2d31-95f7-409e-bca5-42e8ad6651df",
+    "syncId": "2026-10-26T08:55:49.890Z",
+    "createdAt": "2026-10-26T08:55:49.890Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "4745",
+    "characterName": "Гаденыш",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4745",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+        "name": "Мастер садов кошмаров",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/sad_koshmarov4.gif",
+        "category": "underground"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "cad1a90c-9f76-46ff-938e-0893539f3a08",
     "syncId": "2026-10-25T18:31:02.650Z",
     "createdAt": "2026-10-25T18:31:02.650Z",
