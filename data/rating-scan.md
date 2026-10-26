@@ -698,8 +698,8 @@
 3. Hanibal[11] — cuid=8772 — https://dm-game.com/index.php?file=infouser&cuid=8772
 4. CoMeBaCk[10] — cuid=2000 — https://dm-game.com/index.php?file=infouser&cuid=2000
 5. IhorU[10] — cuid=16488 — https://dm-game.com/index.php?file=infouser&cuid=16488
-6. Enjoyfen[9] — cuid=1983 — https://dm-game.com/index.php?file=infouser&cuid=1983
-7. SubZero[9] — cuid=11577 — https://dm-game.com/index.php?file=infouser&cuid=11577
+6. SubZero[10] — cuid=11577 — https://dm-game.com/index.php?file=infouser&cuid=11577
+7. Enjoyfen[9] — cuid=1983 — https://dm-game.com/index.php?file=infouser&cuid=1983
 8. Герцог_Бургундский[9] — cuid=1583 — https://dm-game.com/index.php?file=infouser&cuid=1583
 9. Добрый дядя Орк[9] — cuid=2309 — https://dm-game.com/index.php?file=infouser&cuid=2309
 10. Зеля[9] — cuid=11589 — https://dm-game.com/index.php?file=infouser&cuid=11589

@@ -1,5 +1,39 @@
 [
   {
+    "id": "94ee5bdf-2d96-46f0-b119-66c89bfd6adc",
+    "syncId": "2026-10-26T20:45:14.162Z",
+    "createdAt": "2026-10-26T20:45:14.162Z",
+    "scope": "clans",
+    "type": "player_reincarnation_level_up",
+    "characterId": "11577",
+    "characterName": "SubZero",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11577",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы",
+    "oldLevel": 9,
+    "newLevel": 10
+  },
+  {
+    "id": "0213fc08-4c5a-4f19-b8e7-7aa36daa4003",
+    "syncId": "2026-10-26T20:45:14.162Z",
+    "createdAt": "2026-10-26T20:45:14.162Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "31717",
+    "characterName": "Granddniwe",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31717",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/collector.gif",
+        "name": "Мастер собиратель",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "8a5b2d31-95f7-409e-bca5-42e8ad6651df",
     "syncId": "2026-10-26T08:55:49.890Z",
     "createdAt": "2026-10-26T08:55:49.890Z",

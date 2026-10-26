@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-26T08:55:49.890Z",
+  "createdAt": "2026-10-26T20:45:14.162Z",
   "players": [
     {
       "cuid": "7939",
@@ -16118,7 +16118,7 @@
       "cuid": "11577",
       "nick": "SubZero",
       "level": 12,
-      "reincarnationLevel": 9,
+      "reincarnationLevel": 10,
       "clanId": "232",
       "clanName": "Падшие и Ангелы",
       "position": "Наблюдатель",
@@ -36586,7 +36586,14 @@
       "marriageKnown": true,
       "marriagePartner": "",
       "marriageSince": "",
-      "achievements": []
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        }
+      ]
     },
     {
       "cuid": "7299",
