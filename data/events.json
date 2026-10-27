@@ -1,5 +1,39 @@
 [
   {
+    "id": "750b85b0-ac5d-4af8-8672-979a32c64610",
+    "syncId": "2026-10-27T20:10:01.341Z",
+    "createdAt": "2026-10-27T20:10:01.341Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "24697",
+    "characterName": "Лялечка",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=24697",
+    "clanId": "244",
+    "clanName": "Devils of Death",
+    "oldPosition": "",
+    "newPosition": "хозяйка аттракциона"
+  },
+  {
+    "id": "be54e345-80f0-4473-acd4-fd7b2d7007f4",
+    "syncId": "2026-10-27T20:10:01.341Z",
+    "createdAt": "2026-10-27T20:10:01.341Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "18937",
+    "characterName": "FaberGe",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=18937",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/fisher.gif",
+        "name": "Мастер рыбак",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "94ee5bdf-2d96-46f0-b119-66c89bfd6adc",
     "syncId": "2026-10-26T20:45:14.162Z",
     "createdAt": "2026-10-26T20:45:14.162Z",
