@@ -1,5 +1,25 @@
 [
   {
+    "id": "b3807ca2-eca8-4e2c-a18e-3f71bd8b076e",
+    "syncId": "2026-10-31T09:41:28.939Z",
+    "createdAt": "2026-10-31T09:41:28.939Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "31716",
+    "characterName": "Legolas",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31716",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/all_hands.gif",
+        "name": "Мастер на все руки",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "a072b8de-cba6-443b-b913-8e77b6077716",
     "syncId": "2026-10-28T20:21:44.621Z",
     "createdAt": "2026-10-28T20:21:44.621Z",

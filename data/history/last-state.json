@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-30T20:05:14.258Z",
+  "createdAt": "2026-10-31T09:41:28.939Z",
   "players": [
     {
       "cuid": "7939",
@@ -36687,7 +36687,14 @@
       "marriageKnown": true,
       "marriagePartner": "",
       "marriageSince": "",
-      "achievements": []
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/all_hands.gif",
+          "name": "Мастер на все руки",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+          "category": "profession"
+        }
+      ]
     }
   ],
   "clans": [
