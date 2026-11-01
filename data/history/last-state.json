@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-10-31T19:24:11.285Z",
+  "createdAt": "2026-11-01T10:30:24.079Z",
   "players": [
     {
       "cuid": "7939",
@@ -1326,9 +1326,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/getter.gif",
-          "name": "Добытчик",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
+          "id": "/layout/all/subject/achievement/3/random_num.gif",
+          "name": "Мастер случайных чисел",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/random_num.gif",
           "category": "research"
         },
         {
@@ -1344,9 +1344,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/bukvar.gif",
-          "name": "Букварь (2020)",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar.gif",
+          "id": "/layout/all/subject/achievement/3/getter.gif",
+          "name": "Добытчик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
           "category": "research"
         },
         {
@@ -1362,9 +1362,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/bukvar2021.png",
-          "name": "Букварь (2021)",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2021.png",
+          "id": "/layout/all/subject/achievement/3/bukvar.gif",
+          "name": "Букварь (2020)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar.gif",
           "category": "research"
         },
         {
@@ -1380,9 +1380,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/bukvar2022.gif",
-          "name": "Букварь (2022)",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2022.gif",
+          "id": "/layout/all/subject/achievement/3/bukvar2021.png",
+          "name": "Букварь (2021)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2021.png",
           "category": "research"
         },
         {
@@ -1392,9 +1392,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/bukvar2023.gif",
-          "name": "Букварь (2023)",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2023.gif",
+          "id": "/layout/all/subject/achievement/3/bukvar2022.gif",
+          "name": "Букварь (2022)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2022.gif",
           "category": "research"
         },
         {
@@ -1404,9 +1404,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/bukvar2024.gif",
-          "name": "Букварь (2024)",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2024.gif",
+          "id": "/layout/all/subject/achievement/3/bukvar2023.gif",
+          "name": "Букварь (2023)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2023.gif",
           "category": "research"
         },
         {
@@ -1416,9 +1416,9 @@
           "category": "profession"
         },
         {
-          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
-          "name": "Букварь (2026)",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "id": "/layout/all/subject/achievement/3/bukvar2024.gif",
+          "name": "Букварь (2024)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2024.gif",
           "category": "research"
         },
         {
@@ -1426,6 +1426,12 @@
           "name": "Мастер дропа",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/drop.gif",
           "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/bukvar2026.png",
+          "name": "Букварь (2026)",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
+          "category": "research"
         }
       ]
     },
@@ -1434,7 +1440,7 @@
       "nick": "songre",
       "level": 10,
       "reincarnationLevel": 8,
-      "clanId": "",
+      "clanId": "244",
       "clanName": "Devils of Death",
       "position": "songre",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1996",
@@ -6688,7 +6694,7 @@
     {
       "cuid": "28595",
       "nick": "египтянин",
-      "level": 6,
+      "level": 7,
       "reincarnationLevel": null,
       "clanId": "212",
       "clanName": "Лесные Оборотни",
@@ -37994,6 +38000,7 @@
         "405232",
         "443376",
         "388168",
+        "534349",
         "369541"
       ],
       "itemNames": [
@@ -38014,6 +38021,7 @@
         "Сапоги Гризли(Зч)(+4 силы)",
         "Секира Гризли(Мд)(+15)",
         "Топор Гризли(Мд)(+12)",
+        "Шлем Гризли(Зч)(+3 брони)",
         "Щит Гризли(+50 жизни)"
       ]
     },
@@ -40346,6 +40354,7 @@
         "317784",
         "438066",
         "561590",
+        "495401",
         "519661",
         "593568",
         "593217",
@@ -40364,6 +40373,7 @@
         "Арктический пояс(Мд)",
         "Булава холода(Мд)(+15)",
         "Защита льдом(+75 жизни)",
+        "Кольцо SubZero",
         "Кольцо SubZero",
         "Кольцо SubZero",
         "Кристаллы льда",
@@ -40385,7 +40395,6 @@
         "585333",
         "434742",
         "412062",
-        "383447",
         "495721",
         "491132",
         "432571",
@@ -40406,7 +40415,6 @@
         "Амулет Текилы(Зч)",
         "Арбалет Текилы(Мд)(+12)",
         "Браслеты Текилы(Мд)",
-        "Верность",
         "Верность",
         "Дубина Текилы(Мд)(+15)",
         "Кольцо Текилы",
@@ -40637,7 +40645,6 @@
         "394085",
         "391844",
         "404371",
-        "373585",
         "391843",
         "391140",
         "517467",
@@ -40654,7 +40661,6 @@
         "Ее чудовище",
         "Кольцо Zorro",
         "Кольцо Zorro",
-        "Лоссо Zorro(Мд)(+15)",
         "Наручи Zorro(Мд)",
         "Перчатки Zorro(Мд)(+6 силы)",
         "Плащ Zorro(Мд)(+13)",

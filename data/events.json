@@ -1,5 +1,51 @@
 [
   {
+    "id": "d20039be-5a01-4b01-9475-f70279086a8a",
+    "syncId": "2026-11-01T10:30:24.079Z",
+    "createdAt": "2026-11-01T10:30:24.079Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "2122",
+    "characterName": "oFFWhite",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=2122",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/3/random_num.gif",
+        "name": "Мастер случайных чисел",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/random_num.gif",
+        "category": "research"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
+    "id": "5a01e79b-a6e5-4b94-97e5-c90c60e9a09a",
+    "syncId": "2026-11-01T10:30:24.079Z",
+    "createdAt": "2026-11-01T10:30:24.079Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "1996",
+    "characterName": "songre",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1996",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "8cc241cc-6d3c-4059-ba0e-473d1bfdb586",
+    "syncId": "2026-11-01T10:30:24.079Z",
+    "createdAt": "2026-11-01T10:30:24.079Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "28595",
+    "characterName": "египтянин",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=28595",
+    "clanId": "212",
+    "clanName": "Лесные Оборотни",
+    "oldLevel": 6,
+    "newLevel": 7
+  },
+  {
     "id": "b3807ca2-eca8-4e2c-a18e-3f71bd8b076e",
     "syncId": "2026-10-31T09:41:28.939Z",
     "createdAt": "2026-10-31T09:41:28.939Z",
