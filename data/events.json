@@ -1,5 +1,41 @@
 [
   {
+    "id": "665da6cd-5b08-46cc-803f-37d9dd9eb95e",
+    "syncId": "2026-11-03T21:04:44.797Z",
+    "createdAt": "2026-11-03T21:04:44.797Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "1927",
+    "characterName": "Я человек",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1927",
+    "clanId": "279",
+    "clanName": "Mercenaries"
+  },
+  {
+    "id": "a4020903-de36-4967-a9df-d86fdbb3a8a8",
+    "syncId": "2026-11-03T21:04:44.797Z",
+    "createdAt": "2026-11-03T21:04:44.797Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "6286",
+    "characterName": "ЭХО",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6286",
+    "clanId": "232",
+    "clanName": "Падшие и Ангелы"
+  },
+  {
+    "id": "f5b27379-e0c8-46a1-8f7a-98ff31535f7b",
+    "syncId": "2026-11-03T21:04:44.797Z",
+    "createdAt": "2026-11-03T21:04:44.797Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "6286",
+    "characterName": "ЭХО",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6286",
+    "clanId": "279",
+    "clanName": "Mercenaries"
+  },
+  {
     "id": "d20039be-5a01-4b01-9475-f70279086a8a",
     "syncId": "2026-11-01T10:30:24.079Z",
     "createdAt": "2026-11-01T10:30:24.079Z",
