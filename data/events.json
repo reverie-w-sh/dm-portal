@@ -1,5 +1,19 @@
 [
   {
+    "id": "92993f20-a92b-4efb-8123-5c8f48001e9c",
+    "syncId": "2026-11-04T21:24:57.113Z",
+    "createdAt": "2026-11-04T21:24:57.113Z",
+    "scope": "clans",
+    "type": "player_reincarnation_level_up",
+    "characterId": "4183",
+    "characterName": "Zorro",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=4183",
+    "clanId": "247",
+    "clanName": "Гладиаторы",
+    "oldLevel": 12,
+    "newLevel": 13
+  },
+  {
     "id": "cad9f42d-187a-4064-ac78-5fd42eee6dea",
     "syncId": "2026-11-04T10:56:30.158Z",
     "createdAt": "2026-11-04T10:56:30.158Z",

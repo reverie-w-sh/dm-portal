@@ -815,8 +815,8 @@
 ## Гладиаторы — CLAN 247 — знайдено 10
 
 1. 911[13] — cuid=1244 — https://dm-game.com/index.php?file=infouser&cuid=1244
-2. Tequila[12] — cuid=4116 — https://dm-game.com/index.php?file=infouser&cuid=4116
-3. Zorro[12] — cuid=4183 — https://dm-game.com/index.php?file=infouser&cuid=4183
+2. Zorro[13] — cuid=4183 — https://dm-game.com/index.php?file=infouser&cuid=4183
+3. Tequila[12] — cuid=4116 — https://dm-game.com/index.php?file=infouser&cuid=4116
 4. Луч света[12] — cuid=1365 — https://dm-game.com/index.php?file=infouser&cuid=1365
 5. Мишаня[12] — cuid=2094 — https://dm-game.com/index.php?file=infouser&cuid=2094
 6. Крикс[11] — cuid=5605 — https://dm-game.com/index.php?file=infouser&cuid=5605
