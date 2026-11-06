@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-06T10:52:16.810Z",
+  "createdAt": "2026-11-06T20:58:57.410Z",
   "players": [
     {
       "cuid": "7939",
@@ -9648,6 +9648,12 @@
           "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
           "name": "Мастер алхимик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/vedun.gif",
+          "name": "Мастер ведун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
           "category": "profession"
         },
         {

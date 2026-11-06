@@ -1,5 +1,25 @@
 [
   {
+    "id": "68493fe5-bc93-498b-b457-3d176be3f534",
+    "syncId": "2026-11-06T20:58:57.410Z",
+    "createdAt": "2026-11-06T20:58:57.410Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "12846",
+    "characterName": "Гарпий",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=12846",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/vedun.gif",
+        "name": "Мастер ведун",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "92993f20-a92b-4efb-8123-5c8f48001e9c",
     "syncId": "2026-11-04T21:24:57.113Z",
     "createdAt": "2026-11-04T21:24:57.113Z",
