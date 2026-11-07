@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-07T10:04:11.295Z",
+  "createdAt": "2026-11-07T19:30:24.269Z",
   "players": [
     {
       "cuid": "7939",
@@ -36704,6 +36704,12 @@
           "id": "/layout/all/subject/achievement/2/all_hands.gif",
           "name": "Мастер на все руки",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
           "category": "profession"
         }
       ]

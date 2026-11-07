@@ -1,5 +1,25 @@
 [
   {
+    "id": "d7e2c552-23c3-48c2-a94c-2e22666c4791",
+    "syncId": "2026-11-07T19:30:24.269Z",
+    "createdAt": "2026-11-07T19:30:24.269Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "31716",
+    "characterName": "Legolas",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=31716",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/begun.gif",
+        "name": "Мастер бегун",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "68493fe5-bc93-498b-b457-3d176be3f534",
     "syncId": "2026-11-06T20:58:57.410Z",
     "createdAt": "2026-11-06T20:58:57.410Z",
