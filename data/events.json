@@ -1,5 +1,25 @@
 [
   {
+    "id": "f94d4b62-3084-4a9f-a9ba-2f500438b130",
+    "syncId": "2026-11-08T19:38:27.270Z",
+    "createdAt": "2026-11-08T19:38:27.270Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "5605",
+    "characterName": "Крикс",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=5605",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/4/shadow2.gif",
+        "name": "Мастер леса теней",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/shadow2.gif",
+        "category": "underground"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "d7e2c552-23c3-48c2-a94c-2e22666c4791",
     "syncId": "2026-11-07T19:30:24.269Z",
     "createdAt": "2026-11-07T19:30:24.269Z",

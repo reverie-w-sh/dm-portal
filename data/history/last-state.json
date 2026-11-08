@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-08T10:19:24.091Z",
+  "createdAt": "2026-11-08T19:38:27.270Z",
   "players": [
     {
       "cuid": "7939",
@@ -9502,6 +9502,12 @@
           "name": "Букварь (2020)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/shadow2.gif",
+          "name": "Мастер леса теней",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/shadow2.gif",
+          "category": "underground"
         },
         {
           "id": "/layout/all/subject/achievement/2/repairer.gif",
@@ -40410,6 +40416,7 @@
         "434742",
         "412062",
         "495721",
+        "594845",
         "491132",
         "432571",
         "432572",
@@ -40429,6 +40436,7 @@
         "Амулет Текилы(Зч)",
         "Арбалет Текилы(Мд)(+12)",
         "Браслеты Текилы(Мд)",
+        "Верность",
         "Верность",
         "Дубина Текилы(Мд)(+15)",
         "Кольцо Текилы",
