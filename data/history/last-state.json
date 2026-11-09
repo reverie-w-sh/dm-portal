@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-08T19:38:27.270Z",
+  "createdAt": "2026-11-09T11:27:14.111Z",
   "players": [
     {
       "cuid": "7939",
@@ -36706,6 +36706,12 @@
       "marriagePartner": "",
       "marriageSince": "",
       "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        },
         {
           "id": "/layout/all/subject/achievement/2/all_hands.gif",
           "name": "Мастер на все руки",
