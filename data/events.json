@@ -1,5 +1,45 @@
 [
   {
+    "id": "8ac3f94f-a909-49ea-9eb8-8ee67238867a",
+    "syncId": "2026-11-09T23:55:33.375Z",
+    "createdAt": "2026-11-09T23:55:33.375Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "10420",
+    "characterName": "InDigo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
+    "clanId": "200",
+    "clanName": "Грезы Единорога"
+  },
+  {
+    "id": "46a2f6eb-3d49-4626-8c7c-8ccaa9aa3990",
+    "syncId": "2026-11-09T23:55:33.375Z",
+    "createdAt": "2026-11-09T23:55:33.375Z",
+    "scope": "clans",
+    "type": "player_joined_clan",
+    "characterId": "10420",
+    "characterName": "InDigo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
+    "clanId": "279",
+    "clanName": "Mercenaries"
+  },
+  {
+    "id": "d194039a-51c5-4c0a-9330-44dcefd9d6a0",
+    "syncId": "2026-11-09T23:55:33.375Z",
+    "createdAt": "2026-11-09T23:55:33.375Z",
+    "scope": "personal-smiles",
+    "type": "personal_smile_added",
+    "characterId": "1939",
+    "characterName": "Александр Николаевич",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1939",
+    "amount": 1,
+    "oldCount": 8,
+    "newCount": 9,
+    "addedSmiles": [
+      "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich6.gif"
+    ]
+  },
+  {
     "id": "a822e931-8261-4c47-9e7c-52dd81a2c202",
     "syncId": "2026-11-09T11:27:14.111Z",
     "createdAt": "2026-11-09T11:27:14.111Z",

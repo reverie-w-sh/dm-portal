@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-09T11:27:14.111Z",
+  "createdAt": "2026-11-09T23:55:33.375Z",
   "players": [
     {
       "cuid": "7939",
@@ -10803,9 +10803,9 @@
       "nick": "InDigo",
       "level": 15,
       "reincarnationLevel": 12,
-      "clanId": "200",
-      "clanName": "Грезы Единорога",
-      "position": "InDigo",
+      "clanId": "279",
+      "clanName": "Mercenaries",
+      "position": "Член сообщества",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
       "marriageKnown": true,
       "marriagePartner": "Euphoria",
@@ -41490,6 +41490,23 @@
       ]
     },
     {
+      "cuid": "1939",
+      "nick": "Александр Николаевич",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1939",
+      "personalSmilesCount": 9,
+      "personalSmiles": [
+        "https://dm-game.com/layout/all/smiles/hllwng.gif",
+        "https://dm-game.com/layout/all/smiles/hell.gif",
+        "https://dm-game.com/layout/all/smiles/1939/clan_228.gif",
+        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich1.gif",
+        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich2.gif",
+        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich3.gif",
+        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich4.gif",
+        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich5.gif",
+        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich6.gif"
+      ]
+    },
+    {
       "cuid": "1931",
       "nick": "Викки",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1931",
@@ -41537,22 +41554,6 @@
         "https://dm-game.com/layout/all/smiles/prv_fifi4.gif",
         "https://dm-game.com/layout/all/smiles/prv_fifi16.gif",
         "https://dm-game.com/layout/all/smiles/prv_artems1.gif"
-      ]
-    },
-    {
-      "cuid": "1939",
-      "nick": "Александр Николаевич",
-      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1939",
-      "personalSmilesCount": 8,
-      "personalSmiles": [
-        "https://dm-game.com/layout/all/smiles/hllwng.gif",
-        "https://dm-game.com/layout/all/smiles/hell.gif",
-        "https://dm-game.com/layout/all/smiles/1939/clan_228.gif",
-        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich1.gif",
-        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich2.gif",
-        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich3.gif",
-        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich4.gif",
-        "https://dm-game.com/layout/all/smiles/1939/prv_nikolaich5.gif"
       ]
     },
     {
