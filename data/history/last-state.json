@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-09T23:55:33.375Z",
+  "createdAt": "2026-11-10T11:08:25.191Z",
   "players": [
     {
       "cuid": "7939",
@@ -2511,6 +2511,12 @@
           "id": "/layout/all/subject/achievement/2/smith.gif",
           "name": "Мастер кузнец",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+          "name": "Мастер алхимик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
           "category": "profession"
         },
         {

@@ -1,5 +1,25 @@
 [
   {
+    "id": "5e08daef-384e-4d31-aa40-b4f6b0593e1a",
+    "syncId": "2026-11-10T11:08:25.191Z",
+    "createdAt": "2026-11-10T11:08:25.191Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "15457",
+    "characterName": "Nimona",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=15457",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+        "name": "Мастер алхимик",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "8ac3f94f-a909-49ea-9eb8-8ee67238867a",
     "syncId": "2026-11-09T23:55:33.375Z",
     "createdAt": "2026-11-09T23:55:33.375Z",
