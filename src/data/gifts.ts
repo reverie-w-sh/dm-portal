@@ -45,6 +45,7 @@ export const GIFTS: Gift[] = [
 
   { title: "Волк 1 Подарок)", file: "/gifts/volk-1.gif" },
   { title: "Волк с сердечком)", file: "/gifts/wolf-heart.gif" },  
+  { title: "Друзья Крокодилы Подарок)", file: "/gifts/bro.gif" }, 
   { title: "Котик пчелка Подарок", file: "/gifts/2.gif" },
   { title: "Собака зубастый Подарок)", file: "/gifts/3.gif" },
   { title: "Котик милый Подарок", file: "/gifts/4.gif" },
