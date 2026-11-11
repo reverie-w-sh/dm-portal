@@ -1,5 +1,25 @@
 [
   {
+    "id": "654291ac-7db3-42b3-841e-8c325cc94fa9",
+    "syncId": "2026-11-11T10:51:02.916Z",
+    "createdAt": "2026-11-11T10:51:02.916Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "3925",
+    "characterName": "sinful",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3925",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/alhimik3.gif",
+        "name": "Мастер заклинатель",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/alhimik3.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "e433aebd-1b4c-49b2-84c7-f0afd3433a07",
     "syncId": "2026-11-10T21:26:20.248Z",
     "createdAt": "2026-11-10T21:26:20.248Z",

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-10T21:26:20.248Z",
+  "createdAt": "2026-11-11T10:51:02.916Z",
   "players": [
     {
       "cuid": "7939",
@@ -582,9 +582,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
-          "name": "Мастер алхимик",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+          "id": "/layout/all/subject/achievement/2/alhimik3.gif",
+          "name": "Мастер заклинатель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/alhimik3.gif",
           "category": "profession"
         },
         {
@@ -594,9 +594,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/vedun.gif",
-          "name": "Мастер ведун",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
+          "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+          "name": "Мастер алхимик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
           "category": "profession"
         },
         {
@@ -606,9 +606,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/lekar.gif",
-          "name": "Мастер лекарь",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
+          "id": "/layout/all/subject/achievement/2/vedun.gif",
+          "name": "Мастер ведун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
           "category": "profession"
         },
         {
@@ -618,9 +618,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/begun.gif",
-          "name": "Мастер бегун",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "id": "/layout/all/subject/achievement/2/lekar.gif",
+          "name": "Мастер лекарь",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
           "category": "profession"
         },
         {
@@ -628,6 +628,12 @@
           "name": "Букварь (2026)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2026.png",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/drop.gif",
