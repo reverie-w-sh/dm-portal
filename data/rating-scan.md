@@ -567,16 +567,16 @@
 5. ФКСПАРТАK[11] — cuid=1959 — https://dm-game.com/index.php?file=infouser&cuid=1959
 6. Амазоночка[10] — cuid=2143 — https://dm-game.com/index.php?file=infouser&cuid=2143
 7. Ведьмак[10] — cuid=2063 — https://dm-game.com/index.php?file=infouser&cuid=2063
-8. Ezhik[9] — cuid=15917 — https://dm-game.com/index.php?file=infouser&cuid=15917
-9. KiraYan[9] — cuid=2107 — https://dm-game.com/index.php?file=infouser&cuid=2107
-10. Underdog[9] — cuid=15301 — https://dm-game.com/index.php?file=infouser&cuid=15301
-11. Альф[9] — cuid=19568 — https://dm-game.com/index.php?file=infouser&cuid=19568
-12. аномалька[9] — cuid=8056 — https://dm-game.com/index.php?file=infouser&cuid=8056
-13. Безликий[9] — cuid=1915 — https://dm-game.com/index.php?file=infouser&cuid=1915
-14. Бродяга[9] — cuid=12161 — https://dm-game.com/index.php?file=infouser&cuid=12161
-15. Дон Алессандро[9] — cuid=3642 — https://dm-game.com/index.php?file=infouser&cuid=3642
-16. Дормидонт[9] — cuid=1080 — https://dm-game.com/index.php?file=infouser&cuid=1080
-17. масенький[9] — cuid=10029 — https://dm-game.com/index.php?file=infouser&cuid=10029
+8. масенький[10] — cuid=10029 — https://dm-game.com/index.php?file=infouser&cuid=10029
+9. Ezhik[9] — cuid=15917 — https://dm-game.com/index.php?file=infouser&cuid=15917
+10. KiraYan[9] — cuid=2107 — https://dm-game.com/index.php?file=infouser&cuid=2107
+11. Underdog[9] — cuid=15301 — https://dm-game.com/index.php?file=infouser&cuid=15301
+12. Альф[9] — cuid=19568 — https://dm-game.com/index.php?file=infouser&cuid=19568
+13. аномалька[9] — cuid=8056 — https://dm-game.com/index.php?file=infouser&cuid=8056
+14. Безликий[9] — cuid=1915 — https://dm-game.com/index.php?file=infouser&cuid=1915
+15. Бродяга[9] — cuid=12161 — https://dm-game.com/index.php?file=infouser&cuid=12161
+16. Дон Алессандро[9] — cuid=3642 — https://dm-game.com/index.php?file=infouser&cuid=3642
+17. Дормидонт[9] — cuid=1080 — https://dm-game.com/index.php?file=infouser&cuid=1080
 18. НЕПТУН[9] — cuid=12287 — https://dm-game.com/index.php?file=infouser&cuid=12287
 19. Ajax[8] — cuid=9086 — https://dm-game.com/index.php?file=infouser&cuid=9086
 20. Coby[8] — cuid=11841 — https://dm-game.com/index.php?file=infouser&cuid=11841
