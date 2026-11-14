@@ -1,5 +1,33 @@
 [
   {
+    "id": "0c780741-bc38-4913-b4b5-33594f4bd8eb",
+    "syncId": "2026-11-14T20:02:48.052Z",
+    "createdAt": "2026-11-14T20:02:48.052Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "8116",
+    "characterName": "Zhulik",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=8116",
+    "clanId": "279",
+    "clanName": "Mercenaries",
+    "oldPosition": "Глава спільноти",
+    "newPosition": "Глава сообщества"
+  },
+  {
+    "id": "7e8c370c-65ec-448e-ad8d-93807c7cd2de",
+    "syncId": "2026-11-14T20:02:48.052Z",
+    "createdAt": "2026-11-14T20:02:48.052Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "10420",
+    "characterName": "InDigo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
+    "clanId": "279",
+    "clanName": "Mercenaries",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Моя девочка"
+  },
+  {
     "id": "9d9c35b3-74db-4a4c-b594-6ce7d9ab9be8",
     "syncId": "2026-11-13T21:33:49.837Z",
     "createdAt": "2026-11-13T21:33:49.837Z",
