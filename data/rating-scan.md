@@ -1,4 +1,4 @@
-## Без клана — CLANLESS — знайдено 546
+## Без клана — CLANLESS — знайдено 547
 
 1. bossmaze16[16] — cuid=10711 — https://dm-game.com/index.php?file=infouser&cuid=10711
 2. bossmaze15[15] — cuid=10709 — https://dm-game.com/index.php?file=infouser&cuid=10709
@@ -545,7 +545,8 @@
 543. Укрон[4] — cuid=8767 — https://dm-game.com/index.php?file=infouser&cuid=8767
 544. хлебушек19[4] — cuid=13054 — https://dm-game.com/index.php?file=infouser&cuid=13054
 545. ЦАРЮКА[4] — cuid=4668 — https://dm-game.com/index.php?file=infouser&cuid=4668
-546. Эрагон[4] — cuid=7800 — https://dm-game.com/index.php?file=infouser&cuid=7800
+546. Чингиз[4] — cuid=32094 — https://dm-game.com/index.php?file=infouser&cuid=32094
+547. Эрагон[4] — cuid=7800 — https://dm-game.com/index.php?file=infouser&cuid=7800
 
 ## Хранители — CLAN 7 — знайдено 2
 

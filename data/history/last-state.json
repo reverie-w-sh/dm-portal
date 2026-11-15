@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-15T10:51:12.356Z",
+  "createdAt": "2026-11-15T20:26:32.568Z",
   "players": [
     {
       "cuid": "7939",
@@ -36737,6 +36737,20 @@
           "category": "profession"
         }
       ]
+    },
+    {
+      "cuid": "32094",
+      "nick": "Чингиз",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=32094",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": []
     }
   ],
   "clans": [
