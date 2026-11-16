@@ -1,5 +1,45 @@
 [
   {
+    "id": "477e68de-6f06-4120-a39c-d422b6f6bad2",
+    "syncId": "2026-11-16T23:52:24.023Z",
+    "createdAt": "2026-11-16T23:52:24.023Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "15917",
+    "characterName": "Ezhik",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=15917",
+    "clanId": "200",
+    "clanName": "Грезы Единорога"
+  },
+  {
+    "id": "c8360b5c-0146-47e1-965c-ac8b80b590df",
+    "syncId": "2026-11-16T23:52:24.023Z",
+    "createdAt": "2026-11-16T23:52:24.023Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "6286",
+    "characterName": "ЭХО",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6286",
+    "clanId": "279",
+    "clanName": "Mercenaries",
+    "oldPosition": "Член сообщества",
+    "newPosition": "Відображення"
+  },
+  {
+    "id": "2628f8b6-0139-463e-93ca-c444642f70e8",
+    "syncId": "2026-11-16T23:52:24.023Z",
+    "createdAt": "2026-11-16T23:52:24.023Z",
+    "scope": "clans",
+    "type": "player_level_up",
+    "characterId": "10350",
+    "characterName": "Valerchikqq",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10350",
+    "clanId": "",
+    "clanName": "",
+    "oldLevel": 5,
+    "newLevel": 6
+  },
+  {
     "id": "11894c85-9223-4d9a-9c21-fa757eb5f822",
     "syncId": "2026-11-16T11:07:06.394Z",
     "createdAt": "2026-11-16T11:07:06.394Z",
