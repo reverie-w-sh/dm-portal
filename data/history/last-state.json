@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-17T23:05:44.384Z",
+  "createdAt": "2026-11-18T11:38:00.492Z",
   "players": [
     {
       "cuid": "7939",
@@ -8524,6 +8524,12 @@
           "name": "Букварь (2022)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2022.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/zaklinatel.gif",
+          "name": "Мастер алхимик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/zaklinatel.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/begun.gif",
