@@ -1,5 +1,19 @@
 [
   {
+    "id": "60b9294a-f161-461c-9514-fd09bce2c97a",
+    "syncId": "2026-11-20T22:23:56.485Z",
+    "createdAt": "2026-11-20T22:23:56.485Z",
+    "scope": "clans",
+    "type": "player_position_changed",
+    "characterId": "10420",
+    "characterName": "InDigo",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10420",
+    "clanId": "279",
+    "clanName": "Mercenaries",
+    "oldPosition": "Моя девочка",
+    "newPosition": "Лучший охотник"
+  },
+  {
     "id": "a33e67dd-1021-4872-b312-1998fb4787c3",
     "syncId": "2026-11-19T22:48:20.118Z",
     "createdAt": "2026-11-19T22:48:20.118Z",
