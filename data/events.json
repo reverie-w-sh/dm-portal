@@ -1,5 +1,25 @@
 [
   {
+    "id": "1415731e-8a5e-4e2e-a080-540365132720",
+    "syncId": "2026-11-21T11:02:28.190Z",
+    "createdAt": "2026-11-21T11:02:28.190Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "10350",
+    "characterName": "Valerchikqq",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=10350",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/smith.gif",
+        "name": "Мастер кузнец",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "60b9294a-f161-461c-9514-fd09bce2c97a",
     "syncId": "2026-11-20T22:23:56.485Z",
     "createdAt": "2026-11-20T22:23:56.485Z",

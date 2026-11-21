@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-20T22:23:56.485Z",
+  "createdAt": "2026-11-21T11:02:28.190Z",
   "players": [
     {
       "cuid": "7939",
@@ -36587,6 +36587,12 @@
       "marriagePartner": "",
       "marriageSince": "",
       "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/smith.gif",
+          "name": "Мастер кузнец",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
+        },
         {
           "id": "/layout/all/subject/achievement/3/getter.gif",
           "name": "Добытчик",
