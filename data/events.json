@@ -1,5 +1,29 @@
 [
   {
+    "id": "a2ea1b11-2770-4c80-a2ca-8a3184a694e3",
+    "syncId": "2026-11-25T12:42:55.915Z",
+    "createdAt": "2026-11-25T12:42:55.915Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "11119",
+    "characterName": "fisherman",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=11119",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
+    "id": "cc2c3fc5-3fb0-46b9-b46a-929dafebba06",
+    "syncId": "2026-11-25T12:42:55.915Z",
+    "createdAt": "2026-11-25T12:42:55.915Z",
+    "scope": "clans",
+    "type": "player_left_clan",
+    "characterId": "17756",
+    "characterName": "Milady",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=17756",
+    "clanId": "244",
+    "clanName": "Devils of Death"
+  },
+  {
     "id": "587f5418-e0a5-4e71-8a19-8d19ccc6214c",
     "syncId": "2026-11-24T02:16:55.033Z",
     "createdAt": "2026-11-24T02:16:55.033Z",
