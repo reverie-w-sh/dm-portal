@@ -1,5 +1,25 @@
 [
   {
+    "id": "c637d88b-a214-4c65-abc0-2d09f282e04e",
+    "syncId": "2026-11-25T23:44:07.018Z",
+    "createdAt": "2026-11-25T23:44:07.018Z",
+    "scope": "player",
+    "type": "player_achievement_added",
+    "characterId": "1927",
+    "characterName": "Я человек",
+    "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1927",
+    "amount": 1,
+    "addedAchievements": [
+      {
+        "id": "/layout/all/subject/achievement/2/vedun.gif",
+        "name": "Мастер ведун",
+        "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
+        "category": "profession"
+      }
+    ],
+    "isInitialImport": false
+  },
+  {
     "id": "a2ea1b11-2770-4c80-a2ca-8a3184a694e3",
     "syncId": "2026-11-25T12:42:55.915Z",
     "createdAt": "2026-11-25T12:42:55.915Z",

@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-25T12:42:55.915Z",
+  "createdAt": "2026-11-25T23:44:07.018Z",
   "players": [
     {
       "cuid": "7939",
@@ -1968,9 +1968,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/lekar.gif",
-          "name": "Мастер лекарь",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
+          "id": "/layout/all/subject/achievement/2/vedun.gif",
+          "name": "Мастер ведун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/vedun.gif",
           "category": "profession"
         },
         {
@@ -1980,9 +1980,9 @@
           "category": "research"
         },
         {
-          "id": "/layout/all/subject/achievement/2/begun.gif",
-          "name": "Мастер бегун",
-          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "id": "/layout/all/subject/achievement/2/lekar.gif",
+          "name": "Мастер лекарь",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/lekar.gif",
           "category": "profession"
         },
         {
@@ -1990,6 +1990,12 @@
           "name": "Букварь (2025)",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/bukvar2025.gif",
           "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/begun.gif",
+          "name": "Мастер бегун",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/begun.gif",
+          "category": "profession"
         },
         {
           "id": "/layout/all/subject/achievement/2/drop.gif",
