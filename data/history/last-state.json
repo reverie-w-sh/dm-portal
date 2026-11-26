@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-25T23:44:07.018Z",
+  "createdAt": "2026-11-26T12:22:36.165Z",
   "players": [
     {
       "cuid": "7939",
@@ -20664,9 +20664,9 @@
       "nick": "Jassminka",
       "level": 8,
       "reincarnationLevel": null,
-      "clanId": "216",
-      "clanName": "Царство теней",
-      "position": "Любимка:)",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=9724",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -20727,9 +20727,9 @@
       "nick": "RealMaster",
       "level": 8,
       "reincarnationLevel": null,
-      "clanId": "216",
-      "clanName": "Царство теней",
-      "position": "Мастер",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1464",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -20859,9 +20859,9 @@
       "nick": "сантила",
       "level": 8,
       "reincarnationLevel": null,
-      "clanId": "216",
-      "clanName": "Царство теней",
-      "position": "младший брат",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=1974",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -21504,9 +21504,9 @@
       "nick": "Player",
       "level": 10,
       "reincarnationLevel": 8,
-      "clanId": "244",
-      "clanName": "Devils of Death",
-      "position": "Кейдж",
+      "clanId": "",
+      "clanName": "",
+      "position": "",
       "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=3607",
       "marriageKnown": true,
       "marriagePartner": "",
@@ -36769,6 +36769,27 @@
       "marriagePartner": "",
       "marriageSince": "",
       "achievements": []
+    },
+    {
+      "cuid": "29426",
+      "nick": "Astra",
+      "level": 4,
+      "reincarnationLevel": null,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=29426",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/3/getter.gif",
+          "name": "Добытчик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
+          "category": "research"
+        }
+      ]
     }
   ],
   "clans": [
