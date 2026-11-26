@@ -1,5 +1,5 @@
 {
-  "createdAt": "2026-11-26T12:22:36.165Z",
+  "createdAt": "2026-11-26T23:51:44.366Z",
   "players": [
     {
       "cuid": "7939",
@@ -19804,8 +19804,8 @@
     {
       "cuid": "7938",
       "nick": "DanGar",
-      "level": 8,
-      "reincarnationLevel": null,
+      "level": 9,
+      "reincarnationLevel": 8,
       "clanId": "235",
       "clanName": "Храм Мечей",
       "position": "К8",
@@ -25411,7 +25411,7 @@
     {
       "cuid": "1389",
       "nick": "MoNiKa",
-      "level": 9,
+      "level": 10,
       "reincarnationLevel": 8,
       "clanId": "235",
       "clanName": "Храм Мечей",
@@ -36788,6 +36788,57 @@
           "name": "Добытчик",
           "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
           "category": "research"
+        }
+      ]
+    },
+    {
+      "cuid": "6705",
+      "nick": "Ramiros Sanchos",
+      "level": 9,
+      "reincarnationLevel": 8,
+      "clanId": "",
+      "clanName": "",
+      "position": "",
+      "profileUrl": "https://dm-game.com/index.php?file=infouser&cuid=6705",
+      "marriageKnown": true,
+      "marriagePartner": "",
+      "marriageSince": "",
+      "achievements": [
+        {
+          "id": "/layout/all/subject/achievement/2/fisher.gif",
+          "name": "Мастер рыбак",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/fisher.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/4/labirint_l1.gif",
+          "name": "Мастер лабиринта 1-го уровня",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/4/labirint_l1.gif",
+          "category": "underground"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/collector.gif",
+          "name": "Мастер собиратель",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/collector.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/3/getter.gif",
+          "name": "Добытчик",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/3/getter.gif",
+          "category": "research"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/all_hands.gif",
+          "name": "Мастер на все руки",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/all_hands.gif",
+          "category": "profession"
+        },
+        {
+          "id": "/layout/all/subject/achievement/2/smith.gif",
+          "name": "Мастер кузнец",
+          "imageUrl": "https://dm-game.com/layout/all/subject/achievement/2/smith.gif",
+          "category": "profession"
         }
       ]
     }
