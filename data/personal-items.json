@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T23:51:20.035Z",
+  "updatedAt": "2026-11-27T12:08:56.352Z",
   "items": [
     {
       "id": "440544",
@@ -5490,11 +5490,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=216682"
     },
     {
-      "id": "541123",
-      "name": "Дар Гномов",
+      "id": "437168",
+      "name": "Дар Гномов(Мд)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/12-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541123"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437168"
     },
     {
       "id": "504683",
@@ -5588,11 +5588,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=512640"
     },
     {
-      "id": "541124",
-      "name": "Когти ЭХО",
+      "id": "414803",
+      "name": "Когти ЭХО(Мд)(+6 силы)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/07-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541124"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=414803"
     },
     {
       "id": "504777",
@@ -5609,11 +5609,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=512642"
     },
     {
-      "id": "541127",
-      "name": "Крылья ЭХО",
+      "id": "382318",
+      "name": "Крылья ЭХО(Мд)(+12)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/20-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541127"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=382318"
     },
     {
       "id": "226384",
@@ -5630,39 +5630,46 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=525001"
     },
     {
-      "id": "541132",
-      "name": "Неудержимая Ярость ЭХО",
+      "id": "439262",
+      "name": "Неудержимая Ярость ЭХО(Мд)(+12)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/02-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541132"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=439262"
     },
     {
-      "id": "541133",
-      "name": "Неудержимая Ярость ЭХО",
+      "id": "439656",
+      "name": "Неудержимая Ярость ЭХО(Мд)(+12)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/02-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541133"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=439656"
     },
     {
-      "id": "541126",
-      "name": "Отражающая Броня ЭХО",
+      "id": "437174",
+      "name": "Отражающая Броня ЭХО(+4 брони)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/10-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541126"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437174"
     },
     {
-      "id": "541131",
-      "name": "Отражающие Сапоги ЭХО",
+      "id": "437173",
+      "name": "Отражающие Сапоги ЭХО(+6 силы)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/06-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541131"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437173"
     },
     {
-      "id": "541121",
-      "name": "Отражающий Шлем ЭХО",
+      "id": "437176",
+      "name": "Отражающий Шлем ЭХО(+4 брони)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/11-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541121"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437176"
+    },
+    {
+      "id": "437172",
+      "name": "Отражающий Щит ЭХО(+75 жизни)",
+      "owner": "ЭХО",
+      "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/021-6286-00.png",
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437172"
     },
     {
       "id": "504679",
@@ -5679,39 +5686,39 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=512635"
     },
     {
-      "id": "504685",
+      "id": "386034",
       "name": "Предвестники ЭХО",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/16-6286-00.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=504685"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=386034"
     },
     {
-      "id": "541128",
+      "id": "437169",
       "name": "Предвестники ЭХО",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/16-6286-00.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541128"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437169"
     },
     {
-      "id": "541129",
+      "id": "437170",
       "name": "Предвестники ЭХО",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/16-6286-00.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541129"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437170"
     },
     {
-      "id": "541134",
+      "id": "437171",
       "name": "Предвестники ЭХО",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/16-6286-00.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541134"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437171"
     },
     {
-      "id": "541122",
+      "id": "437175",
       "name": "Призрачные Охотники ЭХО",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/15-6286-00.gif",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541122"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=437175"
     },
     {
       "id": "507019",
@@ -5812,11 +5819,11 @@
       "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=512655"
     },
     {
-      "id": "541130",
-      "name": "Чешуя Дракона",
+      "id": "438413",
+      "name": "Чешуя Дракона(Мд)",
       "owner": "ЭХО",
       "imageUrl": "https://dm-game.com//layout//all//subject//self/eho/13-6286-00.png",
-      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=541130"
+      "itemUrl": "https://dm-game.com/index.php?file=library&page=personal_items&p_itemID=438413"
     },
     {
       "id": "541135",
